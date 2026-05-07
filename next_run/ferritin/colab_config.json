@@ -1,0 +1,15 @@
+{
+  "target": "ferritin",
+  "iteration": 5,
+  "strategy": "explore",
+  "generated": "2026-04-27 18:59",
+  "params": {
+    "contigs": "[A40-55/0 30-40]",
+    "hotspot": "A46,A52",
+    "hotspot_variant": "heme_coord",
+    "guide_scale": 15,
+    "T": 50,
+    "num_designs": 8
+  },
+  "colab_notebook": "https://colab.research.google.com/github/sokrypton/ColabDesign/blob/main/rf/examples/diffusion.ipynb"
+}

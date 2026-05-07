@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Windows bullshit
+*.Zone.Identifier
+
+# Virtualenv
+.venv/
+venv/
+env/
+
+# Large data (track with DVC or separate)
+*.zip
+*.tar.gz
+
+# Protein structure temp files
+*.pkl
+*.npy
+
+# Secrets
+.env
+*.token
+
+# IDE
+.vscode/
+.idea/
+
+# Archives
+archive/
+
+# Generated outputs (keep tracked manually)
+generated/

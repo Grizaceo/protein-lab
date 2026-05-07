@@ -1,0 +1,15 @@
+{
+  "target": "nipah",
+  "iteration": 12,
+  "strategy": "exploit",
+  "generated": "2026-04-27 18:59",
+  "params": {
+    "contigs": "90-90",
+    "hotspot_variant": "focal",
+    "guide_scale": 5,
+    "T": 50,
+    "num_designs": 8,
+    "hotspot": "A489,A504,A505,A506"
+  },
+  "colab_notebook": "https://colab.research.google.com/github/sokrypton/ColabDesign/blob/main/rf/examples/diffusion.ipynb"
+}

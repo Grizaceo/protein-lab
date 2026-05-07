@@ -1,0 +1,22 @@
+# Nipah G (2VSM Chain A) focal patch for binder design
+# Compact cluster (<15Å diameter) based on actual contact analysis
+
+# Strongest contacts (≥4 atoms within 4Å of Ephrin-B2)
+504 TRP  10 atoms
+505 GLU   4 atoms
+489 GLY   4 atoms
+491 SER   4 atoms
+
+# Alternative: even tighter cluster focusing on A504-505 region
+# plus nearest neighbors with strong contact
+504 TRP  10 atoms
+505 GLU   4 atoms
+506 GLY   4 atoms  # adjacent to 505
+490 GLN   4 atoms  # adjacent to 489
+
+# Distances between these residues:
+# A504 ↔ A505: ~4-5Å (adjacent in chain)
+# A504 ↔ A490: ~13Å
+# A505 ↔ A506: ~4-5Å
+# A489 ↔ A491: ~5-6Å (adjacent)
+# A489 ↔ A490: ~4-5Å (adjacent)
