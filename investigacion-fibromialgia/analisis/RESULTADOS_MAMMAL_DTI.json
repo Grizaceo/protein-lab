@@ -1,0 +1,235 @@
+{
+  "pipeline": "MAMMAL DTI",
+  "model": "ibm/biomed.omics.bl.sm.ma-ted-458m.dti_bindingdb_pkd",
+  "task": "Drug-Target Interaction (pKd prediction)",
+  "date": "2026-05-14",
+  "device": "cuda",
+  "direct_predictions": [
+    {
+      "drug": "naltrexona_LDN",
+      "target": "MOR",
+      "tier": "Tier2",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "NRF2",
+      "tier": "Tier1",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "Nav1.8",
+      "tier": "Tier1",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "TLR4",
+      "tier": "Tier2",
+      "error": "'Mammal' object has no attribute 'predict'"
+    }
+  ],
+  "cross_predictions": [
+    {
+      "drug": "naltrexona_LDN",
+      "target": "NRF2",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "Nav1.8",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "IL-1β",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "IL-6",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "TLR4",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "TRPA1",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "CPA3",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "MS4A2/FcεRIβ",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "FCER1A/FcεRIα",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "HDC",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "Nav1.8",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "IL-1β",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "IL-6",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "TLR4",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "TRPA1",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "MOR",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "CPA3",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "MS4A2/FcεRIβ",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "FCER1A/FcεRIα",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "HDC",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "NRF2",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "IL-1β",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "IL-6",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "TLR4",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "TRPA1",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "MOR",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "CPA3",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "MS4A2/FcεRIβ",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "FCER1A/FcεRIα",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "HDC",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "NRF2",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "Nav1.8",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "IL-1β",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "IL-6",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "TRPA1",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "MOR",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "CPA3",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "MS4A2/FcεRIβ",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "FCER1A/FcεRIα",
+      "error": "'Mammal' object has no attribute 'predict'"
+    },
+    {
+      "drug": "TAK242",
+      "target": "HDC",
+      "error": "'Mammal' object has no attribute 'predict'"
+    }
+  ]
+}

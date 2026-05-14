@@ -1,0 +1,285 @@
+{
+  "pipeline": "MAMMAL DTI v2",
+  "model": "ibm/biomed.omics.bl.sm.ma-ted-458m.dti_bindingdb_pkd",
+  "date": "2026-05-14",
+  "direct_predictions": [
+    {
+      "drug": "naltrexona_LDN",
+      "target": "MOR",
+      "tier": "Tier2",
+      "notes": "LDN (Low-Dose Naltrexone), antagonista MOR, FDA aprobado",
+      "pkd": 6.913,
+      "kd_molar": 1.2218436294642148e-07,
+      "interpretation": "Afinidad moderada (µM)",
+      "target_len": 400,
+      "inference_time_s": 0.6
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "NRF2",
+      "tier": "Tier1",
+      "notes": "Tecfidera, activador NRF2, FDA 2013 para EM",
+      "pkd": 5.881,
+      "kd_molar": 1.3142185791688077e-06,
+      "interpretation": "Afinidad baja (mM)",
+      "target_len": 605,
+      "inference_time_s": 0.18
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "Nav1.8",
+      "tier": "Tier1",
+      "error": ""
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "TLR4",
+      "tier": "Tier2",
+      "notes": "Resatorvid, antagonista TLR4, Fase II",
+      "pkd": 5.953,
+      "kd_molar": 1.114853613699545e-06,
+      "interpretation": "Afinidad baja (mM)",
+      "target_len": 839,
+      "inference_time_s": 0.18
+    }
+  ],
+  "cross_predictions": [
+    {
+      "drug": "naltrexona_LDN",
+      "target": "NRF2",
+      "pkd": 5.946,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "Nav1.8",
+      "error": ""
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "IL-1β",
+      "pkd": 5.505,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "IL-6",
+      "pkd": 5.547,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "TLR4",
+      "pkd": 5.945,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "TRPA1",
+      "pkd": 5.832,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "CPA3",
+      "pkd": 5.834,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "MS4A2/FcεRIβ",
+      "pkd": 6.259,
+      "interpretation": "Afinidad moderada (µM)"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "FCER1A/FcεRIα",
+      "pkd": 5.552,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "naltrexona_LDN",
+      "target": "HDC",
+      "pkd": 5.98,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "Nav1.8",
+      "error": ""
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "IL-1β",
+      "pkd": 5.329,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "IL-6",
+      "pkd": 5.309,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "TLR4",
+      "pkd": 5.721,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "TRPA1",
+      "pkd": 5.649,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "MOR",
+      "pkd": 6.839,
+      "interpretation": "Afinidad moderada (µM)"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "CPA3",
+      "pkd": 5.67,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "MS4A2/FcεRIβ",
+      "pkd": 6.142,
+      "interpretation": "Afinidad moderada (µM)"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "FCER1A/FcεRIα",
+      "pkd": 5.34,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "dimetil_fumarato",
+      "target": "HDC",
+      "pkd": 5.853,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "NRF2",
+      "pkd": 5.939,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "IL-1β",
+      "pkd": 5.392,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "IL-6",
+      "pkd": 5.486,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "TLR4",
+      "pkd": 5.949,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "TRPA1",
+      "pkd": 5.775,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "MOR",
+      "pkd": 6.908,
+      "interpretation": "Afinidad moderada (µM)"
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "CPA3",
+      "pkd": 5.778,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "MS4A2/FcεRIβ",
+      "pkd": 6.237,
+      "interpretation": "Afinidad moderada (µM)"
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "FCER1A/FcεRIα",
+      "pkd": 5.501,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "suzetrigine_VX548",
+      "target": "HDC",
+      "pkd": 5.923,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "NRF2",
+      "pkd": 5.967,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "Nav1.8",
+      "error": ""
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "IL-1β",
+      "pkd": 5.457,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "IL-6",
+      "pkd": 5.485,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "TRPA1",
+      "pkd": 5.782,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "MOR",
+      "pkd": 7.019,
+      "interpretation": "Afinidad moderada (µM)"
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "CPA3",
+      "pkd": 5.778,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "MS4A2/FcεRIβ",
+      "pkd": 6.3,
+      "interpretation": "Afinidad moderada (µM)"
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "FCER1A/FcεRIα",
+      "pkd": 5.49,
+      "interpretation": "Afinidad baja (mM)"
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "HDC",
+      "pkd": 5.985,
+      "interpretation": "Afinidad baja (mM)"
+    }
+  ]
+}
