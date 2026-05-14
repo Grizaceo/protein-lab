@@ -1,0 +1,94 @@
+{
+  "target": "DRD2",
+  "model": "ibm/biomed.omics.bl.sm.ma-ted-458m",
+  "mode": "binary_classification",
+  "results": [
+    {
+      "name": "dopamine",
+      "smiles": "C1=CC(=C(C=C1CCN)O)O",
+      "label": 1,
+      "evidence": "endogenous agonist, Ki=1.8-15000 nM",
+      "pred": 1,
+      "score": 0.935941755771637,
+      "correct": true
+    },
+    {
+      "name": "pramipexole",
+      "smiles": "CCCN[C@H]1CCC2=C(C1)SC(=N2)N",
+      "label": 1,
+      "evidence": "D3/D2 agonist, Ki D2=3.9 nM",
+      "pred": 1,
+      "score": 0.9405996203422546,
+      "correct": true
+    },
+    {
+      "name": "ropinirole",
+      "smiles": "CCCN(CCC)CCC1=C2CC(=O)NC2=CC=C1",
+      "label": 1,
+      "evidence": "D2/D3 agonist, Ki D2=2.5 nM",
+      "pred": 1,
+      "score": 0.9361475110054016,
+      "correct": true
+    },
+    {
+      "name": "bromocriptine",
+      "smiles": "CC(C)CC1C(=O)N2CCCC2C3(N1C(=O)C(O3)(C(C)C)NC(=O)C4CN(C5CC6=C(NC7=CC=CC(=C67)C5=C4)Br)C)O",
+      "label": 1,
+      "evidence": "D2 agonist, co-crystallized 6VMS, Ki=0.62-110 nM",
+      "pred": 0,
+      "score": 0.053244903683662415,
+      "correct": false
+    },
+    {
+      "name": "cabergoline",
+      "smiles": "CCNC(=O)N(CCCN(C)C)C(=O)C1CC2C(CC3=CNC4=CC=CC2=C34)N(C1)CC=C",
+      "label": 1,
+      "evidence": "D2 agonist, Ki~0.7 nM",
+      "pred": 1,
+      "score": 0.676264762878418,
+      "correct": true
+    },
+    {
+      "name": "atorvastatin",
+      "smiles": "CC(C)c1c(C(=O)Nc2ccccc2)c(c(c1C(=O)Nc2ccccc2)c1ccc(Cl)cc1)CC(C)(C)C",
+      "label": 0,
+      "evidence": "HMG-CoA reductase inhibitor",
+      "pred": 1,
+      "score": 0.943303644657135,
+      "correct": false
+    },
+    {
+      "name": "ibuprofen",
+      "smiles": "CC(Cc1ccc(cc1)C(C(=O)O)C)C",
+      "label": 0,
+      "evidence": "COX-1/2 inhibitor, NSAID",
+      "pred": 1,
+      "score": 0.946446418762207,
+      "correct": false
+    },
+    {
+      "name": "metformin",
+      "smiles": "CN(C)C(=N)NC(=N)N",
+      "label": 0,
+      "evidence": "AMPK activator, mitochondrial complex I",
+      "pred": 1,
+      "score": 0.9179698824882507,
+      "correct": false
+    },
+    {
+      "name": "omeprazole",
+      "smiles": "CC1=CN=C(C(=C1OC)C)CS(=O)C2=NC3=C(N2)C=C(C=C3)OC",
+      "label": 0,
+      "evidence": "proton pump inhibitor",
+      "pred": 1,
+      "score": 0.8596698641777039,
+      "correct": false
+    }
+  ],
+  "metrics": {
+    "accuracy": 0.4444444444444444,
+    "precision": 0.5,
+    "recall": 0.8,
+    "f1": 0.6153846153846154
+  }
+}
