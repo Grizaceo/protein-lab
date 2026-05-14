@@ -1,0 +1,29 @@
+{
+  "campaign": "fibromialgia_ruta_b",
+  "title": "Ruta B: MOR/LDN — Repurposing de Naltrexona en Fibromialgia",
+  "objective": "Validar y expandir, con cautela, la predicción de binding affinity de naltrexona contra MOR y targets relacionados en fibromialgia",
+  "backends": ["local_mammal"],
+  "investigator_provider": "ollama-cloud",
+  "investigator_model": "nemotron-3-super",
+  "max_experiments": 40,
+  "time_budget_minutes": 480,
+  "known_findings": [
+    "naltrexona → MOR: pKd=6.91 (122 nM, afinidad moderada)",
+    "dimetil_fumarato → NRF2: pKd=5.88 (1.3 µM, afinidad baja — esperado, es profármaco)",
+    "TAK242 → TLR4: pKd=5.95 (1.1 µM, afinidad baja)",
+    "MOR aparece como target promiscuo en cross-predicciones (todos los fármacos testados muestran afinidad moderada); requiere control de sesgo"
+  ],
+  "primary_targets": ["MOR"],
+  "secondary_targets": ["MS4A2", "FCER1A", "HDC", "CPA3", "TRPA1", "TLR4", "NRF2", "IL-1β", "IL-6", "Nav1.8"],
+  "drugs_smiles": {
+    "naltrexona_LDN": "C=CCN1CCC23C4C(=O)CCC2(C1CC5=C3C(=C(C=C5)O)O4)O",
+    "dimetil_fumarato": "COC(=O)C=CC(=O)OC",
+    "suzetrigine_VX548": "CC1=C(SC(=N1)NC(=O)C2=C(C=CC=C2F)F)C(=O)NCC(F)(F)F",
+    "TAK242_resatorvid": "CC1=CC(=CC(=C1Cl)C(F)(F)F)NC(=O)C2=C(C=CC=C2F)F"
+  },
+  "avoid": [
+    "Nav1.8 en local_mammal: secuencia muy larga; reservar para Colab/sliding-window",
+    "Biologics sin SMILES small-molecule (anakinra/tocilizumab) no son válidos para este backend DTI",
+    "No repetir conclusiones clínicas desde pKd predicho"
+  ]
+}
