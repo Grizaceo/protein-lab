@@ -1,0 +1,71 @@
+{
+  "campaign": "fibromialgia_ruta_b_v3",
+  "title": "Ruta B v3: Calibración de Sesgo GPCR — Panel de Controles de Fold",
+  "objective": "Calibrar el sesgo de MAMMAL DTI para GPCR Class A usando 4 GPCRs no-relacionados (MOR, ADRB2, DRD2, AGTR1), 1 proteína no-GPCR (ALB) y 1 proteína inerte (GFP). La hipótesis a falsar: el pKd inflado de MOR es específico de GPCR y compartido por otros GPCR Class A.",
+  "version": "3.0.0",
+  "parent_campaign": "fibromialgia_ruta_b_v2",
+  "backends": ["local_mammal"],
+  "investigator_provider": "ollama-cloud",
+  "investigator_model": "nemotron-3-super",
+  "max_experiments": 105,
+  "pace_to_time_budget": false,
+  "use_pubchem_expansion": false,
+  "known_findings": [
+    "Ruta B v2 (180 exps): MOR sesgo confirmado — atorvastatin pKd=7.165 > morphine pKd=6.818 en MOR.",
+    "Los 30 fármacos en MOR caen en banda [6.77, 7.21] con SD=0.104. Todos los fármacos, incluyendo PPIs y estatinas, muestran pKd≥6.76 en MOR.",
+    "MS4A2 es el único non-MOR que retiene cierta inflación (media 6.228), pero ningún compuesto ≥6.5.",
+    "NRF2, TLR4, TRPA1, HDC: todos con medias 5.76-5.96, sin outliers. Más creíble como línea base baja.",
+    "Hipótesis: MAMMAL infla pKd para GPCR Class A por sesgo de embedding/entrenamiento, no por farmacología real."
+  ],
+  "primary_targets": ["MOR", "ADRB2", "DRD2", "AGTR1"],
+  "secondary_targets": ["MS4A2", "ALB", "GFP"],
+  "excluded_targets_from_selection": [],
+  "drugs_smiles": {
+    "naltrexone": "C1CC1CN2CC[C@]34[C@@H]5C(=O)CC[C@]3([C@H]2CC6=C4C(=C(C=C6)O)O5)O",
+    "morphine": "CN1CC[C@]23[C@@H]4[C@H]1CC5=C2C(=C(C=C5)O)O[C@H]3[C@H](C=C4)O",
+    "fentanyl": "CCC(=O)N(C1CCN(CC1)CCC2=CC=CC=C2)C3=CC=CC=C3",
+    "buprenorphine": "C[C@]([C@H]1C[C@@]23CC[C@@]1([C@H]4[C@@]25CCN([C@@H]3CC6=C5C(=C(C=C6)O)O4)CC7CC7)OC)(C(C)(C)C)O",
+    "naloxone": "C=CCN1CC[C@]23[C@@H]4C(=O)CC[C@]2([C@H]1CC5=C3C(=C(C=C5)O)O4)O",
+    "atorvastatin": "CC(C)C1=C(C(=C(N1CC[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)C3=CC=CC=C3)C(=O)NC4=CC=CC=C4",
+    "omeprazole": "CC1=CN=C(C(=C1OC)C)CS(=O)C2=NC3=C(N2)C=C(C=C3)OC",
+    "celecoxib": "CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C(F)(F)F",
+    "ibuprofen": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O",
+    "melatonin": "CC(=O)NCCC1=CNC2=C1C=C(C=C2)OC",
+    "metformin": "CN(C)C(=N)N=C(N)N",
+    "gabapentin": "C1CCC(CC1)(CC(=O)O)CN",
+    "pregabalin": "CC(C)C[C@@H](CC(=O)O)CN",
+    "aspirin": "CC(=O)OC1=CC=CC=C1C(=O)O",
+    "duloxetine": "CNCC[C@@H](C1=CC=CS1)OC2=CC=CC3=CC=CC=C32"
+  },
+  "drug_annotations": {
+    "naltrexone": { "class": "MOR antagonist", "expected_behavior": "high_MOR_low_others", "role": "specificity_tool" },
+    "morphine": { "class": "MOR agonist", "expected_behavior": "high_MOR_low_others", "role": "positive_control" },
+    "fentanyl": { "class": "MOR agonist potent", "expected_behavior": "high_MOR_low_others", "role": "positive_control" },
+    "buprenorphine": { "class": "MOR partial agonist", "expected_behavior": "high_MOR_low_others", "role": "positive_control" },
+    "naloxone": { "class": "MOR antagonist", "expected_behavior": "high_MOR_low_others", "role": "structural_analog" },
+    "atorvastatin": { "class": "statin", "expected_behavior": "low_all", "role": "negative_control_gold" },
+    "omeprazole": { "class": "PPI", "expected_behavior": "low_all", "role": "negative_control" },
+    "celecoxib": { "class": "COX-2 inhibitor", "expected_behavior": "low_all", "role": "negative_control" },
+    "ibuprofen": { "class": "NSAID", "expected_behavior": "low_all", "role": "negative_control" },
+    "melatonin": { "class": "hormone MT1/MT2", "expected_behavior": "low_all_MOR", "role": "negative_control" },
+    "metformin": { "class": "biguanide AMPK", "expected_behavior": "low_all", "role": "negative_control" },
+    "gabapentin": { "class": "α2δ ligand", "expected_behavior": "low_all", "role": "negative_control_hydrophilic" },
+    "pregabalin": { "class": "α2δ ligand", "expected_behavior": "low_all", "role": "negative_control_hydrophilic" },
+    "aspirin": { "class": "NSAID COX covalent", "expected_behavior": "low_all", "role": "negative_control_small" },
+    "duloxetine": { "class": "SNRI", "expected_behavior": "moderate_non_selective", "role": "fm_approved_reference" }
+  },
+  "target_annotations": {
+    "MOR": { "class": "GPCR_ClassA", "role": "primary_hypothesis_target", "expected_bias": "inflated" },
+    "ADRB2": { "class": "GPCR_ClassA", "role": "GPCR_control", "expected_bias": "inflated_if_GPCR_bias" },
+    "DRD2": { "class": "GPCR_ClassA", "role": "GPCR_control", "expected_bias": "inflated_if_GPCR_bias" },
+    "AGTR1": { "class": "GPCR_ClassA", "role": "GPCR_control", "expected_bias": "inflated_if_GPCR_bias" },
+    "MS4A2": { "class": "tetraspanin_membrane", "role": "semi_GPCR_like_control", "expected_bias": "partial_inflation" },
+    "ALB": { "class": "soluble_carrier", "role": "nonGPCR_baseline", "expected_bias": "low_true_baseline" },
+    "GFP": { "class": "inert_beta_barrel", "role": "absolute_null", "expected_bias": "lowest_possible" }
+  },
+  "avoid": [
+    "No concluir que ADRB2/DRD2/AGTR1 son 'off-targets' de naltrexona — si muestran inflación similar a MOR, el sesgo es del modelo.",
+    "Si GFP muestra pKd > 5.5, el modelo tiene un piso de ruido alto independiente del fold.",
+    "No interpretar diferencias < 0.3 pKd entre GPCRs como significativas."
+  ]
+}

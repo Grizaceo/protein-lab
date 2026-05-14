@@ -43,6 +43,12 @@ TARGETS = {
     "MS4A2": {"fasta_key": "MS4A2/FcεRIβ", "tier": "Tier3"},
     "FCER1A": {"fasta_key": "FCER1A/FcεRIα", "tier": "Tier3"},
     "HDC": {"fasta_key": "HDC", "tier": "Tier3"},
+    # Ruta B v3 GPCR/non-GPCR controls
+    "ADRB2": {"fasta_key": "ADRB2", "tier": "GPCR_ctrl"},
+    "DRD2": {"fasta_key": "DRD2", "tier": "GPCR_ctrl"},
+    "AGTR1": {"fasta_key": "AGTR1", "tier": "GPCR_ctrl"},
+    "ALB": {"fasta_key": "ALB", "tier": "nonGPCR_ctrl"},
+    "GFP": {"fasta_key": "GFP", "tier": "inert_ctrl"},
 }
 
 DEFAULT_DRUGS = {
