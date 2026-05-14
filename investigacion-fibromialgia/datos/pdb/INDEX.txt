@@ -1,0 +1,28 @@
+# PDB structures for FM targets
+# Downloaded: 2026-05-13
+# Total: 22 structures
+
+PDB_ID | Target | Gene | Description | Size
+──────────────────────────────────────────────────────────────────────────────────────────
+1ALU | IL-6 | IL6 | IL-6 crystal structure (1.9Å, classic) | 151 KB
+1F6A | FCER1A (FcεRIα) | FCER1A | FcεRIα bound to IgE Fc (2.4Å, complex) | 509 KB
+1I1B | IL-1β | IL1B | IL-1β mature form (2.0Å, classic structure) | 135 KB
+1IL6 | IL-6 | IL6 | IL-6 NMR ensemble | 231 KB
+1RPQ | FCER1A (FcεRIα) | FCER1A | FcεRIα extracellular domain | 660 KB
+2FLU | NRF2 (NFE2L2) | NRF2 | NRF2 Neh2 domain bound to KEAP1 Kelch domain | 253 KB
+2NVH | IL-1β | IL1B | IL-1β bound to receptor antagonist (drug template) | 136 KB
+3FXI | TLR4 | TLR4 | TLR4/MD-2/LPS complex (3.1Å, full receptor) | 1107 KB
+3J9P | TRPA1 | TRPA1 | TRPA1 cryo-EM structure (4.2Å, full channel) | 1464 KB
+4DKL | MOR (OPRM1) | MOR | MOR bound to morphinan antagonist (2.8Å) | 632 KB
+4E1M | HDC | HDC | HDC with histidine substrate analog | 128 KB
+4G6J | IL-1β | IL1B | IL-1β with small molecule inhibitor | 774 KB
+4G8A | TLR4 | TLR4 | TLR4/MD-2 bound to antagonist TAK-242 | 2054 KB
+5C1M | MOR (OPRM1) | MOR | MOR with agonist BU72 (2.1Å, active state) | 605 KB
+5FUC | IL-6 | IL6 | IL-6 bound to receptor gp130 (complex, 3.6Å) | 674 KB
+6LRZ | NRF2 (NFE2L2) | NRF2 | NRF2 bound to KEAP1 (drug target interface, 2.45Å) | 254 KB
+6PQQ | TRPA1 | TRPA1 | TRPA1 with antagonist A-967079 (3.0Å) | 1940 KB
+7OBN | NRF2 (NFE2L2) | NRF2 | NRF2 bZip domain dimer (transcription factor core, 2.0Å) | 572 KB
+7Q5X | MS4A2 (FcεRIβ) | MS4A2 | FcεRI complex (cryo-EM) | 569 KB
+7WE4 | Nav1.8 (SCN10A) | Nav1.8 | Nav1.8 channel in complex with A-803467 blocker (3.1Å) | 946 KB
+7WFW | Nav1.8 (SCN10A) | Nav1.8 | Nav1.8 with suzetrigine binding site mapped | 851 KB
+7ZYX | CPA3 | CPA3 | CPA3 structure (predicted by AlphaFold, verified) | 327 KB

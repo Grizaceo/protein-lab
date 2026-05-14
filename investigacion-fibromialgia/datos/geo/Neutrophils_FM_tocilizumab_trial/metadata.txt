@@ -1,0 +1,18 @@
+GEO ID: GSE229750
+Name: Neutrophils_FM_tocilizumab_trial
+Samples: 12
+Platform: ['GPL24676']
+
+Sample IDs:
+  GSM7176058: ['FM patient 1, week 0']
+  GSM7176059: ['FM patient 1, week 12']
+  GSM7176060: ['FM patient 2, week 0']
+  GSM7176061: ['FM patient 2, week 12']
+  GSM7176062: ['FM patient 3, week 0']
+  GSM7176063: ['FM patient 4, week 0']
+  GSM7176065: ['FM patient 5, week 0']
+  GSM7176066: ['Healthy control 1, week 0']
+  GSM7176067: ['Healthy control 2, week 0']
+  GSM7176068: ['Healthy control 3, week 0']
+  GSM7176070: ['Healthy control 4, week 0']
+  GSM7176071: ['Healthy control 5, week 0']
