@@ -1,0 +1,88 @@
+{
+  "target": "DRD2",
+  "uniprot": "P14416",
+  "results": [
+    {
+      "drug": "pramipexole",
+      "pKd": 6.224
+    },
+    {
+      "drug": "ropinirole",
+      "pKd": 6.244
+    },
+    {
+      "drug": "rotigotine",
+      "pKd": 6.34
+    },
+    {
+      "drug": "bromocriptine",
+      "pKd": 6.449
+    },
+    {
+      "drug": "cabergoline",
+      "pKd": 6.422
+    },
+    {
+      "drug": "dopamine",
+      "pKd": 6.23
+    },
+    {
+      "drug": "atorvastatin",
+      "pKd": 6.223
+    },
+    {
+      "drug": "ibuprofen",
+      "pKd": 6.235
+    },
+    {
+      "drug": "metformin",
+      "pKd": 6.261
+    },
+    {
+      "drug": "omeprazole",
+      "pKd": 6.305
+    }
+  ],
+  "sorted": [
+    {
+      "drug": "bromocriptine",
+      "pKd": 6.449
+    },
+    {
+      "drug": "cabergoline",
+      "pKd": 6.422
+    },
+    {
+      "drug": "rotigotine",
+      "pKd": 6.34
+    },
+    {
+      "drug": "omeprazole",
+      "pKd": 6.305
+    },
+    {
+      "drug": "metformin",
+      "pKd": 6.261
+    },
+    {
+      "drug": "ropinirole",
+      "pKd": 6.244
+    },
+    {
+      "drug": "ibuprofen",
+      "pKd": 6.235
+    },
+    {
+      "drug": "dopamine",
+      "pKd": 6.23
+    },
+    {
+      "drug": "pramipexole",
+      "pKd": 6.224
+    },
+    {
+      "drug": "atorvastatin",
+      "pKd": 6.223
+    }
+  ]
+}
