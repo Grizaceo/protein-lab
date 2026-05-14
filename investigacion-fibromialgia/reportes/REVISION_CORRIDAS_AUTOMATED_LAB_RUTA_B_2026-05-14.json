@@ -1,0 +1,439 @@
+{
+  "run_dir": "automated_lab/results/fibromialgia_ruta_b_20260514_050308",
+  "n": 1600,
+  "ok": 1600,
+  "errors": 0,
+  "pkd": {
+    "min": 5.267,
+    "median": 5.839,
+    "mean": 5.891810625,
+    "max": 7.349,
+    "sd": 0.43473376739345815
+  },
+  "target_stats": [
+    {
+      "target": "MOR",
+      "n": 160,
+      "mean": 6.9265,
+      "median": 6.915,
+      "min": 6.742,
+      "max": 7.349,
+      "sd": 0.09967917284969817,
+      "n_ge_7": 33,
+      "n_ge_6_5": 160
+    },
+    {
+      "target": "MS4A2",
+      "n": 160,
+      "mean": 6.2350875,
+      "median": 6.2105,
+      "min": 6.139,
+      "max": 6.896,
+      "sd": 0.08904152033602077,
+      "n_ge_7": 0,
+      "n_ge_6_5": 2
+    },
+    {
+      "target": "HDC",
+      "n": 160,
+      "mean": 5.95158125,
+      "median": 5.932,
+      "min": 5.809,
+      "max": 6.553,
+      "sd": 0.09733566098012336,
+      "n_ge_7": 0,
+      "n_ge_6_5": 1
+    },
+    {
+      "target": "NRF2",
+      "n": 160,
+      "mean": 5.94250625,
+      "median": 5.9175,
+      "min": 5.851,
+      "max": 6.463,
+      "sd": 0.07750153199090647,
+      "n_ge_7": 0,
+      "n_ge_6_5": 0
+    },
+    {
+      "target": "TLR4",
+      "n": 160,
+      "mean": 5.89554375,
+      "median": 5.8635,
+      "min": 5.657,
+      "max": 6.493,
+      "sd": 0.14451296857354187,
+      "n_ge_7": 0,
+      "n_ge_6_5": 0
+    },
+    {
+      "target": "CPA3",
+      "n": 160,
+      "mean": 5.78143125,
+      "median": 5.754,
+      "min": 5.667,
+      "max": 6.587,
+      "sd": 0.12090578056254171,
+      "n_ge_7": 0,
+      "n_ge_6_5": 1
+    },
+    {
+      "target": "TRPA1",
+      "n": 160,
+      "mean": 5.76170625,
+      "median": 5.749499999999999,
+      "min": 5.614,
+      "max": 6.174,
+      "sd": 0.09654070364844822,
+      "n_ge_7": 0,
+      "n_ge_6_5": 0
+    },
+    {
+      "target": "IL-6",
+      "n": 160,
+      "mean": 5.49048125,
+      "median": 5.452500000000001,
+      "min": 5.267,
+      "max": 6.439,
+      "sd": 0.15356773635252133,
+      "n_ge_7": 0,
+      "n_ge_6_5": 0
+    },
+    {
+      "target": "FCER1A",
+      "n": 160,
+      "mean": 5.48699375,
+      "median": 5.457,
+      "min": 5.326,
+      "max": 6.448,
+      "sd": 0.14234629855018188,
+      "n_ge_7": 0,
+      "n_ge_6_5": 0
+    },
+    {
+      "target": "IL-1β",
+      "n": 160,
+      "mean": 5.446275,
+      "median": 5.403,
+      "min": 5.296,
+      "max": 6.438,
+      "sd": 0.14418481846227776,
+      "n_ge_7": 0,
+      "n_ge_6_5": 0
+    }
+  ],
+  "top25": [
+    {
+      "drug": "ziconotide",
+      "target": "MOR",
+      "pkd": 7.349,
+      "cycle": 24
+    },
+    {
+      "drug": "montelukast",
+      "target": "MOR",
+      "pkd": 7.211,
+      "cycle": 19
+    },
+    {
+      "drug": "everolimus",
+      "target": "MOR",
+      "pkd": 7.153,
+      "cycle": 32
+    },
+    {
+      "drug": "anandamide",
+      "target": "MOR",
+      "pkd": 7.149,
+      "cycle": 29
+    },
+    {
+      "drug": "cyclosporine",
+      "target": "MOR",
+      "pkd": 7.148,
+      "cycle": 32
+    },
+    {
+      "drug": "fexofenadine",
+      "target": "MOR",
+      "pkd": 7.128,
+      "cycle": 18
+    },
+    {
+      "drug": "sirolimus",
+      "target": "MOR",
+      "pkd": 7.121,
+      "cycle": 32
+    },
+    {
+      "drug": "rapamycin",
+      "target": "MOR",
+      "pkd": 7.121,
+      "cycle": 32
+    },
+    {
+      "drug": "tacrolimus",
+      "target": "MOR",
+      "pkd": 7.119,
+      "cycle": 32
+    },
+    {
+      "drug": "buprenorphine",
+      "target": "MOR",
+      "pkd": 7.113,
+      "cycle": 2
+    },
+    {
+      "drug": "verapamil",
+      "target": "MOR",
+      "pkd": 7.111,
+      "cycle": 23
+    },
+    {
+      "drug": "epigallocatechin_gallate",
+      "target": "MOR",
+      "pkd": 7.086,
+      "cycle": 21
+    },
+    {
+      "drug": "zafirlukast",
+      "target": "MOR",
+      "pkd": 7.072,
+      "cycle": 19
+    },
+    {
+      "drug": "colchicine",
+      "target": "MOR",
+      "pkd": 7.068,
+      "cycle": 15
+    },
+    {
+      "drug": "diltiazem",
+      "target": "MOR",
+      "pkd": 7.057,
+      "cycle": 23
+    },
+    {
+      "drug": "cetirizine",
+      "target": "MOR",
+      "pkd": 7.05,
+      "cycle": 17
+    },
+    {
+      "drug": "hydroxychloroquine",
+      "target": "MOR",
+      "pkd": 7.049,
+      "cycle": 16
+    },
+    {
+      "drug": "cromolyn",
+      "target": "MOR",
+      "pkd": 7.047,
+      "cycle": 16
+    },
+    {
+      "drug": "baricitinib",
+      "target": "MOR",
+      "pkd": 7.04,
+      "cycle": 30
+    },
+    {
+      "drug": "nimodipine",
+      "target": "MOR",
+      "pkd": 7.039,
+      "cycle": 24
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "MOR",
+      "pkd": 7.033,
+      "cycle": 22
+    },
+    {
+      "drug": "escitalopram",
+      "target": "MOR",
+      "pkd": 7.026,
+      "cycle": 9
+    },
+    {
+      "drug": "levocetirizine",
+      "target": "MOR",
+      "pkd": 7.025,
+      "cycle": 17
+    },
+    {
+      "drug": "TAK242_resatorvid",
+      "target": "MOR",
+      "pkd": 7.019,
+      "cycle": 1
+    },
+    {
+      "drug": "trazodone",
+      "target": "MOR",
+      "pkd": 7.015,
+      "cycle": 10
+    }
+  ],
+  "top25_non_mor": [
+    {
+      "drug": "ziconotide",
+      "target": "MS4A2",
+      "pkd": 6.896,
+      "cycle": 24
+    },
+    {
+      "drug": "ziconotide",
+      "target": "CPA3",
+      "pkd": 6.587,
+      "cycle": 24
+    },
+    {
+      "drug": "cyclosporine",
+      "target": "MS4A2",
+      "pkd": 6.577,
+      "cycle": 32
+    },
+    {
+      "drug": "ziconotide",
+      "target": "HDC",
+      "pkd": 6.553,
+      "cycle": 24
+    },
+    {
+      "drug": "everolimus",
+      "target": "MS4A2",
+      "pkd": 6.499,
+      "cycle": 32
+    },
+    {
+      "drug": "ziconotide",
+      "target": "TLR4",
+      "pkd": 6.493,
+      "cycle": 24
+    },
+    {
+      "drug": "ziconotide",
+      "target": "NRF2",
+      "pkd": 6.463,
+      "cycle": 24
+    },
+    {
+      "drug": "sirolimus",
+      "target": "MS4A2",
+      "pkd": 6.458,
+      "cycle": 32
+    },
+    {
+      "drug": "rapamycin",
+      "target": "MS4A2",
+      "pkd": 6.458,
+      "cycle": 32
+    },
+    {
+      "drug": "tacrolimus",
+      "target": "MS4A2",
+      "pkd": 6.452,
+      "cycle": 32
+    },
+    {
+      "drug": "ziconotide",
+      "target": "FCER1A",
+      "pkd": 6.448,
+      "cycle": 24
+    },
+    {
+      "drug": "ziconotide",
+      "target": "IL-6",
+      "pkd": 6.439,
+      "cycle": 24
+    },
+    {
+      "drug": "ziconotide",
+      "target": "IL-1β",
+      "pkd": 6.438,
+      "cycle": 24
+    },
+    {
+      "drug": "montelukast",
+      "target": "MS4A2",
+      "pkd": 6.42,
+      "cycle": 19
+    },
+    {
+      "drug": "epigallocatechin_gallate",
+      "target": "MS4A2",
+      "pkd": 6.42,
+      "cycle": 21
+    },
+    {
+      "drug": "fexofenadine",
+      "target": "MS4A2",
+      "pkd": 6.396,
+      "cycle": 18
+    },
+    {
+      "drug": "buprenorphine",
+      "target": "MS4A2",
+      "pkd": 6.37,
+      "cycle": 2
+    },
+    {
+      "drug": "paroxetine",
+      "target": "MS4A2",
+      "pkd": 6.369,
+      "cycle": 9
+    },
+    {
+      "drug": "cyclosporine",
+      "target": "TLR4",
+      "pkd": 6.353,
+      "cycle": 32
+    },
+    {
+      "drug": "zafirlukast",
+      "target": "MS4A2",
+      "pkd": 6.349,
+      "cycle": 19
+    },
+    {
+      "drug": "verapamil",
+      "target": "MS4A2",
+      "pkd": 6.337,
+      "cycle": 23
+    },
+    {
+      "drug": "baricitinib",
+      "target": "MS4A2",
+      "pkd": 6.328,
+      "cycle": 30
+    },
+    {
+      "drug": "prazosin",
+      "target": "MS4A2",
+      "pkd": 6.323,
+      "cycle": 11
+    },
+    {
+      "drug": "suzetrigine",
+      "target": "MS4A2",
+      "pkd": 6.322,
+      "cycle": 22
+    },
+    {
+      "drug": "dexamethasone",
+      "target": "MS4A2",
+      "pkd": 6.316,
+      "cycle": 15
+    }
+  ],
+  "duplicate_profiles": [
+    [
+      "dronabinol",
+      "tetrahydrocannabinol"
+    ],
+    [
+      "sirolimus",
+      "rapamycin"
+    ]
+  ]
+}
