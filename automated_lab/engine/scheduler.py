@@ -136,6 +136,8 @@ class Scheduler:
 
         experiments = self.generate_experiments(campaign, count=max_experiments)
         print(f"[scheduler] {len(experiments)} experimentos generados")
+        if hours and hours > 0 and len(experiments) < max_experiments:
+            print(f"[scheduler] Nota: cola real menor que máximo solicitado ({len(experiments)}/{max_experiments})")
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         run_dir = RESULTS_DIR / f"{campaign_name}_{timestamp}"
@@ -147,6 +149,7 @@ class Scheduler:
         t_end = t_start + ((hours or 0) * 3600)
         cycle = 0
         idx = 0
+        total_batches = max(1, (len(experiments) + self.batch_size - 1) // self.batch_size)
         while idx < len(experiments):
             if hours and hours > 0 and time.time() >= t_end:
                 print("[scheduler] Presupuesto de tiempo agotado")
@@ -163,6 +166,18 @@ class Scheduler:
             ok = sum(1 for r in results if r.get("status") == "ok")
             err = sum(1 for r in results if r.get("status") == "error")
             print(f"[scheduler]   ✅ {ok} OK | ❌ {err} ERROR | Total: {len(all_results)}/{len(experiments)}")
+            self._write_status(run_dir, campaign_name, t_start, hours or 0, cycle, total_batches, all_results)
+            if hours and hours > 0 and idx < len(experiments):
+                # Pace batches across the whole night instead of burning the
+                # complete library in the first minutes. This keeps the lab
+                # alive for monitor/repair checkpoints while still doing real
+                # work each cycle. Disable with pace_to_time_budget=false.
+                if campaign.get("pace_to_time_budget", True):
+                    target_next = t_start + (cycle / total_batches) * ((hours or 0) * 3600)
+                    sleep_s = max(0.0, min(1800.0, target_next - time.time()))
+                    if sleep_s > 1:
+                        print(f"[scheduler] Pacing: durmiendo {sleep_s/60:.1f} min hasta el próximo ciclo")
+                        time.sleep(sleep_s)
             if not hours or hours <= 0:
                 break
 
@@ -183,6 +198,11 @@ class Scheduler:
             "timestamp": datetime.now().isoformat(),
         }
         (run_dir / "SESSION.json").write_text(json.dumps(session, indent=2, ensure_ascii=False))
+        final_status = dict(session)
+        final_status["status"] = "completed"
+        final_status["updated_at"] = datetime.now().isoformat()
+        (run_dir / "STATUS.json").write_text(json.dumps(final_status, indent=2, ensure_ascii=False))
+        (RESULTS_DIR / "ACTIVE_RUN.json").write_text(json.dumps(final_status, indent=2, ensure_ascii=False))
         print(f"\n{'='*70}")
         print("CAMPAÑA COMPLETADA")
         print(f"  Experimentos: {session['total_experiments']}")
@@ -200,6 +220,28 @@ class Scheduler:
             return f"{provider.name}/{provider.model}" if provider else "none"
         except Exception:
             return "unavailable"
+
+    def _write_status(self, run_dir: Path, campaign_name: str, t_start: float, hours: float,
+                      cycle: int, total_batches: int, results: list[dict[str, Any]]) -> None:
+        ok = sum(1 for r in results if r.get("status") == "ok")
+        err = sum(1 for r in results if r.get("status") == "error")
+        status = {
+            "campaign": campaign_name,
+            "run_dir": str(run_dir),
+            "provider": self._provider_label(),
+            "status": "running",
+            "cycle": cycle,
+            "total_batches": total_batches,
+            "total_results": len(results),
+            "successful": ok,
+            "errors": err,
+            "started_at_epoch": t_start,
+            "elapsed_minutes": round((time.time() - t_start) / 60, 2),
+            "budget_hours": hours,
+            "updated_at": datetime.now().isoformat(),
+        }
+        (run_dir / "STATUS.json").write_text(json.dumps(status, indent=2, ensure_ascii=False))
+        (RESULTS_DIR / "ACTIVE_RUN.json").write_text(json.dumps(status, indent=2, ensure_ascii=False))
 
     def _generate_report(self, campaign_name: str, results: list[dict[str, Any]],
                          t_start: float, campaign: dict[str, Any]) -> str:

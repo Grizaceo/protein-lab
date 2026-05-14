@@ -109,7 +109,15 @@ class IdeaGenerator:
         return "exp_" + hashlib.sha256(raw.encode("utf-8")).hexdigest()[:12]
 
     def _base_grid(self, campaign_name: str, campaign: dict[str, Any], count: int) -> list[dict[str, Any]]:
-        drugs = campaign.get("drugs_smiles") or DEFAULT_DRUGS
+        drugs = dict(campaign.get("drugs_smiles") or DEFAULT_DRUGS)
+        if campaign.get("use_pubchem_expansion", False):
+            try:
+                from idea_generation.ligand_library import resolve_ligands, DEFAULT_SEED_NAMES
+                names = campaign.get("exploratory_drug_names") or DEFAULT_SEED_NAMES
+                limit = campaign.get("pubchem_expansion_limit")
+                drugs.update(resolve_ligands(names, limit=limit))
+            except Exception as exc:
+                print(f"[idea_generation] ⚠ PubChem expansion unavailable: {exc}")
         ordered_targets = self._ordered_targets(campaign_name, campaign)
         avoid_text = "\n".join(campaign.get("avoid", []))
         ideas: list[dict[str, Any]] = []
@@ -170,7 +178,7 @@ class IdeaGenerator:
         except Exception:
             return []
 
-        allowed_pairs = [{"drug_name": x["drug_name"], "target": x["target"]} for x in base]
+        allowed_pairs = [{"drug_name": x["drug_name"], "target": x["target"]} for x in base[:200]]
         prompt = f"""
 Eres el investigador nocturno de protein-lab. Debes mejorar la cola de experimentos DTI sin inventar SMILES ni targets.
 Campaña: {campaign.get('title', campaign_name)}

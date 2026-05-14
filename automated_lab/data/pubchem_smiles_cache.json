@@ -1,0 +1,1125 @@
+{
+  "naltrexone": {
+    "name": "naltrexone",
+    "cid": 5360515,
+    "smiles": "C1CC1CN2CC[C@]34[C@@H]5C(=O)CC[C@]3([C@H]2CC6=C4C(=C(C=C6)O)O5)O",
+    "source": "PubChem PUG REST"
+  },
+  "naloxone": {
+    "name": "naloxone",
+    "cid": 5284596,
+    "smiles": "C=CCN1CC[C@]23[C@@H]4C(=O)CC[C@]2([C@H]1CC5=C3C(=C(C=C5)O)O4)O",
+    "source": "PubChem PUG REST"
+  },
+  "nalmefene": {
+    "name": "nalmefene",
+    "cid": 5284594,
+    "smiles": "C=C1CC[C@]2([C@H]3CC4=C5[C@]2([C@H]1OC5=C(C=C4)O)CCN3CC6CC6)O",
+    "source": "PubChem PUG REST"
+  },
+  "morphine": {
+    "name": "morphine",
+    "cid": 5288826,
+    "smiles": "CN1CC[C@]23[C@@H]4[C@H]1CC5=C2C(=C(C=C5)O)O[C@H]3[C@H](C=C4)O",
+    "source": "PubChem PUG REST"
+  },
+  "buprenorphine": {
+    "name": "buprenorphine",
+    "cid": 644073,
+    "smiles": "C[C@]([C@H]1C[C@@]23CC[C@@]1([C@H]4[C@@]25CCN([C@@H]3CC6=C5C(=C(C=C6)O)O4)CC7CC7)OC)(C(C)(C)C)O",
+    "source": "PubChem PUG REST"
+  },
+  "tramadol": {
+    "name": "tramadol",
+    "cid": 33741,
+    "smiles": "CN(C)C[C@H]1CCCC[C@@]1(C2=CC(=CC=C2)OC)O",
+    "source": "PubChem PUG REST"
+  },
+  "tapentadol": {
+    "name": "tapentadol",
+    "cid": 9838022,
+    "smiles": "CC[C@@H](C1=CC(=CC=C1)O)[C@@H](C)CN(C)C",
+    "source": "PubChem PUG REST"
+  },
+  "methadone": {
+    "name": "methadone",
+    "cid": 4095,
+    "smiles": "CCC(=O)C(CC(C)N(C)C)(C1=CC=CC=C1)C2=CC=CC=C2",
+    "source": "PubChem PUG REST"
+  },
+  "fentanyl": {
+    "name": "fentanyl",
+    "cid": 3345,
+    "smiles": "CCC(=O)N(C1CCN(CC1)CCC2=CC=CC=C2)C3=CC=CC=C3",
+    "source": "PubChem PUG REST"
+  },
+  "oxycodone": {
+    "name": "oxycodone",
+    "cid": 5284603,
+    "smiles": "CN1CC[C@]23[C@@H]4C(=O)CC[C@]2([C@H]1CC5=C3C(=C(C=C5)OC)O4)O",
+    "source": "PubChem PUG REST"
+  },
+  "hydrocodone": {
+    "name": "hydrocodone",
+    "cid": 5284569,
+    "smiles": "CN1CC[C@]23[C@@H]4[C@H]1CC5=C2C(=C(C=C5)OC)O[C@H]3C(=O)CC4",
+    "source": "PubChem PUG REST"
+  },
+  "codeine": {
+    "name": "codeine",
+    "cid": 5284371,
+    "smiles": "CN1CC[C@]23[C@@H]4[C@H]1CC5=C2C(=C(C=C5)OC)O[C@H]3[C@H](C=C4)O",
+    "source": "PubChem PUG REST"
+  },
+  "dextromethorphan": {
+    "name": "dextromethorphan",
+    "cid": 5360696,
+    "smiles": "CN1CC[C@@]23CCCC[C@@H]2[C@@H]1CC4=C3C=C(C=C4)OC",
+    "source": "PubChem PUG REST"
+  },
+  "ketamine": {
+    "name": "ketamine",
+    "cid": 3821,
+    "smiles": "CNC1(CCCCC1=O)C2=CC=CC=C2Cl",
+    "source": "PubChem PUG REST"
+  },
+  "memantine": {
+    "name": "memantine",
+    "cid": 4054,
+    "smiles": "CC12CC3CC(C1)(CC(C3)(C2)N)C",
+    "source": "PubChem PUG REST"
+  },
+  "amantadine": {
+    "name": "amantadine",
+    "cid": 2130,
+    "smiles": "C1C2CC3CC1CC(C2)(C3)N",
+    "source": "PubChem PUG REST"
+  },
+  "lidocaine": {
+    "name": "lidocaine",
+    "cid": 3676,
+    "smiles": "CCN(CC)CC(=O)NC1=C(C=CC=C1C)C",
+    "source": "PubChem PUG REST"
+  },
+  "mexiletine": {
+    "name": "mexiletine",
+    "cid": 4178,
+    "smiles": "CC1=C(C(=CC=C1)C)OCC(C)N",
+    "source": "PubChem PUG REST"
+  },
+  "carbamazepine": {
+    "name": "carbamazepine",
+    "cid": 2554,
+    "smiles": "C1=CC=C2C(=C1)C=CC3=CC=CC=C3N2C(=O)N",
+    "source": "PubChem PUG REST"
+  },
+  "oxcarbazepine": {
+    "name": "oxcarbazepine",
+    "miss": true,
+    "source": "PubChem PUG REST"
+  },
+  "lamotrigine": {
+    "name": "lamotrigine",
+    "cid": 3878,
+    "smiles": "C1=CC(=C(C(=C1)Cl)Cl)C2=C(N=C(N=N2)N)N",
+    "source": "PubChem PUG REST"
+  },
+  "gabapentin": {
+    "name": "gabapentin",
+    "cid": 3446,
+    "smiles": "C1CCC(CC1)(CC(=O)O)CN",
+    "source": "PubChem PUG REST"
+  },
+  "pregabalin": {
+    "name": "pregabalin",
+    "cid": 5486971,
+    "smiles": "CC(C)C[C@@H](CC(=O)O)CN",
+    "source": "PubChem PUG REST"
+  },
+  "topiramate": {
+    "name": "topiramate",
+    "cid": 5284627,
+    "smiles": "CC1(O[C@@H]2CO[C@@]3([C@H]([C@@H]2O1)OC(O3)(C)C)COS(=O)(=O)N)C",
+    "source": "PubChem PUG REST"
+  },
+  "valproic_acid": {
+    "name": "valproic acid",
+    "cid": 3121,
+    "smiles": "CCCC(CCC)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "levetiracetam": {
+    "name": "levetiracetam",
+    "cid": 5284583,
+    "smiles": "CC[C@@H](C(=O)N)N1CCCC1=O",
+    "source": "PubChem PUG REST"
+  },
+  "lacosamide": {
+    "name": "lacosamide",
+    "cid": 219078,
+    "smiles": "CC(=O)N[C@H](COC)C(=O)NCC1=CC=CC=C1",
+    "source": "PubChem PUG REST"
+  },
+  "duloxetine": {
+    "name": "duloxetine",
+    "cid": 60835,
+    "smiles": "CNCC[C@@H](C1=CC=CS1)OC2=CC=CC3=CC=CC=C32",
+    "source": "PubChem PUG REST"
+  },
+  "milnacipran": {
+    "name": "milnacipran",
+    "cid": 65833,
+    "smiles": "CCN(CC)C(=O)[C@@]1(C[C@@H]1CN)C2=CC=CC=C2",
+    "source": "PubChem PUG REST"
+  },
+  "venlafaxine": {
+    "name": "venlafaxine",
+    "cid": 5656,
+    "smiles": "CN(C)CC(C1=CC=C(C=C1)OC)C2(CCCCC2)O",
+    "source": "PubChem PUG REST"
+  },
+  "desvenlafaxine": {
+    "name": "desvenlafaxine",
+    "cid": 125017,
+    "smiles": "CN(C)CC(C1=CC=C(C=C1)O)C2(CCCCC2)O",
+    "source": "PubChem PUG REST"
+  },
+  "amitriptyline": {
+    "name": "amitriptyline",
+    "cid": 2160,
+    "smiles": "CN(C)CCC=C1C2=CC=CC=C2CCC3=CC=CC=C31",
+    "source": "PubChem PUG REST"
+  },
+  "nortriptyline": {
+    "name": "nortriptyline",
+    "cid": 4543,
+    "smiles": "CNCCC=C1C2=CC=CC=C2CCC3=CC=CC=C31",
+    "source": "PubChem PUG REST"
+  },
+  "imipramine": {
+    "name": "imipramine",
+    "cid": 3696,
+    "smiles": "CN(C)CCCN1C2=CC=CC=C2CCC3=CC=CC=C31",
+    "source": "PubChem PUG REST"
+  },
+  "desipramine": {
+    "name": "desipramine",
+    "cid": 2995,
+    "smiles": "CNCCCN1C2=CC=CC=C2CCC3=CC=CC=C31",
+    "source": "PubChem PUG REST"
+  },
+  "cyclobenzaprine": {
+    "name": "cyclobenzaprine",
+    "cid": 2895,
+    "smiles": "CN(C)CCC=C1C2=CC=CC=C2C=CC3=CC=CC=C31",
+    "source": "PubChem PUG REST"
+  },
+  "mirtazapine": {
+    "name": "mirtazapine",
+    "miss": true,
+    "source": "PubChem PUG REST"
+  },
+  "fluoxetine": {
+    "name": "fluoxetine",
+    "cid": 3386,
+    "smiles": "CNCCC(C1=CC=CC=C1)OC2=CC=C(C=C2)C(F)(F)F",
+    "source": "PubChem PUG REST"
+  },
+  "sertraline": {
+    "name": "sertraline",
+    "cid": 68617,
+    "smiles": "CN[C@H]1CC[C@H](C2=CC=CC=C12)C3=CC(=C(C=C3)Cl)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "paroxetine": {
+    "name": "paroxetine",
+    "cid": 43815,
+    "smiles": "C1CNC[C@H]([C@@H]1C2=CC=C(C=C2)F)COC3=CC4=C(C=C3)OCO4",
+    "source": "PubChem PUG REST"
+  },
+  "citalopram": {
+    "name": "citalopram",
+    "cid": 2771,
+    "smiles": "CN(C)CCCC1(C2=C(CO1)C=C(C=C2)C#N)C3=CC=C(C=C3)F",
+    "source": "PubChem PUG REST"
+  },
+  "escitalopram": {
+    "name": "escitalopram",
+    "cid": 146570,
+    "smiles": "CN(C)CCC[C@@]1(C2=C(CO1)C=C(C=C2)C#N)C3=CC=C(C=C3)F",
+    "source": "PubChem PUG REST"
+  },
+  "fluvoxamine": {
+    "name": "fluvoxamine",
+    "cid": 5324346,
+    "smiles": "COCCCC/C(=N\\OCCN)/C1=CC=C(C=C1)C(F)(F)F",
+    "source": "PubChem PUG REST"
+  },
+  "bupropion": {
+    "name": "bupropion",
+    "cid": 444,
+    "smiles": "CC(C(=O)C1=CC(=CC=C1)Cl)NC(C)(C)C",
+    "source": "PubChem PUG REST"
+  },
+  "trazodone": {
+    "name": "trazodone",
+    "cid": 5533,
+    "smiles": "C1CN(CCN1CCCN2C(=O)N3C=CC=CC3=N2)C4=CC(=CC=C4)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "buspirone": {
+    "name": "buspirone",
+    "cid": 2477,
+    "smiles": "C1CCC2(C1)CC(=O)N(C(=O)C2)CCCCN3CCN(CC3)C4=NC=CC=N4",
+    "source": "PubChem PUG REST"
+  },
+  "tizanidine": {
+    "name": "tizanidine",
+    "cid": 5487,
+    "smiles": "C1CN=C(N1)NC2=C(C=CC3=NSN=C32)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "baclofen": {
+    "name": "baclofen",
+    "cid": 2284,
+    "smiles": "C1=CC(=CC=C1C(CC(=O)O)CN)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "clonidine": {
+    "name": "clonidine",
+    "cid": 2803,
+    "smiles": "C1CN=C(N1)NC2=C(C=CC=C2Cl)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "guanfacine": {
+    "name": "guanfacine",
+    "cid": 3519,
+    "smiles": "C1=CC(=C(C(=C1)Cl)CC(=O)N=C(N)N)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "propranolol": {
+    "name": "propranolol",
+    "cid": 4946,
+    "smiles": "CC(C)NCC(COC1=CC=CC2=CC=CC=C21)O",
+    "source": "PubChem PUG REST"
+  },
+  "prazosin": {
+    "name": "prazosin",
+    "cid": 4893,
+    "smiles": "COC1=C(C=C2C(=C1)C(=NC(=N2)N3CCN(CC3)C(=O)C4=CC=CO4)N)OC",
+    "source": "PubChem PUG REST"
+  },
+  "modafinil": {
+    "name": "modafinil",
+    "cid": 4236,
+    "smiles": "C1=CC=C(C=C1)C(C2=CC=CC=C2)S(=O)CC(=O)N",
+    "source": "PubChem PUG REST"
+  },
+  "armodafinil": {
+    "name": "armodafinil",
+    "cid": 9690109,
+    "smiles": "C1=CC=C(C=C1)C(C2=CC=CC=C2)[S@](=O)CC(=O)N",
+    "source": "PubChem PUG REST"
+  },
+  "ibuprofen": {
+    "name": "ibuprofen",
+    "cid": 3672,
+    "smiles": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "naproxen": {
+    "name": "naproxen",
+    "cid": 156391,
+    "smiles": "C[C@@H](C1=CC2=C(C=C1)C=C(C=C2)OC)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "diclofenac": {
+    "name": "diclofenac",
+    "cid": 3033,
+    "smiles": "C1=CC=C(C(=C1)CC(=O)O)NC2=C(C=CC=C2Cl)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "ketoprofen": {
+    "name": "ketoprofen",
+    "cid": 3825,
+    "smiles": "CC(C1=CC(=CC=C1)C(=O)C2=CC=CC=C2)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "indomethacin": {
+    "name": "indomethacin",
+    "cid": 3715,
+    "smiles": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "celecoxib": {
+    "name": "celecoxib",
+    "cid": 2662,
+    "smiles": "CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C(F)(F)F",
+    "source": "PubChem PUG REST"
+  },
+  "meloxicam": {
+    "name": "meloxicam",
+    "cid": 54677470,
+    "smiles": "CC1=CN=C(S1)NC(=O)C2=C(C3=CC=CC=C3S(=O)(=O)N2C)O",
+    "source": "PubChem PUG REST"
+  },
+  "piroxicam": {
+    "name": "piroxicam",
+    "cid": 54676228,
+    "smiles": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3",
+    "source": "PubChem PUG REST"
+  },
+  "etoricoxib": {
+    "name": "etoricoxib",
+    "cid": 123619,
+    "smiles": "CC1=NC=C(C=C1)C2=C(C=C(C=N2)Cl)C3=CC=C(C=C3)S(=O)(=O)C",
+    "source": "PubChem PUG REST"
+  },
+  "aspirin": {
+    "name": "aspirin",
+    "cid": 2244,
+    "smiles": "CC(=O)OC1=CC=CC=C1C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "acetaminophen": {
+    "name": "acetaminophen",
+    "cid": 1983,
+    "smiles": "CC(=O)NC1=CC=C(C=C1)O",
+    "source": "PubChem PUG REST"
+  },
+  "metamizole": {
+    "name": "metamizole",
+    "cid": 3111,
+    "smiles": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)CS(=O)(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "prednisone": {
+    "name": "prednisone",
+    "cid": 5865,
+    "smiles": "C[C@]12CC(=O)[C@H]3[C@H]([C@@H]1CC[C@@]2(C(=O)CO)O)CCC4=CC(=O)C=C[C@]34C",
+    "source": "PubChem PUG REST"
+  },
+  "prednisolone": {
+    "name": "prednisolone",
+    "cid": 5755,
+    "smiles": "C[C@]12C[C@@H]([C@H]3[C@H]([C@@H]1CC[C@@]2(C(=O)CO)O)CCC4=CC(=O)C=C[C@]34C)O",
+    "source": "PubChem PUG REST"
+  },
+  "dexamethasone": {
+    "name": "dexamethasone",
+    "cid": 5743,
+    "smiles": "C[C@@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@@]4([C@]3([C@H](C[C@@]2([C@]1(C(=O)CO)O)C)O)F)C",
+    "source": "PubChem PUG REST"
+  },
+  "hydrocortisone": {
+    "name": "hydrocortisone",
+    "cid": 5754,
+    "smiles": "C[C@]12CCC(=O)C=C1CC[C@@H]3[C@@H]2[C@H](C[C@]4([C@H]3CC[C@@]4(C(=O)CO)O)C)O",
+    "source": "PubChem PUG REST"
+  },
+  "colchicine": {
+    "name": "colchicine",
+    "cid": 6167,
+    "smiles": "CC(=O)N[C@H]1CCC2=CC(=C(C(=C2C3=CC=C(C(=O)C=C13)OC)OC)OC)OC",
+    "source": "PubChem PUG REST"
+  },
+  "sulfasalazine": {
+    "name": "sulfasalazine",
+    "cid": 5339,
+    "smiles": "C1=CC=NC(=C1)NS(=O)(=O)C2=CC=C(C=C2)N=NC3=CC(=C(C=C3)O)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "methotrexate": {
+    "name": "methotrexate",
+    "cid": 126941,
+    "smiles": "CN(CC1=CN=C2C(=N1)C(=NC(=N2)N)N)C3=CC=C(C=C3)C(=O)N[C@@H](CCC(=O)O)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "leflunomide": {
+    "name": "leflunomide",
+    "cid": 3899,
+    "smiles": "CC1=C(C=NO1)C(=O)NC2=CC=C(C=C2)C(F)(F)F",
+    "source": "PubChem PUG REST"
+  },
+  "hydroxychloroquine": {
+    "name": "hydroxychloroquine",
+    "cid": 3652,
+    "smiles": "CCN(CCCC(C)NC1=C2C=CC(=CC2=NC=C1)Cl)CCO",
+    "source": "PubChem PUG REST"
+  },
+  "ketotifen": {
+    "name": "ketotifen",
+    "cid": 3827,
+    "smiles": "CN1CCC(=C2C3=C(C(=O)CC4=CC=CC=C42)SC=C3)CC1",
+    "source": "PubChem PUG REST"
+  },
+  "cromolyn": {
+    "name": "cromolyn",
+    "cid": 2882,
+    "smiles": "C1=CC2=C(C(=C1)OCC(COC3=CC=CC4=C3C(=O)C=C(O4)C(=O)O)O)C(=O)C=C(O2)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "nedocromil": {
+    "name": "nedocromil",
+    "cid": 50294,
+    "smiles": "CCCC1=C2C(=CC3=C1OC(=CC3=O)C(=O)O)C(=O)C=C(N2CC)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "rupatadine": {
+    "name": "rupatadine",
+    "cid": 133017,
+    "smiles": "CC1=CC(=CN=C1)CN2CCC(=C3C4=C(CCC5=C3N=CC=C5)C=C(C=C4)Cl)CC2",
+    "source": "PubChem PUG REST"
+  },
+  "loratadine": {
+    "name": "loratadine",
+    "cid": 3957,
+    "smiles": "CCOC(=O)N1CCC(=C2C3=C(CCC4=C2N=CC=C4)C=C(C=C3)Cl)CC1",
+    "source": "PubChem PUG REST"
+  },
+  "desloratadine": {
+    "name": "desloratadine",
+    "cid": 124087,
+    "smiles": "C1CC2=C(C=CC(=C2)Cl)C(=C3CCNCC3)C4=C1C=CC=N4",
+    "source": "PubChem PUG REST"
+  },
+  "cetirizine": {
+    "name": "cetirizine",
+    "cid": 2678,
+    "smiles": "C1CN(CCN1CCOCC(=O)O)C(C2=CC=CC=C2)C3=CC=C(C=C3)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "levocetirizine": {
+    "name": "levocetirizine",
+    "cid": 1549000,
+    "smiles": "C1CN(CCN1CCOCC(=O)O)[C@H](C2=CC=CC=C2)C3=CC=C(C=C3)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "fexofenadine": {
+    "name": "fexofenadine",
+    "cid": 3348,
+    "smiles": "CC(C)(C1=CC=C(C=C1)C(CCCN2CCC(CC2)C(C3=CC=CC=C3)(C4=CC=CC=C4)O)O)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "diphenhydramine": {
+    "name": "diphenhydramine",
+    "cid": 3100,
+    "smiles": "CN(C)CCOC(C1=CC=CC=C1)C2=CC=CC=C2",
+    "source": "PubChem PUG REST"
+  },
+  "doxepin": {
+    "name": "doxepin",
+    "cid": 3158,
+    "smiles": "CN(C)CCC=C1C2=CC=CC=C2COC3=CC=CC=C31",
+    "source": "PubChem PUG REST"
+  },
+  "famotidine": {
+    "name": "famotidine",
+    "cid": 5702160,
+    "smiles": "C1=C(N=C(S1)N=C(N)N)CSCC/C(=N/S(=O)(=O)N)/N",
+    "source": "PubChem PUG REST"
+  },
+  "cimetidine": {
+    "name": "cimetidine",
+    "cid": 2756,
+    "smiles": "CC1=C(N=CN1)CSCCNC(=NC)NC#N",
+    "source": "PubChem PUG REST"
+  },
+  "ranitidine": {
+    "name": "ranitidine",
+    "cid": 3001055,
+    "smiles": "CN/C(=C\\[N+](=O)[O-])/NCCSCC1=CC=C(O1)CN(C)C",
+    "source": "PubChem PUG REST"
+  },
+  "montelukast": {
+    "name": "montelukast",
+    "cid": 5281040,
+    "smiles": "CC(C)(C1=CC=CC=C1CC[C@H](C2=CC=CC(=C2)/C=C/C3=NC4=C(C=CC(=C4)Cl)C=C3)SCC5(CC5)CC(=O)O)O",
+    "source": "PubChem PUG REST"
+  },
+  "zafirlukast": {
+    "name": "zafirlukast",
+    "cid": 5717,
+    "smiles": "CC1=CC=CC=C1S(=O)(=O)NC(=O)C2=CC(=C(C=C2)CC3=CN(C4=C3C=C(C=C4)NC(=O)OC5CCCC5)C)OC",
+    "source": "PubChem PUG REST"
+  },
+  "omalizumab": {
+    "name": "omalizumab",
+    "miss": true,
+    "source": "PubChem PUG REST"
+  },
+  "quercetin": {
+    "name": "quercetin",
+    "cid": 5280343,
+    "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+    "source": "PubChem PUG REST"
+  },
+  "luteolin": {
+    "name": "luteolin",
+    "cid": 5280445,
+    "smiles": "C1=CC(=C(C=C1C2=CC(=O)C3=C(C=C(C=C3O2)O)O)O)O",
+    "source": "PubChem PUG REST"
+  },
+  "resveratrol": {
+    "name": "resveratrol",
+    "cid": 445154,
+    "smiles": "C1=CC(=CC=C1/C=C/C2=CC(=CC(=C2)O)O)O",
+    "source": "PubChem PUG REST"
+  },
+  "curcumin": {
+    "name": "curcumin",
+    "cid": 969516,
+    "smiles": "COC1=C(C=CC(=C1)/C=C/C(=O)CC(=O)/C=C/C2=CC(=C(C=C2)O)OC)O",
+    "source": "PubChem PUG REST"
+  },
+  "apigenin": {
+    "name": "apigenin",
+    "cid": 5280443,
+    "smiles": "C1=CC(=CC=C1C2=CC(=O)C3=C(C=C(C=C3O2)O)O)O",
+    "source": "PubChem PUG REST"
+  },
+  "naringenin": {
+    "name": "naringenin",
+    "cid": 439246,
+    "smiles": "C1[C@H](OC2=CC(=CC(=C2C1=O)O)O)C3=CC=C(C=C3)O",
+    "source": "PubChem PUG REST"
+  },
+  "baicalein": {
+    "name": "baicalein",
+    "cid": 5281605,
+    "smiles": "C1=CC=C(C=C1)C2=CC(=O)C3=C(O2)C=C(C(=C3O)O)O",
+    "source": "PubChem PUG REST"
+  },
+  "epigallocatechin_gallate": {
+    "name": "epigallocatechin gallate",
+    "cid": 65064,
+    "smiles": "C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O",
+    "source": "PubChem PUG REST"
+  },
+  "capsaicin": {
+    "name": "capsaicin",
+    "cid": 1548943,
+    "smiles": "CC(C)/C=C/CCCCC(=O)NCC1=CC(=C(C=C1)O)OC",
+    "source": "PubChem PUG REST"
+  },
+  "capsazepine": {
+    "name": "capsazepine",
+    "cid": 2733484,
+    "smiles": "C1CC2=CC(=C(C=C2CN(C1)C(=S)NCCC3=CC=C(C=C3)Cl)O)O",
+    "source": "PubChem PUG REST"
+  },
+  "menthol": {
+    "name": "menthol",
+    "cid": 1254,
+    "smiles": "CC1CCC(C(C1)O)C(C)C",
+    "source": "PubChem PUG REST"
+  },
+  "camphor": {
+    "name": "camphor",
+    "cid": 2537,
+    "smiles": "CC1(C2CCC1(C(=O)C2)C)C",
+    "source": "PubChem PUG REST"
+  },
+  "cinnamaldehyde": {
+    "name": "cinnamaldehyde",
+    "cid": 637511,
+    "smiles": "C1=CC=C(C=C1)/C=C/C=O",
+    "source": "PubChem PUG REST"
+  },
+  "allyl_isothiocyanate": {
+    "name": "allyl isothiocyanate",
+    "cid": 5971,
+    "smiles": "C=CCN=C=S",
+    "source": "PubChem PUG REST"
+  },
+  "suzetrigine": {
+    "name": "suzetrigine",
+    "cid": 156445116,
+    "smiles": "C[C@H]1[C@H]([C@@H](O[C@@]1(C)C(F)(F)F)C(=O)NC2=CC(=NC=C2)C(=O)N)C3=C(C(=C(C=C3)F)F)OC",
+    "source": "PubChem PUG REST"
+  },
+  "riluzole": {
+    "name": "riluzole",
+    "cid": 5070,
+    "smiles": "C1=CC2=C(C=C1OC(F)(F)F)SC(=N2)N",
+    "source": "PubChem PUG REST"
+  },
+  "ranolazine": {
+    "name": "ranolazine",
+    "cid": 56959,
+    "smiles": "CC1=C(C(=CC=C1)C)NC(=O)CN2CCN(CC2)CC(COC3=CC=CC=C3OC)O",
+    "source": "PubChem PUG REST"
+  },
+  "flecainide": {
+    "name": "flecainide",
+    "cid": 3356,
+    "smiles": "C1CCNC(C1)CNC(=O)C2=C(C=CC(=C2)OCC(F)(F)F)OCC(F)(F)F",
+    "source": "PubChem PUG REST"
+  },
+  "propafenone": {
+    "name": "propafenone",
+    "cid": 4932,
+    "smiles": "CCCNCC(COC1=CC=CC=C1C(=O)CCC2=CC=CC=C2)O",
+    "source": "PubChem PUG REST"
+  },
+  "quinidine": {
+    "name": "quinidine",
+    "cid": 441074,
+    "smiles": "COC1=CC2=C(C=CN=C2C=C1)[C@@H]([C@H]3C[C@@H]4CCN3C[C@@H]4C=C)O",
+    "source": "PubChem PUG REST"
+  },
+  "verapamil": {
+    "name": "verapamil",
+    "cid": 2520,
+    "smiles": "CC(C)C(CCCN(C)CCC1=CC(=C(C=C1)OC)OC)(C#N)C2=CC(=C(C=C2)OC)OC",
+    "source": "PubChem PUG REST"
+  },
+  "diltiazem": {
+    "name": "diltiazem",
+    "cid": 39186,
+    "smiles": "CC(=O)O[C@@H]1[C@@H](SC2=CC=CC=C2N(C1=O)CCN(C)C)C3=CC=C(C=C3)OC",
+    "source": "PubChem PUG REST"
+  },
+  "nifedipine": {
+    "name": "nifedipine",
+    "cid": 4485,
+    "smiles": "CC1=C(C(C(=C(N1)C)C(=O)OC)C2=CC=CC=C2[N+](=O)[O-])C(=O)OC",
+    "source": "PubChem PUG REST"
+  },
+  "amlodipine": {
+    "name": "amlodipine",
+    "cid": 2162,
+    "smiles": "CCOC(=O)C1=C(NC(=C(C1C2=CC=CC=C2Cl)C(=O)OC)C)COCCN",
+    "source": "PubChem PUG REST"
+  },
+  "nimodipine": {
+    "name": "nimodipine",
+    "cid": 4497,
+    "smiles": "CC1=C(C(C(=C(N1)C)C(=O)OC(C)C)C2=CC(=CC=C2)[N+](=O)[O-])C(=O)OCCOC",
+    "source": "PubChem PUG REST"
+  },
+  "ziconotide": {
+    "name": "ziconotide",
+    "cid": 16135415,
+    "smiles": "C[C@H]1C(=O)N[C@H](C(=O)N[C@H]2CSSC[C@H]3C(=O)N[C@H](C(=O)N[C@H](C(=O)NCC(=O)N[C@H](C(=O)N[C@@H](CSSC[C@@H](C(=O)N[C@@H](CSSC[C@@H](C(=O)N[C@H](C(=O)NCC(=O)N[C@H](C(=O)NCC(=O)N1)CCCCN)CCCCN)N)C(=O)N[C@H](C(=O)NCC(=O)N[C@H](C(=O)N3)CO)[C@@H](C)O)NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@@H](NC2=O)CO)CCCNC(=N)N)CC(C)C)CCSC)CC4=CC=C(C=C4)O)CC(=O)O)C(=O)N)CCCCN)CO)CCCNC(=N)N)CCCCN",
+    "source": "PubChem PUG REST"
+  },
+  "resatorvid": {
+    "name": "resatorvid",
+    "cid": 11703255,
+    "smiles": "CCOC(=O)C1=CCCC[C@H]1S(=O)(=O)NC2=C(C=C(C=C2)F)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "minocycline": {
+    "name": "minocycline",
+    "cid": 54675783,
+    "smiles": "CN(C)[C@H]1[C@@H]2C[C@@H]3CC4=C(C=CC(=C4C(=C3C(=O)[C@@]2(C(=C(C1=O)C(=O)N)O)O)O)O)N(C)C",
+    "source": "PubChem PUG REST"
+  },
+  "doxycycline": {
+    "name": "doxycycline",
+    "cid": 54671203,
+    "smiles": "C[C@@H]1[C@H]2[C@@H]([C@H]3[C@@H](C(=O)C(=C([C@]3(C(=O)C2=C(C4=C1C=CC=C4O)O)O)O)C(=O)N)N(C)C)O",
+    "source": "PubChem PUG REST"
+  },
+  "pioglitazone": {
+    "name": "pioglitazone",
+    "cid": 4829,
+    "smiles": "CCC1=CN=C(C=C1)CCOC2=CC=C(C=C2)CC3C(=O)NC(=O)S3",
+    "source": "PubChem PUG REST"
+  },
+  "rosiglitazone": {
+    "name": "rosiglitazone",
+    "cid": 77999,
+    "smiles": "CN(CCOC1=CC=C(C=C1)CC2C(=O)NC(=O)S2)C3=CC=CC=N3",
+    "source": "PubChem PUG REST"
+  },
+  "metformin": {
+    "name": "metformin",
+    "cid": 4091,
+    "smiles": "CN(C)C(=N)N=C(N)N",
+    "source": "PubChem PUG REST"
+  },
+  "dimethyl_fumarate": {
+    "name": "dimethyl fumarate",
+    "cid": 637568,
+    "smiles": "COC(=O)/C=C/C(=O)OC",
+    "source": "PubChem PUG REST"
+  },
+  "monomethyl_fumarate": {
+    "name": "monomethyl fumarate",
+    "cid": 5369209,
+    "smiles": "COC(=O)/C=C/C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "fingolimod": {
+    "name": "fingolimod",
+    "cid": 107970,
+    "smiles": "CCCCCCCCC1=CC=C(C=C1)CCC(CO)(CO)N",
+    "source": "PubChem PUG REST"
+  },
+  "laquinimod": {
+    "name": "laquinimod",
+    "cid": 54677946,
+    "smiles": "CCN(C1=CC=CC=C1)C(=O)C2=C(C3=C(C=CC=C3Cl)N(C2=O)C)O",
+    "source": "PubChem PUG REST"
+  },
+  "ibudilast": {
+    "name": "ibudilast",
+    "cid": 3671,
+    "smiles": "CC(C)C1=NN2C=CC=CC2=C1C(=O)C(C)C",
+    "source": "PubChem PUG REST"
+  },
+  "pentoxifylline": {
+    "name": "pentoxifylline",
+    "cid": 4740,
+    "smiles": "CC(=O)CCCCN1C(=O)C2=C(N=CN2C)N(C1=O)C",
+    "source": "PubChem PUG REST"
+  },
+  "apremilast": {
+    "name": "apremilast",
+    "cid": 11561674,
+    "smiles": "CCOC1=C(C=CC(=C1)[C@@H](CS(=O)(=O)C)N2C(=O)C3=C(C2=O)C(=CC=C3)NC(=O)C)OC",
+    "source": "PubChem PUG REST"
+  },
+  "roflumilast": {
+    "name": "roflumilast",
+    "cid": 449193,
+    "smiles": "C1CC1COC2=C(C=CC(=C2)C(=O)NC3=C(C=NC=C3Cl)Cl)OC(F)F",
+    "source": "PubChem PUG REST"
+  },
+  "n_acetylcysteine": {
+    "name": "n-acetylcysteine",
+    "cid": 12035,
+    "smiles": "CC(=O)N[C@@H](CS)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "melatonin": {
+    "name": "melatonin",
+    "cid": 896,
+    "smiles": "CC(=O)NCCC1=CNC2=C1C=C(C=C2)OC",
+    "source": "PubChem PUG REST"
+  },
+  "palmitoylethanolamide": {
+    "name": "palmitoylethanolamide",
+    "cid": 4671,
+    "smiles": "CCCCCCCCCCCCCCCC(=O)NCCO",
+    "source": "PubChem PUG REST"
+  },
+  "low_dose_naltrexone": {
+    "name": "low-dose naltrexone",
+    "miss": true,
+    "source": "PubChem PUG REST"
+  },
+  "cannabidiol": {
+    "name": "cannabidiol",
+    "cid": 644019,
+    "smiles": "CCCCCC1=CC(=C(C(=C1)O)[C@@H]2C=C(CC[C@H]2C(=C)C)C)O",
+    "source": "PubChem PUG REST"
+  },
+  "tetrahydrocannabinol": {
+    "name": "tetrahydrocannabinol",
+    "cid": 16078,
+    "smiles": "CCCCCC1=CC(=C2[C@@H]3C=C(CC[C@H]3C(OC2=C1)(C)C)C)O",
+    "source": "PubChem PUG REST"
+  },
+  "dronabinol": {
+    "name": "dronabinol",
+    "cid": 16078,
+    "smiles": "CCCCCC1=CC(=C2[C@@H]3C=C(CC[C@H]3C(OC2=C1)(C)C)C)O",
+    "source": "PubChem PUG REST"
+  },
+  "nabilone": {
+    "name": "nabilone",
+    "cid": 5284592,
+    "smiles": "CCCCCCC(C)(C)C1=CC(=C2[C@@H]3CC(=O)CC[C@H]3C(OC2=C1)(C)C)O",
+    "source": "PubChem PUG REST"
+  },
+  "rimonabant": {
+    "name": "rimonabant",
+    "cid": 104850,
+    "smiles": "CC1=C(N(N=C1C(=O)NN2CCCCC2)C3=C(C=C(C=C3)Cl)Cl)C4=CC=C(C=C4)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "oleoylethanolamide": {
+    "name": "oleoylethanolamide",
+    "cid": 5283454,
+    "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)NCCO",
+    "source": "PubChem PUG REST"
+  },
+  "anandamide": {
+    "name": "anandamide",
+    "cid": 5281969,
+    "smiles": "CCCCC/C=C\\C/C=C\\C/C=C\\C/C=C\\CCCC(=O)NCCO",
+    "source": "PubChem PUG REST"
+  },
+  "fenofibrate": {
+    "name": "fenofibrate",
+    "cid": 3339,
+    "smiles": "CC(C)OC(=O)C(C)(C)OC1=CC=C(C=C1)C(=O)C2=CC=C(C=C2)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "bezafibrate": {
+    "name": "bezafibrate",
+    "cid": 39042,
+    "smiles": "CC(C)(C(=O)O)OC1=CC=C(C=C1)CCNC(=O)C2=CC=C(C=C2)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "gemfibrozil": {
+    "name": "gemfibrozil",
+    "cid": 3463,
+    "smiles": "CC1=CC(=C(C=C1)C)OCCCC(C)(C)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "tofacitinib": {
+    "name": "tofacitinib",
+    "cid": 9926791,
+    "smiles": "C[C@@H]1CCN(C[C@@H]1N(C)C2=NC=NC3=C2C=CN3)C(=O)CC#N",
+    "source": "PubChem PUG REST"
+  },
+  "baricitinib": {
+    "name": "baricitinib",
+    "cid": 44205240,
+    "smiles": "CCS(=O)(=O)N1CC(C1)(CC#N)N2C=C(C=N2)C3=C4C=CNC4=NC=N3",
+    "source": "PubChem PUG REST"
+  },
+  "ruxolitinib": {
+    "name": "ruxolitinib",
+    "cid": 25126798,
+    "smiles": "C1CCC(C1)[C@@H](CC#N)N2C=C(C=N2)C3=C4C=CNC4=NC=N3",
+    "source": "PubChem PUG REST"
+  },
+  "upadacitinib": {
+    "name": "upadacitinib",
+    "cid": 58557659,
+    "smiles": "CC[C@@H]1CN(C[C@@H]1C2=CN=C3N2C4=C(NC=C4)N=C3)C(=O)NCC(F)(F)F",
+    "source": "PubChem PUG REST"
+  },
+  "filgotinib": {
+    "name": "filgotinib",
+    "cid": 49831257,
+    "smiles": "C1CC1C(=O)NC2=NN3C(=N2)C=CC=C3C4=CC=C(C=C4)CN5CCS(=O)(=O)CC5",
+    "source": "PubChem PUG REST"
+  },
+  "thalidomide": {
+    "name": "thalidomide",
+    "cid": 5426,
+    "smiles": "C1CC(=O)NC(=O)C1N2C(=O)C3=CC=CC=C3C2=O",
+    "source": "PubChem PUG REST"
+  },
+  "lenalidomide": {
+    "name": "lenalidomide",
+    "cid": 216326,
+    "smiles": "C1CC(=O)NC(=O)C1N2CC3=C(C2=O)C=CC=C3N",
+    "source": "PubChem PUG REST"
+  },
+  "pomalidomide": {
+    "name": "pomalidomide",
+    "miss": true,
+    "source": "PubChem PUG REST"
+  },
+  "azathioprine": {
+    "name": "azathioprine",
+    "cid": 2265,
+    "smiles": "CN1C=NC(=C1SC2=NC=NC3=C2NC=N3)[N+](=O)[O-]",
+    "source": "PubChem PUG REST"
+  },
+  "mycophenolic_acid": {
+    "name": "mycophenolic acid",
+    "cid": 446541,
+    "smiles": "CC1=C2COC(=O)C2=C(C(=C1OC)C/C=C(\\C)/CCC(=O)O)O",
+    "source": "PubChem PUG REST"
+  },
+  "cyclosporine": {
+    "name": "cyclosporine",
+    "cid": 5284373,
+    "smiles": "CC[C@H]1C(=O)N(CC(=O)N([C@H](C(=O)N[C@H](C(=O)N([C@H](C(=O)N[C@H](C(=O)N[C@@H](C(=O)N([C@H](C(=O)N([C@H](C(=O)N([C@H](C(=O)N([C@H](C(=O)N1)[C@@H]([C@H](C)C/C=C/C)O)C)C(C)C)C)CC(C)C)C)CC(C)C)C)C)C)CC(C)C)C)C(C)C)CC(C)C)C)C",
+    "source": "PubChem PUG REST"
+  },
+  "tacrolimus": {
+    "name": "tacrolimus",
+    "cid": 445643,
+    "smiles": "C[C@@H]1C[C@@H]([C@@H]2[C@H](C[C@H]([C@@](O2)(C(=O)C(=O)N3CCCC[C@H]3C(=O)O[C@@H]([C@@H]([C@H](CC(=O)[C@@H](/C=C(/C1)\\C)CC=C)O)C)/C(=C/[C@@H]4CC[C@H]([C@@H](C4)OC)O)/C)O)C)OC)OC",
+    "source": "PubChem PUG REST"
+  },
+  "sirolimus": {
+    "name": "sirolimus",
+    "cid": 5284616,
+    "smiles": "C[C@@H]1CC[C@H]2C[C@@H](/C(=C/C=C/C=C/[C@H](C[C@H](C(=O)[C@@H]([C@@H](/C(=C/[C@H](C(=O)C[C@H](OC(=O)[C@@H]3CCCCN3C(=O)C(=O)[C@@]1(O2)O)[C@H](C)C[C@@H]4CC[C@H]([C@@H](C4)OC)O)C)/C)O)OC)C)C)/C)OC",
+    "source": "PubChem PUG REST"
+  },
+  "everolimus": {
+    "name": "everolimus",
+    "cid": 6442177,
+    "smiles": "C[C@@H]1CC[C@H]2C[C@@H](/C(=C/C=C/C=C/[C@H](C[C@H](C(=O)[C@@H]([C@@H](/C(=C/[C@H](C(=O)C[C@H](OC(=O)[C@@H]3CCCCN3C(=O)C(=O)[C@@]1(O2)O)[C@H](C)C[C@@H]4CC[C@H]([C@@H](C4)OC)OCCO)C)/C)O)OC)C)C)/C)OC",
+    "source": "PubChem PUG REST"
+  },
+  "rapamycin": {
+    "name": "rapamycin",
+    "cid": 5284616,
+    "smiles": "C[C@@H]1CC[C@H]2C[C@@H](/C(=C/C=C/C=C/[C@H](C[C@H](C(=O)[C@@H]([C@@H](/C(=C/[C@H](C(=O)C[C@H](OC(=O)[C@@H]3CCCCN3C(=O)C(=O)[C@@]1(O2)O)[C@H](C)C[C@@H]4CC[C@H]([C@@H](C4)OC)O)C)/C)O)OC)C)C)/C)OC",
+    "source": "PubChem PUG REST"
+  },
+  "caffeine": {
+    "name": "caffeine",
+    "cid": 2519,
+    "smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+    "source": "PubChem PUG REST"
+  },
+  "theophylline": {
+    "name": "theophylline",
+    "cid": 2153,
+    "smiles": "CN1C2=C(C(=O)N(C1=O)C)NC=N2",
+    "source": "PubChem PUG REST"
+  },
+  "nicotine": {
+    "name": "nicotine",
+    "cid": 89594,
+    "smiles": "CN1CCC[C@H]1C2=CN=CC=C2",
+    "source": "PubChem PUG REST"
+  },
+  "varenicline": {
+    "name": "varenicline",
+    "cid": 5310966,
+    "smiles": "C1[C@@H]2CNC[C@H]1C3=CC4=NC=CN=C4C=C23",
+    "source": "PubChem PUG REST"
+  },
+  "donepezil": {
+    "name": "donepezil",
+    "cid": 3152,
+    "smiles": "COC1=C(C=C2C(=C1)CC(C2=O)CC3CCN(CC3)CC4=CC=CC=C4)OC",
+    "source": "PubChem PUG REST"
+  },
+  "rivastigmine": {
+    "name": "rivastigmine",
+    "cid": 77991,
+    "smiles": "CCN(C)C(=O)OC1=CC=CC(=C1)[C@H](C)N(C)C",
+    "source": "PubChem PUG REST"
+  },
+  "galantamine": {
+    "name": "galantamine",
+    "cid": 9651,
+    "smiles": "CN1CC[C@@]23C=C[C@@H](C[C@@H]2OC4=C(C=CC(=C34)C1)OC)O",
+    "source": "PubChem PUG REST"
+  },
+  "omeprazole": {
+    "name": "omeprazole",
+    "cid": 4594,
+    "smiles": "CC1=CN=C(C(=C1OC)C)CS(=O)C2=NC3=C(N2)C=C(C=C3)OC",
+    "source": "PubChem PUG REST"
+  },
+  "pantoprazole": {
+    "name": "pantoprazole",
+    "cid": 4679,
+    "smiles": "COC1=C(C(=NC=C1)CS(=O)C2=NC3=C(N2)C=C(C=C3)OC(F)F)OC",
+    "source": "PubChem PUG REST"
+  },
+  "atorvastatin": {
+    "name": "atorvastatin",
+    "cid": 60823,
+    "smiles": "CC(C)C1=C(C(=C(N1CC[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)C3=CC=CC=C3)C(=O)NC4=CC=CC=C4",
+    "source": "PubChem PUG REST"
+  },
+  "simvastatin": {
+    "name": "simvastatin",
+    "cid": 54454,
+    "smiles": "CCC(C)(C)C(=O)O[C@H]1C[C@H](C=C2[C@H]1[C@H]([C@H](C=C2)C)CC[C@@H]3C[C@H](CC(=O)O3)O)C",
+    "source": "PubChem PUG REST"
+  },
+  "rosuvastatin": {
+    "name": "rosuvastatin",
+    "cid": 446157,
+    "smiles": "CC(C)C1=NC(=NC(=C1/C=C/[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C",
+    "source": "PubChem PUG REST"
+  },
+  "losartan": {
+    "name": "losartan",
+    "cid": 3961,
+    "smiles": "CCCCC1=NC(=C(N1CC2=CC=C(C=C2)C3=CC=CC=C3C4=NNN=N4)CO)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "telmisartan": {
+    "name": "telmisartan",
+    "cid": 65999,
+    "smiles": "CCCC1=NC2=C(N1CC3=CC=C(C=C3)C4=CC=CC=C4C(=O)O)C=C(C=C2C)C5=NC6=CC=CC=C6N5C",
+    "source": "PubChem PUG REST"
+  },
+  "lisinopril": {
+    "name": "lisinopril",
+    "cid": 5362119,
+    "smiles": "C1C[C@H](N(C1)C(=O)[C@H](CCCCN)N[C@@H](CCC2=CC=CC=C2)C(=O)O)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "enalapril": {
+    "name": "enalapril",
+    "cid": 5388962,
+    "smiles": "CCOC(=O)[C@H](CCC1=CC=CC=C1)N[C@@H](C)C(=O)N2CCC[C@H]2C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "sildenafil": {
+    "name": "sildenafil",
+    "cid": 135398744,
+    "smiles": "CCCC1=NN(C2=C1N=C(NC2=O)C3=C(C=CC(=C3)S(=O)(=O)N4CCN(CC4)C)OCC)C",
+    "source": "PubChem PUG REST"
+  },
+  "tadalafil": {
+    "name": "tadalafil",
+    "cid": 110635,
+    "smiles": "CN1CC(=O)N2[C@@H](C1=O)CC3=C([C@H]2C4=CC5=C(C=C4)OCO5)NC6=CC=CC=C36",
+    "source": "PubChem PUG REST"
+  },
+  "allopurinol": {
+    "name": "allopurinol",
+    "cid": 135401907,
+    "smiles": "C1=NNC2=C1C(=O)NC=N2",
+    "source": "PubChem PUG REST"
+  },
+  "febuxostat": {
+    "name": "febuxostat",
+    "cid": 134018,
+    "smiles": "CC1=C(SC(=N1)C2=CC(=C(C=C2)OCC(C)C)C#N)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "probenecid": {
+    "name": "probenecid",
+    "cid": 4911,
+    "smiles": "CCCN(CCC)S(=O)(=O)C1=CC=C(C=C1)C(=O)O",
+    "source": "PubChem PUG REST"
+  },
+  "clonazepam": {
+    "name": "clonazepam",
+    "cid": 2802,
+    "smiles": "C1C(=O)NC2=C(C=C(C=C2)[N+](=O)[O-])C(=N1)C3=CC=CC=C3Cl",
+    "source": "PubChem PUG REST"
+  },
+  "diazepam": {
+    "name": "diazepam",
+    "cid": 3016,
+    "smiles": "CN1C(=O)CN=C(C2=C1C=CC(=C2)Cl)C3=CC=CC=C3",
+    "source": "PubChem PUG REST"
+  },
+  "alprazolam": {
+    "name": "alprazolam",
+    "cid": 2118,
+    "smiles": "CC1=NN=C2N1C3=C(C=C(C=C3)Cl)C(=NC2)C4=CC=CC=C4",
+    "source": "PubChem PUG REST"
+  },
+  "zolpidem": {
+    "name": "zolpidem",
+    "cid": 5732,
+    "smiles": "CC1=CC=C(C=C1)C2=C(N3C=C(C=CC3=N2)C)CC(=O)N(C)C",
+    "source": "PubChem PUG REST"
+  },
+  "eszopiclone": {
+    "name": "eszopiclone",
+    "cid": 969472,
+    "smiles": "CN1CCN(CC1)C(=O)O[C@H]2C3=NC=CN=C3C(=O)N2C4=NC=C(C=C4)Cl",
+    "source": "PubChem PUG REST"
+  },
+  "ramelteon": {
+    "name": "ramelteon",
+    "cid": 208902,
+    "smiles": "CCC(=O)NCC[C@@H]1CCC2=C1C3=C(C=C2)OCC3",
+    "source": "PubChem PUG REST"
+  }
+}
