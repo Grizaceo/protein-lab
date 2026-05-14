@@ -119,13 +119,16 @@ class IdeaGenerator:
             except Exception as exc:
                 print(f"[idea_generation] ⚠ PubChem expansion unavailable: {exc}")
         ordered_targets = self._ordered_targets(campaign_name, campaign)
-        avoid_text = "\n".join(campaign.get("avoid", []))
+        # Use explicit excluded_targets list when available; avoid fragile
+        # substring match on the full avoid text (e.g. "MOR" inside a
+        # caveat sentence should not kill the whole MOR row).
+        excluded = set(campaign.get("excluded_targets", []))
         ideas: list[dict[str, Any]] = []
         template_count = len(HYPOTHESIS_TEMPLATES)
         for drug_index, (drug_name, drug_smiles) in enumerate(drugs.items()):
             for target_index, target_name in enumerate(ordered_targets):
                 meta = TARGETS.get(target_name, {})
-                if meta.get("avoid_local_dti") or target_name in avoid_text:
+                if meta.get("avoid_local_dti") or target_name in excluded:
                     continue
                 seq = self._sequence_for_target(target_name)
                 if not seq:
