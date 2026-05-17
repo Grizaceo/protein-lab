@@ -2,6 +2,11 @@
 **Fecha diseño:** 2026-04-21
 **GPU:** RTX 4060 8GB VRAM | **VRAM confirmable libre:** 7.4 GB
 
+## Repository
+- Remote: https://github.com/Grizaceo/protein-lab
+- Default branch (local actual): `master`
+- Nota: el repo remoto se inicializó para versionar código, documentación y artefactos curados; datos pesados, outputs experimentales y material sensible deben seguir revisándose antes de trackearse.
+
 ---
 
 ## LECCIONES APRENDIDAS (21 abr 2026)
