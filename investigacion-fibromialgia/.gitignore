@@ -1,0 +1,32 @@
+# ── Raw data (too large / proprietary download required) ──────────────────────
+datos/geo/PBMC_FM_96patients_93controls/GSE221921_FM_ProcessedData.xlsx
+datos/pdb/
+docking_runs/
+data/
+
+# ── Internal session / checkpoint files ───────────────────────────────────────
+ESTADO.md
+ESTADO_SESION_*.md
+CHECKPOINT_*.md
+MAPEO_INICIAL.md
+
+# ── Internal analysis reports (not part of the reproducible package) ──────────
+reportes/
+
+# ── Large binary / embedding artifacts ───────────────────────────────────────
+target_embeddings.json
+esm2_embeddings.log
+analisis/esm2/
+
+# ── Python artifacts ──────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+
+# ── OS / editor ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
