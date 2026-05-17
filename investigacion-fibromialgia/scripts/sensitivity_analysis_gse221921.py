@@ -18,10 +18,10 @@ DATA_FILE = os.path.join(GEO_DIR, "GSE221921_FM_ProcessedData.xlsx")
 OUT_DIR = "/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/analisis"
 
 mast_cell_genes  = ['CPA3', 'MS4A2', 'FCER1A', 'HDC']
-dopamine_network = ['DRD2', 'NCAM1', 'GPR52', 'CAMKV', 'CELF4',
+gwas_neural_genes = ['DRD2', 'NCAM1', 'GPR52', 'CAMKV', 'CELF4',
                     'DCC', 'MDGA2', 'NPY', 'KYNU', 'SRD5A2',
                     'PPP2R2B', 'NPC1', 'HTT']
-all_genes = mast_cell_genes + dopamine_network
+all_genes = mast_cell_genes + gwas_neural_genes
 
 # ── Load data ──────────────────────────────────────────────────────────────
 print("Loading GSE221921...")

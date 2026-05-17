@@ -104,7 +104,7 @@ Table 1 presents the sensitivity analysis for all 16 measured genes. Two genes �
 **Key observations:**
 - *MDGA2* and *DRD2* survive all five models including sex-adjusted OLS, suggesting that their signal is not solely explained by the severe sex imbalance in the cohort.
 - *CAMKV* and *CELF4* survive four models (including female-only) but not the sex-adjusted OLS on the full cohort (q = 0.112 and 0.167, respectively). Their signals are supportive but model-sensitive.
-- *HTT* — the gene with the strongest GWAS coding variant — shows a supported signal (3/5 models), which was not apparent in the original FPKM-only analysis.
+- *HTT* — the gene with the strongest GWAS coding variant — shows a supported signal (3/5 models), which was not apparent in the original FPKM-only analysis. However, we note that the direction of effect is negative (downregulated in FM PBMCs), contrasting with the upregulation seen in *MDGA2* and *DRD2*.
 - No mast cell marker shows a robust PBMC signal; *MS4A2* reaches significance only in the Mann-Whitney model and is therefore classified as model-sensitive rather than replicated across analytical frameworks.
 
 ### 3.2 Cross-Context Comparison: GSE67311 (Whole Blood)
@@ -237,7 +237,7 @@ Zhao, F., et al. (2025). Identification of diagnostic biomarkers for fibromyalgi
 
 ## Data & Code Availability
 
-All transcriptomic data are publicly available from GEO (GSE221921, GSE67311). Analysis scripts are available in the project repository:
+All transcriptomic data are publicly available from GEO (GSE221921, GSE67311). The GSE221921 processed data matrix (`GSE221921_FM_ProcessedData.xlsx`) must be downloaded from GEO and placed in the `datos/geo/PBMC_FM_96patients_93controls/` directory for local replication. Analysis scripts are available in the project repository:
 - `scripts/sensitivity_analysis_gse221921.py` — five-model sensitivity analysis
 - `scripts/cross_context_gwas_neural_genes.py` — cross-context comparison of GWAS-prioritized neural genes vs. mast cell markers across PBMC and whole-blood datasets
 - `scripts/phase2_rct_review.py` — literature review evidence table

@@ -151,9 +151,4 @@ combined = pd.merge(
 out_path = f"{out_dir}/cross_context_gwas_neural_genes.csv"
 combined.to_csv(out_path, index=False)
 
-# Legacy compatibility alias (same content, deprecated filename)
-legacy_out_path = f"{out_dir}/cross_validation_GWAS_network.csv"
-combined.to_csv(legacy_out_path, index=False)
-
 print(f"\nFull table saved → {out_path}")
-print(f"Legacy compatibility copy → {legacy_out_path}")
