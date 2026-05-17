@@ -68,7 +68,7 @@ PCI Genomics no es una revista tradicional: es una plataforma de evaluación de 
 - [x] Instrucciones para replicar el flujo en §Data & Code Availability.
 - [x] **Subir repositorio a GitHub** (público) — https://github.com/Grizaceo/protein-lab
 - [x] **Crear release/tag estable** — `v1.0.0` publicado.
-- [ ] **Obtener DOI de Zenodo** (blocker — conectar GitHub repo a Zenodo y crear release).
+- [x] **Obtener DOI de Zenodo** — DOI: `10.5281/zenodo.20250218`
 - [ ] Verificar que el flujo corre de punta a punta con los datos de GEO.
 
 ### C. Preprint en servidor
@@ -126,7 +126,8 @@ of the PBMC compartment.
 This work is strictly exploratory and hypothesis-generating. We explicitly
 acknowledge nine limitations including sex confounding, use of FPKM rather than
 raw counts, absence of cell deconvolution, and the GWAS source being a preprint.
-All code and derived data are publicly available at [GitHub URL / Zenodo DOI].
+All code and derived data are publicly available at GitHub (https://github.com/Grizaceo/protein-lab) 
+and archived on Zenodo (DOI: 10.5281/zenodo.20250218).
 
 This preprint is not submitted to any journal. It has not been peer reviewed
 previously.
@@ -191,7 +192,7 @@ Herramientas para buscar recommenders en PCI Genomics:
 
 | Riesgo | Probabilidad | Mitigación |
 |--------|-------------|------------|
-| Falta de DOI/permalink del código | **Media** (GitHub ✅, Zenodo pendiente) | Conectar repo a Zenodo y crear release |
+| Falta de DOI/permalink del código | **Baja** (¡Resuelto!) | OK |
 | Preprint no publicado en bioRxiv | **Alta** (aún no subido) | Blocker duro — resolver en Fase 2 |
 | Manuscrito sin líneas numeradas | **Alta** (formato .md actual) | Resolver en Fase 1 |
 | Framing demasiado terapéutico | **Baja** (ya corregido) | Verificar en revisión final |
@@ -208,8 +209,8 @@ Herramientas para buscar recommenders en PCI Genomics:
 El manuscrito está científicamente listo. El framing, las limitaciones, y la sección de código/datos ya están en el estado correcto para PCI Genomics.
 
 **Los únicos blockers son operativos:**
-1. ~~Repositorio GitHub público + release `v1.0.0`~~ ✅ https://github.com/Grizaceo/protein-lab — tag `v1.0.0`
-2. DOI de Zenodo ← **siguiente paso**
+1. ~~Repositorio GitHub público + release `v1.0.0`~~ ✅ https://github.com/Grizaceo/protein-lab
+2. ~~DOI de Zenodo~~ ✅ `10.5281/zenodo.20250218`
 3. Preprint publicado en bioRxiv
 4. PDF con líneas numeradas
 
