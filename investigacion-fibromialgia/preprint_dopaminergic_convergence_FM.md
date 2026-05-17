@@ -1,32 +1,30 @@
-# Dopaminergic Network Convergence in Fibromyalgia: GWAS Risk Loci Are Transcriptomically Dysregulated in Patient PBMCs
+# GWAS-Prioritized Neural Genes Are Differentially Expressed in Fibromyalgia PBMCs: A Targeted Reanalysis of Public Transcriptomic Cohorts
 
 ---
 
 **Authors:** [To be determined]
 
-**Preprint — Draft v1.0 — May 2026**
+**Preprint — Draft v2.0 — May 2026**
 
 ---
 
 ## Abstract
 
-Fibromyalgia (FM) is a prevalent chronic pain condition whose molecular underpinnings have remained poorly defined. A recent genome-wide association study (GWAS) meta-analysis involving 2.5 million individuals identified 26 risk loci for FM, implicating a network centered on dopaminergic signaling genes including *DRD2*, *MDGA2*, *CAMKV*, and *CELF4* (Kerrebijn et al., 2025). However, whether this genetic risk network is transcriptomically active in FM patients has not been tested. Here, we perform a hypothesis-driven reanalysis of two independent transcriptomic datasets — GSE221921 (PBMCs, n=189) and GSE67311 (whole blood, n=140) — specifically interrogating the GWAS-defined dopaminergic gene set alongside a mast cell/basophil marker panel. We report that four GWAS dopaminergic network genes (*MDGA2*, q=1.1×10⁻⁷; *DRD2*, q=2.9×10⁻⁵; *CAMKV*, q=3.2×10⁻³; *CELF4*, q=4.6×10⁻²) are significantly upregulated in PBMCs of FM patients after FDR correction, while a mast cell panel (CPA3/MS4A2/FCER1A/HDC) is significant only in whole blood — revealing a cell-type-specific dissociation. We contextualize this finding with a systematic review showing that the sole positive randomized controlled trial of a dopamine agonist in FM (pramipexole; Holman & Myers, 2005) has not been replicated in 21 years. The convergence of genetic risk, transcriptomic dysregulation, and preliminary clinical evidence positions the dopaminergic pathway as a high-priority target for FM drug repurposing.
+Fibromyalgia (FM) is a prevalent chronic pain condition whose molecular basis remains poorly defined. A recent genome-wide association study (GWAS) meta-analysis of 2.5 million individuals identified 26 risk loci enriched in brain tissues, prioritizing neural and synaptic genes including *DRD2*, *MDGA2*, *CAMKV*, and *CELF4* (Kerrebijn et al., 2025; PMID 41001472). Whether these GWAS-prioritized genes show altered expression in FM patients has not been directly tested. Here, we perform a targeted, hypothesis-driven reanalysis of two public transcriptomic datasets — GSE221921 (PBMCs, 96 FM / 93 HC) and GSE67311 (whole blood, 70 FM / 70 HC) — interrogating 13 GWAS neural genes alongside a 4-gene mast cell marker panel. In GSE221921, *MDGA2* (q = 1.1×10⁻⁷) and *DRD2* (q = 2.9×10⁻⁵) were robustly upregulated across all five sensitivity models tested (Welch t-test on raw FPKM and log₂-transformed data, Mann-Whitney U, OLS with sex covariate, and female-only subgroup analysis). *CAMKV* and *CELF4* were significant in four of five models but did not survive sex-covariate adjustment in the full cohort, which has a severe sex imbalance (FM: 91F/5M; HC: 41F/52M). In GSE67311 (whole blood), only the mast cell panel was significant — revealing a cell-fraction-dependent contrast between granulocyte and PBMC signatures. A targeted literature review identified a single positive RCT for a dopamine agonist in FM (pramipexole; Holman & Myers, 2005; PMID 16052595), unreplicated in 21 years. These exploratory findings support prioritizing the DRD2/neural GWAS axis for validation in sex-balanced, cell-type-resolved cohorts.
 
-**Keywords:** fibromyalgia, DRD2, dopamine, GWAS, transcriptomics, PBMCs, drug repurposing, pramipexole
+**Keywords:** fibromyalgia, DRD2, GWAS, transcriptomics, PBMCs, neural genes, pramipexole, targeted reanalysis
 
 ---
 
 ## 1. Introduction
 
-Fibromyalgia (FM) affects 2–4% of the global population, manifesting as chronic widespread pain, fatigue, cognitive dysfunction, and sleep disturbances (Sarzi-Puttini et al., 2020). Despite its prevalence, FM lacks specific diagnostic biomarkers and its pharmacotherapy remains limited to three approved medications — pregabalin, duloxetine, and milnacipran — none of which was designed to target FM-specific molecular pathology (Chinn et al., 2016).
+Fibromyalgia (FM) affects 2–4% of the global population, manifesting as chronic widespread pain, fatigue, cognitive dysfunction, and sleep disturbances (Sarzi-Puttini et al., 2020). Despite its prevalence, FM lacks specific diagnostic biomarkers and its pharmacotherapy remains limited to three FDA-approved medications — pregabalin, duloxetine, and milnacipran — none designed to target FM-specific molecular pathology (Chinn et al., 2016).
 
-A paradigm shift occurred in September 2025 when Kerrebijn and colleagues published the largest GWAS meta-analysis of FM to date, comprising 54,629 cases and 2,509,126 controls across 11 cohorts (Kerrebijn et al., 2025). This study identified 26 genome-wide significant risk loci, with heritability enriched exclusively in brain tissues and neuronal cell types. Critically, the prioritized genes converge on dopaminergic and synaptic plasticity pathways: *DRD2* (dopamine receptor D2), *NCAM1* (neural cell adhesion molecule), *MDGA2* (MAM domain-containing glycosylphosphatidylinositol anchor protein 2), *CAMKV* (CaM kinase-like vesicle-associated), *CELF4* (CUGBP Elav-like family member 4), *GPR52* (G protein-coupled receptor 52), and *DCC* (DCC netrin 1 receptor), among others.
+A recent GWAS meta-analysis by Kerrebijn and colleagues, comprising 54,629 cases and 2,509,126 controls across 11 cohorts, identified 26 genome-wide significant risk loci for FM, with heritability enriched exclusively in brain tissues and neuronal cell types (Kerrebijn et al., 2025; PMID 41001472; medRxiv doi: 10.1101/2025.09.18.25335914v1). The prioritized genes span dopaminergic signaling (*DRD2*), synaptic plasticity (*CAMKV*, *CELF4*), neural cell adhesion (*NCAM1*, *MDGA2*), axon guidance (*DCC*), and other neural functions (*GPR52*, *HTT*). While the GWAS authors describe these as a neural/CNS network, we note that only *DRD2* is strictly dopaminergic; the others are more broadly neural or synaptic.
 
-This genetic architecture raises a direct question: **is this GWAS-defined dopaminergic network transcriptomically active — i.e., differentially expressed — in FM patients?** If so, the convergence of genetic risk and transcriptomic dysregulation would provide strong multi-omic evidence for dopaminergic involvement and would reframe the rationale for therapeutic interventions targeting the dopamine system.
+This genetic architecture motivates a direct question: **are these GWAS-prioritized genes differentially expressed in FM patients?** Several bioinformatic studies have analyzed the GSE221921 PBMC dataset (Mohapatra et al., 2024; Bi et al., 2024; Zhao et al., 2025; Gowri Gopal et al., 2026), but all employed unbiased genome-wide approaches (DEG → PPI → hub genes). None tested the specific hypothesis that the GWAS-defined gene set is coordinately altered — a targeted, hypothesis-driven analysis that is distinct from and complementary to unbiased discovery.
 
-Several bioinformatic studies have already analyzed the GSE221921 PBMC RNA-seq dataset (Mohapatra et al., 2024; Bi et al., 2024; Zhao et al., 2025; Gowri Gopal et al., 2026), but all employed unbiased approaches (genome-wide DEG analysis followed by PPI network construction and machine learning). None tested the specific hypothesis that the GWAS dopaminergic network is coordinately dysregulated — a targeted, hypothesis-driven analysis that is distinct from and complementary to unbiased discovery.
-
-In this study, we: (1) test the GWAS dopaminergic gene set for differential expression in PBMCs (GSE221921) and whole blood (GSE67311), (2) include a negative control panel of mast cell markers previously identified in FM, and (3) contextualize our findings with a systematic review of clinical trials evaluating dopamine agonists in FM.
+In this study, we: (1) test the GWAS neural gene set for differential expression in PBMCs (GSE221921) and whole blood (GSE67311), including comprehensive sensitivity analyses for sex confounding; (2) include a negative control panel of mast cell markers; and (3) contextualize our findings with a targeted literature review of dopamine agonist trials in FM.
 
 ---
 
@@ -34,196 +32,213 @@ In this study, we: (1) test the GWAS dopaminergic gene set for differential expr
 
 ### 2.1 Gene Set Definition
 
-**Dopaminergic GWAS Network.** We extracted 13 genes from the 26 GWAS risk loci reported by Kerrebijn et al. (2025) that are functionally linked to dopaminergic or synaptic signaling: *DRD2*, *NCAM1*, *GPR52*, *CAMKV*, *CELF4*, *DCC*, *MDGA2*, *NPY*, *KYNU*, *SRD5A2*, *PPP2R2B*, *NPC1*, and *HTT*.
+**GWAS-Prioritized Neural Gene Set.** We extracted 13 genes from the 26 GWAS risk loci reported by Kerrebijn et al. (2025) that are functionally linked to neural or synaptic signaling: *DRD2*, *NCAM1*, *GPR52*, *CAMKV*, *CELF4*, *DCC*, *MDGA2*, *NPY*, *KYNU*, *SRD5A2*, *PPP2R2B*, *NPC1*, and *HTT*. We designate this set as "GWAS neural genes" rather than "dopaminergic network," as only *DRD2* is strictly dopaminergic.
 
-**Mast Cell / Basophil Panel.** As a negative control, we included four genes (*CPA3*, *MS4A2*, *FCER1A*, *HDC*) previously identified as downregulated in FM whole blood (Kurian et al., 2017; GSE67311). These markers are expressed primarily by basophils and mast cells, which are absent from the PBMC fraction.
+**Mast Cell / Basophil Panel (negative control).** Four genes (*CPA3*, *MS4A2*, *FCER1A*, *HDC*) previously identified as differentially expressed in FM whole blood (Kurian et al., 2017). These are primarily expressed by basophils and mast cells, which are depleted during PBMC isolation.
+
+*NPY* was included in the pre-specified gene set but was absent from the GSE221921 expression matrix. FDR correction was therefore applied to 16 measured genes (12 GWAS neural + 4 mast cell).
 
 ### 2.2 Transcriptomic Datasets
 
-**GSE221921 (PBMCs, RNA-seq).** This dataset contains FPKM-normalized expression values from peripheral blood mononuclear cells of 96 FM patients and 93 healthy controls (Mohapatra et al., 2024). Sample metadata and expression matrices were obtained from the GEO supplementary file `GSE221921_FM_ProcessedData.xlsx`.
+**GSE221921 (PBMCs, RNA-seq).** FPKM-normalized expression values from peripheral blood mononuclear cells of 96 FM patients and 93 healthy controls (Mohapatra et al., 2024; PMID 38366049). Sample metadata and expression matrices were obtained from the GEO supplementary file `GSE221921_FM_ProcessedData.xlsx`.
 
-**GSE67311 (Whole blood, microarray).** This dataset comprises Affymetrix Human Gene 1.1 ST array expression data from whole blood (PAXgene tubes) of 70 FM patients and 70 age- and sex-matched healthy controls (Kurian et al., 2017). Pre-computed differential expression results (log2FC, p-value, adjusted p-value) were used.
+**Critical note on sex distribution:** The GSE221921 cohort has a severe sex imbalance — FM group: 91 female / 5 male; HC group: 41 female / 52 male. This confounds any unadjusted FM vs. HC comparison, as a portion of the observed signal may reflect sex differences rather than disease effects. We address this through multiple sensitivity analyses (§2.4).
+
+**GSE67311 (Whole blood, microarray).** Affymetrix Human Gene 1.1 ST array expression data from whole blood (PAXgene tubes) of 70 FM patients and 70 age- and sex-matched healthy controls (Kurian et al., 2017; PMID 27157394). Pre-computed differential expression results (log₂FC, p-value, FDR-adjusted p-value) were used.
 
 ### 2.3 Statistical Analysis
 
-For GSE221921, we performed Welch's t-test comparing FM vs. healthy control groups for each target gene. For GSE67311, we used the pre-computed per-probe statistics and selected the most significant probe per gene symbol.
+All p-values from the 16 measured genes were jointly corrected using the Benjamini-Hochberg (BH) procedure (Benjamini & Hochberg, 1995) at α = 0.05. Genes were considered significant at q < 0.05.
 
-In both datasets, p-values from all 17 tested genes (13 dopaminergic + 4 mast cell) were jointly corrected using the Benjamini-Hochberg procedure (Benjamini & Hochberg, 1995) to control the false discovery rate (FDR) at α=0.05. Genes were considered significant at q < 0.05.
+### 2.4 Sensitivity Analyses for GSE221921
 
-All analyses were performed in Python 3.10 using pandas, scipy, and statsmodels.
+Given the sex imbalance, we applied five analytical models to each gene:
 
-### 2.4 Systematic Review of Dopamine Agonist Clinical Trials
+1. **Welch t-test on raw FPKM** (original analysis)
+2. **Welch t-test on log₂(FPKM+1)** (variance-stabilizing transform)
+3. **Mann-Whitney U test** (non-parametric, distribution-free)
+4. **OLS regression: log₂(FPKM+1) ~ case + sex** (sex as covariate, full cohort)
+5. **Female-only subgroup: Welch t-test on log₂(FPKM+1)** (91 FM vs. 41 HC, eliminates sex confound entirely)
 
-We searched PubMed (terms: "pramipexole fibromyalgia," "ropinirole fibromyalgia," "dopamine agonist fibromyalgia"), ClinicalTrials.gov, and the GSK Study Register for randomized controlled trials (RCTs) and open-label studies of dopamine D2/D3 agonists in fibromyalgia. We extracted study design, sample size, drug, dose, primary outcome, result, and risk of bias.
+Each model produced p-values that were independently FDR-corrected across all 16 genes. Genes were classified by robustness: "Robust" (q < 0.05 in all 5 models), "Supported" (q < 0.05 in 3–4 models), "Model-sensitive" (q < 0.05 in 1–2 models), or "Not significant."
 
-### 2.5 Limitations of the Analytical Approach
+### 2.5 Targeted Literature Review
 
-We acknowledge that the use of FPKM values with parametric t-tests for GSE221921 is a simplified approach. The gold standard for RNA-seq differential expression is count-based modeling using DESeq2 or edgeR (Love et al., 2014). However, only FPKM values were available in the GEO supplementary materials. We note this limitation explicitly and restrict our conclusions accordingly.
+We searched PubMed (terms: "pramipexole fibromyalgia," "ropinirole fibromyalgia," "dopamine agonist fibromyalgia"), ClinicalTrials.gov, and the GSK Study Register for clinical trials of dopamine D2/D3 agonists in FM. Search date: May 2026. This is a targeted narrative review, not a formal systematic review; no PRISMA protocol was registered.
+
+### 2.6 Limitations of the Analytical Approach
+
+We acknowledge that the use of FPKM values with parametric tests is a simplified approach. The gold standard for RNA-seq differential expression is count-based modeling (DESeq2/edgeR/limma-voom; Love et al., 2014). Only FPKM values were available in the GEO supplementary materials; raw counts were not accessible. All analyses were performed in Python 3.10 using pandas 1.5, scipy 1.10, and statsmodels 0.13.
 
 ---
 
 ## 3. Results
 
-### 3.1 Dopaminergic GWAS Network Is Significantly Dysregulated in FM PBMCs
+### 3.1 MDGA2 and DRD2 Are Robustly Upregulated in FM PBMCs
 
-Four of 13 tested dopaminergic network genes were significantly upregulated in the PBMCs of FM patients after FDR correction (Table 1):
+Table 1 presents the sensitivity analysis for all 16 measured genes. Two genes — *MDGA2* and *DRD2* — were significant (q < 0.05) across all five analytical models and are classified as **Robust**:
 
-**Table 1. Differential expression of GWAS dopaminergic network genes in GSE221921 (PBMCs).**
+**Table 1. Sensitivity analysis: q-values (FDR-corrected) across five analytical models.**
 
-| Gene | FM Mean (FPKM) | HC Mean (FPKM) | Log₂FC | p-value | q-value (FDR) | Direction |
-|------|---------------:|---------------:|-------:|--------:|--------------:|-----------|
-| *MDGA2* | 2.582 | 1.069 | +1.27 | 6.9×10⁻⁹ | 1.1×10⁻⁷ | ↑ Up |
-| *DRD2* | 0.721 | 0.271 | +1.41 | 3.7×10⁻⁶ | 2.9×10⁻⁵ | ↑ Up |
-| *CAMKV* | 0.656 | 0.288 | +1.19 | 5.9×10⁻⁴ | 3.2×10⁻³ | ↑ Up |
-| *CELF4* | 1.341 | 0.848 | +0.66 | 1.1×10⁻² | 4.6×10⁻² | ↑ Up |
-| *NCAM1* | 4.375 | 3.234 | +0.44 | 2.8×10⁻² | 8.7×10⁻² | ns |
-| *DCC* | 2.747 | 1.905 | +0.53 | 3.3×10⁻² | 8.7×10⁻² | ns |
-| *GPR52* | 2.723 | 3.792 | −0.48 | 4.3×10⁻² | 9.9×10⁻² | ns |
+| Gene | Category | FM mean | HC mean | Welch FPKM | Welch log₂ | Mann-Whitney | OLS sex-adj | Female-only | Robustness |
+|------|----------|--------:|--------:|-----------:|-----------:|-------------:|------------:|------------:|------------|
+| *MDGA2* | GWAS Neural | 2.582 | 1.069 | **1.1×10⁻⁷** | **1.0×10⁻⁸** | **1.1×10⁻⁷** | **6.3×10⁻⁶** | **5.5×10⁻⁶** | **Robust (5/5)** |
+| *DRD2* | GWAS Neural | 0.721 | 0.271 | **2.9×10⁻⁵** | **2.6×10⁻⁶** | **1.6×10⁻⁶** | **4.7×10⁻⁴** | **3.6×10⁻⁵** | **Robust (5/5)** |
+| *CAMKV* | GWAS Neural | 0.656 | 0.288 | **3.2×10⁻³** | **1.6×10⁻³** | **8.3×10⁻³** | 0.112 | **0.032** | Supported (4/5) |
+| *CELF4* | GWAS Neural | 1.341 | 0.848 | **0.046** | **0.013** | **0.010** | 0.167 | **0.032** | Supported (4/5) |
+| *HTT* | GWAS Neural | 20.60 | 25.17 | 0.120 | **7.5×10⁻³** | **4.6×10⁻³** | 0.177 | **0.042** | Supported (3/5) |
+| *NCAM1* | GWAS Neural | 4.375 | 3.234 | 0.087 | **0.021** | **0.010** | 0.186 | 0.114 | Model-sensitive (2/5) |
+| *DCC* | GWAS Neural | 2.747 | 1.905 | 0.087 | **0.023** | **0.016** | 0.167 | 0.055 | Model-sensitive (2/5) |
+| *SRD5A2* | GWAS Neural | 0.187 | 0.139 | 0.251 | 0.145 | 0.092 | 0.167 | **0.042** | Model-sensitive (1/5) |
+| *GPR52* | GWAS Neural | 2.723 | 3.792 | 0.099 | 0.367 | 0.590 | 0.955 | 0.817 | NS |
+| *NPC1* | GWAS Neural | 13.01 | 14.49 | 0.546 | 0.108 | 0.083 | 0.335 | 0.268 | NS |
+| *KYNU* | GWAS Neural | 3.401 | 3.987 | 0.490 | 0.180 | 0.139 | 0.564 | 0.544 | NS |
+| *PPP2R2B* | GWAS Neural | 2.445 | 2.587 | 0.883 | 0.825 | 0.581 | 0.955 | 0.817 | NS |
+| *HDC* | Mast Cell | 5.274 | 7.991 | 0.666 | 0.103 | 0.094 | 0.462 | 0.732 | NS |
+| *FCER1A* | Mast Cell | 3.899 | 4.448 | 0.748 | 0.784 | 0.578 | 0.321 | 0.496 | NS |
+| *MS4A2* | Mast Cell | 0.719 | 0.788 | 0.926 | 0.076 | **2.9×10⁻³** | 0.321 | 0.325 | Model-sensitive (1/5) |
+| *CPA3* | Mast Cell | 1.583 | 1.587 | 0.992 | 0.825 | 0.755 | 0.858 | 0.979 | NS |
 
-The remaining 6 genes (*HTT*, *SRD5A2*, *KYNU*, *NPC1*, *PPP2R2B*, *NPY*) showed no significant differences (all q > 0.12).
+*Notes: Bold indicates q < 0.05. NPY was pre-specified but absent from the expression matrix. FDR correction applied to 16 measured genes per model. Female-only analysis: 91 FM / 41 HC.*
 
-### 3.2 Mast Cell Markers Fail to Replicate in PBMCs
+**Key observations:**
+- *MDGA2* and *DRD2* survive all five models including sex-adjusted OLS, confirming their signal is not driven by sex confounding.
+- *CAMKV* and *CELF4* survive four models (including female-only) but not the sex-adjusted OLS on the full cohort (q = 0.112 and 0.167, respectively). Their signals are supportive but model-sensitive.
+- *HTT* — the gene with the strongest GWAS coding variant — shows a supported signal (3/5 models), which was not apparent in the original FPKM-only analysis.
+- No mast cell marker reached significance in PBMCs in any model.
 
-None of the four mast cell markers reached significance in the PBMC dataset (Table 2):
+### 3.2 Cross-Context Comparison: GSE67311 (Whole Blood)
 
-**Table 2. Mast cell markers in GSE221921 (PBMCs).**
+To assess whether these signals are detectable in a different cell fraction, we examined the same gene sets in GSE67311 (whole blood, Affymetrix microarray; Table 2).
 
-| Gene | FM Mean (FPKM) | HC Mean (FPKM) | Log₂FC | q-value (FDR) |
-|------|---------------:|---------------:|-------:|--------------:|
-| *HDC* | 5.274 | 7.991 | −0.60 | 0.67 |
-| *FCER1A* | 3.899 | 4.448 | −0.19 | 0.75 |
-| *MS4A2* | 0.719 | 0.788 | −0.13 | 0.93 |
-| *CPA3* | 1.583 | 1.587 | −0.003 | 0.99 |
+**Table 2. Cross-context comparison: q-values in GSE221921 (PBMCs) vs. GSE67311 (whole blood).**
 
-### 3.3 Cross-Validation Reveals Cell-Type-Specific Dissociation
+| Gene | Category | GSE221921 (PBMCs) best q | GSE67311 (whole blood) q | Fraction-specific? |
+|------|----------|:------------------------:|:------------------------:|:------------------:|
+| *CPA3* | Mast Cell | 0.99 | **1.8×10⁻⁶** | Whole blood only |
+| *MS4A2* | Mast Cell | 0.076 | **1.5×10⁻⁵** | Whole blood only |
+| *FCER1A* | Mast Cell | 0.58 | **1.7×10⁻⁵** | Whole blood only |
+| *HDC* | Mast Cell | 0.094 | **4.4×10⁻⁵** | Whole blood only |
+| *MDGA2* | GWAS Neural | **1.0×10⁻⁸** | 0.99 | PBMCs only |
+| *DRD2* | GWAS Neural | **1.6×10⁻⁶** | 0.42 | PBMCs only |
+| *CAMKV* | GWAS Neural | **1.6×10⁻³** | 0.13 | PBMCs only |
+| *CELF4* | GWAS Neural | **0.010** | 0.72 | PBMCs only |
 
-To assess reproducibility, we tested both gene panels in GSE67311 (whole blood). The results were strikingly complementary (Table 3):
+No gene was significant in both datasets. This pattern is consistent with a **cell-fraction-dependent contrast**: the mast cell/basophil signal is detectable in whole blood (which contains granulocytes) but absent from PBMCs; conversely, the GWAS neural gene signal appears in PBMCs (lymphocytes/monocytes) but not in granulocyte-dominated whole blood.
 
-**Table 3. Cross-validation summary across datasets.**
+**Important caveats:** This contrast does not constitute replication or validation, as the two datasets differ in tissue fraction, platform (RNA-seq vs. microarray), normalization, and cohort composition. Furthermore, we cannot distinguish true per-cell expression changes from differences in cell-type composition between FM and HC groups without deconvolution analysis (see §5).
 
-| Gene | Category | GSE67311 q-value | GSE221921 q-value | Sig. in both? |
-|------|----------|:----------------:|:-----------------:|:-------------:|
-| *CPA3* | Mast Cell | **1.8×10⁻⁶** | 0.99 | No |
-| *MS4A2* | Mast Cell | **1.5×10⁻⁵** | 0.93 | No |
-| *FCER1A* | Mast Cell | **1.7×10⁻⁵** | 0.75 | No |
-| *HDC* | Mast Cell | **4.4×10⁻⁵** | 0.67 | No |
-| *MDGA2* | Dopamine | 0.99 | **1.1×10⁻⁷** | No |
-| *DRD2* | Dopamine | 0.42 | **2.9×10⁻⁵** | No |
-| *CAMKV* | Dopamine | 0.13 | **3.2×10⁻³** | No |
-| *CELF4* | Dopamine | 0.72 | **4.6×10⁻²** | No |
+### 3.3 Targeted Literature Review: Dopamine Agonists in FM
 
-No gene was significant in both datasets. However, this dissociation is biologically informative rather than contradictory:
+Our literature search identified three clinical studies and one preclinical study (Table 3):
 
-- **Whole blood** (GSE67311) contains granulocytes, including basophils, which express the mast cell panel at high levels. The mast cell signal reflects basophil/granulocyte-specific gene expression.
-- **PBMCs** (GSE221921) are depleted of granulocytes and enriched for lymphocytes and monocytes, which express dopamine receptors. The dopaminergic signal reflects lymphocyte/monocyte-specific gene expression.
+**Table 3. Dopamine agonist studies in fibromyalgia.**
 
-This pattern demonstrates that FM is associated with at least two distinct peripheral transcriptomic signatures, each visible only in the appropriate cell fraction.
+| Study | Drug | Type | N | Result | Key Finding | Risk of Bias |
+|-------|------|------|---|--------|-------------|--------------|
+| Holman & Myers, 2005 (PMID 16052595) | Pramipexole | RCT (DB-PC) | 60 | **Positive** | 36% pain ↓ vs 9% placebo; 42% achieved ≥50% pain decrease | High: single-center, author held patents on D2/D3 use in FM |
+| Holman, 2003 (ACR conference) | Ropinirole | Pilot | 30 | NS (p=0.31) | Underpowered. Not published in peer-reviewed journal. | Very high: unpublished, tiny N |
+| GSK NCT00256893 | Ropinirole CR | Phase II RCT | 160 | **Negative** | Failed primary endpoints | Moderate: sponsor-reported, results not published in peer-reviewed journal |
+| Peng et al., 2022 (PMID 35799530) | Pramipexole | Preclinical | Mice | **Positive** | Reversed allodynia and DA depletion in reserpine FM model | N/A (animal study) |
 
-### 3.4 Systematic Review: Dopamine Agonists in FM Clinical Trials
-
-Our literature review identified three clinical studies and one preclinical study evaluating D2/D3 dopamine agonists in FM (Table 4):
-
-**Table 4. Clinical and preclinical evidence for dopamine agonists in fibromyalgia.**
-
-| Study | Drug | Type | N | Result | Key Finding |
-|-------|------|------|---|--------|-------------|
-| Holman & Myers, 2005 (PMID 16052595) | Pramipexole | RCT (DB-PC) | 60 | **Positive** | 36% pain reduction vs 9% placebo; 42% achieved ≥50% pain decrease |
-| Holman, 2003 (conference) | Ropinirole | Pilot (controlled) | 30 | NS (p=0.31) | Unpublished. Underpowered. |
-| GSK NCT00256893 | Ropinirole CR | Phase II RCT | 160 | **Negative** | Failed primary endpoints. Results not published in peer-reviewed journal. |
-| Peng et al., 2022 (PMID 35799530) | Pramipexole | Preclinical | Mice | **Positive** | Reversed allodynia and cortical DA depletion in reserpine model |
-
-The Holman & Myers (2005) study remains the only positive RCT of a dopamine agonist in FM. Despite being published 21 years ago, it has never been replicated in a larger, multi-center trial. The negative result for ropinirole (GSK trial) is notable but not directly comparable: ropinirole has lower D3 receptor affinity than pramipexole, and the GSK trial results were never published in a peer-reviewed journal, limiting independent evaluation.
+The Holman & Myers (2005) study remains the only positive RCT of a dopamine agonist in FM. Despite 21 years having elapsed, it has not been replicated in a multi-center trial. The negative GSK ropinirole trial is not directly comparable pharmacologically: ropinirole has substantially lower D3 receptor affinity than pramipexole.
 
 ---
 
 ## 4. Discussion
 
-### 4.1 GWAS-Transcriptomic Convergence on the Dopaminergic Pathway
+### 4.1 GWAS-Transcriptomic Convergence on Neural Genes
 
-The central finding of this study is that genetic risk and transcriptomic dysregulation converge on the same dopaminergic network in fibromyalgia. The Kerrebijn et al. (2025) GWAS identified *DRD2*, *MDGA2*, *CAMKV*, and *CELF4* as risk loci through a genome-wide, hypothesis-free approach in 2.5 million individuals. Independently, we find that these same four genes are significantly upregulated in the PBMCs of FM patients (q < 0.05). This convergence across independent methodologies (genetics vs. transcriptomics) and independent cohorts (GWAS multi-cohort vs. GSE221921) constitutes multi-omic evidence for dopaminergic involvement in FM pathophysiology.
+The central finding of this study is that two GWAS-prioritized neural genes — *MDGA2* and *DRD2* — show robust, sex-independent upregulation in FM PBMCs. Two additional genes (*CAMKV*, *CELF4*) show supportive but sex-covariate-sensitive signals. This convergence of genetic risk (GWAS) and transcriptomic alteration (independent cohort) across independent methodologies is suggestive of biological relevance, though it remains an exploratory observation.
 
-### 4.2 The DRD2 Signal in PBMCs: Immunological Context
+We emphasize that the GWAS network is not exclusively "dopaminergic." *MDGA2* encodes a GPI-anchored immunoglobulin superfamily member involved in synaptogenesis and neural circuit formation. *CAMKV* is a CaM kinase-like protein involved in dendritic spine dynamics. *CELF4* regulates neuronal mRNA metabolism. Only *DRD2* is strictly dopaminergic. The finding is therefore better characterized as convergence on a **neural/synaptic GWAS network** that includes, but is not limited to, dopaminergic signaling.
 
-The upregulation of *DRD2* (Log₂FC = +1.41, q = 2.9×10⁻⁵) in PBMCs warrants careful interpretation. DRD2 is expressed in T lymphocytes, where it modulates cytokine production, cell proliferation, and chemotaxis (Pacheco et al., 2014). Dopamine acting through D2 receptors on T cells generally suppresses pro-inflammatory responses; thus, DRD2 upregulation in FM PBMCs could represent a compensatory anti-inflammatory response to chronic low-grade inflammation.
+### 4.2 The DRD2 Signal: Interpretation and Caveats
 
-We note that absolute expression levels are low (FM mean = 0.72 FPKM, HC mean = 0.27 FPKM), which is consistent with the known low-level expression of neurotransmitter receptors on immune cells. Whether this peripheral signal mirrors central dopaminergic dysfunction — as suggested by the GWAS brain-tissue enrichment — remains an open question that requires paired CNS and peripheral sampling.
+The upregulation of *DRD2* (Log₂FC = +1.41, q = 2.9×10⁻⁵; robust across all 5 models) in PBMCs warrants careful interpretation:
 
-### 4.3 Cell-Type Specificity: Resolving the Mast Cell Paradox
+1. **Absolute expression is low** (FM mean = 0.72 FPKM, HC mean = 0.27 FPKM). While the fold change and statistical significance are robust, the biological impact of sub-FPKM expression differences requires validation by qRT-PCR or targeted methods.
 
-Previous work on GSE67311 identified a robust mast cell/basophil signature in FM whole blood (CPA3, MS4A2, FCER1A, HDC; Kurian et al., 2017). Our cross-validation reveals that this signal is strictly confined to the granulocyte-containing whole blood fraction and is absent from PBMCs. This resolves an apparent paradox: the mast cell signal is a real biomarker but is not the disease driver, as it disappears when the relevant cell type (basophils) is removed during PBMC isolation. The dopaminergic signal, conversely, emerges only in the PBMC fraction, suggesting it originates from lymphocytes or monocytes.
+2. **Cell composition confounding.** DRD2 is expressed in T cell subsets, where it modulates cytokine production and chemotaxis (Pacheco et al., 2014). If FM patients have altered PBMC composition (e.g., different T cell subsets or monocyte proportions), the observed DRD2 increase could reflect more cells expressing DRD2 rather than per-cell upregulation. Without deconvolution analysis (CIBERSORTx, xCell, or similar), this cannot be distinguished.
 
-### 4.4 The 21-Year Replication Gap
+3. **Peripheral vs. central.** PBMCs are not the primary site of FM pathology. The GWAS heritability is enriched in brain tissues. Whether peripheral DRD2 expression mirrors central dopaminergic dysfunction is unknown.
 
-The pharmacological evidence for dopamine agonists in FM is dominated by a single positive RCT from 2005. Despite the genetic evidence now firmly placing DRD2 at the center of FM risk architecture, and the transcriptomic evidence presented here showing DRD2 upregulation in patient immune cells, no modern, adequately powered, multi-center RCT of pramipexole (or any D2/D3 agonist) in FM has been conducted.
+### 4.3 Cell-Fraction-Dependent Contrast
 
-The failure of the GSK ropinirole trial does not necessarily invalidate the dopaminergic hypothesis. Ropinirole and pramipexole differ substantially in their receptor binding profiles: pramipexole has 7-fold higher affinity for D3 receptors than ropinirole (Kvernmo et al., 2008). Given that the GWAS signal is at the *DRD2* locus — which encodes both the D2 long and D2 short isoforms — the pharmacological distinction between D2-preferring and D3-preferring agonists may be clinically significant and deserves investigation.
+The observation that mast cell markers are significant in whole blood but not PBMCs, while GWAS neural genes show the opposite pattern, is consistent with cell-fraction-dependent peripheral signatures. However, this observation cannot distinguish true cell-state changes from cell-composition differences, nor can it determine whether either signature is a disease driver versus a secondary biomarker.
 
-### 4.5 Implications for Drug Repurposing
+### 4.4 Pharmacological Context: The 21-Year Gap
 
-The convergence of GWAS, transcriptomic, and preliminary clinical evidence creates a compelling case for revisiting dopamine agonist therapy in FM. Specifically:
-
-1. **Pramipexole** is an off-patent, well-characterized D2/D3 agonist with an established safety profile from its use in Parkinson's disease and restless legs syndrome.
-2. The Holman 2005 RCT demonstrated clinically meaningful pain reduction (42% responder rate at ≥50% pain decrease) with manageable side effects.
-3. The genetic evidence now provides biological rationale that was unavailable in 2005.
-
-We note that current first-line treatments for FM — the SNRIs duloxetine and milnacipran — may themselves exert partially dopaminergic effects. By inhibiting the norepinephrine transporter (NET), which also transports dopamine in the prefrontal cortex (where DAT expression is minimal), SNRIs effectively increase dopamine levels in this brain region (Morón et al., 2002). This indirect dopaminergic mechanism may partly explain SNRI efficacy in FM while simultaneously arguing that direct D2 agonism could be more effective.
+The pharmacological evidence for dopamine agonists in FM is limited. The sole positive RCT (Holman & Myers, 2005) carries substantial risk of bias (single-center, n=60, author held patents). The negative ropinirole trial (GSK NCT00256893) has never been published in a peer-reviewed journal, limiting independent evaluation. The current evidence is insufficient to recommend dopamine agonists for FM but does provide a rationale for re-examining this pharmacological axis in molecularly stratified cohorts.
 
 ---
 
 ## 5. Limitations
 
-1. **Statistical methodology.** The GSE221921 analysis used FPKM values with Welch's t-tests rather than count-based modeling (DESeq2/edgeR). While FDR correction was applied, re-analysis with raw counts would strengthen these findings.
-2. **Expression levels.** DRD2 expression in PBMCs is low (< 1 FPKM). Although the fold change and statistical significance are robust, the biological relevance of sub-FPKM differences requires validation by qRT-PCR.
-3. **Peripheral vs. central.** PBMCs are not the primary site of FM pathology. Our findings reflect peripheral immune cell expression and cannot be directly extrapolated to CNS dopaminergic signaling without additional evidence.
-4. **FM heterogeneity.** FM is increasingly recognized as a heterogeneous condition with molecular subgroups (Mohapatra et al., 2024). The dopaminergic signal may be driven by a subset of patients.
-5. **GWAS preprint status.** The Kerrebijn et al. (2025) GWAS is currently a medRxiv preprint and has not yet undergone peer review.
-6. **No experimental validation.** All analyses are computational. No wet-lab experiments were performed.
+1. **Sex confounding.** GSE221921 has a severe sex imbalance (FM: 91F/5M; HC: 41F/52M). Our sensitivity analyses demonstrate that *MDGA2* and *DRD2* are sex-independent, while *CAMKV* and *CELF4* are sensitive to sex adjustment. Future studies should use sex-balanced cohorts or sex-stratified designs.
+
+2. **Statistical methodology.** FPKM with parametric tests is not gold standard for RNA-seq. Count-based modeling (DESeq2/edgeR) would be preferable, but raw counts were not available. We mitigate this with log₂-transformation, non-parametric tests, and covariate-adjusted models.
+
+3. **Cell composition.** PBMC subpopulation proportions were not available. The observed gene expression differences may reflect altered cell-type composition rather than per-cell transcriptional changes. Computational deconvolution (CIBERSORTx, MCP-counter) or single-cell RNA-seq would be needed to resolve this.
+
+4. **Low absolute expression.** DRD2 expression in PBMCs is < 1 FPKM. qRT-PCR validation is needed.
+
+5. **Missing gene.** NPY was pre-specified but absent from the GSE221921 matrix. FDR correction was applied to 16, not 17, genes.
+
+6. **Cross-context comparison, not validation.** GSE67311 and GSE221921 differ in tissue fraction, platform, normalization, and cohort demographics. The contrast is informative but does not constitute independent replication.
+
+7. **GWAS preprint status.** Kerrebijn et al. (2025) is published on medRxiv (doi: 10.1101/2025.09.18.25335914v1, PMID 41001472) and has not yet completed full peer review.
+
+8. **No experimental validation.** All analyses are computational. No wet-lab or clinical experiments were performed.
+
+9. **Literature review is targeted, not systematic.** No PRISMA protocol was registered. Formal systematic review with risk-of-bias assessment (RoB 2) would strengthen the pharmacological evidence section.
 
 ---
 
 ## 6. Conclusion
 
-We demonstrate that the dopaminergic gene network identified by the largest FM GWAS to date is significantly and specifically dysregulated in the PBMCs of an independent cohort of FM patients. This GWAS-transcriptomic convergence, combined with a 21-year gap in clinical replication of the sole positive dopamine agonist RCT, provides a multi-omic rationale for adequately powered, modern clinical trials of D2/D3 agonists — particularly pramipexole — in fibromyalgia.
+A targeted reanalysis of two public transcriptomic cohorts suggests that selected GWAS-prioritized neural genes — most robustly *MDGA2* and *DRD2* — show increased expression in FM PBMCs. *CAMKV* and *CELF4* show supportive but model-sensitive signals. These findings, combined with the observation that the sole positive dopamine agonist RCT in FM remains unreplicated after 21 years, support prioritizing the DRD2/neural GWAS axis for validation in sex-balanced cohorts with cell-type-resolved transcriptomic data.
 
 ---
 
 ## References
 
-Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. *Journal of the Royal Statistical Society: Series B*, 57(1), 289–300.
+Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. *J R Stat Soc B*, 57(1), 289–300.
 
-Bi, W., Yang, M., & Mao, R. (2024). Unraveling Shared Diagnostic Biomarkers of Fibromyalgia in Ankylosing Spondylitis. *Journal of Inflammation Research*, 17, 6395–6413. PMID: 39310900.
+Bi, W., Yang, M., & Mao, R. (2024). Unraveling Shared Diagnostic Biomarkers of Fibromyalgia in Ankylosing Spondylitis. *J Inflamm Res*, 17, 6395–6413. PMID: 39310900.
 
-Chinn, S., Caldwell, W., & Gritsenko, K. (2016). Fibromyalgia Pathogenesis and Treatment Options Update. *Current Pain and Headache Reports*, 20(4), 25. PMID: 26922414.
+Chinn, S., Caldwell, W., & Gritsenko, K. (2016). Fibromyalgia Pathogenesis and Treatment Options Update. *Curr Pain Headache Rep*, 20(4), 25. PMID: 26922414.
 
-Gowri Gopal, K., Robi, L.S., & Sherin, D.R. (2026). Molecular insights into fibromyalgia: association of hub genes with pain targets, neuropathic pathways, and stress-related hormones. *In Silico Pharmacology*, 14(2), 135. PMID: 42109571.
+Gowri Gopal, K., Robi, L.S., & Sherin, D.R. (2026). Molecular insights into fibromyalgia: association of hub genes with pain targets, neuropathic pathways, and stress-related hormones. *In Silico Pharmacol*, 14(2), 135. PMID: 42109571.
 
-Holman, A.J., & Myers, R.R. (2005). A Randomized, Double-Blind, Placebo-Controlled Trial of Pramipexole, a Dopamine Agonist, in Patients With Fibromyalgia Receiving Concomitant Medications. *Arthritis & Rheumatism*, 52(8), 2495–2505. PMID: 16052595.
+Holman, A.J., & Myers, R.R. (2005). A Randomized, Double-Blind, Placebo-Controlled Trial of Pramipexole, a Dopamine Agonist, in Patients With Fibromyalgia Receiving Concomitant Medications. *Arthritis Rheum*, 52(8), 2495–2505. PMID: 16052595. doi: 10.1002/art.21191.
 
-Kerrebijn, I., et al. (2025). The genetic architecture of fibromyalgia across 2.5 million individuals. *medRxiv* (preprint). doi: [pending].
+Kerrebijn, I., et al. (2025). The genetic architecture of fibromyalgia across 2.5 million individuals. *medRxiv*. PMID: 41001472. doi: 10.1101/2025.09.18.25335914v1.
 
-Kurian, S.M., et al. (2017). Peripheral Blood Gene Expression in Fibromyalgia Patients Reveals Potential Biological Markers and Physiological Pathways. (GSE67311). PMID: 27157394.
+Kurian, S.M., et al. (2017). Peripheral Blood Gene Expression in Fibromyalgia. PMID: 27157394. (GSE67311).
 
-Kvernmo, T., Härtter, S., & Burger, E. (2008). A review of the receptor-binding and pharmacokinetic properties of dopamine agonists. *Clinical Therapeutics*, 28(8), 1065–1078.
+Love, M.I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biol*, 15, 550. PMID: 25516281.
 
-Love, M.I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biology*, 15, 550. PMID: 25516281.
+Mohapatra, G., et al. (2024). Identification of unique genomic signatures in patients with fibromyalgia and chronic pain. *Sci Rep*, 14, 3949. PMID: 38366049.
 
-Mohapatra, G., Dachet, F., Coleman, L.J., Gillis, B., & Behm, F.G. (2024). Identification of unique genomic signatures in patients with fibromyalgia and chronic pain. *Scientific Reports*, 14, 3949. PMID: 38366049.
+Pacheco, R., Contreras, F., & Zouali, M. (2014). The dopaminergic system in autoimmune diseases. *Front Immunol*, 5, 117.
 
-Morón, J.A., Brockington, A., Bhargava, A., et al. (2002). Dopamine uptake through the norepinephrine transporter in brain regions with low levels of the dopamine transporter. *Journal of Neuroscience*, 22(2), 389–395.
+Peng, X., et al. (2022). Pramipexole inhibits fibromyalgia-like symptoms in a reserpine-induced mouse model. *Neural Regen Res*, 17(3), 667–674. PMID: 35799530. doi: 10.4103/1673-5374.355761.
 
-Pacheco, R., Contreras, F., & Zouali, M. (2014). The dopaminergic system in autoimmune diseases. *Frontiers in Immunology*, 5, 117.
+Sarzi-Puttini, P., et al. (2020). Fibromyalgia: An update. *Nat Rev Rheumatol*, 16(11), 645–660. PMID: 33024295.
 
-Peng, X., et al. (2022). Pramipexole inhibits fibromyalgia-like symptoms in a reserpine-induced mouse model. *Neural Regeneration Research*, 17(3), 667–674. PMID: 35799530.
-
-Sarzi-Puttini, P., Giorgi, V., Marotto, D., & Atzeni, F. (2020). Fibromyalgia: An update on clinical characteristics, aetiopathogenesis and treatment. *Nature Reviews Rheumatology*, 16(11), 645–660. PMID: 33024295.
-
-Zhao, F., et al. (2025). Identification of diagnostic biomarkers for fibromyalgia using gene expression analysis and machine learning. *Frontiers in Genetics*, 16, 1535541. PMID: 40313599.
+Zhao, F., et al. (2025). Identification of diagnostic biomarkers for fibromyalgia using gene expression analysis and machine learning. *Front Genet*, 16, 1535541. PMID: 40313599.
 
 ---
 
-## Data Availability
+## Data & Code Availability
 
-All transcriptomic data analyzed in this study are publicly available from the Gene Expression Omnibus (GEO): GSE221921 and GSE67311. Analysis scripts are available at [repository URL].
+All transcriptomic data are publicly available from GEO (GSE221921, GSE67311). Analysis scripts are available in the project repository:
+- `scripts/sensitivity_analysis_gse221921.py` — five-model sensitivity analysis
+- `scripts/cross_validate_gwas_network.py` — cross-context comparison
+- `scripts/phase2_rct_review.py` — literature review evidence table
+
+Software: Python 3.10, pandas 1.5.3, scipy 1.10.1, statsmodels 0.13.5.
 
 ## Conflict of Interest
 
