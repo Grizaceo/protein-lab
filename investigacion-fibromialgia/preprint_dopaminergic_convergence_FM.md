@@ -102,29 +102,29 @@ Table 1 presents the sensitivity analysis for all 16 measured genes. Two genes �
 *Notes: Bold indicates q < 0.05. NPY was pre-specified but absent from the expression matrix. FDR correction applied to 16 measured genes per model. Female-only analysis: 91 FM / 41 HC.*
 
 **Key observations:**
-- *MDGA2* and *DRD2* survive all five models including sex-adjusted OLS, confirming their signal is not driven by sex confounding.
+- *MDGA2* and *DRD2* survive all five models including sex-adjusted OLS, suggesting that their signal is not solely explained by the severe sex imbalance in the cohort.
 - *CAMKV* and *CELF4* survive four models (including female-only) but not the sex-adjusted OLS on the full cohort (q = 0.112 and 0.167, respectively). Their signals are supportive but model-sensitive.
 - *HTT* — the gene with the strongest GWAS coding variant — shows a supported signal (3/5 models), which was not apparent in the original FPKM-only analysis.
-- No mast cell marker reached significance in PBMCs in any model.
+- No mast cell marker shows a robust PBMC signal; *MS4A2* reaches significance only in the Mann-Whitney model and is therefore classified as model-sensitive rather than replicated across analytical frameworks.
 
 ### 3.2 Cross-Context Comparison: GSE67311 (Whole Blood)
 
 To assess whether these signals are detectable in a different cell fraction, we examined the same gene sets in GSE67311 (whole blood, Affymetrix microarray; Table 2).
 
-**Table 2. Cross-context comparison: q-values in GSE221921 (PBMCs) vs. GSE67311 (whole blood).**
+**Table 2. Cross-context comparison: robustness pattern in GSE221921 (PBMCs) vs. q-values in GSE67311 (whole blood).**
 
-| Gene | Category | GSE221921 (PBMCs) best q | GSE67311 (whole blood) q | Fraction-specific? |
-|------|----------|:------------------------:|:------------------------:|:------------------:|
-| *CPA3* | Mast Cell | 0.99 | **1.8×10⁻⁶** | Whole blood only |
-| *MS4A2* | Mast Cell | 0.076 | **1.5×10⁻⁵** | Whole blood only |
-| *FCER1A* | Mast Cell | 0.58 | **1.7×10⁻⁵** | Whole blood only |
-| *HDC* | Mast Cell | 0.094 | **4.4×10⁻⁵** | Whole blood only |
-| *MDGA2* | GWAS Neural | **1.0×10⁻⁸** | 0.99 | PBMCs only |
-| *DRD2* | GWAS Neural | **1.6×10⁻⁶** | 0.42 | PBMCs only |
-| *CAMKV* | GWAS Neural | **1.6×10⁻³** | 0.13 | PBMCs only |
-| *CELF4* | GWAS Neural | **0.010** | 0.72 | PBMCs only |
+| Gene | Category | GSE221921 (PBMCs) robustness | GSE67311 (whole blood) q | Fraction-specific? |
+|------|----------|:----------------------------:|:------------------------:|:------------------:|
+| *CPA3* | Mast Cell | NS (0/5) | **1.8×10⁻⁶** | Whole blood only |
+| *MS4A2* | Mast Cell | Model-sensitive (1/5) | **1.5×10⁻⁵** | Whole blood only |
+| *FCER1A* | Mast Cell | NS (0/5) | **1.7×10⁻⁵** | Whole blood only |
+| *HDC* | Mast Cell | NS (0/5) | **4.4×10⁻⁵** | Whole blood only |
+| *MDGA2* | GWAS Neural | Robust (5/5) | 0.99 | PBMCs only |
+| *DRD2* | GWAS Neural | Robust (5/5) | 0.42 | PBMCs only |
+| *CAMKV* | GWAS Neural | Supported (4/5) | 0.13 | PBMCs only |
+| *CELF4* | GWAS Neural | Supported (4/5) | 0.72 | PBMCs only |
 
-No gene was significant in both datasets. This pattern is consistent with a **cell-fraction-dependent contrast**: the mast cell/basophil signal is detectable in whole blood (which contains granulocytes) but absent from PBMCs; conversely, the GWAS neural gene signal appears in PBMCs (lymphocytes/monocytes) but not in granulocyte-dominated whole blood.
+No gene was significant in both datasets. This pattern is consistent with a **cell-fraction-dependent contrast**: the mast cell/basophil signal is detectable in whole blood (which contains granulocytes) but absent from PBMCs; conversely, the GWAS neural gene signal appears in PBMCs (lymphocytes/monocytes) but not in granulocyte-containing whole blood.
 
 **Important caveats:** This contrast does not constitute replication or validation, as the two datasets differ in tissue fraction, platform (RNA-seq vs. microarray), normalization, and cohort composition. Furthermore, we cannot distinguish true per-cell expression changes from differences in cell-type composition between FM and HC groups without deconvolution analysis (see §5).
 
@@ -149,7 +149,7 @@ The Holman & Myers (2005) study remains the only positive RCT of a dopamine agon
 
 ### 4.1 GWAS-Transcriptomic Convergence on Neural Genes
 
-The central finding of this study is that two GWAS-prioritized neural genes — *MDGA2* and *DRD2* — show robust, sex-independent upregulation in FM PBMCs. Two additional genes (*CAMKV*, *CELF4*) show supportive but sex-covariate-sensitive signals. This convergence of genetic risk (GWAS) and transcriptomic alteration (independent cohort) across independent methodologies is suggestive of biological relevance, though it remains an exploratory observation.
+The central finding of this study is that two GWAS-prioritized neural genes — *MDGA2* and *DRD2* — show robust upregulation across multiple analytical models in FM PBMCs, including sex-adjusted and female-only sensitivity analyses. Two additional genes (*CAMKV*, *CELF4*) show supportive but sex-covariate-sensitive signals. This convergence of genetic risk (GWAS) and transcriptomic alteration (independent cohort) across independent methodologies is suggestive of biological relevance, though it remains an exploratory observation.
 
 We emphasize that the GWAS network is not exclusively "dopaminergic." *MDGA2* encodes a GPI-anchored immunoglobulin superfamily member involved in synaptogenesis and neural circuit formation. *CAMKV* is a CaM kinase-like protein involved in dendritic spine dynamics. *CELF4* regulates neuronal mRNA metabolism. Only *DRD2* is strictly dopaminergic. The finding is therefore better characterized as convergence on a **neural/synaptic GWAS network** that includes, but is not limited to, dopaminergic signaling.
 
@@ -165,17 +165,21 @@ The upregulation of *DRD2* (Log₂FC = +1.41, q = 2.9×10⁻⁵; robust across a
 
 ### 4.3 Cell-Fraction-Dependent Contrast
 
-The observation that mast cell markers are significant in whole blood but not PBMCs, while GWAS neural genes show the opposite pattern, is consistent with cell-fraction-dependent peripheral signatures. However, this observation cannot distinguish true cell-state changes from cell-composition differences, nor can it determine whether either signature is a disease driver versus a secondary biomarker.
+The observation that mast cell markers are significant in whole blood but not PBMCs, while GWAS neural genes show the opposite pattern, is consistent with cell-fraction-dependent peripheral signatures. However, this observation cannot distinguish true cell-state changes from cell-composition differences, nor can it determine whether either signature is a disease driver versus a secondary biomarker. The isolated Mann-Whitney signal for *MS4A2* in PBMCs underscores this point: weak, model-specific peripheral signals should not be overinterpreted as robust transcriptional convergence.
 
 ### 4.4 Pharmacological Context: The 21-Year Gap
 
 The pharmacological evidence for dopamine agonists in FM is limited. The sole positive RCT (Holman & Myers, 2005) carries substantial risk of bias (single-center, n=60, author held patents). The negative ropinirole trial (GSK NCT00256893) has never been published in a peer-reviewed journal, limiting independent evaluation. The current evidence is insufficient to recommend dopamine agonists for FM but does provide a rationale for re-examining this pharmacological axis in molecularly stratified cohorts.
 
+### 4.5 Practical Next Steps for Validation
+
+The present analysis supports a staged validation strategy rather than immediate therapeutic inference. First, the *MDGA2* and *DRD2* PBMC signals should be retested in sex-balanced bulk cohorts, ideally with raw counts enabling limma-voom or DESeq2-based modeling. Second, orthogonal validation by qRT-PCR or targeted transcript quantification is needed because *DRD2* absolute expression is low. Third, cell-composition-aware analyses (e.g., CIBERSORTx, xCell, MCP-counter, or single-cell RNA-seq) are required to determine whether the observed differences reflect altered cell proportions or per-cell transcriptional regulation. Finally, any future pharmacological work should be framed as a stratified follow-up to this neural/GWAS signal rather than as proof that dopamine agonism is an established FM treatment strategy.
+
 ---
 
 ## 5. Limitations
 
-1. **Sex confounding.** GSE221921 has a severe sex imbalance (FM: 91F/5M; HC: 41F/52M). Our sensitivity analyses demonstrate that *MDGA2* and *DRD2* are sex-independent, while *CAMKV* and *CELF4* are sensitive to sex adjustment. Future studies should use sex-balanced cohorts or sex-stratified designs.
+1. **Sex confounding.** GSE221921 has a severe sex imbalance (FM: 91F/5M; HC: 41F/52M). Our sensitivity analyses suggest that *MDGA2* and *DRD2* are not solely explained by sex imbalance, while *CAMKV* and *CELF4* are sensitive to sex adjustment. Residual confounding remains possible, and future studies should use sex-balanced cohorts or sex-stratified designs.
 
 2. **Statistical methodology.** FPKM with parametric tests is not gold standard for RNA-seq. Count-based modeling (DESeq2/edgeR) would be preferable, but raw counts were not available. We mitigate this with log₂-transformation, non-parametric tests, and covariate-adjusted models.
 
@@ -197,7 +201,7 @@ The pharmacological evidence for dopamine agonists in FM is limited. The sole po
 
 ## 6. Conclusion
 
-A targeted reanalysis of two public transcriptomic cohorts suggests that selected GWAS-prioritized neural genes — most robustly *MDGA2* and *DRD2* — show increased expression in FM PBMCs. *CAMKV* and *CELF4* show supportive but model-sensitive signals. These findings, combined with the observation that the sole positive dopamine agonist RCT in FM remains unreplicated after 21 years, support prioritizing the DRD2/neural GWAS axis for validation in sex-balanced cohorts with cell-type-resolved transcriptomic data.
+A targeted reanalysis of two public transcriptomic cohorts suggests that selected GWAS-prioritized neural genes — most robustly *MDGA2* and *DRD2* — show increased expression in FM PBMCs across multiple analytical models. *CAMKV* and *CELF4* show supportive but model-sensitive signals, whereas the mast cell panel remains largely restricted to whole blood. These findings, combined with the observation that the sole positive dopamine agonist RCT in FM remains unreplicated after 21 years, support prioritizing the DRD2/neural GWAS axis for validation in sex-balanced cohorts with cell-type-resolved transcriptomic data and orthogonal experimental confirmation.
 
 ---
 
@@ -235,8 +239,13 @@ Zhao, F., et al. (2025). Identification of diagnostic biomarkers for fibromyalgi
 
 All transcriptomic data are publicly available from GEO (GSE221921, GSE67311). Analysis scripts are available in the project repository:
 - `scripts/sensitivity_analysis_gse221921.py` — five-model sensitivity analysis
-- `scripts/cross_validate_gwas_network.py` — cross-context comparison
+- `scripts/cross_context_gwas_neural_genes.py` — cross-context comparison of GWAS-prioritized neural genes vs. mast cell markers across PBMC and whole-blood datasets
 - `scripts/phase2_rct_review.py` — literature review evidence table
+
+Representative derived tables include:
+- `analisis/sensitivity_analysis_GSE221921.csv` — five-model robustness table for PBMC reanalysis
+- `analisis/cross_context_gwas_neural_genes.csv` — cross-context comparison table used for the PBMC vs. whole-blood contrast
+- `analisis/RCT_dopamine_agonists_FM.csv` — targeted literature review evidence table
 
 Software: Python 3.10, pandas 1.5.3, scipy 1.10.1, statsmodels 0.13.5.
 

@@ -8,12 +8,12 @@ gse67311_file  = f"{base}/GSE67311_DEGs_all_named.csv"
 gse221921_file = f"{base}/geo/PBMC_FM_96patients_93controls/GSE221921_FM_ProcessedData.xlsx"
 out_dir        = f"{base}/../analisis"
 
-# ── Gene lists (GWAS Kerrebijn 2025 – dopamine network) ───────────────────
+# ── Gene lists (GWAS Kerrebijn 2025 – neural/synaptic prioritized genes) ──
 mast_cell_genes   = ['CPA3', 'MS4A2', 'FCER1A', 'HDC']
-dopamine_network  = ['DRD2', 'NCAM1', 'GPR52', 'CAMKV', 'CELF4',
+gwas_neural_genes = ['DRD2', 'NCAM1', 'GPR52', 'CAMKV', 'CELF4',
                      'DCC', 'MDGA2', 'NPY', 'KYNU', 'SRD5A2',
                      'PPP2R2B', 'NPC1', 'HTT']
-all_genes = mast_cell_genes + dopamine_network
+all_genes = mast_cell_genes + gwas_neural_genes
 
 # ══════════════════════════════════════════════════════════════════════════
 # DATASET 1: GSE67311 (whole blood, microarray, 70 FM + 70 HC)
@@ -41,7 +41,7 @@ gse67_hits = gse67_hits.copy()
 gse67_hits['q_value (FDR)'] = qvals
 gse67_hits['Significant'] = qvals < 0.05
 gse67_hits['Category'] = gse67_hits['gene_symbol'].apply(
-    lambda g: 'Mast Cell' if g in mast_cell_genes else 'Dopamine')
+    lambda g: 'Mast Cell' if g in mast_cell_genes else 'GWAS Neural')
 
 result67 = (gse67_hits[['gene_symbol', 'Category',
                          'log2FC', 'p_value', 'q_value (FDR)', 'Significant']]
@@ -97,7 +97,7 @@ for gene in all_genes:
         log2fc = np.log2(fm_v.mean() + 1e-6) - np.log2(hc_v.mean() + 1e-6)
         rows221.append({
             'gene_symbol': gene,
-            'Category': 'Mast Cell' if gene in mast_cell_genes else 'Dopamine',
+            'Category': 'Mast Cell' if gene in mast_cell_genes else 'GWAS Neural',
             'FM_mean': round(fm_v.mean(), 3),
             'HC_mean': round(hc_v.mean(), 3),
             'log2FC': round(log2fc, 3),
@@ -112,10 +112,10 @@ df221_res = df221_res.sort_values('p_value')
 print(df221_res.to_string(index=False))
 
 # ══════════════════════════════════════════════════════════════════════════
-# CROSS-VALIDATION SUMMARY
+# CROSS-CONTEXT SUMMARY
 # ══════════════════════════════════════════════════════════════════════════
 print("\n" + "=" * 65)
-print("CROSS-VALIDATION SUMMARY")
+print("CROSS-CONTEXT SUMMARY")
 print("=" * 65)
 
 sig67  = set(result67[result67['Significant']]['gene_symbol'])
@@ -148,6 +148,12 @@ combined = pd.merge(
     on='gene_symbol', how='outer'
 ).sort_values('q_221921')
 
-out_path = f"{out_dir}/cross_validation_GWAS_network.csv"
+out_path = f"{out_dir}/cross_context_gwas_neural_genes.csv"
 combined.to_csv(out_path, index=False)
+
+# Legacy compatibility alias (same content, deprecated filename)
+legacy_out_path = f"{out_dir}/cross_validation_GWAS_network.csv"
+combined.to_csv(legacy_out_path, index=False)
+
 print(f"\nFull table saved → {out_path}")
+print(f"Legacy compatibility copy → {legacy_out_path}")
