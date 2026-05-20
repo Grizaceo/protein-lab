@@ -91,7 +91,8 @@ import pandas as pd
 
 df = pd.DataFrame(rct_evidence)
 
-out_path = "/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/analisis/RCT_dopamine_agonists_FM.csv"
+import pathlib
+out_path = str(pathlib.Path(__file__).resolve().parent.parent / "analisis" / "RCT_dopamine_agonists_FM.csv")
 df.to_csv(out_path, index=False)
 
 print("=" * 70)

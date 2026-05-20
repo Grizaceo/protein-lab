@@ -3,7 +3,8 @@ import numpy as np
 from statsmodels.stats.multitest import multipletests
 
 # ── Paths ──────────────────────────────────────────────────────────────────
-base = "/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/datos"
+import pathlib
+base = str(pathlib.Path(__file__).resolve().parent.parent / "datos")
 gse67311_file  = f"{base}/GSE67311_DEGs_all_named.csv"
 gse221921_file = f"{base}/geo/PBMC_FM_96patients_93controls/GSE221921_FM_ProcessedData.xlsx"
 out_dir        = f"{base}/../analisis"

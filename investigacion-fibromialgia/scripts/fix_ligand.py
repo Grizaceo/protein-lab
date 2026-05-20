@@ -3,7 +3,8 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 import urllib.request
 
-base_dir = "/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/datos/pdb"
+import pathlib
+base_dir = str(pathlib.Path(__file__).resolve().parent.parent / "datos" / "pdb")
 native_pdb = os.path.join(base_dir, "bromocriptine_native.pdb")
 dock_sdf = os.path.join(base_dir, "bromocriptine_clean.sdf")
 

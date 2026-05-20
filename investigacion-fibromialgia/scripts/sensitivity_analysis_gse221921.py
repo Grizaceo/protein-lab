@@ -13,9 +13,10 @@ import statsmodels.api as sm
 warnings.filterwarnings('ignore')
 
 # ── Config ─────────────────────────────────────────────────────────────────
-GEO_DIR = "/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/datos/geo/PBMC_FM_96patients_93controls"
+import pathlib
+GEO_DIR = str(pathlib.Path(__file__).resolve().parent.parent / "datos" / "geo" / "PBMC_FM_96patients_93controls")
 DATA_FILE = os.path.join(GEO_DIR, "GSE221921_FM_ProcessedData.xlsx")
-OUT_DIR = "/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/analisis"
+OUT_DIR = str(pathlib.Path(__file__).resolve().parent.parent / "analisis")
 
 mast_cell_genes  = ['CPA3', 'MS4A2', 'FCER1A', 'HDC']
 gwas_neural_genes = ['DRD2', 'NCAM1', 'GPR52', 'CAMKV', 'CELF4',

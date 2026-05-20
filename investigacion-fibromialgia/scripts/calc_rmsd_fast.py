@@ -2,7 +2,8 @@ import os
 import numpy as np
 from rdkit import Chem
 
-base_dir = "/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/datos/pdb"
+import pathlib
+base_dir = str(pathlib.Path(__file__).resolve().parent.parent / "datos" / "pdb")
 native_pdb = os.path.join(base_dir, "bromocriptine_native.pdb")
 docked_sdf = os.path.join(base_dir, "bromocriptine_docked1.sdf")
 

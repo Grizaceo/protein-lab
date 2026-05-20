@@ -1,7 +1,8 @@
 import os
 import GEOparse
 
-geo_dir = "/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/datos/geo/PBMC_FM_96patients_93controls"
+import pathlib
+geo_dir = str(pathlib.Path(__file__).resolve().parent.parent / "datos" / "geo" / "PBMC_FM_96patients_93controls")
 os.makedirs(geo_dir, exist_ok=True)
 
 try:

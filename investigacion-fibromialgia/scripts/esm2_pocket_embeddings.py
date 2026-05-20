@@ -3,10 +3,11 @@ import torch
 import esm
 from Bio.PDB import PDBParser
 
-base_dir = "/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/datos/pdb"
+import pathlib
+base_dir = str(pathlib.Path(__file__).resolve().parent.parent / "datos" / "pdb")
 drd2_pdb = os.path.join(base_dir, "6vms_chainR_drd2.pdb")
 mor_pdb = os.path.join(base_dir, "5C1M_MOR.pdb") # Use 5C1M as MOR reference
-out_dir = "/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/analisis/esm2"
+out_dir = str(pathlib.Path(__file__).resolve().parent.parent / "analisis" / "esm2")
 
 os.makedirs(out_dir, exist_ok=True)
 
