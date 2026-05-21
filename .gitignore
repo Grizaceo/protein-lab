@@ -40,3 +40,23 @@ archive/
 # Generated outputs (keep tracked manually)
 generated/
 automated_lab/results/
+
+# Logs and outputs of sessions
+*.log
+esm2_embeddings.log
+
+# Heavy data — use Git LFS or Zenodo
+target_embeddings.json
+pocket_druggability_table.csv
+*esm2_drd2_matrix*.json
+*mammal_binary_drd2*.json
+*mammal_drd2_panel*.json
+RESULTADOS_MAMMAL_DTI*.json
+
+# Binary PDFs (keep source markdown tracked)
+preprint_*.pdf
+
+# Structural biological binaries
+*.pdb
+*.cif
+*.mmcif
