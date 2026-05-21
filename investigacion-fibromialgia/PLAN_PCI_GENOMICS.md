@@ -217,3 +217,39 @@ El manuscrito está científicamente listo. El framing, las limitaciones, y la s
 **No enviar a PCI hasta tener los 4 ítems anteriores resueltos.**
 
 El siguiente paso inmediato es la **Fase 0**: publicar el repositorio de scripts en GitHub y obtener el DOI de Zenodo.
+
+---
+
+## 11) Actualización post-CROSS_CONTEXT_RESOLUTION (2026-05-22)
+
+### Hallazgo clave
+
+El análisis cross-context (ver `analisis/CROSS_CONTEXT_RESOLUTION.md`) determinó que:
+
+**La divergencia DRD2-PBMCs vs Mastocitos-sangre entera es biología real tejido-específica, NO artefacto.**
+
+Evidencia:
+- DRD2 tiene expresión documentada en PBMCs (Kirillova 2008, McKhann 2003)
+- La señal dopaminérgica tiene respaldo PET SNC (Wood 2007, PMID 17610577)
+- La señal de mastocitos tiene respaldo histológico (Blanco 2010, PMID 20428906)
+- La no-replicación cruzada es esperada por composición celular diferente
+- NO existe un tercer dataset de PBMCs FM con n suficiente para replicación (limitación estructural del campo)
+
+### Impacto en el preprint
+
+**El preprint es MÁS fuerte de lo que pensábamos.** La divergencia cross-context es un hallazgo, no un defecto.
+
+**Acciones recomendadas:**
+1. Agregar párrafo en discusión sobre especificidad celular (ver §7.1 de CROSS_CONTEXT_RESOLUTION.md)
+2. Agregar limitación sobre falta de deconvolución celular (ver §7.2)
+3. NO cambiar resultados — están bien como están
+
+### Estado actualizado de blockers
+
+| Blocker | Estado |
+|---------|--------|
+| GitHub + release | ✅ |
+| Zenodo DOI | ✅ |
+| bioRxiv | ❌ Pendiente |
+| PDF numerado | ❌ Pendiente |
+| Cross-context resuelto | ✅ (2026-05-22) |
