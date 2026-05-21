@@ -1,0 +1,29 @@
+id: gse221921-sensitivity-v1
+lab_id: protein-lab
+objective: "Validate GWAS neural gene DE in FM PBMCs with 5-model sensitivity analysis"
+hypothesis_id: fm-drd2-v1
+inputs:
+  dataset: GSE221921
+  genes: [DRD2, MDGA2, CAMKV, CELF4, NCAM1, GPR52, DCC, KYNU, SRD5A2, PPP2R2B, NPC1, HTT]
+steps:
+  - name: download-data
+    action: data.fetch
+    parameters:
+      source: GEO
+      accession: GSE221921
+    runtime_checks: ["verify-checksum"]
+  - name: sensitivity-analysis
+    action: script.run
+    resource: rtx4060
+    parameters:
+      script: scripts/sensitivity_analysis_gse221921.py
+    depends_on: [download-data]
+    required_capabilities: [lightweight-inference] # lightweight-inference capability from rtx4060 resource
+  - name: cross-context
+    action: script.run
+    parameters:
+      script: scripts/cross_context_gwas_neural_genes.py
+    depends_on: [sensitivity-analysis]
+expected_outputs:
+  - analisis/sensitivity_analysis_GSE221921.csv
+  - analisis/cross_context_gwas_neural_genes.csv
