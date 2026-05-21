@@ -1,0 +1,30 @@
+{
+  "id": "fm-drd2-v1",
+  "statement": "DRD2 dopaminergic pathway is pathophysiologically relevant in FM",
+  "rationale": "GWAS 2.5M (Kerrebijn 2025), neuroendocrine challenge (Malt 2003), RCT pramipexole (Holman 2005)",
+  "novelty_claim": "First multi-evidence convergence analysis linking GWAS DRD2 signal to FM transcriptomics",
+  "test_strategy": "Sensitivity analysis of GWAS-prioritized neural genes in GSE221921 PBMCs",
+  "evidence": [
+    {
+      "source_id": "PMID:41001472",
+      "title": "Kerrebijn 2025 FM GWAS 2.5M",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41001472/",
+      "note": ""
+    },
+    {
+      "source_id": "PMID:16052595",
+      "title": "Holman 2005 pramipexole RCT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16052595/",
+      "note": ""
+    },
+    {
+      "source_id": "PMID:12781354",
+      "title": "Malt 2003 buspirone challenge",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12781354/",
+      "note": ""
+    }
+  ],
+  "score": 0.92,
+  "status": "generated",
+  "metadata": {}
+}
