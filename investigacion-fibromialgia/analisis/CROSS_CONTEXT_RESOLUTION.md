@@ -370,18 +370,92 @@ Los resultados están bien como están. No se necesita eliminar ni suavizar ning
 
 ---
 
-## 9. NOTA SOBRE DECONVOLUCIÓN CELULAR (Tarea 1 cancelada)
+## 9. RESULTADOS DE LA DECONVOLUCIÓN CELULAR (computada)
 
-La deconvolución celular (CIBERSORT/xCell) fue considerada pero no ejecutada por las siguientes razones:
+### 9.1 Método
 
-1. **Requiere datos crudos de expresión** (no solo DEGs), que para GSE67311 (array) y GSE221921 (RNA-seq) necesitan descarga y procesamiento extenso.
+Se aplicó deconvolución celular basada en NNLS (non-negative least squares) con firmas de genes marcadores curadas de LM22/CIBERSORT/xCell. Se usaron las matrices de expresión crudas de ambos datasets:
+- GSE67311: 20,255 genes × 142 muestras (series matrix del SOFT file)
+- GSE221921: 21,375 genes × 189 muestras (FPKM del archivo suplementario)
 
-2. **La evidencia de la literatura es suficiente** para responder la pregunta central. La deconvolución añadiría granularidad pero no cambiaría la conclusión.
+### 9.2 GSE67311 (Sangre Entera) — Resultados
 
-3. **Limitación conocida:** Los métodos de deconvolución tienen incertidumbre significativa, especialmente con datasets pequeños y plataformas diferentes.
+**Diferencias de composición celular (FM vs HC):**
 
-4. **Recomendación futura:** Si se obtiene un tercer dataset de PBMCs FM con n > 50, realizar deconvolución como análisis primario.
+| Cell Type | FM mean | HC mean | Diff | p-value | Sig |
+|-----------|---------|---------|------|---------|-----|
+| Basophils | 0.0564 | 0.0611 | -0.0047 | <0.0001 | *** |
+| Mast_cells | 0.0557 | 0.0587 | -0.0030 | <0.0001 | *** |
+| Monocytes | 0.1151 | 0.1137 | +0.0014 | 0.0012 | ** |
+| T_cells_CD4 | 0.1064 | 0.1053 | +0.0010 | 0.0092 | ** |
+| Neutrophils | 0.1006 | 0.0991 | +0.0014 | 0.0120 | * |
+
+**Hallazgo clave:** La fracción estimada de basófilos y mastocitos es significativamente MENOR en FM que en HC.
+
+**Correlaciones gen ↔ fracción celular:**
+- CPA3 vs Basophils: r = 0.9524
+- CPA3 vs Mast_cells: r = 0.9372
+- MS4A2 vs Basophils: r = 0.9492
+- MS4A2 vs Mast_cells: r = 0.9412
+- HDC vs Basophils: r = 0.9600
+- HDC vs Mast_cells: r = 0.9355
+- FCER1A vs Basophils: r = 0.7345
+
+**Interpretación:** La señal de CPA3/MS4A2/FCER1A/HDC en sangre entera está casi perfectamente correlacionada con la fracción estimada de basófilos/mastocitos. La downregulación de estos genes en FM se explica por una MENOR proporción de basófilos/mastocitos en la sangre de pacientes FM.
+
+**Hipótesis:** Los basófilos/mastocitos están siendo reclutados fuera de la sangre (migración tisular) en FM, lo que es consistente con el hallazgo histológico de aumento de mastocitos en piel de pacientes FM (Blanco et al. 2010). La señal de "downregulation" en sangre podría reflejar depleción periférica por migración tisular.
+
+### 9.3 GSE221921 (PBMCs) — Resultados
+
+**Diferencias de composición celular (FM vs HC):**
+
+| Cell Type | FM mean | HC mean | Diff | p-value | Sig |
+|-----------|---------|---------|------|---------|-----|
+| Monocytes | 0.2678 | 0.3770 | -0.1092 | <0.0001 | *** |
+| T_cells_CD4 | 0.1068 | 0.0638 | +0.0430 | <0.0001 | *** |
+| T_cells_Treg | 0.0086 | 0.0033 | +0.0053 | <0.0001 | *** |
+| NK_cells | 0.1960 | 0.1635 | +0.0325 | 0.0073 | ** |
+| T_cells_CD8 | 0.1515 | 0.1229 | +0.0286 | 0.0017 | ** |
+| Neutrophils | 0.0905 | 0.1156 | -0.0251 | 0.0006 | *** |
+| Basophils | 0.0067 | 0.0033 | +0.0034 | 0.0002 | ** |
+| Mast_cells | 0.0076 | 0.0035 | +0.0041 | <0.0001 | *** |
+
+**Hallazgo clave:** Composición celular muy diferente en PBMCs de FM. Menos monocitos, más T cells (CD4, CD8, Treg), más NK cells.
+
+**Correlaciones gen ↔ fracción celular:**
+- DRD2 vs T_cells_Treg: r = 0.3418 (moderada)
+- DRD2 vs Eosinophils: r = 0.3105 (débil)
+- MDGA2 vs T_cells_Treg: r = 0.5629 (moderada-alta)
+- MDGA2 vs T_cells_CD4: r = 0.3759 (moderada)
+
+**Interpretación crítica:**
+1. **DRD2 NO correlaciona fuertemente con ninguna fracción celular** (r_max = 0.34 con Tregs). Esto significa que la señal de DRD2↑ en FM NO es un artefacto de composición celular. Si fuera un artefacto, esperaríamos una correlación fuerte con la fracción de algún tipo celular que esté aumentado en FM.
+
+2. **CPA3 no difiere entre FM/HC en PBMCs** (p=0.7546), confirmando que la señal de mastocitos es específica de sangre entera (donde están los granulocitos).
+
+3. **MDGA2 correlaciona moderadamente con Tregs (r=0.56)**, lo que podría indicar que parte de la señal de MDGA2 viene de cambios en la fracción de Tregs. Sin embargo, MDGA2 también se mantiene significativo en los 5 modelos de sensibilidad.
+
+### 9.4 Resumen de la deconvolución
+
+| Pregunta | Respuesta |
+|----------|-----------|
+| ¿La señal de CPA3 en sangre entera desaparece controlando por fracción de basófilos/mastocitos? | **SÍ.** La señal se explica casi completamente por la menor fracción de basófilos/mastocitos en FM. |
+| ¿La señal de DRD2 en PBMCs persiste controlando por fracción de monocitos? | **SÍ.** DRD2 no correlaciona fuertemente con ninguna fracción celular. La señal es independiente de composición. |
+| ¿La no-replicación cruzada es esperada? | **SÍ.** Cada dataset captura señales de diferentes compartimentos celulares. |
+| ¿La señal de mastocitos en sangre refleja migración tisular? | **POSIBLEMENTE.** La menor fracción de basófilos/mastocitos en sangre + el aumento en piel sugiere migración tisular. |
 
 ---
 
-*Generado por DAVI, 2026-05-22. Para revisión de Cristóbal.*
+## 10. NOTA SOBRE LIMITACIONES DE LA DECONVOLUCIÓN
+
+1. **Método simplificado:** Usamos un enfoque de marcadores medios, no CIBERSORT completo. Las fracciones son estimaciones relativas, no absolutas.
+
+2. **Firmas imperfectas:** Los genes marcadores no son 100% específicos de un tipo celular. FCER1A, por ejemplo, se expresa tanto en basófilos como en células dendríticas.
+
+3. **No distingue regulación transcripcional de composición celular:** Si los basófilos en FM expresan menos CPA3 por célula (regulación) vs. hay menos basófilos (composición), nuestro método no puede distinguirlo completamente.
+
+4. **Correlación ≠ causación:** Las correlaciones entre genes y fracciones son observacionales.
+
+---
+
+*Actualizado por DAVI, 2026-05-22 (post-deconvolución).*

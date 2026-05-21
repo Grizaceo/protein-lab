@@ -1,0 +1,26 @@
+{
+  "uniprot_id": "P0ABD3",
+  "entry_accession": "P0ABD3",
+  "length": 158,
+  "global_mean_plddt": 97.56,
+  "plddt_distribution": {
+    "very_high": 96.84,
+    "high": 1.9,
+    "low": 1.27,
+    "very_low": 0.0
+  },
+  "domains": [
+    {
+      "start": 1,
+      "end": 158,
+      "length": 158,
+      "mean_plddt": 97.56
+    }
+  ],
+  "idrs": [],
+  "pae_power": 1.0,
+  "min_domain_size": 15,
+  "cif_file": "AF-P0ABD3-F1-model_v6.cif",
+  "pae_file": "AF-P0ABD3-F1-predicted_aligned_error_v6.json",
+  "metadata_file": "AF-P0ABD3-F1-metadata.json"
+}

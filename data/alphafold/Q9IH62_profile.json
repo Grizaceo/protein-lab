@@ -1,0 +1,57 @@
+{
+  "uniprot_id": "Q9IH62",
+  "entry_accession": "Q9IH62",
+  "length": 602,
+  "global_mean_plddt": 70.99,
+  "plddt_distribution": {
+    "very_high": 23.75,
+    "high": 37.71,
+    "low": 17.94,
+    "very_low": 20.6
+  },
+  "domains": [
+    {
+      "start": 44,
+      "end": 101,
+      "length": 58,
+      "mean_plddt": 62.96
+    },
+    {
+      "start": 212,
+      "end": 326,
+      "length": 115,
+      "mean_plddt": 84.58
+    },
+    {
+      "start": 329,
+      "end": 600,
+      "length": 272,
+      "mean_plddt": 85.4
+    }
+  ],
+  "idrs": [
+    {
+      "start": 1,
+      "end": 43,
+      "length": 43,
+      "mean_plddt": 28.4
+    },
+    {
+      "start": 109,
+      "end": 126,
+      "length": 18,
+      "mean_plddt": 43.88
+    },
+    {
+      "start": 145,
+      "end": 187,
+      "length": 43,
+      "mean_plddt": 32.37
+    }
+  ],
+  "pae_power": 1.0,
+  "min_domain_size": 15,
+  "cif_file": "AF-0000000365766633-model_v1.cif",
+  "pae_file": "AF-0000000365766633-predicted_aligned_error_v1.json",
+  "metadata_file": "AF-Q9IH62-F1-metadata.json"
+}

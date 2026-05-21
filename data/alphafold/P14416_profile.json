@@ -1,0 +1,51 @@
+{
+  "uniprot_id": "P14416",
+  "entry_accession": "P14416",
+  "length": 443,
+  "global_mean_plddt": 72.45,
+  "plddt_distribution": {
+    "very_high": 37.25,
+    "high": 23.7,
+    "low": 12.64,
+    "very_low": 26.41
+  },
+  "domains": [
+    {
+      "start": 32,
+      "end": 240,
+      "length": 209,
+      "mean_plddt": 87.14
+    },
+    {
+      "start": 354,
+      "end": 443,
+      "length": 90,
+      "mean_plddt": 86.06
+    }
+  ],
+  "idrs": [
+    {
+      "start": 1,
+      "end": 31,
+      "length": 31,
+      "mean_plddt": 38.81
+    },
+    {
+      "start": 257,
+      "end": 269,
+      "length": 13,
+      "mean_plddt": 42.93
+    },
+    {
+      "start": 283,
+      "end": 347,
+      "length": 65,
+      "mean_plddt": 38.15
+    }
+  ],
+  "pae_power": 1.0,
+  "min_domain_size": 15,
+  "cif_file": "AF-P14416-F1-model_v6.cif",
+  "pae_file": "AF-P14416-F1-predicted_aligned_error_v6.json",
+  "metadata_file": "AF-P14416-F1-metadata.json"
+}

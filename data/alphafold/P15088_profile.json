@@ -1,0 +1,33 @@
+{
+  "uniprot_id": "P15088",
+  "entry_accession": "P15088",
+  "length": 417,
+  "global_mean_plddt": 94.5,
+  "plddt_distribution": {
+    "very_high": 91.13,
+    "high": 4.8,
+    "low": 0.72,
+    "very_low": 3.36
+  },
+  "domains": [
+    {
+      "start": 15,
+      "end": 417,
+      "length": 403,
+      "mean_plddt": 96.26
+    }
+  ],
+  "idrs": [
+    {
+      "start": 1,
+      "end": 14,
+      "length": 14,
+      "mean_plddt": 44.07
+    }
+  ],
+  "pae_power": 1.0,
+  "min_domain_size": 15,
+  "cif_file": "AF-P15088-F1-model_v6.cif",
+  "pae_file": "AF-P15088-F1-predicted_aligned_error_v6.json",
+  "metadata_file": "AF-P15088-F1-metadata.json"
+}
