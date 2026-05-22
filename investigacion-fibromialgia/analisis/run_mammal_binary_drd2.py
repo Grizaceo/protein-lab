@@ -39,13 +39,19 @@ DRUGS = [
     {"name": "omeprazole", "smiles": "CC1=CN=C(C(=C1OC)C)CS(=O)C2=NC3=C(N2)C=C(C=C3)OC", "label": 0, "evidence": "proton pump inhibitor"},
 ]
 
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print(f"Using device: {device}")
+
 print("Loading MAMMAL base model (encoder-decoder)...")
 model_path = "ibm/biomed.omics.bl.sm.ma-ted-458m"
 model = Mammal.from_pretrained(model_path, allow_config_mismatch=True)
 model.eval()
-model.to(device="cuda")
+model.to(device=device)
 tok = ModularTokenizerOp.from_pretrained(model_path)
-print(f"Model loaded. VRAM: {torch.cuda.memory_allocated()/1e9:.1f} GB")
+if device == "cuda":
+    print(f"Model loaded. VRAM: {torch.cuda.memory_allocated()/1e9:.1f} GB")
+else:
+    print("Model loaded on CPU.")
 
 # Classification prompt format from TCR binding example
 def predict_binding(target_seq, drug_smiles):
