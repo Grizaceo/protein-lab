@@ -16,6 +16,18 @@ gwas_neural_genes = ['DRD2', 'NCAM1', 'GPR52', 'CAMKV', 'CELF4',
                      'PPP2R2B', 'NPC1', 'HTT']
 all_genes = mast_cell_genes + gwas_neural_genes
 
+# NOTE ON MULTIPLE TESTING CORRECTION (FDR) JUSTIFICATION:
+# The FDR (Benjamini-Hochberg) correction in this script is applied locally
+# (restricted to this candidate gene list of 17 genes) rather than globally across the
+# entire genome/transcriptome.
+# Justification: This is a hypothesis-driven candidate gene study (directed hypothesis).
+# Because these genes are pre-selected based on strong prior biological and clinical
+# evidence (GWAS-prioritized loci and mast cell biology), testing is restricted to this
+# focused search space. Applying a genome-wide adjustment (e.g. 20,000+ genes) would be
+# overly conservative and inflate Type II errors (false negatives) for highly plausible
+# biological candidates. However, it must be acknowledged that the controlled False
+# Discovery Rate applies strictly within the context of this pre-defined list.
+
 # ══════════════════════════════════════════════════════════════════════════
 # DATASET 1: GSE67311 (whole blood, microarray, 70 FM + 70 HC)
 # Already has gene_symbol column and FDR-corrected p_adj
