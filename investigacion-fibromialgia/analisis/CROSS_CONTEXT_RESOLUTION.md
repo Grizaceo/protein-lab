@@ -127,14 +127,14 @@ a) Menos basófilos/mastocitos en FM (composición celular) — hipótesis de "d
 b) Basófilos/mastocitos con menos expresión de CPA3 (regulación transcripcional)
 c) Ambas
 
-**Sin deconvolución celular, no podemos distinguir (a) de (b).**
+**Sin análisis de composición celular (deconvolución formal con CIBERSORTx o similar), no podemos distinguir (a) de (b).**
 
 **Para DRD2 en PBMCs:** La señal podría reflejar:
 a) Más monocitos/células DRD2+ en FM
 b) Mayor expresión de DRD2 por célula
 c) Ambas
 
-**Sin deconvolución celular, no podemos distinguir (a) de (b).**
+**Sin análisis de composición celular (deconvolución formal con CIBERSORTx o similar), no podemos distinguir (a) de (b).**
 
 #### 3.2 Otros confounders potenciales
 
@@ -275,7 +275,7 @@ La divergencia cross-context no es un problema — es una **predicción confirma
 
 1. **No demostramos causalidad.** Ambas señales son asociaciones. No sabemos si la disfunción dopaminérgica causa FM, es consecuencia de FM, o es un epifenómeno de terceras variables.
 
-2. **No controlamos por composición celular.** Sin deconvolución, no sabemos si los cambios de expresión reflejan cambios en proporción de células o regulación transcripcional dentro de cada tipo celular.
+2. **No controlamos por composición celular.** Sin deconvolución formal (CIBERSORTx, MCP-counter), no sabemos si los cambios de expresión reflejan cambios en proporción de células o regulación transcripcional dentro de cada tipo celular. Nuestro análisis de enriquecimiento de firmas celulares (cell-type signature enrichment scoring) basado en promedios de marcadores es un indicador aproximado, no una deconvolución cuantitativa.
 
 3. **No tenemos replicación independiente de DRD2 en PBMCs.** No existe un tercer dataset de PBMCs FM con n suficiente. Esta es una limitación estructural del campo.
 
@@ -331,7 +331,7 @@ En la sección de discusión, agregar un párrafo sobre:
 
 ### 7.2 Agregar a limitaciones
 
-> "We did not perform cell-type deconvolution on either dataset. Therefore, we cannot distinguish whether the observed expression changes reflect shifts in cellular composition or transcriptional regulation within specific cell types. Future studies with single-cell RNA-seq or flow cytometry-validated deconvolution are needed."
+> "We did not perform formal cell-type deconvolution on either dataset (e.g., CIBERSORTx, xCell, MCP-counter). An exploratory cell-type signature enrichment scoring based on marker gene averages was performed, but this is not equivalent to quantitative deconvolution and does not estimate true cell proportions. Therefore, we cannot distinguish whether the observed expression changes reflect shifts in cellular composition or transcriptional regulation within specific cell types. Future studies with single-cell RNA-seq or flow cytometry-validated deconvolution are needed."
 
 ### 7.3 No cambiar los resultados
 
@@ -370,13 +370,15 @@ Los resultados están bien como están. No se necesita eliminar ni suavizar ning
 
 ---
 
-## 9. RESULTADOS DE LA DECONVOLUCIÓN CELULAR (computada)
+## 9. RESULTADOS DE LA PUNTUACIÓN DE ENRIQUECIMIENTO DE FIRMAS CELULARES (computada)
 
 ### 9.1 Método
 
-Se aplicó deconvolución celular basada en NNLS (non-negative least squares) con firmas de genes marcadores curadas de LM22/CIBERSORT/xCell. Se usaron las matrices de expresión crudas de ambos datasets:
+Se aplicó una **puntuación de enriquecimiento de firmas celulares** (*cell-type signature enrichment scoring*) basada en el promedio de expresión de genes marcadores curados de LM22/CIBERSORT/xCell. Este método calcula el promedio de la expresión de los genes marcadores de cada tipo celular y normaliza las puntuaciones por muestra. **Nota importante:** Esto NO es una deconvolución celular formal (la cual estima proporciones celulares reales mediante optimización numérica como NNLS o soporte de vectores, como hace CIBERSORTx). Las fracciones reportadas son indicadores relativos aproximados, no proporciones absolutas. Se usaron las matrices de expresión de ambos datasets:
 - GSE67311: 20,255 genes × 142 muestras (series matrix del SOFT file)
 - GSE221921: 21,375 genes × 189 muestras (FPKM del archivo suplementario)
+
+**Corrección estadística:** Se aplicó la corrección FDR (Benjamini-Hochberg) sobre las 12 pruebas de Mann-Whitney (una por tipo celular) para controlar la tasa de falso descubrimiento.
 
 ### 9.2 GSE67311 (Sangre Entera) — Resultados
 
@@ -435,7 +437,7 @@ Se aplicó deconvolución celular basada en NNLS (non-negative least squares) co
 
 3. **MDGA2 correlaciona moderadamente con Tregs (r=0.56)**, lo que podría indicar que parte de la señal de MDGA2 viene de cambios en la fracción de Tregs. Sin embargo, MDGA2 también se mantiene significativo en los 5 modelos de sensibilidad.
 
-### 9.4 Resumen de la deconvolución
+### 9.4 Resumen de la puntuación de enriquecimiento celular
 
 | Pregunta | Respuesta |
 |----------|-----------|
@@ -446,9 +448,9 @@ Se aplicó deconvolución celular basada en NNLS (non-negative least squares) co
 
 ---
 
-## 10. NOTA SOBRE LIMITACIONES DE LA DECONVOLUCIÓN
+## 10. NOTA SOBRE LIMITACIONES DE LA PUNTUACIÓN DE ENRIQUECIMIENTO
 
-1. **Método simplificado:** Usamos un enfoque de marcadores medios, no CIBERSORT completo. Las fracciones son estimaciones relativas, no absolutas.
+1. **Método simplificado:** Usamos un enfoque de promedios de marcadores (*cell-type signature enrichment scoring*), **NO** una deconvolución formal como CIBERSORTx. Las fracciones son estimaciones relativas aproximadas, no proporciones absolutas de tipos celulares.
 
 2. **Firmas imperfectas:** Los genes marcadores no son 100% específicos de un tipo celular. FCER1A, por ejemplo, se expresa tanto en basófilos como en células dendríticas.
 
@@ -458,4 +460,4 @@ Se aplicó deconvolución celular basada en NNLS (non-negative least squares) co
 
 ---
 
-*Actualizado por DAVI, 2026-05-22 (post-deconvolución).*
+*Actualizado por DAVI, 2026-05-22 (post-análisis de enriquecimiento celular; terminología corregida a "signature enrichment scoring" por revisión por pares).*

@@ -108,6 +108,8 @@ for name, seq in SEQUENCES.items():
         r = model(tokens, repr_layers=[33], return_contacts=False)
     full_embs[name] = r["representations"][33][0, 1:len(seq)+1].mean(dim=0).cpu().numpy()
 
+names = list(SEQUENCES.keys())
+
 print("\n=== FULL COSINE SIMILARITY MATRIX ===")
 print(f"{'':>10s}", end="")
 for n in names:
