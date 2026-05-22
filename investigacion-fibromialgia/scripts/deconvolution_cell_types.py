@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 """
-Cell-type deconvolution of GSE67311 (whole blood) and GSE221921 (PBMCs).
+Cell-type signature enrichment scoring of GSE67311 (whole blood) and GSE221921 (PBMCs).
 
-Uses NNLS with curated marker gene signatures to estimate cell fractions.
+Uses curated marker gene signatures to score cell-type signature enrichment.
 """
 
 import pandas as pd
 import numpy as np
 from scipy.optimize import nnls
 from scipy.stats import mannwhitneyu
+from statsmodels.stats.multitest import multipletests
 import gzip
 import os
 import warnings
+import pathlib
 warnings.filterwarnings('ignore')
 
-OUTPUT_DIR = '/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/analisis/deconvolution'
+REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
+OUTPUT_DIR = str(REPO_ROOT / 'analisis' / 'deconvolution')
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ============================================================
@@ -44,8 +47,8 @@ KEY_GENES = ['DRD2', 'MDGA2', 'CPA3', 'MS4A2', 'FCER1A', 'HDC']
 def load_gse67311():
     print("Loading GSE67311 (whole blood)...")
     
-    matrix_file = '/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/datos/geo/GSE67311/GSE67311_series_matrix.txt.gz'
-    degs_file = '/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/datos/GSE67311_DEGs_all_named.csv'
+    matrix_file = str(REPO_ROOT / 'datos' / 'geo' / 'GSE67311' / 'GSE67311_series_matrix.txt.gz')
+    degs_file = str(REPO_ROOT / 'datos' / 'GSE67311_DEGs_all_named.csv')
     
     # Parse series matrix
     sample_ids = []
@@ -109,7 +112,7 @@ def load_gse67311():
 def load_gse221921():
     print("Loading GSE221921 (PBMCs)...")
     
-    xlsx_file = '/home/gris/.hermes/workspace/protein-lab/investigacion-fibromialgia/datos/geo/PBMC_FM_96patients_93controls/GSE221921_FM_ProcessedData.xlsx'
+    xlsx_file = str(REPO_ROOT / 'datos' / 'geo' / 'PBMC_FM_96patients_93controls' / 'GSE221921_FM_ProcessedData.xlsx')
     
     # Read FPKM values
     # First 7 columns are gene metadata, rest are samples
@@ -181,7 +184,7 @@ def deconvolve(expr_df, cell_markers):
                     sig_celltypes.append(ct)
         
         if not sig_genes:
-            frac_results[sample] = {ct: 0 for ct in cell_markets}
+            frac_results[sample] = {ct: 0 for ct in cell_markers}
             continue
         
         S = np.array([expr_df.loc[g].values for g in sig_genes])  # n_markers x n_samples_for_this_gene
@@ -210,8 +213,8 @@ def deconvolve(expr_df, cell_markers):
     return pd.DataFrame(frac_results).T
 
 
-def deconvolve_simple(expr_df, cell_markers):
-    """Simplified deconvolution: use mean marker expression per cell type."""
+def score_signature_enrichment(expr_df, cell_markers):
+    """Cell-type signature enrichment scoring: use mean marker expression per cell type."""
     
     cell_types = list(cell_markers.keys())
     
@@ -234,27 +237,60 @@ def deconvolve_simple(expr_df, cell_markers):
 
 
 def analyze(frac_df, sample_info, expr_df, dataset_name):
-    """Analyze deconvolution results."""
+    """Analyze cell-type marker signature enrichment results with multiple testing correction."""
     print(f"\n{'='*60}")
-    print(f"{dataset_name} — Cell-type deconvolution")
+    print(f"{dataset_name} — Cell-type signature enrichment scoring")
     print(f"{'='*60}")
     
     merged = frac_df.copy()
     merged['is_fm'] = sample_info['is_fm'].values
     
-    print(f"\n{'Cell Type':<20} {'FM mean':>10} {'HC mean':>10} {'Diff':>10} {'p-value':>10} {'Sig':>5}")
-    print("-" * 70)
+    raw_pvals = []
+    cell_types = list(frac_df.columns)
     
-    results = []
-    for ct in frac_df.columns:
+    # First pass: collect statistics and p-values
+    intermediate_results = []
+    for ct in cell_types:
         fm = merged[merged['is_fm'] == True][ct]
         hc = merged[merged['is_fm'] == False][ct]
         stat, pval = mannwhitneyu(fm, hc, alternative='two-sided')
         diff = fm.mean() - hc.mean()
-        sig = '*' if pval < 0.05 else ''
-        print(f"{ct:<20} {fm.mean():>10.4f} {hc.mean():>10.4f} {diff:>10.4f} {pval:>10.4f} {sig:>5}")
-        results.append({'cell_type': ct, 'fm_mean': fm.mean(), 'hc_mean': hc.mean(),
-                        'diff': diff, 'p_value': pval, 'significant': pval < 0.05})
+        raw_pvals.append(pval)
+        intermediate_results.append({
+            'cell_type': ct,
+            'fm_mean': fm.mean(),
+            'hc_mean': hc.mean(),
+            'diff': diff,
+            'p_value': pval
+        })
+        
+    # Apply FDR (Benjamini-Hochberg) correction
+    _, qvals, _, _ = multipletests(raw_pvals, method='fdr_bh')
+    
+    print(f"\n{'Cell Type':<20} {'FM mean':>10} {'HC mean':>10} {'Diff':>10} {'p-value':>10} {'q-value (FDR)':>14} {'Sig':>5}")
+    print("-" * 88)
+    
+    results = []
+    for i, res in enumerate(intermediate_results):
+        ct = res['cell_type']
+        pval = res['p_value']
+        qval = qvals[i]
+        diff = res['diff']
+        fm_mean = res['fm_mean']
+        hc_mean = res['hc_mean']
+        
+        # Significant if q-value < 0.05
+        sig = '*' if qval < 0.05 else ''
+        print(f"{ct:<20} {fm_mean:>10.4f} {hc_mean:>10.4f} {diff:>10.4f} {pval:>10.4f} {qval:>14.4f} {sig:>5}")
+        results.append({
+            'cell_type': ct,
+            'fm_mean': fm_mean,
+            'hc_mean': hc_mean,
+            'diff': diff,
+            'p_value': pval,
+            'q_value': qval,
+            'significant': qval < 0.05
+        })
     
     # Key gene analysis
     print(f"\n\nKey gene expression (FM vs HC):")
@@ -289,20 +325,20 @@ def analyze(frac_df, sample_info, expr_df, dataset_name):
 # ============================================================
 def main():
     print("="*60)
-    print("CELL-TYPE DECONVOLUTION — FM TRANSCRIPTOMICS")
+    print("CELL-TYPE SIGNATURE ENRICHMENT SCORING — FM TRANSCRIPTOMICS")
     print("="*60)
     
     # Load data
     expr_67311, info_67311 = load_gse67311()
     expr_221921, info_221921 = load_gse221921()
     
-    # Deconvolve
-    print("\nDeconvolving GSE67311...")
-    frac_67311 = deconvolve_simple(expr_67311, CELL_MARKERS)
+    # Score signature enrichment
+    print("\nScoring signature enrichment for GSE67311...")
+    frac_67311 = score_signature_enrichment(expr_67311, CELL_MARKERS)
     results_67311 = analyze(frac_67311, info_67311, expr_67311, "GSE67311 (Whole Blood)")
     
-    print("\n\nDeconvolving GSE221921...")
-    frac_221921 = deconvolve_simple(expr_221921, CELL_MARKERS)
+    print("\n\nScoring signature enrichment for GSE221921...")
+    frac_221921 = score_signature_enrichment(expr_221921, CELL_MARKERS)
     results_221921 = analyze(frac_221921, info_221921, expr_221921, "GSE221921 (PBMCs)")
     
     # Save
