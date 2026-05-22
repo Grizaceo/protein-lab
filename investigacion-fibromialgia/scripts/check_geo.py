@@ -10,8 +10,8 @@ try:
     gse = GEOparse.get_GEO(geo="GSE221921", destdir=geo_dir)
     print(f"Got {len(gse.gsms)} samples.")
     print("Supplementary files:")
-    for file, url in gse.metadata.get("supplementary_file", []):
-        print(file)
+    for sup_file in gse.metadata.get("supplementary_file", []):
+        print(sup_file)
         
     print("\nMetadata values:")
     for k, v in gse.metadata.items():
