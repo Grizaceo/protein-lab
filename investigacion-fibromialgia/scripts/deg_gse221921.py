@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import numpy as np
 from scipy.stats import ttest_ind
 
 import pathlib
@@ -84,7 +85,6 @@ def test_genes(gene_list, name):
     else:
         print("No valid columns found for testing.")
 
-import numpy as np
 
 # Before testing, let's fix the column matching just in case
 meta_sample_ids = meta_samples[sample_col].astype(str).tolist()
