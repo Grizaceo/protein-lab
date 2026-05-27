@@ -66,6 +66,30 @@ async def run_eac_campaign(campaign_name: str, max_experiments: int = 3, hours: 
     safety_monitor.acquire_lock()
 
     try:
+        # Load target sequences FASTA
+        fasta_path = LAB_DIR / "investigacion-fibromialgia" / "datos" / "target_sequences.fasta"
+        fasta_sequences = {}
+        if fasta_path.exists():
+            try:
+                current_header = None
+                current_seq = []
+                with open(fasta_path) as f:
+                    for line in f:
+                        line = line.strip()
+                        if line.startswith(">"):
+                            if current_header:
+                                fasta_sequences[current_header] = "".join(current_seq)
+                            parts = line[1:].split("|")
+                            current_header = parts[0].upper()
+                            current_seq = []
+                        else:
+                            current_seq.append(line)
+                    if current_header:
+                        fasta_sequences[current_header] = "".join(current_seq)
+                logger.info(f"Loaded {len(fasta_sequences)} sequences from FASTA.")
+            except Exception as e:
+                logger.warning(f"Failed to load FASTA: {e}")
+
         # 3. Running WSL safety audits
         logger.info("Auditing WSL environment...")
         safety_monitor.check_gpu_contention()
@@ -127,9 +151,80 @@ async def run_eac_campaign(campaign_name: str, max_experiments: int = 3, hours: 
                 "score": hyp.score
             })
 
-            # Create specific biophysics steps for Nipah or Ferritin
+            # Create specific biophysics steps for Fibromialgia, Nipah or Ferritin
             steps = []
-            if "nipah" in campaign_name.lower() or "receptor" in hyp.statement.lower():
+            stmt_lower = hyp.statement.lower()
+            
+            # Determine target
+            target = "MOR"
+            if "adrb2" in stmt_lower:
+                target = "ADRB2"
+            elif "drd2" in stmt_lower:
+                target = "DRD2"
+            elif "agtr1" in stmt_lower:
+                target = "AGTR1"
+            elif "gfp" in stmt_lower:
+                target = "GFP"
+            elif "alb" in stmt_lower:
+                target = "ALB"
+            elif "ms4a2" in stmt_lower:
+                target = "MS4A2"
+                
+            # Determine drug
+            drug = "naltrexone"
+            if "atorvastatin" in stmt_lower:
+                drug = "atorvastatin"
+            elif "morphine" in stmt_lower:
+                drug = "morphine"
+            elif "fentanyl" in stmt_lower:
+                drug = "fentanyl"
+            elif "buprenorphine" in stmt_lower:
+                drug = "buprenorphine"
+            elif "naloxone" in stmt_lower:
+                drug = "naloxone"
+
+            if "fibromialgia" in campaign_name.lower() or "fibromyalgia" in campaign_name.lower() or "ruta_b" in campaign_name.lower():
+                # Get sequences for homology alignment
+                seq1 = fasta_sequences.get(target, "MALWMRLLPLLALLALWGPDPAAA")
+                seq2 = seq1
+                if len(seq1) > 20:
+                    seq2 = seq1[:20] + "X" + seq1[21:]
+                
+                seq1_short = seq1[:40]
+                seq2_short = seq2[:40]
+
+                steps.append(ExperimentStep(
+                    name="predict-dti",
+                    action="dti.predict",
+                    resource="mammal_local",
+                    parameters={"target": target, "drug_name": drug}
+                ))
+                steps.append(ExperimentStep(
+                    name="fold-complex",
+                    action="structure.fold",
+                    resource="colab_bridge",
+                    parameters={"target": target, "method": "alphafold2"},
+                    depends_on=["predict-dti"]
+                ))
+                steps.append(ExperimentStep(
+                    name="monitor-preprints",
+                    action="literature.monitor_preprints",
+                    resource="mammal_local",
+                    parameters={"query": f"{target} receptor ligand binding fibromyalgia", "limit": "3"}
+                ))
+                steps.append(ExperimentStep(
+                    name="query-experimental",
+                    action="target.query_affinity_experimental",
+                    resource="mammal_local",
+                    parameters={"target": target, "drug_name": drug}
+                ))
+                steps.append(ExperimentStep(
+                    name="align-homology",
+                    action="sequence.align_homologs",
+                    resource="topological_auditor",
+                    parameters={"seq1": seq1_short, "seq2": seq2_short}
+                ))
+            elif "nipah" in campaign_name.lower() or "receptor" in hyp.statement.lower():
                 steps.append(ExperimentStep(
                     name="predict-dti",
                     action="dti.predict",

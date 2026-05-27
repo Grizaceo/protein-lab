@@ -235,6 +235,40 @@ class LLMReasoningBridge:
     # --- Mocks for offline testing ---
     def _mock_generate(self, goal: str, lab: LabConfig) -> List[Hypothesis]:
         logger.info("Generating mock hypotheses...")
+        g_clean = goal.lower()
+        if "fibromialgia" in g_clean or "fibromyalgia" in g_clean or "ruta_b" in g_clean:
+            return [
+                Hypothesis(
+                    id="hyp-mock-01",
+                    statement="Naltrexone binds OPRM1 (MOR) with a high predicted affinity of pKd=7.2, but exhibits a similar inflated binding score across other non-related GPCR Class A receptors (ADRB2, DRD2, AGTR1) due to structural embedding training bias in MAMMAL.",
+                    rationale="Class A GPCRs share a conserved 7TM helical bundle and transmembrane pocket topology. DTI models like MAMMAL often over-generalize pocket representations, leading to shared inflated predictions rather than receptor-specific pharmacology.",
+                    novelty_claim="First systematic GPCR fold-specific training bias calibration using a control panel under EaC.",
+                    test_strategy="Predict binding affinity on MOR and ADRB2 via MAMMAL local, perform sequence alignment, and check literature preprints.",
+                    evidence=[],
+                    status=HypothesisStatus.GENERATED,
+                    score=0.0
+                ),
+                Hypothesis(
+                    id="hyp-mock-02",
+                    statement="Atorvastatin (negative control) exhibits an unexpectedly high predicted binding affinity (pKd > 7.1) for OPRM1 and other GPCR Class A receptors in MAMMAL local DTI, indicating a hydrophobic embedding bias.",
+                    rationale="Atorvastatin is highly lipophilic. MAMMAL DTI's latent space representation of GPCR pocket embeddings overweights hydrophobic contact terms, artificially inflating pKd values for lipophilic compounds regardless of biological target relevance.",
+                    novelty_claim="A systematic negative control profiling to expose hydrophobic bias in deep DTI models.",
+                    test_strategy="Predict binding of Atorvastatin on ADRB2, query experimental affinity database, and perform literature search.",
+                    evidence=[],
+                    status=HypothesisStatus.GENERATED,
+                    score=0.0
+                ),
+                Hypothesis(
+                    id="hyp-mock-03",
+                    statement="Inert non-GPCR targets like GFP and ALB exhibit low predicted binding affinities (pKd < 5.0) for naltrexone and atorvastatin, confirming that MAMMAL DTI's inflation bias is specific to the GPCR fold.",
+                    rationale="GFP (beta-barrel) and ALB (soluble carrier) lack the 7TM pocket topology. Comparing their predictions against GPCRs isolates structural bias from general pocket size/hydrophobicity factors.",
+                    novelty_claim="Inert beta-barrel fold control validation for machine learning bias isolation.",
+                    test_strategy="Predict binding on GFP via MAMMAL local, query experimental affinity database, and perform Needleman-Wunsch sequence alignment.",
+                    evidence=[],
+                    status=HypothesisStatus.GENERATED,
+                    score=0.0
+                )
+            ]
         return [
             Hypothesis(
                 id="hyp-mock-01",

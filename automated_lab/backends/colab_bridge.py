@@ -47,7 +47,20 @@ class ColabBridge:
         # Load state to get target_info
         from iteration.state_manager import load_state, get_target
         state = load_state()
-        target_info = get_target(state, target)
+        try:
+            target_info = get_target(state, target)
+        except KeyError:
+            target_info = {
+                "display_name": f"{target.upper()} Target (EaC campaign)",
+                "pdb_source": f"data/pdb/{target}.pdb",
+                "fasta_source": None,
+                "hotspot_files": {},
+                "iteration": 0,
+                "best_score": 0.0,
+                "best_run": None,
+                "stuck_count": 0,
+                "runs": []
+            }
         
         strategy = experiment.get("strategy", "explore")
         rationale_text = experiment.get("rationale", "EaC Bridged Exploration")
