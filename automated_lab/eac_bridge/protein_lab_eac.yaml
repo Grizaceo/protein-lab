@@ -1,0 +1,79 @@
+id: protein-lab-eac
+name: "Protein Lab EaC Bridge"
+domain: "computational biophysics and drug discovery"
+evidence_sources:
+  - "pubmed"
+  - "arxiv"
+  - "local_corpus"
+capabilities:
+  - "dti_prediction"
+  - "structure_folding"
+  - "topological_audit"
+  - "literature_grounding"
+safety_rules:
+  - "prevent_cron_overlap"
+  - "check_gpu_contention"
+  - "wsl_deadline_control"
+  - "no_esmfold_on_low_vram"
+resources:
+  - name: "mammal_local"
+    status: "available"
+    capabilities: ["dti_prediction"]
+    attributes:
+      device: "cuda"
+      model_path: "automated_lab/backends/mammal"
+  - name: "colab_bridge"
+    status: "available"
+    capabilities: ["structure_folding"]
+    attributes:
+      allowed_engines: ["alphafold2", "rfdiffusion"]
+  - name: "local_gpu"
+    status: "available"
+    capabilities: ["dti_prediction", "structure_folding"]
+    attributes:
+      vram_gb: 8
+      rtx_model: "4060"
+  - name: "topological_auditor"
+    status: "available"
+    capabilities: ["topological_audit"]
+    attributes:
+      methods: ["ihara_zeta", "gue_beta", "iron_center"]
+
+safety_hooks:
+  - name: "deny_esmfold_low_vram"
+    verdict: "deny"
+    reason: "ESMFold requires more than 8GB of VRAM; local folding denied on RTX 4060"
+    match_action: "structure.fold"
+    match_params:
+      method: "esmfold"
+      resource: "local_gpu"
+  - name: "warn_alphafold_colab"
+    verdict: "require_approval"
+    reason: "AlphaFold folding requires colab bridge and may take substantial time"
+    match_action: "structure.fold"
+    match_params:
+      method: "alphafold2"
+
+# --- Custom Extensions for protein-lab Bridge ---
+runtime_monitor_mode: "permissive" # "strict" (abort on S01-S06) or "permissive" (log only)
+explore_chemical_space: false
+
+wsl_autonomy:
+  lock_file: "artifacts/eac_wsl_lock.lock"
+  cuda_vram_min_mb: 2000
+  deadline_hour: 9 # Stop runs after 9 AM local time (pitfall #7)
+
+world_model:
+  enabled: true
+  mode: "shadow" # "shadow", "active", "disabled"
+  shadow_cycles: 10 # Promotes to active after 10 cycles if gates pass
+  shadow_budget_usd: 5.0
+  weights:
+    w_ledger: 0.5
+    w_critic: 0.4
+    w_novelty_penalty: 0.3
+  gates:
+    min_samples: 10
+    min_spearman_rho: 0.5
+    min_top_k_recall: 0.7
+    max_false_negative_rate: 0.2

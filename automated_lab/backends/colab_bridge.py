@@ -44,9 +44,23 @@ class ColabBridge:
         target = experiment.get("target", "nipah")
         params = experiment.get("params", {})
 
+        # Load state to get target_info
+        from iteration.state_manager import load_state, get_target
+        state = load_state()
+        target_info = get_target(state, target)
+        
+        strategy = experiment.get("strategy", "explore")
+        rationale_text = experiment.get("rationale", "EaC Bridged Exploration")
+
         # Usar colab_prep existente
         from iteration.colab_prep import prepare_next_run
-        result = prepare_next_run(target, params)
+        result = prepare_next_run(
+            target_name=target,
+            target_info=target_info,
+            params=params,
+            strategy=strategy,
+            rationale_text=rationale_text
+        )
 
         return {
             "status": "pending_manual",

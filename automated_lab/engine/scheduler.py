@@ -299,11 +299,19 @@ def main():
     parser.add_argument("--hours", type=float, default=None, help="Alias explícito para --overnight")
     parser.add_argument("--max-experiments", type=int, default=None)
     parser.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
+    parser.add_argument("--eac", action="store_true",
+                        help="Activar compilación y bucle EaC con World Model y Harness safety monitor")
     args = parser.parse_args()
 
     hours = args.overnight if args.overnight is not None else args.hours
-    sched = Scheduler(batch_size=args.batch_size)
-    sched.run_campaign(args.campaign, hours=hours, max_experiments=args.max_experiments)
+    if args.eac:
+        import asyncio
+        from eac_bridge.run_eac import run_eac_campaign
+        max_exp = args.max_experiments or 3
+        asyncio.run(run_eac_campaign(args.campaign, max_exp, hours or 0.0))
+    else:
+        sched = Scheduler(batch_size=args.batch_size)
+        sched.run_campaign(args.campaign, hours=hours, max_experiments=args.max_experiments)
 
 
 if __name__ == "__main__":
