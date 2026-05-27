@@ -49,6 +49,23 @@ class ProteinLabCompiler(BaseCompiler):
                     )
                     plan.warnings.append("Suggested fix: Change folding method to AlphaFold2 via Colab bridge.")
 
+            # Validate Phase 8 Advanced Scientific Skills
+            elif cmd.command.startswith("literature.monitor_preprints"):
+                if "query=" not in cmd.command:
+                    plan.errors.append(
+                        f"Missing parameter in {cmd.step_name!r}: 'literature.monitor_preprints' requires 'query'."
+                    )
+            elif cmd.command.startswith("target.query_affinity_experimental"):
+                if "target=" not in cmd.command or "drug_name=" not in cmd.command:
+                    plan.errors.append(
+                        f"Missing parameter in {cmd.step_name!r}: 'target.query_affinity_experimental' requires 'target' and 'drug_name'."
+                    )
+            elif cmd.command.startswith("sequence.align_homologs"):
+                if "seq1=" not in cmd.command or "seq2=" not in cmd.command:
+                    plan.errors.append(
+                        f"Missing parameter in {cmd.step_name!r}: 'sequence.align_homologs' requires 'seq1' and 'seq2'."
+                    )
+
         if plan.errors:
             logger.error(f"EaC Compilation FAILED for {spec.id} with {len(plan.errors)} errors.")
         else:

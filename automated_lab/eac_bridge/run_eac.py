@@ -143,6 +143,25 @@ async def run_eac_campaign(campaign_name: str, max_experiments: int = 3, hours: 
                     parameters={"target": "nipah", "method": "alphafold2"},
                     depends_on=["predict-dti"]
                 ))
+                # Add Phase 8 advanced scientific steps
+                steps.append(ExperimentStep(
+                    name="monitor-preprints",
+                    action="literature.monitor_preprints",
+                    resource="mammal_local",
+                    parameters={"query": "nipah virus receptor binding", "limit": "3"}
+                ))
+                steps.append(ExperimentStep(
+                    name="query-experimental",
+                    action="target.query_affinity_experimental",
+                    resource="mammal_local",
+                    parameters={"target": "nipah", "drug_name": "naltrexone"}
+                ))
+                steps.append(ExperimentStep(
+                    name="align-homology",
+                    action="sequence.align_homologs",
+                    resource="topological_auditor",
+                    parameters={"seq1": "MALWMRLLPLLALLALWGPDPAAA", "seq2": "MALWMRLLPLLALLALWGPDPCAA"}
+                ))
             else:
                 # Ferritin / BioMaterial steps
                 steps.append(ExperimentStep(
@@ -157,6 +176,25 @@ async def run_eac_campaign(campaign_name: str, max_experiments: int = 3, hours: 
                     resource="mammal_local",
                     parameters={"target": "ferritin", "drug_name": "gold_atom"},
                     depends_on=["audit-mesh"]
+                ))
+                # Add Phase 8 advanced scientific steps
+                steps.append(ExperimentStep(
+                    name="monitor-preprints",
+                    action="literature.monitor_preprints",
+                    resource="mammal_local",
+                    parameters={"query": "ferritin gold nanoparticle", "limit": "3"}
+                ))
+                steps.append(ExperimentStep(
+                    name="query-experimental",
+                    action="target.query_affinity_experimental",
+                    resource="mammal_local",
+                    parameters={"target": "mor", "drug_name": "naltrexone"}
+                ))
+                steps.append(ExperimentStep(
+                    name="align-homology",
+                    action="sequence.align_homologs",
+                    resource="topological_auditor",
+                    parameters={"seq1": "MSGLQPHISV", "seq2": "MSGLQPHLSV"}
                 ))
 
             spec = ExperimentSpec(
@@ -225,9 +263,17 @@ def generate_morning_report(campaign_name: str, hypotheses: list, outcomes: list
                 parts = []
                 for step, res in results.items():
                     if "pkd" in res:
-                        parts.append(f"pKd={res['pkd']:.2f}")
+                        parts.append(f"MAMMAL pKd={res['pkd']:.2f}")
                     if "ihara_zeta" in res:
                         parts.append(f"Ihara={res['ihara_zeta']:.2f}")
+                    if "real_pkd" in res:
+                        parts.append(f"Real pKd={res['real_pkd']:.2f}")
+                    if "bias" in res:
+                        parts.append(f"Bias={res['bias']:.2f}")
+                    if "preprints_count" in res:
+                        parts.append(f"Preprints={res['preprints_count']}")
+                    if "percent_identity" in res:
+                        parts.append(f"SeqId={res['percent_identity']:.1f}%")
                 metrics_str = ", ".join(parts) if parts else "Completado"
 
         lines.append(

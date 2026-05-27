@@ -188,3 +188,57 @@ class CombinedLiteratureProvider:
         except Exception as e:
             logger.error(f"Fallback NCBI E-utils search failed: {e}")
             return []
+
+    def monitor_preprints(self, query: str, limit: int = 5) -> List[Dict]:
+        """
+        Queries EuropePMC to retrieve preprints (bioRxiv, medRxiv, arXiv) matching the search query.
+        Implements grounding checks to filter out any fake or flagged citations.
+        """
+        logger.info(f"Monitoring preprints for: {query!r} (limit={limit})")
+        results = []
+        try:
+            url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+            # SRC:PPR retrieves preprints
+            params = {
+                "query": f"SRC:PPR AND ({query})",
+                "format": "json",
+                "pageSize": limit,
+                "resultType": "lite"
+            }
+            resp = requests.get(url, params=params, timeout=10)
+            if resp.status_code == 200:
+                data = resp.json()
+                items = data.get("resultList", {}).get("result", [])
+                for item in items:
+                    authors = [a.strip() for a in item.get("authorString", "").split(",") if a.strip()]
+                    doi = item.get("doi")
+                    results.append({
+                        "title": item.get("title", ""),
+                        "authors": authors,
+                        "abstract": item.get("abstractText", "Preprint retrieved from EuropePMC."),
+                        "url": f"https://doi.org/{doi}" if doi else f"https://europepmc.org/article/PPR/{item.get('id')}",
+                        "source": "europepmc_preprint",
+                        "id": item.get("id"),
+                        "doi": doi,
+                        "year": item.get("pubYear", "")
+                    })
+        except Exception as e:
+            logger.error(f"EuropePMC preprint search failed: {e}")
+            pass
+
+        # Apply grounding filters against fake citations
+        clean_results = []
+        for r in results:
+            title_lower = r.get("title", "").lower()
+            abstract_lower = r.get("abstract", "").lower()
+            is_fake = False
+            for fake in self.fake_pmids:
+                if fake.lower() in title_lower or fake.lower() in abstract_lower:
+                    is_fake = True
+                    logger.warning(f"REJECTED fake preprint matching {fake!r}: {r.get('title')}")
+                    break
+            if not is_fake:
+                clean_results.append(r)
+
+        return clean_results[:limit]
+

@@ -66,10 +66,21 @@ class ResearchLedger:
                     error_msg TEXT,
                     execution_time_ms REAL,
                     raw_output TEXT,
+                    real_pkd REAL,
+                    bias REAL,
+                    preprints TEXT,
                     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY(hypothesis_id) REFERENCES hypotheses(id)
                 );
             """)
+
+            # Ensure columns added for Phase 8 exist in case db was already created
+            for col, col_type in [("real_pkd", "REAL"), ("bias", "REAL"), ("preprints", "TEXT")]:
+                try:
+                    conn.execute(f"ALTER TABLE results ADD COLUMN {col} {col_type};")
+                except sqlite3.OperationalError:
+                    # Column already exists
+                    pass
 
             # Table for safety audits & Harness signatures
             conn.execute("""
@@ -119,11 +130,11 @@ class ResearchLedger:
             ))
             conn.commit()
 
-    def save_result(self, hyp_id: str, status: str, pkd: Optional[float] = None, plddt: Optional[float] = None, ihara_zeta: Optional[float] = None, error_msg: Optional[str] = None, execution_time_ms: float = 0.0, raw_output: Optional[dict[str, Any]] = None):
+    def save_result(self, hyp_id: str, status: str, pkd: Optional[float] = None, plddt: Optional[float] = None, ihara_zeta: Optional[float] = None, error_msg: Optional[str] = None, execution_time_ms: float = 0.0, raw_output: Optional[dict[str, Any]] = None, real_pkd: Optional[float] = None, bias: Optional[float] = None, preprints: Optional[list[dict]] = None):
         with self._get_connection() as conn:
             conn.execute("""
-                INSERT INTO results (hypothesis_id, status, pkd, plddt, ihara_zeta, error_msg, execution_time_ms, raw_output)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                INSERT INTO results (hypothesis_id, status, pkd, plddt, ihara_zeta, error_msg, execution_time_ms, raw_output, real_pkd, bias, preprints)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(hypothesis_id) DO UPDATE SET
                     status=excluded.status,
                     pkd=excluded.pkd,
@@ -132,6 +143,9 @@ class ResearchLedger:
                     error_msg=excluded.error_msg,
                     execution_time_ms=excluded.execution_time_ms,
                     raw_output=excluded.raw_output,
+                    real_pkd=excluded.real_pkd,
+                    bias=excluded.bias,
+                    preprints=excluded.preprints,
                     updated_at=CURRENT_TIMESTAMP;
             """, (
                 hyp_id,
@@ -141,7 +155,10 @@ class ResearchLedger:
                 ihara_zeta,
                 error_msg,
                 execution_time_ms,
-                json.dumps(raw_output or {})
+                json.dumps(raw_output or {}),
+                real_pkd,
+                bias,
+                json.dumps(preprints) if preprints is not None else None
             ))
             # Also update the hypothesis score to match the actual pkd/surrogate metric
             if pkd is not None:
