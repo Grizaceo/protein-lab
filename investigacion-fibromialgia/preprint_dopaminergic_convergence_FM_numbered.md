@@ -284,3 +284,7 @@
 280: ## Conflict of Interest
 
 281: The author declares no conflicts of interest.
+
+282: ## Author's Note
+
+283: This study was initiated out of personal motivation following personal experience with fibromyalgia in close contacts. No financial or institutional interest is involved.

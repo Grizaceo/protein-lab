@@ -350,3 +350,7 @@ This study was conducted using an agentic AI-assisted research methodology imple
 ## Conflict of Interest
 
 The author declares no conflicts of interest.
+
+## Author's Note
+
+This study was initiated out of personal motivation following personal experience with fibromyalgia in close contacts. No financial or institutional interest is involved.
