@@ -24,7 +24,9 @@
       "note": ""
     }
   ],
-  "score": 0.92,
+  "score": null,
   "status": "generated",
-  "metadata": {}
+  "metadata": {
+    "score_note": "A qualitative classification is used instead of a quantitative score. The quantitative score was removed because there is no objective formula. Qualitatively, this hypothesis is supported by robust cross-context validation (GWAS, transcriptomics, and clinical RCT evidence)."
+  }
 }

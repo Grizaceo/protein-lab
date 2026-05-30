@@ -1,8 +1,8 @@
 {
-  "target": "nipah",
-  "iteration": 12,
+  "target": "MOR",
+  "iteration": 1,
   "strategy": "explore",
-  "generated": "2026-05-27 05:52",
+  "generated": "2026-05-27 06:30",
   "params": {},
   "colab_notebook": "https://colab.research.google.com/github/sokrypton/ColabDesign/blob/main/rf/examples/diffusion.ipynb"
 }

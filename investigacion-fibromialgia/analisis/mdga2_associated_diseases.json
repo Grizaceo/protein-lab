@@ -1,0 +1,315 @@
+{
+  "target": {
+    "id": "ENSG00000139915",
+    "approvedSymbol": "MDGA2",
+    "associatedDiseases": {
+      "count": 481,
+      "rows": [
+        {
+          "disease": {
+            "id": "HP_0000924",
+            "name": "Abnormality of the skeletal system"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.567958347974124
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0005670",
+            "name": "smoking initiation"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.539234354648824
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0001073",
+            "name": "obesity"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.5355606718422093
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0003888",
+            "name": "attention deficit hyperactivity disorder"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.5034991084313566
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "MONDO_0002428",
+            "name": "protozoa infectious disease"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.49740477053381904
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "MONDO_0005148",
+            "name": "type 2 diabetes mellitus"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.497332730335164
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "MONDO_0002491",
+            "name": "substance abuse"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.4716326793489769
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0009658",
+            "name": "adverse effect"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.46675051653554567
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0005251",
+            "name": "hypotension"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.46368530639723105
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0010684",
+            "name": "malunion fracture"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.45707110880115137
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0009482",
+            "name": "drug allergy"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.45599966132413383
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "MONDO_0001703",
+            "name": "color vision disorder"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.45125150644576567
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "MONDO_0000334",
+            "name": "multinodular goiter"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.4493092112155214
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0004329",
+            "name": "alcohol drinking"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.4449928023105938
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_1001067",
+            "name": "nutritional deficiency disease"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.4424327507009996
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "HP_0001249",
+            "name": "Intellectual disability"
+          },
+          "datasourceScores": [
+            {
+              "id": "eva",
+              "score": 0.4377101742803672
+            },
+            {
+              "id": "europepmc",
+              "score": 0.024317231904464845
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "GO_0050896",
+            "name": "response to stimulus"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.43541460032557583
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0004875",
+            "name": "mathematical ability"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.43490360731529815
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0009578",
+            "name": "placental retention"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.4144454792705767
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "MONDO_0002342",
+            "name": "chondromalacia"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.4144454792705767
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0008546",
+            "name": "poisoning"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.4144454792705767
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_0006834",
+            "name": "septic shock"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.4144454792705767
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "HP_0003418",
+            "name": "Back pain"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.4011158477553385
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "EFO_1001216",
+            "name": "tooth disease"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.39941147934253923
+            }
+          ]
+        },
+        {
+          "disease": {
+            "id": "MONDO_0044919",
+            "name": "malignant renal pelvis neoplasm"
+          },
+          "datasourceScores": [
+            {
+              "id": "gwas_credible_sets",
+              "score": 0.39941147934253923
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

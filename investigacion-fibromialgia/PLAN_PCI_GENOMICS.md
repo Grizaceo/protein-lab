@@ -246,10 +246,10 @@ Evidencia:
 
 ### Estado actualizado de blockers
 
-| Blocker | Estado |
-|---------|--------|
-| GitHub + release | ✅ |
-| Zenodo DOI | ✅ |
-| bioRxiv | ❌ Pendiente |
-| PDF numerado | ❌ Pendiente |
-| Cross-context resuelto | ✅ (2026-05-22) |
+| Blocker | Estado | Nota |
+|---------|--------|------|
+| GitHub + release | ✅ | https://github.com/Grizaceo/protein-lab |
+| Zenodo DOI | ✅ | `10.5281/zenodo.20250218` (verificado como real y activo) |
+| bioRxiv | ❌ Pendiente | Pendiente de subida por el usuario |
+| PDF numerado | ✅ | Generada versión numerada limpia `preprint_dopaminergic_convergence_FM_numbered.md` sin pipes |
+| Cross-context resuelto | ✅ | Incorporado en preprint v2.1 |

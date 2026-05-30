@@ -1,13 +1,13 @@
-# Instrucciones Colab — Nipah G Binder (2VSM chain A)
-**Iteración:** 12  
-**Generado:** 2026-05-27 05:52  
+# Instrucciones Colab — MOR Target (EaC campaign)
+**Iteración:** 1  
+**Generado:** 2026-05-27 06:30  
 **Estrategia:** EXPLORE  
 
 ---
 
 ## Estado actual
 
-- Mejor score hasta ahora: **0.2802** (`2026-04-23_test_2vsm`)
+- Mejor score hasta ahora: **0.0000** (`ninguno`)
 - Iteraciones sin mejora (stuck_count): 0
 
 ---
@@ -16,7 +16,7 @@
 
 | Archivo local | Ruta en Colab |
 | --- | --- |
-| `next_run/nipah/target.pdb` | `/content/input/target.pdb` |
+| `next_run/MOR/target.pdb` | `/content/input/target.pdb` |
 
 > ⚠ PDB no encontrado localmente — descarga manualmente de RCSB
 

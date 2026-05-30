@@ -1,0 +1,197 @@
+{
+  "target": {
+    "id": "ENSG00000139915",
+    "approvedSymbol": "MDGA2",
+    "tractability": [
+      {
+        "modality": "SM",
+        "label": "Approved Drug",
+        "value": false
+      },
+      {
+        "modality": "SM",
+        "label": "Advanced Clinical",
+        "value": false
+      },
+      {
+        "modality": "SM",
+        "label": "Phase 1 Clinical",
+        "value": false
+      },
+      {
+        "modality": "SM",
+        "label": "Structure with Ligand",
+        "value": false
+      },
+      {
+        "modality": "SM",
+        "label": "High-Quality Ligand",
+        "value": false
+      },
+      {
+        "modality": "SM",
+        "label": "High-Quality Pocket",
+        "value": false
+      },
+      {
+        "modality": "SM",
+        "label": "Med-Quality Pocket",
+        "value": false
+      },
+      {
+        "modality": "SM",
+        "label": "Druggable Family",
+        "value": false
+      },
+      {
+        "modality": "AB",
+        "label": "Approved Drug",
+        "value": false
+      },
+      {
+        "modality": "AB",
+        "label": "Advanced Clinical",
+        "value": false
+      },
+      {
+        "modality": "AB",
+        "label": "Phase 1 Clinical",
+        "value": false
+      },
+      {
+        "modality": "AB",
+        "label": "UniProt loc high conf",
+        "value": true
+      },
+      {
+        "modality": "AB",
+        "label": "GO CC high conf",
+        "value": true
+      },
+      {
+        "modality": "AB",
+        "label": "UniProt loc med conf",
+        "value": false
+      },
+      {
+        "modality": "AB",
+        "label": "UniProt SigP or TMHMM",
+        "value": true
+      },
+      {
+        "modality": "AB",
+        "label": "GO CC med conf",
+        "value": false
+      },
+      {
+        "modality": "AB",
+        "label": "Human Protein Atlas loc",
+        "value": false
+      },
+      {
+        "modality": "PR",
+        "label": "Approved Drug",
+        "value": false
+      },
+      {
+        "modality": "PR",
+        "label": "Advanced Clinical",
+        "value": false
+      },
+      {
+        "modality": "PR",
+        "label": "Phase 1 Clinical",
+        "value": false
+      },
+      {
+        "modality": "PR",
+        "label": "Literature",
+        "value": false
+      },
+      {
+        "modality": "PR",
+        "label": "UniProt Ubiquitination",
+        "value": false
+      },
+      {
+        "modality": "PR",
+        "label": "Database Ubiquitination",
+        "value": true
+      },
+      {
+        "modality": "PR",
+        "label": "Half-life Data",
+        "value": true
+      },
+      {
+        "modality": "PR",
+        "label": "Small Molecule Binder",
+        "value": false
+      },
+      {
+        "modality": "OC",
+        "label": "Approved Drug",
+        "value": false
+      },
+      {
+        "modality": "OC",
+        "label": "Advanced Clinical",
+        "value": false
+      },
+      {
+        "modality": "OC",
+        "label": "Phase 1 Clinical",
+        "value": false
+      }
+    ],
+    "safetyLiabilities": [
+      {
+        "event": "sexual dysfunction",
+        "eventId": "",
+        "biosamples": [],
+        "effects": [],
+        "studies": [
+          {
+            "name": "fluvoxamine induced effect",
+            "type": "clinical",
+            "description": "Genetic variation linked to this safety liability: 14_47546779_A_A,A, 14_47546779_A_A,C, 14_47546779_A_C,C"
+          },
+          {
+            "name": "milnacipran induced effect",
+            "type": "clinical",
+            "description": "Genetic variation linked to this safety liability: 14_47546779_A_A,A, 14_47546779_A_A,C, 14_47546779_A_C,C"
+          },
+          {
+            "name": "paroxetine induced effect",
+            "type": "clinical",
+            "description": "Genetic variation linked to this safety liability: 14_47546779_A_A,A, 14_47546779_A_A,C, 14_47546779_A_C,C"
+          }
+        ],
+        "datasource": "ClinPGx"
+      }
+    ],
+    "geneticConstraint": [
+      {
+        "constraintType": "syn",
+        "exp": 367.8500061035156,
+        "obs": 371,
+        "score": -0.08965300023555756,
+        "oe": 1.0085999965667725
+      },
+      {
+        "constraintType": "mis",
+        "exp": 1053.9000244140625,
+        "obs": 873,
+        "score": 2.0346999168395996,
+        "oe": 0.8283699750900269
+      },
+      {
+        "constraintType": "lof",
+        "exp": 93.36499786376953,
+        "obs": 24,
+        "score": 1,
+        "oe": 0.2570500075817108
+      }
+    ]
+  }
+}
