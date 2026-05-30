@@ -2,7 +2,9 @@
 002: 
 003: ---
 004: 
-005: **Authors:** [To be determined]
+005: **Authors:** Cristóbal Muñoz Rojas¹
+
+006: ¹ Independent Researcher, Santiago, Chile. Correspondence: cristoe4@gmail.com
 006: 
 007: **Preprint — Draft v2.2 — May 2026**
 008: 
@@ -275,6 +277,10 @@
 275: 
 276: Software: Python 3.10, pandas 1.5.3, scipy 1.10.1, statsmodels 0.13.5.
 277: 
-278: ## Conflict of Interest
-279: 
-280: The authors declare no conflicts of interest.
+278: ## AI-Assisted Research Methodology
+
+279: This study was conducted using an agentic AI-assisted research methodology implemented within a human-in-the-loop (HITL) framework. Analytical pipelines, literature synthesis, and computational design steps were developed with the support of large language model agents (Claude, Anthropic). All scientific claims were systematically validated by the human author against pre-established, independently verifiable ground truths: AlphaFold structural predictions (EMBL-EBI), RCSB PDB crystallographic coordinates, ChEMBL bioactivity databases, GEO-deposited expression matrices, and published statistical methods. Verification followed an evidence-first principle: no finding was accepted without traceable support from primary sources. This framework is implemented in the open-source `agentic-lab-eac` package (Apache-2.0, GitHub: Grizaceo/agentic-lab-eac), which formalizes the generate–review–verify cycle used throughout this study.
+
+280: ## Conflict of Interest
+
+281: The author declares no conflicts of interest.
