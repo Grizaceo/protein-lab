@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/gris/.miniconda/envs/protein-lab/bin/colabfold_batch", line 3, in <module>
+    from colabfold.batch import main
+  File "/home/gris/.miniconda/envs/protein-lab/lib/python3.10/site-packages/colabfold/batch.py", line 43, in <module>
+    from alphafold.common import protein, residue_constants
+ModuleNotFoundError: No module named 'alphafold.common'
