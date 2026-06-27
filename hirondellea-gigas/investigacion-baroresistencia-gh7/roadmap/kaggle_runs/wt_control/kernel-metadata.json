@@ -1,0 +1,15 @@
+{
+  "id": "cristobalmuozrojas/md-wt-control-gh7-1-0bar",
+  "title": "md-wt-control-gh7-1-0bar",
+  "code_file": "md_wt_control.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "categories": [
+    "bioinformatics"
+  ]
+}

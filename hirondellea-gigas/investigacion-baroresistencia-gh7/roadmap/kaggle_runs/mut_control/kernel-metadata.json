@@ -1,0 +1,17 @@
+{
+  "id": "cristobalmuozrojas/md-mut-control-gh7",
+  "title": "MD MUT CONTROL GH7 \u2014 1.0bar",
+  "code_file": "md_mut_control.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "cristobalmuozrojas/gh7-md-structures"
+  ],
+  "competition_sources": [],
+  "categories": [
+    "bioinformatics"
+  ]
+}
