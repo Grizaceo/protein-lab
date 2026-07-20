@@ -73,7 +73,7 @@ Our project will:
 
 2. **Apply the agentic pipeline** to each: hypothesis-driven transcriptomic reanalysis of public GEO datasets, target identification via Open Targets/AlphaFold profiling, and drug repurposing analysis against existing pharmacopeia.
 
-3. **Generate mechanistic hypotheses** for DisMech contribution: structured YAML entries with ontology bindings (Mondo, HPO, MAXO), evidence snippets validated against PubMed abstracts, and pathograph networks.
+3. **Enrich DisMech entries**: For each disease, add a transcriptomic signature section to the existing DisMech YAML — structured expression data (differentially expressed genes, effect sizes, robustness classification) linked to the existing mechanism pathographs. For Fabry disease (no DisMech page), create a full new entry. All evidence snippets validated against PubMed abstracts via DisMech's reference validator.
 
 4. **Cross-disease pattern detection**: Use Claude's reasoning to identify shared mechanistic pathways across the 5 diseases — the "mechanistic convergence" approach that is intractable with traditional single-disease studies but tractable with agentic AI.
 
@@ -85,9 +85,9 @@ This project demonstrates that agentic AI can reshape our understanding of rare 
 
 ### Novelty claim (what becomes possible with frontier AI that wasn't before)
 
-Without frontier AI: rare disease research is stuck in single-disease silos. Each condition has ~1-5 published transcriptomic studies, manual literature review takes months per disease, and cross-disease mechanistic synthesis is intractable because no human team can read 5,000+ papers across 5 diseases and identify shared pathways.
+Without frontier AI: rare disease research is stuck in single-disease silos. Each condition has ~1-5 published transcriptomic studies, manual literature review takes months per disease, and cross-disease mechanistic synthesis is intractable because no human team can read 5,000+ papers across 5 diseases and identify shared pathways. DisMech's existing pages document mechanism and phenotype, but they do not include systematic transcriptomic signatures — which genes are differentially expressed, in which tissue, with what effect size and statistical robustness.
 
-With Claude: we can run the same hypothesis-driven pipeline across 5 rare diseases in 6 months, synthesize literature at scale, identify cross-disease mechanistic convergence, and produce DisMech-ready structured entries with automatically validated evidence. The pipeline is not "AI summarizing papers" — it's AI executing a rigorous, reproducible analytical workflow (transcriptomic statistics → structural biology → drug design) that would take a traditional lab 2-3 years per disease.
+With Claude: we can run the same hypothesis-driven pipeline across 5 rare diseases in 6 months, synthesize literature at scale, identify cross-disease mechanistic convergence, and produce DisMech-ready structured entries with automatically validated evidence. The transcriptomic enrichment layer we propose adds a dimension that current DisMech pages lack: quantitative expression signatures linked to the existing mechanism pathographs, plus drug-target docking and repurposing analysis grounded in the transcriptomic findings. The pipeline is not "AI summarizing papers" — it's AI executing a rigorous, reproducible analytical workflow (transcriptomic statistics → structural biology → drug design) that would take a traditional lab 2-3 years per disease.
 
 ### Team / Qualifications
 
@@ -135,13 +135,15 @@ Note: While the applicant is formally affiliated with the Faculty of Law (not a 
 
 1. **Direct alignment with Monarch partnership**: We contribute to DisMech — Monarch's agent-friendly mechanistic classification library — using the same Claude Code-based curation workflow that Monarch already uses. For Fabry disease (no DisMech page), we create a new entry. For the 4 diseases with existing pages, we enrich them with a transcriptomic signature layer that complements the existing mechanism curation.
 
-2. **Validated methodology, not a proposal**: The fibromialgia preprint proves the pipeline works. We're not proposing to build something; we're proposing to transfer something that works.
+2. **Validated methodology, not a proposal**: The fibromyalgia preprint proves the pipeline works. We're not proposing to build something; we're proposing to transfer something that works to a new domain.
 
-3. **Open-source by design**: agentic-lab-eac, protein-lab, and DisMech contributions are all open. Outputs go to public repositories.
+3. **Enrichment, not duplication**: DisMech's existing pages document mechanism and phenotype qualitatively. We add a quantitative transcriptomic layer — expression signatures, statistical robustness, drug-target docking — that complements without duplicating. For Fabry disease, we create the first DisMech entry.
 
-4. **Independent researcher**: Aligns with Anthropic's explicit eligibility for "independent scientists" — a chronically underfunded group in rare disease research.
+4. **Open-source by design**: agentic-lab-eac, protein-lab, and DisMech contributions are all open. Outputs go to public repositories.
 
-5. **Cross-disease synthesis**: The methodological novelty is using agentic AI to find shared mechanisms across rare diseases — exactly what Anthropic's announcement describes: "detect patterns across them" and "create shared terminology."
+5. **Independent researcher**: Aligns with Anthropic's explicit eligibility for "independent scientists" — a chronically underfunded group in rare disease research.
+
+6. **Cross-disease synthesis**: The methodological novelty is using agentic AI to find shared mechanisms across rare diseases — exactly what Anthropic's announcement describes: "detect patterns across them" and "create shared terminology."
 
 ---
 
