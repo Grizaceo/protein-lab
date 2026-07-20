@@ -51,7 +51,7 @@ Apply the same pipeline to 3-5 rare diseases from Monarch's prioritized list whe
 | Neurofibromatosis type 1 | MONDO:0018975 | absent | GSE218493 + RNA-seq (Banerjee 2025) | NF1/RAS pathway; transcriptomic mechanisms poorly mapped |
 | Fabry disease | MONDO:0010526 | absent | Kidney transcriptome (Delaleu 2023, Kidney Int) | Lysosomal storage; ETR-resistant targets; drug repurposing |
 | Pitt-Hopkins syndrome | MONDO:0012589 | absent | GSE48367 (TCF4 study) | Ultra-rare neurodevelopmental; TCF4 haploinsufficiency |
-| Myasthenia gravis | MONDO:0009688 | absent | GSE85452, GSE103974 | Autoimmune neurological; GAD65/AChR; well-defined targets |
+| Myasthenia gravis | MONDO:0009688 | absent | GSE85452, GSE103974 | Autoimmune neurological; AChR/MuSK antibodies; thymus-mediated |
 
 ---
 
