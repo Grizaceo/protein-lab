@@ -81,7 +81,7 @@ Our project will:
 
 The $50,000 in Claude credits enables: large-scale literature synthesis across 5 disease domains (~$15K in inference), transcriptomic reanalysis with sensitivity models ($5K), molecular docking and de novo generation runs ($10K), cross-disease pattern synthesis and hypothesis generation ($10K), and DisMech curation with evidence validation ($10K). The 6-month timeline allows: Month 1-2 for disease selection and data acquisition, Month 3-4 for pipeline execution, Month 5-6 for synthesis, curation, and submission.
 
-This project demonstrates that agentic AI can reshape our understanding of rare diseases by applying a validated, open-source, human-in-the-loop methodology to the exact gap that Monarch and Anthropic have identified: the mechanistic dark matter of rare disease biology.
+This project demonstrates that agentic AI can reshape our understanding of rare diseases by applying a validated, open-source, human-in-the-loop methodology to the exact gap that Monarch and Anthropic have identified: the mechanistic dark matter of rare disease biology. Unlike existing Anthropic AI for Science grantees — Every Cure (drug screening), Centre for Population Genomics (variant classification), Violet Research Institute (regulatory navigation) — this project contributes a transcriptomic-to-structural pipeline that feeds directly into Monarch's DisMech knowledge base, filling a niche no current grantee occupies.
 
 ### Novelty claim (what becomes possible with frontier AI that wasn't before)
 
@@ -141,9 +141,9 @@ Note: While the applicant is formally affiliated with the Faculty of Law (not a 
 
 4. **Open-source by design**: agentic-lab-eac, protein-lab, and DisMech contributions are all open. Outputs go to public repositories.
 
-5. **Independent researcher**: Aligns with Anthropic's explicit eligibility for "independent scientists" — a chronically underfunded group in rare disease research.
+5. **Independent researcher, underserved end of eligibility**: All three existing AI for Science rare disease grantees are large institutional teams (Penn, Garvan, Violet). An independent researcher with a published preprint, open-source framework, and working pipeline represents the chronically underfunded end of Anthropic's eligibility spectrum.
 
-6. **Cross-disease synthesis**: The methodological novelty is using agentic AI to find shared mechanisms across rare diseases — exactly what Anthropic's announcement describes: "detect patterns across them" and "create shared terminology."
+6. **Complementary to existing grantees, not competing**: Every Cure (Penn, $48M ARPA-H) screens FDA-approved drugs against disease databases — we add a transcriptomic-to-structural layer that identifies new targets, not just repurposes existing drugs. The Centre for Population Genomics (Garvan/Murdoch) drafts variant classifications — we do transcriptomics, not variant calling. Violet Research Institute navigates regulatory filings — we do mechanism discovery, not regulatory. No existing grantee contributes to Monarch's DisMech knowledge base. Our pipeline is the only one that chains transcriptomic reanalysis → molecular docking → de novo drug design in a single agentic workflow, and DisMech is the only output target that feeds back into a community resource Monarch itself maintains. The methodological novelty is using agentic AI to find shared mechanisms across rare diseases — exactly what Anthropic's announcement describes: "detect patterns across them" and "create shared terminology."
 
 ---
 
