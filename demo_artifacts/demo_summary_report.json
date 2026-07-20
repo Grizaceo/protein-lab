@@ -2,7 +2,7 @@
   "disease": "Hutchinson-Gilford Progeria Syndrome",
   "mondo_id": "MONDO:0008310",
   "geo_accession": "GSE137083",
-  "date": "2026-07-20T18:12:26.676723",
+  "date": "2026-07-20T18:29:29.877302",
   "pipeline": "agentic-lab-eac v1.0 (demo)",
   "samples": {
     "HGPS": 10,

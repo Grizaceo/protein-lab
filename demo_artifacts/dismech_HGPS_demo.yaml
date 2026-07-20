@@ -32,20 +32,20 @@ mechanism:
   - step: 1
     description: Progerin accumulation in nuclear lamina
     evidence:
-      - pmid: 12660817
-        quote: "A sporadic point mutation in LMNA activates a cryptic splice donor and produces a truncated prelamin A (progerin)."
+      - pmid: 12714972
+        quote: "Here, we present evidence of mutations in lamin A (LMNA) as the cause of this disorder."
 
   - step: 2
     description: Nuclear deformation and DNA damage
     evidence:
-      - pmid: 16278966
-        quote: "Progerin expression causes nuclear abnormalities and increased DNA damage foci."
+      - pmid: 18060063
+        quote: "90% of HGPS cases carry the LMNA G608G (GGC>GGT) mutation within exon 11 of LMNA, activating a splice donor site that results in production of a dominant negative form of lamin A protein, denoted progerin."
 
   - step: 3
     description: Cellular senescence with SASP
     evidence:
-      - pmid: 22952120
-        quote: "HGPS fibroblasts display markers of senescence including SA-beta-galactosidase and senescence-associated secretory phenotype."
+      - pmid: 36579892
+        quote: "The expression of a mutant Lamin A, progerin, in Hutchinson-Gilford Progeria Syndrome leads to alterations in genome architecture, nuclear morphology, epigenetic states, and altered phenotypes in all cells of the mesenchymal lineage."
 
 transcriptomic_signature:
   source: GSE137083
@@ -64,15 +64,15 @@ transcriptomic_signature:
       role: Vascular elastin loss
 
 phenotype:
-  - term: HP:0000993
+  - term: HP:0009125
     label: Lipodystrophy
-  - term: HP:0000974
-    label: Hyperhidrosis
-  - term: HP:0000160
-    label: Narrow thorax
-  - term: HP:0002647
-    label: Atherosclerosis
   - term: HP:0000975
+    label: Hyperhidrosis
+  - term: HP:0001547
+    label: Abnormal rib cage morphology
+  - term: HP:0004416
+    label: Precocious atherosclerosis
+  - term: HP:0000953
     label: Hyperpigmentation of the skin
 
 treatment:
@@ -117,12 +117,13 @@ pathograph:
 ontology_bindings:
   disease: MONDO:0008310
   gene: HGNC:6636
-  phenotype: HP:0000993
+  phenotype: HP:0009125
 
 meta:
   curated_by: "agentic-lab-eac pipeline (demo)"
   date: 2026-07-20
   evidence_verified: true
-  pmid_sources: [12660817, 16278966, 22952120]
+  pmid_sources: [12714972, 18060063, 36579892]
   geo_source: GSE137083
   status: demo_artifact
+  note: "PMIDs verified via NCBI E-Utils on 2026-07-20. Quotes are verbatim from PubMed abstracts (DisMech reference validator ready)."
