@@ -1,0 +1,56 @@
+{
+  "disease": "Hutchinson-Gilford Progeria Syndrome",
+  "mondo_id": "MONDO:0008310",
+  "geo_accession": "GSE137083",
+  "date": "2026-07-20T18:12:26.676723",
+  "pipeline": "agentic-lab-eac v1.0 (demo)",
+  "samples": {
+    "HGPS": 10,
+    "Control": 10
+  },
+  "genes_tested": 25,
+  "progeria_panel_results": {
+    "robust": 13,
+    "supported": 5,
+    "model_sensitive": 0,
+    "not_significant": 3
+  },
+  "housekeeping_control": {
+    "robust": 0,
+    "supported": 0,
+    "not_significant": 4
+  },
+  "top_genes": [
+    {
+      "Gene": "PML",
+      "Description": "Promyelocytic leukemia \u2014 nuclear bodies marker (dataset focus)",
+      "Log2FC": 0.627,
+      "Robustness": "Robust (5/5)"
+    },
+    {
+      "Gene": "MMP1",
+      "Description": "Matrix metalloproteinase 1 \u2014 tissue remodeling",
+      "Log2FC": 0.562,
+      "Robustness": "Robust (5/5)"
+    },
+    {
+      "Gene": "MMP3",
+      "Description": "Matrix metalloproteinase 3 \u2014 SASP",
+      "Log2FC": 0.479,
+      "Robustness": "Robust (5/5)"
+    },
+    {
+      "Gene": "IL6",
+      "Description": "Interleukin-6 \u2014 SASP (senescence-associated secretory phenotype)",
+      "Log2FC": 0.409,
+      "Robustness": "Robust (5/5)"
+    },
+    {
+      "Gene": "CDKN2A",
+      "Description": "p16INK4a \u2014 senescence marker, upregulated in HGPS",
+      "Log2FC": 0.314,
+      "Robustness": "Robust (5/5)"
+    }
+  ],
+  "note": "Synthetic data demo based on known HGPS biology. Real run will use downloaded GEO data."
+}
