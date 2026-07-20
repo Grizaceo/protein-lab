@@ -47,11 +47,11 @@ Apply the same pipeline to 5 rare diseases from Monarch's prioritized list where
 
 | Disease | MONDO ID | DisMech status | GEO datasets verified | Rationale |
 |---------|----------|:---:|:---:|---|
-| Hutchinson-Gilford progeria | MONDO:0008310 | secondary_only | GSE113957, GSE137083 (RNA-seq fibroblasts) | Rich transcriptomic data; aging/inflammation; lonafarnib alternatives |
-| Neurofibromatosis type 1 | MONDO:0018975 | absent | GSE218493 + RNA-seq (Banerjee 2025) | NF1/RAS pathway; transcriptomic mechanisms poorly mapped |
-| Fabry disease | MONDO:0010526 | absent | Kidney transcriptome (Delaleu 2023, Kidney Int) | Lysosomal storage; ETR-resistant targets; drug repurposing |
-| Pitt-Hopkins syndrome | MONDO:0012589 | absent | GSE48367 (TCF4 study) | Ultra-rare neurodevelopmental; TCF4 haploinsufficiency |
-| Myasthenia gravis | MONDO:0009688 | absent | GSE85452, GSE103974 | Autoimmune neurological; AChR/MuSK antibodies; thymus-mediated |
+| Hutchinson-Gilford progeria | MONDO:0008310 | Full page exists | GSE113957, GSE137083 (RNA-seq fibroblasts) | Rich transcriptomic data; existing DisMech page can be enriched with transcriptomic signature layer |
+| Neurofibromatosis type 1 | MONDO:0018975 | Full page exists | GSE218493 + RNA-seq (Banerjee 2025) | NF1/RAS pathway; existing DisMech page can be enriched with transcriptomic data |
+| Fabry disease | MONDO:0010526 | No page found | GSE178947 (kidney transcriptome) | Lysosomal storage; ETR-resistant targets; no DisMech page exists — maximum curation value |
+| Pitt-Hopkins syndrome | MONDO:0012589 | Full page exists | GSE48367 (TCF4 study) | Ultra-rare neurodevelopmental; existing page can be enriched |
+| Myasthenia gravis | MONDO:0009688 | Full page exists | GSE85452, GSE103974 | Autoimmune neurological; AChR/MuSK; thymus-mediated; page can be enriched |
 
 ---
 
@@ -65,7 +65,7 @@ Agentic Transcriptomic Repurposing for Rare Diseases: From Fibromyalgia Proof-of
 
 Fibromyalgia affects 2-4% of the global population, yet its molecular basis remains poorly defined. We developed an agentic AI pipeline — built with Claude and formalized in the open-source agentic-lab-eac framework — that combines (1) hypothesis-driven reanalysis of public transcriptomic cohorts, (2) molecular docking against structurally characterized targets, and (3) conditional Transformer-based de novo molecular generation for selective drug candidates. Applied to fibromyalgia, this pipeline identified robust convergence between GWAS-prioritized neural genes (DRD2, MDGA2) and transcriptomic alterations in PBMCs, produced structural insights into DRD2/DRD3 selectivity, and generated novel candidate scaffolds with predicted CNS penetration (preprint v2.2, DOI: 10.5281/zenodo.20250218).
 
-We now propose to transfer this validated pipeline to rare genetic diseases, where the methodological gap is greatest and the potential impact is highest. Rare diseases affect 400 million people worldwide, yet mechanistic understanding is fragmented across 7,000+ conditions, each with small patient populations and limited datasets. The Monarch Initiative's DisMech knowledge base — curated with Claude Code — currently covers 1,298 disorders (2,051 subtypes), grounded in 21,000+ cited publications, but hundreds of prioritized rare diseases remain uncurated or have only secondary mechanistic entries.
+We now propose to transfer this validated pipeline to rare genetic diseases, where the methodological gap is greatest and the potential impact is highest. Rare diseases affect 400 million people worldwide, yet mechanistic understanding is fragmented across 7,000+ conditions, each with small patient populations and limited datasets. The Monarch Initiative's DisMech knowledge base — curated with Claude Code — currently covers 1,583 disorders (2,436 subtypes), grounded in 23,000+ cited publications, but many prioritized rare diseases still lack full mechanistic curation or have gaps in their pathographs.
 
 Our project will:
 
@@ -77,7 +77,7 @@ Our project will:
 
 4. **Cross-disease pattern detection**: Use Claude's reasoning to identify shared mechanistic pathways across the 5 diseases — the "mechanistic convergence" approach that is intractable with traditional single-disease studies but tractable with agentic AI.
 
-5. **Deliverables**: 5 DisMech YAML entries submitted as PRs to monarch-initiative/dismech; a cross-disease mechanistic analysis preprint; open-source pipeline extensions in agentic-lab-eac for rare disease-specific workflows.
+5. **Deliverables**: DisMech contributions — 1 new YAML entry (Fabry disease) + transcriptomic signature enrichment for 4 existing DisMech pages (progeria, NF1, Pitt-Hopkins, myasthenia gravis) submitted as PRs to monarch-initiative/dismech; a cross-disease mechanistic analysis preprint; open-source pipeline extensions in agentic-lab-eac for rare disease-specific workflows.
 
 The $50,000 in Claude credits enables: large-scale literature synthesis across 5 disease domains (~$15K in inference), transcriptomic reanalysis with sensitivity models ($5K), molecular docking and de novo generation runs ($10K), cross-disease pattern synthesis and hypothesis generation ($10K), and DisMech curation with evidence validation ($10K). The 6-month timeline allows: Month 1-2 for disease selection and data acquisition, Month 3-4 for pipeline execution, Month 5-6 for synthesis, curation, and submission.
 
@@ -118,7 +118,7 @@ Note: While the applicant is formally affiliated with the Faculty of Law (not a 
 | 2 | Transcriptomic reanalysis (sensitivity models per disease) | 5 sensitivity analysis tables, differentially expressed gene sets |
 | 3 | Target profiling (AlphaFold, Open Targets), molecular docking | Target profiles, docking results, selectivity analyses |
 | 4 | De novo drug generation (Transformer), cross-disease pattern synthesis | Candidate scaffolds, cross-disease mechanistic map |
-| 5 | DisMech curation (YAML entries, evidence validation, ontology binding) | 5 DisMech PRs submitted |
+| 5 | DisMech curation (1 new YAML for Fabry + transcriptomic enrichment for 4 existing pages, evidence validation, ontology binding) | DisMech PRs submitted |
 | 6 | Preprint writing, pipeline extensions, community engagement | Preprint submitted to bioRxiv, agentic-lab-eac v2 release |
 
 ### Credit usage breakdown ($50,000)
@@ -133,7 +133,7 @@ Note: While the applicant is formally affiliated with the Faculty of Law (not a 
 
 ### Why this fits Anthropic's rare disease program
 
-1. **Direct alignment with Monarch partnership**: We contribute to DisMech — Monarch's agent-friendly mechanistic classification library — using the same Claude Code-based curation workflow that Monarch already uses.
+1. **Direct alignment with Monarch partnership**: We contribute to DisMech — Monarch's agent-friendly mechanistic classification library — using the same Claude Code-based curation workflow that Monarch already uses. For Fabry disease (no DisMech page), we create a new entry. For the 4 diseases with existing pages, we enrich them with a transcriptomic signature layer that complements the existing mechanism curation.
 
 2. **Validated methodology, not a proposal**: The fibromialgia preprint proves the pipeline works. We're not proposing to build something; we're proposing to transfer something that works.
 
