@@ -8,10 +8,10 @@
 
 ## STRATEGY SUMMARY
 
-**The pivot:** Reframe the existing fibromialgia pipeline as a proof-of-concept for a transferable agentic AI methodology, then propose applying it to specific rare diseases from Monarch's prioritized list using DisMech/Mondo resources.
+**The pivot:** Reframe the existing fibromyalgia pipeline as a proof-of-concept for a transferable agentic AI methodology, then propose applying it to specific rare diseases from Monarch's prioritized list using DisMech/Mondo resources.
 
 **What we have (evidence of capability):**
-1. Preprint v2.2 (Draft, May 2026) — GWAS-transcriptomic convergence in fibromialgia
+1. Preprint v2.2 (Draft, May 2026) — GWAS-transcriptomic convergence in fibromyalgia
 2. Public repo: github.com/Grizaceo/protein-lab (DOI: 10.5281/zenodo.20250218)
 3. agentic-lab-eac framework: github.com/Grizaceo/agentic-lab-eac (Apache-2.0)
 4. Pipeline: transcriptomic reanalysis → molecular docking → de novo drug design (Transformer encoder-decoder)
@@ -22,7 +22,7 @@ Apply the same pipeline to 5 rare diseases from Monarch's prioritized list where
 - Public transcriptomic data exists (GEO)
 - Drug targets are poorly characterized
 - Mechanistic understanding is limited
-- DisMech has gaps (diseases marked "absent" in curation candidates)
+DisMech pages exist but lack transcriptomic signature layers (or no page exists, as with Fabry)
 
 ---
 
@@ -30,7 +30,6 @@ Apply the same pipeline to 5 rare diseases from Monarch's prioritized list where
 
 **Rationale:** Track 1 fits our profile. We are an independent researcher (not a biotech startup), our pipeline is computational (not wet-lab), and the work produces mechanistic hypotheses and public datasets — exactly what Track 1 funds. The Monarch partnership (DisMech, Mondo) is Track 1's stated partner ecosystem.
 
-**Secondary angle (Track 2):** The de novo drug design component (Transformer + docking + QSAR) could justify a Track 2 application for drug development, but Track 1 is the stronger fit given our current evidence.
 
 ---
 
@@ -38,7 +37,7 @@ Apply the same pipeline to 5 rare diseases from Monarch's prioritized list where
 
 ### Selection criteria:
 1. Monarch priority list (initial-diseases.md)
-2. DisMech status = "absent" (uncurated — maximum value contribution)
+2. DisMech page exists or not (maximum value: no page = new entry; existing page = enrichment)
 3. Public transcriptomic data available (GEO)
 4. Known drug target gaps
 5. Mechanistic convergence potential (shared pathways across diseases)
@@ -48,10 +47,10 @@ Apply the same pipeline to 5 rare diseases from Monarch's prioritized list where
 | Disease | MONDO ID | DisMech status | GEO datasets verified | Rationale |
 |---------|----------|:---:|:---:|---|
 | Hutchinson-Gilford progeria | MONDO:0008310 | Full page exists | GSE113957, GSE137083 (RNA-seq fibroblasts) | Rich transcriptomic data; existing DisMech page can be enriched with transcriptomic signature layer |
-| Neurofibromatosis type 1 | MONDO:0018975 | Full page exists | GSE218493 + RNA-seq (Banerjee 2025) | NF1/RAS pathway; existing DisMech page can be enriched with transcriptomic data |
+| Neurofibromatosis type 1 | MONDO:0018975 | Full page exists | GSE218493 (scRNA-seq neurofibroma) | NF1/RAS pathway; existing DisMech page can be enriched with transcriptomic data |
 | Fabry disease | MONDO:0010526 | No page found | GSE178947 (kidney transcriptome) | Lysosomal storage; ETR-resistant targets; no DisMech page exists — maximum curation value |
 | Pitt-Hopkins syndrome | MONDO:0012589 | Full page exists | GSE48367 (TCF4 study) | Ultra-rare neurodevelopmental; existing page can be enriched |
-| Myasthenia gravis | MONDO:0009688 | Full page exists | GSE85452, GSE103974 | Autoimmune neurological; AChR/MuSK; thymus-mediated; page can be enriched |
+| Myasthenia gravis | MONDO:0009688 | Full page exists | GSE85452, GSE103974 | Autoimmune neurological; AChR/MuSK; thymus-mediated |
 
 ---
 
@@ -69,7 +68,7 @@ We now propose to transfer this validated pipeline to rare genetic diseases, whe
 
 Our project will:
 
-1. **Select 5 rare diseases** from Monarch's prioritized list where transcriptomic data exists in GEO but mechanistic curation is absent in DisMech (Hutchinson-Gilford progeria, neurofibromatosis type 1, Fabry disease, Pitt-Hopkins syndrome, and myasthenia gravis).
+1. **Select 5 rare diseases** from Monarch's prioritized list where transcriptomic GEO data is available: Hutchinson-Gilford progeria, neurofibromatosis type 1, Fabry disease, Pitt-Hopkins syndrome, and myasthenia gravis. Four have existing DisMech pages to enrich; Fabry has no page (new entry).
 
 2. **Apply the agentic pipeline** to each: hypothesis-driven transcriptomic reanalysis of public GEO datasets, target identification via Open Targets/AlphaFold profiling, and drug repurposing analysis against existing pharmacopeia.
 
@@ -105,7 +104,7 @@ Note: While the applicant is formally affiliated with the Faculty of Law (not a 
 ### Data & Code Availability
 
 - All transcriptomic data: public GEO datasets (GSE221921, GSE67311 for fibromyalgia proof-of-concept; GSE113957/GSE137083 for progeria, GSE218493 for NF1, GSE178947 for Fabry, GSE48367 for Pitt-Hopkins, GSE85452/GSE103974 for myasthenia gravis)
-- Pipeline code: github.com/Grizaceo/protein-lab (MIT licensed), github.com/Grizaceo/agentic-lab-eac (Apache-2.0)
+- Pipeline code: github.com/Grizaceo/protein-lab (MIT — LICENSE committed, pending git push), github.com/Grizaceo/agentic-lab-eac (Apache-2.0)
 - DisMech contributions: PRs to github.com/monarch-initiative/dismech
 - Preprint: DOI 10.5281/zenodo.20250218
 - Software: Python 3.10, pandas, scipy, statsmodels, RDKit, AutoDock Vina, PyTorch
@@ -125,9 +124,9 @@ Note: While the applicant is formally affiliated with the Faculty of Law (not a 
 
 | Activity | Credits | Justification |
 |----------|--------:|--------------|
-| Literature synthesis (5 diseases × ~500 papers each) | $15,000 | Large-batch Claude inference for literature corpus analysis, evidence extraction, DisMech YAML generation |
+| Literature synthesis (5 diseases × ~500 papers each) | $15,000 | Claude Opus for literature corpus analysis, evidence extraction, DisMech YAML generation |
 | Transcriptomic reanalysis orchestration | $5,000 | Claude Sonnet/Opus for pipeline orchestration, statistical interpretation, sensitivity model design |
-| Molecular docking & de novo generation | $10,000 | Agentic workflows for structural analysis, QSAR model training, candidate filtering |
+| Molecular docking & de novo generation | $10,000 | Claude Sonnet for agentic structural analysis, QSAR model training, candidate filtering |
 | Cross-disease mechanistic synthesis | $10,000 | High-volume reasoning across 5 disease datasets, pathway analysis, hypothesis generation |
 | DisMech curation & evidence validation | $10,000 | Claude for YAML generation, PubMed evidence validation, ontology binding, PR preparation |
 
@@ -144,6 +143,10 @@ Note: While the applicant is formally affiliated with the Faculty of Law (not a 
 5. **Independent researcher, underserved end of eligibility**: All three existing AI for Science rare disease grantees are large institutional teams (Penn, Garvan, Violet). An independent researcher with a published preprint, open-source framework, and working pipeline represents the chronically underfunded end of Anthropic's eligibility spectrum.
 
 6. **Complementary to existing grantees, not competing**: Every Cure (Penn, $48M ARPA-H) screens FDA-approved drugs against disease databases — we add a transcriptomic-to-structural layer that identifies new targets, not just repurposes existing drugs. The Centre for Population Genomics (Garvan/Murdoch) drafts variant classifications — we do transcriptomics, not variant calling. Violet Research Institute navigates regulatory filings — we do mechanism discovery, not regulatory. No existing grantee contributes to Monarch's DisMech knowledge base. Our pipeline is the only one that chains transcriptomic reanalysis → molecular docking → de novo drug design in a single agentic workflow, and DisMech is the only output target that feeds back into a community resource Monarch itself maintains. The methodological novelty is using agentic AI to find shared mechanisms across rare diseases — exactly what Anthropic's announcement describes: "detect patterns across them" and "create shared terminology."
+
+### Data ethics & responsible AI
+
+All transcriptomic data is publicly available from GEO (no patient identifiers, no IRB required). The pipeline is computational only — no wet-lab experiments, no human subjects, no clinical interventions. All DisMech contributions use published, peer-reviewed evidence with exact quotes validated against PubMed abstracts. The human-in-the-loop framework (documented in the preprint) ensures every scientific claim is verified against primary sources before acceptance. No biosecurity-sensitive operations (pathogen engineering, toxin synthesis) are involved.
 
 ---
 
