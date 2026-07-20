@@ -18,7 +18,7 @@
 5. Human-in-the-loop agentic methodology already documented in the preprint
 
 **What we propose (the new work):**
-Apply the same pipeline to 3-5 rare diseases from Monarch's prioritized list where:
+Apply the same pipeline to 5 rare diseases from Monarch's prioritized list where:
 - Public transcriptomic data exists (GEO)
 - Drug targets are poorly characterized
 - Mechanistic understanding is limited
