@@ -60,3 +60,13 @@ preprint_*.pdf
 *.pdb
 *.cif
 *.mmcif
+
+# Datos grandes intencionalmente untracked (2026-08-03)
+hirondellea-gigas/datos/
+hirondellea-gigas/investigacion-baroresistencia-gh7/resultados/
+materiales-avanzados-chile/
+investigacion-fibromialgia/datos/geo/GSE269047/
+casp17/submissions/
+casp17/predictions/
+*.tgz
+nul
