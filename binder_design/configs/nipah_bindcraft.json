@@ -1,0 +1,36 @@
+{
+  "campaign": "nipah_bindcraft_validation",
+  "target": {
+    "pdb_id": "2VSM",
+    "chain": "A",
+    "name": "Nipah Virus Glycoprotein G",
+    "domain_residue_range": [212, 600],
+    "hotspots": [489, 504, 505, 506],
+    "hotspot_chain_prefix": "A"
+  },
+  "bindcraft": {
+    "notebook_url": "https://colab.research.google.com/github/martinpacesa/BindCraft/blob/main/notebooks/BindCraft.ipynb",
+    "binder_lengths": [65, 150],
+    "num_trajectories": 500,
+    "seed": 42,
+    "trim_mode": "minimal"
+  },
+  "filters": {
+    "iptm_min": 0.5,
+    "iptm_competitive": 0.75,
+    "plddt_interface_min": 80,
+    "rosetta_ddg_max_reu": -30,
+    "qed_min": 0.3,
+    "sa_score_max": 4.5
+  },
+  "compute": {
+    "preferred": "colab_pro_a100",
+    "fallback": "colab_free_t4",
+    "local_gpu": "rtx_4060_8gb_not_supported"
+  },
+  "output": {
+    "targets_dir": "binder_design/targets",
+    "runs_dir": "colab_runs",
+    "accepted_prefix": "bindcraft_nipah"
+  }
+}

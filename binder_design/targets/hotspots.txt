@@ -1,0 +1,5 @@
+# BindCraft hotspot residues (chain A, 2VSM)
+A489
+A504
+A505
+A506
