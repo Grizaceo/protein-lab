@@ -1,0 +1,1409 @@
+<?xml version="1.0"  ?><!DOCTYPE pmc-articleset PUBLIC "-//NLM//DTD ARTICLE SET 2.0//EN" "https://dtd.nlm.nih.gov/ncbi/pmc/articleset/nlm-articleset-2.0.dtd"><pmc-articleset><article id="advs72030" xml:lang="en" article-type="research-article" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Adv Sci (Weinh)</journal-id><journal-id journal-id-type="iso-abbrev">Adv Sci (Weinh)</journal-id><journal-id journal-id-type="pmc-domain-id">2933</journal-id><journal-id journal-id-type="pmc-domain">advsci</journal-id><journal-id journal-id-type="nlm-id">101664569</journal-id><journal-id journal-id-type="publisher-id">ADVS</journal-id><journal-title-group><journal-title>Advanced Science</journal-title></journal-title-group><issn pub-type="epub">2198-3844</issn><publisher><publisher-name>Wiley</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC12713070</article-id><article-id pub-id-type="pmcid-ver">PMC12713070.1</article-id><article-id pub-id-type="pmcaid">12713070</article-id><article-id pub-id-type="pmcaiid">12713070</article-id><article-id pub-id-type="pmid">41025730</article-id><article-id pub-id-type="doi">10.1002/advs.202507691</article-id><article-id pub-id-type="publisher-id">ADVS72030</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group></article-categories><title-group><article-title>Diagnosis, Prognosis, and Drug Target Discovery for Chronic Widespread Pain: A Large Proteogenomic Study</article-title></title-group><contrib-group><contrib id="advs72030-cr-0001" contrib-type="author"><name name-style="western"><surname>Chen</surname><given-names initials="L">Li</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-8607-8997</contrib-id><xref rid="advs72030-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs72030-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="advs72030-cr-0002" contrib-type="author"><name name-style="western"><surname>Kelleher</surname><given-names initials="E">Eoin</given-names></name><xref rid="advs72030-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="advs72030-cr-0003" contrib-type="author"><name name-style="western"><surname>Meng</surname><given-names initials="R">Ruogu</given-names></name><xref rid="advs72030-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib id="advs72030-cr-0004" contrib-type="author"><name name-style="western"><surname>Liu</surname><given-names initials="D">Duanke</given-names></name><xref rid="advs72030-aff-0005" ref-type="aff">
+<sup>5</sup>
+</xref></contrib><contrib id="advs72030-cr-0005" contrib-type="author"><name name-style="western"><surname>Guo</surname><given-names initials="Y">Yuchen</given-names></name><xref rid="advs72030-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="advs72030-cr-0006" contrib-type="author"><name name-style="western"><surname>Wang</surname><given-names initials="Y">Yunhe</given-names></name><xref rid="advs72030-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref></contrib><contrib id="advs72030-cr-0007" contrib-type="author"><name name-style="western"><surname>Gao</surname><given-names initials="Y">Yaqing</given-names></name><xref rid="advs72030-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref></contrib><contrib id="advs72030-cr-0008" contrib-type="author"><name name-style="western"><surname>Huang</surname><given-names initials="Z">Zhe</given-names></name><xref rid="advs72030-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref></contrib><contrib id="advs72030-cr-0009" contrib-type="author" corresp="yes"><name name-style="western"><surname>Liang</surname><given-names initials="Z">Zhu</given-names></name><xref rid="advs72030-aff-0007" ref-type="aff">
+<sup>7</sup>
+</xref><address><email>zliang3@bwh.harvard.edu</email></address></contrib><contrib id="advs72030-cr-0010" contrib-type="author"><name name-style="western"><surname>Yuan</surname><given-names initials="S">Shuai</given-names></name><xref rid="advs72030-aff-0008" ref-type="aff">
+<sup>8</sup>
+</xref><xref rid="advs72030-aff-0009" ref-type="aff">
+<sup>9</sup>
+</xref></contrib><contrib id="advs72030-cr-0011" contrib-type="author" corresp="yes"><name name-style="western"><surname>Zeng</surname><given-names initials="C">Chao</given-names></name><xref rid="advs72030-aff-0010" ref-type="aff">
+<sup>10</sup>
+</xref><address><email>zengchao@csu.edu.cn</email></address></contrib><contrib id="advs72030-cr-0012" contrib-type="author"><name name-style="western"><surname>Ma</surname><given-names initials="J">Jun</given-names></name><xref rid="advs72030-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="advs72030-cr-0013" contrib-type="author" corresp="yes"><name name-style="western"><surname>Dong</surname><given-names initials="Y">Yanhui</given-names></name><xref rid="advs72030-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><address><email>dongyanhui@bjmu.edu.cn</email></address></contrib><contrib id="advs72030-cr-0014" contrib-type="author"><name name-style="western"><surname>Irani</surname><given-names initials="A">Anushka</given-names></name><xref rid="advs72030-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs72030-aff-0011" ref-type="aff">
+<sup>11</sup>
+</xref></contrib><contrib id="advs72030-cr-0015" contrib-type="author" corresp="yes"><name name-style="western"><surname>Lei</surname><given-names initials="G">Guanghua</given-names></name><xref rid="advs72030-aff-0010" ref-type="aff">
+<sup>10</sup>
+</xref><address><email>lei_guanghua@csu.edu.cn</email></address></contrib><contrib id="advs72030-cr-0016" contrib-type="author" corresp="yes"><name name-style="western"><surname>Xie</surname><given-names initials="J">Junqing</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-0040-0042</contrib-id><xref rid="advs72030-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs72030-aff-0012" ref-type="aff">
+<sup>12</sup>
+</xref><address><email>Junqing.xie@ndorms.ox.ac.uk</email></address></contrib><contrib id="advs72030-cr-0017" contrib-type="author"><name name-style="western"><surname>Prieto‐Alhambra</surname><given-names initials="D">Daniel</given-names></name><xref rid="advs72030-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="advs72030-aff-0013" ref-type="aff">
+<sup>13</sup>
+</xref></contrib></contrib-group><aff id="advs72030-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Centre for Statistics in Medicine and NIHR Biomedical Research Centre Oxford</named-content>
+<named-content content-type="organisation-division">NDORMS</named-content>
+<institution>University of Oxford</institution>
+<city>Oxford</city>
+<postal-code>OX3 7LD</postal-code>
+<country country="GB">UK</country>
+</aff><aff id="advs72030-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">Institute of Child and Adolescent Health</named-content>
+<named-content content-type="organisation-division">School of Public Health</named-content>
+<institution>Peking University</institution>
+<city>Beijing</city>
+<postal-code>100191</postal-code>
+<country country="CN">China</country>
+</aff><aff id="advs72030-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Nuffield Department of Clinical Neurosciences</named-content>
+<institution>University of Oxford</institution>
+<city>Oxford</city>
+<postal-code>OX3 9DU</postal-code>
+<country country="GB">UK</country>
+</aff><aff id="advs72030-aff-0004">
+<label>
+<sup>4</sup>
+</label>
+<named-content content-type="organisation-division">National Institute of Health Data Science</named-content>
+<institution>Peking University</institution>
+<city>Beijing</city>
+<postal-code>100191</postal-code>
+<country country="CN">China</country>
+</aff><aff id="advs72030-aff-0005">
+<label>
+<sup>5</sup>
+</label>
+<named-content content-type="organisation-division">Beijing Institute of Ophthalmology</named-content>
+<named-content content-type="organisation-division">Beijing Tongren Eye Center</named-content>
+<named-content content-type="organisation-division">Beijing Key Laboratory of Ophthalmology and Visual Sciences</named-content>
+<institution>Beijing Tongren Hospital, Capital Medical University</institution>
+<city>Beijing</city>
+<postal-code>100730</postal-code>
+<country country="CN">China</country>
+</aff><aff id="advs72030-aff-0006">
+<label>
+<sup>6</sup>
+</label>
+<named-content content-type="organisation-division">Nuffield Department of Population Health</named-content>
+<institution>University of Oxford</institution>
+<city>Oxford</city>
+<postal-code>OX3 7LF</postal-code>
+<country country="GB">UK</country>
+</aff><aff id="advs72030-aff-0007">
+<label>
+<sup>7</sup>
+</label>
+<named-content content-type="organisation-division">Nuffield Department of Medicine</named-content>
+<named-content content-type="organisation-division">Target Discovery Institute</named-content>
+<named-content content-type="organisation-division">Center for Medicines Discovery</named-content>
+<institution>University of Oxford</institution>
+<city>Oxford</city>
+<postal-code>OX3 7FZ</postal-code>
+<country country="GB">UK</country>
+</aff><aff id="advs72030-aff-0008">
+<label>
+<sup>8</sup>
+</label>
+<named-content content-type="organisation-division">Department of Surgery</named-content>
+<institution>Perelman School of Medicine at the University of Pennsylvania</institution>
+<city>PA</city>
+<postal-code>19104</postal-code>
+<country country="US">USA</country>
+</aff><aff id="advs72030-aff-0009">
+<label>
+<sup>9</sup>
+</label>
+<named-content content-type="organisation-division">Institute of Environmental Medicine</named-content>
+<institution>Karolinska Institutet</institution>
+<city>Stockholm</city>
+<postal-code>171 77</postal-code>
+<country country="SE">Sweden</country>
+</aff><aff id="advs72030-aff-0010">
+<label>
+<sup>10</sup>
+</label>
+<named-content content-type="organisation-division">Department of Orthopaedics</named-content>
+<institution>Xiangya Hospital, Central South University</institution>
+<city>Changsha</city>
+<postal-code>410013</postal-code>
+<country country="CN">China</country>
+</aff><aff id="advs72030-aff-0011">
+<label>
+<sup>11</sup>
+</label>
+<named-content content-type="organisation-division">Division of Rheumatology</named-content>
+<institution>Mayo Clinic Florida</institution>
+<city>Florida</city>
+<postal-code>32224</postal-code>
+<country country="US">USA</country>
+</aff><aff id="advs72030-aff-0012">
+<label>
+<sup>12</sup>
+</label>
+<named-content content-type="organisation-division">The Queen's College</named-content>
+<institution>University of Oxford</institution>
+<city>Oxford</city>
+<postal-code>OX1 4AW</postal-code>
+<country country="GB">UK</country>
+</aff><aff id="advs72030-aff-0013">
+<label>
+<sup>13</sup>
+</label>
+<named-content content-type="organisation-division">Department of Medical Informatics</named-content>
+<institution>Erasmus University Medical Center</institution>
+<city>Rotterdam</city>
+<postal-code>3015 GD</postal-code>
+<country country="NL">The Netherlands</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>E‐mail:<email>zengchao@csu.edu.cn</email>
+<email>dongyanhui@bjmu.edu.cn</email>; <email>lei_guanghua@csu.edu.cn</email>; <email>Junqing.xie@ndorms.ox.ac.uk</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>30</day><month>9</month><year>2025</year></pub-date><pub-date pub-type="collection"><month>12</month><year>2025</year></pub-date><volume>12</volume><issue seq="310">47</issue><issue-id pub-id-type="pmc-issue-id">502716</issue-id><issue-id pub-id-type="doi">10.1002/advs.v12.47</issue-id><elocation-id>e07691</elocation-id><history><date date-type="rev-recd"><day>14</day><month>8</month><year>2025</year></date><date date-type="received"><day>28</day><month>4</month><year>2025</year></date></history><pub-history><event event-type="pmc-release"><date><day>30</day><month>09</month><year>2025</year></date></event><event event-type="pmc-live"><date><day>19</day><month>12</month><year>2025</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2025-12-19 10:25:13.053"><day>19</day><month>12</month><year>2025</year></date></event></pub-history><permissions><copyright-statement content-type="article-copyright">© 2025 The Author(s). Advanced Science published by Wiley‐VCH GmbH</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="ADVS-12-e07691.pdf"/><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pdf" xlink:href="file:ADVS-12-e07691.pdf"/><abstract><title>Abstract</title><p>Chronic widespread pain (CWP) remains challenging due to its heterogeneous causes and complex mechanisms. A total of 2920 plasma proteins are analyzed from 29,254 UK Biobank participants. A total of 256 proteins are identified as cross‐sectionally correlated with CWP. A simple (top 10 proteins) and comprehensive (all significant proteins) proteomic‐based score (ProtS) is created for CWP diagnosis, both outperforming and improving the existing clinical score (area under the curve, AUC: 0.801, 0.723, and 0.791 alone, and 0.856 and 0.880 in combination). In addition, the protein score predicted 13‐years risk of pain‐related traits over the body, including pain onset, progression, and intensity; Moreover, it has stronger associations with nociplastic pain and fibromyalgia compared to nociceptive and neuropathic pain, implying a unique protein signature of different pain mechanisms. Finally, among 434 candidate proteins prioritized in the observational analysis, 18 are corroborated with causal relevance by Mendelian randomization, and importantly, four (CA14, DPEP1, LGALS3, and TNF) showed potential as novel drug targets repurposed for treating CWP.</p></abstract><abstract id="advs72030-abs-0001" abstract-type="graphical"><p>Plasma proteomics is leveraged to decode the biological underpinnings of chronic widespread pain. A nested machine learning framework integrates proteomic signatures, prospective outcomes, and Mendelian randomization to uncover 18 causal proteins. Several targets are druggable, including CA14 and TNF, highlighting new avenues for precision pain therapeutics and drug repurposing in nociplastic pain.
+<boxed-text position="anchor" content-type="graphic" orientation="portrait"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-1" orientation="portrait" xlink:href="ADVS-12-e07691-g003.jpg"/></boxed-text>
+</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="advs72030-kwd-0001">biomarker</kwd><kwd id="advs72030-kwd-0002">drug‐repurposing</kwd><kwd id="advs72030-kwd-0003">nociplastic pain</kwd><kwd id="advs72030-kwd-0004">proteomic</kwd><kwd id="advs72030-kwd-0005">wide spread pain</kwd></kwd-group><counts><fig-count count="6"/><table-count count="0"/><page-count count="14"/><word-count count="10352"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>December 18, 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.6.6 mode:remove_FC converted:18.12.2025</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="advs72030-cit-0001">
+<string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Kelleher</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Meng</surname>
+</string-name>, et al. “<article-title>Diagnosis, Prognosis, and Drug Target Discovery for Chronic Widespread Pain: A Large Proteogenomic Study</article-title>.” <source>Adv. Sci.</source>
+<volume>12</volume>, no. <issue>47</issue> (<year>2025</year>): <elocation-id>e07691</elocation-id>. <pub-id pub-id-type="doi">10.1002/advs.202507691</pub-id>
+<pub-id pub-id-type="pmcid">PMC12713070</pub-id><pub-id pub-id-type="pmid">41025730</pub-id></mixed-citation>
+</p></notes></front><body><sec id="advs72030-sec-0010"><label>1</label><title>Introduction</title><p>Chronic pain affects 27.5% of the global population and is one of the leading causes of medical consultation and disability,<sup>[</sup>
+<xref rid="advs72030-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>, <xref rid="advs72030-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref>
+<sup>]</sup> particularly among adults over 65, where joint, back, and neck pain are common.<sup>[</sup>
+<xref rid="advs72030-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>, <xref rid="advs72030-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref>
+<sup>]</sup> The burden of chronic pain extends beyond physical suffering, as it poses significant societal costs through lost productivity and increased healthcare resource utilization, presenting a major global health challenge.<sup>[</sup>
+<xref rid="advs72030-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="advs72030-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>
+<sup>]</sup>
+</p><p>The International Association for the Study of Pain (IASP) defines pain as an unpleasant sensory and emotional experience. While acute pain serves a protective function by signaling potential or actual tissue damage, chronic pain is defined as pain persisting for more than three months, continuing beyond the normal healing period. Unlike acute pain, which is adaptive, chronic pain is often maladaptive as it no longer serves a protective role. Indeed, chronic pain is increasingly recognized as a distingct condition, with the 2019 ICD‐11 classification introducing “chronic primary pain”, where pain is the principal problem rather than a result of another disease.<sup>[</sup>
+<xref rid="advs72030-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>, <xref rid="advs72030-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref>, <xref rid="advs72030-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>, <xref rid="advs72030-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>
+<sup>]</sup> Chronic pain was traditionally classified as either neuropathic pain, which originates from a lesion or disease of the somatosensory nervous system, or nociceptive pain, which results from actual or threatened non‐neural tissue damage.<sup>[</sup>
+<xref rid="advs72030-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref>, <xref rid="advs72030-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>
+<sup>]</sup> However, in 2016, a third category—nociplastic pain—was introduced to describe pain arising from altered nociception without clear evidence of tissue or nerve damage. Nociplastic pain, characterized by its widespread and diffuse nature, is particularly debilitating and is best typified by conditions such as fibromyalgia.<sup>[</sup>
+<xref rid="advs72030-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>
+<sup>]</sup>
+</p><p>Despite advances in understanding these pain mechanisms, clinical tools to accurately diagnose and distinguish between them remain lacking. Existing clinical models do not account for the molecular underpinnings that could differentiate nociceptive, neuropathic, and nociplastic pain. Here, proteomics – the large‐scale study of proteins – offers a promising avenue. By examining proteins as biomarkers, proteomics offers promising opportunities to improve diagnostic accuracy and support personalized therapeutic strategies for chronic pain.</p><p>The field of proteomics has significantly advanced our understanding of molecular mechanisms in complex diseases like cardiovascular disease, diabetes, and cancer by integrating genetic, lifestyle, and environmental influences.<sup>[</sup>
+<xref rid="advs72030-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>
+<sup>]</sup> Given the recognition of pain vulnerability—where genetic and biological factors predispose certain individuals to developing chronic pain<sup>[</sup>
+<xref rid="advs72030-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="advs72030-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>, <xref rid="advs72030-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>
+<sup>]</sup>—proteomic analyses could help identify those at higher risk, facilitating early recognition and intervention. Prior biomarker studies in chronic pain have been limited by small sample sizes and a narrow focus on specific proteins, failing to capture the full complexity of pain mechanisms.<sup>[</sup>
+<xref rid="advs72030-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>
+<sup>]</sup> By leveraging a comprehensive proteomic dataset in a large population‐based study, our research addresses this gap and provides an opportunity to identify novel biomarkers associated with pain vulnerability and distinct pain mechanisms.<sup>[</sup>
+<xref rid="advs72030-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>
+<sup>]</sup> These innovative approaches may offer a deeper understanding of chronic pain mechanisms, opening pathways to improved diagnostic assays and novel therapeutic targets.</p><p>We therefore aimed to: (1) evaluate the proteomic signatures distinguishing acute and chronic pain, identifying unique molecular patterns; (2) assess the diagnostic and prognostic validity of models based on 2923 unique plasma proteins in predicting widespread chronic pain, comparing their performance to conventional clinical risk models, and to explore the added value of integrating plasma proteins into clinical risk models; and (3) to assess the causal relevance of key identified proteins and their potential as therapeutic targets for the treatment of chronic pain.</p></sec><sec id="advs72030-sec-0020"><label>2</label><title>Results</title><sec id="advs72030-sec-0030"><label>2.1</label><title>Baseline Characteristics and Pain Phenotypes</title><p>We analyzed 29254 participants with plasma proteomics data (Olink) from the UK Biobank, of whom 44.6% were male, with a median age of 55.8 years (Table <xref rid="advs72030-supinfo-0001" ref-type="">S2</xref>, Supporting Information). The comparison of participants with and without proteins is provided in Table <xref rid="advs72030-supinfo-0001" ref-type="">S1</xref> (Supporting Information). In the present study, 52.3% of participants reported suffering from chronic pain at baseline. Regarding pain types, 85.2% reported musculoskeletal pain, 22.5% pain in the head and face, 10.7% abdominal pain, and 3.0% experienced widespread pain. Overall, 24.4% of participants reported at least two pain sites affected. A Venn diagram depicting the overlap between different chronic pain types, including widespread chronic pain, is provided in Figure <xref rid="advs72030-supinfo-0001" ref-type="">S5</xref> (Supporting Information). In 2019, data on pain mechanisms were collected from a total of 8225 participants. Among them, 571 reported nociceptive pain, 75 reported neuropathic pain, 4153 experienced nociplastic pain, and 717 had a diagnosis of fibromyalgia (Table <xref rid="advs72030-supinfo-0001" ref-type="">S2</xref>, Supporting Information).</p></sec><sec id="advs72030-sec-0040"><label>2.2</label><title>Proteomic Associations with Chronic and Acute Pain</title><p>We conducted a proteome‐wide association study (PWAS) to evaluate the ability of protein signatures to distinguish chronic pain by comparing protein expression profiles between individuals with chronic pain and pain‐free controls. People with chronic pain showed widespread and substantial changes in protein expression compared to pain‐free controls. In contrast, those with acute pain showed minimal associations with protein levels (<bold>Figure</bold>
+<xref rid="advs72030-fig-0001" ref-type="fig">
+<bold>1</bold>A</xref> and Figures <xref rid="advs72030-supinfo-0001" ref-type="">S6</xref>, Supporting Information). To assess the difference in protein signatures associated with chronic and acute pain, we analyzed the overlap between proteins linked to each condition. Only 16% (40/254) of the proteins associated with chronic pain overlapped with those linked to acute pain, underscoring distinct molecular pathways (Figure <xref rid="advs72030-fig-0001" ref-type="fig">1A,B</xref> and Table <xref rid="advs72030-supinfo-0001" ref-type="">S3</xref>, Supporting Information).</p><fig position="float" fig-type="Figure" id="advs72030-fig-0001" orientation="portrait"><label>Figure 1</label><caption><p>Proteomic signature of major types of chronic pain and acute pain. Notes: A, Comparison of proteins significantly associated with both chronic and acute pain. B, Count of proteins significantly associated with specific types of acute and chronic pain, categorized by panel. C, Volcano plots show protein associations with different pain types after applying Bonferroni correction. Proteins with p‐values below 0.05/2920 are highlighted in red (positive) and blue (negative), while nonsignificant associations are represented in gray. The top 10 positively and negatively associated proteins with the lowest p‐values for each pain type are labelled.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-3" orientation="portrait" xlink:href="ADVS-12-e07691-g004.jpg"/></fig><p>In the analysis of widespread chronic pain, the proteins most significantly upregulated compared to controls were CDCP1, IL18R1, GAST, GDF15, ASGR1, CCL7, VSIG2, CHGA, TNFRSF10A, and MRC1. In contrast, the ten most downregulated proteins were CA14, APOF, PON3, SELENOP, EGFR, ITGAV, SCT, CELA2A, IGFBP3, and PPY (Figure <xref rid="advs72030-fig-0001" ref-type="fig">1B</xref>). A total of 256 proteins out of 2920 (8.7%) exhibited significant associations with widespread chronic pain. In the PWAS, 254 out of 2920 proteins (8.7%) exhibited significant associations with overall chronic pain. Musculoskeletal pain had the highest number of significant associations, with 245 proteins (8.7%), followed by abdominal pain with 167 proteins (5.7%), and head and face pain with 73 proteins (2.5%) (Figure <xref rid="advs72030-fig-0001" ref-type="fig">1B</xref> and Table <xref rid="advs72030-supinfo-0001" ref-type="">S4</xref>, Supporting Information). Several proteins, including APOF, ASGR1, CA14, CA6, MXRA8, PLTP, PON3, and RARRES2, were shared across multiple pain types (Figure <xref rid="advs72030-fig-0001" ref-type="fig">1C</xref>).</p></sec><sec id="advs72030-sec-0050"><label>2.3</label><title>Functional Enrichment of Proteins Associated with Widespread Chronic Pain</title><p>We performed GO enrichment analysis on proteins significantly associated with widespread chronic pain. The most enriched biological processes involved positive regulation of leukocyte migration, regulation of cell activation, and symbiont entry into host, implicating immune activation and host–pathogen interactions as central mechanisms. Enriched cellular components, including lysosomal lumen, vacuolar lumen, and external side of the plasma membrane, indicated roles in intracellular trafficking and membrane‐associated immune processes. For molecular functions, terms such as signaling receptor activity, virus receptor activity, and death receptor activity were highly represented, highlighting dysregulated cytokine and death receptor signaling.</p><p>KEGG enrichment further confirmed immune and inflammatory involvement, identifying cytokine–cytokine receptor interaction, viral protein interaction with cytokine and cytokine receptor, and lysosome as top pathways. Reactome analysis similarly emphasized immune dysregulation, with significant enrichment in Interleukin‑10 signaling, TNF binding their physiological receptors, TNFR2 non‑canonical NF‑κB signaling, and cytokine signaling in the immune system.</p><p>Together, these results indicate that widespread chronic pain is driven by coordinated dysregulation of immune signaling, cytokine‐receptor interactions, and lysosome‑mediated processes (Figure <xref rid="advs72030-supinfo-0001" ref-type="">S7</xref>, Supporting Information).</p></sec><sec id="advs72030-sec-0060"><label>2.4</label><title>Protein Signatures Improved Classification of Widespread Chronic Pain</title><p>Proteins identified from PWAS for widespread chronic pain and specific chronic pain types were used to derive comprehensive proteomic scores (C‐ProtS) for chronic pain. Additionally, simple proteomic scores (S‐ProtS) were generated using the top 10 proteins associated with widespread chronic pain and specific chronic pain types to evaluate the potential of these simple plasma protein signatures in distinguishing specific chronic pain types.</p><p>Clinical risk models (CS) incorporating previously<sup>[</sup>
+<xref rid="advs72030-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>
+<sup>]</sup> identified key risk factors like sleep difficulties, neuroticism, powerlessness, mental health issues, life stressors, and obesity achieved a median Area Under the Curve (AUC) of 0.791 (95% CI: 0.767, 0.814) for widespread chronic pain. A protein‐only model based on S‐ProtS showed comparable performance, with an AUC of 0.723 (95% CI: 0.700,0.746). The C‐ProtS model achieved numerically higher performance, with an AUC of 0.801 (95% CI: 0.780,0.822). Incorporating C‐ProtS into the CS model enhanced discrimination, yielding an AUC of 0.856 (95% CI: 0.838,0.874) for widespread chronic pain. The combined C‐ProtS and CS model reached the highest discrimination, with an AUC of 0.880 (95% CI: 0.864,0.897) (<bold>Figure</bold>
+<xref rid="advs72030-fig-0002" ref-type="fig">
+<bold>2</bold>A</xref> and Table <xref rid="advs72030-supinfo-0001" ref-type="">S5</xref>, Supporting Information). To assess the interpretability of the classification models, we evaluated their calibration and performed decision curve analyses. For widespread chronic pain, the combined models demonstrated good calibration, as evidenced by a calibration slope of 0.860 (95% CI 0.803–0.916), indicating strong alignment between predicted and observed risks (Figure <xref rid="advs72030-supinfo-0001" ref-type="">S8</xref>, Supporting Information).</p><fig position="float" fig-type="Figure" id="advs72030-fig-0002" orientation="portrait"><label>Figure 2</label><caption><p>Diagnostic performance of the proteomic score, clinical score, and combined. Notes: This figure presents the ROC curves and Area Under the Curve (AUC) for widespread chronic pain. Higher AUC values indicate improved model performance in distinguishing individuals with widespread chronic pain from those without. Abbreviations: CS: clinical risk model; S‐ProtS: simple proteomic score; C‐ProtS: comprehensive proteomic score; CS+S‐ProtS: combined model with clinical model and S‐ProtS; CS+C‐ProtS: combined model with clinical model and C‐ProtS.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-5" orientation="portrait" xlink:href="ADVS-12-e07691-g006.jpg"/></fig></sec><sec id="advs72030-sec-0070"><label>2.5</label><title>Prospective Prediction of Pain Progression and Onset</title><p>The stability and individual changes in pain site numbers between baseline and the two follow‐up visits are shown in Figure <xref rid="advs72030-supinfo-0001" ref-type="">S9</xref> (Supporting Information). We assessed the predictive power of C‐ProtS and S‐ProtS for predicting new widespread pain, pain mechanisms, and pain progression. Both C‐ProtS and S‐ProtS demonstrated good predictive discrimination for fibromyalgia, with AUCs of 0.75 and 0.70, respectively (<bold>Figure</bold>
+<xref rid="advs72030-fig-0003" ref-type="fig">
+<bold>3</bold>A</xref>).</p><fig position="float" fig-type="Figure" id="advs72030-fig-0003" orientation="portrait"><label>Figure 3</label><caption><p>Prospective associations of pain‐specific proteomic scores with mechanism pain classification, pain onset, progression, multisite chronic pain, duration, intensity, impact, and activity limitations in longitudinal data. Notes: The 2019 follow‐up refers to the online follow‐up conducted in 2019, and the 2022 follow‐up refers to the one conducted in 2022. Panel A shows the AUC of C‐ProtS and S‐ProtS for selected pain types. Panel B: Displays the association between the onset of widespread chronic pain, pain mechanism classification, and the proteomic scores (ProtS) in 2019, adjusted for age, gender, sleeplessness, feeling fed‐up, tiredness, mood, stressful life events, and BMI. Panels C and J: Show the associations between the onset of chronic pain and the proteomic scores in 2019 and 2022, respectively, adjusted for the same covariates. "Onset of chronic pain" includes participants who were pain‐free at baseline but reported chronic pain at follow‐up. Panels D and K: "Pain spreading" refers to participants whose number of pain sites increased, while "pain recovery" refers to those whose pain sites decreased. Examining pain spreading and pain recovery, also adjusted for covariates. Panels E and L: Depict the number of pain sites (multisite chronic pain) plotted against quantiles of the Simple Proteomic Score (S‐ProtS) and Comprehensive Proteomic Score (C‐ProtS). Panel F: Shows the proportion of chronic pain duration across quantiles of C‐ProtS. Panels J‐I: Illustrate the rating of worst pain, impact of pain, and symptom severity, respectively, in relation to quantiles of S‐ProtS and C‐ProtS. Panel M: Illustrates the proportion of activity limitations caused by overall chronic pain among participants with chronic pain. Panel N: Shows activity limitations by specific chronic pain sites. Abbreviations: S‐ProtS, Simple Proteomic Score; C‐ProtS, Comprehensive Proteomic Score.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-7" orientation="portrait" xlink:href="ADVS-12-e07691-g005.jpg"/></fig><p>Both C‐ProtS and S‐ProtS for widespread chronic pain were significantly associated with the onset of widespread chronic pain at follow‐up visits (Figure <xref rid="advs72030-fig-0003" ref-type="fig">3B</xref>). In the pain mechanism classification, C‐ProtS and S‐ProtS were significantly associated with nociplastic pain and fibromyalgia. However, for nociceptive pain and neuropathic pain, no significant associations were observed for either C‐ProtS or S‐ProtS (Figure <xref rid="advs72030-fig-0003" ref-type="fig">3B</xref>).</p><p>For the onset of specific pain sites, C‐ProtS and S‐ProtS also showed significant positive associations, although these were weaker for certain pain sites, such as headache, facial pain, and abdominal pain, compared to other chronic pain sites (Figure <xref rid="advs72030-fig-0003" ref-type="fig">3C,J</xref>). Both follow‐up visits demonstrated a positive correlation between proteomic scores and pain spread, and a negative correlation with pain recovery. Higher proteomic scores were associated with an increased number of pain sites (multisite chronic pain), while lower scores corresponded with fewer pain sites and greater pain recovery (Figure <xref rid="advs72030-fig-0003" ref-type="fig">3D,E,K,L</xref>). The proteomic scores, both C‐ProtS and S‐ProtS, demonstrated a strong association with the number of pain sites at the 2019 follow‐up (C‐ProtS: R<sup>2</sup> = 0.837, P&lt;0.001; S‐ProtS: R<sup>2</sup> = 0.801, P&lt;0.001) and an even stronger association at the 2022 follow‐up (C‐ProtS: R<sup>2</sup> = 0.890, P&lt;0.001; S‐ProtS: R<sup>2</sup> = 0.944, P&lt;0.001) (Figure <xref rid="advs72030-fig-0003" ref-type="fig">3C,G</xref>).</p><p>Proteomic scores exhibited a monotonic increase with pain duration, rating of worst pain, pain impact, and pain symptom severity nine years later (Figure <xref rid="advs72030-fig-0003" ref-type="fig">3F–I</xref>). The percentage of participants reporting activity limitations due to chronic pain increased across higher proteomic score quantiles (C‐ProtS and S‐ProtS) (Figure <xref rid="advs72030-fig-0003" ref-type="fig">3L</xref>). S‐ProtS showed comparable associations with activity limitations related to chronic pain sites, similar to those observed with C‐ProtS (Figure <xref rid="advs72030-fig-0003" ref-type="fig">3N</xref>).</p></sec><sec id="advs72030-sec-0080"><label>2.6</label><title>Contributions of Proteins to the Classification of Widespread Chronic Pain</title><p>Proteins, including CA14, KIR2DS4, PDCD1, CHI3L1, CNDP1, IL18R1, CRH, GAST, HPGDS, ITGAV, SELENOP, ASAH2, LYPD8, GZMB, and PROCR, were identified as key contributors to widespread chronic pain. Among these, CA14 emerged as the most impactful, reflected by its highest SHAP (SHapley Additive exPlanations) value, suggesting a prominent role in pain prediction. KIR2DS4 and PDCD1 followed as major contributors. The SHAP analysis further highlighted the role of GAST, where both high and low levels influenced risk prediction. Elevated GZMB values (indicated by purple) are particularly associated with an increased risk of widespread chronic pain (<bold>Figure</bold>
+<xref rid="advs72030-fig-0004" ref-type="fig">
+<bold>4</bold>
+</xref>).</p><fig position="float" fig-type="Figure" id="advs72030-fig-0004" orientation="portrait"><label>Figure 4</label><caption><p>SHAP of protein contributions to widespread chronic pain. Notes: (A) SHAP plot illustrating the impact of individual proteins on widespread chronic pain prediction. Brighter colours (yellow) represent higher feature values, while darker colours (purple) indicate lower feature values, demonstrating how each protein contributes to the prediction model. (B) Mean SHAP values for the top contributing proteins to widespread chronic pain. Abbreviations: SHAP, SHapley Additive exPlanations. (C) Overlap between SHAP‐selected proteins and association‐derived proteins.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-9" orientation="portrait" xlink:href="ADVS-12-e07691-g001.jpg"/></fig><p>To comprehensively prioritize protein biomarkers for widespread chronic pain, we integrated machine learning‐derived feature importance (non‐zero SHAP values) with traditional association analyses. A total of 237 proteins exhibited non‐zero SHAP values, while epidemiological analysis identified 256 proteins significantly associated with widespread chronic pain. Notably, 59 proteins were shared between both approaches, representing high‐confidence candidates for mechanistic and therapeutic investigation. The union of these datasets yielded 434 unique proteins, constituting a robust resource for subsequent biological and translational studies.</p></sec><sec id="advs72030-sec-0090"><label>2.7</label><title>Mendelian Randomization and Causal Inferences</title><p>To investigate potential causal relationships between circulating proteins and pain phenotypes, we performed Mendelian randomization (MR) analyses on a combined set of 434 prioritized proteins. Pain outcomes included chronic widespread pain from the UKB, a European meta‐analysis cohort excluding UKB, and multisite chronic pain from UKB, enabling a comprehensive evaluation of causality across clinically relevant endpoints.</p><p>We designated the European meta‐analysis of chronic widespread pain as the primary MR outcome, using UKB multisite chronic pain and UKB chronic widespread pain as independent replication cohorts. In the primary MR analysis, 18 proteins demonstrated significant causal associations with widespread pain. Of these, 10 were validated in the UKB multisite chronic pain cohort, and 17 in the UKB chronic widespread pain cohort, with 9 proteins consistently validated in both replication analyses (<bold>Figure</bold>
+<xref rid="advs72030-fig-0005" ref-type="fig">
+<bold>5</bold>A</xref>). Notably, 14 of the 18 proteins showed concordant effect directions between epidemiological association and MR results, while four proteins—PTN, TNF, CA14, and LEG1—exhibited discordant directions. The 18 proteins identified include CA14, COL9A1, CRELD1, DPEP1, LEG1, LGALS3, MLN, PRSS53, TNF, BPIFB2, CTSO, DDR1, FAM171B, IFI30, LRRC37A2, PTN, SFTPD, and ST3GAL1 (Figure <xref rid="advs72030-fig-0005" ref-type="fig">5B</xref>).</p><fig position="float" fig-type="Figure" id="advs72030-fig-0005" orientation="portrait"><label>Figure 5</label><caption><p>Integrated causal, longitudinal, and pharmacological characterization of top protein biomarkers for widespread chronic pain. Notes:   (A) Overlap of proteins with significant causal associations across three phenotypes: CWP in UKB, CWP in European meta‐analysis, and multisite chronic pain in UKB. (B) Comparison of MR estimates and epidemiological associations for the 18 MR‐identified proteins (concordant: red; discordant: blue). (C) Multi‐layer evidence: top—prospective associations with pain type, onset, spread, and recovery (UKB 2019/2021); middle—MR across three phenotypes; bottom—colocalization (CA14, DDR1, MLN with PP.H4 &gt; 0.5). (D) Drug repurposing landscape for targetable proteins (CA14, DPEP1, LGALS3, TNF) by mechanism and therapeutic type.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-11" orientation="portrait" xlink:href="ADVS-12-e07691-g002.jpg"/></fig><p>To further elucidate shared genetic architecture, we conducted colocalization analysis. Three proteins—CA14, DDR1, and MLN—demonstrated strong evidence of colocalization with pain phenotypes (PP.H4 &gt; 0.5), suggesting that their associations are likely attributable to shared causal variants (Figure <xref rid="advs72030-fig-0005" ref-type="fig">5C</xref>).</p></sec><sec id="advs72030-sec-0100"><label>2.8</label><title>Prospective Association of Top 18 Proteins with Pain Phenotypes</title><p>We investigated the prospective associations between levels of the top 18 proteins identified for widespread chronic pain and pain mechanisms (nociceptive pain, neuropathic pain, nociplastic pain, and fibromyalgia), as well as the onset, spread, and recovery of chronic pain.</p><p>9 proteins (BPIFB2, CA14, COL9A1, CTSO, IFI30, LGALS3, PTN, SFTPD, and TNF) exhibited significant associations with nociplastic pain or fibromyalgia. 2 of the 15 proteins (LEG1 and LRRC37A2) showed significant associations with nociceptive pain or neuropathic pain, indicating that these 14 proteins can effectively distinguish nociplastic pain/fibromyalgia from nociceptive and neuropathic pain up to 9 years in advance (Figure <xref rid="advs72030-fig-0005" ref-type="fig">5C</xref>). At the 2021 follow‐up, the onset and progression of chronic pain showed significant associations with the 10 proteins (BPIFB2, CA14, COL9A1, CTSO, FAM171B, IFI30, LGALS3, MLN, PTN, and SFTPD). Among these, BPIFB2, CA14, COL9A1, IFI30, LGALS3, MLN, and PTN exhibited significant associations with all aspects of chronic pain onset and progression, including pain spreading and recovery (Figure <xref rid="advs72030-fig-0005" ref-type="fig">5C</xref>). The detailed prospective associations between the top 18 proteins and pain mechanism classification (nociceptive pain, neuropathic pain, nociplastic pain, and fibromyalgia), as well as the onset and progression of chronic pain, including non‐linear associations, are presented in the Figure <xref rid="advs72030-supinfo-0001" ref-type="">S10–S28</xref> (Supporting Information).</p></sec><sec id="advs72030-sec-0110"><label>2.9</label><title>Proteomics‐Based Drug Repurposing</title><p>To evaluate the translational potential of our protein prioritization strategy, we systematically interrogated Open target databases for therapeutic agents targeting the 18 proteins identified by MR as causally linked to widespread chronic pain. Of these, four proteins—CA14, DPEP1, LGALS3, and TNF—had existing pharmacological modulators, either approved or in clinical development, encompassing 18 distinct compounds across small molecules, antibodies, and protein‐based biologics (Table <xref rid="advs72030-supinfo-0001" ref-type="">S5</xref>, Supporting Information).</p><p>CA14, a carbonic anhydrase expressed in neuronal tissues, is targeted by sulthiame, an antiepileptic drug approved for obstructive sleep apnea and seizure disorders. Given the observed non‐linear associations between CA14 levels and pain phenotypes, CA14 agonists—rather than inhibitors—may offer greater therapeutic utility in this context (Figure <xref rid="advs72030-supinfo-0001" ref-type="">S29</xref>, Supporting Information).</p><p>DPEP1, a renal dipeptidase involved in inflammatory responses, is inhibited by cilastatin, a small molecule co‐administered with β‐lactam antibiotics to reduce renal toxicity in infectious disease settings.</p><p>LGALS3 (galectin‐3), a regulator of immune signaling and fibrosis, is targeted by several investigational agents, including belapectin, davanat, and olitigaltin, with indications ranging from non‐alcoholic steatohepatitis to fibrotic lung disease and cancer.</p><p>TNF, a master cytokine in inflammatory signaling, is the target of multiple approved biologics—such as adalimumab, infliximab, and etanercept—used in immune‐mediated diseases including rheumatoid arthritis, Crohn's disease, and psoriasis.</p><p>Collectively, these findings point to multiple actionable opportunities for drug repurposing in nociplastic pain, supported by proteome‐wide causal inference. In particular, TNF antagonists and galectin‐3 inhibitors emerge as strong candidates for translational advancement in pain therapeutics (Figure <xref rid="advs72030-fig-0005" ref-type="fig">5D</xref>).</p></sec></sec><sec id="advs72030-sec-0120"><label>3</label><title>Discussion</title><p>Our analysis revealed marked differences in the protein signatures of chronic versus acute pain. By leveraging these protein changes, we developed pain‐specific proteomic scores that not only effectively discriminated individuals with chronic pain from those who were pain‐free, but also predicted the intensity, phenotype, onset, spread, and recovery of chronic pain, particularly widespread chronic pain, a key feature of nociplastic pain. Notably, a comprehensive proteomic signature based on the 10 proteins performed comparably to models based on conventional clinical variables alone. Both the simple and comprehensive proteomic scores significantly enhanced the predictive performance when added to clinical predictors. Among the 434 proteins identified through machine learning–based feature importance and conventional association analyses, 18 demonstrated evidence of causal relevance supported by Mendelian randomization analysis, with 9 proteins significantly associated with specific pain mechanisms. Notably, four of these 18 proteins have existing drugs targeting them. CA14, identified as the top‐ranking protein and supported by both MR and colocalization analyses, is a known target of sulthiame (CHEMBL328560), suggesting a potential therapeutic target for nociplastic pain conditions such as fibromyalgia.</p><sec id="advs72030-sec-0130"><label>3.1</label><title>Distinct Protein Signatures in Chronic and Acute Pain</title><p>Chronic pain exhibits more extensive protein changes compared to acute pain. Traditionally, chronic pain is defined primarily by its duration and lacks specific biomarkers to guide clinical management. Our study addresses his challenge by identifying distinct proteomic signatures that differentiate between chronic and acute pain, suggesting that proteomic information could predict those who will transition from acute to acute pain. Previous research has highlighted the utility of proteomics in understanding pain sensitivity, especially in experimental models.<sup>[</sup>
+<xref rid="advs72030-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>
+<sup>]</sup> Notably, several proteins identified in our study provide novel insights into the biological pathways involved in pain mechanisms, in particular highlighting the involvement of metabolic and immune pathways in chronic pain development and persistence. For instance, leptin (LEP), known for its role in energy regulation, was strongly associated with chronic pain, indicating the potential involvement of metabolic dysregulation. Additionally, proteins such as ASGR1 and RARRES2, involved in immune responses, highlight the role of inflammation in chronic pain mechanisms. Inflammatory biomarkers may aid in predicting high‐risk groups for developing nociplastic pain and guide the development of tailored treatments.</p><p>The distinct molecular profiles observed across specific pain types, such as head and face pain, abdominal pain, and musculoskeletal pain, further emphasize the heterogeneity of chronic pain. However, the identification of shared proteins across multiple pain types — such as APOF and ASGR1— suggests that there may be common underlying biological mechanisms driving pain across body regions. This finding could pave the way for the development of universal biomarkers that apply across multiple pain syndromes.</p></sec><sec id="advs72030-sec-0140"><label>3.2</label><title>Classification Accuracy of Proteomic Profiling</title><p>We demonstrate that proteomic profiling can perform as well as conventional clinical risk scores in predicting chronic pain and its progression. Moreover, combining proteomic scores with clinical variables further enhances predictive performance, suggesting that an integrated approach may be beneficial. This study is the first to comprehensively demonstrate the predictive power of plasma proteins across a broad spectrum of chronic pain types. We achieved this by directly comparing proteomic data with clinical variables and evaluating the added predictive value that proteomics offers beyond traditional clinical predictors. The proteomic score alone exhibited high predictive accuracy for chronic pain and its various subtypes. This predictive performance was further enhanced when proteomic data were combined with clinical variables. Our findings underscore the substantial potential of proteomic profiling as a promising technique to complement clinical evaluation, aiding in both the risk assessment for transition to chronic pain and the prognostication of chronic pain outcomes.</p><p>The proteomic score demonstrated a strong association with the onset, spread, and recovery of chronic pain. This profile effectively identifies individuals at higher risk for developing chronic pain, experiencing its spread to new sites, and their likelihood of recovery. Pain is influenced by a complex interplay of biological, psychological, and social factors.<sup>[</sup>
+<xref rid="advs72030-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>
+<sup>]</sup> Proteins integrate genetic, environmental, age‐related, behavioral, and medication influences, offering comprehensive insights into pain mechanisms. Previous research has suggested that pain spread is not random but shows strong dependencies between adjacent pain sites.<sup>[</sup>
+<xref rid="advs72030-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>
+<sup>]</sup> Our study supports this by revealing significant associations between pain‐specific proteomic scores and pain at various sites. Additionally, we observed robust correlations between proteomic scores and pain recovery, indicating shared biological foundations for both the spread and recovery of pain.</p><p>The proteomic score demonstrated a significant and specific association with nociplastic pain and fibromyalgia, distinguishing them from nociceptive and neuropathic pain. Nociplastic pain is characterized by abnormal sensory processing without clear peripheral damage. The association between proteomic score and nociplastic pain suggests that proteomic signatures capture the complex biological underpinnings of this condition, including abnormalities in sensory perception, a hallmark feature.<sup>[</sup>
+<xref rid="advs72030-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>
+<sup>]</sup>
+</p></sec><sec id="advs72030-sec-0150"><label>3.3</label><title>Causal Relevance and Therapeutic Potential of Key Proteins</title><p>Carbonic anhydrase 14 and leptin were identified as the primary proteins consistently associated with chronic pain, particularly nociplastic pain and fibromyalgia, and progression of chronic pain (onset, spreading, and recovery of chronic pain) in both longitudinal analyses. carbonic anhydrase 14, identified here for the first time as associated with chronic pain, plays an important role in neuronal signal transmission via zinc ion binding and carbonate dehydratase activity. It is primarily enriched in the spinal cord and is crucial for neuronal function. Leptin is involved in immune regulation and inflammation, contributing to pain modulation, especially in nociplastic pain. Fibromyalgia affects 10–48% of patients with rheumatic diseases, compared to ≈2–6% in the general population, likely due to shared mechanisms of immune dysregulation and inflammation.<sup>[</sup>
+<xref rid="advs72030-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="advs72030-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>, <xref rid="advs72030-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>
+<sup>]</sup> Both leptin and gastrin showed positive correlations with new‐onset pain and pain spread, suggesting their role in the development and propagation of chronic pain. This relationship is further supported by their impact on pain recovery outcomes. Animal studies have demonstrated that leptin can influence pain thresholds.<sup>[</sup>
+<xref rid="advs72030-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref>, <xref rid="advs72030-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>
+<sup>]</sup> Together, these proteins suggest potential complementary roles in pain, with leptin influencing inflammation and carbonic anhydrase 14 affecting neuronal signaling.</p><p>The role of carbonic anhydrase 14 and leptin were both supported by mendelian randomization, with carbonic anhydrase 14 further validated through colocalization analysis. Our search on the Open Targets platform revealed that carbonic anhydrase 14 is the target of an approved small molecule drug, sulthiame, which is currently used to treat epilepsy and obstructive sleep apnoea. However, there are currently no well‐documented drugs that activate CA14. Most research on carbonic anhydrase modulation has centered on inhibitors rather than activators, as seen with sulthiame in epilepsy treatment. If enhancing CA14 activity proves to be therapeutically relevant for pain management, future research will need to focus on developing specific agonist or allosteric modulators. In addition to carbonic anhydrase 14, drugs for four other proteins were identified, primarily used for cancer and autoimmune diseases. While these therapies carry potential risks related to immune modulation, they remain possibilities for treatment options. Carbonic anhydrase 14, the top‐ranked protein with a strong causal association, suggests that targeting this protein could offer a promising therapeutic avenue for nociplastic pain.</p><p>A notable observation in our study is the inverse directionality between observational and MR associations for certain proteins, such as CA14, LEG1, PTN, and TNF. This inverse directionality is not unique to our study and likely reflects the distinction between state‐dependent protein alterations versus lifelong genetic predisposition. For instance, while CA14 and LEG1 were negatively associated with pain cross‐sectionally, MR suggested protective effects of genetically elevated expression. In contrast, PTN and TNF were upregulated in pain states but showed inverse effects in MR, highlighting the complex, context‐specific roles of inflammatory and neuroimmune pathways in pain biology.</p></sec><sec id="advs72030-sec-0160"><label>3.4</label><title>Limitations and Strengths</title><p>While our study provides strong evidence for the role of proteomic profiling in characterisitng chronic pain, there are limitations which warrant discussion. First, while proteomic profiling demonstrated predictive value, the Olink panels used may have excluded key proteins relevant to chronic pain, potentially limiting the comprehensiveness of our analysis. Future studies should incorporate a wider array of proteomic markers to capture a more complete picture of the biological pathways involved in chronic pain. Second, the focus was primarily on a specific subset of pain types. Other pain characteristics not included may have different proteomic profiles and predictors. Furthermore, some participants in the control group, despite being classified as pain‐free, may have had a history of chronic pain. Third, the study population was predominantly white British, which may limit the generalizability of the findings to other ethnic groups. Proteomic profiles and pain associations could vary across different genetic backgrounds. Fourth, while l CA14, DDR1, and MLN showed a causal relationship with pain, potential protein‐protein interactions were not considered. The underlying biological pathways also remain unclear, warranting further research. Fifth, the findings have not been validated in independent cohorts. External validation in other large and diverse populations is necessary to confirm the robustness and applicability of the results. A potential limitation is the partial sample overlap between the protein and pain GWAS datasets, as both were derived from the UK Biobank. While all instruments had F‐statistics &gt; 10 and sensitivity analyses supported the robustness of the results, some bias toward the null cannot be excluded.<sup>[</sup>
+<xref rid="advs72030-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>
+<sup>]</sup> We acknowledge that the MR findings would be more robust if there were evidence indicating that the pQTLs and genetic variations associated with the outcome are shared. However, we also recognize that the lack of colocalization evidence does not undermine the validity of the results, as colocalization methods are known to have a high false‐negative rate, typically ≈60%.<sup>[</sup>
+<xref rid="advs72030-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>
+<sup>]</sup> Finally, the top proteins were prioritized based on SHAP values derived from the cross‑validated model trained on the full dataset. However, as no independent test set was available, we cannot directly assess the generalizability of these features. Future studies with external cohorts are needed to validate the predictive performance and robustness of these selected proteins.</p></sec></sec><sec id="advs72030-sec-0170"><label>4</label><title>Conclusion</title><p>In conclusion, this study underscores the significant potential of proteomic profiling to advance our understanding and management of chronic pain, particularly nociplastic pain, and fibromyalgia. By coupling machine learning–based prioritization with genetic validation, we identified 18 circulating proteins with putative causal roles in widespread chronic pain, several of which—such as CA14, DDR1, and MLN—also demonstrated colocalized genetic regulation. Importantly, four of these proteins (CA14, DPEP1, LGALS3, and TNF) are targetable by approved or investigational therapeutics, revealing immediate opportunities for drug repurposing. TNF inhibitors and galectin‐3 antagonists, in particular, emerge as promising candidates for translation into clinical pain management.</p></sec><sec id="advs72030-sec-0180"><label>5</label><title>Experimental Section</title><sec id="advs72030-sec-0210"><title>Study Population</title><p>The UK Biobank was a prospective, population‐based cohort comprising over 500 000 individuals aged 40–69, recruited from 22 assessment centers across the UK between 2006 and 2010. In 2019, additional online surveys were conducted to track specific pain‐related outcomes over time. Plasma proteomic data were available for 53029 UK Biobank participants, comprising a randomly selected subset at baseline and 6229 individuals preselected by the UK Biobank Pharma Proteomics Project (UKB‐PPP). To minimize potential selection bias, individuals from the UKB‐PPP subgroup were excluded. After quality control (Figure <xref rid="advs72030-supinfo-0001" ref-type="">S1</xref>, Supporting Information), proteins were excluded with &gt;50% missing values (n = 3), and samples with &gt;50% missing proteins (n = 6709). Participants reporting acute pain were also excluded (n = 7755), as were those with any cancer diagnosis or from the UKB‐PPP group (n = 9311), yielding a final analytic sample of 29254 participants with high‐quality proteomic and phenotype data. More details of the study design, cohort construction, and study window are provided in Figures <xref rid="advs72030-supinfo-0001" ref-type="">S1</xref> and <xref rid="advs72030-supinfo-0001" ref-type="">S2</xref> (Supporting Information). Ethical approval was obtained from the North West Multi‐centre Research Ethics Committee (MREC, <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.ukbiobank.ac.uk/learn-more-about-uk-biobank/about-us/ethics" ext-link-type="uri">https://www.ukbiobank.ac.uk/learn‐more‐about‐uk‐biobank/about‐us/ethics</ext-link>), with all participants providing written informed consent. This research was approved under application number 98 358.</p></sec><sec id="advs72030-sec-0220"><title>Inclusion and Exclusion Criteria</title><p>To ensure biological specificity and minimize confounding, analysis‑specific exclusion criteria were applied, reflecting the well‑established mechanistic differences between acute and chronic pain. Chronic pain involves long‐term central sensitization, neuroimmune dysregulation, and psychosocial modulation, whereas acute pain was typically short‐term and self‐limited. Participants with acute pain (≤3 months) were excluded from chronic pain analyses, whereas those with chronic pain (&gt;3 months) were excluded from acute pain analyses. Individuals were also excluded with any history of cancer, as cancer‐related pain arises from tumor invasion or oncologic treatment and may reflect distinct biological processes. Finally, participants who were not randomly selected—specifically those recruited through the UKB‐PPP—were excluded due to their non‐random sampling and potential selection bias. These exclusions were made to improve etiological coherence and ensure that the observed proteomic associations reflect mechanisms underlying chronic, non‐cancer pain in the general population.</p></sec><sec id="advs72030-sec-0230"><title>Clinical Variables</title><p>Six variables capturing biological, psychological, and social factors were included as predictors for the construction of a clinical model. They were specified in prior with literature evidence suggesting their predictive value for chronic pain.<sup>[</sup>
+<xref rid="advs72030-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>
+<sup>]</sup> The factors were collected by an standardized touchscreen questionnaire in UK Biobank and include sleep difficulties (difficulty falling asleep, rated as quite a lot or very much), neuroticism (perceived life effort as constant, rated as quite a lot or very much), powerlessness (feelings of lack of energy or powerlessness, rated as quite a lot or very much), mental health issues (history of diagnosis or treatment by a doctor), life stressors (events such as divorce, death of a partner, or significant unemployment history), and a BMI over 30 kg m<sup>−2</sup>. All the variables listed above were transformed into binary variables (Table <xref rid="advs72030-supinfo-0001" ref-type="">S1</xref>, Supporting Information). Binary thresholds were defined as follows: sleeplessness and feeling “fed‐up” were scored as positive if experienced “usually”; tiredness was scored positive if reported “more than half the days”; mood disturbance was coded as “yes” if participants reported feeling nervous, anxious, tense, or depressed; stressful life events included events such as bereavement or unemployment; and BMI &gt; 30 kg m<sup>−</sup>
+<sup>2</sup> was considered obese.</p></sec><sec id="advs72030-sec-0240"><title>Proteomic Profiling</title><p>The UK Biobank Pharma Proteomics Project consortium has generated extensive blood‐based proteomic data. Proteomic profiling was conducted on EDTA‐plasma samples from a cohort of 54893 UKB participants at baseline recruitment, derived from a randomized subset representative of the broader UKB population. Utilising the Olink Explore 1536 and Expansion platforms, the profiling encompassed 2920 unique proteins, assessed through 2941 assays. The protein targeting assays were organized into four 384‐plex panels: Inflammation, Oncology, Cardiometabolic, and Neurology. Detailed methodologies concerning assay execution, sample selection, and handling were available in the online document (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id" ext-link-type="uri">https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id</ext-link> = 1839). No notable impacts from batch and plate variations, nor anomalies in protein coefficients of variation (CVs), were detected. The inter‐ and intraplate CVs for all OLINK panels remained below 20% and 10%, respectively, with a median protein CV of 6.7%. There were strong correlations observed for identical proteins across different panels and between the OLINK assay and independent assays within the UK Biobank. The proteomics data were provided as Normalized Protein Expression (NPX) values on a log<sub>2</sub> transformation.</p><p>This analysis focuses on participants with less than 50% missing proteomic data. Additionally, three proteins missing in over 50% of participants were excluded. Post‐quality control, missing NPX values were imputed using chained random forests, incorporating age and sex as predictors in the imputation process. The NPX data of proteins were standardized to have a mean of 0 and a variance of 1, following a standard normal distribution.</p></sec><sec id="advs72030-sec-0250"><title>Baseline Pain Phenotype</title><p>At the baseline recruitment between 2006 and 2010, 501243 participants were asked about pain experiences that interfered with their usual activities in eight major body regions in the past one month.</p><p>Participants who reported pain at a specific site in the past month were subsequently asked whether the pain had persisted for more than three months. This follow‐up question was used to define chronic pain (pain persisting for more than three months) and acute pain (having pain in the last one month but persisting for three months or less). Among the eight painful locations specifically asked in the questionnaire, They were grouped into four categories based on the similarity of underlying aetiologies and conditions: (1) headache and facial pain, which may reflect conditions like migraines or tension headaches; (2) abdominal pain, potentially linked to visceral causes such as irritable bowel syndrome (IBS) or endometriosis; (3) musculoskeletal pain (neck or shoulder pain, hip pain, and knee pain), which may indicate localized mechanical or inflammatory issues; and (4) widespread pain (“pain all over the body”), often associated with conditions like fibromyalgia. For widespread pain, participants who reported experiencing it were not given the option to select other specific body regions.</p></sec><sec id="advs72030-sec-0260"><title>Longitudinal Pain Phenotypes—Online UK Biobank in 2019 – Pain Mechanism Classification</title><p>Pain outcomes were classified based on participants' chronic pain status and diagnostic criteria derived from validated scales. In 2019, participants were invited to complete an online pain questionnaire that incorporated the 2016 revised Fibromyalgia Survey Criteria (FSC)<sup>[</sup>
+<xref rid="advs72030-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>
+<sup>]</sup> and the Douleur Neuropathique 4 (DN4).<sup>[</sup>
+<xref rid="advs72030-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>
+<sup>]</sup>
+</p></sec><sec id="advs72030-sec-0270"><title>Longitudinal Pain Phenotypes—Douleur Neuropathique 4 (DN4)</title><p>The DN4 was a seven‐item questionnaire designed to assess neuropathic pain. In the UK Biobank study, an abbreviated version was used, omitting the clinical examination assessment. Scores range from 0 to 7, with a score of ≥3 indicating the presence of neuropathic pain. Although primarily used to diagnose neuropathic pain, the DN4 may also reflect central sensitisation, a key feature of nociplastic pain.<sup>[</sup>
+<xref rid="advs72030-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>
+<sup>]</sup>
+</p></sec><sec id="advs72030-sec-0280"><title>Longitudinal Pain Phenotypes—Fibromyalgia Survey Criteria (FSC)</title><p>The FSC was based on the 2016 ACR Fibromyalgia Survey Criteria<sup>[</sup>
+<xref rid="advs72030-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>
+<sup>]</sup> and consists of two components: the Widespread Pain Index (WPI), which measures pain across 19 body areas (score 0–19), and the Symptom Severity Scale (SSS), which assesses somatic symptoms including fatigue, sleep disturbances, and cognitive difficulties (score 0–12). The total score (range 0–31) was calculated by combining the WPI and SSS scores.</p><p>The WPI was used to assess the severity of nociplastic pain, while the DN4 helped to identify both neuropathic pain and potential central sensitisation, providing a comprehensive evaluation of different pain types.</p><p>Based on these criteria, participants were classified into four distinct pain categories:
+<list list-type="order" id="advs72030-list-0001"><list-item><p>Nociceptive pain was defined for participants with chronic pain but no neuropathic characteristics (DN4 score = 0) and an FSC score &lt;3, indicating a low likelihood of nociplastic pain. Participants without chronic pain were classified as having no nociceptive pain.</p></list-item><list-item><p>Neuropathic pain was defined for participants with chronic pain and a DN4 score ≥3, suggesting the presence of neuropathic pain. Participants with an FSC score ≥3 were excluded to reduce the likelihood of including those with possible nociplastic or fibromyalgia‐related pain.</p></list-item><list-item><p>Nociplastic pain was defined for participants exhibiting DN4 ≥3 or a total WPI and SSS score &gt;12. Notably, universally accepted diagnostic criteria for nociplastic pain remain absent. Fibromyalgia, widely recognized as the prototypical manifestation of nociplastic pain, highlights the utility of the FSC score as an effective marker of symptom severity. In addition, the FSC score may reliably reflect the burden of nociplastic pain.<sup>[</sup>
+<xref rid="advs72030-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref>
+<sup>]</sup> Accordingly, an FSC score ≥12 serves as a practical threshold for identifying individuals likely to experience nociplastic pain as the predominant driver of their chronic pain.</p></list-item><list-item><p>Fibromyalgia was identified either through self‐reported diagnoses from baseline or the 2019 questionnaires or via general practitioner records. Additionally, participants with a WPI and SSS combined score &gt;12 were classified as having fibromyalgia.<sup>[</sup>
+<xref rid="advs72030-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref>
+<sup>]</sup>
+</p></list-item></list>
+</p></sec><sec id="advs72030-sec-0290"><title>Longitudinal Pain Phenotypes—Online UK Biobank in 2019 – Pain Sites</title><p>Participants were inquired about experiencing pain or discomfort, either constantly or intermittently, for a duration exceeding three months. They were then requested to specify the affected sites, which included the head, face, neck, shoulders, chest, stomach, abdomen, back, hip, legs, knees, feet, arms, hands, and widespread body pain.</p></sec><sec id="advs72030-sec-0300"><title>Longitudinal Pain Phenotypes—New Onset Pain</title><p>Participants who did not report any chronic pain at baseline but reported chronic pain at the follow‐up visit were defined as having the onset of pain.</p></sec><sec id="advs72030-sec-0310"><title>Longitudinal Pain Phenotypes—Spreading Chronic Pain</title><p>The spreading of chronic pain was assessed by monitoring changes in the number of chronic pain sites. An increase in the number of pain sites at the follow‐up visit compared to the baseline visit was defined as pain spread.</p></sec><sec id="advs72030-sec-0320"><title>Longitudinal Pain Phenotypes—Recovery of Chronic Pain</title><p>Recovery of chronic pain was defined as a decrease in the number of pain sites at the follow‐up visit compared to the baseline visit.</p></sec><sec id="advs72030-sec-0330"><title>Longitudinal Pain Phenotypes—Duration of Pain</title><p>Participants reporting chronic pain were asked to specify the duration of their discomfort through the online questionnaire, selecting from the following categories: 3–12 months, 1–5 years, or more than 5 years.</p></sec><sec id="advs72030-sec-0340"><title>Longitudinal Pain Phenotypes—Pain Rating in the Last 24 H</title><p>Participants were also asked to rate their pain intensity at each reported chronic pain site over the preceding 24 h using a numeric rating scale of 0 to 10, where 0 represented no pain and 10 indicated the worst possible pain.</p></sec><sec id="advs72030-sec-0350"><title>Longitudinal Pain Phenotypes—Worst Pain Rating</title><p>Participants were prompted to rate the most severe pain they had experienced in the last 24 h at the chronic pain site that bothered them the most, again on a numeric rating scale from 0 (no pain) to 10 (the worst imaginable pain). or widespread pain, a separate questionnaire (“All‐over body pain in the last three months and rating of pain”) was used. The ratings from specific body sites and the overall widespread pain were combined for analysis.</p></sec><sec id="advs72030-sec-0360"><title>Longitudinal Pain Phenotypes—Pain Interference</title><p>The impact of pain on daily functioning was evaluated across seven domains: general activity, mood, walking ability, normal work, relationships with others, sleep, and enjoyment of life. Each domain was rated on a scale of 0 to 10, where 0 indicated no interference and 10 signified complete interference. A total pain interference score was derived by summing the individual scores for these seven items.</p></sec><sec id="advs72030-sec-0370"><title>Longitudinal Pain Phenotypes—Symptom Severity</title><p>Participants were asked to report the severity of three symptoms—fatigue, sleep quality, and cognitive symptoms—over the past week, as measured by the fibromyalgia symptom severity scale. Each symptom was rated on a scale from 0 (no problem) to 3 (severe, pervasive, continuous, and life‐disrupting issues). The total symptom severity score was calculated by summing the scores for fatigue, sleep quality, and cognitive symptoms.</p></sec><sec id="advs72030-sec-0380"><title>Longitudinal Pain Phenotypes—Online UK Biobank in 2022‐ Pain sites</title><p>In 2022, the UK Biobank conducted an online survey to assess pain at various anatomical sites among participants. Respondents were asked to identify current pain in specific areas, including the neck, back, chest, abdomen, legs, muscles, and joints. Additionally, participants provided information on the duration of the pain and the degree to which each site of pain impacted their daily lives. Pain persisting for more than twelve weeks was classified as chronic pain.</p><p>The onset of chronic pain, spreading chronic pain, and recovery of chronic pain in the follow‐up questionnaire 2022 were also defined, followed the phenotype at the follow‐up questionnaire 2019.</p></sec><sec id="advs72030-sec-0390"><title>Statistical Analyses—Proteome‐Wide Association Study</title><p>To identify protein biomarkers associated with diverse pain phenotypes, a proteome‐wide association study (PWAS) was conducted across 2920 plasma proteins. Logistic regression models were fitted for each of the following phenotypes: overall pain, head and face pain, abdominal pain, musculoskeletal pain, and widespread pain. Pain‐free individuals served as controls for each analysis. Protein levels were inverse rank‐normalized and standardized prior to modeling. Covariates included age, sex, sleeplessness, feeling fed‐up, tiredness, mood, stressful life events, and BMI. Statistical significance was defined using a Bonferroni threshold (P &lt; 0.05 / 2920).</p></sec><sec id="advs72030-sec-0400"><title>Statistical Analyses—Functional Enrichment Analysis</title><p>Proteins significantly associated with widespread chronic pain were subjected to Gene Ontology (GO), KEGG, and Reactome pathway enrichment using clusterProfiler and ReactomePA in R. All quantified plasma proteins (n  =  2920) were used as the background set. Pathways with FDR‑adjusted P &lt; 0.05 were considered significant, and the top enriched GO terms and KEGG/Reactome pathways were visualized by –log10(P‑adjusted).</p></sec><sec id="advs72030-sec-0410"><title>Statistical Analyses—Proteomic Score</title><p>To derive predictive signatures of widespread chronic pain, a two‐step machine learning framework leveraging nested cross‐validation (Figure <xref rid="advs72030-supinfo-0001" ref-type="">S3</xref>, Supporting Information) was implemented. First, comprehensive proteomic score models (C‐ProtS) were developed using XGBoost, a scalable and efficient gradient boosting algorithm, trained on all proteins selected through internal feature filtering. Second, simple proteomic score models (S‐ProtS) were constructed by restricting the input to a SHAP‐informed subset of top‐ranked proteins contributing most to model prediction. XGBoost was a high‐performance machine learning algorithm designed for efficiency, flexibility, and portability, utilizing parallel tree boosting to develop the protein‐profiling model.<sup>[</sup>
+<xref rid="advs72030-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>
+<sup>]</sup>
+</p></sec><sec id="advs72030-sec-0420"><title>Statistical Analyses—Feature Selection</title><p>Feature selection was embedded within a nested cross‐validation framework to ensure unbiased variable selection and prevent information leakage. In each training fold of the inner loop, LASSO (least absolute shrinkage and selection operator) regression was applied to identify a subset of proteins most predictive of widespread chronic pain. The LASSO penalty encourages sparsity by shrinking less informative coefficients to zero, enabling data‐driven selection of relevant features within each fold.</p></sec><sec id="advs72030-sec-0430"><title>Statistical Analyses—Proteomic Score Development</title><p>A series of XGBOOST models was developed to assess the potential of plasma proteomics as a single‐domain assay for predicting widespread chronic pain. For chronic widespread pain, a separate XGBOOST model was constructed using nested cross‐validation (5 outer folds and 10 inner folds), a technique employed to minimize the risk of random error caused by data splitting. The predicted risk values from these models were designated as proteomic scores (comprehensive proteomic scores, C‐ProtS). To interpret model outputs and identify the most influential proteins, SHAP (SHapley Additive exPlanations) values based on the final XGBoost model were computed, which was retrained on the full dataset using the optimal hyperparameters selected through nested cross‐validation. SHAP values were derived from cooperative game theory and provide a unified measure to explain the contribution of each feature—in this case, each protein—to the model's prediction. A positive SHAP value indicates that the protein increases the predicted risk for widespread chronic pain, while a negative SHAP value suggests the protein decreases the predicted risk. The top 15 proteins were ranked based on their absolute SHAP values, indicating their relative importance in the model. SHAP plots were also generated to visually interpret the impact of each protein on the model's predictions, allowing for a clear understanding of how specific proteins influence the risk predictions for widespread chronic pain. Nested cross‑validation was used to mitigate overfitting and provide an internal estimate of model performance, although no external test set was available for independent evaluation.</p><p>To construct a simplified and interpretable model, all proteins were ranked by their SHAP values and sequentially added them to a new XGBoost model in descending order of importance. The process was terminated once the model's AUC reached 90% of that achieved by the full proteomic model (C‐ProtS). The resulting subset of proteins defined the simple model (simple proteomic score, S‐ProtS), which was developed using the same nested cross‐validation strategy.</p></sec><sec id="advs72030-sec-0440"><title>Statistical Analyses—Model for Pain Prediction</title><p>XGBOOST models were lifted, incorporating different sets of clinical predictors (Figure <xref rid="advs72030-supinfo-0001" ref-type="">S4</xref>, Supporting Information). The model‐based based was developed on six predictors identified from a previous study, utilizing nested cross‐validation. Additionally, models combining these six clinical predictors were created with the proteomic score to evaluate their additive predictive value. Model performance was assessed using AUC, ranging from 0.5 (non‐informative) to 1 (perfect discrimination). Calibration plots were employed to visualize the agreement between predicted risks and observed pain rates, while net benefit curves illustrated the additive predictive value of ProRS alongside different clinical predictor sets.</p><p>Importantly, model predictions were derived from the test folds across each outer loop of the nested cross‐validation, ensuring unbiased performance estimates by avoiding information leakage. Key predictive metrics, including the area under the Receiver Operating Characteristic (ROC) curve (AUC), were reported. Calibration was evaluated using calibration plots and quantified through the calibration slope statistic, with a slope of 1 indicating optimal overall calibration. Net benefit curves were also generated to evaluate the incremental clinical value of incorporating the proteomic risk score into existing clinical models. All models underwent development and evaluation through nested cross‐validation, with continuous variables standardised and categorical variables one‐hot encoded.</p></sec><sec id="advs72030-sec-0450"><title>Statistical Analyses—Prospective Association of the Proteomic Score</title><p>To evaluate the prognostic association of the widespread chronic pain‐specific proteomic score, Poisson regression was employed to estimate the relationship between the proteomic score (quantile 5 vs quantile 1) and nociceptive pain, neuropathic pain, nociplastic pain, fibromyalgia, onset of chronic pain, pain spread, and pain recovery. For onset pain, the analysis focused on participants without any chronic pain at baseline who developed onset pain by the follow‐up visit. All models were adjusted for age, gender, sleeplessness, feelings of being fed‐up, tiredness, mood, stressful life events, and BMI.</p></sec><sec id="advs72030-sec-0460"><title>Statistical Analyses—Causal Relevance of the Proteins (Mendelian Randomization Analysis)</title><p>To systematically prioritize protein biomarkers implicated in widespread chronic pain, machine learning–based feature importance (proteins with non‐zero SHAP values) and conventional association analyses were integrated. To explore the causal relationship between integrated proteins and pain, a two‐sample Mendelian randomization (MR) analysis was conducted. Selection of genetic instruments: Instrumental variables were derived from two large‐scale genome‐wide association studies (GWAS): the UK Biobank Pharma Proteomics Project (UKB‐PPP). Due to the moderate heritability of circulating protein levels and limited sample sizes in current proteomic GWAS datasets, relatively few proteins possess genome‐wide significant instruments (p &lt; 5 × 10<sup>−8</sup>). To enable proteome‐wide coverage and avoid restricting the analysis to only highly heritable proteins, a relaxed significance threshold of p &lt; 5 × 10<sup>−5</sup> was adopted for selecting genetic instruments. This threshold has been commonly used in proteomic MR studies to ensure adequate instrument availability. Cis‐SNPs MR Analysis: Cis‐SNPs associated with the top shared plasma proteins at genome‐wide significance (p &lt; 5 × 10<sup>−5</sup>) and LD (R<sup>2</sup> &lt; 0.1) were utilized as instrumental variables. Cis‐SNPs were defined as those located within 5 Mb of the gene encoding the protein, with LD estimated based on the 1000 Genomes European panel. Furthermore, F‐statistics &gt; 10 were applied to ensure adequate instrumental strength associated with exposure traits.</p></sec><sec id="advs72030-sec-0470"><title>Statistical Analyses—Protein Source</title><p>Genetic instruments for protein levels were obtained from the UK Biobank Pharma Proteomics Project, an external large‐scale proteomic GWAS that profiled 2923 plasma proteins in ≈54000 UK Biobank participants using the Olink platform.<sup>[</sup>
+<xref rid="advs72030-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref>
+<sup>]</sup>
+</p></sec><sec id="advs72030-sec-0480"><title>Statistical Analyses—Pain Sources</title><p>To avoid potential bias arising from population diversity, the genetic background was restricted in drug target MR analysis to participants of European descent. Three large‐scale genome‐wide association studies (GWAS) of chronic pain was employed. The primary MR analysis was based on a meta‐analysis of chronic widespread pain across six population‐based European cohorts (14 177 cases and 28 903 controls), excluding UK Biobank: the Rotterdam Study I, II, and III (Netherlands), TwinsUK and the English Longitudinal Study of Ageing (UK), and the Nord‐Trøndelag Health Survey (Norway).<sup>[</sup>
+<xref rid="advs72030-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>
+<sup>]</sup> For independent validation, two UK Biobank‐derived phenotypes was used: (1) multisite chronic pain, comprising 73082 cases and 105474 controls,<sup>[</sup>
+<xref rid="advs72030-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref>
+<sup>]</sup> and (2) chronic widespread musculoskeletal pain defined through self‐reported and ICD‐coded diagnoses (6914 cases and 223 606 controls).<sup>[</sup>
+<xref rid="advs72030-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>
+<sup>]</sup> This three‐source design enabled robust causal inference and cross‐cohort replication.</p></sec><sec id="advs72030-sec-0490"><title>Statistical Analyses—Sensitivity Analysis</title><p>The Steiger test was employed to assess potential reverse causality in the MR analysis. Additionally, the bidirectional Mendelian randomization approach was used to explore the reverse causal relationship between multisite chronic pain and specific proteins. Associations between cis‐pQTLs and outcomes were calculated as beta with corresponding confidence intervals (CIs) using the random‐effects inverse‐variance weighted (IVW) method. Furthermore, MR‐PRESSO was utilized to detect outlier genetic variants. The MR‐Egger intercept test was conducted to evaluate horizontal pleiotropy, and Cochrane's Q value was calculated to assess heterogeneity in IVW estimators, with P &lt; 0.05 indicating evidence of heterogeneity.</p></sec><sec id="advs72030-sec-0500"><title>Statistical Analyses—Colocalization Analysis</title><p>Colocalization analysis was performed to determine whether the observed associations between the top shared proteins and multisite chronic pain were driven by linkage disequilibrium. For each locus, a Bayesian framework was applied to evaluate support for five mutually exclusive hypotheses: (1) no association with either trait; (2) association with trait 1 only; (3) association with trait 2 only; (4) both traits were associated but have distinct causal variants; and (5) both traits were associated and share the same causal variant. The analysis yielded posterior probabilities for each hypothesis (H0, H1, H2, H3, and H4). Prior probabilities were assigned as follows: the SNP being associated with trait 1 only (p1) was set at 1 × 10<sup>−4</sup>; the SNP being associated with trait 2 only (p2) at 1 × 10<sup>−4</sup>; and the SNP being associated with both traits (p12) at 1 × 10<sup>−5</sup>. Strong evidence of colocalization was defined as a posterior probability for shared causal variants (PH4) ≥ 0.8, while medium evidence was indicated by 0.5 &lt; PH4 &lt; 0.8.</p></sec><sec id="advs72030-sec-0510"><title>Statistical Analyses—Prospective Association of the Top Proteins</title><p>Among the 434 proteins tested, 18 showed significant causal associations with widespread chronic pain in MR analyses. Poisson regression was employed to estimate the prognostic association between these top proteins and pain mechanism classification (nociceptive pain, neuropathic pain, nociplastic pain, and fibromyalgia), new onset chronic pain, pain spread, and pain recovery (quantile 5 vs quantile 1). The analysis was adjusted for variables including age, gender, sleeplessness, feeling fed‐up, tiredness, mood, stressful life events, and BMI.</p><p>To explore dose‐response relationships between the top proteins and pain outcomes, restricted cubic spline (RCS) regression was used, with the same multivariable adjustments. Nonlinearity was tested using the likelihood ratio test, and the number of nodes was selected based on the lowest Akaike Information Criterion (AIC) value. The same analytical approach was applied to the other 18 proteins.</p></sec><sec id="advs72030-sec-0520"><title>Statistical Analyses—Protein‐Protein Interaction (PPI)</title><p>Protein‐protein interaction (PPI) analysis was performed for the 18 causal proteins identified in our models using the STRING database (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://string-db.org/" ext-link-type="uri">https://string‐db.org/</ext-link>).<sup>[</sup>
+<xref rid="advs72030-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>
+<sup>]</sup> STRING offers comprehensive interaction networks derived from experimental data, computational predictions, and known biological pathways. This analysis enabled us to examine potential interactions between the top proteins and to identify biologically relevant networks that may be involved in the pathogenesis of widespread chronic pain.</p></sec><sec id="advs72030-sec-0530"><title>Statistical Analyses—Drug Repurposing</title><p>To explore the potential for drug repurposing, the Open Targets platform<sup>[</sup>
+<xref rid="advs72030-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>
+<sup>]</sup> was searched for the 18 proteins identified in our analysis. Open Targets integrates data from multiple sources, including genetic associations, known drug interactions, and disease pathways, to evaluate the therapeutic potential of various proteins. This search enabled us to determine whether any of the top proteins were associated with existing drugs that could be repurposed for chronic pain treatment. By identifying proteins already targeted by approved or investigational drugs, opportunities were aimed to uncover for repurposing these drugs to address widespread chronic pain. This approach may offer faster and more cost‐effective therapeutic options by leveraging drugs that have already undergone substantial testing for safety and efficacy in other conditions.</p><p>All modeling and statistical analyses were performed using R software (V4.3.0). Missing value imputation was conducted using the missRanger package. The XGBOOST and nested cross‐validation were implemented with the nestedcv package, with calibration curves generated by the CalibrationCurve package and net benefit curves by the rmda package. The two‐sample Mendelian randomization analysis was conducted using the TwosampleMR package. Colocalization analysis was carried out with the <italic toggle="yes">coloc</italic> package.</p></sec></sec><sec sec-type="COI-statement" id="advs72030-sec-0540"><title>Conflict of Interest</title><p>The authors declare no conflict of interest.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="advs72030-supinfo-0001" position="float" content-type="local-data" orientation="portrait"/><supplementary-material id="advs72030-supitem-0001" position="float" content-type="local-data" orientation="portrait"><caption><p>Supporting Information</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ADVS-12-e07691-s001.docx" position="float" orientation="portrait"/></supplementary-material></sec></body><back><sec sec-type="data-availability" id="advs72030-sec-0560"><title>Data Availability Statement</title><p>The data that support the findings of this study are available on request from the corresponding author.</p></sec><ref-list id="advs72030-bibl-0001"><ref id="advs72030-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="advs72030-cite-0001">
+<string-name name-style="western">
+<given-names>D. A.</given-names>
+<surname>Tompkins</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. G.</given-names>
+<surname>Hobelmann</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Compton</surname>
+</string-name>, <source>Drug Alcohol Depend</source>
+<year>2017</year>, <volume>173</volume>, <fpage>S11</fpage>.<pub-id pub-id-type="pmid">28363315</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.drugalcdep.2016.12.002</pub-id><pub-id pub-id-type="pmcid">PMC5771233</pub-id></mixed-citation></ref><ref id="advs72030-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="advs72030-cite-0002">
+<string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Zimmer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Fraser</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Grol‐Prokopczyk</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Zajacova</surname>
+</string-name>, <source>Pain</source>
+<year>2022</year>, <volume>163</volume>, <fpage>1740</fpage>.<pub-id pub-id-type="pmid">35027516</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1097/j.pain.0000000000002557</pub-id><pub-id pub-id-type="pmcid">PMC9198107</pub-id></mixed-citation></ref><ref id="advs72030-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="advs72030-cite-0003">
+<string-name name-style="western">
+<given-names>J. R.</given-names>
+<surname>Pleis</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. W.</given-names>
+<surname>Ward</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. W.</given-names>
+<surname>Lucas</surname>
+</string-name>, <source>Vital Health Stat 10</source>
+<year>2010</year>, <volume>249</volume>, <fpage>1</fpage>.<pub-id pub-id-type="pmid">21905346</pub-id></mixed-citation></ref><ref id="advs72030-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="advs72030-cite-0004">
+<string-name name-style="western">
+<given-names>M. M.</given-names>
+<surname>Husky</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Ferdous Farin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Compagnone</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Fermanian</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Kovess‐Masfety</surname>
+</string-name>, <source>Health Qual. Life Outcomes</source>
+<year>2018</year>, <volume>16</volume>, <fpage>195</fpage>.<pub-id pub-id-type="pmid">30257670</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s12955-018-1018-4</pub-id><pub-id pub-id-type="pmcid">PMC6158815</pub-id></mixed-citation></ref><ref id="advs72030-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="advs72030-cite-0005">
+<string-name name-style="western">
+<given-names>C. J.</given-names>
+<surname>Phillips</surname>
+</string-name>, <source>Rev Pain</source>
+<year>2009</year>, <volume>3</volume>, <fpage>2</fpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1177/204946370900300102</pub-id><pub-id pub-id-type="pmcid">PMC4590036</pub-id><pub-id pub-id-type="pmid">26526940</pub-id></mixed-citation></ref><ref id="advs72030-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="advs72030-cite-0006">
+<string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Soni</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Santos‐Paulo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Segerdahl</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. K.</given-names>
+<surname>Javaid</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Pinedo‐Villanueva</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Tracey</surname>
+</string-name>, <source>Rheumatology (Oxford)</source>
+<year>2020</year>, <volume>59</volume>, <fpage>2074</fpage>.<pub-id pub-id-type="pmid">31808524</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/rheumatology/kez499</pub-id></mixed-citation></ref><ref id="advs72030-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="advs72030-cite-0007">
+<string-name name-style="western">
+<given-names>S. N.</given-names>
+<surname>Raja</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. B.</given-names>
+<surname>Carr</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Cohen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. B.</given-names>
+<surname>Finnerup</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Flor</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Gibson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F. J.</given-names>
+<surname>Keefe</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. S.</given-names>
+<surname>Mogil</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Ringkamp</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K. A.</given-names>
+<surname>Sluka</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.‐J.</given-names>
+<surname>Song</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Stevens</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. D.</given-names>
+<surname>Sullivan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. R.</given-names>
+<surname>Tutelman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Ushida</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Vader</surname>
+</string-name>, <source>Pain</source>
+<year>2020</year>, <volume>161</volume>, <fpage>1976</fpage>.<pub-id pub-id-type="pmid">32694387</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1097/j.pain.0000000000001939</pub-id><pub-id pub-id-type="pmcid">PMC7680716</pub-id></mixed-citation></ref><ref id="advs72030-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="advs72030-cite-0008">
+<string-name name-style="western">
+<given-names>R.‐D.</given-names>
+<surname>Treede</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Rief</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Barke</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Aziz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. I.</given-names>
+<surname>Bennett</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Benoliel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Cohen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Evers</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. B.</given-names>
+<surname>Finnerup</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. B.</given-names>
+<surname>First</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. A.</given-names>
+<surname>Giamberardino</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Kaasa</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Kosek</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Lavand'homme</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Nicholas</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Perrot</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Scholz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Schug</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. H.</given-names>
+<surname>Smith</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Svensson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. W. S.</given-names>
+<surname>Vlaeyen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.‐J.</given-names>
+<surname>Wang</surname>
+</string-name>, <source>Pain</source>
+<year>2015</year>, <volume>156</volume>, <fpage>1003</fpage>.<pub-id pub-id-type="pmid">25844555</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1097/j.pain.0000000000000160</pub-id><pub-id pub-id-type="pmcid">PMC4450869</pub-id></mixed-citation></ref><ref id="advs72030-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="advs72030-cite-0009">
+<string-name name-style="western">
+<given-names>R.‐D.</given-names>
+<surname>Treede</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Rief</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Barke</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Aziz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. I.</given-names>
+<surname>Bennett</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Benoliel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Cohen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Evers</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. B.</given-names>
+<surname>Finnerup</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. B.</given-names>
+<surname>First</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. A.</given-names>
+<surname>Giamberardino</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Kaasa</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Korwisi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Kosek</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Lavand'homme</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Nicholas</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Perrot</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Scholz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Schug</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. H.</given-names>
+<surname>Smith</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Svensson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. W. S.</given-names>
+<surname>Vlaeyen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.‐J.</given-names>
+<surname>Wang</surname>
+</string-name>, <source>Pain</source>
+<year>2019</year>, <volume>160</volume>, <fpage>19</fpage>.30586067
+</mixed-citation></ref><ref id="advs72030-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="advs72030-cite-0010">
+<string-name name-style="western">
+<given-names>R. J.</given-names>
+<surname>Gatchel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y. B.</given-names>
+<surname>Peng</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. L.</given-names>
+<surname>Peters</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. N.</given-names>
+<surname>Fuchs</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. C.</given-names>
+<surname>Turk</surname>
+</string-name>, <source>Psychol Bull</source>
+<year>2007</year>, <volume>133</volume>, <fpage>581</fpage>.<pub-id pub-id-type="pmid">17592957</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1037/0033-2909.133.4.581</pub-id></mixed-citation></ref><ref id="advs72030-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="advs72030-cite-0011">
+<string-name name-style="western">
+<given-names>C. M.</given-names>
+<surname>Kaplan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Kelleher</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Irani</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Schrepf</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. J.</given-names>
+<surname>Clauw</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. E.</given-names>
+<surname>Harte</surname>
+</string-name>, <source>Nat. Rev. Neurol.</source>
+<year>2024</year>, <volume>20</volume>, <fpage>347</fpage>.<pub-id pub-id-type="pmid">38755449</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41582-024-00966-8</pub-id></mixed-citation></ref><ref id="advs72030-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="advs72030-cite-0012">
+<string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Carrasco‐Zanini</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Pietzner</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Davitte</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Surendran</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. C.</given-names>
+<surname>Croteau‐Chonka</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Robins</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Torralbo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Tomlinson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Grünschläger</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Fitzpatrick</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Ytsma</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Kanno</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Gade</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Freitag</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Ziebell</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Haas</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Denaxas</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. C.</given-names>
+<surname>Betts</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. J.</given-names>
+<surname>Wareham</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Hemingway</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. A.</given-names>
+<surname>Scott</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Langenberg</surname>
+</string-name>, <source>Nat. Med.</source>
+<year>2024</year>, <volume>30</volume>, <fpage>2489</fpage>.<pub-id pub-id-type="pmid">39039249</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41591-024-03142-z</pub-id><pub-id pub-id-type="pmcid">PMC11405273</pub-id></mixed-citation></ref><ref id="advs72030-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="advs72030-cite-0013">
+<string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Tanguay‐Sabourin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Fillingim</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G. V.</given-names>
+<surname>Guglietti</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Zare</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Parisien</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Norman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Sweatman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Da‐ano</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Heikkala</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. C. S.</given-names>
+<surname>Breitner</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Menes</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Poirier</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Tremblay‐Mercier</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Perez</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Karppinen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Villeneuve</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. J.</given-names>
+<surname>Thompson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. O.</given-names>
+<surname>Martel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Roy</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Diatchenko</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Vachon‐Presseau</surname>
+</string-name>, <source>Nat. Med.</source>
+<year>2023</year>, <volume>29</volume>, <fpage>1821</fpage>.<pub-id pub-id-type="pmid">37414898</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41591-023-02430-4</pub-id><pub-id pub-id-type="pmcid">PMC10353938</pub-id></mixed-citation></ref><ref id="advs72030-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="advs72030-cite-0014">
+<string-name name-style="western">
+<given-names>C. S.</given-names>
+<surname>Nielsen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G. P.</given-names>
+<surname>Knudsen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>O. A.</given-names>
+<surname>Steingrimsdottir</surname>
+</string-name>, <source>Clin. Genet.</source>
+<year>2012</year>, <volume>82</volume>, <fpage>331</fpage>.<pub-id pub-id-type="pmid">22823509</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1399-0004.2012.01938.x</pub-id></mixed-citation></ref><ref id="advs72030-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="advs72030-cite-0015">
+<string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Abboud</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Duveau</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Bouali‐Benazzouz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Massé</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Mattar</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Brochoire</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Fossat</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Boué‐Grabot</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Hleihel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Landry</surname>
+</string-name>, <source>J. Neurosci. Methods</source>
+<year>2021</year>, <volume>348</volume>, <elocation-id>108997</elocation-id>.<pub-id pub-id-type="pmid">33188801</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jneumeth.2020.108997</pub-id></mixed-citation></ref><ref id="advs72030-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="advs72030-cite-0016">
+<string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Gottesman‐Katz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Latorre</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Vanner</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. L.</given-names>
+<surname>Schmidt</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. W.</given-names>
+<surname>Bunnett</surname>
+</string-name>, <source>Gut</source>
+<year>2021</year>, <volume>70</volume>, <fpage>970</fpage>.<pub-id pub-id-type="pmid">33272979</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1136/gutjnl-2020-321193</pub-id><pub-id pub-id-type="pmcid">PMC9716638</pub-id></mixed-citation></ref><ref id="advs72030-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="advs72030-cite-0017">
+<string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Denk</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. B.</given-names>
+<surname>McMahon</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Tracey</surname>
+</string-name>, <source>Nat. Neurosci.</source>
+<year>2014</year>, <volume>17</volume>, <fpage>192</fpage>.<pub-id pub-id-type="pmid">24473267</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/nn.3628</pub-id></mixed-citation></ref><ref id="advs72030-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="advs72030-cite-0018">
+<string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Segelcke</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. R.</given-names>
+<surname>Sondermann</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Kappert</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Pradier</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Görlich</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Fobker</surname>
+</string-name>, et al., <source>medRxiv</source>
+<year>2024</year>, <elocation-id>24309933</elocation-id>.</mixed-citation></ref><ref id="advs72030-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="advs72030-cite-0019">
+<string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Wolfe</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Ross</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Anderson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I. J.</given-names>
+<surname>Russell</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Hebert</surname>
+</string-name>, <source>Arthritis Rheum.</source>
+<year>1995</year>, <volume>38</volume>, <fpage>19</fpage>.<pub-id pub-id-type="pmid">7818567</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/art.1780380104</pub-id></mixed-citation></ref><ref id="advs72030-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="advs72030-cite-0020">
+<string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Walitt</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. L.</given-names>
+<surname>Nahin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. S.</given-names>
+<surname>Katz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. J.</given-names>
+<surname>Bergman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Wolfe</surname>
+</string-name>, <source>PLoS One</source>
+<year>2015</year>, <volume>10</volume>, <elocation-id>0138024</elocation-id>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1371/journal.pone.0138024</pub-id><pub-id pub-id-type="pmcid">PMC4575027</pub-id><pub-id pub-id-type="pmid">26379048</pub-id></mixed-citation></ref><ref id="advs72030-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="advs72030-cite-0021">
+<string-name name-style="western">
+<given-names>A. E.</given-names>
+<surname>Murphy</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Minhas</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. J.</given-names>
+<surname>Clauw</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y. C.</given-names>
+<surname>Lee</surname>
+</string-name>, <source>Arthritis Care Res (Hoboken)</source>
+<year>2023</year>, <volume>75</volume>, <fpage>2215</fpage>.<pub-id pub-id-type="pmid">36785994</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/acr.25104</pub-id><pub-id pub-id-type="pmcid">PMC11210328</pub-id></mixed-citation></ref><ref id="advs72030-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="advs72030-cite-0022">
+<string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Tian</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Ma</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Lim</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Kim</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Mao</surname>
+</string-name>, <source>Pain</source>
+<year>2011</year>, <volume>152</volume>, <fpage>1263</fpage>.<pub-id pub-id-type="pmid">21376468</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.pain.2011.01.054</pub-id><pub-id pub-id-type="pmcid">PMC3098907</pub-id></mixed-citation></ref><ref id="advs72030-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="advs72030-cite-0023">
+<string-name name-style="western">
+<given-names>H. M.</given-names>
+<surname>Rodgers</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Liban</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. M.</given-names>
+<surname>Wilson</surname>
+</string-name>, <source>Physiol. Behav.</source>
+<year>2014</year>, <volume>123</volume>, <fpage>80</fpage>.<pub-id pub-id-type="pmid">24161513</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.physbeh.2013.10.007</pub-id></mixed-citation></ref><ref id="advs72030-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="advs72030-cite-0024">
+<string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Hukku</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Pividori</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Luca</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Pique‐Regi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H. K.</given-names>
+<surname>Im</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Wen</surname>
+</string-name>, <source>Am. J. Hum. Genet.</source>
+<year>2021</year>, <volume>108</volume>, <fpage>25</fpage>.<pub-id pub-id-type="pmid">33308443</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.ajhg.2020.11.012</pub-id><pub-id pub-id-type="pmcid">PMC7820626</pub-id></mixed-citation></ref><ref id="advs72030-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="advs72030-cite-0025">
+<string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Wolfe</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Egloff</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Hauser</surname>
+</string-name>, <source>J Rheumatol</source>
+<year>2016</year>, <volume>43</volume>, <fpage>1743</fpage>.<pub-id pub-id-type="pmid">27370877</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3899/jrheum.160153</pub-id></mixed-citation></ref><ref id="advs72030-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="advs72030-cite-0026">
+<string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Bouhassira</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Attal</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Alchaar</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Boureau</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Brochet</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Bruxelle</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Cunin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Fermanian</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Ginies</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Grun‐Overdyking</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Jafari‐Schluep</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Lantéri‐Minet</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Laurent</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Mick</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Serrie</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Valade</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Vicaut</surname>
+</string-name>, <source>Pain</source>
+<year>2005</year>, <volume>114</volume>, <fpage>29</fpage>.<pub-id pub-id-type="pmid">15733628</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.pain.2004.12.010</pub-id></mixed-citation></ref><ref id="advs72030-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="advs72030-cite-0027">
+<string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Rutter‐Locher</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Arumalla</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Norton</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. S.</given-names>
+<surname>Taams</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. W.</given-names>
+<surname>Kirkham</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Bannister</surname>
+</string-name>, <source>Semin Arthritis Rheum</source>
+<year>2023</year>, <volume>61</volume>, <elocation-id>152207</elocation-id>.<pub-id pub-id-type="pmid">37163841</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.semarthrit.2023.152207</pub-id></mixed-citation></ref><ref id="advs72030-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="advs72030-cite-0028">
+<string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Wolfe</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. T.</given-names>
+<surname>Walitt</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. J.</given-names>
+<surname>Rasker</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. S.</given-names>
+<surname>Katz</surname>
+</string-name>, <source>Journal of Rheumatology Hauser</source>
+<year>2015</year>, <volume>42</volume>.</mixed-citation></ref><ref id="advs72030-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="advs72030-cite-0029">
+<string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Xue</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Shi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Hu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Cui</surname>
+</string-name>, <source>Brain</source>
+<year>2024</year>, <volume>147</volume>, <fpage>1075</fpage>.<pub-id pub-id-type="pmid">37816260</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/brain/awad341</pub-id><pub-id pub-id-type="pmcid">PMC10907082</pub-id></mixed-citation></ref><ref id="advs72030-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="advs72030-cite-0030">
+<string-name name-style="western">
+<given-names>B. B.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Chiou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Traylor</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Benner</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Hsu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T. G.</given-names>
+<surname>Richardson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Surendran</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Mahajan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Robins</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. G.</given-names>
+<surname>Vasquez‐Grinnell</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Hou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E. M.</given-names>
+<surname>Kvikstad</surname>
+</string-name>, <string-name name-style="western">
+<given-names>O. S.</given-names>
+<surname>Burren</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Davitte</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K. L.</given-names>
+<surname>Ferber</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. E.</given-names>
+<surname>Gillies</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Å. K.</given-names>
+<surname>Hedman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Hu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Lin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Mikkilineni</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. K.</given-names>
+<surname>Pendergrass</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Pickering</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Prins</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Baird</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.‐Y.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. D.</given-names>
+<surname>Ward</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. M.</given-names>
+<surname>Deaton</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Welsh</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. M.</given-names>
+<surname>Willis</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Lehner</surname>
+</string-name>, et al., <source>Nature</source>
+<year>2023</year>, <volume>622</volume>, <fpage>329</fpage>.<pub-id pub-id-type="pmid">37794186</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41586-023-06592-6</pub-id><pub-id pub-id-type="pmcid">PMC10567551</pub-id></mixed-citation></ref><ref id="advs72030-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="advs72030-cite-0031">
+<string-name name-style="western">
+<given-names>M. S.</given-names>
+<surname>Rahman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. S.</given-names>
+<surname>Winsvold</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. O.</given-names>
+<surname>Chavez Chavez</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Børte</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y. A.</given-names>
+<surname>Tsepilov</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. Z.</given-names>
+<surname>Sharapov</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y. S.</given-names>
+<surname>Aulchenko</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Hagen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>E. A.</given-names>
+<surname>Fors</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Hveem</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. A.</given-names>
+<surname>Zwart</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. B.</given-names>
+<surname>van Meurs</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. B.</given-names>
+<surname>Freidin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F. M.</given-names>
+<surname>Williams</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. E.</given-names>
+<surname>Martinsen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. H.</given-names>
+<surname>Skogholt</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Brumpton</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Heuch</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Mundal</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. B.</given-names>
+<surname>Nielsen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Storheim</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K. B.</given-names>
+<surname>Nilsen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Fritsche</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. F.</given-names>
+<surname>Thomas</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. M.</given-names>
+<surname>Pedersen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. E.</given-names>
+<surname>Gabrielsen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. B.</given-names>
+<surname>Johnsen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. U.</given-names>
+<surname>Lie</surname>
+</string-name>, <string-name name-style="western">
+<given-names>O.</given-names>
+<surname>Holmen</surname>
+</string-name>, et al., <source>Ann. Rheum. Dis.</source>
+<year>2021</year>, <volume>80</volume>, <fpage>1227</fpage>.<pub-id pub-id-type="pmid">33926923</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1136/annrheumdis-2020-219624</pub-id><pub-id pub-id-type="pmcid">PMC8372387</pub-id></mixed-citation></ref><ref id="advs72030-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="advs72030-cite-0032">
+<string-name name-style="western">
+<given-names>K. J. A.</given-names>
+<surname>Johnston</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. J.</given-names>
+<surname>Adams</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. I.</given-names>
+<surname>Nicholl</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Ward</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. J.</given-names>
+<surname>Strawbridge</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Ferguson</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. M.</given-names>
+<surname>McIntosh</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. E. S.</given-names>
+<surname>Bailey</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. J.</given-names>
+<surname>Smith</surname>
+</string-name>, <source>PLoS Genet.</source>
+<year>2019</year>, <volume>15</volume>, <elocation-id>1008164</elocation-id>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1371/journal.pgen.1008164</pub-id><pub-id pub-id-type="pmcid">PMC6592570</pub-id><pub-id pub-id-type="pmid">31194737</pub-id></mixed-citation></ref><ref id="advs72030-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="advs72030-cite-0033">
+<string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Szklarczyk</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Kirsch</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Koutrouli</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Nastou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Mehryary</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Hachilif</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. L.</given-names>
+<surname>Gable</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Fang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N. T.</given-names>
+<surname>Doncheva</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Pyysalo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Bork</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L. J.</given-names>
+<surname>Jensen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>von Mering</surname>
+</string-name>, <source>Nucleic Acids Res.</source>
+<year>2023</year>, <volume>51</volume>, <fpage>D638</fpage>.<pub-id pub-id-type="pmid">36370105</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/nar/gkac1000</pub-id><pub-id pub-id-type="pmcid">PMC9825434</pub-id></mixed-citation></ref><ref id="advs72030-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="advs72030-cite-0034">
+<string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Ochoa</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Hercules</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Carmona</surname>
+</string-name>, <source>J Nucleic Acids Research Mcdonagh</source>
+<year>2020</year>.</mixed-citation></ref></ref-list></back></article></pmc-articleset>
