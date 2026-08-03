@@ -139,10 +139,17 @@ cohens_d = (mean(fm_plasma) - mean(hc_plasma)) / sp
 
 ---
 
-## 6. Control positivo (validación) — CORREGIDO 2026-08-03
+## 6. Control positivo (validación) — CORREGIDO 2026-08-03 (ver GROUNDING_IL8_Control_Positivo.md)
 
-- **IL-8 (CXCL8)** — elevada en CSF (p=0.001) Y plasma (Bäckryd 2017 PMID 28424559) — el solapamiento CSF+plasma mejor documentado. **Control positivo principal.**
+- **IL-8 (CXCL8)** — **Control positivo principal, CONFIRMADO por grounding de primera mano:**
+  - ✅ Elevado en CSF de FM (Kadetoff 2012, Kosek 2015, Bäckryd 2017)
+  - ✅ Elevado en plasma/suero de FM (Kadetoff 2012, Bäckryd 2017, O'Mahony 2021)
+  - ✅ Robusto en metaanálisis reciente (O'Mahony 2021, robusto en sensitivity analysis)
+  - ✅ Mediador central distintivo de dolor disfuncional vs inflamatorio (Kosek 2015: IL-8 en FM vs IL-1β en RA)
+  - ⚠️ NO es FM-específico: marcador de dolor crónico/disfuncional general (Rosenström 2024: 6/9 dolores nociceptivos)
+  - **Rol en protocolo:** ancla técnica de reproducibilidad (¿el panel detecta FM vs HC en ambos compartimentos?) — no como evidencia FM-exclusiva
 - **CXCL6, CXCL5, MCP-2/CCL8, LAP-TGF-β1** — las 4 proteínas que solapan CSF y plasma en el top discriminador de Bäckryd. Controles secundarios.
+- **IL-6 — matiz:** el metaanálisis O'Mahony 2021 lo muestra significativo pero NO robusto en sensitivity analysis. Nuestro hallazgo GSE221921 (Bonf=0.003) sigue válido en PBMCs; pero como endpoint periférico, IL-8 es más sólido que IL-6. Prioridad: IL-8 > IL-6.
 - ~~TNF-α~~ — ❌ casi todos los valores bajo LoD en CSF (Bäckryd 2017). No usable como control en CSF.
 
 ---
