@@ -19,6 +19,31 @@
 | LGALS3BP | FC=0.75 (↓), p=0.0003 | FC=0.956 (↓), p=0.337, NS | ⚠️ dirección consistente, NS |
 | MDH1 | FC=0.86, NS | FC=0.985, NS | ✅ NS en ambos |
 
+---
+
+## ITEM C (2026-08-03): DECONVOLUCIÓN CELULAR — LA HIPÓTESIS DE DILUCIÓN NO SE SOSTIENE
+
+**Pregunta:** ¿la no-replicación se explica porque whole blood diluye la señal linfocitaria por neutrófilos?
+
+**Resultado (marcadores de tipo celular en GSE67311):**
+- Composición celular FM vs HC: ESENCIALMENTE IDÉNTICA
+  - Neutrófilos: FM=10.92 vs HC=10.89 (7 marcadores)
+  - Linfocitos T: FM=9.89 vs HC=9.98 | B: 8.88 vs 8.88 | monocitos: 11.11 vs 11.13 | NK: 8.43 vs 8.51
+- Correlación score neutrófilo vs proxies: débil y mixta
+  - TAC1: r=+0.07, NS | IL6: r=-0.02, NS | OPRM1: r=-0.22, p=0.008 | PENK: r=-0.13, NS | PCSK1N: r=-0.02, NS
+
+**Conclusión del item C:** la discrepancia NO es dilución por neutrófilos — la composición celular
+es comparable entre grupos y los proxies no correlacionan sistemáticamente con la fracción
+neutrofílica. Las explicaciones restantes (sin datos nuevos) son:
+1. Diferencia de plataforma: RNA-seq FPKM (GSE221921) vs microarray RMA log2 (GSE67311)
+2. Heterogeneidad de cohorte: pacientes distintos, criterios de inclusión distintos
+3. Efectos reales pero pequeños (d≈0.2-0.5) que no sobreviven ruido entre plataformas
+4. Los hallazgos de GSE221921 son parcialmente cohorte-específicos
+
+**Implicancia práctica:** los proxies son PBMC/RNA-seq-específicos. El protocolo Olink mide
+plasma (proteína), que es el test definitivo — no se puede resolver con más transcriptómica
+de sangre. La decisión A (aceptar limitación + Olink como arbitro) queda reforzada.
+
 ## QUÉ SIGNIFICA (honestidad cruda)
 
 1. **La "cross-validación completada" de la madrugada era falsa.** Se documentó "GSE67311

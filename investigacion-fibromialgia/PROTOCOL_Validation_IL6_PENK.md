@@ -11,9 +11,16 @@ Validar los 2 proxies periféricos identificados en el análisis in-silico (IL6 
 - **PXD008076**: Khoonsari 2019 (CSF proteome, 4 discriminadoras) — *referencia CSF*
 
 ### Biomarcadores objetivo
-1. **IL6** — validated proxy (HIGH grade, significant en GSE221921 y cross-validated en GSE67311)
-2. **TAC1 / Substance P** — validated proxy (HIGH grade tras corrección 2026-08-03: FC=2.10, p=0.0002 en GSE221921; antes anotado PENK)
+1. **IL6** — proxy PBMC-específico (HIGH grade en GSE221921: FC=1.66, p=0.0002, Bonf=0.0038; ⚠️ NO se replicó en whole blood GSE67311 — ver VALIDACION_GSE67311_NEGATIVA.md)
+2. **TAC1 / Substance P** — proxy PBMC-específico (HIGH grade tras corrección 2026-08-03: FC=2.10, p=0.0002 en GSE221921; ⚠️ NO se replicó en GSE67311)
 3. **PENK** — hallazgo opioide endógeno separado (MEDIUM, FC=1.38, p=0.0031) — NO es Substance P
+4. **OPRM1** — receptor mu opioide (NUEVO: FC=2.28, p<0.0001, Bonf=0.0001 — el más significativo del panel GSE221921; ⚠️ NO replicado en GSE67311)
+
+### ⚠️ LIMITACIÓN DECLARADA (2026-08-03, ver VALIDACION_GSE67311_NEGATIVA.md)
+Los proxies fueron validados en **PBMCs** (GSE221921). En sangre total (GSE67311) **NO se reproducen**
+(TAC1/IL6/OPRM1 colapsan a FC≈1.0; PCSK1N invierte dirección). Hipótesis de trabajo: dilución por
+neutrófilos en whole blood (bajo investigación — item C deconvolución). El protocolo Olink mide
+**plasma**, compartimento distinto de ambos — la hipótesis plasmática queda matizada pero viva.
 
 ### Plataforma
 - **Colab Pro+ T4 GPU**: procesamiento de datos transcriptómicos + análisis de clasificación
