@@ -115,3 +115,31 @@ valida como causales está reducido en el compartimento celular FM.
 - Eje IL-6/IL-8: NO respaldado por UKB (0 menciones en 2,923 proteínas) → baja de prioridad
 - Patrón PBMC FM: señalización inmune REDUCIDA (5/9 genes MR ↓) + CA14 ↑ (pH/nocicepción)
 - Hipótesis actualizada: FM periférica = inmunomodulación/agotamiento + desregulación de pH/nocicepción (CA14), no inflamación sistémica clásica
+
+---
+
+## CA14 — CIERRE DEL TRIÁNGULO (2026-08-03)
+
+**Del texto completo del preprint (medRxiv v1, snippet verificado):**
+- "CA14, identified as the **top-ranking protein** and supported by both MR and colocalisation
+  analyses, is a **known target of sulthiame (CHEMBL328560)**, suggesting a potential
+  therapeutic target for nociplastic pain conditions such as fibromyalgia."
+- CA14: "plays an important role in neuronal signal transmission via zinc ion binding and
+  carbonate dehydratase activity"
+
+### El triángulo completo para CA14
+
+| Capa | Evidencia | Fuente |
+|------|-----------|--------|
+| 1. Proteína plasmática | Causal en CWP/FM (top-ranking, MR + colocalización) | UKB Chen 2024 (29,254 personas) |
+| 2. mRNA PBMC | ↑ en FM (FC=2.29, p=0.0003, d=+0.41) | GSE221921 (nuestro análisis) |
+| 3. Farmacología | Inhibidor conocido: sulthiame (CHEMBL328560), usado en epilepsia | Chen 2024 |
+
+**Implicancia accionable:** CA14 es el candidato más fuerte de toda la investigación —
+cruza causalidad poblacional, expresión en nuestros datos, y tiene un fármaco aprobado
+(sulthiame) como posible herramienta de validación/repurposing. Es la base de una hipótesis
+publicable y potencialmente testable.
+
+**Nota:** sulthiame inhibe anhidrasas carbónicas — si CA14 está elevado en FM, un inhibidor
+podría normalizar la señal. Dirección causal (¿CA14 alta causa dolor, o es marcador?) aún
+requiere el MR del paper (que la respalda como causal).
