@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAVI Protein Lab - Fibromyalgia Neurobioquímica Central</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --surface-alt: #283548;
+            --surface-light: #334155;
+            --primary: #06b6d4;
+            --primary-hover: #0891b2;
+            --accent: #a78bfa;
+            --accent-alt: #fb71ce;
+            --success: #4ade80;
+            --warning: #fbbf24;
+            --danger: #f87171;
+            --text: #f1f5f9;
+            --text-dim: #94a3b8;
+            --border: #475569;
+            --border-alt: #64748b;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            background: var(--bg);
+            color: var(--text);
+            padding: 20px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        header .subtitle {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+        header .meta {
+            margin-top: 12px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.1);
+        }
+        .card h2 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h2 span {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        .badge-verified { background: rgba(74, 222, 128, 0.2); color: var(--success); }
+        .badge-cited { background: rgba(251, 191, 37, 0.2); color: var(--warning); }
+        .badge-missing { background: rgba(248, 113, 113, 0.2); color: var(--danger); }
+        .badge-dataset { background: rgba(6, 182, 212, 0.2); color: var(--primary); }
+        .paper-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-alt);
+        }
+        .paper-row:last-child { border-bottom: none; }
+        .paper-title { font-size: 0.9rem; }
+        .paper-meta { color: var(--text-dim); font-size: 0.75rem; margin-top: 2px; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+        .status-verified { background: var(--success); }
+        .status-cited { background: var(--warning); }
+        .progress-container {
+            background: var(--surface-alt);
+            border-radius: 8px;
+            padding: 10px;
+            margin: 16px 0;
+        }
+        .progress-bar {
+            height: 20px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 8px;
+            transition: width 0.5s ease;
+        }
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            margin: 16px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 16px;
+            padding-left: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            background: transparent;
+        }
+        .timeline-item.completed::before {
+            background: var(--primary);
+        }
+        .timeline-item.current::before {
+            background: var(--accent);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .next-step {
+            background: rgba(167, 139, 250, 0.1);
+            border-left: 3px solid var(--accent);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+        .next-step h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .next-step ul {
+            margin-left: 20px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background: var(--surface-alt);
+            border-radius: 8px;
+            padding: 16px 8px;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+        footer {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            margin-top: 30px;
+            padding: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            header h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>DAVI Protein Lab — Fibromyalgia Neurobioquímica Central</h1>
+        <div class="subtitle">Grounding Report & Next Steps</div>
+        <div class="meta">DAVI (Dinámica de Aprendizaje y Valoración Interactiva) • Protocolo de Arranque Completado</div>
+    </header>
+
+    <!-- Stats Overview -->
+    <div class="stats-grid">
+        <div class="stat-box">
+            <div class="stat-number">30</div>
+            <div class="stat-label">Papers Verificados</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Datasets Públicos</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Ejes de Investigación</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Papers Citados (no directos)</div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <!-- Research Axes -->
+        <div class="card">
+            <h2>Ejes de Investigación <span>(6 encontrados)</span></h2>
+            <div style="margin-top: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                        <span style="font-size:0.85rem;">1. Neurotransmisores en CSF</span>
+                        <span style="color:var(--success); font-size:0.8rem;">✓ Verificado</span>
+                    </div>
+                    <div class="progress-container" style="margin:0;">
+                        <div class="progress-bar" style="width:100%;"></div>
+                    </div>
+                    <div class="progress-text">6 papers • 2 datasets</div>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                        <span style="font-size:0.85rem;">2. Inflamación sistémica vs. neuroinflamación</span>
+                        <span style="color:var(--success); font-size:0.8rem;">✓ Verificado</span>
+                    </div>
+                    <div class="progress-container" style="margin:0;">
+                        <div class="progress-bar" style="width:90%;"></div>
+                    </div>
+                    <div class="progress-text">5 papers • 1 dataset (TSPO PET)</div>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                        <span style="font-size:0.85rem;">3. Microbioma gut-brain axis</span>
+                        <span style="color:var(--success); font-size:0.8rem;">✓ Verificado</span>
+                    </div>
+                    <div class="progress-container" style="margin:0;">
+                        <div class="progress-bar" style="width:85%;"></div>
+                    </div>
+                    <div class="progress-text">4 papers • 2 datasets</div>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                        <span style="font-size:0.85rem;">4. Kynurenine pathway dysregulation</span>
+                        <span style="color:var(--accent); font-size:0.8rem;">~ Parcial</span>
+                    </div>
+                    <div class="progress-container" style="margin:0;">
+                        <div class="progress-bar" style="width:60%;"></div>
+                    </div>
+                    <div class="progress-text">2 papers (contexto general) • 0 datasets FM-específicos</div>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                        <span style="font-size:0.85rem;">5. Conectividad DMN</span>
+                        <span style="color:var(--success); font-size:0.8rem;">✓ Verificado</span>
+                    </div>
+                    <div class="progress-container" style="margin:0;">
+                        <div class="progress-bar" style="width:75%;"></div>
+                    </div>
+                    <div class="progress-text">1 paper • 1 dataset (OpenNeuro ds004144)</div>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                        <span style="font-size:0.85rem;">6. Arquitectura genética neural</span>
+                        <span style="color:var(--success); font-size:0.8rem;">✓ Verificado</span>
+                    </div>
+                    <div class="progress-container" style="margin:0;">
+                        <div class="progress-bar" style="width:80%;"></div>
+                    </div>
+                    <div class="progress-text">2 papers (GWAS) • 2 datasets (GSE221921, GSE67311)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Datasets -->
+        <div class="card">
+            <h2>Datasets Públicos <span class="badge badge-dataset">8 datasets</span></h2>
+            <div style="margin-top: 12px;">
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">OpenNeuro ds004144 (neuroimagen)</div>
+                        <div class="paper-meta">33 FM : 33 HC • rs-fMRI + T1/T2 • BIDS</div>
+                    </div>
+                    <span class="badge badge-verified">Open</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">PXD008076 (CSF proteome)</div>
+                        <div class="paper-meta">Khoonsari 2019 • LC-MS/MS • 4 proteínas</div>
+                    </div>
+                    <span class="badge badge-verified">Registro</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">GSE221921 (RNA-seq PBMCs)</div>
+                        <div class="paper-meta">96 FM : 93 HC • 13 genes GWAS</div>
+                    </div>
+                    <span class="badge badge-verified">Open</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">GSE67311 (Microarray)</div>
+                        <div class="paper-meta">70 FM : 70 HC • Perfil inflamatorio</div>
+                    </div>
+                    <span class="badge badge-verified">Open</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">CSF Metabolome DB</div>
+                        <div class="paper-meta">468 metabolitos • Referencia</div>
+                    </div>
+                    <span class="badge badge-verified">Open</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Urine Metabolome DB</div>
+                        <div class="paper-meta">~3,100 metabolitos • Referencia</div>
+                    </div>
+                    <span class="badge badge-verified">Open</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">HMDB (metabolitos FM)</div>
+                        <div class="paper-meta">~100 metabolitos CSF/plasma</div>
+                    </div>
+                    <span class="badge badge-verified">Open</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">NCBI SRA (brain transcriptomics)</div>
+                        <div class="paper-meta">RNA-seq post-mortem cerebro FM</div>
+                    </div>
+                    <span class="badge badge-verified">Open</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Papers verificados -->
+        <div class="card">
+            <h2>Papers Clave <span class="badge badge-verified">30 verificados</span></h2>
+            <div style="margin-top: 12px; max-height: 480px; overflow-y: auto;">
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Russell 1992 — Biogenic amines</div>
+                        <div class="paper-meta">PMID 1374252 • 5-HT/NA/DA ↓ CSF FM</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Russell 1994 — Substance P</div>
+                        <div class="paper-meta">PMID 7526868 • SP ↑ 3x en CSF FM</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Khoonsari 2019 — CSF proteome</div>
+                        <div class="paper-meta">PMID 29656018 • 4 proteínas discriminadoras</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Wainberg 2026 — Genetic architecture</div>
+                        <div class="paper-meta">PMID 42521817 • 26 loci GWAS neural</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Kerrebijn 2025 — GWAS FM</div>
+                        <div class="paper-meta">PMID 41001472 • Nature Medicine</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Cai 2025 — Microbiota-pain</div>
+                        <div class="paper-meta">PMID 40280127 • Neuron • Transplante experimental</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Fineschi 2024 — PDS FM</div>
+                        <div class="paper-meta">PMC13161182 • 19 proteínas ↑ </div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">O'Mahony 2021 — Cytokine meta</div>
+                        <div class="paper-meta">PMID 33576773 • TNF-α, IL-6, IL-8 ↑</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Fallon 2016 — DMN connectivity</div>
+                        <div class="paper-meta">PMID 27442504 • Alterada conectividad DMN</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Backryd 2017 — CSF quinas</div>
+                        <div class="paper-meta">PMC5344444 • Alteraciones inflamatorias</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Zhao 2026 — Gut microbiota review</div>
+                        <div class="paper-meta">PMC13375801 • SCFAs, bile acids ↓</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+                <div class="paper-row">
+                    <div>
+                        <div class="paper-title">Berta 2026 — Glial cells review</div>
+                        <div class="paper-meta">PMC13276489 • Central sensitization</div>
+                    </div>
+                    <span class="badge badge-verified">✓</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="card" style="margin-bottom: 24px;">
+        <h2>Línea de Tiempo de Investigación</h2>
+        <div class="timeline">
+            <div class="timeline-item completed">
+                <div style="font-weight:bold; color:var(--success);">✓ Protocolo de Arranque</div>
+                <div style="font-size:0.85rem; color:var(--text-dim);">Leer SOUL.md + STARTUP_OPERATING_CONTRACT.md</div>
+            </div>
+            <div class="timeline-item completed">
+                <div style="font-weight:bold; color:var(--success);">✓ Grounding exhaustivo</div>
+                <div style="font-size:0.85rem; color:var(--text-dim);">30 papers + 8 datasets sobre neurobioquímica central en FM</div>
+            </div>
+            <div class="timeline-item completed">
+                <div style="font-weight:bold; color:var(--success);">✓ Identificación de gaps</div>
+                <div style="font-size:0.85rem; color:var(--text-dim);">2 papers citados sin acceso directo; brecha periférico-central</div>
+            </div>
+            <div class="timeline-item current">
+                <div style="font-weight:bold; color:var(--accent);">→ Próximo Paso: Validación experimental</div>
+                <div style="font-size:0.85rem; color:var(--text-dim);">Seleccionar dataset + diseñar experimento con hipótesis falsificable</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="next-step">
+        <h3>Próximos Pasos Lógicos (Next Steps)</h3>
+        <ul>
+            <li><strong>Validar biomarcadores CSF prioritarios:</strong> Diseñar un estudio para medir las 4 proteínas de Khoonsari 2019 (ApoC-III, LGALS3BP, MDH1, ProSAAS) en CSF chilena de FM vs HC. <em>Dataset base: PXD008076</em></li>
+            <li><strong>Validar subtipo inflamatorio:</strong> Replicar el PDS de Fineschi 2024 (19 proteínas ↑) en cohorte chilena. <em>Panel Olink CSF/plasma disponible vía ProteomeXchange</em></li>
+            <li><strong>Experimento microbioma-c-dolor:</strong> Usar el dataset de Cai 2025 (Neuron) como referencia para diseñar un experimento de trasplante de microbioma FM → modelo animal, midiendo dolor y metabolitos SCFAs.</li>
+            <li><strong>Validar genes GWAS neurales:</strong> Usar GSE221921 (RNA-seq PBMCs) para validar DRD2 y MDGA2 como genes priorizados del GWAS de Kerrebijn/Wainberg 2025/2026.</li>
+            <li><strong>Analizar conectividad DMN:</strong> Procesar OpenNeuro ds004144 con fMRIPrep + análisis de conectividad del DMN; correlacionar con scores de dolor, depresión y fatiga.</li>
+            <li><strong>Kynurenine pathway (gap a cerrar):</strong> Medir KYN/KA/QUIN ratio en plasma/CSF de FM vs HC; comparar con papers de depresión (Tanaka 2026) para contextualizar.</li>
+        </ul>
+    </div>
+
+    <!-- Gap Analysis -->
+    <div class="card" style="margin-bottom: 24px;">
+        <h2>Análisis de Gaps <span style="color:var(--warning); font-size:0.9rem;">2 gaps identificados</span></h2>
+        <div style="margin-top: 12px;">
+            <div style="margin-bottom: 16px;">
+                <strong style="color:var(--warning);">⚠ TSPO PET Albrecht 2018</strong>
+                <div style="font-size:0.85rem; color:var(--text-dim); margin-top:4px;">
+                    Citado en múltiples revisiones pero el paper original no se localizó directamente en PMC/PubMed.
+                    El review de Torrado-Carvajal 2024 (Eur J Pain) fue verificado ✅, pero no el study primario.
+                </div>
+            </div>
+            <div>
+                <strong style="color:var(--warning);">⚠ Succinato urinario Malatji 2017</strong>
+                <div style="font-size:0.85rem; color:var(--text-dim); margin-top:4px;">
+                    Citado en literatura secundaria (Fineschi 2022/Backryd 2023) como "succinato ↑ en orina FM".
+                    El paper original no fue localizado para verificación directa.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brecha periférica-central -->
+    <div class="next-step" style="border-color: var(--danger);">
+        <h3 style="color: var(--danger);">Gap Crítico: Brecha periférico ↔ central</h3>
+        <ul>
+            <li>La mayoría de los estudios miden citocinas/proteínas en <strong>plasma/saliva</strong>, pero los estudios en <strong>CSF</strong> son escasos (Russell 1992/1994, Khoonsari 2019, Backryd 2023)</li>
+            <li>Papers de glial cells (Berta 2026) sugieren más estudios CSF no indexados en nuestras búsquedas</li>
+            <li><strong>Recomendación:</strong> Priorizar estudios que midan biomarcadores en <em>ambos</em> compartimentos (plasma + CSF) para establecer correlación periférica-central</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Artefacto generado por DAVI (Dinámica de Aprendizaje y Valoración Interactiva)</p>
+        <p>Protocolo de Arranque: SOUL.md + STARTUP_OPERATING_CONTRACT.md ✓</p>
+        <p>Documento completo: <code>GROUNDING_FM_Neurobioquimica_Central.md</code></p>
+    </footer>
+</div>
+</body>
+</html>

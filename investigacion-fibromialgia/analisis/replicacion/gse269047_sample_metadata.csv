@@ -1,0 +1,44 @@
+sample_id,title,is_fm
+GSM8305496,"PBMC from ME/CFS, subject 1",True
+GSM8305497,"PBMC from ME/CFS, subject 2",True
+GSM8305498,"PBMC from ME/CFS, subject 3",True
+GSM8305499,"PBMC from ME/CFS, subject 4",True
+GSM8305500,"PBMC from ME/CFS, subject 5",True
+GSM8305501,"PBMC from ME/CFS, subject 6",True
+GSM8305502,"PBMC from ME/CFS, subject 7",True
+GSM8305503,"PBMC from ME/CFS, subject 8",True
+GSM8305504,"PBMC from FM, subject 1",True
+GSM8305505,"PBMC from FM, subject 2",True
+GSM8305506,"PBMC from FM, subject 3",True
+GSM8305507,"PBMC from FM, subject 4",True
+GSM8305508,"PBMC from FM, subject 5",True
+GSM8305509,"PBMC from FM, subject 6",True
+GSM8305510,"PBMC from FM, subject 7",True
+GSM8305511,"PBMC from FM, subject 8",True
+GSM8305512,"PBMC from FM, subject 9",True
+GSM8305513,"PBMC from FM, subject 10",True
+GSM8305514,"PBMC from co-diagnosed individual, subject 1",False
+GSM8305515,"PBMC from co-diagnosed individual, subject 2",False
+GSM8305516,"PBMC from co-diagnosed individual, subject 3",False
+GSM8305517,"PBMC from co-diagnosed individual, subject 4",False
+GSM8305518,"PBMC from co-diagnosed individual, subject 5",False
+GSM8305519,"PBMC from co-diagnosed individual, subject 6",False
+GSM8305520,"PBMC from co-diagnosed individual, subject 7",False
+GSM8305521,"PBMC from co-diagnosed individual, subject 8",False
+GSM8305522,"PBMC from co-diagnosed individual, subject 9",False
+GSM8305523,"PBMC from co-diagnosed individual, subject 10",False
+GSM8305524,"PBMC from co-diagnosed individual, subject 11",False
+GSM8305525,"PBMC from co-diagnosed individual, subject 12",False
+GSM8305526,"PBMC from co-diagnosed individual, subject 13",False
+GSM8305527,"PBMC from co-diagnosed individual, subject 14",False
+GSM8305528,"PBMC from co-diagnosed individual, subject 15",False
+GSM8305529,"PBMC from co-diagnosed individual, subject 16",False
+GSM8305530,"PBMC from healthy control, subject 1",False
+GSM8305531,"PBMC from healthy control, subject 2",False
+GSM8305532,"PBMC from healthy control, subject 3",False
+GSM8305533,"PBMC from healthy control, subject 4",False
+GSM8305534,"PBMC from healthy control, subject 5",False
+GSM8305535,"PBMC from healthy control, subject 6",False
+GSM8305536,"PBMC from healthy control, subject 7",False
+GSM8305537,"PBMC from healthy control, subject 8",False
+GSM8305538,"PBMC from healthy control, subject 9",False

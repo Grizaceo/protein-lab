@@ -1,0 +1,44 @@
+sample_id,title,disease
+GSM8305496,"PBMC from ME/CFS, subject 1",ME/CFS
+GSM8305497,"PBMC from ME/CFS, subject 2",ME/CFS
+GSM8305498,"PBMC from ME/CFS, subject 3",ME/CFS
+GSM8305499,"PBMC from ME/CFS, subject 4",ME/CFS
+GSM8305500,"PBMC from ME/CFS, subject 5",ME/CFS
+GSM8305501,"PBMC from ME/CFS, subject 6",ME/CFS
+GSM8305502,"PBMC from ME/CFS, subject 7",ME/CFS
+GSM8305503,"PBMC from ME/CFS, subject 8",ME/CFS
+GSM8305504,"PBMC from FM, subject 1",FM
+GSM8305505,"PBMC from FM, subject 2",FM
+GSM8305506,"PBMC from FM, subject 3",FM
+GSM8305507,"PBMC from FM, subject 4",FM
+GSM8305508,"PBMC from FM, subject 5",FM
+GSM8305509,"PBMC from FM, subject 6",FM
+GSM8305510,"PBMC from FM, subject 7",FM
+GSM8305511,"PBMC from FM, subject 8",FM
+GSM8305512,"PBMC from FM, subject 9",FM
+GSM8305513,"PBMC from FM, subject 10",FM
+GSM8305514,"PBMC from co-diagnosed individual, subject 1",Other
+GSM8305515,"PBMC from co-diagnosed individual, subject 2",Other
+GSM8305516,"PBMC from co-diagnosed individual, subject 3",Other
+GSM8305517,"PBMC from co-diagnosed individual, subject 4",Other
+GSM8305518,"PBMC from co-diagnosed individual, subject 5",Other
+GSM8305519,"PBMC from co-diagnosed individual, subject 6",Other
+GSM8305520,"PBMC from co-diagnosed individual, subject 7",Other
+GSM8305521,"PBMC from co-diagnosed individual, subject 8",Other
+GSM8305522,"PBMC from co-diagnosed individual, subject 9",Other
+GSM8305523,"PBMC from co-diagnosed individual, subject 10",Other
+GSM8305524,"PBMC from co-diagnosed individual, subject 11",Other
+GSM8305525,"PBMC from co-diagnosed individual, subject 12",Other
+GSM8305526,"PBMC from co-diagnosed individual, subject 13",Other
+GSM8305527,"PBMC from co-diagnosed individual, subject 14",Other
+GSM8305528,"PBMC from co-diagnosed individual, subject 15",Other
+GSM8305529,"PBMC from co-diagnosed individual, subject 16",Other
+GSM8305530,"PBMC from healthy control, subject 1",Control
+GSM8305531,"PBMC from healthy control, subject 2",Control
+GSM8305532,"PBMC from healthy control, subject 3",Control
+GSM8305533,"PBMC from healthy control, subject 4",Control
+GSM8305534,"PBMC from healthy control, subject 5",Control
+GSM8305535,"PBMC from healthy control, subject 6",Control
+GSM8305536,"PBMC from healthy control, subject 7",Control
+GSM8305537,"PBMC from healthy control, subject 8",Control
+GSM8305538,"PBMC from healthy control, subject 9",Control

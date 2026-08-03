@@ -1,0 +1,7 @@
+target,pdb_id,resolution,oligomer_state,extracellular_epitopes,mechanism_in_fm
+Connexin-43 (GJA1),7F94,2.4 Å (Cryo-EM),Hexameric Connexon,EL1 (Residues 40-75) & EL2 (Residues 170-210),"Auto-IgG binding to EL1/EL2 disrupts gap junction homeostasis, triggering extracellular ATP & glutamate release from SGCs."
+Kir4.1 (KCNJ10),6M84,3.1 Å (Cryo-EM),Tetramer,Extracellular pore turret (Residues 100-135),"Auto-IgG blockade of Kir4.1 causes extracellular K+ accumulation in DRG, depolarizing sensory neurons."
+CD40 (CD40),3QD6,2.6 Å (X-ray),Monomeric / Trimeric complex with CD40L,CRD1 & CRD2 (Residues 25-100),"CD40-CD40L axis drives B-cell differentiation, somatic hypermutation, and anti-SGC IgG hyper-production (af Ekenstam 2026)."
+FcεRI α-subunit (FCER1A),1F6A,2.4 Å (X-ray),Heterotetramer αβγ2,D1 & D2 Ig-like domains (Residues 26-200),High-affinity IgE binding site; downregulation in blood reflects loss/degranulation of basophil/mast cell pool.
+MRGPRX2 (MRGPRX2),7VV3,2.8 Å (Cryo-EM),Monomeric GPCR,"N-terminal tail & ECL2/ECL3 (Residues 1-30, 165-185)",Non-canonical IgG binding (Sanchez 2025) induces mast cell degranulation and IL-6/tryptase release without IgE cross-linking.
+FcγRIIIa / CD16a (FCGR3A),3SGJ,2.2 Å (X-ray),Complexed with IgG Fc,D1 & D2 domains (Residues 20-190),"Canonical receptor for IgG Fc; mediates immune-complex activation of mast cells, macrophages, and SGCs."
