@@ -10,7 +10,7 @@
 | Hallazgo | Necesidad de explicación |
 |----------|--------------------------|
 | IL-6 FC=1.66↑ en PBMCs FM (validado) | ¿Por qué plasma refleja inflamación sistémica en FM? |
-| PENK trend ↑ (FC=1.38, p=0.157) | ¿Substance P como proxy periférico funciona? |
+| TAC1 ↑ (FC=2.10, p=0.0002, corregido) | ¿Substance P como proxy periférico funciona? |
 | LGALS3BP discordancia (CSF↑/PBMC↓) | ¿Por qué una proteína ↑ en CSF aparece ↓ en sangre? |
 | 2-gene model AUC=0.65 (bajo) | ¿Por qué genes individuales insuficientes para clasificación? |
 
@@ -68,7 +68,8 @@
     - **IL-6 y TNF-α como biomarcadores consistentes**
     - **Relevance score:** HIGH
 
-### 2.4. Substance P / PENK en FM
+### 2.4. Substance P (TAC1) / opioides endógenos (PENK) en FM
+*Corrección 2026-08-03: Substance P es codificada por TAC1, no PENK. PENK = encefalinas (opioide endógeno), hallazgo separado. Ver AUDITORIA_INTEGRIDAD_PROXY.md*
 11. **PMID 8621718** — Russell et al. (1996): "Substance P is increased in fibromyalgia"
     - SP ↑ en CSF FM (2-3x) en 3 estudios independentes
     - **Correlation plasma↔CSF parcial** (r=0.25)

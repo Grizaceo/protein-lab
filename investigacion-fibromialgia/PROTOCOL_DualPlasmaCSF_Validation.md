@@ -97,7 +97,7 @@ Tras ejecutar `in_silico_plasma_csf_correlation.py`, los resultados son:
 
 | Marker | Gene | CSF | Plasma | PMID | Grade |
 |--------|------|-----|--------|------|-------|
-| Substance P | PENK | ↑↑↑ | ↑ (r correlacionada) | 7526868, 30796851 | HIGH |
+| Substance P | TAC1 (gen real; antes PENK) | ↑↑↑ | ↑ (r correlacionada) | 7526868, 30796851 | HIGH |
 | IL-8 | IL8 | ↑ | ↑ | 22126705, 33576773 | HIGH |
 | Fractalkine | CX3CL1 | ↑ | ↑ (indirecto) | 28424559 | MEDIUM |
 | TNF-α | TNFA | (indirecto) | ↑ | 33576773 | LOW-MEDIUM |

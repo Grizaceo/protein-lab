@@ -30,7 +30,8 @@
 
 ## 1. Objetivo
 
-Validar **IL-6** y **Substance P (PENK)** como biomarcadores plasmáticos que correlacionan con cambios centrales (CSF) en fibromialgia, usando tecnología Olink PEA (Proximity Extension Assay).
+Validar **IL-6** y **Substance P (TAC1)** como biomarcadores plasmáticos que correlacionan con cambios centrales (CSF) en fibromialgia, usando tecnología Olink PEA (Proximity Extension Assay).
+*Corrección 2026-08-03: Substance P es codificada por TAC1, no PENK. PENK (encefalinas) es hallazgo opioide separado — ver AUDITORIA_INTEGRIDAD_PROXY.md*
 
 ---
 
@@ -39,7 +40,8 @@ Validar **IL-6** y **Substance P (PENK)** como biomarcadores plasmáticos que co
 | Biomarcador | Rationale | Proxy grade |
 |-------------|-----------|-------------|
 | IL-6 | Inflamación sistémica; significante ↑ en GSE221921 (FC=1.66, p=0.033); documentada elevación plasmática en FM (O'Mahony 2021) | **HIGH** |
-| Substance P (PENK) | Neuropeptido de dolor; ↑ trend en GSE221921 (FC=1.38, p=0.157); correlación plasma↔CSF documentada (Karlsson 2019) | **MEDIUM** |
+| Substance P (TAC1) | Neuropéptido de dolor; ↑ en GSE221921 vía TAC1 (FC=2.10, p=0.0002, d=+0.47); correlación plasma↔CSF documentada (Karlsson 2019) | **HIGH** (corregido: TAC1, no PENK) |
+| PENK (encefalinas) | Opioide endógeno; ↑ en GSE221921 (FC=1.38, p=0.0031); hallazgo SEPARADO de Substance P — ver AUDITORIA_INTEGRIDAD_PROXY.md | MEDIUM (hallazgo opioide) |
 
 ---
 

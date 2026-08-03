@@ -67,7 +67,7 @@ Revisión de citocinas en CSF y dolor crónico humano.
 
 ### 7. Contexto adicional
 - Krock 2019 (EBioMedicine): IL-8 como target terapéutico en dolor lumbar crónico (CSF humano + validación preclínica) — refuerza "IL-8 = marcador de dolor crónico general"
-- Rodríguez-Pintó 2014 (Immunol Lett): IL-8 segregación estimulada por Substance P → tráfico de neutrófilos — conecta IL-8 con nuestro proxy PENK/SP (mecanismo mastocito-neutrófilo)
+- Rodríguez-Pintó 2014 (Immunol Lett): IL-8 segregación estimulada por Substance P → tráfico de neutrófilos — conecta IL-8 con nuestro proxy SP/TAC1 (mecanismo mastocito-neutrófilo)
 
 ---
 
@@ -79,7 +79,7 @@ Revisión de citocinas en CSF y dolor crónico humano.
 
 3. **Re-ordenamiento de prioridad en el protocolo Olink:** el endpoint periférico más robusto es IL-8 > IL-6. Si se hace un run propio con valor agregado (correlación CSF↔plasma por sujeto), IL-8 e IL-6 deben medirse ambos, con IL-8 como ancla de reproducibilidad.
 
-4. **Refuerza el claim de PENK/SP:** el mecanismo IL-8/SP (Rodríguez-Pintó 2014) conecta la quimioquina con el neuropéptido que validamos — no son independientes, son un eje mastocito→neutrófilo→IL-8.
+4. **Refuerza el claim de SP/TAC1:** el mecanismo IL-8/SP (Rodríguez-Pintó 2014) conecta la quimioquina con el neuropéptido que validamos (TAC1, corregido 2026-08-03) — no son independientes, son un eje mastocito→neutrófilo→IL-8.
 
 5. **IL-6 matizado:** el metaanálisis más reciente dice que IL-6 periférico NO es robusto a sensitivity analysis. Nuestro hallazgo en GSE221921 (Bonf=0.003) sigue válido para PBMCs, pero la literatura periférica global lo muestra menos sólido que IL-8. Honestidad: IL-6 es "significativo pero frágil en agregación", IL-8 es "significativo y robusto".
 

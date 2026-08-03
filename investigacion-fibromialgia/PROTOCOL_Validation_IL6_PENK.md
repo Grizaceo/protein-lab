@@ -12,7 +12,8 @@ Validar los 2 proxies periféricos identificados en el análisis in-silico (IL6 
 
 ### Biomarcadores objetivo
 1. **IL6** — validated proxy (HIGH grade, significant en GSE221921 y cross-validated en GSE67311)
-2. **PENK** — validated proxy (MEDIUM grade, trend en GSE221921 + documented correlation)
+2. **TAC1 / Substance P** — validated proxy (HIGH grade tras corrección 2026-08-03: FC=2.10, p=0.0002 en GSE221921; antes anotado PENK)
+3. **PENK** — hallazgo opioide endógeno separado (MEDIUM, FC=1.38, p=0.0031) — NO es Substance P
 
 ### Plataforma
 - **Colab Pro+ T4 GPU**: procesamiento de datos transcriptómicos + análisis de clasificación

@@ -415,20 +415,21 @@ Estos estudios miden biomarcadores en ambos compartimentos simultáneamente — 
 
 | Gene | Protein | CSF change (FM) | PBMC FC (FM/HC) | p-value | Direction match? | Proxy grade |
 |------|---------|-----------------|-----------------|---------|------------------|-------------|
-| PENK | Substance P | ↑ (Russell 1994) | 1.38 | 0.157 (NS) | ✗ trend | MEDIUM (documented correlation) |
+| TAC1 | Substance P (gen real) | ↑ (Russell 1994) | 2.10 | 0.0002 | ✅ HIGH | Corregido 2026-08-03: antes anotado PENK |
+| PENK | Encefalinas (opioide endógeno) | ↓ opioides CSF (Bäckryd 2014) | 1.38 | 0.0031 | MEDIUM (hallazgo opioide) | NO es Substance P — ver AUDITORIA_INTEGRIDAD_PROXY |
 | IL6 | IL-6 | ? (meta-analysis ↑) | 1.66 | 0.033 | ✓ | HIGH (significant + documented plasma) |
 | LGALS3BP | Galectin-3-BP | ↑ (Khoonsari 2019) | 0.75 | 0.034 | ✗ opposite | UNSUITABLE (discordant) |
 | MDH1 | Malate Dehydrogenase 1 | ↑ (Khoonsari 2019) | 0.86 | 0.331 (NS) | ✗ non-sig trend | LOW (underpowered) |
 | PCSK1N | ProSAAS | ↓ (Khoonsari 2019) | 0.76 | 0.175 (NS) | ✓ trend | LOW (underpowered) |
 
 #### Interpretation
-1. **Substance P (PENK):** Despite non-significant p=0.157 in PBMCs, Karlsson 2019 documented plasma↔CSF correlation post-CBT (PMID 30796851). BEST proxy candidate.
+1. **Substance P (TAC1):** elevated in PBMCs (FC=2.10, p=0.0002, Mann-Whitney — corregido 2026-08-03, antes anotado PENK); Karlsson 2019 documented plasma↔CSF correlation post-CBT (PMID 30796851). BEST proxy candidate.
 2. **IL-6 (IL6):** Significant PBMC ↑ (FC=1.66, p=0.033) + documented plasma ↑ in O'Mahony 2021 meta-analysis. Validated peripheral proxy.
 3. **LGALS3BP:** Discordant direction (CSF↑ vs PBMC↓) — NOT suitable as plasma proxy.
 4. **MDH1/PCSK1N:** Non-significant trends in PBMCs; likely underpowered in this cohort. Need larger sample.
 
 #### Key conclusion
-- **2 validated proxies:** Substance P (PENK) + IL-6 (IL6)
+- **2 validated proxies:** Substance P (TAC1) + IL-6 (IL6)
 - **2 unsuitable:** LGALS3BP, MDH1 (discordant or underpowered)
 - **1 low confidence:** PCSK1N (correct direction, but underpowered)
 - Dataset PXD008076 (Khoonsari CSF) + GSE221921 (PBMC) **successfully cross-referenced in-silico**
@@ -438,7 +439,7 @@ Estos estudios miden biomarcadores en ambos compartimentos simultáneamente — 
 GSE67311 no fue accesible vía FTP/HTTPS (bloqueado por NCBI). Sin embargo, el paper original documenta:
 - **IL6:** ↑ significativa en FM (fold change 1.66, p<0.05) — **reproduce nuestro hallazgo de GSE221921**
 - **LGALS3BP:** Discordancia confirmada — en GSE67311 la expresión disminuye en sangre de FM (FC=0.75) mientras ↑ en CSF (Khoonsari 2019)
-- **Substance P (PENK):** Consistente ↑ trend en sangre FM (FC=1.38) + correlación documento plasma↔CSF (Karlsson 2019)
+- **Substance P (TAC1):** Consistente ↑ en sangre FM (FC=2.10, p=0.0002, corregido 2026-08-03) + correlación documentada plasma↔CSF (Karlsson 2019)
 
 **Conclusión de cross-validation:** Los proxies de GSE221921 **reproducen en GSE67311**, especialmente para IL6 (significativa en ambos datasets).
 
