@@ -23,7 +23,7 @@
 
 ### Implicancia para el protocolo
 1. Si el objetivo es "validar IL-6 en plasma FM con Olink": **ya está publicado** (Bäckryd). No comprar un run nuevo para eso — citar.
-2. El valor de un run propio sería: correlación directa CSF↔plasma en los mismos sujetos (que Bäckryd no hizo por sujeto) o validación de PENK/Substance P (que no está en panel Olink).
+2. El valor de un run propio sería: correlación directa CSF↔plasma en los mismos sujetos (que Bäckryd no hizo por sujeto) o validación de Substance P (TAC1, no está en panel Olink; PENK es hallazgo opioide separado).
 3. **Control positivo correcto: IL-8** (elevado en plasma + CSF, reproducido por múltiples estudios) — no TNF-α (bajo LoD).
 
 ---
@@ -212,6 +212,6 @@ cohens_d = (mean(fm_plasma) - mean(hc_plasma)) / sp
 ## 11. Key conclusions for protein lab
 
 1. **IL-6** es el mejor proxy periférico validado computationalmente (HIGH grade)
-2. **Substance SP (PENK)** es prometedor pero no está en paneles Olink directos — usar como endpoint secundario con ELISA
+2. **Substance P (TAC1)** es prometedor pero no está en paneles Olink directos — usar como endpoint secundario con ELISA. PENK (encefalinas) es hallazgo opioide separado.
 3. **LGALS3BP** no es un proxy viable (discordancia confirmada)
 4. **Protocolo listo** para implementación en protein lab cuando IRB esté aprobado
