@@ -32,9 +32,9 @@ XLSX_PATH = os.path.join(
 )
 assert os.path.exists(XLSX_PATH), f'Dataset no encontrado: {XLSX_PATH}'
 
-N_GENES_PANEL = 15  # 10 Wray + IL6 + PENK + LGALS3BP + MDH1 + PCSK1N (Bonferroni usa este N)
+N_GENES_PANEL = 19  # 10 Wray + IL6 + PENK + LGALS3BP + MDH1 + PCSK1N + TAC1 + OPRM1 + PNOC + CXCL8 (Bonferroni usa este N)
 
-print('=== Validation v3: panel 15 genes, stats no-paramétricas + effect sizes ===')
+print('=== Validation v3: panel 19 genes, stats no-paramétricas + effect sizes ===')
 print(f'Dataset: {XLSX_PATH}')
 print()
 
@@ -52,11 +52,12 @@ hc_samples = sorted([s for s, e in sample_map.items() if e == 'Control'])
 print(f'Dataset: GSE221921 ({len(fm_samples)} FM vs {len(hc_samples)} HC)')
 assert len(fm_samples) == 96 and len(hc_samples) == 93, 'Conteo distinto al claim'
 
-# [5] Panel expandido: 10 Wray + IL6 + PENK + genes auditados adversariamente
+# [5] Panel expandido: 10 Wray + IL6 + PENK + genes auditados adversariamente + eje opioide/tachykinina
 panel_genes = ['CPA3', 'C11orf83', 'LOC100131943', 'RGS17', 'PARD3B',
                'ANKRD20A9P', 'TTLL7', 'C8orf12', 'KAT2B', 'RIOK3',
                'IL6', 'PENK',
-               'LGALS3BP', 'MDH1', 'PCSK1N']
+               'LGALS3BP', 'MDH1', 'PCSK1N',
+               'TAC1', 'OPRM1', 'PNOC', 'CXCL8']
 
 sample_cols = [c for c in values.columns if str(c).startswith('Sample_')]
 
@@ -186,8 +187,11 @@ report += f'''
 
 ### Proxy Status (lenguaje matizado — post adversarial verification 2026-08-03)
 - **IL6 (IL-6):** significant small-effect proxy ↑ en FM (FC=1.66, MWU p={next(r for r in results if r['gene']=="IL6")['p_u']:.4f}, Bonf={next(r for r in results if r['gene']=="IL6")['p_u_bonf']:.4f}, d={next(r for r in results if r['gene']=="IL6")['cohen_d']:+.3f})
-- **PENK (Substance P):** significant small-effect proxy ↑ en FM (FC=1.38, MWU p={next(r for r in results if r['gene']=="PENK")['p_u']:.4f}, Bonf={next(r for r in results if r['gene']=="PENK")['p_u_bonf']:.4f}, d={next(r for r in results if r['gene']=="PENK")['cohen_d']:+.3f})
-  - ⚠️ **Advertencia BDNF/NGF:** los neuropéptidos NO siempre trasladan CSF→plasma (BDNF y NGF elevados en CSF de FM no se ven en plasma). PENK es el proxy más frágil de los dos; IL-6 tiene prioridad en el protocolo Olink.
+- **TAC1 (Substance P):** significant proxy ↑ en FM — gen REAL de SP (corregido 2026-08-03, antes anotado PENK) (FC={next(r for r in results if r['gene']=="TAC1")['fc']:.2f}, MWU p={next(r for r in results if r['gene']=="TAC1")['p_u']:.4f}, Bonf={next(r for r in results if r['gene']=="TAC1")['p_u_bonf']:.4f}, d={next(r for r in results if r['gene']=="TAC1")['cohen_d']:+.3f})
+- **PENK (encefalinas):** hallazgo opioide SEPARADO de Substance P (FC={next(r for r in results if r['gene']=="PENK")['fc']:.2f}, MWU p={next(r for r in results if r['gene']=="PENK")['p_u']:.4f}, Bonf={next(r for r in results if r['gene']=="PENK")['p_u_bonf']:.4f}, d={next(r for r in results if r['gene']=="PENK")['cohen_d']:+.3f})
+  - ⚠️ **Advertencia BDNF/NGF:** los neuropéptidos NO siempre trasladan CSF→plasma (BDNF y NGF elevados en CSF de FM no se ven en plasma). SP/TAC1 es el proxy con traslado menos seguro; IL-6 tiene prioridad en el protocolo Olink.
+- **OPRM1 (receptor mu opioide):** NUEVO — eje opioide endógeno completo con PENK (FC={next(r for r in results if r['gene']=="OPRM1")['fc']:.2f}, MWU p={next(r for r in results if r['gene']=="OPRM1")['p_u']:.4f}, d={next(r for r in results if r['gene']=="OPRM1")['cohen_d']:+.3f})
+- **CXCL8 (IL-8):** ⚠️ INVERTIDO en PBMCs (FC={next(r for r in results if r['gene']=="CXCL8")['fc']:.2f}, p={next(r for r in results if r['gene']=="CXCL8")['p_u']:.4f}) vs proteína ↑ en plasma/CSF (lit.) — NO usar mRNA PBMC como proxy de IL-8 plasmática; válido solo como proteína (control positivo Olink)
 - **LGALS3BP:** discordancia confirmada CSF↑/PBMC↓ (FC=0.75, MWU Bonf={next(r for r in results if r['gene']=="LGALS3BP")['p_u_bonf']:.4f}) → **UNSUITABLE como proxy periférico**
 - **PCSK1N:** re-clasificado LOW → **candidato a proxy** (MWU Bonf={next(r for r in results if r['gene']=="PCSK1N")['p_u_bonf']:.4f}, dirección consistente CSF↓/PBMC↓)
 - **MDH1:** no significativo (MWU p={next(r for r in results if r['gene']=="MDH1")['p_u']:.4f}) → descartado
