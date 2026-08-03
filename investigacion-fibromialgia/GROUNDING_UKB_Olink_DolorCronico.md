@@ -120,6 +120,8 @@ valida como causales está reducido en el compartimento celular FM.
 
 ## CA14 — CIERRE DEL TRIÁNGULO (2026-08-03)
 
+**⚠️ CORREGIDO 2026-08-03 (versión publicada):** La sección original se basaba en el preprint medRxiv v1. La versión PEER-REVIEWED publicada (Adv Sci 2025; PMID 41025730; DOI 10.1002/advs.202507691) corrige puntos clave — ver "RESOLUCIÓN DE DEUDA CA14" al final de este documento. Resumen de la corrección: **CA14 plasmática está DOWNREGULADA en CWP (no elevada); MR sugiere efecto protector de la elevación genética; el paper recomienda AGONISTAS de CA14, no el inhibidor sulthiame.**
+
 **Del texto completo del preprint (medRxiv v1, snippet verificado):**
 - "CA14, identified as the **top-ranking protein** and supported by both MR and colocalisation
   analyses, is a **known target of sulthiame (CHEMBL328560)**, suggesting a potential
@@ -127,19 +129,67 @@ valida como causales está reducido en el compartimento celular FM.
 - CA14: "plays an important role in neuronal signal transmission via zinc ion binding and
   carbonate dehydratase activity"
 
-### El triángulo completo para CA14
+### El triángulo completo para CA14 (versión corregida)
 
 | Capa | Evidencia | Fuente |
 |------|-----------|--------|
-| 1. Proteína plasmática | Causal en CWP/FM (top-ranking, MR + colocalización) | UKB Chen 2024 (29,254 personas) |
+| 1. Proteína plasmática | Causal en CWP/FM (top-ranking, MR + colocalización PP.H4 > 0.5); **dirección: ↓ DOWNREGULADA cross-sectional** | UKB Chen/Lei 2025 (Adv Sci, PMID 41025730, 29,254 personas) |
 | 2. mRNA PBMC | ↑ en FM (FC=2.29, p=0.0003, d=+0.41) | GSE221921 (nuestro análisis) |
-| 3. Farmacología | Inhibidor conocido: sulthiame (CHEMBL328560), usado en epilepsia | Chen 2024 |
+| 3. Farmacología | Sulthiame (CHEMBL328560) es INHIBIDOR; **el paper sugiere AGONISTAS/activadores de CA14 para dolor** (CA14↓ parece contribuir al dolor; elevarla podría ser protector) | Chen/Lei 2025 |
 
-**Implicancia accionable:** CA14 es el candidato más fuerte de toda la investigación —
-cruza causalidad poblacional, expresión en nuestros datos, y tiene un fármaco aprobado
-(sulthiame) como posible herramienta de validación/repurposing. Es la base de una hipótesis
-publicable y potencialmente testable.
+**Interpretación revisada (honestidad cruda):** CA14 baja en plasma en CWP, y el MR sugiere
+que elevarla genéticamente es PROTECTOR. El mRNA sube en PBMC (compensatorio o compartimento
+distinto). La implicación farmacológica NO es "inhibir CA14 con sulthiame" sino potencialmente
+"activar CA14". El panel Olink debe medir CA14 esperando **↓ en plasma FM** (test de la
+hipótesis inversa); si confirma ↓, la dirección de repurposing es agonista, no sulthiame.
 
-**Nota:** sulthiame inhibe anhidrasas carbónicas — si CA14 está elevado en FM, un inhibidor
-podría normalizar la señal. Dirección causal (¿CA14 alta causa dolor, o es marcador?) aún
-requiere el MR del paper (que la respalda como causal).
+**Nota:** sulthiame inhibe anhidrasas carbónicas — en el marco corregido NO es la herramienta
+de validación sugerida; se requiere un agonista/activador de CA14 (no bien documentado aún).
+
+---
+
+## RESOLUCIÓN DE DEUDA CA14 (2026-08-03) — VERSIÓN PUBLICADA PEER-REVIEWED
+
+**Pregunta de la deuda:** dirección plasmática exacta (↑/↓) de CA14 del estudio Chen 2024.
+
+**Resuelto con la versión PUBLICADA:** Chen L et al. **"Diagnosis, Prognosis, and Drug Target Discovery for Chronic Widespread Pain: A Large Proteogenomic Study"**, *Advanced Science* 2025. **PMID 41025730, DOI 10.1002/advs.202507691, PMC12713070** (texto completo descargado y verificado 2026-08-03). Es el mismo estudio que el preprint medRxiv 10.1101/2024.10.29.24316353 (PPR932603), ahora publicado con análisis ampliados: 2,920 proteínas, 29,254 UKB, 256 proteínas asociadas a CWP, 18 causales por MR, 4 druggable.
+
+### Datos verificados en el texto completo (citas textuales)
+
+1. **Dirección plasmática: CA14 está DOWNREGULADA (↓) en CWP.**
+   > "the ten most downregulated proteins were **CA14**, APOF, PON3, SELENOP, EGFR, ITGAV, SCT, CELA2A, IGFBP3, and PPY"
+   → Nuestro narrative previo ("CA14 elevado en plasma") era INCORRECTO. La proteína plasmática BAJA en CWP.
+
+2. **MR discordante: elevación genética de CA14 es PROTECTORA.**
+   > "while CA14 and LEG1 were **negatively associated with pain cross-sectionally, MR suggested protective effects of genetically elevated expression**. In contrast, PTN and TNF were upregulated in pain states but showed inverse effects in MR"
+   → CA14↓ en estado de dolor + MR protector de CA14 alta = consistente con que **CA14 baja contribuye al dolor** (estado-dependent, no predisposición).
+
+3. **El paper recomienda AGONISTAS de CA14, no inhibidores.**
+   > "CA14, a carbonic anhydrase expressed in neuronal tissues, is targeted by sulthiame, an antiepileptic drug approved for obstructive sleep apnea and seizure disorders. **Given the observed non-linear associations between CA14 levels and pain phenotypes, CA14 agonists—rather than inhibitors—may offer greater therapeutic utility in this context**"
+   → Nuestra implicación previa ("sulthiame inhibidor normaliza la señal") estaba INVERTIDA. La dirección terapéutica es activar CA14.
+
+4. **Leptina NO está en los 18 causales finales.** La lista publicada de 18: CA14, COL9A1, CRELD1, DPEP1, LEG1, LGALS3, MLN, PRSS53, TNF, BPIFB2, CTSO, DDR1, FAM171B, IFI30, LRRC37A2, PTN, SFTPD, ST3GAL1. Leptina solo aparece respaldada por MR en discusión (asociación positiva con new-onset pain/spread), no como causal colocalizada. → Corrección: nuestro doc listaba "CA14+leptina causales" — matizar: CA14 es el causal fuerte; LEP es asociación/MR menor.
+
+5. **Colocalización CA14: confirmada** (CA14, DDR1, MLN con PP.H4 > 0.5).
+
+6. **CA14 = top SHAP** (mayor contribuidor al score predictivo).
+
+7. **4 proteínas druggable: CA14, DPEP1, LGALS3, TNF** (18 compuestos). TNF inhibitors y galectin-3 antagonists = candidatos fuertes de repurposing.
+
+### Impacto en nuestra línea (honestidad cruda)
+
+| Claim previo | Corrección verificada |
+|---|---|
+| "CA14 elevado en plasma FM" | ❌ CA14 ↓ downregulated en plasma CWP (entre las 10 más) |
+| "sulthiame (inhibidor) como herramienta de validación" | ❌ El paper sugiere AGONISTAS de CA14; sulthiame NO es la dirección |
+| "CA14+leptina causales por MR+coloc" | ⚠️ CA14 sí (MR+coloc PP.H4>0.5); LEP NO en los 18 finales |
+| "CA14 mRNA ↑ en PBMC (FC=2.29)" | ✅ Se mantiene (nuestro dato GSE221921, compartimento distinto) |
+| "CA14 candidato más fuerte del pivot" | ✅ SE MANTIENE — causal, colocalizada, druggable, top SHAP; solo cambia la dirección y la implicación farmacológica |
+
+### Nueva hipótesis accionable (corregida)
+
+**CA14 plasmática ↓ en FM/CWP → contribuye causalmente al dolor (MR protector de elevación) → la validación Olink debe esperar ↓ en plasma FM; si confirma, el repurposing va hacia agonistas/activadores de CA14 (no sulthiame).** El mRNA PBMC ↑ (nuestro dato) puede ser compensatorio o reflejar compartimento distinto — se documenta como dato, no como contradicción hasta medir ambos compartimentos.
+
+### Fuente
+
+Chen L, Kelleher E, Meng R, et al. Diagnosis, Prognosis, and Drug Target Discovery for Chronic Widespread Pain: A Large Proteogenomic Study. *Adv Sci (Weinh)*. 2025. PMID: 41025730. DOI: 10.1002/advs.202507691. PMC12713070. (Versión publicada del preprint medRxiv 10.1101/2024.10.29.24316353, PPR932603.)
