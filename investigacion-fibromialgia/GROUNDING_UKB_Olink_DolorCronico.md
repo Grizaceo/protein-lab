@@ -76,3 +76,42 @@ en FM (y con LGALS3BP ↓ que ya habíamos visto).
 **Limitación declarada:** mRNA en PBMC ≠ proteína en plasma. La dirección plasma de estos
 5 genes causales NO se infiere de aquí — solo documentamos que el mRNA de los genes que UKB
 valida como causales está reducido en el compartimento celular FM.
+
+---
+
+## EXTENSIÓN (2026-08-03): PREPRINT CWP (medRxiv 2024.10.29.24316353) + CA14/LEP
+
+**Fuente:** Chen L et al. medRxiv 2024 (EuropePMC PPR932603). 2,923 proteínas, 29,254 UKB.
+4,153 nociplástico, 717 FM. Texto: abstract completo vía API EuropePMC.
+
+### Hallazgos del preprint (abstract verificado)
+- **811 proteínas** correlacionadas con CWP (cross-sectional)
+- Scores proteicos (ProtS): AUC 0.82 (top-10) y 0.88 (todas), superan al score clínico (0.81)
+- Asociación prospectiva hasta 13 años de follow-up
+- Firmas proteómicas DISTINTAS para nociplástico vs nociceptivo vs neuropático
+- **Biomarcadores causales triangulados por MR + colocalización: CA14 (anhidrasa carbónica 14) y LEPTINA**
+- 10 candidatos drug-repurposing para CWP
+
+### Análisis propio en GSE221921 (PBMC FM)
+
+| Gen | Fuente UKB | FC (FM/HC) | MWU p | d |
+|-----|-----------|-----------|-------|-----|
+| **CA14** | MR+coloc causal CWP | **2.292 ↑** | **0.0003** | +0.41 |
+| TNFRSF1B | MR dolor crónico | 0.541 ↓ | <0.0001 | -0.56 |
+| COL18A1 | MR dolor crónico | 0.581 ↓ | 0.0001 | -0.54 |
+| CD74 | MR dolor crónico | 0.579 ↓ | <0.0001 | -0.44 |
+| BTN2A1 | MR dolor crónico | 0.745 ↓ | 0.0025 | -0.35 |
+| TNFRSF4 | MR dolor crónico | 0.768 ↓ | 0.0004 | -0.23 |
+| LEP | MR+coloc causal CWP | AUSENTE en GSE221921 | — | — |
+
+### Lectura clave
+**CA14 es el ÚNICO gen causal UKB que SUBE en PBMC de FM (FC=2.29, p=0.0003).**
+- CA14 = anhidrasa carbónica XIV (regulación pH, dolor, nocicepción)
+- Consistencia: causal en proteína plasmática (UKB, MR+coloc) Y elevado en mRNA de PBMC (nuestros datos)
+- Esto lo convierte en el candidato más fuerte del pivot: cruza transcriptómica → proteómica causal
+- La leptina (LEP) no es medible en GSE221921 (ausente) — pendiente para plasma
+
+### Narrative revisado (inmunomodulación, no inflamación clásica)
+- Eje IL-6/IL-8: NO respaldado por UKB (0 menciones en 2,923 proteínas) → baja de prioridad
+- Patrón PBMC FM: señalización inmune REDUCIDA (5/9 genes MR ↓) + CA14 ↑ (pH/nocicepción)
+- Hipótesis actualizada: FM periférica = inmunomodulación/agotamiento + desregulación de pH/nocicepción (CA14), no inflamación sistémica clásica

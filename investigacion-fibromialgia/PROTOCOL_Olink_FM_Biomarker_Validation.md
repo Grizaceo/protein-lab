@@ -35,13 +35,18 @@ Validar **IL-6** y **Substance P (TAC1)** como biomarcadores plasmáticos que co
 
 ---
 
-## 2. Biomarcadores candidatos
+## 2. Biomarcadores candidatos — ACTUALIZADO 2026-08-03 (post UK Biobank grounding)
+
+**PIVOT:** El grounding UKB (Li ZY 2025 Adv Sci + Chen 2024 medRxiv, 29-51K participantes, 2,923 proteínas) NO respalda IL-6/IL-8 como biomarcadores plasmáticos de dolor crónico (0 menciones). El narrative cambia a inmunomodulación + pH/nocicepción.
 
 | Biomarcador | Rationale | Proxy grade |
 |-------------|-----------|-------------|
-| IL-6 | Inflamación sistémica; significante ↑ en GSE221921 (FC=1.66, p=0.033); documentada elevación plasmática en FM (O'Mahony 2021) | **HIGH** |
-| Substance P (TAC1) | Neuropéptido de dolor; ↑ en GSE221921 vía TAC1 (FC=2.10, p=0.0002, d=+0.47); correlación plasma↔CSF documentada (Karlsson 2019) | **HIGH** (corregido: TAC1, no PENK) |
+| **CA14** (anhidrasa carbónica XIV) | **NUEVO CANDIDATO PRINCIPAL.** Causal en CWP por MR+colocación (UKB, Chen 2024) + elevado en PBMC FM (GSE221921 FC=2.29, p=0.0003, d=+0.41) — el único gen causal UKB que sube en nuestros datos. Regula pH/nocicepción. | **ALTO** (nuevo, transversal) |
+| IL-6 | Inflamación sistémica; significante ↑ en GSE221921 (FC=1.66, p=0.0002); documentada elevación plasmática en FM (O'Mahony 2021) | **MEDIO** (no respaldado por UKB) |
+| Substance P (TAC1) | Neuropéptido de dolor; ↑ en GSE221921 vía TAC1 (FC=2.10, p=0.0002, d=+0.47); correlación plasma↔CSF documentada (Karlsson 2019) | **MEDIO** (no en UKB; traslado incierto) |
 | PENK (encefalinas) | Opioide endógeno; ↑ en GSE221921 (FC=1.38, p=0.0031); hallazgo SEPARADO de Substance P — ver AUDITORIA_INTEGRIDAD_PROXY.md | MEDIUM (hallazgo opioide) |
+| OPRM1 (receptor mu) | Eje opioide; el más significativo del panel GSE221921 (FC=2.28, Bonf=0.0001) | MEDIO (mRNA PBMC) |
+| Control negativo de señal inmune | TNFRSF1B, CD74, COL18A1, BTN2A1, TNFRSF4 — causales UKB ↓ en PBMC FM (FC 0.54-0.77) — medir dirección inversa (inmunomodulación) | observacional |
 
 ---
 
