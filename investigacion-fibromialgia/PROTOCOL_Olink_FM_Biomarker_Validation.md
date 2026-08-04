@@ -45,9 +45,9 @@ Validar **IL-6** y **Substance P (TAC1)** como biomarcadores plasmáticos que co
 
 | Biomarcador | Rationale | Proxy grade |
 |-------------|-----------|-------------|
-| **COL9A1** (colágeno IX alpha 1) | **CANDIDATO PRINCIPAL (nuevo 2026-08-04).** Robusto 5/5 modelos en GSE221921 (d=0.88, FC=2.32, p_Bonf=9e-08). Causal en CWP por Chen 2025 (PMID 41025730). Sobrevive female-only y sex-adjusted. Co-expresado con PTN (r=0.51) y BPIFB2 (r=0.51). Proteína secretada ECM — detectable en plasma. Power: 75+75 cubre escenario moderado (d_protein=0.53, power=88%). | **ALTO** (robusto, direccional, detectable) |
-| **PTN** (pleiotrophin) | **NUEVO 2026-08-04.** Robusto 5/5 modelos. Factor neurotrófico secretado (neurite outgrowth, ligando ALK). Co-expresado con COL9A1 (r=0.51, p<0.001). Eje osteo/neural: osteoblast differentiation + nerve repair. Secretado — detectable en plasma. | **ALTO** (secretado, neurotrófico, co-expresado) |
-| **BPIFB2** (BPI fold family B2) | **NUEVO 2026-08-04.** Robusto 5/5 modelos. Innate immunity (LPS binding). Co-expresado con COL9A1 (r=0.51, p<0.001). Eje inmunológico. Secretado — detectable en plasma. Biomarker en saliva para Sjögren (literatura). | **MEDIO-ALTO** (innate immunity, secretado) |
+| **COL9A1** (colágeno IX alpha 1) | **CANDIDATO PRINCIPAL (nuevo 2026-08-04).** Robusto 4/5 modelos en GSE221921 (d=0.88, FC=2.32, p_Bonf=9e-08). Sobrevive female-only Bonferroni (p_fem_bonf=0.0013) Y sex-adjusted Bonferroni (p_adj_bonf=0.000085). Causal en CWP por Chen 2025 (PMID 41025730). Co-expresado con PTN (r=0.51). Proteína secretada ECM — detectable en plasma. Power: 75+75 cubre escenario moderado (d_protein=0.53, power=88%). | **ALTO** (robusto, Bonferroni-survivor, direccional, detectable) |
+| **PTN** (pleiotrophin) | **NUEVO 2026-08-04.** Robusto 4/5 modelos. Sobrevive female-only Bonferroni (p_fem_bonf=0.00095) Y sex-adjusted Bonferroni (p_adj_bonf=0.020). Factor neurotrófico secretado (neurite outgrowth, ligando ALK). Co-expresado con COL9A1 (r=0.51, p<0.001). Secretado — detectable en plasma. | **ALTO** (Bonferroni-survivor, secretado, neurotrófico) |
+| **BPIFB2** (BPI fold family B2) | **NUEVO 2026-08-04.** Robusto 4/5 modelos NOMINAL (p_sex_adj=0.0035). NO sobrevive Bonferroni sex-adjusted (p_adj_bonf=0.063). Innate immunity (LPS binding). Co-expresado con COL9A1 (r=0.51, p<0.001). Secretado — detectable en plasma. **Candidato secundario: merece validación pero requiere confirmación.** | **MEDIO** (nominal no Bonferroni, secretado) |
 | **CA14** (anhidrasa carbónica XIV) | **DEGRADADO 2026-08-04.** Causal en CWP (MR+colocación UKB) PERO no sobrevive female-only (p=0.1345) ni deconvolución (E1). Hipótesis pH→ASIC1a descartada (E5). Mantener como referencia: medir si panel incluye CA14 pero no como primario. Predicción Olink: ↓ en plasma FM (MR protector). | **MEDIO** (causal UKB pero no robusto en PBMC) |
 | IL-6 | Inflamación sistémica; ↑ en GSE221921 (FC=1.66, p=0.0002); ya validado en plasma FM (Bäckryd 2017) | **MEDIO** (ya publicado, citar) |
 | Substance P (TAC1) | Neuropéptido de dolor; ↑ en GSE221921 (FC=2.10, p=0.0002, d=+0.47); correlación plasma↔CSF (Karlsson 2019) | **MEDIO** (no en UKB) |
@@ -56,7 +56,7 @@ Validar **IL-6** y **Substance P (TAC1)** como biomarcadores plasmáticos que co
 
 ### Estructura biológica del módulo COL9A1 (C1-C5)
 
-Los 4 genes robustos (COL9A1, BPIFB2, PTN, ST3GAL1) forman **dos ejes convergentes**, no un módulo singular:
+Los 4 genes que pasan nominal female-only + sex-adjusted (COL9A1, BPIFB2, PTN, ST3GAL1) forman **dos ejes convergentes**, no un módulo singular. Solo COL9A1 y PTN sobreviven corrección múltiple Bonferroni (sex-adjusted).
 
 - **EJE 1 (estructural/neuro):** COL9A1 + PTN → cartílago structural + neurite outgrowth. Co-expresados r=0.51. Dolor articular + reparación neural.
 - **EJE 2 (innate immunity):** BPIFB2 + ST3GAL1 → LPS binding + T cell sialylation. Dolor indirecto vía inflamación.

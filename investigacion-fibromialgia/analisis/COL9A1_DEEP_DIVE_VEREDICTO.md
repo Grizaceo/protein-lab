@@ -67,7 +67,7 @@ Recomendación: cohort de 75 FM + 75 HC cubre escenario moderado con 88% power.
 
 COL9A1 reemplaza a CA14 como candidato principal de validación Olink:
 - CA14: causal UKB pero no robusto en PBMC (female-only falla, composicional)
-- COL9A1: robusto 5/5, sobrevive female-only, d=0.88, detectable en plasma, conexión pain directa (osteoarthritis)
+- COL9A1: robusto 4/5 (no male-only), sobrevive female-only Bonferroni + sex-adjusted Bonferroni, d=0.88, detectable en plasma, conexión pain directa (osteoarthritis)
 
 ### Panel Olink recomendado (actualizado)
 
