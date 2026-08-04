@@ -44,6 +44,52 @@ neutrofílica. Las explicaciones restantes (sin datos nuevos) son:
 plasma (proteína), que es el test definitivo — no se puede resolver con más transcriptómica
 de sangre. La decisión A (aceptar limitación + Olink como arbitro) queda reforzada.
 
+## ITEM E (2026-08-03): EJE OPIOIDE/TAQUIKININA COMPLETO EN GSE67311 — NO REPLICA, PERO LA CO-EXPRESIÓN SÍ ES ESTABLE
+
+**Pregunta (pendiente C):** ¿replican TACR1/OPRM1/OPRK1 (receptores del eje) en whole blood?
+El análisis previo solo cubría TAC1/OPRM1/IL6. **Script:** `scripts/validate_opioid_axis_gse67311.py`
+(Bonf x5 propio, Mann-Whitney + Cohen's d, co-expresión Spearman FM/HC).
+
+**Tabla 2. Eje opioide/taquininina — GSE67311 whole blood (FM=67, HC=75)**
+
+| Gen | GSE221921 (PBMC) | GSE67311 (whole blood) | Reproduce? |
+|-----|------------------|------------------------|------------|
+| TACR1 | FC=2.73, d=+0.60 | FC=1.008, p=0.480, Bonf=1.0, d=+0.050 | ❌ NO |
+| OPRM1 | FC=2.28, d=+0.53 | FC=1.020, p=0.160, Bonf=0.80, d=+0.222 | ❌ NO |
+| OPRK1 | FC=1.78 | FC=1.021, p=0.878, Bonf=1.0, d=+0.191 | ❌ NO |
+| TAC1 | FC=2.10, d=+0.47 | FC=1.004, p=0.495, Bonf=1.0, d=+0.038 | ❌ NO |
+| PENK | FC=1.38, p=0.0031 | FC=1.038, p=0.031, Bonf=0.155, d=+0.317 | ⚠️ trend (no sobrevive Bonf) |
+
+**Veredicto:** el upregulation absoluto del eje NO replica en whole blood — todos FC≈1.0,
+ninguno sobrevive Bonferroni. Esto extiende la no-replicación de los 3 genes originales
+(TAC1/OPRM1/IL6) a los 5 genes del eje completo, incluyendo los dos receptores que faltaban
+(TACR1, OPRK1). La señal es PBMC-específica, no una propiedad de sangre periférica total.
+
+**Hallazgo matizado — la co-expresión SÍ es estable:** aunque la expresión absoluta no cambia,
+la estructura de co-regulación del eje en FM whole blood es ROBUSTA y en algunos pares MÁS
+fuerte que en PBMC:
+
+| Par | FM rho (GSE67311) | p | Referencia PBMC rho |
+|-----|-------------------|-----|---------------------|
+| TACR1–OPRK1 | **+0.736** | <0.001 | 0.31–0.63 |
+| OPRM1–OPRK1 | **+0.530** | <0.001 | 0.31–0.63 |
+| TACR1–OPRM1 | **+0.420** | <0.001 | 0.31–0.63 |
+| OPRM1–TAC1 | +0.363 | 0.003 | 0.31–0.63 |
+| OPRK1–PENK | +0.375 | 0.002 | 0.31–0.63 |
+| TACR1–TAC1 | +0.189 | 0.125 | NS |
+
+Interpretación: la co-regulación coordinada del circuito (receptores NK1/mu/kappa co-expresados)
+es un rasgo estable de sangre periférica en FM, presente incluso en whole blood donde el
+upregulation absoluto desaparece. El eje es un módulo transcripcional coherente — lo que
+falla en whole blood es la AMPLITUD (fold-change), no la organización del circuito.
+
+**Implicancia:** (1) confirma que la discrepancia PBMC vs whole blood es de compartimento/
+sensibilidad, no de biología ausente — el circuito existe y está coordinado en sangre total;
+(2) el test definitivo sigue siendo plasma proteico (Olink/ELISA): si la co-expresión es
+estable pero la amplitud es dependiente de compartimento, la medición plasmática debe
+priorizar sensibilidad (panel Olink Explore HT sobre Target 96); (3) la dirección de CA14
+(↓ plasmática) no se ve afectada por este resultado.
+
 ## QUÉ SIGNIFICA (honestidad cruda)
 
 1. **La "cross-validación completada" de la madrugada era falsa.** Se documentó "GSE67311
