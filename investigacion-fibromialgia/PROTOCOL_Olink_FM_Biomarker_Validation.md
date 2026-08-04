@@ -77,16 +77,47 @@ Validar **IL-6** y **Substance P (TAC1)** como biomarcadores plasmáticos que co
 
 ## 4. Design Sample Size
 
-### Power calculation
-- Effect size esperado: IL-6 FC ≥ 1.6 (GSE221921)
-- Alpha: 0.05, Power: 0.80, Ratio FM:HC = 1:1
-- **Mínimo:** 36 pares FM+HC (total 72)
-- **Planeado:** 40 FM + 40 HC (buffer 10%)
+### Power calculation — REDISEÑADO 2026-08-03 (candidato principal: CA14, no IL-6)
 
-### Rationale n=40
-- Bäckryd 2017 usó n=40 FM vs 20 HC (92 proteínas)
-- GSE221921: n=96 FM vs 93 HC
-- GSE67311: n=70 FM vs 70 HC
+**⚠️ El power previo (n=40, FC≥1.6) estaba calibrado para IL-6 — ya no es el candidato.**
+Simulación Monte Carlo propia (`scripts/power_analysis_ca14_olink.py`, 2000 sims, alpha=0.05,
+Mann-Whitney, CV técnico Olink 16.5% mediana → sd_log2=0.238):
+
+| n/grupo | d=0.3 | d=0.4 | d=0.5 | d=0.6 |
+|---------|-------|-------|-------|-------|
+| 40 | 0.25 | 0.37 | 0.55 | 0.71 |
+| 50 | 0.29 | 0.46 | 0.65 | 0.81 |
+| 70 | 0.37 | 0.61 | **0.81** | 0.92 |
+| 100 | 0.51 | 0.76 | 0.92 | 0.98 |
+
+- **Efecto esperado de CA14:** desconocido en plasma FM (nunca medido — ver §2). Rango plausible
+  d=0.3–0.6 (proteómica plasmática en dolor crónico; Bäckryd/Widenfalk reportan d≈0.4–0.6).
+- **Recomendación (poder ≥ 0.80):** d=0.6 → n=50/grupo; d=0.5 → n=70/grupo (140 total);
+  d≤0.4 → NO alcanza 0.80 con n≤100 → solo detectable en pooling multicéntrico.
+- **Estratificación por sexo (FM ~90% mujeres):** restringir a mujeres reduce n efectivo:
+  con n=40/grupo nominal y 90% mujeres, poder cae a 0.51 (d=0.5) / 0.65 (d=0.6).
+- **Conclusión honesta:** una cohorte individual FM vs HC (n=40-70) solo detecta CA14 si el
+  efecto real es medio-grande (d≥0.5). Para efectos pequeños (plausibles en proteómica
+  plasmática), se requiere diseño multicéntrico/pooled o meta-análisis con datasets públicos
+  existentes (vía B del análisis in-silico: Chen 2025 UKB ya tiene n=29,254 — su señal es la
+  evidencia más potente disponible y no requiere laboratorio nuevo).
+
+### Pre-registro (plan de análisis para datos futuros — in-silico hoy)
+
+Si en el futuro un colaborador/dataset provee muestras FM+HC con Olink (o se liberan summary
+stats de UKB CWP), el análisis será:
+
+```python
+# Pipeline estadístico — pre-registro 2026-08-03
+# 1. NPX Olink (log2-like, no normal) → Mann-Whitney de dos colas (NO t-test)
+# 2. H1 direccional PRE-REGISTRADA: CA14 ↓ en plasma FM (basada en Chen 2025: top-10
+#    downregulated en CWP; MR protector de elevación genética)
+# 3. Bonferroni sobre targets: CA14 + IL-8 (control) + SP (ELISA) → p*3
+# 4. Sensibilidad: excluir medicación opioide/antidepresiva (confusor conocido);
+#    estratificar por sexo (FM ~90% mujeres) y edad
+# 5. Control de calidad: LOD, CV de duplicados; NPX fuera de rango → excluir
+# 6. Reportar efecto (d de Cohen) + IC 95%, no solo p — el tamaño importa
+```
 
 ---
 
