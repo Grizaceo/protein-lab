@@ -4,7 +4,7 @@
 
 ¹ Independent Researcher, Santiago, Chile. Correspondence: cristoe4@gmail.com
 
-**Preprint — Draft v1.0 — August 2026**
+**Preprint — Draft v1.1 — August 2026**
 
 ---
 
