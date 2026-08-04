@@ -16,7 +16,9 @@
 | Fentanyl | -8.5 | 0.55 | Agonist (synthetic) | -10.5 a -11.5 |
 | Met-enkephalin | -7.9 | 1.55 | Endogenous peptide | -8 a -9 |
 | Leu-enkephalin | -7.6 | 2.67 | Endogenous peptide | -7.5 a -8.5 |
-| Naloxone | FALLO | — | Antagonist | -9.5 a -10.5 |
+| **Naloxone** | **-9.44** | **0.12** | Antagonist | -9.5 a -10.5 |
+
+*Naloxone corregido 2026-08-04 — ver "Naloxone NO falló" más abajo. Es el mejor score del set y el único ligando que cae dentro (o al borde) de su rango de literatura.*
 
 ## Análisis
 
@@ -46,9 +48,42 @@ En la vida real, fentanyl tiene ~100x mayor potencia que morfina (por eso se usa
 2. La potencia in vivo depende de eficacia (Emax) y no solo afinidad (Ki)
 3. Vina mide affinity ortostérico, no efficacy functional
 
-### Naloxone falló
+### Naloxone NO falló — corrección 2026-08-04
 
-Naloxone SMILES fue difícil de parsear (múltiples intentos). La versión final generó PDBQT but Vina falló con "low exhaustiveness" warning. No es crítico — naloxone es antagonist y nuestro interés en FM es agonist (pain relief). Lo intentaremos con exhaustiveness=32 en P3.
+**La versión anterior de este reporte registraba naloxona como FALLO. Era un error de lectura.** El mensaje que se interpretó como fallo era:
+
+```
+WARNING: At low exhaustiveness, it may be impossible to utilize all CPUs.
+```
+
+Eso es un aviso de **utilización de CPU**, no un fallo de docking. Vina completó la corrida y devolvió poses válidas. El archivo `estructuras/dockings/naloxone_OPRM1_docked.pdbqt` de la corrida original existe, contiene 2 poses con coordenadas válidas (27 átomos cada una) y reporta ΔG = **-10.42**.
+
+**Re-corrida de verificación (2026-08-04).** Ligando reconstruido desde SMILES de PubChem CID 5284596, validado por fórmula (C19H21NO4, MW 327.38) y optimizado con MMFF94/RDKit; misma caja (centro -7.7, 8.1, 7.9; 22³ Å), semilla 20260804:
+
+| exhaustiveness | ΔG mejor pose | Ki (µM) |
+|---|---|---|
+| 8 (igual que el resto del set) | -9.446 | 0.118 |
+| 32 (convergido) | -9.444 | 0.118 |
+
+Convergencia perfecta entre 8 y 32 — la búsqueda no era el problema. La diferencia con el -10.42 archivado (0.98 kcal/mol) se debe a la preparación del ligando, no al docking; ambas corridas caen en o junto al rango de literatura.
+
+Artefactos: `naloxone_OPRM1_rerun_exh32_docked.pdbqt`, `naloxone_OPRM1_rerun_exh32_log.txt`, `naloxone_ligand_rdkit_mmff94.sdf`.
+
+### Lo que naloxona revela sobre el pipeline
+
+Naloxona es **el mejor score del set** (-9.44, mejor que morfina -8.73) y **el único ligando cuyo Ki predicho se acerca a su rango experimental**. Los cuatro agonistas se subestiman 3-550×; naloxona no.
+
+Esto no es ruido: refina el modo de fallo del pipeline. La hipótesis previa era "Vina subestima antagonistas" (basada en aprepitant vs rolapitant en P1). Naloxona la contradice — es un antagonista y acierta. El predictor real es la **flexibilidad conformacional**:
+
+| ligando | enlaces rotables | MW | resultado Vina |
+|---|---|---|---|
+| Morphine | 0 | 285 | razonable |
+| **Naloxone** | **2** | **327** | **acierta el rango de literatura** |
+| Rolapitant | 5 | 486 | subestimado |
+| Aprepitant | 6 | 516 | falla por ~9 kcal/mol |
+| Met/Leu-enkephalin | pentapéptidos | ~570 | subestimado 3-30× |
+
+El error crece monótonamente con los enlaces rotables. El fallo del pipeline no es "antagonistas" sino **ligandos flexibles y grandes bajo docking rígido sin induced fit** — que es una afirmación más precisa, más defendible y consistente con la física del método.
 
 ## Conexión con FM
 

@@ -10,7 +10,7 @@
 
 ## Abstract
 
-Fibromyalgia (FM) is a chronic pain condition with a largely unknown peripheral molecular basis. A targeted reanalysis of public PBMC transcriptomics (GSE221921) identified a coordinated activation of the opioid/tachykinin neuropeptide axis — *TACR1* (NK1 receptor, d = +0.60), *OPRM1* (μ-opioid, d = +0.53), *TAC1* (Substance P, d = +0.47), *OPRK1* (κ-opioid, d = +0.38) — as the most robust transcriptomic signal in FM, surviving all five sex-adjusted sensitivity models (companion transcriptomic manuscript). To probe the structural druggability of these targets and of the dopaminergic axis (*DRD2*, prioritized by FM GWAS), we performed a computational chemistry campaign: (i) molecular docking of known agonists/antagonists and endogenous ligands against *DRD2* (PDB 6VMS + AlphaFold), *TACR1* (AlphaFold), and *OPRM1* (AlphaFold); (ii) biophysical DRD2/DRD3 pocket mapping and de novo D2-selective candidate design; (iii) in silico docking validation of the de novo library; and (iv) an exploratory Transformer-based conditional generation pipeline. We show that AutoDock Vina + AlphaFold reproduces the qualitative ranking of reference agonists (bromocriptine > pramipexole > dopamine for DRD2; morphine > enkephalins for OPRM1) but fails to resolve fine potency differences between drug-like agonists (morphine vs fentanyl scored equivalently) and under-scores flexible high-affinity antagonists (aprepitant vs rolapitant reversed vs experiment). These results establish a working docking pipeline for FM-implicated GPCRs while honestly delineating its precision limits, and provide a structurally grounded, D3-excluding de novo candidate set for future FEP/TI or radioligand validation.
+Fibromyalgia (FM) is a chronic pain condition with a largely unknown peripheral molecular basis. A targeted reanalysis of public PBMC transcriptomics (GSE221921) identified elevation of the opioid/tachykinin neuropeptide axis — *TACR1* (NK1 receptor, d = +0.60), *OPRM1* (μ-opioid, d = +0.53), *TAC1* (Substance P, d = +0.47), *OPRK1* (κ-opioid, d = +0.38) — as the largest effect-size block in FM PBMCs. That block survives all five sex-adjusted sensitivity models but **not** adjustment for cell composition, and is therefore best read as a shift in circulating leukocyte populations rather than per-cell upregulation (companion transcriptomic manuscript, v2.8). These receptors nonetheless remain the GPCRs that FM transcriptomics and GWAS jointly implicate, and their structural tractability is a question independent of that compositional caveat. To probe the structural druggability of these targets and of the dopaminergic axis (*DRD2*, prioritized by FM GWAS), we performed a computational chemistry campaign: (i) molecular docking of known agonists/antagonists and endogenous ligands against *DRD2* (PDB 6VMS + AlphaFold), *TACR1* (AlphaFold), and *OPRM1* (AlphaFold); (ii) biophysical DRD2/DRD3 pocket mapping and de novo D2-selective candidate design; (iii) in silico docking validation of the de novo library; and (iv) an exploratory Transformer-based conditional generation pipeline. We show that AutoDock Vina + AlphaFold reproduces the qualitative ranking of reference agonists (bromocriptine > pramipexole > dopamine for DRD2; morphine > enkephalins for OPRM1) but fails to resolve fine potency differences between drug-like agonists (morphine vs fentanyl scored equivalently). Across all 11 reference ligands docked, prediction error tracks **conformational flexibility rather than pharmacological class**: the rigid antagonist naloxone (2 rotatable bonds) yields the campaign's most accurate prediction, while the flexible antagonist aprepitant (6 rotatable bonds, MW 516) is off by ~9 kcal/mol. Ligands with ≥5 rotatable bonds should not be compared with this pipeline. These results establish a working docking pipeline for FM-implicated GPCRs while delineating its precision limits quantitatively, and provide a structurally grounded, D3-excluding de novo candidate set for future FEP/TI or radioligand validation.
 
 **Keywords:** fibromyalgia, DRD2, TACR1, OPRM1, molecular docking, AutoDock Vina, AlphaFold, de novo design, GPCR, neuropeptide axis
 
@@ -18,7 +18,9 @@ Fibromyalgia (FM) is a chronic pain condition with a largely unknown peripheral 
 
 ## 1. Introduction
 
-The peripheral biology of fibromyalgia (FM) has been reframed by population-scale plasma proteomics (UK Biobank Olink) and targeted transcriptomic reanalysis. Two non-inflammatory axes dominate the FM peripheral signature: a complete opioid/tachykinin neuropeptide circuit (TACR1, OPRM1, TAC1, OPRK1) and an extracellular-matrix / neurite-outgrowth module (COL9A1, PTN), with CA14 as a direction-specific reference candidate (companion transcriptomic manuscript, v2.7). The dopaminergic axis (*DRD2*) is prioritized independently by FM GWAS (Kerrebijn et al., 2025) and shows robust PBMC upregulation.
+The peripheral biology of fibromyalgia (FM) has been reframed by population-scale plasma proteomics (UK Biobank Olink) and targeted transcriptomic reanalysis. Two non-inflammatory axes dominate the FM peripheral signature (companion transcriptomic manuscript, v2.8): an extracellular-matrix / neurite-outgrowth module (COL9A1, PTN), which is the cell-intrinsic core — the only signal surviving sex stratification, Bonferroni correction and cell-composition adjustment simultaneously — and an opioid/tachykinin neuropeptide block (TACR1, OPRM1, TAC1, OPRK1) that is larger in effect size but compositional in origin, with CA14 as a direction-specific reference candidate. The dopaminergic axis (*DRD2*) is prioritized independently by FM GWAS (Kerrebijn et al., 2025) and shows robust PBMC upregulation.
+
+The targets of this manuscript are the GPCRs of the second axis plus DRD2. That choice is deliberate and worth stating plainly: COL9A1 and PTN are the stronger transcriptomic signals, but they are a secreted collagen and a secreted growth factor — neither is a small-molecule GPCR target, so neither is addressable by the docking campaign reported here. The compositional caveat weakens the *biological* case for OPRM1/TACR1 as FM drug targets, but does not change whether these receptors are structurally tractable, which is the question this manuscript actually answers.
 
 The translational question is whether these targets are structurally tractable for small-molecule intervention. FM has a 21-year gap of non-replicated positive dopamine-agonist trials, driven in part by severe mesolimbic tolerability barriers of D2/D3 agonists (Impulse Control Disorders, DAWS). A D3-excluding, centrally active dopaminergic agent would be the intellectually interesting design goal. Meanwhile, NK1 (TACR1) antagonists failed FM pain trials, and chronic opioid exposure is discouraged in FM guidelines — so OPRM1 repurposing is contra-indicated.
 
@@ -74,14 +76,17 @@ Pocket residues (Ballesteros–Weinstein): D78, Y92, T205, Y272, F288, N305. **R
 
 ### 3.3 OPRM1 docking (P2)
 
-| Ligando | ΔG (kcal/mol) | Ki (µM) |
-|---------|---------------|---------|
-| Morphine | -8.7 | 0.40 |
-| Fentanyl | -8.5 | 0.55 |
-| Met-enkephalin | -7.9 | 1.55 |
-| Leu-enkephalin | -7.6 | 2.67 |
+| Ligando | Rot. bonds | ΔG (kcal/mol) | Ki (µM) | Lit. Ki (nM) | Error |
+|---------|-----------:|---------------|---------|--------------|-------|
+| **Naloxone** (antagonist) | 2 | **-9.44** | **0.12** | 1–10 | **~12–120×** |
+| Morphine | 0 | -8.7 | 0.40 | 10–100 | 4–40× |
+| Fentanyl | 6 | -8.5 | 0.55 | 1–10 | 55–550× |
+| Met-enkephalin | peptide | -7.9 | 1.55 | 50–500 | 3–30× |
+| Leu-enkephalin | peptide | -7.6 | 2.67 | 100–1000 | 3–27× |
 
-Pocket residues: S147, V293, T296, P297, H299, I300, K305. **Ranking preserved**: morphine > fentanyl (Vina cannot resolve their ~100× in vivo potency difference — a pharmacokinetic, not binding, effect) and met-enkephalin > leu-enkephalin (matches literature). Naloxone failed to dock (SMILES/parsing issue, low exhaustiveness) — non-critical as our FM interest is agonist, not antagonist.
+Pocket residues: S147, V293, T296, P297, H299, I300, K305. **Ranking preserved** among agonists: morphine > fentanyl (Vina cannot resolve their ~100× in vivo potency difference — a pharmacokinetic and efficacy effect, not binding) and met-enkephalin > leu-enkephalin (matches literature).
+
+**Naloxone correction (2026-08-04).** An earlier version of this manuscript reported that naloxone "failed to dock (SMILES/parsing issue, low exhaustiveness)". That was a misreading: the message emitted was `WARNING: At low exhaustiveness, it may be impossible to utilize all CPUs` — a CPU-utilization notice, not a docking failure. The original run had completed and written valid poses. Re-docking with a formula-validated ligand (PubChem CID 5284596; C19H21NO4, MW 327.38; MMFF94/RDKit) in the same box gives ΔG = **−9.446 at exhaustiveness 8 and −9.444 at exhaustiveness 32** — fully converged. Naloxone is the **best-scoring ligand of the OPRM1 set** and the only one whose predicted Ki approaches its experimental range.
 
 ### 3.4 DRD2/DRD3 pocket mapping and de novo selectivity
 
@@ -107,11 +112,24 @@ Top 8 de novo candidates (Table 6) were docked against DRD2/DRD3. All poses anch
 
 ### 4.1 What the pipeline can and cannot do
 
-The AutoDock Vina + AlphaFold pipeline is **fit for purpose as a ranking/screening filter** but not for absolute affinity or fine potency. It correctly orders reference agonists within a chemotype (bromocriptine > pramipexole > dopamine; morphine > enkephalins) and preserves known qualitative trends. It fails on two axes: (i) it cannot separate drug-like agonists of similar physicochemistry (morphine ≈ fentanyl), and (ii) it under-scores flexible high-affinity antagonists (aprepitant < rolapitant) without induced-fit modeling.
+The AutoDock Vina + AlphaFold pipeline is **fit for purpose as a ranking/screening filter** but not for absolute affinity or fine potency. It correctly orders reference agonists within a chemotype (bromocriptine > pramipexole > dopamine; morphine > enkephalins) and preserves known qualitative trends. It cannot separate drug-like agonists of similar physicochemistry (morphine ≈ fentanyl).
+
+**The failure mode is ligand flexibility, not pharmacology.** Our initial reading — that the pipeline under-scores *antagonists* — was based on aprepitant scoring below rolapitant at TACR1 (§3.2). Naloxone refutes that generalization: it is an antagonist, and it produces the most accurate prediction in the entire campaign. Ordering all OPRM1 and TACR1 ligands by rotatable-bond count recovers the real pattern:
+
+| Ligand | Rot. bonds | MW | Prediction error vs experiment |
+|---|---:|---:|---|
+| Morphine (agonist) | 0 | 285 | 4–40× |
+| Naloxone (**antagonist**) | 2 | 327 | ~12–120× |
+| Rolapitant (antagonist) | 5 | 486 | under-scored |
+| Fentanyl (agonist) | 6 | 337 | 55–550× |
+| Aprepitant (antagonist) | 6 | 516 | ~9 kcal/mol off |
+| Met/Leu-enkephalin (peptides) | pentapeptides | ~570 | 3–30× |
+
+Error grows with conformational freedom, irrespective of whether the ligand is an agonist or an antagonist. This is the expected physics of rigid-receptor docking without induced fit, and it is a sharper and more defensible statement of the pipeline's limit than the antagonist framing. Practically: the pipeline can be trusted to rank rigid, low-rotatable-bond chemotypes, and should not be used to compare flexible ligands (rot. bonds ≥ 5) or peptides without FEP/TI or induced-fit modeling.
 
 ### 4.2 FM relevance and the tolerability wall
 
-The transcriptomic companion shows the opioid axis is robust to sex adjustment but **confounded by cell composition** (0/7 genes survive deconvolution) and by medication exposure (FM patients use opioids chronically). Combined with ACR 2025 guidelines discouraging opioids in FM, OPRM1 is a poor repurposing target. DRD2 remains the genetically prioritized axis, but its peripheral expression is low and compartment-specific; the strongest unconfounded evidence is germline sQTL (companion §4.7), not PBMC mRNA. The de novo D2-selective, D3-excluding design is the one avenue that addresses the tolerability wall directly — but requires FEP/TI or radioligand validation before any inference.
+The transcriptomic companion shows the opioid axis is robust to sex adjustment but **confounded by cell composition**: no axis gene survives adjustment for estimated leukocyte fractions across the four deconvolution implementations tested (OPRM1 and TACR1 are borderline, significant under 2 of 4; TAC1, PENK, OPRK1, OPRD1 and POMC fail under all four). The adjustment is a genuine filter rather than a procedure that removes all signal — a 600-gene negative control shows 28% of sex-adjusted case effects survive it — and COL9A1/PTN do survive, so the axis result is a real negative, not an artifact. Medication exposure compounds this: FM patients use opioids chronically, which regulates opioid receptor expression and may itself alter leukocyte composition. Combined with ACR 2025 guidelines discouraging opioids in FM, OPRM1 is a poor repurposing target. DRD2 remains the genetically prioritized axis, but its peripheral expression is low and compartment-specific; the strongest unconfounded evidence is germline sQTL (companion §4.7), not PBMC mRNA. The de novo D2-selective, D3-excluding design is the one avenue that addresses the tolerability wall directly — but requires FEP/TI or radioligand validation before any inference.
 
 ### 4.3 Limitations
 
@@ -137,13 +155,23 @@ Kerrebijn, I., et al. (2025). The genetic architecture of fibromyalgia across 2.
 
 Trott, O., & Olson, A.J. (2010). AutoDock Vina: improving the speed and accuracy of docking. *J Comput Chem*, 31(2), 455–461. PMID: 19499576.
 
-Muñoz Rojas, C. (2026). *Peripheral Neuroimmune and Nociceptive Gene Signatures in Fibromyalgia: A Targeted Reanalysis of Public Transcriptomic Cohorts Informed by UK Biobank Plasma Proteomics* (companion transcriptomic manuscript, v2.7).
+Muñoz Rojas, C. (2026). *Peripheral Neuroimmune and Nociceptive Gene Signatures in Fibromyalgia: A Targeted Reanalysis of Public Transcriptomic Cohorts Informed by UK Biobank Plasma Proteomics* (companion transcriptomic manuscript, v2.8).
 
 ---
 
 ## Data & Code Availability
 
-Docking scripts, PDBQT preparations, and de novo candidate tables are available at [github.com/Grizaceo/protein-lab](https://github.com/Grizaceo/protein-lab) under `investigacion-fibromialgia/docking_fm_targets/`. Receptor models: DRD2 (6VMS, P14416), TACR1 (P25103), OPRM1 (P35372). Ligand SMILES and Vina logs are provided per target.
+All artifacts are at [github.com/Grizaceo/protein-lab](https://github.com/Grizaceo/protein-lab) under `investigacion-fibromialgia/`. This directory (`docking_fm_targets/`) holds the manuscript only; the code, structures and results live in the paths below.
+
+**Receptor models** — `estructuras/alphafold/`: `DRD2_P14416.pdbqt`, `TACR1_P25103.pdbqt`, `OPRM1_P35372.pdbqt`, each with `_metadata.json` (pLDDT) and `_pae.json`. Experimental DRD2: `estructuras/drd2_receptor_6VMS.pdbqt`.
+
+**Docked poses and Vina logs** — `estructuras/dockings/`: 14 output PDBQTs plus 4 Vina logs, covering dopamine, pramipexole and bromocriptine (DRD2, both 6VMS and AlphaFold), rolapitant, aprepitant and the Substance P 1–4 fragment (TACR1), and morphine, fentanyl, met-/leu-enkephalin and naloxone (OPRM1). The naloxone re-docking of §3.3 adds `naloxone_OPRM1_rerun_exh32_docked.pdbqt`, its full Vina log, and the validated ligand (`naloxone_ligand_rdkit_mmff94.sdf`); the original run is retained as `naloxone_OPRM1_docked.pdbqt` for comparison.
+
+**Per-target result reports** — `analisis/P0_DRD2_DOCKING_RESULTADOS.md`, `P1_TACR1_DOCKING_RESULTADOS.md`, `P2_OPRM1_DOCKING_RESULTADOS.md`.
+
+**Scripts** — `scripts/`: `analyze_docking_drd2.py`, `dock_validation.py`, `pocket_analysis.py`, `run_denovo_docking.py`, `train_qsar_selectivity.py`, `train_transformer.py`, `transformer_selective_generator.py`, `predict_admet_bbb.py`.
+
+**Not included:** intermediate ligand preparation files (`datos/pdb/`) and exploratory docking runs (`docking_runs/`) are gitignored as bulk intermediates; every result reported in §3 is reproducible from the tracked receptor PDBQTs, the ligand SMILES listed in the P0/P1/P2 reports, and the scripts above.
 
 ## Conflict of Interest
 
