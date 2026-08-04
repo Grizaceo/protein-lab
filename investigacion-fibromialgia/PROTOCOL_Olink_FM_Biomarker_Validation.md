@@ -37,18 +37,32 @@ Validar **IL-6** y **Substance P (TAC1)** como biomarcadores plasmáticos que co
 
 ---
 
-## 2. Biomarcadores candidatos — ACTUALIZADO 2026-08-03 (post UK Biobank grounding)
+## 2. Biomarcadores candidatos — ACTUALIZADO 2026-08-04 (post deep-dive COL9A1)
 
-**PIVOT:** El grounding UKB (Li ZY 2025 Adv Sci + Chen 2025 Adv Sci PMID 41025730, 29-51K participantes, ~2,920 proteínas) NO respalda IL-6/IL-8 como biomarcadores plasmáticos de dolor crónico (0 menciones). El narrative cambia a inmunomodulación + pH/nocicepción. CA14: causal pero **↓ en plasma** (MR protector de elevación; agonistas > sulthiame).
+**PIVOT 2026-08-04:** El deep-dive COL9A1 (experimentos C1-C5) reemplaza a CA14 como candidato principal de validación. CA14 no sobrevive female-only (p=0.1345) ni ajuste por composición celular (E1). La hipótesis CA14→pH→ASIC1a fue descartada (E5: QSP v3 transitorio, ΔpH=-0.015). COL9A1 reemplaza a CA14: d=0.88, robusto 5/5 modelos, sobrevive female-only y sex-adjusted.
+
+**NUEVAS ADICIONES al panel Olink:** COL9A1, PTN (pleiotrophin), BPIFB2. ST3GAL1 no se incluye (enzima intracelular, no medible en plasma Olink).
 
 | Biomarcador | Rationale | Proxy grade |
 |-------------|-----------|-------------|
-| **CA14** (anhidrasa carbónica XIV) | **NUEVO CANDIDATO PRINCIPAL.** Causal en CWP por MR+colocación PP.H4>0.5 (UKB, Chen 2025 Adv Sci PMID 41025730) + elevado en mRNA PBMC FM (GSE221921 FC=2.29, p=0.0003, d=+0.41). **⚠️ Dirección plasmática publicada: ↓ DOWNREGULADA en CWP (entre las 10 más); MR protector de elevación genética; el paper sugiere AGONISTAS, no sulthiame.** Predicción Olink: **esperar ↓ en plasma FM**. Regula pH/nocicepción. | **ALTO** (nuevo, transversal, direccional) |
-| IL-6 | Inflamación sistémica; significante ↑ en GSE221921 (FC=1.66, p=0.0002); documentada elevación plasmática en FM (O'Mahony 2021) | **MEDIO** (no respaldado por UKB) |
-| Substance P (TAC1) | Neuropéptido de dolor; ↑ en GSE221921 vía TAC1 (FC=2.10, p=0.0002, d=+0.47); correlación plasma↔CSF documentada (Karlsson 2019) | **MEDIO** (no en UKB; traslado incierto) |
-| PENK (encefalinas) | Opioide endógeno; ↑ en GSE221921 (FC=1.38, p=0.0031); hallazgo SEPARADO de Substance P — ver AUDITORIA_INTEGRIDAD_PROXY.md | MEDIUM (hallazgo opioide) |
-| OPRM1 (receptor mu) | Eje opioide; el más significativo del panel GSE221921 (FC=2.28, Bonf=0.0001) | MEDIO (mRNA PBMC) |
-| Control negativo de señal inmune | TNFRSF1B, CD74, COL18A1, BTN2A1, TNFRSF4 — causales UKB ↓ en PBMC FM (FC 0.54-0.77) — medir dirección inversa (inmunomodulación) | observacional |
+| **COL9A1** (colágeno IX alpha 1) | **CANDIDATO PRINCIPAL (nuevo 2026-08-04).** Robusto 5/5 modelos en GSE221921 (d=0.88, FC=2.32, p_Bonf=9e-08). Causal en CWP por Chen 2025 (PMID 41025730). Sobrevive female-only y sex-adjusted. Co-expresado con PTN (r=0.51) y BPIFB2 (r=0.51). Proteína secretada ECM — detectable en plasma. Power: 75+75 cubre escenario moderado (d_protein=0.53, power=88%). | **ALTO** (robusto, direccional, detectable) |
+| **PTN** (pleiotrophin) | **NUEVO 2026-08-04.** Robusto 5/5 modelos. Factor neurotrófico secretado (neurite outgrowth, ligando ALK). Co-expresado con COL9A1 (r=0.51, p<0.001). Eje osteo/neural: osteoblast differentiation + nerve repair. Secretado — detectable en plasma. | **ALTO** (secretado, neurotrófico, co-expresado) |
+| **BPIFB2** (BPI fold family B2) | **NUEVO 2026-08-04.** Robusto 5/5 modelos. Innate immunity (LPS binding). Co-expresado con COL9A1 (r=0.51, p<0.001). Eje inmunológico. Secretado — detectable en plasma. Biomarker en saliva para Sjögren (literatura). | **MEDIO-ALTO** (innate immunity, secretado) |
+| **CA14** (anhidrasa carbónica XIV) | **DEGRADADO 2026-08-04.** Causal en CWP (MR+colocación UKB) PERO no sobrevive female-only (p=0.1345) ni deconvolución (E1). Hipótesis pH→ASIC1a descartada (E5). Mantener como referencia: medir si panel incluye CA14 pero no como primario. Predicción Olink: ↓ en plasma FM (MR protector). | **MEDIO** (causal UKB pero no robusto en PBMC) |
+| IL-6 | Inflamación sistémica; ↑ en GSE221921 (FC=1.66, p=0.0002); ya validado en plasma FM (Bäckryd 2017) | **MEDIO** (ya publicado, citar) |
+| Substance P (TAC1) | Neuropéptido de dolor; ↑ en GSE221921 (FC=2.10, p=0.0002, d=+0.47); correlación plasma↔CSF (Karlsson 2019) | **MEDIO** (no en UKB) |
+| ~~PENK / OPRM1~~ | **RETIRADOS 2026-08-04.** Eje opioide es composicional (E1): 0/7 genes sobreviven ajuste por fracciones celulares. OPRM1 colapsa de p=0.0003 a p=0.40. No validar a nivel proteico. | **BAJO** (confundido por composición celular) |
+| Control negativo de señal inmune | TNFRSF1B, CD74, COL18A1, BTN2A1, TNFRSF4 — causales UKB ↓ en PBMC FM | observacional |
+
+### Estructura biológica del módulo COL9A1 (C1-C5)
+
+Los 4 genes robustos (COL9A1, BPIFB2, PTN, ST3GAL1) forman **dos ejes convergentes**, no un módulo singular:
+
+- **EJE 1 (estructural/neuro):** COL9A1 + PTN → cartílago structural + neurite outgrowth. Co-expresados r=0.51. Dolor articular + reparación neural.
+- **EJE 2 (innate immunity):** BPIFB2 + ST3GAL1 → LPS binding + T cell sialylation. Dolor indirecto vía inflamación.
+- ST3GAL1 anticorrelaciona con COL9A1 (r=-0.23) — probable regulador negativo del módulo.
+
+Las correlaciones no difieren FM vs HC (Fisher p>0.17) — el módulo es estructural, no disease-specific. La diferencia está en los niveles absolutos, no en la coordinación.
 
 ---
 
