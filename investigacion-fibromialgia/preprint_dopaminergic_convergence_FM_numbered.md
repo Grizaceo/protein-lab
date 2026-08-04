@@ -6,7 +6,7 @@
 006: 
 007: ¹ Independent Researcher, Santiago, Chile. Correspondence: cristoe4@gmail.com
 008: 
-009: **Preprint — Draft v2.5 — August 2026**
+009: **Preprint — Draft v2.6 — August 2026**
 010: 
 011: ---
 012: 
@@ -246,7 +246,7 @@
 246: | 2. PBMC mRNA | ↑ in FM (FC = 2.29, p = 0.0003, d = +0.41) | GSE221921 (this study) |
 247: | 3. Pharmacology | Sulthiame (CHEMBL328560) is an **inhibitor**; **the paper proposes CA14 agonists — not inhibitors — as the more promising therapeutic direction** | Chen et al. 2025; ChEMBL |
 248: 
-249: CA14 encodes carbonic anhydrase XIV, a membrane-bound enzyme regulating extracellular pH; pH dysregulation in nociceptors is a well-established driver of pain signaling (acid-sensing). The published analysis shows CA14 among the ten most downregulated plasma proteins in CWP, while MR indicates a protective effect of genetically elevated CA14 — an observational-vs-MR discordance the authors interpret as state-dependent protein alteration vs. lifelong genetic predisposition. **Our testable prediction: CA14 should be ↓ in FM plasma** in the Olink validation; if confirmed, the repurposing direction is **agonism/activation of CA14**, not sulthiame inhibition. The elevated PBMC mRNA we observe may be compensatory or compartment-specific; both compartments should be measured to resolve this.
+249: CA14 encodes carbonic anhydrase XIV, a membrane-bound enzyme regulating extracellular pH; pH dysregulation in nociceptors is a well-established driver of pain signaling (acid-sensing). The published analysis shows CA14 among the ten most downregulated plasma proteins in CWP, while MR indicates a protective effect of genetically elevated CA14 — an observational-vs-MR discordance the authors interpret as state-dependent protein alteration vs. lifelong genetic predisposition. **Our testable prediction: CA14 should be ↓ in FM plasma** in the Olink validation; if confirmed, the repurposing direction is **agonism/activation of CA14**, not sulthiame inhibition. The elevated PBMC mRNA we observe may be compensatory or compartment-specific; both compartments should be measured to resolve this. **Mechanistic caveat (QSP, 2026-08-03):** a single-compartment QSP model of the CA14→pH→ASIC pathway, thermodynamically calibrated, shows that a 30-50% reduction of CA14 shifts extracellular pH by only ΔpH ≈ −0.009 — far below the ≥0.2 needed for ASIC activation. The simple peripheral acidosis mechanism is therefore not supported; the causal signal (MR/coloc) may act in a different compartment (CNS), via transient pH kinetics, or reflect CA14 as a marker rather than mediator (see `scripts/qsp_ca14_ph_nociception.py`).
 250: 
 251: **Druggability caveat.** Sulthiame inhibits multiple carbonic anhydrases, not only CA14, and the published analysis explicitly favors agonists over inhibitors for pain; no well-documented CA14 activator is yet available. Any repurposing hypothesis requires isoform selectivity assessment and cannot be inferred from the present transcriptomic analysis alone.
 252: 
