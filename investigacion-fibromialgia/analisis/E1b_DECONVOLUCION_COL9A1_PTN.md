@@ -1,7 +1,7 @@
 # E1b — Ajuste por composición celular: COL9A1/PTN vs eje opioide (GSE221921)
 
 **Fecha:** 2026-08-04
-**Script:** `scripts/e1_deconvolution_adjusted_model.py` (ejecutable, ~3 min)
+**Script:** `scripts/e1_deconvolution_adjusted_model.py` (ejecutable, ~50 s)
 **Salidas:** `E1b_deconvolution_col9a1_ptn.csv`, `E1b_variant_sweep.csv`, `E1b_negative_control_random_genes.csv`
 **Motivo:** E1 (commit `03b4609`) probó el ajuste composicional **solo sobre los 7 genes del eje opioide**. El módulo COL9A1–PTN, que la v2.7 del manuscrito declara objetivo primario de validación, nunca fue evaluado bajo ese modelo.
 
