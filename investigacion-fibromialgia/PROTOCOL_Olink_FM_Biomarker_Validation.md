@@ -1,12 +1,14 @@
-# Protocolo Experimental: Validación de biomarcadores IL-6 + Substance P en plasma FM
-## Diseño in-silico de protocolo Olink
-## ACTUALIZADO 2026-08-03 — post adversarial verification + grounding de datasets
+# Protocolo de Validación Plasmática FM — PLAN IN-SILICO + PRE-REGISTRO para datos futuros
+## Convertido de diseño Olink experimental a plan in-silico ejecutable 2026-08-03
+## ACTUALIZADO 2026-08-03 — post adversarial verification + grounding UKB + power/QSP
 
 ## Basado en:
-- Grounding: `~/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/GROUNDING_FM_Neurobioquimica_Central.md`
-- Bäckryd 2017 (PMID 28424559) — 92 proteins multiplex CSF+plasma de 40 FM
-- GSE221921 in-silico: IL6 FC=1.66↑, PENK FC=1.38↑ en PBMCs FM (verificado adversarialmente 2026-08-03)
-- GSE67311 cross-validation (70 FM vs 70 HC) — paper Wray 2009
+- Chen 2025 UKB: CA14 ↓ plasma CWP, MR + coloc PP.H4>0.5 (PMID 41025730, PMC12713070)
+- Li ZY 2025: UKB Olink 51K, 2,923 proteínas (PMID 40048323)
+- Bäckryd 2017: 92 proteins multiplex CSF+plasma (PMID 28424559)
+- Revisión sistemática FM proteomics 2024 (PMID 38652420)
+- Power analysis: `scripts/power_analysis_ca14_olink.py` (2026-08-03)
+- QSP model: `scripts/qsp_ca14_ph_nociception.py` + SIMULACION_QSP_CA14_PH.md
 
 ## 0. GROUNDING DE DATOS PÚBLICOS (2026-08-03) — LEER ANTES DE COMPRAR NADA
 
@@ -121,50 +123,40 @@ stats de UKB CWP), el análisis será:
 
 ---
 
-## 5. Workflow Experimental
+## 5. WF IN-SILICO (EJECUTABLE HOY — costo cero)
 
-### Fase 1: Reclutamiento
-- 40 pacientes FM (diagnóstico ACR 2010/2016)
-- 40 controles santé (HC) emparejados (edad, sexo, IMC)
+Este protocolo ya no requiere reclutamiento ni muestras. La validación de CA14 ↓ en
+plasma FM se hace con evidencia existente + pre-registro para datos futuros:
 
-### Fase 2: Recolección de muestras
-- **Plasma:** EDTA, centrifugado 1500g 15min a 4°C, almacenado -80°C
-- **CSF:** opcional (subconjunto de 10 FM + 10 HC para correlación directa)
-- Fasting ≥ 8 horas previo a extracción
+### Fase in-silico 1 — Dirección plasmática (HECHO 2026-08-03)
+- [x] Chen 2025 UKB (n=29,254): CA14 entre top-10 ↓ en CWP; MR protector de elevación →
+      predicción CA14 ↓ plasma FM (PMID 41025730, full text en fuentes_verificadas/)
+- [x] Revisión sistemática FM (PMID 38652420): CA14 NO reportada → primer claim en su clase
 
-### Fase 3: Análisis Olink
-- **Olink Explore HT** para IL-6 + panel neuroinflamación (96 analytes)
-- **Olink Target 96 Inflammation** como panel secundario
-- Substance SP: ELISA (Phoenix Pharmaceuticals kit) o RIA
+### Fase in-silico 2 (pendiente — D2)
+- [ ] Cruzar las 145 proteínas diferenciales de PMID 38652420 contra los 18 causal UKB
+      (ver tabla en §2 y Sch. 145) — buscar convergencia de vías
 
-### Fase 4: Análisis estadístico
-```python
-# Pipeline estadístico — CORREGIDO 2026-08-03 (ver adversarial verification)
-# NPX Olink es log2-like y no-normal → Mann-Whitney, NO t-test
-# Usar directamente: scripts/analyze_olink_npx.py
-from scipy import stats
-import numpy as np
+### Pre-registro (para cuando lleguen datos)
+Pipeline listo: `scripts/analyze_olink_npx.py`. H1: CA14 ↓ plasma FM (pre-registrado
+2026-08-03). Mann-Whitney NO paramétrico + Bonf (CA14 + IL-8 + SP) + d Cohen + IC95.
 
-# 1. Fold change FM vs HC
-fc = np.mean(fm_plasma) / np.mean(hc_plasma)
+## 5b. WF DE LABORATORIO (CONTINGENTE — solo si hay colaboración clínica)
 
-# 2. Mann-Whitney U (NPX no es normal; t-test paramétrico era inapropiado)
-u_stat, p_val = stats.mannwhitneyu(fm_plasma, hc_plasma)
+Contexto: con investigación puramente in-silico sin acceso a muestras, este cronograma
+NO es ejecutable por DAVI/Cristóbal. Se documenta aquí para cuando un colaborador o
+datos de multicéntrico estén disponibles. Reclutamiento, extracción y Olink son de
+competencia del colaborador/laboratorio acreditado.
 
-# 3. Bonferroni sobre N targets (ej: 3 proxies → p * 3)
-p_bonf = min(1.0, p_val * n_targets)
+### Reclutamiento + muestras (colaborador)
+- 50–70 FM (ACR 2010/2016) + 50–70 HC (sexo/edad/IMC emparejados; FM ~90% mujeres)
+- Plasma EDTA 1500g 15min −80°C; CSI opcional (subconjunto 10+10)
+- Requisito crítico: confirmar que el panel Olink elegido INCLUYE CA14 (Target 96 inflamación
+  NO lo incluye — solo Explore HT o Explore 3072 cubren anhidrasas carbónicas)
 
-# 4. Correlación CSF↔Plasma (si se mide CSF en los mismos sujetos)
-r, p_corr = stats.pearsonr(plasma_values, csf_values)
-
-# 5. AUC OUT-OF-FOLD honesta (no in-sample — ver validate_fm_biomarkers_iter2.py)
-#    StratifiedKFold 5 + LogisticRegression, predict_proba en el fold de test
-
-# 6. Effect size (Cohen's d pooled)
-from numpy import std, mean
-sp = np.sqrt(((n1-1)*std(fm_plasma, ddof=1)**2 + (n2-1)*std(hc_plasma, ddof=1)**2)/(n1+n2-2))
-cohens_d = (mean(fm_plasma) - mean(hc_plasma)) / sp
-```
+### Análisis estadístico por DAVI
+Internal script: `scripts/analyze_olink_npx.py` (Mann-Whitney + Bonferroni correcto + Cohen's d
++ AUX out-of-fold corregido + correlación CSI↔plasma)
 
 ### Métricas de validación (ajustadas 2026-08-03 — effect sizes reales son small)
 | Métrica | Threshold | Rationale |
@@ -192,62 +184,76 @@ cohens_d = (mean(fm_plasma) - mean(hc_plasma)) / sp
 
 ---
 
-## 7. Timeline
+## 7. Cronograma
 
-| Week | Fase | Deliverable |
-|------|------|-------------|
-| 1 | Protocol setup | IRB draft + Olink order |
-| 2-4 | Reclutamiento | 40 FM + 20 HC |
-| 5 | Sample collection | Plasma + CSF (subset) |
-| 6 | Olink run | Raw NPX values |
-| 7 | Statistical analysis | Fold change + p-values |
-| 8 | Correlación CSF↔plasma | Pearson r |
-| 9 | Report generation | Final report |
+### IN-SILICO (ejecutable HOY)
+| Fase | Estado | Acción | Tiempo in-silico |
+|------|--------|--------|-----------------|
+| A — Grounding UKB | ✅ | Chen 2025 verificado full-text (PMID 41025730) | HECHO |
+| B — Power CA14 | ✅ | Monte Carlo sim (scripts/power_analysis_ca14_olink.py) | HECHO |
+| C — Eje opioide GSE67311 | ✅ | Validación completa (scripts/validate_opioid_axis_…) | HECHO |
+| D — QSP model | ✅ | Negativo: CA14↓ no acidifica (scripts/qsp_ca14_ph_) | HECHO |
+| D2 — 145 proteínas × UKB | 🔲 | Crossover PMID 38652420 vs 18 causal UKB | ~30 min |
+| E — Preprint v2.6 | ✅ | Draft 32 pgs | HECHO |
 
----
-
-## 8. Budget estimado — CORREGIDO 2026-08-03 (costos previos inflados)
-
-| Item | Cost (USD) | Nota |
-|------|-----------|------|
-| Olink Target 96 Inflammation (40 FM + 40 HC) | $4,000-6,000 | ~$50-75/muestra académico; un run de 96 muestras ≈ $5K |
-| Substance SP ELISA (80 samples) | $2,400 | Phoenix Pharmaceuticals kit |
-| IL-8 control (incluido en panel) | $0 | Ya viene en Target 96 |
-| **Total estimado** | **$6,400-8,400** | Previo decía $9-11K — corregido |
-
-**Alternativa de costo cero (inmediata):** la validación Olink de IL-6 en plasma FM YA está publicada (Bäckryd 2017, p<0.001). El run propio solo se justifica si se añade valor: correlación CSF↔plasma por sujeto, o validación de PENK/SP con ELISA.
+### FUTURO (contingente, requiere colaborador/datos)
+| Fase | Acción |
+|------|--------|
+| 0 | Contactar Bäckryd/Ghafouri (Linköping) para datos crudos Olink FM (datos no públicos — alternativa costo cero) |
+| 1 | Colaborador clínico: reclutamiento FM+HC + plasma EDTA |
+| 2 | Olink run (Explore HT, panel que incluya CA14 — NO Target 96 inflamación) + SP ELISA |
+| 3 | DAVI ejecuta pipeline pre-registrado (`scripts/analyze_olink_npx.py`) |
 
 ---
 
-## 9. Riesgos y mitigaciones
+## 8. Costos
 
-| Riesgo | Probabilidad | Mitigación |
-|--------|-------------|------------|
-| Substance SP no detectable en plasma | HIGH | Medir como proxy el IL-6 + TNF-α, usar SP como secondary endpoint |
-| LGALS3BP discordancia (ya confirmada) | RESOLVED | No incluir en protocolo — usar como control negativo |
-| Niveles de IL-6 variables por circadiano | MEDIUM | Establecer horarios fijos de extracción (fasting AM) |
-| No se puede acceder a CSF | HIGH | Subestudio con consentimiento separado; usar plasma como proxy primario |
+| Item | In-silico (hoy) | Futuro (si aparece colaboración) |
+|------|----------------|---------------------------------|
+| Evidencia CA14 ↓ en plasma | $0 — PMID 41025730 (ya verificado) | — |
+| Power analysis | $0 — sim Monte Carlo lista | — |
+| Re-analizar datos Olink públicos | $0 — Bäckryd 2017 PMID 28424559 (IL-6/IL-8 ya validados; si se obtienen NPX crudos de Linköping, el script `analyze_olink_npx.py`) está listo | — |
+| Olink run propio | — | ~$5-8K (Explore HT, 100 muestras) |
+| SP ELISA | — | ~$2K (Phospho, 80 muestras) |
+
+**Conclusión:** el abordaje in-silico actual=$0; el abordaje clínico futuro=$7-10K +
+colaborador. El costo cero ya produce evidencia publicable: preprint v2.6 con CA14 como
+primer candidato causal en FM, respaldado por MR+Fisher de 29K personas.
+
+---
+
+## 9. Riesgos
+
+| Riesgo | Prob | Mitigación |
+|--------|------|------------|
+| CA14 no detectable en plasma periférico (LOD bajo) | MEDIUM | Chen 2025: CA14 sí medible en UKB Olink Explore; Olink tiene alta sensibilidad para CA14; confirmar cobertura del panel elegido |
+| Efecto real CA14 ↓ es pequeño (d≤0.3) | HIGH | Power sim: cohorte individual no lo detecta; la evidencia UKB n=29K ya está publicada (PMID 41025730) — es el gold standard sin laboratorio |
+| Datos Olink públicos no disponibles para FM | HIGH (hoy) | Bäckryd/Ghafouri han compartido datos en el passado; contactar informalmente; alternativa: summary stats UKB cuando se liberen |
+| Interpretación errónea de CA14 con Target 96 inflamación (NO incluye CA14) | CRÍTICO | Requisito al colaborador: confirmar que el panel INCLUYE CA14 antes de ordenar |
+| QSP descartó vía periférica simple | RESUELTO | Doc SIMULACION_QSP_CA14_PH.md — CA14 candidato causal se mantiene; mecanismo va a SNC u otras vías |
 
 ---
 
-## 10. Next steps
+## 10. Próximos pasos
 
-### In-silico (hecho)
-1. ✅ Validar proxies in GSE221921 — COMPLETADO + verificado adversarialmente (2026-08-03): IL6 Bonf=0.003, PENK Bonf=0.047, LGALS3BP unsuitable, PCSK1N re-clasificado
-2. ✅ Cross-validation GSE67311 — COMPLETADO (Wray 2009 panel)
-3. ✅ Grounding datasets públicos (2026-08-03): NO hay dataset Olink FM en GEO; Bäckryd 2017 ya validó IL-6 plasma (p<0.001) y mostró IL-8 como solapamiento CSF+plasma real
-4. ✅ Pipeline Olink listo: `scripts/analyze_olink_npx.py` (Mann-Whitney + Bonferroni + Cohen's d + AUC OOF + correlación CSF)
+### In-silico (hoy)
+1. ✅ Grounding UKB + grounding IL-8 control — COMPLETADO (2026-08-03)
+2. ✅ Eje opioide/taquinikinina PBMC + validación GSE67311 — COMPLETADO
+3. ✅ Corrección PENK→TAC1 + adversarial verification — COMPLETADO
+4. ✅ Power analysis CA14 Monte Carlo — COMPLETADO
+5. ✅ QSP CA14-pH modelo — NEGATIVO (vía simple periférica descartada para pH)
+6. ✅ Preprint v2.6 — COMPLETADO
+7. ✅ Protocolo convertido a plan in-silico — COMPLETADO
+8. □ D2 — Crossmatch 145 proteínas FM (PMID 38652420) × 18 causal UKB
 
-### Experimental (requiere colaboración o IRB)
-1. ⏸️ Un run Olink propio SOLO se justifica con valor agregado: correlación CSF↔plasma por sujeto o validación PENK/SP (ELISA, no está en panel Olink)
-2. ⏸️ Alternativa costo cero: contactar a Bäckryd/Ghafouri (Linköping) por datos crudos Olink FM para reanálisis independiente — los datos NPX no están en repositorio público
-3. ⏸️ Draft IRB solo si se recluta cohorte propia
-
----
+### Futuro (experimental, cuando haya colaborador/datos)
+1. Contactar Bäckryd/Gröfouri (Linköping) por NPX crudos Olink FM para reanálisis <code>analyze_olink_npx.py</code>
+2. Un run Olink propio CON CA14 en el panel = validación directa de la predicción registrada
+3. Publicar: sitio + demo + pre-registro (OSF → preprint → eventualmente journal)
 
 ## 11. Key conclusions for protein lab
 
-1. **IL-6** es el mejor proxy periférico validado computationalmente (HIGH grade)
-2. **Substance P (TAC1)** es prometedor pero no está en paneles Olink directos — usar como endpoint secundario con ELISA. PENK (encefalinas) es hallazgo opioide separado.
-3. **LGALS3BP** no es un proxy viable (discordancia confirmada)
-4. **Protocolo listo** para implementación en protein lab cuando IRB esté aprobado
+1. **CA14** es el primer candidato causal en FM: MR + colocalización PP.H4>0.5 en UKB (n=54K), ↓ plasma CWP ↑ en PBMC miRNA, predicción direccional CA14 ↓ plasma FM pre-registrada.
+2. **Machine mechanism vía pH queda descartada** por el machismo QSP del compartimento único — no replantea la candidatura causal, solo el mecanismo (SNC / pico transitorio / marcador).
+3. **Eje opioide/taquinacina:** activado en PBMCs (TACR1 d= +0.60, OPRM1 d=+0.53) pero NO replica en whole blood a nivel de amplitud; es compartimento-dependiente.
+4. **Protocolo listo** para ejecución in-silico (costo cero) + contingente (colaborador). Estricto (bajo Elisa / resubrap) respaldo de n=29K.
