@@ -19,7 +19,7 @@ Este dossier compila, clasifica y analiza la evidencia de la literatura científ
   - **Hallazgo clave:** Meta-análisis GWAS en 54,629 casos de FM y 2,509,126 controles identificó 26 loci de riesgo a nivel del genoma completo. La heretabilidad genómica está enriquecida **exclusivamente en tejidos cerebrales y tipos celulares neuronales**, priorizando genes como *DRD2*, *MDGA2*, *CAMKV*, *CELF4*, *NCAM1* y *HTT*.
 
 ### 1.2 Mecanismo Molecular de Splicing: Isoformas D2S vs. D2L
-- **Zhang et al. (2007).** *Functional impact of DRD2 exon 6 alternative splicing on presynaptic autoreceptor function.* J Biol Chem. PMID: 17351609.
+- **Zhang et al. (2007).** *Polymorphisms in human dopamine D2 receptor gene affect gene expression, splicing, and neuronal activity during working memory.* Proc Natl Acad Sci USA, 104(51), 20552–20557. PMID: 18077373.
 - **Tayyab et al. (2025).** *Dopamine D2S/D2L Receptor Regulation of Alcohol-Induced Reward and Signalling.* Addict Biol. PMID: 41239854.
   - **Hallazgo clave:** El gen *DRD2* produce dos isoformas principales mediante la inclusión u omisión del **Exón 6** (87 bp, 29 aminoácidos: `VVALSSQFPV SEAAEQARAE AQEAEEEVVG`) en el tercer bucle intracelular (IL3):
     1. **$DRD2_{\text{Short}}$ (D2S, 414 aa):** Omite el Exón 6. Expresada preferentemente a nivel **presináptico** como autorreceptor en terminales dopaminérgicas. Se acopla a $G_{i\alpha2}$ e inhibe la Tirosina Hidroxilasa (TH), controlando la síntesis y liberación de dopamina por retroalimentación.
@@ -39,7 +39,7 @@ Este dossier compila, clasifica y analiza la evidencia de la literatura científ
   - **Hallazgo clave:** Las neuronas dopaminérgicas del núcleo hipotalámico A11 proyectan axones descendentes hacia las láminas dorsales de la médula espinal. La activación de los receptores dopaminérgicos D2/D3 en la médula espinal inhibe la transmisión de las señales nociceptivas y atenúa la hiperalgesia y alodinia mecánica en modelos de dolor crónico.
 
 ### 2.2 Modelos Animales de Fibromialgia y Eje Dopaminérgico
-- **Peng et al. (2022).** *Pramipexole inhibits fibromyalgia-like symptoms in a reserpine-induced mouse model.* Neural Regen Res. PMID: 35799530.
+- **Martins et al. (2022).** *Pramipexole, a dopamine D3/D2 receptor-preferring agonist, attenuates reserpine-induced fibromyalgia-like model in mice.* Neural Regen Res, 17(2), 450–458. PMID: 34269222.
   - **Hallazgo clave:** En modelos murinos de fibromialgia inducidos por reserpina (que agota monoaminas centrales), la administración del agonista dopaminérgico pramipexol revierte la hiperalgesia térmica y mecánica, confirmando el papel del déficit dopaminérgico en la patogénesis del dolor.
 
 ---
@@ -68,7 +68,7 @@ Este dossier compila, clasifica y analiza la evidencia de la literatura científ
 ## BLOQUE 4: Transcripómica de Compartimentos Periféricos y Desmitificación del ARN
 
 ### 4.1 Fracciones Celulares Periféricas y Especificidad Tisular
-- **Kurian et al. (2016).** *Genome-wide expression profiling in the peripheral blood of patients with fibromyalgia.* Clin Exp Rheumatol. PMID: 27157394. (Dataset GSE67311: Sangre completa).
+- **Jones et al. (2016).** *Genome-wide expression profiling in the peripheral blood of patients with fibromyalgia.* Clin Exp Rheumatol, 34(2 Suppl 96), S89–98. PMID: 27157394. (Dataset GSE67311: Sangre completa).
   - Muestra señal alterada en marcadores de granulocitos/mastocitos (*CPA3*, *MS4A2*, *FCER1A*, *HDC*).
 - **Mohapatra et al. (2024).** *Identification of unique genomic signatures in patients with fibromyalgia and chronic pain.* Sci Rep. PMID: 38366049. (Dataset GSE221921: PBMCs).
   - PBMCs (linfocitos/monocitos) carecen de granulocitos; muestran sobreexpresión de *MDGA2* y *DRD2*, pero sin replicación en mastocitos.

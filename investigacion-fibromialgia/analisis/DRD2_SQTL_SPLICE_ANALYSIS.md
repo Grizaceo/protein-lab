@@ -77,4 +77,4 @@ El tercer bucle intracelular (IL3, ubicado entre las hélices transmembrana TM5 
 ## 6. Referencias y Fuentes de Datos
 - **GTEx Consortium v10:** Datasets de expresión mediana y sQTL (`https://gtexportal.org/api/v2`).
 - **Kerrebijn et al. (2025):** GWAS meta-analysis of Fibromyalgia (PMID 41001472).
-- **Zhang et al. (2007):** Functional impact of DRD2 exon 6 alternative splicing on presynaptic autoreceptor function (PMID 17351609).
+- **Zhang et al. (2007):** Polymorphisms in human dopamine D2 receptor gene affect gene expression, splicing, and neuronal activity during working memory. *Proc Natl Acad Sci USA*, 104(51), 20552–20557. PMID: 18077373.

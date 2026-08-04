@@ -57,7 +57,7 @@ Además, tres ejes adicionales han emergido con fuerte evidencia reciente:
   - PMID: 38366049 (Mohapatra et al., 2024)
   - Relevancia: Interrogación de genes GWAS priorizados (DRD2, MDGA2, CAMKV, CELF4) en PBMCs
 - **GSE67311** — Whole blood microarray (70 FM / 70 HC)
-  - PMID: 27157394 (Kurian et al., 2017)
+  - PMID: 27157394 (Jones et al., 2016)
   - Relevancia: Perfil de marcadores de células de la médula y control negativo de mastocitos
 
 ### 1.4 CSF Metabolome Database

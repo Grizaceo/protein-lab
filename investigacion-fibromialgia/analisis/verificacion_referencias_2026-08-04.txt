@@ -1,0 +1,34 @@
+=== VERIFICACIÓN DE REFERENCIAS DEL PREPRINT (2026-08-04) ===
+
+Total PMIDs verificados: 27
+
+PMID 16052595: [OK] Holman AJ | Arthritis Rheum 2005 Aug | A randomized, double-blind, placebo-controlled trial of pramipexole, a dopamine 
+PMID 18077373: [OK] Zhang Y | Proc Natl Acad Sci U S A 2007 Dec 18 | Polymorphisms in human dopamine D2 receptor gene affect gene expression, splicin
+PMID 19499576: [OK] Trott O | J Comput Chem 2010 Jan 30 | AutoDock Vina: improving the speed and accuracy of docking with a new scoring fu
+PMID 24462815: [OK] Rodriguez-Pintó I | Immunol Lett 2014 Oct | Fibromyalgia and cytokines.
+PMID 24711809: [OK] Pacheco R | Front Immunol 2014 | The dopaminergic system in autoimmune diseases.
+PMID 25516281: [OK] Love MI | Genome Biol 2014 | Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.
+PMID 26763911: [OK] Tsilioni I | J Pharmacol Exp Ther 2016 Mar | Neuropeptides CRH, SP, HK-1, and Inflammatory Cytokines IL-6 and TNF Are Increas
+PMID 26922414: [OK] Chinn S | Curr Pain Headache Rep 2016 Apr | Fibromyalgia Pathogenesis and Treatment Options Update.
+PMID 27157394: [OK] Jones KD | Clin Exp Rheumatol 2016 Mar-Apr | Genome-wide expression profiling in the peripheral blood of patients with fibrom
+PMID 28424559: [OK] Bäckryd E | J Pain Res 2017 | Evidence of both systemic inflammation and neuroinflammation in fibromyalgia pat
+PMID 33024295: [OK] Sarzi-Puttini P | Nat Rev Rheumatol 2020 Nov | Fibromyalgia: an update on clinical characteristics, aetiopathogenesis and treat
+PMID 33576773: [OK] O'Mahony LF | Rheumatology (Oxford) 2021 Jun 18 | Is fibromyalgia associated with a unique cytokine profile? A systematic review a
+PMID 34269222: [OK] Martins CP | Neural Regen Res 2022 Feb | Pramipexole, a dopamine D3/D2 receptor-preferring agonist, attenuates reserpine-
+PMID 35085583: [OK] Edwards S | Neuropharmacology 2022 May 1 | Pramipexole treatment attenuates mechanical hypersensitivity in male rats experi
+PMID 37003519: [OK] De la Luz-Cuellar YE | Eur J Pharmacol 2023 Jun 5 | Spinal dopaminergic D(1)-and D(2)-like receptors have a sex-dependent effect in 
+PMID 38366049: [OK] Mohapatra G | Sci Rep 2024 Feb 17 | Identification of unique genomic signatures in patients with fibromyalgia and ch
+PMID 39310900: [OK] Bi W | J Inflamm Res 2024 | Unraveling Shared Diagnostic Biomarkers of Fibromyalgia in Ankylosing Spondyliti
+PMID 40048323: [OK] Li ZY | Adv Sci (Weinh) 2025 Apr | Large-Scale Plasma Proteomics to Profile Pathways and Prognosis of Chronic Pain.
+PMID 40313599: [OK] Zhao F | Front Genet 2025 | Identification of diagnostic biomarkers for fibromyalgia using gene expression a
+PMID 41001472: [OK] Kerrebijn I | medRxiv 2025 Sep 19 | The genetic architecture of fibromyalgia across 2.5 million individuals.
+PMID 41025730: [OK] Chen L | Adv Sci (Weinh) 2025 Dec | Diagnosis, Prognosis, and Drug Target Discovery for Chronic Widespread Pain: A L
+PMID 41239854: [OK] Tayyab M | Addict Biol 2025 Nov | Dopamine D2S/D2L Receptor Regulation of Alcohol-Induced Reward and Signalling.
+PMID 42034459: [OK] Hamblin R | Best Pract Res Clin Endocrinol Metab 2026 Mar | Impulse control disorders and dopamine agonists.
+PMID 42109571: [OK] Gowri Gopal K | In Silico Pharmacol 2026 | Molecular insights into fibromyalgia: association of hub genes with pain targets
+PMID 42217644: [OK] Lindström S | J Affect Disord 2026 Nov 1 | Pramipexole exposure and risk of incident gambling disorder in individuals with 
+PMID 42489789: [OK] Joodi SA | Inflammopharmacology 2026 Jul 23 | Therapeutic and research frontiers in fibromyalgia: integrating pathophysiology 
+PMID 7526868: [OK] Russell IJ | Arthritis Rheum 1994 Nov | Elevated cerebrospinal fluid levels of substance P in patients with the fibromya
+
+--- RESULTADO ---
+TODAS las referencias resuelven correctamente.

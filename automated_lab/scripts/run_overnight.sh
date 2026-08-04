@@ -8,6 +8,8 @@ set -euo pipefail
 LAB_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$LAB_DIR"
 
+export PYTHONPATH="$(cd "$LAB_DIR/.." && pwd)"
+
 CAMPAIGN="${1:-fibromialgia_ruta_b}"
 HOURS="${2:-8}"
 MAX_EXPERIMENTS="${3:-}"

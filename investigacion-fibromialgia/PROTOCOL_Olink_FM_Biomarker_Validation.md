@@ -117,6 +117,10 @@ stats de UKB CWP), el análisis será:
 # 3. Bonferroni sobre targets: CA14 + IL-8 (control) + SP (ELISA) → p*3
 # 4. Sensibilidad: excluir medicación opioide/antidepresiva (confusor conocido);
 #    estratificar por sexo (FM ~90% mujeres) y edad
+#    NOTA AUDITORÍA 2026-08-04: GSE221921 (PBMC discovery) carece de datos de
+#    medicación, edad y BMI — el eje opioide (OPRM1/OPRK1/TACR1) observado allí
+#    no puede distinguirse de un efecto farmacológico. La cohorte Olink debe
+#    registrar medicación al momento del muestreo y estratificar obligatoriamente.
 # 5. Control de calidad: LOD, CV de duplicados; NPX fuera de rango → excluir
 # 6. Reportar efecto (d de Cohen) + IC 95%, no solo p — el tamaño importa
 ```

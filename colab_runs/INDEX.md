@@ -48,5 +48,11 @@
 
 - **Mock runs archivados** en `archive/mock_runs/` — no representan corridas reales
 - **Duplicados eliminados:** nipah_iter4/ y outputs/ sueltos
-- **15 corridas reales** conservadas en colab_runs/
-- **Próximo paso:** ipTM es el cuello de botella. RFdiffusion con 50 pasos T + AF2 en T4 de Colab no está generando binders con ipTM >0.16 en Nipah ni >0.06 en Ferritin
+- **15 corridas reales** conservadas en colab_runs/ (pipeline RFdiffusion, superseded)
+- **Próximo paso:** migrar a BindCraft — ver `binder_design/README.md`
+
+## BindCraft runs
+
+| Run | Pipeline | Designs | Best ipTM | Status |
+|-----|----------|---------|-----------|--------|
+| *(pending first Colab run)* | BindCraft | — | — | infrastructure ready |

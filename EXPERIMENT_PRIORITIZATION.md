@@ -1,36 +1,30 @@
 # EXPERIMENT PRIORITIZATION — protein-lab
-**Generado:** 2026-06-25
+**Generado:** 2026-06-25 | **Actualizado:** 2026-07-04 (post-auditoria + binder_design)
 **Criterio:** Impacto científico / viabilidad técnica / recursos disponibles / tiempo a resultado
 
 ---
 
-## Metodología de priorización
+## P0 — INMEDIATO (línea activa principal)
 
-Cada experimento se evalúa en 4 ejes (1-5 puntos cada uno):
+### P0-0: BindCraft — Validación Nipah G (competencias Adaptyv)
+**Score: 20/20** (Impacto 5, Viabilidad 5, Recursos 5, Tiempo 4)
 
-| Eje | Qué mide |
-|-----|----------|
-| **Impacto** | Potencial de publicación, relevancia científica/económica |
-| **Viabilidad** | ¿Están los scripts/inputs listos? ¿Requiere infraestructura nueva? |
-| **Recursos** | ¿Se puede ejecutar en RTX 4060 local o necesita Colab/Kaggle? |
-| **Tiempo** | ¿Cuánto tarda en dar resultado? (rápido = más iteración) |
-
-**Score máximo: 20 puntos**
+- **Qué:** Migrar de RFdiffusion (ipTM max 0.16) a BindCraft; smoke test 50 traj en Colab
+- **Archivos:** `binder_design/` (README, COLAB_INSTRUCTIONS, scripts, configs)
+- **Resultado esperado:** ≥1 diseño con ipTM > 0.5 (valida migración de pipeline)
+- **Próximo paso:** `python binder_design/scripts/prepare_bindcraft_target.py --mode both` → Colab
+- **Bloqueo:** Ejecución manual en Colab (RTX 4060 local no soporta BindCraft)
+- **Competencia:** Todas cerradas — modo practicar-y-esperar (`COMPETITION_STATUS.md`)
 
 ---
 
-## P0 — INMEDIATO (ejecutar esta semana)
+## P0 — INMEDIATO (secundario)
 
-### P0-1: FEP/MM-PBSA D2 vs D3 Selectivity (scripts → ejecución local)
-**Score: 19/20** (Impacto 5, Viabilidad 4, Recursos 5, Tiempo 5)
+### P0-1: FEP/MM-PBSA D2 vs D3 Selectivity
+**Score: 8/20** (Impacto 5, Viabilidad 1, Recursos 5, Tiempo 2) — **CORREGIDO**
 
-- **Qué:** Correr los 5 scripts FEP en RTX 4060 (prep + MD 10ns validación)
-- **Archivos:** `investigacion-fibromialgia/fep/scripts/*.py` (todos existen, ~80% implementados)
-- **Resultado esperado:** ΔG_bind para 6 candidatos en DRD2 y DRD3, ranking de selectividad
-- **Próximo paso:** `conda activate fep && python scripts/01_prepare_systems.py --step receptors`
-- **Bloqueo:** Requiere entorno `fep` (conda). Si no existe, crear con environment.yml
-- **Tiempo estimado:** 1 día prep, 1-2 días MD validación, análisis inmediato
-- **Por qué P0:** Es el experimento con mayor ratio impacto/esfuerzo. Los scripts existen, los inputs están definidos (6VMS, 3PBL, 5 SMILES), y el preprint lo justifica directamente.
+- **Estado real:** carpeta `investigacion-fibromialgia/fep/` **NO EXISTE** en disco
+- **Acción:** crear scripts desde cero antes de ejecutar; ya no es P0 hasta que exista infra
 
 ### P0-2: EAC Automated Lab — Próxima campaña (fibromialgia_ruta_a)
 **Score: 17/20** (Impacto 4, Viabilidad 5, Recursos 5, Tiempo 3)
@@ -153,11 +147,12 @@ Cada experimento se evalúa en 4 ejes (1-5 puntos cada uno):
 
 | Experimento | Bloqueo |
 |-------------|---------|
-| ESMFold | ❌ CRASHEA UBUNTU (16GB VRAM). No usar. Documentado en README. |
+| ESMFold | CRASHEA UBUNTU (16GB VRAM). No usar. Documentado en README. |
 | Nav1.8 DTI | Requiere Colab (1956 aa). Baja prioridad vs otros targets. |
-| Re SAC CRO dossier | Paper en redacción. No hay experimento computacional pendiente. |
-| Nipah G Binder | Estancado en ipTM ~0.16 (necesita >0.5). RFdiffusion no está generando buenos binders. Rediseño de estrategia necesario. |
-| Ferritin Biosensor (RFdiffusion) | Estancado en ipTM ~0.06. Mismo problema que Nipah. |
+| Re SAC CRO dossier | **Auditoria 2026-07-04:** narrativa sin DFT/WHAM/Marcus en disco; TRL real 1-2 |
+| Nipah G Binder (RFdiffusion) | **Supersedido por BindCraft** — ver binder_design/ |
+| Ferritin Biosensor (RFdiffusion) | Estancado ipTM ~0.06. Depriorizado vs binder_design |
+| GH7 MD 100ns | **Auditoria:** trayectorias son ~15 ps, no 100 ns; analisis ausente |
 
 ---
 
@@ -181,6 +176,8 @@ Semana 2 (Jul 3 - Jul 9):
 
 | Experimento | Métrica | Umbral |
 |-------------|---------|--------|
+| BindCraft | ipTM | >0.50 = migración OK; >0.75 = competitivo |
+| BindCraft | Rosetta ΔΔG | < −30 REU = pasa filtro wet-lab |
 | FEP | ΔΔG selectividad D2/D3 | >2 kcal/mol diferencia = selectividad real |
 | EAC DTI | pKd nuevo | >7 (sub-100nM) = hit |
 | GH7 MD | RMSD convergencia | <3Å después de 50ns |

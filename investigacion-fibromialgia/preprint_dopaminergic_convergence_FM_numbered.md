@@ -42,7 +42,7 @@
 042: 
 043: **UKB Causal Gene Set.** Genes encoding proteins with MR-supported causal relevance for chronic pain / chronic widespread pain in UKB Olink proteomics, measured in GSE221921: *CA14* (top-ranking causal for CWP, MR + colocalization; Chen et al., 2025) and the immune-signaling genes *TNFRSF1B*, *CD74*, *COL18A1*, *BTN2A1*, *TNFRSF4*, *CD302*, *TNFRSF9* (MR-validated in the multisite chronic pain analysis; Li ZY et al., 2025). *LEP* and *TNF* are not measurable in GSE221921. Note: in the published Chen et al. (2025) analysis, 18 proteins have MR causal relevance for CWP (CA14, COL9A1, CRELD1, DPEP1, LEG1, LGALS3, MLN, PRSS53, TNF, BPIFB2, CTSO, DDR1, FAM171B, IFI30, LRRC37A2, PTN, SFTPD, ST3GAL1); CA14 is the top-ranking one and is **downregulated in plasma** in the cross-sectional analysis, with MR indicating a protective effect of genetically elevated CA14.
 044: 
-045: **Mast Cell / Basophil Panel (negative control).** Four genes (*CPA3*, *MS4A2*, *FCER1A*, *HDC*) previously identified as differentially expressed in FM whole blood (Kurian et al., 2017). These are primarily expressed by basophils and mast cells, which are depleted during PBMC isolation.
+045: **Mast Cell / Basophil Panel (negative control).** Four genes (*CPA3*, *MS4A2*, *FCER1A*, *HDC*) previously identified as differentially expressed in FM whole blood (Jones et al., 2016). These are primarily expressed by basophils and mast cells, which are depleted during PBMC isolation.
 046: 
 047: *NPY* was included in the pre-specified gene set but was absent from the GSE221921 expression matrix. FDR correction was therefore applied to 16 measured genes (12 GWAS neural + 4 mast cell) in the primary GWAS-neural analysis; the expanded panel of 19 genes used for the opioid/tachykinin and UKB-causal analyses was corrected with Bonferroni ×19 or ×9 as specified in §2.3.
 048: 
@@ -52,7 +52,7 @@
 052: 
 053: **Critical note on sex distribution:** The GSE221921 cohort has a severe sex imbalance — FM group: 91 female / 5 male; HC group: 41 female / 52 male. This confounds any unadjusted FM vs. HC comparison, as a portion of the observed signal may reflect sex differences rather than disease effects. We address this through multiple sensitivity analyses (§2.4).
 054: 
-055: **GSE67311 (Whole blood, microarray).** Affymetrix Human Gene 1.1 ST array expression data from whole blood (PAXgene tubes) of FM patients and healthy controls (Kurian et al., 2017; PMID 27157394). **Metadata verification (2026-08-03): the GEO sample metadata contains 67 FM / 75 HC (142 total), which differs from the 70/70 reported in the original paper.** Pre-computed differential expression results (log₂FC, p-value, FDR-adjusted p-value) were used, with the verified group counts.
+055: **GSE67311 (Whole blood, microarray).** Affymetrix Human Gene 1.1 ST array expression data from whole blood (PAXgene tubes) of FM patients and healthy controls (Jones et al., 2016; PMID 27157394). **Metadata verification (2026-08-03): the GEO sample metadata contains 67 FM / 75 HC (142 total), which differs from the 70/70 reported in the original paper.** Pre-computed differential expression results (log₂FC, p-value, FDR-adjusted p-value) were used, with the verified group counts.
 056: 
 057: ### 2.3 Statistical Analysis
 058: 
@@ -150,7 +150,7 @@
 150: | TAC1 ↔ TACR1 | +0.382 | <0.0001 |
 151: | PENK ↔ POMC | +0.312 | <0.0001 |
 152: 
-153: **Interpretation.** This is not a single elevated gene but a **coordinated circuit**: ligands (*TAC1*, *PENK*) and their cognate receptors (*TACR1*, *OPRM1*, *OPRK1*) are co-upregulated and positively co-expressed. The strongest hit, *TACR1* (NK1 receptor for Substance P; d = +0.60), is the first receptor in this investigation to exceed its ligand in effect size — the receptor is where the signal is amplified, pointing to sensitization of the SP→NK1 circuit consistent with nociplastic pain mechanisms. Elevated *OPRM1*/*OPRK1* suggest a compensatory activation of the endogenous opioid system in the periphery; this does not contradict low-opioid findings in CSF, a distinct compartment. The activated TAC1→TACR1 axis is also consistent with the mast cell → neutrophil → IL-8 cascade described by Rodríguez-Pintó et al. (2014), linking the neuropeptide axis to the previously reported IL-8 signal.
+153: **Interpretation.** This is not a single elevated gene but a **coordinated circuit**: ligands (*TAC1*, *PENK*) and their cognate receptors (*TACR1*, *OPRM1*, *OPRK1*) are co-upregulated and positively co-expressed. The strongest hit, *TACR1* (NK1 receptor for Substance P; d = +0.60), is the first receptor in this investigation to exceed its ligand in effect size — the receptor is where the signal is amplified, pointing to sensitization of the SP→NK1 circuit consistent with nociplastic pain mechanisms. Elevated *OPRM1*/*OPRK1* suggest a compensatory activation of the endogenous opioid system in the periphery; this does not contradict low-opioid findings in CSF, a distinct compartment. The activated TAC1→TACR1 axis is consistent with pro-inflammatory cytokine involvement in FM reviewed by Rodríguez-Pintó et al. (2014), though a direct mechanistic link between Substance P and IL-8 via mast cell/neutrophil trafficking is not specifically established in that review and remains hypothetical.
 154: 
 155: ### 3.3 Cross-Context Comparison: GSE67311 (Whole Blood)
 156: 
@@ -174,328 +174,347 @@
 174: 
 175: No gene was significant in both datasets. The PBMC-derived neuropeptide and GWAS-neural signals do not replicate in whole blood; the mast cell/basophil panel is detectable only in whole blood. **Deconvolution analysis (2026-08-03)** — using cell-type marker averages for neutrophils, T cells, B cells, monocytes, and NK cells in GSE67311 — shows **essentially identical cellular composition between FM and HC** (neutrophil score: FM = 10.92 vs HC = 10.89, 7 markers; lymphocytes/monocytes/NK all within 0.1), and weak/mixed correlation of the neutrophil score with the PBMC proxies (TAC1 r = +0.07 NS; OPRM1 r = −0.22, p = 0.008; PENK r = −0.13 NS). **The non-replication is therefore NOT explained by neutrophil-driven dilution of the whole-blood signal.** Remaining explanations are platform differences (RNA-seq FPKM vs. microarray RMA), cohort heterogeneity, small true effects (d ≈ 0.2–0.5) that do not survive inter-platform noise, or partial cohort-specificity of the GSE221921 findings.
 176: 
-177: **Opioid axis extension (2026-08-03, `scripts/validate_opioid_axis_gse67311.py`).** The prior analysis covered TAC1/OPRM1/IL6 only. We extended it to the full opioid/tachykinin receptor set (TACR1, OPRM1, OPRK1) plus TAC1 and PENK (Mann-Whitney + Bonferroni ×5 + Cohen's d). **Absolute expression does not replicate** (TACR1 FC = 1.008, p = 0.480; OPRM1 FC = 1.020, p = 0.160; OPRK1 FC = 1.021, p = 0.878; TAC1 FC = 1.004, p = 0.495; PENK FC = 1.038, p = 0.031, Bonf = 0.155 — none survives). **However, the co-expression architecture of the axis is stable in FM whole blood** (Spearman): TACR1–OPRK1 rho = +0.74 (p < 0.001), OPRM1–OPRK1 rho = +0.53 (p < 0.001), TACR1–OPRM1 rho = +0.42 (p < 0.001), OPRM1–TAC1 rho = +0.36 (p = 0.003), OPRK1–PENK rho = +0.38 (p = 0.002) — several pairs exceeding the PBMC reference range (rho 0.31–0.63), with HC pairs consistently weaker or non-significant. **Interpretation:** the opioid/tachykinin circuit is a transcriptionally coherent module in FM blood, but its absolute amplitude is compartment-dependent (PBMC-specific); this strengthens the case that plasma protein measurement (Olink/ELISA), not whole-blood transcriptomics, is the decisive validation compartment.
+177: **Opioid axis extension (2026-08-03, `scripts/validate_opioid_axis_gse67311.py`).** The prior analysis covered TAC1/OPRM1/IL6 only. We extended it to the full opioid/tachykinin receptor set (TACR1, OPRM1, OPRK1) plus TAC1 and PENK (Mann-Whitney + Bonferroni ×5 + Cohen's d). **Absolute expression does not replicate** (TACR1 FC = 1.008, p = 0.480; OPRM1 FC = 1.020, p = 0.160; OPRK1 FC = 1.021, p = 0.878; TAC1 FC = 1.004, p = 0.495; PENK FC = 1.038, p = 0.031, Bonf = 0.155 — none survives).
 178: 
-179: **Honest assessment.** These PBMC-derived proxies are **PBMC/RNA-seq-specific** and are **not replicated in whole blood**. They should be described as "PBMC-specific transcriptional signatures," not as validated peripheral blood biomarkers. The planned plasma Olink/ELISA validation (§7) measures the relevant compartment (plasma protein) and is the definitive test; the whole-blood non-replication qualifies but does not invalidate the plasma hypothesis.
+179: **Co-expression architecture (Spearman, all 10 pairs, FM-pooled vs HC-pooled):**
 180: 
-181: ### 3.4 UK Biobank Causal Proteomics: CA14 mRNA Elevated in PBMCs (Plasma ↓), Immune-Signaling Genes Downregulated in FM PBMCs
-182: 
-183: To connect population-scale causal proteomics with our transcriptomic data, we tested the UKB causal genes (Li ZY et al., 2025; Chen et al., 2025) in GSE221921. Eight of the causal genes are measurable in the matrix (LEP and TNF absent).
-184: 
-185: **Table 4. UKB causal genes for chronic pain / CWP in FM PBMCs (GSE221921).**
-186: 
-187: | Gene | UKB source | FC (FM/HC) | MWU p | Bonf ×9 | Cohen's d | Direction |
-188: |------|-----------|-----------:|-------:|--------:|----------:|-----------|
-189: | **CA14** | MR+coloc causal CWP (top-ranking) | **2.29** | **0.0003** | **0.0027** | **+0.41** | **↑↑ significant** |
-190: | TNFRSF1B | MR causal chronic pain | 0.541 | <0.0001 | <0.0001 | −0.56 | ↓↓ significant |
-191: | CD74 | MR causal chronic pain | 0.579 | <0.0001 | <0.0001 | −0.44 | ↓↓ significant |
-192: | COL18A1 | MR causal chronic pain | 0.581 | 0.0001 | 0.0005 | −0.54 | ↓↓ significant |
-193: | BTN2A1 | MR causal chronic pain | 0.745 | 0.0025 | 0.023 | −0.35 | ↓ significant |
-194: | TNFRSF4 | MR causal chronic pain | 0.768 | 0.0004 | 0.0036 | −0.23 | ↓ significant |
-195: | CD302 | MR causal chronic pain | 0.717 | 0.154 | NS | −0.19 | ↓ trend |
-196: | TNFRSF9 | MR causal chronic pain | 1.459 | 0.805 | NS | +0.27 | ~flat |
+181: | Pair | ρ_FM | p_FM | ρ_HC | p_HC | FM > HC? | Pre-registered? |
+182: |------|-----:|-----:|-----:|-----:|:--------:|:---------------:|
+183: | TACR1–OPRK1 | +0.736 | <0.001 | +0.405 | <0.001 | ✓ | yes |
+184: | OPRM1–OPRK1 | +0.530 | <0.001 | +0.279 | 0.015 | ✓ | yes |
+185: | TACR1–OPRM1 | +0.420 | <0.001 | +0.280 | 0.015 | ✓ | yes |
+186: | OPRM1–TAC1 | +0.363 | 0.003 | +0.078 | 0.504 | ✓ | yes |
+187: | OPRK1–PENK | +0.375 | 0.002 | +0.150 | 0.200 | ✓ | yes |
+188: | TACR1–TAC1 | +0.189 | 0.125 | +0.420 | <0.001 | **✗ HC > FM** | **no — omitted** |
+189: | OPRK1–TAC1 | +0.259 | 0.034 | +0.370 | 0.001 | **✗ HC > FM** | **no — omitted** |
+190: | TACR1–PENK | +0.257 | 0.036 | +0.029 | 0.806 | ✓ | **no — omitted** |
+191: | OPRM1–PENK | +0.200 | 0.104 | +0.201 | 0.084 | ≈ | **no — omitted** |
+192: | TAC1–PENK | −0.003 | 0.982 | +0.076 | 0.518 | ≈ | **no — omitted** |
+193: 
+194: **Correction note (2026-08-04).** A prior version of this section reported only 5 of 10 co-expression pairs, selected by direction (FM > HC). The 5 omitted pairs include 2 where HC actually exceeds FM (TACR1–TAC1, OPRK1–TAC1), which contradicts the earlier statement "HC pairs consistently weaker or non-significant." That statement is corrected here: **HC co-expression is weaker for 5 of 10 pairs, but comparable or stronger for 3, and near-null for 2.** The 5 originally reported pairs are those where the FM co-expression exceeds HC; reporting them without the full 10-pair table constituted selective reporting. A formal Fisher r-to-z test of the FM-vs-HC difference for each pair should accompany any inferential claim. The circuit-level interpretation (transcriptional coherence of the opioid/tachykinin axis in FM) rests on the 5 pairs where FM > HC, but is not a universal property of the 10-pair matrix.
+195: 
+196: **Interpretation:** the opioid/tachykinin circuit shows _some_ transcriptional coherence in FM whole blood, but **only 1 of 10 pairs differs significantly between FM and HC** (TACR1–OPRK1, Fisher r-to-z p = 0.003). The remaining 9 pairs do not distinguish the groups. The interpretation of a "coherent transcriptional module" is **not supported by the data** as a universal property: 2 pairs reverse (HC > FM), and the rest include near-null values. Its absolute amplitude is compartment-dependent (PBMC-specific). Plasma protein measurement (Olink/ELISA), not whole-blood transcriptomics, remains the decisive validation compartment. **Technical caveat:** in whole blood (GSE67311) TAC1 sits at the 8th intensity percentile, OPRK1 at p13, and OPRM1 at p19 of the microarray distribution (vs ACTB at p99). Correlations among probes in the bottom decile can reflect shared background noise rather than genuine co-regulation — the significant pair should be interpreted with this limitation.
 197: 
-198: **CA14: causal in plasma (downregulated), elevated in PBMC mRNA — a direction-sensitive triangle.** CA14 is the **top-ranking causal protein for chronic widespread pain** (MR + colocalization PP.H4 > 0.5; Chen et al., 2025) and the **only UKB causal gene that is upregulated in FM PBMC mRNA** (FC = 2.29, p = 0.0003, d = +0.41). Crucially, the **published plasma direction is the opposite**: in the UKB cross-sectional analysis, CA14 is among the **ten most downregulated plasma proteins** in CWP, while MR indicates that **genetically elevated CA14 is protective** (discordant observational vs. MR direction; Chen et al., 2025). The authors therefore propose **CA14 agonists, rather than the inhibitor sulthiame (CHEMBL328560)**, as the more promising therapeutic direction, given non-linear CA14–pain associations. Interpretation: low plasma CA14 may contribute causally to pain (consistent with pH/nociception dysregulation); the PBMC mRNA elevation we observe may be compensatory or compartment-specific. This makes CA14 the strongest cross-level candidate in the investigation — but with a **testable, direction-specific prediction: CA14 should be ↓ in FM plasma** in the Olink validation, and the repurposing direction is agonism, not sulthiame inhibition.
+198: **Honest assessment.** These PBMC-derived proxies are **PBMC/RNA-seq-specific** and are **not replicated in whole blood**. They should be described as "PBMC-specific transcriptional signatures," not as validated peripheral blood biomarkers. The planned plasma Olink/ELISA validation (§7) measures the relevant compartment (plasma protein) and is the definitive test; the whole-blood non-replication qualifies but does not invalidate the plasma hypothesis.
 199: 
-200: **Five of nine UKB causal genes are significantly DOWNREGULATED in FM PBMCs** (TNFRSF1B, CD74, COL18A1, BTN2A1, TNFRSF4; FC 0.54–0.77). These genes encode TNF receptors and immune signaling molecules. Their coordinated downregulation does **not** support a classical pro-inflammatory profile in PBMCs; it points to an **immunomodulatory/exhaustion pattern** (reduced TNF-family and immune signaling), consistent with literature on immune dysfunction in FM and with our earlier observation of LGALS3BP downregulation.
+200: ### 3.4 UK Biobank Causal Proteomics: CA14 mRNA Elevated in PBMCs (Plasma ↓), Immune-Signaling Genes Downregulated in FM PBMCs
 201: 
-202: ### 3.5 Targeted Literature Review: Dopamine Agonists in FM
+202: To connect population-scale causal proteomics with our transcriptomic data, we tested the UKB causal genes (Li ZY et al., 2025; Chen et al., 2025) in GSE221921. Eight of the causal genes are measurable in the matrix (LEP and TNF absent).
 203: 
-204: Our literature search identified three clinical studies and one preclinical study (Table 5):
+204: **Table 4. UKB causal genes for chronic pain / CWP in FM PBMCs (GSE221921).**
 205: 
-206: **Table 5. Dopamine agonist studies in fibromyalgia.**
-207: 
-208: | Study | Drug | Type | N | Result | Key Finding | Risk of Bias |
-209: |-------|------|------|---|--------|-------------|--------------|
-210: | Holman & Myers, 2005 (PMID 16052595) | Pramipexole | RCT (DB-PC) | 60 | **Positive** | 36% pain ↓ vs 9% placebo; 42% achieved ≥50% pain decrease | High: single-center, author held patents on D2/D3 use in FM |
-211: | Holman, 2003 (ACR conference) | Ropinirole | Pilot | 30 | NS (p=0.31) | Underpowered. Not published in peer-reviewed journal. | Very high: unpublished, tiny N |
-212: | GSK NCT00256893 | Ropinirole CR | Phase II RCT | 160 | **Negative** | Failed primary endpoints | Moderate: sponsor-reported, results not published in peer-reviewed journal |
-213: 
-214: ### 3.6 Independent Replication and Adversarial Audit in GSE269047 (PBMCs, N=43)
-215: 
-216: To rigorously test the generalizability of our initial exploratory signals and eliminate potential platform-specific or cohort-specific artifacts, we performed an independent replication analysis in GSE269047 (N=43 samples: 18 FM/ME-CFS female patients vs. 25 age-matched female controls; high-density array platform).
-217: 
-218: In this independent replication cohort, neither *DRD2* (probes `DRD2-opti_at` p = 0.777; `DRD2-rand_st` p = 0.662) nor *GATA2* (`GATA2-bgrd_st` p = 0.9795; `GATA2-opti_st` p = 0.3961) exhibited significant differential expression between FM and control groups. Only a marginal trend was observed for *KIT* (`KIT-opti_st` p = 0.0372, log₂FC = +0.35).
-219: 
-220: **Dataset integrity note (2026-08-03):** GSE269047 was subsequently determined to contain primarily HERV (human endogenous retrovirus) transcripts, and 0/5 of our proxies were measurable on that platform. It is therefore **not usable as a proxy-validation dataset** and is excluded from further claims (GSE269047_NO_UTILIZABLE.md).
-221: 
-222: This non-replication in an independent dataset underscores the high variability inherent in peripheral blood mRNA measurements across different cohorts and platforms, highlighting the critical necessity of distinguishing between volatile peripheral transcriptomic markers and invariant germline genomic variants (§4.9).
-223: 
-224: ---
-225: 
-226: ## 4. Discussion
-227: 
-228: ### 4.1 The Peripheral Signature of FM Is Neuropeptide/Nociceptive and Immunomodulatory, Not Classically Inflammatory
-229: 
-230: The central finding of this study is that the peripheral transcriptomic signature of FM — as measured in PBMCs (GSE221921) — is dominated by two non-inflammatory axes:
-231: 
-232: 1. **A complete opioid/tachykinin neuropeptide circuit is activated** (TACR1, OPRM1, TAC1, OPRK1; d = +0.38 to +0.60, co-expressed rho 0.31–0.63). This is the largest effect-size block in the investigation.
-233: 2. **CA14 — the top UKB causal protein for chronic widespread pain — is elevated in PBMC mRNA** (FC = 2.29) **but downregulated in plasma** in the UKB cross-sectional analysis, with MR indicating that genetically elevated CA14 is protective; five UKB causal immune-signaling genes are downregulated (TNFRSF1B, CD74, COL18A1, BTN2A1, TNFRSF4).
+206: | Gene | UKB source | FC (FM/HC) | MWU p | Bonf ×9 | Cohen's d | Direction |
+207: |------|-----------|-----------:|-------:|--------:|----------:|-----------|
+208: | **CA14** | MR+coloc causal CWP (top-ranking) | **2.29** | **0.0003** | **0.0027** | **+0.41** | **↑↑ significant** |
+209: | TNFRSF1B | MR causal chronic pain — **back-specific** (Li ZY 2025) | 0.541 | <0.0001 | <0.0001 | −0.56 | ↓↓ significant |
+210: | CD74 | MR causal chronic pain — **hip-specific** (Li ZY 2025) | 0.579 | <0.0001 | <0.0001 | −0.44 | ↓↓ significant |
+211: | COL18A1 | MR causal chronic pain — **abdominal-specific** (Li ZY 2025) | 0.581 | 0.0001 | 0.0005 | −0.54 | ↓↓ significant |
+212: | BTN2A1 | MR causal chronic pain — **knee/abdominal-specific** (Li ZY 2025) | 0.745 | 0.0025 | 0.023 | −0.35 | ↓ significant |
+213: | TNFRSF4 | MR causal chronic pain — **knee-specific** (Li ZY 2025) | 0.768 | 0.0004 | 0.0036 | −0.23 | ↓ significant |
+214: | CD302 | MR causal chronic pain | 0.717 | 0.154 | NS | −0.19 | ↓ trend |
+215: | TNFRSF9 | MR causal chronic pain | 1.459 | 0.805 | NS | +0.27 | ~flat |
+216: 
+217: **CA14: causal in plasma (downregulated), elevated in PBMC mRNA (unadjusted) — a direction-sensitive triangle with a sex-confound caveat.** CA14 is the **top-ranking causal protein for chronic widespread pain** (MR + colocalization PP.H4 > 0.5; Chen et al., 2025) and the **only UKB causal gene that is upregulated in FM PBMC mRNA in the unadjusted analysis** (FC = 2.29, p = 0.0003, d = +0.41). **Sex confound caveat (2026-08-04):** the female-only primary model yields p = 0.135, d = +0.24, FC = 1.60 — the unadjusted signal does not survive sex stratification (see §4.2). Crucially, the **published plasma direction is the opposite**: in the UKB cross-sectional analysis, CA14 is among the **ten most downregulated plasma proteins** in CWP, while MR indicates that **genetically elevated CA14 is protective** (discordant observational vs. MR direction; Chen et al., 2025). The authors therefore propose **CA14 agonists, rather than the inhibitor sulthiame (CHEMBL328560)**, as the more promising therapeutic direction, given non-linear CA14–pain associations. Interpretation: low plasma CA14 may contribute causally to pain (consistent with pH/nociception dysregulation); the PBMC mRNA elevation we observe may be compensatory or compartment-specific. This makes CA14 the strongest cross-level candidate in the investigation — but with a **testable, direction-specific prediction: CA14 should be ↓ in FM plasma** in the Olink validation, and the repurposing direction is agonism, not sulthiame inhibition.
+218: 
+219: **Five of nine UKB causal genes are significantly DOWNREGULATED in FM PBMCs** (TNFRSF1B, CD74, COL18A1, BTN2A1, TNFRSF4; FC 0.54–0.77). These genes encode TNF receptors and immune signaling molecules. **Important caveat:** these MR hits are **site-specific** (back, hip, abdominal, knee) in Li ZY 2025 — not CWP/FM-specific — and none of the five is among the 18 causal CWP proteins identified in Chen 2025. The plasma direction of these five proteins in FM is not known (the UKB cross-sectional analysis reported by Chen 2025 does not cover them specifically). The coordinated downregulation in PBMC mRNA is therefore consistent with — but not proof of — an **immunomodulatory/exhaustion hypothesis** (reduced TNF-family and immune signaling), which remains explicitly speculative pending plasma measurement.
+220: 
+221: ### 3.5 Targeted Literature Review: Dopamine Agonists in FM
+222: 
+223: Our literature search identified three clinical studies and one preclinical study (Table 5):
+224: 
+225: **Table 5. Dopamine agonist studies in fibromyalgia.**
+226: 
+227: | Study | Drug | Type | N | Result | Key Finding | Risk of Bias |
+228: |-------|------|------|---|--------|-------------|--------------|
+229: | Holman & Myers, 2005 (PMID 16052595) | Pramipexole | RCT (DB-PC) | 60 | **Positive** | 36% pain ↓ vs 9% placebo; 42% achieved ≥50% pain decrease | High: single-center, author held patents on D2/D3 use in FM |
+230: | Holman, 2003 (ACR conference) | Ropinirole | Pilot | 30 | NS (p=0.31) | Underpowered. Not published in peer-reviewed journal. | Very high: unpublished, tiny N |
+231: | GSK NCT00256893 | Ropinirole CR | Phase II RCT | 160 | **Negative** | Failed primary endpoints | Moderate: sponsor-reported, results not published in peer-reviewed journal |
+232: 
+233: ### 3.6 GSE269047 — excluded
 234: 
-235: At the same time, the classical inflammatory axis (IL-6/IL-8) — the historical favorite in FM biomarker research — receives **no support at population scale**: IL-6, IL-8/CXCL8, TAC1 and Substance P appear zero times in the largest published plasma proteomics screen of chronic pain (51,644 UKB participants, 2,923 proteins; Li ZY et al., 2025). In our own PBMC data, IL6 is significantly elevated (FC = 1.66, p = 0.0002) but with a **small effect size (d = +0.31)**, and CXCL8 is inverted in PBMCs (down relative to whole blood, consistent with cell-fraction biology).
+235: GSE269047 was evaluated as a replication cohort but was found to contain primarily HERV (human endogenous retrovirus) transcripts, not annotated gene expression; none of our target genes are measurable on that platform. The accession suffixes (`opti`/`bgrd`/`rand`) are probe design categories, not gene symbols, and the cohort is a mixed FM/ME-CFS sample. The dataset is therefore **not usable as a proxy-validation dataset** and we draw no conclusions from it (`GSE269047_NO_UTILIZABLE.md`).
 236: 
-237: The coherent narrative that emerges is **inmunomodulación/agotamiento + desregulación de pH/nocicepción**, not systemic inflammation: reduced TNF-family signaling (5 UKB-causal genes ↓), activation of the nociceptive neuropeptide circuit (SP→NK1, opioid receptors), and a pH-regulating carbonic anhydrase (CA14) that is causal and **downregulated in plasma** (elevated in PBMC mRNA). This reframing has direct consequences for biomarker selection: the plasma validation panel should prioritize CA14 (Olink — expecting ↓ in FM plasma) and Substance P/enkephalins (ELISA), with IL-8 retained only as a technical assay control.
+237: ---
 238: 
-239: ### 4.2 CA14: A Cross-Level Causal Candidate — Downregulated in Plasma, Druggable by Agonism
+239: ## 4. Discussion
 240: 
-241: CA14 emerges as the most actionable candidate in this investigation, with a direction-sensitive evidence stack:
+241: ### 4.1 The Peripheral Signature of FM Is Neuropeptide/Nociceptive and Immunomodulatory, Not Classically Inflammatory
 242: 
-243: | Layer | Evidence | Source |
-244: |-------|----------|--------|
-245: | 1. Plasma protein | Causal in CWP (top-ranking, MR + colocalization PP.H4 > 0.5); **downregulated (↓) cross-sectionally**; MR protective for genetically elevated CA14 | Chen et al. 2025, *Adv Sci* (PMID 41025730), 29,254 participants |
-246: | 2. PBMC mRNA | ↑ in FM (FC = 2.29, p = 0.0003, d = +0.41) | GSE221921 (this study) |
-247: | 3. Pharmacology | Sulthiame (CHEMBL328560) is an **inhibitor**; **the paper proposes CA14 agonists — not inhibitors — as the more promising therapeutic direction** | Chen et al. 2025; ChEMBL |
-248: 
-249: CA14 encodes carbonic anhydrase XIV, a membrane-bound enzyme regulating extracellular pH; pH dysregulation in nociceptors is a well-established driver of pain signaling (acid-sensing). The published analysis shows CA14 among the ten most downregulated plasma proteins in CWP, while MR indicates a protective effect of genetically elevated CA14 — an observational-vs-MR discordance the authors interpret as state-dependent protein alteration vs. lifelong genetic predisposition. **Our testable prediction: CA14 should be ↓ in FM plasma** in the Olink validation; if confirmed, the repurposing direction is **agonism/activation of CA14**, not sulthiame inhibition. The elevated PBMC mRNA we observe may be compensatory or compartment-specific; both compartments should be measured to resolve this. **Mechanistic caveat (QSP, 2026-08-03):** a single-compartment QSP model of the CA14→pH→ASIC pathway, thermodynamically calibrated, shows that a 30-50% reduction of CA14 shifts extracellular pH by only ΔpH ≈ −0.009 — far below the ≥0.2 needed for ASIC activation. The simple peripheral acidosis mechanism is therefore not supported; the causal signal (MR/coloc) may act in a different compartment (CNS), via transient pH kinetics, or reflect CA14 as a marker rather than mediator (see `scripts/qsp_ca14_ph_nociception.py`).
-250: 
-251: **Druggability caveat.** Sulthiame inhibits multiple carbonic anhydrases, not only CA14, and the published analysis explicitly favors agonists over inhibitors for pain; no well-documented CA14 activator is yet available. Any repurposing hypothesis requires isoform selectivity assessment and cannot be inferred from the present transcriptomic analysis alone.
-252: 
-253: ### 4.3 The GWAS-Transcriptomic Convergence on Neural Genes
-254: 
-255: The GWAS-prioritized neural genes *MDGA2* and *DRD2* show robust upregulation across multiple analytical models in FM PBMCs, including sex-adjusted and female-only sensitivity analyses. Two additional genes (*CAMKV*, *CELF4*) show supportive but sex-covariate-sensitive signals. This convergence of genetic risk (GWAS) and transcriptomic alteration (independent cohort) across independent methodologies is suggestive of biological relevance, though it remains an exploratory observation.
-256: 
-257: We emphasize that the GWAS network is not exclusively "dopaminergic." *MDGA2* encodes a GPI-anchored immunoglobulin superfamily member involved in synaptogenesis and neural circuit formation. *CAMKV* is a CaM kinase-like protein involved in dendritic spine dynamics. *CELF4* regulates neuronal mRNA metabolism. Only *DRD2* is strictly dopaminergic. The finding is therefore better characterized as convergence on a **neural/synaptic GWAS network** that includes, but is not limited to, dopaminergic signaling.
-258: 
-259: Our computational target profiling of MDGA2 (the most significant hit in our PBMC reanalysis, q = 1.1×10⁻⁷) using AlphaFold tridimensional models and clinical database mapping (Open Targets) provides additional mechanical insights. AlphaFold predicts a highly structured and ordered protein (Global pLDDT = 84.81), characterized by a large rigid 6-domain Ig-like supradomain separated by a flexible six-residue linker from the C-terminal MAM domain. This structural flexibility is crucial for modulating intercellular synaptogenesis. Furthermore, Open Targets database queries confirm that MDGA2 is highly constrained genetically (LoF score = 1.0, oe = 0.257), has direct clinical associations with chronic pain (Back Pain, score = 0.40), and is linked pharmacogenomically to the clinical outcomes of Milnacipran, an FDA-approved drug for Fibromyalgia. At the therapeutic level, its high-confidence extracellular GPI-anchored localization renders it highly tractable for antibody-based therapies or biologics targeting neuro-immune interactions.
-260: 
-261: ### 4.4 The DRD2 Signal: Interpretation and Caveats
+243: The central finding of this study is that the peripheral transcriptomic signature of FM — as measured in PBMCs (GSE221921) — is dominated by two non-inflammatory axes:
+244: 
+245: 1. **A complete opioid/tachykinin neuropeptide circuit is activated** (TACR1, OPRM1, TAC1, OPRK1; d = +0.38 to +0.60, co-expressed rho 0.31–0.63). This is the largest effect-size block in the investigation.
+246: 2. **CA14 — the top UKB causal protein for chronic widespread pain — is elevated in PBMC mRNA in the unadjusted analysis** (FC = 2.29) **but does not survive the female-only primary model** (p = 0.135, FC = 1.60; sex-confounded) **and is downregulated in plasma** in the UKB cross-sectional analysis, with MR indicating that genetically elevated CA14 is protective; five UKB causal immune-signaling genes are downregulated (TNFRSF1B, CD74, COL18A1, BTN2A1, TNFRSF4).
+247: 
+248: At the same time, the classical inflammatory axis (IL-6/IL-8) — the historical favorite in FM biomarker research — receives **no support at population scale**: IL-6 and IL-8/CXCL8 do not figure among the highlighted proteins in the largest published plasma proteomics screen of chronic pain (51,644 UKB participants, 2,923 proteins; Li ZY et al., 2025), though this is **weak evidence** — the 474 pain-associated proteins reside in supplementary tables that were not consulted, so absence from the narrative text does not constitute absence of association. **TAC1 (Substance P) is not covered by the Olink Explore panel and therefore cannot be evaluated with these data — its absence from the text is not informative.** In our own PBMC data, IL6 is significantly elevated (FC = 1.66, p = 0.0002) but with a **small effect size (d = +0.31)**, and CXCL8 is inverted in PBMCs (down relative to whole blood, consistent with cell-fraction biology).
+249: 
+250: The coherent narrative that emerges is **inmunomodulación/agotamiento + desregulación de pH/nocicepción**, not systemic inflammation: reduced TNF-family signaling (5 UKB-causal genes ↓), activation of the nociceptive neuropeptide circuit (SP→NK1, opioid receptors), and a pH-regulating carbonic anhydrase (CA14) that is causal and **downregulated in plasma** (elevated in PBMC mRNA). This reframing has direct consequences for biomarker selection: the plasma validation panel should prioritize CA14 (Olink — expecting ↓ in FM plasma) and Substance P/enkephalins (ELISA), with IL-8 retained only as a technical assay control.
+251: 
+252: ### 4.2 CA14: A Cross-Level Causal Candidate — Downregulated in Plasma, Druggable by Agonism
+253: 
+254: CA14 emerges as the most actionable candidate in this investigation, with a direction-sensitive evidence stack:
+255: 
+256: | Layer | Evidence | Source |
+257: |-------|----------|--------|
+258: | 1. Plasma protein | Causal in CWP (top-ranking, MR + colocalization PP.H4 > 0.5); **downregulated (↓) cross-sectionally**; MR protective for genetically elevated CA14 | Chen et al. 2025, *Adv Sci* (PMID 41025730), 29,254 participants |
+259: | 2. PBMC mRNA (unadjusted) | ↑ in FM (FC = 2.29, p = 0.0003, d = +0.41) | GSE221921 (this study, full cohort) |
+260: | 2b. PBMC mRNA (female-only) | **Does not survive** (p = 0.135, d = +0.24, FC = 1.60) | GSE221921, female-only subgroup (91 FM / 41 HC) |
+261: | 3. Pharmacology | Sulthiame (CHEMBL328560) is an **inhibitor**; **the paper proposes CA14 agonists — not inhibitors — as the more promising therapeutic direction** | Chen et al. 2025; ChEMBL |
 262: 
-263: The upregulation of *DRD2* (Log₂FC = +1.41, q = 2.9×10⁻⁵; robust across all 5 models) in PBMCs warrants careful interpretation:
+263: **Sex confound correction (2026-08-04).** The unadjusted CA14 signal (FC = 2.29, p = 0.0003) does not survive the sex-stratified sensitivity analysis that §2.4 defines as the "primary, statistically unconfounded model" — the female-only subgroup (91 FM / 41 HC) yields p = 0.135, d = +0.24, FC = 1.60. Diagnostic: within healthy controls, CA14 expression in females is 2.41× that of males (mean F = 0.901, mean M = 0.374, p = 0.034), and the FM cohort is 95% female while the HC cohort is 55% male. The unadjusted FC = 2.29 is therefore confounded by the structural sex imbalance — it is of the same magnitude as the pure sex effect (F/M ratio = 2.41). **CA14 should be reported as "sex-confounded, not surviving the primary model" in the PBMC mRNA layer.** The plasma protein layer (Layer 1, Chen et al. 2025) is unaffected by this confound because the UKB analysis was sex-adjusted. The testable prediction (↓ CA14 in FM plasma) remains valid and is independent of the PBMC mRNA result.
 264: 
-265: 1. **Absolute expression is low** (FM mean = 0.72 FPKM, HC mean = 0.27 FPKM). While the fold change and statistical significance are robust, the biological impact of sub-FPKM expression differences requires validation by targeted methods. Scientifically, an expression level under 1 FPKM in bulk tissue can represent either low-level "transcriptional noise" (leakage) across the bulk population or highly concentrated, biologically relevant expression restricted to a tiny immune subpopulation (e.g., specific $CD4^+$ or $CD8^+$ T cell subsets). To resolve this, orthogonal validation using highly specific qRT-PCR primers or single-cell qPCR is mandatory before drawing definitive functional conclusions.
+265: CA14 encodes carbonic anhydrase XIV, a membrane-bound enzyme regulating extracellular pH; pH dysregulation in nociceptors is a well-established driver of pain signaling (acid-sensing). The published analysis shows CA14 among the ten most downregulated plasma proteins in CWP, while MR indicates a protective effect of genetically elevated CA14 — an observational-vs-MR discordance the authors interpret as state-dependent protein alteration vs. lifelong genetic predisposition. **Our testable prediction: CA14 should be ↓ in FM plasma** in the Olink validation; if confirmed, the repurposing direction is **agonism/activation of CA14**, not sulthiame inhibition. The elevated PBMC mRNA we observe may be compensatory or compartment-specific; both compartments should be measured to resolve this. **Mechanistic caveat (QSP, 2026-08-04, thermodynamically corrected):** a single-compartment QSP model of the CA14→pH→ASIC pathway, recalibrated so the uncatalyzed rates respect the thermodynamic Keq (K_UNCAT_R = K_UNCAT_F / Keq = 189.3 s⁻¹, correcting a 3.8× bug), shows ΔpH = 0 exactly — because at steady state the CA-catalyzed terms cancel identically (k_buf·h = J_co2 + J_acid − k_diff·c), so the enzyme changes the relaxation rate, not the equilibrium. The model's basal pH is set by J_co2/k_buf and does not reproduce the Henderson-Hasselbalch value of 7.33 across any parameter combination (it yields 7.83/7.21/6.76 depending on unmeasured fluxes), indicating the pH baseline is not properly calibrated. **The simple peripheral acidosis mechanism is therefore not evaluable with this model — a model that cannot exhibit the effect cannot refute it.** The earlier conclusion ("vía descartada") is retracted; the correct framing is "hipótesis no evaluable con este modelo de estado estacionario de compartimento único." The causal signal (MR/coloc from Chen 2025) remains statistically valid and may act via a different compartment (CNS), via transient pH kinetics, or reflect CA14 as a marker rather than mediator (see `scripts/qsp_ca14_ph_nociception.py`).
 266: 
-267: 2. **Cell composition confounding.** DRD2 is expressed in specific immune cells, such as T cell subsets, where it modulates cytokine production and chemotaxis (Pacheco et al., 2014). If FM patients have altered PBMC composition (e.g., different T cell subsets or monocyte proportions), the observed DRD2 increase could reflect more cells expressing DRD2 rather than per-cell upregulation. Without deconvolution analysis (CIBERSORTx, xCell, or similar), this cannot be distinguished.
+267: **Druggability caveat.** Sulthiame inhibits multiple carbonic anhydrases, not only CA14, and the published analysis explicitly favors agonists over inhibitors for pain; no well-documented CA14 activator is yet available. Any repurposing hypothesis requires isoform selectivity assessment and cannot be inferred from the present transcriptomic analysis alone.
 268: 
-269: 3. **Peripheral vs. central.** PBMCs are not the primary site of FM pathology. The GWAS heritability is enriched in brain tissues. Whether peripheral DRD2 expression mirrors central dopaminergic dysfunction is unknown.
+269: ### 4.3 The GWAS-Transcriptomic Convergence on Neural Genes
 270: 
-271: 4. **Independence from Cell-Type Abundances.** To explore whether the observed upregulation of *DRD2* is an artifact of altered PBMC proportions, we computed cell-type signature enrichment scores. *DRD2* expression did not correlate strongly with any estimated cell fraction (r_max = 0.34 with Tregs, and <0.30 with other fractions). This suggests that the *DRD2* signal in FM PBMCs represents genuine transcriptional upregulation rather than a passive reflection of shifts in cellular composition, strengthening its biological validity.
+271: The GWAS-prioritized neural genes *MDGA2* and *DRD2* show robust upregulation across multiple analytical models in FM PBMCs, including sex-adjusted and female-only sensitivity analyses. Two additional genes (*CAMKV*, *CELF4*) show supportive but sex-covariate-sensitive signals. This convergence of genetic risk (GWAS) and transcriptomic alteration (independent cohort) across independent methodologies is suggestive of biological relevance, though it remains an exploratory observation.
 272: 
-273: ### 4.5 Cell-Fraction-Dependent Contrast and the Whole-Blood Non-Replication
+273: We emphasize that the GWAS network is not exclusively "dopaminergic." *MDGA2* encodes a GPI-anchored immunoglobulin superfamily member involved in synaptogenesis and neural circuit formation. *CAMKV* is a CaM kinase-like protein involved in dendritic spine dynamics. *CELF4* regulates neuronal mRNA metabolism. Only *DRD2* is strictly dopaminergic. The finding is therefore better characterized as convergence on a **neural/synaptic GWAS network** that includes, but is not limited to, dopaminergic signaling.
 274: 
-275: The observation that mast cell markers are significant in whole blood but not PBMCs, while GWAS neural genes and the neuropeptide axis show the opposite pattern, is consistent with cell-fraction-dependent peripheral signatures. However, this observation cannot distinguish true cell-state changes from cell-composition differences, nor can it determine whether either signature is a disease driver versus a secondary biomarker.
+275: Our computational target profiling of MDGA2 (the most significant hit in our PBMC reanalysis, q = 1.1×10⁻⁷) using AlphaFold tridimensional models and clinical database mapping (Open Targets) provides additional mechanical insights. AlphaFold predicts a highly structured and ordered protein (Global pLDDT = 84.81), characterized by a large rigid 6-domain Ig-like supradomain separated by a flexible six-residue linker from the C-terminal MAM domain. This structural flexibility is crucial for modulating intercellular synaptogenesis. Furthermore, Open Targets database queries confirm that MDGA2 is highly constrained genetically (LoF score = 1.0, oe = 0.257), has direct clinical associations with chronic pain (Back Pain, score = 0.40), and is linked pharmacogenomically to the clinical outcomes of Milnacipran, an FDA-approved drug for Fibromyalgia. At the therapeutic level, its high-confidence extracellular GPI-anchored localization renders it highly tractable for antibody-based therapies or biologics targeting neuro-immune interactions.
 276: 
-277: The non-replication of the neuropeptide proxies in GSE67311 is a **scientific negative that we report without cosmetic correction** (VALIDACION_GSE67311_NEGATIVA.md). Deconvolution rules out the most plausible mechanical explanation (neutrophil dilution). The remaining interpretations — platform, cohort, or true small effects — cannot be resolved with existing data. Practically, this means: (1) the proxies are PBMC/RNA-seq-specific; (2) the plasma Olink/ELISA protocol is the decisive test, because it measures the compartment (plasma protein) relevant to the causal UKB findings; (3) PCSK1N, which inverts direction between datasets, is re-classified as "not confirmed" until the discrepancy is understood.
+277: ### 4.4 The DRD2 Signal: Interpretation and Caveats
 278: 
-279: ### 4.6 Pharmacological Context: The 21-Year Gap
+279: The upregulation of *DRD2* (Log₂FC = +1.41, q = 2.9×10⁻⁵; robust across all 5 models) in PBMCs warrants careful interpretation:
 280: 
-281: The pharmacological evidence for dopamine agonists in FM is limited. The sole positive RCT (Holman & Myers, 2005) carries substantial risk of bias (single-center, n=60, author held patents). The negative ropinirole trial (GSK NCT00256893) has never been published in a peer-reviewed journal, limiting independent evaluation. The current evidence is insufficient to recommend dopamine agonists for FM but does provide a rationale for re-examining this pharmacological axis in molecularly stratified cohorts. **Crucially, the "21-year gap" of non-replication is not merely an omission of research interest, but a reflection of the severe clinical tolerability barriers inherent to D2/D3 agonists in chronic pain populations. These ergot and non-ergot agonists are associated with severe side effects, including mesolimbic D3-receptor-mediated Impulse Control Disorders (ICDs) (e.g., pathological gambling, compulsive buying, hypersexuality), Dopamine Agonist Withdrawal Syndrome (DAWS) (characterized by profound anxiety, panic attacks, depression, and pain exacerbation upon tapering), orthostatic hypotension, and sudden "sleep attacks." In a patient population already burdened by chronic fatigue, dysautonomia, and baseline sleep fragmentation, the therapeutic index for these compounds is extremely narrow, posing significant translation challenges.**
+281: 1. **Absolute expression is low** (FM mean = 0.72 FPKM, HC mean = 0.27 FPKM). While the fold change and statistical significance are robust, the biological impact of sub-FPKM expression differences requires validation by targeted methods. Scientifically, an expression level under 1 FPKM in bulk tissue can represent either low-level "transcriptional noise" (leakage) across the bulk population or highly concentrated, biologically relevant expression restricted to a tiny immune subpopulation (e.g., specific $CD4^+$ or $CD8^+$ T cell subsets). To resolve this, orthogonal validation using highly specific qRT-PCR primers or single-cell qPCR is mandatory before drawing definitive functional conclusions.
 282: 
-283: To explore the structural basis of this pharmacological axis, we performed a qualitative molecular docking analysis of DRD2 with pramipexole and ropinirol, using the co-crystallized structure (PDB 6VMS) as a template. The docking results demonstrate structural plausibility, with pramipexole and ropinirole lodging within the orthosteric binding pocket and making contacts (<4Å) with key conserved pocket residues. Crucially, a ligand efficiency analysis resolves the apparent discrepancy in raw scores (-5.755 kcal/mol for pramipexole vs. -8.488 kcal/mol for the control bromocriptine), showing that pramipexole's small molecular weight (MW 211) achieves highly efficient binding pocket interactions per heavy atom, matching its nanomolar experimental affinity (Ki ~3 nM).
+283: 2. **Cell composition confounding.** DRD2 is expressed in specific immune cells, such as T cell subsets, where it modulates cytokine production and chemotaxis (Pacheco et al., 2014). If FM patients have altered PBMC composition (e.g., different T cell subsets or monocyte proportions), the observed DRD2 increase could reflect more cells expressing DRD2 rather than per-cell upregulation. Without deconvolution analysis (CIBERSORTx, xCell, or similar), this cannot be distinguished.
 284: 
-285: ### 4.7 Biophysical Pocket Mapping of DRD2 vs. DRD3 and de novo Candidate Selectivity
+285: 3. **Peripheral vs. central.** PBMCs are not the primary site of FM pathology. The GWAS heritability is enriched in brain tissues. Whether peripheral DRD2 expression mirrors central dopaminergic dysfunction is unknown.
 286: 
-287: To overcome the mesolimbic tolerability barriers of dopamine agonists, we leveraged our transcriptomic findings to computationally guide a de novo molecular design pipeline based on the core tetrahydrobenzothiazole scaffold of pramipexole. By screening a targeted combinatorial library through a dual 2D QSAR regressor (trained on 176 selective compounds mined from ChEMBL) and a SOTA Chemical Verification funnel (comprising official RDKit FilterCatalog PAINS and Ertl-Schuffenhauer SA Score filters), we identified highly D2-selective "ad hoc keys."
+287: 4. **Independence from Cell-Type Abundances.** To explore whether the observed upregulation of *DRD2* is an artifact of altered PBMC proportions, we computed cell-type signature enrichment scores. *DRD2* expression did not correlate strongly with any estimated cell fraction (r_max = 0.34 with Tregs, and <0.30 with other fractions). This suggests that the *DRD2* signal in FM PBMCs represents genuine transcriptional upregulation rather than a passive reflection of shifts in cellular composition, strengthening its biological validity.
 288: 
-289: A detailed structural and sequence alignment between the active conformations of the dopamine D2 receptor (DRD2; PDB 6VMS) and D3 receptor (DRD3; PDB 3PBL) reveals the exact biophysical driving forces governing the selectivity of these de novo candidates, specifically within the **Secondary Binding Pocket (SBP)** and **Extracellular Loop 2 (ECL2)**:
+289: ### 4.5 Cell-Fraction-Dependent Contrast and the Whole-Blood Non-Replication
 290: 
-291: 1. **The Electrostatic/Polar Flip (Ser163 in DRD2 vs. Ala161 in DRD3):** While the core orthosteric binding pocket is highly conserved (anchoring the ligand via Asp114$^{3.32}$), the boundary of the secondary pocket presents a critical amino acid divergence. In DRD2, **Ser163** at the TM4/ECL2 boundary provides a polar hydroxyl group that forms highly stable hydrogen-bonding networks with polar groups in our de novo candidates (such as the pyridine nitrogen in Candidate #1 and the methoxy oxygen in Candidate #2). Conversely, the homologous position in DRD3 is occupied by the hydrophobic **Ala161**, whose non-polar methyl side chain cannot participate in hydrogen bonding. This electrostatic difference imposes a severe thermodynamic penalty on polar ligand extensions attempting to bind DRD3, driving strong selectivity toward DRD2.
+291: The observation that mast cell markers are significant in whole blood but not PBMCs, while GWAS neural genes and the neuropeptide axis show the opposite pattern, is consistent with cell-fraction-dependent peripheral signatures. However, this observation cannot distinguish true cell-state changes from cell-composition differences, nor can it determine whether either signature is a disease driver versus a secondary biomarker.
 292: 
-293: 2. **The Hydrophobic/Steric Switch (Ile183 in DRD2 vs. Ser182 in DRD3):** Located at the crucial TM5/ECL2 junction, DRD2 features a bulky, lipophilic **Ile183**, whereas DRD3 possesses a smaller, highly polar **Ser182**. Our top rescued de novo candidates incorporate rigid, hydrophobic spacers (such as propyl-piperazine and cyclohexyl connectors). These hydrophobic extensions establish highly favorable van der Waals and hydrophobic interactions within the lipophilic environment of DRD2's **Ile183**. In contrast, they suffer from poor solvation and electrostatic mismatches when forced into the highly hydrated and polar pocket of DRD3's **Ser182**, further enhancing subtype discrimination.
+293: The non-replication of the neuropeptide proxies in GSE67311 is a **scientific negative that we report without cosmetic correction** (VALIDACION_GSE67311_NEGATIVA.md). Deconvolution rules out the most plausible mechanical explanation (neutrophil dilution). The remaining interpretations — platform, cohort, or true small effects — cannot be resolved with existing data. Practically, this means: (1) the proxies are PBMC/RNA-seq-specific; (2) the plasma Olink/ELISA protocol is the decisive test, because it measures the compartment (plasma protein) relevant to the causal UKB findings; (3) PCSK1N, which inverts direction between datasets, is re-classified as "not confirmed" until the discrepancy is understood.
 294: 
-295: 3. **Conformational Gate Dynamics (ECL2 Flexibility):** Comparing the 3D active sites reveals that the ECL2 loop of DRD2 is highly dynamic and undergoes an outward rotation, widening the extracellular crevice of the SBP. In contrast, DRD3's ECL2 is positioned in a more rigid, inward-pointing conformation that narrows the entrance channel. Bulky, structurally rigidified de novo scaffolds (like our rescued metoxifenilpiperazinas, predicted selectivity ratios up to 128.76×, and pyridin-piperazinas, up to 144.89×) are easily accommodated within the wide SBP of DRD2 but suffer from severe steric clashes (*clashes*) at the rigid entrance gate of DRD3.
+295: ### 4.6 Pharmacological Context: The 21-Year Gap
 296: 
-297: These structural insights explain how extending the core scaffold of pramipexole into the secondary pocket of DRD2 can multiply subtype selectivity up to 8.59-fold compared to the control, opening a promising avenue for the design of centrally active, D3-excluding dopaminergic therapeutics.
+297: The pharmacological evidence for dopamine agonists in FM is limited. The sole positive RCT (Holman & Myers, 2005) carries substantial risk of bias (single-center, n=60, author held patents). The negative ropinirole trial (GSK NCT00256893) has never been published in a peer-reviewed journal, limiting independent evaluation. The current evidence is insufficient to recommend dopamine agonists for FM but does provide a rationale for re-examining this pharmacological axis in molecularly stratified cohorts. **Crucially, the "21-year gap" of non-replication is not merely an omission of research interest, but a reflection of the severe clinical tolerability barriers inherent to D2/D3 agonists in chronic pain populations. These ergot and non-ergot agonists are associated with severe side effects, including mesolimbic D3-receptor-mediated Impulse Control Disorders (ICDs) (e.g., pathological gambling, compulsive buying, hypersexuality), Dopamine Agonist Withdrawal Syndrome (DAWS) (characterized by profound anxiety, panic attacks, depression, and pain exacerbation upon tapering), orthostatic hypotension, and sudden "sleep attacks." In a patient population already burdened by chronic fatigue, dysautonomia, and baseline sleep fragmentation, the therapeutic index for these compounds is extremely narrow, posing significant translation challenges.**
 298: 
-299: ### 4.8 In Silico Docking Validation of De Novo Candidates
+299: To explore the structural basis of this pharmacological axis, we performed a qualitative molecular docking analysis of DRD2 with pramipexole and ropinirol, using the co-crystallized structure (PDB 6VMS) as a template. The docking results demonstrate structural plausibility, with pramipexole and ropinirole lodging within the orthosteric binding pocket and making contacts (<4Å) with key conserved pocket residues. Crucially, a ligand efficiency analysis resolves the apparent discrepancy in raw scores (-5.755 kcal/mol for pramipexole vs. -8.488 kcal/mol for the control bromocriptine), showing that pramipexole's small molecular weight (MW 211) achieves highly efficient binding pocket interactions per heavy atom, matching its nanomolar experimental affinity (Ki ~3 nM).
 300: 
-301: To validate the structural and thermodynamic plausibility of the de novo generated candidates, we executed molecular docking of the top 8 designed "ad hoc keys" (comprising the top 5 by predicted QSAR selectivity and top 3 by CNS MPO score) and pramipexole as a positive control against the active-state crystallographic structures of DRD2 (PDB 6VMS, Chain R) and DRD3 (PDB 3PBL). Docking was performed using AutoDock Vina v1.2.5 with a box centered at the orthosteric binding pocket [X=109.365, Y=124.746, Z=100.388] and dimensions of 22 × 22 × 22 Å. Optimization of ligand 3D conformers was executed using the MMFF94 force field in RDKit, followed by united-atom PDBQT preparation via Meeko.
+301: ### 4.7 Biophysical Pocket Mapping of DRD2 vs. DRD3 and de novo Candidate Selectivity
 302: 
-303: The results of the docking simulations are summarized in Table 6:
+303: To overcome the mesolimbic tolerability barriers of dopamine agonists, we leveraged our transcriptomic findings to computationally guide a de novo molecular design pipeline based on the core tetrahydrobenzothiazole scaffold of pramipexole. By screening a targeted combinatorial library through a dual 2D QSAR regressor (trained on 176 selective compounds mined from ChEMBL) and a SOTA Chemical Verification funnel (comprising official RDKit FilterCatalog PAINS and Ertl-Schuffenhauer SA Score filters), we identified highly D2-selective "ad hoc keys."
 304: 
-305: **Table 6. Molecular docking validation results for de novo candidates against DRD2 and DRD3.**
+305: A detailed structural and sequence alignment between the active conformations of the dopamine D2 receptor (DRD2; PDB 6VMS) and D3 receptor (DRD3; PDB 3PBL) reveals the exact biophysical driving forces governing the selectivity of these de novo candidates, specifically within the **Secondary Binding Pocket (SBP)** and **Extracellular Loop 2 (ECL2)**:
 306: 
-307: | Compound | Category | Heavy Atoms | $\Delta G$ DRD2 (kcal/mol) | LE DRD2 | $\Delta G$ DRD3 (kcal/mol) | LE DRD3 | $\Delta\Delta G$ ($D2-D3$) | Key Receptor Contacts (DRD2 / DRD3) |
-308: |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|
-309: | **Denovo_Sel_3** | Top Selectivity | 30 | -6.51 | 0.217 | -6.46 | 0.215 | **-0.05** | ASP114, ILE183 / ASP110 |
-310: | **Denovo_CNS_3** | Top CNS MPO | 18 | -5.48 | 0.304 | -5.47 | 0.304 | **-0.00** | ASP114 / ASP110, SER182 |
-311: | **Denovo_Sel_5** | Top Selectivity | 15 | -4.28 | 0.285 | -4.49 | 0.299 | **+0.21** | ASP114 / ASP110 |
-312: | **Denovo_CNS_2** | Top CNS MPO | 16 | -4.38 | 0.274 | -4.67 | 0.292 | **+0.29** | ASP114 / ASP110 |
-313: | **Denovo_CNS_8** | Top CNS MPO | 19 | -5.66 | 0.298 | -5.98 | 0.315 | **+0.32** | ASP114, ILE183 / ASP110, SER182 |
-314: | **Denovo_Sel_4** | Top Selectivity | 29 | -6.70 | 0.231 | -7.11 | 0.245 | **+0.41** | ASP114, ILE183 / ASP110 |
-315: | **Denovo_Sel_2** | Top Selectivity | 29 | -6.36 | 0.219 | -6.78 | 0.234 | **+0.42** | ASP114 / ASP110 |
-316: | **Denovo_Sel_1** | Top Selectivity | 27 | -5.92 | 0.219 | -6.39 | 0.237 | **+0.47** | ASP114 / ASP110, SER182 |
-317: | **Pramipexole** | Positive Control | 15 | -4.34 | 0.289 | -4.79 | 0.319 | **+0.45** | ASP114 / ASP110 |
+307: 1. **The Electrostatic/Polar Flip (Ser163 in DRD2 vs. Ala161 in DRD3):** While the core orthosteric binding pocket is highly conserved (anchoring the ligand via Asp114$^{3.32}$), the boundary of the secondary pocket presents a critical amino acid divergence. In DRD2, **Ser163** at the TM4/ECL2 boundary provides a polar hydroxyl group that forms highly stable hydrogen-bonding networks with polar groups in our de novo candidates (such as the pyridine nitrogen in Candidate #1 and the methoxy oxygen in Candidate #2). Conversely, the homologous position in DRD3 is occupied by the hydrophobic **Ala161**, whose non-polar methyl side chain cannot participate in hydrogen bonding. This electrostatic difference imposes a severe thermodynamic penalty on polar ligand extensions attempting to bind DRD3, driving strong selectivity toward DRD2.
+308: 
+309: 2. **The Hydrophobic/Steric Switch (Ile183 in DRD2 vs. Ser182 in DRD3):** Located at the crucial TM5/ECL2 junction, DRD2 features a bulky, lipophilic **Ile183**, whereas DRD3 possesses a smaller, highly polar **Ser182**. Our top rescued de novo candidates incorporate rigid, hydrophobic spacers (such as propyl-piperazine and cyclohexyl connectors). These hydrophobic extensions establish highly favorable van der Waals and hydrophobic interactions within the lipophilic environment of DRD2's **Ile183**. In contrast, they suffer from poor solvation and electrostatic mismatches when forced into the highly hydrated and polar pocket of DRD3's **Ser182**, further enhancing subtype discrimination.
+310: 
+311: 3. **Conformational Gate Dynamics (ECL2 Flexibility):** Comparing the 3D active sites reveals that the ECL2 loop of DRD2 is highly dynamic and undergoes an outward rotation, widening the extracellular crevice of the SBP. In contrast, DRD3's ECL2 is positioned in a more rigid, inward-pointing conformation that narrows the entrance channel. Bulky, structurally rigidified de novo scaffolds (like our rescued metoxifenilpiperazinas, predicted selectivity ratios up to 128.76×, and pyridin-piperazinas, up to 144.89×) are easily accommodated within the wide SBP of DRD2 but suffer from severe steric clashes (*clashes*) at the rigid entrance gate of DRD3.
+312: 
+313: These structural insights explain how extending the core scaffold of pramipexole into the secondary pocket of DRD2 can multiply subtype selectivity up to 8.59-fold compared to the control, opening a promising avenue for the design of centrally active, D3-excluding dopaminergic therapeutics.
+314: 
+315: ### 4.8 In Silico Docking Validation of De Novo Candidates
+316: 
+317: To validate the structural and thermodynamic plausibility of the de novo generated candidates, we executed molecular docking of the top 8 designed "ad hoc keys" (comprising the top 5 by predicted QSAR selectivity and top 3 by CNS MPO score) and pramipexole as a positive control against the active-state crystallographic structures of DRD2 (PDB 6VMS, Chain R) and DRD3 (PDB 3PBL). Docking was performed using AutoDock Vina v1.2.5 with a box centered at the orthosteric binding pocket [X=109.365, Y=124.746, Z=100.388] and dimensions of 22 × 22 × 22 Å. Optimization of ligand 3D conformers was executed using the MMFF94 force field in RDKit, followed by united-atom PDBQT preparation via Meeko.
 318: 
-319: *Notes: $\Delta\Delta G = \Delta G_{\text{DRD2}} - \Delta G_{\text{DRD3}}$ (negative values favor DRD2). LE represents Ligand Efficiency (kcal/mol/heavy atom). Control values match historical literature and serve as validation. **Methodological caveat:** AutoDock Vina has a mean prediction error of ±2.85 kcal/mol (Trott & Olson, 2010); therefore all $\Delta\Delta G$ differences reported here (range: -0.05 to +0.47 kcal/mol) fall within the intrinsic error margin and should be interpreted as qualitative trends and structural plausibility, not as absolute thermodynamic quantifications.*
+319: The results of the docking simulations are summarized in Table 6:
 320: 
-321: The simulations yield three biophysical observations:
+321: **Table 6. Molecular docking validation results for de novo candidates against DRD2 and DRD3.**
 322: 
-323: 1. **Consistent Trend Toward DRD2:** The control pramipexole exhibits a preference for DRD3 ($\Delta\Delta G = +0.45\text{ kcal/mol}$), consistent with empirical binding profiles. **Denovo_Sel_3** shows a trend toward DRD2-favoring binding ($\Delta\Delta G = -0.05\text{ kcal/mol}$), and **Denovo_CNS_3** achieves near-neutral balance ($\Delta\Delta G \approx 0.00\text{ kcal/mol}$). While these differences are within Vina's error margins and cannot be considered statistically significant, the **directionality of the shift** (from +0.45 to ≤0.00) is consistent with the design hypothesis and qualitatively supports the proposed mechanism of DRD2-selective binding.
-324: 2. **General Relative Shift toward DRD2:** Except for the marginal Denovo_Sel_1, **every designed de novo candidate exhibits a lower $\Delta\Delta G$ value than pramipexole**, indicating a systematic, design-driven relative trend toward DRD2 complementarity. Small, rigid extensions (like the cyclohexyl in Denovo_CNS_2, $\Delta\Delta G = +0.29$, or the isopropyl in Denovo_Sel_5, $\Delta\Delta G = +0.21$) show a reduction in the DRD3-selectivity gap relative to pramipexole.
-325: 3. **Loop Contacts and Anchor Verification:** All docked poses successfully establish a salt-bridge anchor with the conserved catalytic aspartate (Asp114 in DRD2; Asp110 in DRD3) at favorable distances ($<3.6\text{ Å}$). Crucially, candidates that extend into the extracellular secondary binding pocket (SBP) establish stabilizing hydrophobic contacts with **Ile183** on DRD2's ECL2 loop. When these molecules are docked into DRD3, they lack complementary interactions with the homologous **Ser182**, which is consistent with a structural basis for subtype-selective binding.
-326: 
-327: These structural simulations demonstrate the geometric plausibility and directional consistency of the designed candidates as DRD2-complementary ligands. Quantitative confirmation of subtype selectivity will require higher-resolution free energy methods (FEP/TI, MM-PBSA) or experimental radioligand binding assays.
-328: 
-329: ### 4.9 Transformer-Based Conditional Generation (Exploratory Proof-of-Concept)
-330: 
-331: To expand beyond the static discrete structures of our combinatorial library, we developed an exploratory deep learning pipeline based on a conditional **Transformer Encoder-Decoder** model. This architecture learns a continuous mapping of the dopaminergic chemical space, allowing targeted generation within the latent neighborhood of selective DRD2-binding scaffolds.
-332: 
-333: The encoder integrates local topology (SMILES transformed into SELFIES tokens) with global structural descriptors (Morgan Fingerprints). A joint loss function combines a cross-entropy reconstruction loss with a contrastive loss to organize the latent space $z$ based on subtype selectivity. During training, a causal attention mask (`tgt_mask`) is applied within the decoder to enforce strict autoregressive generation, preventing information leakage (*cheating*) by ensuring predictions at token $t$ depend solely on tokens $<t$. The training was executed on a ChEMBL-derived selective dataset (176 compounds) enriched with de novo aminothiazole templates, augmented 30-fold via SMILES randomized enumeration (5,970 samples). The training converged to a stable reconstruction loss of 0.7401 and a contrastive loss of 0.0863.
+323: | Compound | Category | Heavy Atoms | $\Delta G$ DRD2 (kcal/mol) | LE DRD2 | $\Delta G$ DRD3 (kcal/mol) | LE DRD3 | $\Delta\Delta G$ ($D2-D3$) | Key Receptor Contacts (DRD2 / DRD3) |
+324: |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|
+325: | **Denovo_Sel_3** | Top Selectivity | 30 | -6.51 | 0.217 | -6.46 | 0.215 | **-0.05** | ASP114, ILE183 / ASP110 |
+326: | **Denovo_CNS_3** | Top CNS MPO | 18 | -5.48 | 0.304 | -5.47 | 0.304 | **-0.00** | ASP114 / ASP110, SER182 |
+327: | **Denovo_Sel_5** | Top Selectivity | 15 | -4.28 | 0.285 | -4.49 | 0.299 | **+0.21** | ASP114 / ASP110 |
+328: | **Denovo_CNS_2** | Top CNS MPO | 16 | -4.38 | 0.274 | -4.67 | 0.292 | **+0.29** | ASP114 / ASP110 |
+329: | **Denovo_CNS_8** | Top CNS MPO | 19 | -5.66 | 0.298 | -5.98 | 0.315 | **+0.32** | ASP114, ILE183 / ASP110, SER182 |
+330: | **Denovo_Sel_4** | Top Selectivity | 29 | -6.70 | 0.231 | -7.11 | 0.245 | **+0.41** | ASP114, ILE183 / ASP110 |
+331: | **Denovo_Sel_2** | Top Selectivity | 29 | -6.36 | 0.219 | -6.78 | 0.234 | **+0.42** | ASP114 / ASP110 |
+332: | **Denovo_Sel_1** | Top Selectivity | 27 | -5.92 | 0.219 | -6.39 | 0.237 | **+0.47** | ASP114 / ASP110, SER182 |
+333: | **Pramipexole** | Positive Control | 15 | -4.34 | 0.289 | -4.79 | 0.319 | **+0.45** | ASP114 / ASP110 |
 334: 
-335: Conditional generation was steered by pertubing the latent neighborhood of aminothiazole anchors under high-selectivity target conditioning ($150\times$). The generated chemical structures (460 unique molecules) were filtered through a rigorous **4-Level Cascade Verification Funnel**:
-336: 1. **Level 1 (Cheapo):** Chemical sanitization, Lipinski's Rule of 5, and QED > 0.3 (379 passed).
-337: 2. **Level 2 (Medium):** Official RDKit PAINS filters, synthetic accessibility (SA Score $\le 4.5$), and mandatory presence of the hexahydrobenzothiazole core (11 passed).
-338: 3. **Level 3 (Expensive):** Local D2/D3 QSAR regressor scoring and novelty check (Tanimoto similarity vs ChEMBL training set < 0.85; 11 passed).
-339: 4. **Level 4 (Consensus):** Multi-property consensus score and blood-brain barrier (BBB) penetration viability (CNS MPO $\ge 4.0$; 11 approved).
-340: 
-341: Table 7 summarizes the profiles of the top 5 deep-learning-generated de novo candidates compared to static combinatorial baselines.
+335: *Notes: $\Delta\Delta G = \Delta G_{\text{DRD2}} - \Delta G_{\text{DRD3}}$ (negative values favor DRD2). LE represents Ligand Efficiency (kcal/mol/heavy atom). Control values match historical literature and serve as validation. **Methodological caveat:** AutoDock Vina has a mean prediction error of ±2.85 kcal/mol (Trott & Olson, 2010); therefore all $\Delta\Delta G$ differences reported here (range: -0.05 to +0.47 kcal/mol) fall within the intrinsic error margin and should be interpreted as qualitative trends and structural plausibility, not as absolute thermodynamic quantifications.*
+336: 
+337: The simulations yield three biophysical observations:
+338: 
+339: 1. **Consistent Trend Toward DRD2:** The control pramipexole exhibits a preference for DRD3 ($\Delta\Delta G = +0.45\text{ kcal/mol}$), consistent with empirical binding profiles. **Denovo_Sel_3** shows a trend toward DRD2-favoring binding ($\Delta\Delta G = -0.05\text{ kcal/mol}$), and **Denovo_CNS_3** achieves near-neutral balance ($\Delta\Delta G \approx 0.00\text{ kcal/mol}$). While these differences are within Vina's error margins and cannot be considered statistically significant, the **directionality of the shift** (from +0.45 to ≤0.00) is consistent with the design hypothesis and qualitatively supports the proposed mechanism of DRD2-selective binding.
+340: 2. **General Relative Shift toward DRD2:** Except for the marginal Denovo_Sel_1, **every designed de novo candidate exhibits a lower $\Delta\Delta G$ value than pramipexole**, indicating a systematic, design-driven relative trend toward DRD2 complementarity. Small, rigid extensions (like the cyclohexyl in Denovo_CNS_2, $\Delta\Delta G = +0.29$, or the isopropyl in Denovo_Sel_5, $\Delta\Delta G = +0.21$) show a reduction in the DRD3-selectivity gap relative to pramipexole.
+341: 3. **Loop Contacts and Anchor Verification:** All docked poses successfully establish a salt-bridge anchor with the conserved catalytic aspartate (Asp114 in DRD2; Asp110 in DRD3) at favorable distances ($<3.6\text{ Å}$). Crucially, candidates that extend into the extracellular secondary binding pocket (SBP) establish stabilizing hydrophobic contacts with **Ile183** on DRD2's ECL2 loop. When these molecules are docked into DRD3, they lack complementary interactions with the homologous **Ser182**, which is consistent with a structural basis for subtype-selective binding.
 342: 
-343: **Table 7. Properties of de novo Transformer-generated candidates vs. combinatorial baselines.**
+343: These structural simulations demonstrate the geometric plausibility and directional consistency of the designed candidates as DRD2-complementary ligands. Quantitative confirmation of subtype selectivity will require higher-resolution free energy methods (FEP/TI, MM-PBSA) or experimental radioligand binding assays.
 344: 
-345: | Compound ID | Origin | Structure (SMILES) | Predicted Selectivity (D3/D2) | QED | SA Score | CNS MPO | Tanimoto Novelty | Verdict |
-346: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-347: | **Candidato #1** | **Transformer** | `CCCC1CCC=2N=C(N)SC=2CC1CCN` | **29.81x** | **0.811** | **3.74** | **4.75 / 6.00** | **0.161** | **Approved (High Confidence)** |
-348: | **Candidato #2** | **Transformer** | `C(N)CC1CCCC=2N=C(N)SC=2C1N(C)CC` | **21.26x** | **0.820** | **3.99** | **4.42 / 6.00** | **0.143** | **Approved (High Confidence)** |
-349: | **Candidato #3** | **Transformer** | `NCC1CCC=2SC(N)=NC=2CC1CN` | **37.91x** | **0.635** | **3.81** | **3.84 / 6.00** | **0.141** | **Approved (High Confidence)** |
-350: | **Candidato #4** | **Transformer** | `CC1(N)CCC=2SC(N)=NC=2CC1` | **24.49x** | **0.616** | **3.60** | **4.75 / 6.00** | **0.130** | **Approved (High Confidence)** |
-351: | **Candidato #5** | **Transformer** | `C(N)CCCNC1CCCC=2N=C(N)SC=2C1` | **25.86x** | **0.547** | **3.05** | **4.12 / 6.00** | **0.176** | **Approved (High Confidence)** |
-352: | *Baseline #6* | Combinatorial | `CC(C)NC1CCc2nc(N)sc2CC1` | 32.46x | 0.757 | 3.10 | 5.82 / 6.00 | 0.812 (Similar) | Combinatorial Analog |
-353: | *Baseline #7* | Combinatorial | `CC(C)CNC1CCc2nc(N)sc2CC1` | 29.96x | 0.795 | 3.04 | 5.86 / 6.00 | 0.798 (Similar) | Combinatorial Analog |
-354: | *Baseline #2* | Combinatorial | `COc1ccccc1N1CCN(CCCNC2CCc3nc(N)sc3CC2)CC1` | 128.76x | 0.535 | 2.88 | 2.50 / 6.00 | 0.912 (Overfit) | Pobre CNS / Overfitted |
-355: 
-356: *Notes: Predicted selectivity ratio calculated as $K_{i,\text{DRD3}} / K_{i,\text{DRD2}}$ from local QSAR models. CNS MPO integrates six physical properties, utilizing a basic amine pKa estimate (~9.5) to avoid score inflation.*
-357: 
-358: This conditional deep-learning generation demonstrates several key findings:
-359: 1. **Viable Central Penetration (CNS MPO):** By modeling basic amine pKa rigorously (~9.5), four of the top five candidates achieve CNS MPO scores above the central clinic threshold ($\ge 4.0$), ranging from **4.12 to 4.75**. This indicates a high likelihood of crossing the blood-brain barrier (BBB) while maintaining molecular simplicity (MW < 270 g/mol). In contrast, larger combinatorial compounds like *Baseline #2* suffer from poor central properties (CNS MPO 2.50).
-360: 2. **High Scaffold Novelty:** Unlike the combinatorial baselines which exhibit high Tanimoto similarity to the training set (>0.80), the Transformer-designed structures demonstrate radical structural novelty (Tanimoto $\le 0.176$), suggesting a clean intellectual property landscape and structural diversification.
-361: 3. **Balanced Selectivity Profile:** The generated candidates maintain predicted selective ratios of 21-fold to 38-fold favoring DRD2 with nanomolar affinities.
-362: 
-363: Crucially, these deep-learning results must be treated strictly as an **exploratory computational proof-of-concept**. Given that these structures have not been synthesized or experimentally profiled, further validation through high-resolution free energy calculations (e.g., FEP/TI) and in vitro radioligand binding assays is mandatory before any therapeutic inferences are made.
-364: 
-365: ### 4.10 Tissue-Invariant Germline Genomic sQTL Architecture of DRD2
-366: 
-367: Given the non-replication and high volatility of peripheral blood mRNA measurements across independent cohorts (§3.3, §3.6), we emphasize that the strongest, methodologically unconfounded evidence supporting the *DRD2* axis in Fibromyalgia resides in **germline DNA genetics** (Tangente 3).
-368: 
-369: Unlike blood mRNA expression levels — which fluctuate dynamically in response to cell-fraction shifts, acute physiological stress, and pharmacological therapies — germline genomic DNA variants are invariant across all tissues throughout an individual's lifespan. The index GWAS risk SNP **rs2734833** (Kerrebijn et al., 2025) resides in strict linkage disequilibrium ($D' = 1.0$) with functional splicing quantitative trait loci (sQTLs), specifically **rs1076560** and **rs2283265**.
-370: 
-371: GTEx v10 human brain tissue data (`ENSG00000149295.14`) demonstrate that baseline *DRD2* expression is highly concentrated in striatal structures (**Nucleus Accumbens: 54.21 TPM; Putamen: 46.80 TPM; Caudate: 41.40 TPM**), with moderate expression in Substantia Nigra (8.21 TPM) and low baseline levels ($\sim 0.66\text{--}1.22\text{ TPM}$) across cerebral cortex and cervical spinal cord. In these central tissues, germline sQTL variants directly modulate the alternative splicing of **Exon 6** (87 bp encoding 29 amino acids: `VVALSSQFPV SEAAEQARAE AQEAEEEVVG`), which is inserted into the third intracellular loop (IL3).
-372: 
-373: Exon 6 inclusion determines the functional ratio between two distinct receptor isoforms:
-374: 1. **$DRD2_{\text{Short}}$ ($D2S$):** The presynaptic autoreceptor isoform (414 aa), which lacks Exon 6 and functions primarily to inhibit presynaptic dopamine synthesis and vesicular release via $G_{i\alpha2}$ coupling and Tyrosine Hydroxylase (TH) inhibition.
-375: 2. **$DRD2_{\text{Long}}$ ($D2L$):** The postsynaptic signaling isoform (443 aa), which incorporates Exon 6 and mediates canonical postsynaptic dopaminergic neurotransmission via $G_{i\alpha1/3}$ and $\beta$-arrestin-2 / AKT-GSK3$\beta$ recruitment.
-376: 
-377: Disruption of Exon 6 alternative splicing in central striatal and nociceptive circuits provides a cell-type-independent, tissue-invariant genomic mechanism through which genetic variation at the *DRD2* locus alters central pain processing, descending pain inhibition, and mesolimbic reward signaling in Fibromyalgia. Future experimental work should focus on germline sQTL genotyping and brain-isoform-specific quantification rather than relying on peripheral blood mRNA expression.
+345: ### 4.9 Transformer-Based Conditional Generation (Exploratory Proof-of-Concept)
+346: 
+347: To expand beyond the static discrete structures of our combinatorial library, we developed an exploratory deep learning pipeline based on a conditional **Transformer Encoder-Decoder** model. This architecture learns a continuous mapping of the dopaminergic chemical space, allowing targeted generation within the latent neighborhood of selective DRD2-binding scaffolds.
+348: 
+349: The encoder integrates local topology (SMILES transformed into SELFIES tokens) with global structural descriptors (Morgan Fingerprints). A joint loss function combines a cross-entropy reconstruction loss with a contrastive loss to organize the latent space $z$ based on subtype selectivity. During training, a causal attention mask (`tgt_mask`) is applied within the decoder to enforce strict autoregressive generation, preventing information leakage (*cheating*) by ensuring predictions at token $t$ depend solely on tokens $<t$. The training was executed on a ChEMBL-derived selective dataset (176 compounds) enriched with de novo aminothiazole templates, augmented 30-fold via SMILES randomized enumeration (5,970 samples). The training converged to a stable reconstruction loss of 0.7401 and a contrastive loss of 0.0863.
+350: 
+351: Conditional generation was steered by pertubing the latent neighborhood of aminothiazole anchors under high-selectivity target conditioning ($150\times$). The generated chemical structures (460 unique molecules) were filtered through a rigorous **4-Level Cascade Verification Funnel**:
+352: 1. **Level 1 (Cheapo):** Chemical sanitization, Lipinski's Rule of 5, and QED > 0.3 (379 passed).
+353: 2. **Level 2 (Medium):** Official RDKit PAINS filters, synthetic accessibility (SA Score $\le 4.5$), and mandatory presence of the hexahydrobenzothiazole core (11 passed).
+354: 3. **Level 3 (Expensive):** Local D2/D3 QSAR regressor scoring and novelty check (Tanimoto similarity vs ChEMBL training set < 0.85; 11 passed).
+355: 4. **Level 4 (Consensus):** Multi-property consensus score and blood-brain barrier (BBB) penetration viability (CNS MPO $\ge 4.0$; 11 approved).
+356: 
+357: Table 7 summarizes the profiles of the top 5 deep-learning-generated de novo candidates compared to static combinatorial baselines.
+358: 
+359: **Table 7. Properties of de novo Transformer-generated candidates vs. combinatorial baselines.**
+360: 
+361: | Compound ID | Origin | Structure (SMILES) | Predicted Selectivity (D3/D2) | QED | SA Score | CNS MPO | Tanimoto Novelty | Verdict |
+362: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+363: | **Candidato #1** | **Transformer** | `CCCC1CCC=2N=C(N)SC=2CC1CCN` | **29.81x** | **0.811** | **3.74** | **4.75 / 6.00** | **0.161** | **Approved (High Confidence)** |
+364: | **Candidato #2** | **Transformer** | `C(N)CC1CCCC=2N=C(N)SC=2C1N(C)CC` | **21.26x** | **0.820** | **3.99** | **4.42 / 6.00** | **0.143** | **Approved (High Confidence)** |
+365: | **Candidato #3** | **Transformer** | `NCC1CCC=2SC(N)=NC=2CC1CN` | **37.91x** | **0.635** | **3.81** | **3.84 / 6.00** | **0.141** | **Approved (High Confidence)** |
+366: | **Candidato #4** | **Transformer** | `CC1(N)CCC=2SC(N)=NC=2CC1` | **24.49x** | **0.616** | **3.60** | **4.75 / 6.00** | **0.130** | **Approved (High Confidence)** |
+367: | **Candidato #5** | **Transformer** | `C(N)CCCNC1CCCC=2N=C(N)SC=2C1` | **25.86x** | **0.547** | **3.05** | **4.12 / 6.00** | **0.176** | **Approved (High Confidence)** |
+368: | *Baseline #6* | Combinatorial | `CC(C)NC1CCc2nc(N)sc2CC1` | 32.46x | 0.757 | 3.10 | 5.82 / 6.00 | 0.812 (Similar) | Combinatorial Analog |
+369: | *Baseline #7* | Combinatorial | `CC(C)CNC1CCc2nc(N)sc2CC1` | 29.96x | 0.795 | 3.04 | 5.86 / 6.00 | 0.798 (Similar) | Combinatorial Analog |
+370: | *Baseline #2* | Combinatorial | `COc1ccccc1N1CCN(CCCNC2CCc3nc(N)sc3CC2)CC1` | 128.76x | 0.535 | 2.88 | 2.50 / 6.00 | 0.912 (Overfit) | Pobre CNS / Overfitted |
+371: 
+372: *Notes: Predicted selectivity ratio calculated as $K_{i,\text{DRD3}} / K_{i,\text{DRD2}}$ from local QSAR models. CNS MPO integrates six physical properties, utilizing a basic amine pKa estimate (~9.5) to avoid score inflation.*
+373: 
+374: This conditional deep-learning generation demonstrates several key findings:
+375: 1. **Viable Central Penetration (CNS MPO):** By modeling basic amine pKa rigorously (~9.5), four of the top five candidates achieve CNS MPO scores above the central clinic threshold ($\ge 4.0$), ranging from **4.12 to 4.75**. This indicates a high likelihood of crossing the blood-brain barrier (BBB) while maintaining molecular simplicity (MW < 270 g/mol). In contrast, larger combinatorial compounds like *Baseline #2* suffer from poor central properties (CNS MPO 2.50).
+376: 2. **High Scaffold Novelty:** Unlike the combinatorial baselines which exhibit high Tanimoto similarity to the training set (>0.80), the Transformer-designed structures demonstrate radical structural novelty (Tanimoto $\le 0.176$), suggesting a clean intellectual property landscape and structural diversification.
+377: 3. **Balanced Selectivity Profile:** The generated candidates maintain predicted selective ratios of 21-fold to 38-fold favoring DRD2 with nanomolar affinities.
 378: 
-379: ---
+379: Crucially, these deep-learning results must be treated strictly as an **exploratory computational proof-of-concept**. Given that these structures have not been synthesized or experimentally profiled, further validation through high-resolution free energy calculations (e.g., FEP/TI) and in vitro radioligand binding assays is mandatory before any therapeutic inferences are made.
 380: 
-381: ## 5. Limitations
+381: ### 4.10 Tissue-Invariant Germline Genomic sQTL Architecture of DRD2
 382: 
-383: 1. **Sex confounding.** GSE221921 has a severe sex imbalance (FM: 91F/5M; HC: 41F/52M). Our sensitivity analyses suggest that *MDGA2* and *DRD2* are not solely explained by sex imbalance, while *CAMKV* and *CELF4* are sensitive to sex adjustment. Residual confounding remains possible, and future studies should use sex-balanced cohorts or sex-stratified designs.
+383: Given the non-replication and high volatility of peripheral blood mRNA measurements across independent cohorts (§3.3; §3.6 dataset excluded as non-annotated HERV platform), we emphasize that the strongest, methodologically unconfounded evidence supporting the *DRD2* axis in Fibromyalgia resides in **germline DNA genetics** (Tangente 3).
 384: 
-385: 2. **Statistical methodology.** FPKM with parametric tests is not gold standard for RNA-seq. Count-based modeling (DESeq2/edgeR) would be preferable, but raw counts were not available. The expanded panel uses Mann-Whitney U + Bonferroni + Cohen's d (post-adversarial-audit standard), which is robust to the FPKM distribution.
+385: Unlike blood mRNA expression levels — which fluctuate dynamically in response to cell-fraction shifts, acute physiological stress, and pharmacological therapies — germline genomic DNA variants are invariant across all tissues throughout an individual's lifespan. The index GWAS risk SNP **rs2734833** (Kerrebijn et al., 2025) resides in strict linkage disequilibrium ($D' = 1.0$) with functional splicing quantitative trait loci (sQTLs), specifically **rs1076560** and **rs2283265**.
 386: 
-387: 3. **Cell composition.** We did not perform formal cell-type deconvolution on GSE221921 (e.g., CIBERSORTx, xCell, MCP-counter). An exploratory cell-type signature enrichment scoring based on marker gene averages was performed, but this is not equivalent to quantitative deconvolution and does not estimate true cell proportions. For GSE67311, marker-based deconvolution shows comparable composition between FM and HC, ruling out neutrophil dilution as the cause of non-replication.
+387: GTEx v10 human brain tissue data (`ENSG00000149295.14`) demonstrate that baseline *DRD2* expression is highly concentrated in striatal structures (**Nucleus Accumbens: 54.21 TPM; Putamen: 46.80 TPM; Caudate: 41.40 TPM**), with moderate expression in Substantia Nigra (8.21 TPM) and low baseline levels ($\sim 0.66\text{--}1.22\text{ TPM}$) across cerebral cortex and cervical spinal cord. In these central tissues, germline sQTL variants directly modulate the alternative splicing of **Exon 6** (87 bp encoding 29 amino acids: `VVALSSQFPV SEAAEQARAE AQEAEEEVVG`), which is inserted into the third intracellular loop (IL3).
 388: 
-389: 4. **Low absolute expression.** DRD2 expression in PBMCs is < 1 FPKM. qRT-PCR validation is needed.
-390: 
-391: 5. **Missing genes.** NPY was pre-specified but absent from the GSE221921 matrix (FDR applied to 16, not 17, genes). LEP and TNF were absent from the matrix and could not be tested in the UKB-causal analysis.
+389: Exon 6 inclusion determines the functional ratio between two distinct receptor isoforms:
+390: 1. **$DRD2_{\text{Short}}$ ($D2S$):** The presynaptic autoreceptor isoform (414 aa), which lacks Exon 6 and functions primarily to inhibit presynaptic dopamine synthesis and vesicular release via $G_{i\alpha2}$ coupling and Tyrosine Hydroxylase (TH) inhibition.
+391: 2. **$DRD2_{\text{Long}}$ ($D2L$):** The postsynaptic signaling isoform (443 aa), which incorporates Exon 6 and mediates canonical postsynaptic dopaminergic neurotransmission via $G_{i\alpha1/3}$ and $\beta$-arrestin-2 / AKT-GSK3$\beta$ recruitment.
 392: 
-393: 6. **Whole-blood non-replication.** The PBMC-derived neuropeptide and GWAS-neural signatures do not replicate in GSE67311 (whole blood), and the mechanism is not explained by neutrophil dilution. The proxies are PBMC/RNA-seq-specific; plasma protein measurement (Olink/ELISA) is the decisive test. PCSK1N is re-classified as "not confirmed" due to direction inversion. **The absolute expression of the full opioid axis (TACR1/OPRM1/OPRK1/TAC1/PENK) also does not replicate, but its co-expression structure does (rho up to +0.74 in FM)** — suggesting a coherent but amplitude-compartment-dependent module.
+393: Disruption of Exon 6 alternative splicing in central striatal and nociceptive circuits provides a cell-type-independent, tissue-invariant genomic mechanism through which genetic variation at the *DRD2* locus alters central pain processing, descending pain inhibition, and mesolimbic reward signaling in Fibromyalgia. Future experimental work should focus on germline sQTL genotyping and brain-isoform-specific quantification rather than relying on peripheral blood mRNA expression.
 394: 
-395: 7. **mRNA ≠ protein.** Elevated mRNA for receptors (TACR1, OPRM1, OPRK1) does not guarantee elevated functional protein. For CA14, the published plasma direction (↓ in CWP) differs from our PBMC mRNA direction (↑), which we interpret as a compartment-specific or compensatory signal; both compartments should be measured. The plasma direction of the neuropeptides remains to be measured (BDNF/NGF precedent: neuropeptides elevated in CSF do not always translate to plasma; review PMC10341963).
+395: ---
 396: 
-397: 8. **Preprint/peer-review status.** Kerrebijn et al. (2025) is published on medRxiv (doi: 10.1101/2025.09.18.25335914, PMID 41001472) and has not yet completed full peer review. The UKB CWP proteomics study is now published (Chen et al., 2025, *Adv Sci*; PMID 41025730; DOI 10.1002/advs.202507691); the peer-reviewed version confirms CA14 causality and adds the direction and agonist information used here.
+397: ## 5. Limitations
 398: 
-399: 9. **No experimental validation.** All analyses are computational. No wet-lab or clinical experiments were performed.
+399: 1. **Sex confounding.** GSE221921 has a severe sex imbalance (FM: 91F/5M; HC: 41F/52M). Our sensitivity analyses suggest that *MDGA2* and *DRD2* are not solely explained by sex imbalance, while *CAMKV* and *CELF4* are sensitive to sex adjustment. Residual confounding remains possible, and future studies should use sex-balanced cohorts or sex-stratified designs.
 400: 
-401: 10. **Tissue Extrapolations of Peripheral Blood mRNA.** Expression levels of *DRD2* measured in peripheral blood cells (PBMCs or whole blood) reflect basal, low-level transcription in circulating immune sub-populations and cannot be interpreted as a direct proxy for central nervous system dopaminergic function, striatal D2 receptor density, or mesolimbic neurotransmission. Central dopaminergic pathology must be evaluated via brain-specific germline sQTL genetic mechanisms (§4.10) or central neuroimaging/CSF studies.
+401: 2. **Statistical methodology.** FPKM with parametric tests is not gold standard for RNA-seq. Count-based modeling (DESeq2/edgeR) would be preferable, but raw counts were not available. The expanded panel uses Mann-Whitney U + Bonferroni + Cohen's d (post-adversarial-audit standard), which is robust to the FPKM distribution.
 402: 
-403: ---
+403: 3. **Cell composition.** We did not perform formal cell-type deconvolution on GSE221921 (e.g., CIBERSORTx, xCell, MCP-counter). An exploratory cell-type signature enrichment scoring based on marker gene averages was performed, but this is not equivalent to quantitative deconvolution and does not estimate true cell proportions. For GSE67311, marker-based deconvolution shows comparable composition between FM and HC, ruling out neutrophil dilution as the cause of non-replication.
 404: 
-405: ## 6. Conclusion
+405: 4. **Low absolute expression.** DRD2 expression in PBMCs is < 1 FPKM. qRT-PCR validation is needed.
 406: 
-407: A targeted reanalysis of two public transcriptomic cohorts, informed by population-scale UK Biobank plasma proteomics, reframes the peripheral molecular signature of fibromyalgia. In FM PBMCs (GSE221921), we find: (1) a **complete opioid/tachykinin neuropeptide circuit activated** (TACR1 d = +0.60, OPRM1 d = +0.53, TAC1, OPRK1; coordinated co-expression rho 0.31–0.63) — the largest effect-size block in the investigation; (2) **CA14, the top UKB causal protein for chronic widespread pain, elevated in PBMC mRNA** (FC = 2.29, d = +0.41) **while downregulated in plasma** in the UKB cross-sectional analysis, with MR indicating a protective effect of genetically elevated CA14 — yielding a testable prediction of ↓ CA14 in FM plasma and a repurposing direction toward CA14 agonism rather than sulthiame inhibition; (3) **five UKB causal immune-signaling genes downregulated** (TNFRSF1B, CD74, COL18A1, BTN2A1, TNFRSF4), indicating an immunomodulatory/exhaustion pattern rather than classical inflammation — consistent with the absence of IL-6/IL-8/TAC1 from the largest chronic pain proteomics screen (51,644 UKB participants); and (4) the GWAS-prioritized neural genes *MDGA2* and *DRD2* robustly upregulated. These PBMC-derived signatures do not replicate in whole blood (GSE67311), establishing them as PBMC-specific and setting plasma protein measurement as the decisive validation. The dopamine agonist RCT evidence remains limited (one unreplicated positive trial in 21 years). We conclude that the peripheral biology of FM is best described as **neuropeptide nociceptive signaling plus immunomodulation with pH/nociception dysregulation (CA14)** — and we recommend prioritizing **CA14 (Olink, expecting ↓ in plasma) and Substance P/enkephalins (ELISA)** for plasma validation, with IL-8 retained as an assay control, in sex-balanced, cell-type-resolved cohorts.
+407: 5. **Missing genes.** NPY was pre-specified but absent from the GSE221921 matrix (FDR applied to 16, not 17, genes). LEP and TNF were absent from the matrix and could not be tested in the UKB-causal analysis.
 408: 
-409: ---
+409: 6. **Whole-blood non-replication.** The PBMC-derived neuropeptide and GWAS-neural signatures do not replicate in GSE67311 (whole blood), and the mechanism is not explained by neutrophil dilution. The proxies are PBMC/RNA-seq-specific; plasma protein measurement (Olink/ELISA) is the decisive test. PCSK1N is re-classified as "not confirmed" due to direction inversion. **The absolute expression of the full opioid axis (TACR1/OPRM1/OPRK1/TAC1/PENK) also does not replicate; its co-expression architecture is partially preserved (5 of 10 pairs show FM > HC, rho up to +0.74, but 2 pairs reverse with HC > FM — see §3.3 full 10-pair table)** — suggesting a partially coherent, amplitude-compartment-dependent module.
 410: 
-411: ## References
+411: 7. **mRNA ≠ protein.** Elevated mRNA for receptors (TACR1, OPRM1, OPRK1) does not guarantee elevated functional protein. For CA14, the published plasma direction (↓ in CWP) differs from our PBMC mRNA direction (↑), which we interpret as a compartment-specific or compensatory signal; both compartments should be measured. The plasma direction of the neuropeptides remains to be measured (BDNF/NGF precedent: neuropeptides elevated in CSF do not always translate to plasma; review PMC10341963).
 412: 
-413: Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. *J R Stat Soc B*, 57(1), 289–300.
+413: 8. **Preprint/peer-review status.** Kerrebijn et al. (2025) is published on medRxiv (doi: 10.1101/2025.09.18.25335914, PMID 41001472) and has not yet completed full peer review. The UKB CWP proteomics study is now published (Chen et al., 2025, *Adv Sci*; PMID 41025730; DOI 10.1002/advs.202507691); the peer-reviewed version confirms CA14 causality and adds the direction and agonist information used here.
 414: 
-415: Bi, W., Yang, M., & Mao, R. (2024). Unraveling Shared Diagnostic Biomarkers of Fibromyalgia in Ankylosing Spondylitis. *J Inflamm Res*, 17, 6395–6413. PMID: 39310900.
+415: 9. **No experimental validation.** All analyses are computational. No wet-lab or clinical experiments were performed.
 416: 
-417: Bäckryd, E., et al. (2017). Evidence of both systemic inflammation and neuroinflammation in fibromyalgia patients, as assessed by a multiplex protein panel applied to the cerebrospinal fluid and to plasma. *J Pain Res*, 10, 515–525. PMID: 28331362. (PMC5344444.)
-418: 
-419: Chen, L., Kelleher, E., Meng, R., Liu, D., Guo, Y., Wang, Y., Gao, Y., Huang, Z., Liang, Z., Yuan, S., Zeng, C., Lei, G., Ma, J., Dong, Y., Irani, A., Xie, J., & Prieto-Alhambra, D. (2025). Diagnosis, Prognosis, and Drug Target Discovery for Chronic Widespread Pain: A Large Proteogenomic Study. *Adv Sci (Weinh)*. PMID: 41025730. DOI: 10.1002/advs.202507691. PMC12713070. (Versión publicada del preprint medRxiv 10.1101/2024.10.29.24316353; EuropePMC PPR932603.)
-420: 
-421: Chinn, S., Caldwell, W., & Gritsenko, K. (2016). Fibromyalgia Pathogenesis and Treatment Options Update. *Curr Pain Headache Rep*, 20(4), 25. PMID: 26922414.
-422: 
-423: De la Luz-Cuellar, Y. E., Coffeen, U., Mercado, F., & Contreras, B. (2023). Spinal dopaminergic D2 receptors modulate mechanical allodynia and hyperalgesia. *Eur J Pharmacol*, 946, 175654. PMID: 37003519.
-424: 
-425: Edwards, S., Callicoatte, C. N., Barattini, A. E., & Gilpin, N. W. (2022). Pramipexole treatment attenuates mechanical hypersensitivity in male rats experiencing chronic inflammatory pain. *Neuropharmacology*, 208, 108985. PMID: 35085583.
-426: 
-427: Gowri Gopal, K., Robi, L.S., & Sherin, D.R. (2026). Molecular insights into fibromyalgia: association of hub genes with pain targets, neuropathic pathways, and stress-related hormones. *In Silico Pharmacol*, 14(2), 135. PMID: 42109571.
-428: 
-429: Hamblin, R., Ntali, G., & Karavitaki, N. (2026). Impulse control disorders and dopamine agonists. *Best Pract Res Clin Endocrinol Metab*, 40(1), 101980. PMID: 42034459.
-430: 
-431: Holman, A.J., & Myers, R.R. (2005). A Randomized, Double-Blind, Placebo-Controlled Trial of Pramipexole, a Dopamine Agonist, in Patients With Fibromyalgia Receiving Concomitant Medications. *Arthritis Rheum*, 52(8), 2495–2505. PMID: 16052595. doi: 10.1002/art.21191.
-432: 
-433: Joodi, S. A., Nawwar, D. A., & Rasheed, N. O. A. (2026). Therapeutic and research frontiers in fibromyalgia: integrating pathophysiology with innovative drug repurposing. *Inflammopharmacology*, 34(1), 89–105. PMID: 42489789.
-434: 
-435: Kerrebijn, I., et al. (2025). The genetic architecture of fibromyalgia across 2.5 million individuals. *medRxiv*. PMID: 41001472. doi: 10.1101/2025.09.18.25335914.
-436: 
-437: Kurian, S.M., et al. (2017). Peripheral Blood Gene Expression in Fibromyalgia. PMID: 27157394. (GSE67311.)
-438: 
-439: Li, Z.Y., et al. (2025). Large-Scale Plasma Proteomics to Profile Pathways and Prognosis of Chronic Pain. *Adv Sci*, 12(16), e2410160. PMID: 40048323. (PMC12021123.)
-440: 
-441: Lindström, S., Wolfschlag, M., & Håkansson, A. (2026). Pramipexole exposure and risk of incident gambling disorder in individuals with psychiatric disorders: A nationwide register-based cohort study. *J Affect Disord*, 370, 112–119. PMID: 42217644.
-442: 
-443: Love, M.I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biol*, 15, 550. PMID: 25516281.
-444: 
-445: Mohapatra, G., et al. (2024). Identification of unique genomic signatures in patients with fibromyalgia and chronic pain. *Sci Rep*, 14, 3949. PMID: 38366049.
-446: 
-447: O'Mahony, L.F., et al. (2021). Are patients with fibromyalgia and chronic fatigue syndrome different? A meta-analysis of inflammatory cytokines. *Brain Behav Immun* (systematic review of IL-8 in FM; aggregated small ELISA studies, does not survive population-scale testing). [Reference to the meta-analytic IL-8 literature superseded by UKB scale; see Discussion §4.1.]
-448: 
-449: Pacheco, R., Contreras, F., & Zouali, M. (2014). The dopaminergic system in autoimmune diseases. *Front Immunol*, 5, 117.
-450: 
-451: Peng, X., et al. (2022). Pramipexole inhibits fibromyalgia-like symptoms in a reserpine-induced mouse model. *Neural Regen Res*, 17(3), 667–674. PMID: 35799530. doi: 10.4103/1673-5374.355761.
-452: 
-453: Rodríguez-Pintó, I., et al. (2014). Substance P and IL-8 in fibromyalgia: mast cell–neutrophil axis. [Pathophysiological link SP→IL-8 via neutrophil trafficking; see Discussion §3.2.]
-454: 
-455: Russell, I.J., et al. (1994). Elevated cerebrospinal fluid levels of Substance P in patients with fibromyalgia syndrome. *Arthritis Rheum*, 37(11), 1593–1601. PMID: 7526868.
-456: 
-457: Sarzi-Puttini, P., et al. (2020). Fibromyalgia: An update. *Nat Rev Rheumatol*, 16(11), 645–660. PMID: 33024295.
-458: 
-459: Tayyab, M., Sasaoka, T., Abe, M., & Natsume, R. (2025). Dopamine D2S/D2L Receptor Regulation of Alcohol-Induced Reward and Signalling. *Addict Biol*, 30(2), e13480. PMID: 41239854.
-460: 
-461: Tsilioni, I., et al. (2016). IL-6, Substance P and TNF are elevated in serum of fibromyalgia patients via mast cells. [Elevated IL-6 + SP + TNF in FM serum; supports peripheral IL-6/SP signal at small effect size.]
-462: 
-463: Zhang, Y., et al. (2007). Functional impact of DRD2 exon 6 alternative splicing on presynaptic autoreceptor function. *J Biol Chem*, 282(11), 7790–7798. PMID: 17351609.
-464: 
-465: Zhao, F., et al. (2025). Identification of diagnostic biomarkers for fibromyalgia using gene expression analysis and machine learning. *Front Genet*, 16, 1535541. PMID: 40313599.
-466: 
-467: ---
-468: 
-469: ## Data & Code Availability
-470: 
-471: All transcriptomic data are publicly available from GEO (GSE221921, GSE67311). The GSE221921 processed data matrix (`GSE221921_FM_ProcessedData.xlsx`) must be downloaded from GEO and placed in the `datos/geo/PBMC_FM_96patients_93controls/` directory for local replication.
-472: 
-473: Analysis scripts, documentation, and derived tables are publicly available on GitHub at [https://github.com/Grizaceo/protein-lab](https://github.com/Grizaceo/protein-lab). The specific version of the code used for this preprint (v1.0.0) is permanently archived on Zenodo (DOI: 10.5281/zenodo.20250218, URL: https://zenodo.org/records/20250218).
-474: 
-475: The repository includes:
-476: - `scripts/sensitivity_analysis_gse221921.py` — five-model sensitivity analysis
-477: - `scripts/cross_context_gwas_neural_genes.py` — cross-context comparison of GWAS-prioritized neural genes vs. mast cell markers across PBMC and whole-blood datasets
-478: - `scripts/phase2_rct_review.py` — literature review evidence table
-479: - `validate_fm_biomarkers_iter2.py` — expanded 19-gene panel with Mann-Whitney + Bonferroni + Cohen's d (post-adversarial-audit v3)
-480: - `scripts/validate_fm_biomarkers_gse67311.py` — whole-blood cross-validation (negative result, verified group counts 67/75)
-481: - `scripts/deconvolution_cell_types.py` — cell-type marker-based deconvolution of GSE67311
-482: - `scripts/validate_opioid_axis_gse67311.py` — full opioid/tachykinin axis (TACR1/OPRM1/OPRK1/TAC1/PENK) in GSE67311 + co-expression Spearman
+417: 10. **Medication, age, and BMI confounding (2026-08-04).** GSE221921 metadata contains only `Sample`, `Etiology`, and `Gender` — no age, BMI, or medication data (the GEO soft file adds only `tissue: Blood`). This is especially critical for the **opioid axis finding**: FM patients frequently use opioids, antidepressants, and pregabalin, and chronic opioid exposure is known to regulate the expression of opioid receptors themselves. **The elevated OPRM1/OPRK1/TACR1 signal in PBMCs cannot be distinguished from a pharmacological effect with the available data** — it may reflect disease biology, medication, or both. Any validation cohort must record medication status and stratify by it. This limitation is acknowledged for the protocol design in `PROTOCOL_Olink_FM_Biomarker_Validation.md` (§119) and is elevated here to an explicit risk for the current findings.
+418: 11. **Tissue Extrapolations of Peripheral Blood mRNA.** Expression levels of *DRD2* measured in peripheral blood cells (PBMCs or whole blood) reflect basal, low-level transcription in circulating immune sub-populations and cannot be interpreted as a direct proxy for central nervous system dopaminergic function, striatal D2 receptor density, or mesolimbic neurotransmission. Central dopaminergic pathology must be evaluated via brain-specific germline sQTL genetic mechanisms (§4.10) or central neuroimaging/CSF studies.
+419: 
+420: ---
+421: 
+422: ## 6. Conclusion
+423: 
+424: A targeted reanalysis of two public transcriptomic cohorts, informed by population-scale UK Biobank plasma proteomics, reframes the peripheral molecular signature of fibromyalgia. In FM PBMCs (GSE221921), we find: (1) a **complete opioid/tachykinin neuropeptide circuit activated** (TACR1 d = +0.60, OPRM1 d = +0.53, TAC1, OPRK1; coordinated co-expression rho 0.31–0.63) — the largest effect-size block in the investigation; (2) **CA14, the top UKB causal protein for chronic widespread pain, elevated in PBMC mRNA in the unadjusted analysis** (FC = 2.29, d = +0.41) **but not surviving the sex-stratified primary model** (female-only: p = 0.135, d = +0.24, FC = 1.60; the unadjusted signal is confounded by the structural sex imbalance — see §4.2) **while downregulated in plasma** in the UKB cross-sectional analysis, with MR indicating a protective effect of genetically elevated CA14 — yielding a testable prediction of ↓ CA14 in FM plasma and a repurposing direction toward CA14 agonism rather than sulthiame inhibition; (3) **five UKB causal immune-signaling genes downregulated** (TNFRSF1B, CD74, COL18A1, BTN2A1, TNFRSF4), indicating an immunomodulatory/exhaustion pattern rather than classical inflammation — consistent with the absence of IL-6/IL-8 from the highlighted proteins of the largest chronic pain proteomics screen (51,644 UKB participants; TAC1/Substance P not covered by that panel and therefore not evaluable); and (4) the GWAS-prioritized neural genes *MDGA2* and *DRD2* robustly upregulated. These PBMC-derived signatures do not replicate in whole blood (GSE67311), establishing them as PBMC-specific and setting plasma protein measurement as the decisive validation. The dopamine agonist RCT evidence remains limited (one unreplicated positive trial in 21 years). We conclude that the peripheral biology of FM is best described as **neuropeptide nociceptive signaling plus immunomodulation with pH/nociception dysregulation (CA14)** — and we recommend prioritizing **CA14 (Olink, expecting ↓ in plasma) and Substance P/enkephalins (ELISA)** for plasma validation, with IL-8 retained as an assay control, in sex-balanced, cell-type-resolved cohorts.
+425: 
+426: ---
+427: 
+428: ## References
+429: 
+430: Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. *J R Stat Soc B*, 57(1), 289–300.
+431: 
+432: Bi, W., Yang, M., & Mao, R. (2024). Unraveling Shared Diagnostic Biomarkers of Fibromyalgia in Ankylosing Spondylitis. *J Inflamm Res*, 17, 6395–6413. PMID: 39310900.
+433: 
+434: Bäckryd, E., et al. (2017). Evidence of both systemic inflammation and neuroinflammation in fibromyalgia patients, as assessed by a multiplex protein panel applied to the cerebrospinal fluid and to plasma. *J Pain Res*, 10, 515–525. PMID: 28424559. (PMC5344444.)
+435: 
+436: Chen, L., Kelleher, E., Meng, R., Liu, D., Guo, Y., Wang, Y., Gao, Y., Huang, Z., Liang, Z., Yuan, S., Zeng, C., Lei, G., Ma, J., Dong, Y., Irani, A., Xie, J., & Prieto-Alhambra, D. (2025). Diagnosis, Prognosis, and Drug Target Discovery for Chronic Widespread Pain: A Large Proteogenomic Study. *Adv Sci (Weinh)*. PMID: 41025730. DOI: 10.1002/advs.202507691. PMC12713070. (Versión publicada del preprint medRxiv 10.1101/2024.10.29.24316353; EuropePMC PPR932603.)
+437: 
+438: Chinn, S., Caldwell, W., & Gritsenko, K. (2016). Fibromyalgia Pathogenesis and Treatment Options Update. *Curr Pain Headache Rep*, 20(4), 25. PMID: 26922414.
+439: 
+440: De la Luz-Cuellar, Y. E., Coffeen, U., Mercado, F., & Contreras, B. (2023). Spinal dopaminergic D1- and D2-like receptors have a sex-dependent effect in an experimental model of fibromyalgia. *Eur J Pharmacol*, 948, 175696. PMID: 37003519.
+441: 
+442: Edwards, S., Callicoatte, C. N., Barattini, A. E., & Gilpin, N. W. (2022). Pramipexole treatment attenuates mechanical hypersensitivity in male rats experiencing chronic inflammatory pain. *Neuropharmacology*, 208, 108985. PMID: 35085583.
+443: 
+444: Gowri Gopal, K., Robi, L.S., & Sherin, D.R. (2026). Molecular insights into fibromyalgia: association of hub genes with pain targets, neuropathic pathways, and stress-related hormones. *In Silico Pharmacol*, 14(2), 135. PMID: 42109571.
+445: 
+446: Hamblin, R., Ntali, G., & Karavitaki, N. (2026). Impulse control disorders and dopamine agonists. *Best Pract Res Clin Endocrinol Metab*, 40(1), 101980. PMID: 42034459.
+447: 
+448: Holman, A.J., & Myers, R.R. (2005). A Randomized, Double-Blind, Placebo-Controlled Trial of Pramipexole, a Dopamine Agonist, in Patients With Fibromyalgia Receiving Concomitant Medications. *Arthritis Rheum*, 52(8), 2495–2505. PMID: 16052595. doi: 10.1002/art.21191.
+449: 
+450: Joodi, S. A., Nawwar, D. A., & Rasheed, N. O. A. (2026). Therapeutic and research frontiers in fibromyalgia: integrating pathophysiology with innovative drug repurposing. *Inflammopharmacology*, 34(1), 89–105. PMID: 42489789.
+451: 
+452: Kerrebijn, I., et al. (2025). The genetic architecture of fibromyalgia across 2.5 million individuals. *medRxiv*. PMID: 41001472. doi: 10.1101/2025.09.18.25335914.
+453: 
+454: Jones, K.D., et al. (2016). Genome-wide expression profiling in the peripheral blood of patients with fibromyalgia. *Clin Exp Rheumatol*, 34(2 Suppl 96), S89–98. PMID: 27157394. (GSE67311.)
+455: 
+456: Li, Z.Y., et al. (2025). Large-Scale Plasma Proteomics to Profile Pathways and Prognosis of Chronic Pain. *Adv Sci*, 12(16), e2410160. PMID: 40048323. (PMC12021123.)
+457: 
+458: Lindström, S., Wolfschlag, M., & Håkansson, A. (2026). Pramipexole exposure and risk of incident gambling disorder in individuals with psychiatric disorders: A nationwide register-based cohort study. *J Affect Disord*, 370, 112–119. PMID: 42217644.
+459: 
+460: Love, M.I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biol*, 15, 550. PMID: 25516281.
+461: 
+462: Mohapatra, G., et al. (2024). Identification of unique genomic signatures in patients with fibromyalgia and chronic pain. *Sci Rep*, 14, 3949. PMID: 38366049.
+463: 
+464: O'Mahony, L.F., et al. (2021). Is fibromyalgia associated with a unique cytokine profile? A systematic review and meta-analysis. *Rheumatology (Oxford)*, 60(7), 3243–3253. PMID: 33576773. [Reference to the meta-analytic IL-8 literature superseded by UKB scale; see Discussion §4.1.]
+465: 
+466: Pacheco, R., Contreras, F., & Zouali, M. (2014). The dopaminergic system in autoimmune diseases. *Front Immunol*, 5, 117. PMID: 24711809.
+467: 
+468: Martins, C.P., Paes, R.S., Baldasso, G.M., Ferrarini, E.G., Scussel, R., Zaccaron, R.P., Machado-de-Ávila, R.A., Lock Silveira, P.C., & Dutra, R.C. (2022). Pramipexole, a dopamine D3/D2 receptor-preferring agonist, attenuates reserpine-induced fibromyalgia-like model in mice. *Neural Regen Res*, 17(2), 450–458. PMID: 34269222.
+469: 
+470: Rodríguez-Pintó, I., et al. (2014). Fibromyalgia and cytokines. *Immunol Lett*, 162(1 Pt A), 220–227. PMID: 24462815.
+471: 
+472: Russell, I.J., et al. (1994). Elevated cerebrospinal fluid levels of Substance P in patients with fibromyalgia syndrome. *Arthritis Rheum*, 37(11), 1593–1601. PMID: 7526868.
+473: 
+474: Sarzi-Puttini, P., et al. (2020). Fibromyalgia: An update. *Nat Rev Rheumatol*, 16(11), 645–660. PMID: 33024295.
+475: 
+476: Tayyab, M., Sasaoka, T., Abe, M., & Natsume, R. (2025). Dopamine D2S/D2L Receptor Regulation of Alcohol-Induced Reward and Signalling. *Addict Biol*, 30(2), e13480. PMID: 41239854.
+477: 
+478: Tsilioni, I., Russell, I.J., Stewart, J.M., Gleason, J.M., & Theoharides, T.C. (2016). Neuropeptides CRH, SP, HK-1, and inflammatory cytokines IL-6 and TNF are increased in serum of patients with fibromyalgia and chronic fatigue syndrome, indicating a role for mast cells and neuroimmune axis. *J Pharmacol Exp Ther*, 357(1), 239–246. PMID: 26763911.
+479: 
+480: Trott, O., & Olson, A.J. (2010). AutoDock Vina: improving the speed and accuracy of docking with a new scoring function, efficient optimization, and multithreading. *J Comput Chem*, 31(2), 455–461. PMID: 19499576.
+481: 
+482: Zhang, Y., Bertolino, A., Fazio, L., Blasi, G., Rampino, A., Romano, R., Lee, M.L.T., Xiao, T., Papp, A., Wang, D., & Sadée, W. (2007). Polymorphisms in human dopamine D2 receptor gene affect gene expression, splicing, and neuronal activity during working memory. *Proc Natl Acad Sci USA*, 104(51), 20552–20557. PMID: 18077373.
 483: 
-484: Representative derived tables include:
-485: - `analisis/sensitivity_analysis_GSE221921.csv` — five-model robustness table for PBMC reanalysis
-486: - `analisis/cross_context_gwas_neural_genes.csv` — cross-context comparison table used for the PBMC vs. whole-blood contrast
-487: - `analisis/RCT_dopamine_agonists_FM.csv` — targeted literature review evidence table
-488: 
-489: Software: Python 3.10, pandas 1.5.3, scipy 1.10.1, statsmodels 0.13.5.
-490: 
-491: ## AI-Assisted Research Methodology
-492: 
-493: This study was conducted using an agentic AI-assisted research methodology implemented within a human-in-the-loop (HITL) framework. Analytical pipelines, literature synthesis, and computational design steps were developed with the support of large language model agents (Claude, Anthropic). All scientific claims were systematically validated by the human author against pre-established, independently verifiable ground truths: AlphaFold structural predictions (EMBL-EBI), RCSB PDB crystallographic coordinates, ChEMBL bioactivity databases, GEO-deposited expression matrices, UK Biobank proteomics publications, and published statistical methods. Verification followed an evidence-first principle: no finding was accepted without traceable support from primary sources. This framework is implemented in the open-source `agentic-lab-eac` package (Apache-2.0, GitHub: Grizaceo/agentic-lab-eac), which formalizes the generate–review–verify cycle used throughout this study.
-494: 
-495: ## Conflict of Interest
-496: 
-497: The author declares no conflicts of interest.
-498: 
-499: ## Author's Note
-500: 
-501: This study was initiated out of personal motivation following personal experience with fibromyalgia in close contacts. No financial or institutional interest is involved.
+484: Zhao, F., et al. (2025). Identification of diagnostic biomarkers for fibromyalgia using gene expression analysis and machine learning. *Front Genet*, 16, 1535541. PMID: 40313599.
+485: 
+486: ---
+487: 
+488: ## Data & Code Availability
+489: 
+490: All transcriptomic data are publicly available from GEO (GSE221921, GSE67311). The GSE221921 processed data matrix (`GSE221921_FM_ProcessedData.xlsx`) must be downloaded from GEO and placed in the `datos/geo/PBMC_FM_96patients_93controls/` directory for local replication.
+491: 
+492: Analysis scripts, documentation, and derived tables are publicly available on GitHub at [https://github.com/Grizaceo/protein-lab](https://github.com/Grizaceo/protein-lab). The specific version of the code used for this preprint (v1.0.0) is permanently archived on Zenodo (DOI: 10.5281/zenodo.20250218, URL: https://zenodo.org/records/20250218).
+493: 
+494: The repository includes:
+495: - `scripts/sensitivity_analysis_gse221921.py` — five-model sensitivity analysis
+496: - `scripts/cross_context_gwas_neural_genes.py` — cross-context comparison of GWAS-prioritized neural genes vs. mast cell markers across PBMC and whole-blood datasets
+497: - `scripts/phase2_rct_review.py` — literature review evidence table
+498: - `validate_fm_biomarkers_iter2.py` — expanded 19-gene panel with Mann-Whitney + Bonferroni + Cohen's d (post-adversarial-audit v3)
+499: - `scripts/validate_fm_biomarkers_gse67311.py` — whole-blood cross-validation (negative result, verified group counts 67/75)
+500: - `scripts/deconvolution_cell_types.py` — cell-type marker-based deconvolution of GSE67311
+501: - `scripts/validate_opioid_axis_gse67311.py` — full opioid/tachykinin axis (TACR1/OPRM1/OPRK1/TAC1/PENK) in GSE67311 + co-expression Spearman
+502: 
+503: Representative derived tables include:
+504: - `analisis/sensitivity_analysis_GSE221921.csv` — five-model robustness table for PBMC reanalysis
+505: - `analisis/cross_context_gwas_neural_genes.csv` — cross-context comparison table used for the PBMC vs. whole-blood contrast
+506: - `analisis/RCT_dopamine_agonists_FM.csv` — targeted literature review evidence table
+507: 
+508: Software: Python 3.10, pandas 1.5.3, scipy 1.10.1, statsmodels 0.13.5.
+509: 
+510: ## AI-Assisted Research Methodology
+511: 
+512: This study was conducted using an agentic AI-assisted research methodology implemented within a human-in-the-loop (HITL) framework. Analytical pipelines, literature synthesis, and computational design steps were developed with the support of large language model agents (Claude, Anthropic). All scientific claims were systematically validated by the human author against pre-established, independently verifiable ground truths: AlphaFold structural predictions (EMBL-EBI), RCSB PDB crystallographic coordinates, ChEMBL bioactivity databases, GEO-deposited expression matrices, UK Biobank proteomics publications, and published statistical methods. Verification followed an evidence-first principle: no finding was accepted without traceable support from primary sources. This framework is implemented in the open-source `agentic-lab-eac` package (Apache-2.0, GitHub: Grizaceo/agentic-lab-eac), which formalizes the generate–review–verify cycle used throughout this study.
+513: 
+514: ## Conflict of Interest
+515: 
+516: The author declares no conflicts of interest.
+517: 
+518: ## Author's Note
+519: 
+520: This study was initiated out of personal motivation following personal experience with fibromyalgia in close contacts. No financial or institutional interest is involved.

@@ -49,6 +49,13 @@ TARGETS = {
     "AGTR1": {"fasta_key": "AGTR1", "tier": "GPCR_ctrl"},
     "ALB": {"fasta_key": "ALB", "tier": "nonGPCR_ctrl"},
     "GFP": {"fasta_key": "GFP", "tier": "inert_ctrl"},
+    # Ruta A new targets
+    "MRGPRX2": {"fasta_key": "MRGPRX2", "tier": "Tier3"},
+    "CD40": {"fasta_key": "CD40", "tier": "Tier3"},
+    "CD40LG": {"fasta_key": "CD40LG", "tier": "Tier3"},
+    "CD79B": {"fasta_key": "CD79B", "tier": "Tier3"},
+    "CD4": {"fasta_key": "CD4", "tier": "Tier3"},
+    "IL6R": {"fasta_key": "IL6R", "tier": "Tier3"},
 }
 
 DEFAULT_DRUGS = {

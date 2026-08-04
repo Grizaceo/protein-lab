@@ -43,12 +43,13 @@ H0 = 10 ** (-7.33) * 1e3        # mM (~4.68e-5 mM)
 # Catalítico (CA14, conservador vs CA II 1e7-1e8)
 # CALIBRACIÓN TERMODINÁMICA: k_hyd/k_deh = Keq = [HCO3-][H+]/[CO2] = 7.93e-4 mM
 # en estado normal (pH 7.33, c0=1.535, b0=26, h0=4.68e-5 mM).
-# Con k_hyd_total = 5.15 (0.15 no cat + 5 cat), k_deh_total = 5.15/7.93e-4 = 6494.
+# Corrección (2026-08-04): K_UNCAT_R debe respetar Keq: k_uncat_f/k_uncat_r = KEQ,
+# => K_UNCAT_R = K_UNCAT_F / KEQ = 0.15 / 7.93e-4 = 189.3 s^-1 (antes 50.0, un bug 3.8x).
 K_UNCAT_F = 0.15                # s^-1
-K_UNCAT_R = 50.0                # s^-1
+K_UNCAT_R = K_UNCAT_F / ((26.0 * (10 ** (-7.33) * 1e3)) / 1.535)  # = 189.3 s^-1, respeta Keq
 K_CAT_HYD = 5.0                 # s^-1 efectivo a ca_rel=1 (domina sobre no catalítico)
-KEQ = (B0 * H0) / C0            # 7.93e-4 mM
-K_CAT_DEH = (K_UNCAT_F + K_CAT_HYD) / KEQ - K_UNCAT_R   # ~6444 s^-1
+KEQ = (26.0 * (10 ** (-7.33) * 1e3)) / 1.535  # 7.93e-4 mM (idéntico, pero sin dependencia de globales)
+K_CAT_DEH = (K_UNCAT_F + K_CAT_HYD) / KEQ - K_UNCAT_R   # ~6305 s^-1
 T = C0 + B0                     # carbonato total (mM)
 
 def solve_ss(ca_rel, j_co2=0.02, k_diff=0.01, j_acid=1e-5, k_buf=0.5):

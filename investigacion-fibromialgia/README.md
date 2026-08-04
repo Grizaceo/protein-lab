@@ -19,7 +19,7 @@ FM patients?
 
 **Datasets analyzed:**
 - **GSE221921** — PBMCs, RNA-seq, 96 FM / 93 HC (Mohapatra et al., 2024)
-- **GSE67311** — Whole blood, Affymetrix microarray, 70 FM / 70 HC (Kurian et al., 2017)
+- **GSE67311** — Whole blood, Affymetrix microarray, 70 FM / 70 HC (Jones et al., 2016)
 
 **Key findings:**
 - *MDGA2* (q = 1.1×10⁻⁷) and *DRD2* (q = 2.9×10⁻⁵) are robustly upregulated
@@ -118,7 +118,7 @@ The full manuscript is available in [`preprint_dopaminergic_convergence_FM.md`](
 
 - Kerrebijn et al. (2025). The genetic architecture of fibromyalgia across 2.5 million individuals. *medRxiv*. PMID: 41001472. doi: 10.1101/2025.09.18.25335914v1
 - Mohapatra et al. (2024). Identification of unique genomic signatures in patients with fibromyalgia and chronic pain. *Sci Rep*, 14, 3949. PMID: 38366049
-- Kurian et al. (2017). Peripheral Blood Gene Expression in Fibromyalgia. PMID: 27157394 (GSE67311)
+- Jones, K.D., et al. (2016). Genome-wide expression profiling in the peripheral blood of patients with fibromyalgia. *Clin Exp Rheumatol*, 34(2 Suppl 96), S89–98. PMID: 27157394 (GSE67311)
 - Holman & Myers (2005). A Randomized, Double-Blind, Placebo-Controlled Trial of Pramipexole in Fibromyalgia. *Arthritis Rheum*, 52(8), 2495–2505. PMID: 16052595
 
 ---

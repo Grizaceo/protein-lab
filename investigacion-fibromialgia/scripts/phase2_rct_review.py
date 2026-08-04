@@ -68,9 +68,9 @@ rct_evidence = [
     # ── Estudios Preclínicos ───────────────────────────────────────────────
     {
         "Tipo": "Preclínico (in vivo)",
-        "Estudio": "Peng et al., 2022",
-        "PMID": "35799530",
-        "DOI": "10.4103/1673-5374.355761",
+        "Estudio": "Martins et al., 2022",
+        "PMID": "34269222",
+        "DOI": "10.4103/1673-5374.317984",
         "Journal": "Neural Regeneration Research",
         "Droga": "Pramipexol",
         "Mecanismo": "Agonista D3/D2",
@@ -138,7 +138,7 @@ cuatro puntos:
    Nótese: ropinirol tiene menor afinidad por D3 que pramipexol — diferencia
    farmacológica relevante dado que el GWAS apunta a DRD2 (no DRD3).
 
-3. EVIDENCIA PRECLÍNICA RECIENTE (Peng 2022, PMID 35799530):
+3. EVIDENCIA PRECLÍNICA RECIENTE (Martins 2022, PMID 34269222):
    Pramipexol revirtió alodinia y deplección dopaminérgica en modelo
    murino de FM (reserpina), validando el mecanismo D3/D2 en dolor crónico.
 
