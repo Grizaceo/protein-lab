@@ -89,7 +89,7 @@ def prepare_re_sac_data() -> dict:
     
     La línea Re SAC está completa con:
     - DFT: Re-N4C2 promovido por W, dG_H* = -0.5122 eV
-    - MD: MtrF retiene perrhenato por puente salino ARG319 (96.2%)
+    - MD: MtrF-perrhenato simulado (trajectories .dcd) — claim ARG319 RETIRADO 2026-08-05 (residuo 319 = ALA en MtrF_3PMQ; ver material-science-lab AUDITORIA_RE_SAC.md)
     - Umbrella Sampling: DeltaG_bind = -10.57 kcal/mol
     - Marcus/LZ: k_ET = 6.43e9 s-1
     - CI-NEB: barrera 2.25 eV (estable hasta 600K)
@@ -121,7 +121,7 @@ def prepare_re_sac_data() -> dict:
             "md": {
                 "method": "OpenMM, 10ns, NPT",
                 "system": "MtrF-perrhenate complex",
-                "key_interaction": "ARG319 salt bridge to perrhenate",
+                "key_interaction": "RETIRADO 2026-08-05: residuo 319 = ALA en estructura usada (MtrF_3PMQ)",
                 "occupancy": 0.962,  # 96.2%
                 "force_field": "AMBER ff19SB + GAFF2",
             },
