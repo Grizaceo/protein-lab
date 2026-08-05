@@ -21,7 +21,8 @@ if _env_file.exists():
 from automated_lab.backends.ferritina_adapter import FerritinaAdapter
 from automated_lab.backends.hemoglobina_adapter import HemoglobinaAdapter
 from automated_lab.backends.fibromialgia_adapter import FibromialgiaAdapter
-from automated_lab.backends.materiales_adapter import MaterialesAdapter
+# NOTA 2026-08-05: materiales_adapter migrado a material-science-lab
+# (chasis inicial P0). Esta línea ya no se registra aquí.
 from automated_lab.backends.hirondellea_adapter import HirondelleaAdapter
 from automated_lab.backends.replicacion_adapter import (
     ReplicacionGSE274134Adapter,
@@ -43,9 +44,8 @@ ADAPTERS = {
     "hemoglobina": HemoglobinaAdapter,
     "exp01-hemoglobina": HemoglobinaAdapter,
     "fibromialgia": FibromialgiaAdapter,
-    "materiales-avanzados-chile": MaterialesAdapter,
-    "materiales": MaterialesAdapter,
-    "catalizadores-renio": MaterialesAdapter,
+    # NOTA 2026-08-05: "materiales-avanzados-chile"/"materiales"/"catalizadores-renio"
+    # migrados a material-science-lab (P0 chasis). Usar get_adapter desde ese repo.
     "hirondellea-gigas": HirondelleaAdapter,
     "hirondellea": HirondelleaAdapter,
     "baroresistencia-gh7": HirondelleaAdapter,
