@@ -6,7 +6,7 @@
 
 ¹ Independent Researcher, Santiago, Chile. Correspondence: cristoe4@gmail.com
 
-**Preprint — Draft v2.9 — August 2026**
+**Preprint — Draft v2.10 — August 2026 (Reframed toward the exercise-responsive FM subphenotype, FME)**
 
 ---
 
@@ -20,7 +20,9 @@ Fibromyalgia (FM) is a prevalent chronic pain condition whose peripheral molecul
 
 We therefore nominate **COL9A1 and PTN** as the primary analytes for plasma validation, with CA14 as a direction-specific reference, in sex-balanced, medication-stratified, cell-type-resolved cohorts; for the neuropeptide axis the appropriate follow-up is cell-resolved (flow cytometry or scRNA-seq), not plasma. Fold changes are reported as both arithmetic and geometric ratios, which differ by up to 2× on these heavy-tailed FPKM distributions; standardized effect sizes are unchanged or larger under log₂ transformation.
 
-**Keywords:** fibromyalgia, COL9A1, PTN, CA14, TACR1, OPRM1, tachykinin, opioid, extracellular matrix, UK Biobank, Olink, PBMCs, targeted reanalysis, nociception, immunomodulation
+**Keywords:** fibromyalgia, COL9A1, PTN, CA14, TACR1, OPRM1, tachykinin, opioid, extracellular matrix, UK Biobank, Olink, PBMCs, targeted reanalysis, nociception, immunomodulation, exercise-responsive subphenotype, endogenous opioid analgesia, small-fiber neuropathy
+
+**Framing note (v2.10).** This manuscript was reoriented on 2026-08-07 toward the **exercise-responsive fibromyalgia subphenotype (FME)** — the subgroup in which exercise-induced analgesia is preserved or restor-able and the peripheral/somatic (extracellular-matrix + small-nerve) compartment is the modulable substrate, rather than the purely centrally-sensitized non-exerciser. The reorientation is *narrative and design-level only*: no primary statistic in §3 was recomputed. It reflects a refocusing of the Discussion, Limitations, and Conclusion toward FME, plus two new design modules (§4.7 responder phenotyping, §4.8 genetic prediction) grounded in the verified corpus of GROUNDING_FM_VARIANTE_EJERCICIO.md.
 
 ---
 
@@ -337,6 +339,34 @@ The structural basis of this pharmacological axis — molecular docking of DRD2 
 
 ---
 
+### 4.7 The Exercise-Responsive Subphenotype (FME): A Design Module for Responder Stratification
+
+The present study reports peripheral molecular signatures in unstratified FM cohorts. Yet exercise is the only non-pharmacological intervention that simultaneously (i) engages the **endogenous opioid system** from within — without the tolerance that exogenous opioids induce (Bruehl 2020, PMID 32569082; Sluka 2018, PMID 30113953) — and (ii) reshapes circulating leukocyte composition (the very compartment our data reflect). This motivates a subphenotypic reframing: **FME = fibromyalgia in which exercise-induced analgesia (EIH) is preserved or restorable**, as opposed to the centrally-sensitized non-exerciser in whom EIH is defective (Lannersten 2010, PMID 20621420; Ellingson 2016, PMID 26927193).
+
+Three external facts make FME a concrete, testable design axis rather than a narrative:
+
+1. **EIH is opioid-mediated.** Naloxone blocks exercise-induced analgesia in both animal and human models (Sluka 2018). Our compositional opioid-axis elevation (TACR1/OPRM1/OPRK1/TAC1) is therefore a *candidate marker of the very system exercise activates* — in responders it is functional; in non-responders it may be desensitized by chronic exogenous-opioid exposure (Limitation 10).
+2. **~49% of FM diagnoses carry underlying small-fiber polyneuropathy (SFPN)** detectable by skin biopsy (Oaklander 2013, PMID 23748113; Üçeyler 2013, PMID 23474848). SFPN is the peripheral/somatic substrate that maps onto our lead module: **COL9A1** (collagen IX, cartilage/extracellular matrix) and **PTN** (pleiotrophin, neurite outgrowth / nerve repair). An FME cohort with skin-biopsy phenotyping can test whether COL9A1/PTN signal tracks the peripheral-neuropathic (exercise-modulable) fraction.
+3. **Responder status is partially genetic.** Gene–gene interactions between opioid (*OPRM1* G) and serotonergic (*5-HTT* low / *5-HT1A* G) variants regulate endogenous pain modulation in FM (Tour 2017, PMID 28282362). This yields a pre-specified genetic responder predictor (§4.8).
+
+**Proposed responder-phenotyping design (module C — see also PROTOCOL_FME_Responder_Phenotyping.md).**
+- *Cohort:* 75 FME-candidate FM patients + 75 HC (mirrors the Olink protocol's 88% power for COL9A1/PTN), enriched for exercise-tolerant individuals and medication-stratified (opioid-free stratum mandatory).
+- *EIH assay:* pressure-pain threshold (PPT) measured before and after a standardized submaximal aerobic exercise challenge (e.g., 15-min cycling at 60% HRmax); ΔPPT defines responder (≥20% rise) vs non-responder.
+- *Peripheral axis:* Olink plasma panel (COL9A1, PTN primary; CA14 direction-specific reference; plus any Olink-covered opioid-axis analyte) + epidermal nerve-fiber density (skin punch biopsy, 3 mm, distal leg) to quantify SFPN.
+- *Predicted convergence:* in FME responders, COL9A1/PTN plasma elevation co-occurs with preserved EIH and (if measurable) SFPN density; in non-responders, the opioid-axis composition shift dominates and EIH is flat/negative.
+
+This design converts our two lead findings (ECM/neurite module + compositional opioid shift) into a *mechanism-linked stratification* rather than two disconnected signals.
+
+### 4.8 Genetic Prediction of the Exercising Responder (Module D)
+
+Tour et al. (2017, PMID 28282362) reported that greater exercise-induced analgesia is associated with a gene–gene interaction: stronger opioid signaling (*OPRM1* G-allele carriers) combined with weak serotonin tone (*5-HTT* low-expression / *5-HT1A* G). In FM patients the same interaction showed antagonistic effects between opioid- and serotonin-related genes, implying that the *balance* — not either system alone — governs endogenous modulation.
+
+We therefore propose, as a pre-specified secondary analysis in any FME validation cohort, to **genotype *OPRM1* (rs1799971, A118G) and the *5-HTT* promoter (*5-HTTLPR*) / *5-HT1A* (rs6295) variants and test whether the opioid-favorable / serotonin-low genotype combination predicts responder status (ΔPPT after exercise) and COL9A1/PTN plasma elevation.** This is a hypothesis-generating, non-confirmatory aim: no local genotype data exist in GSE221921, so it cannot be tested on the present cohorts and must await the validation cohort. Reported as exploratory with explicit family-wise correction across the genotype×phenotype grid.
+
+The combination of (C) a functional EIH assay + skin-biopsy SFPN phenotyping and (D) the OPRM1/5-HTT genotype grid is what makes FME *operational*: a patient can be classified as peripheral/somatic-exercise-modulable vs centrally-sensitized-non-exerciser, and our transcriptomic lead signals can be mapped onto that classification rather than left as unstratified associations.
+
+---
+
 ## 5. Limitations
 
 1. **Sex confounding.** GSE221921 has a severe sex imbalance (FM: 91F/5M; HC: 41F/52M). Our sensitivity analyses suggest that *MDGA2* and *DRD2* are not solely explained by sex imbalance, while *CAMKV* and *CELF4* are sensitive to sex adjustment. Residual confounding remains possible, and future studies should use sex-balanced cohorts or sex-stratified designs.
@@ -373,6 +403,10 @@ The structural basis of this pharmacological axis — molecular docking of DRD2 
 ## 6. Conclusion
 
 A targeted reanalysis of two public transcriptomic cohorts, informed by population-scale UK Biobank plasma proteomics, reframes the peripheral molecular signature of fibromyalgia. In FM PBMCs (GSE221921), we find: (1) **an extracellular-matrix / neurite-outgrowth module — *COL9A1* (FC = 2.32, d = +0.88) and *PTN* (FC = 2.91, d = +0.61) — is the only signal that survives Bonferroni correction on the sex-adjusted model *and* adjustment for cell composition**, across all four deconvolution implementations tested; it forms a co-expressed pair (r = 0.51) with direct relevance to joint pain (COL9A1, osteoarthritis link) and nerve repair (PTN), is detectable in plasma by Olink, and is **the most robust finding of the investigation** and its primary validation target; (2) a **complete opioid/tachykinin neuropeptide block elevated** (TACR1 d = +0.60, OPRM1 d = +0.53, TAC1, OPRK1; coordinated co-expression rho 0.31–0.63) — the largest effect-size block in the investigation, surviving all five sex-sensitivity models but **not** cell-composition adjustment, and therefore best interpreted as a shift in circulating neuropeptide-expressing leukocyte populations rather than per-cell transcriptional activation, with chronic opioid exposure an unexcluded alternative cause; (3) **CA14, the top UKB causal protein for chronic widespread pain, elevated in PBMC mRNA in the unadjusted analysis** (FC = 2.29, d = +0.41) **but not surviving the sex-stratified primary model** (female-only: p = 0.135, d = +0.24, FC = 1.60; the unadjusted signal is confounded by the structural sex imbalance — see §4.2) **while downregulated in plasma** in the UKB cross-sectional analysis, with MR indicating a protective effect of genetically elevated CA14 — retained here as a direction-specific reference candidate (testable prediction of ↓ CA14 in FM plasma; repurposing direction toward CA14 agonism rather than sulthiame inhibition) rather than the lead target; and (4) **five UKB causal immune-signaling genes downregulated** (TNFRSF1B, CD74, COL18A1, BTN2A1, TNFRSF4), indicating an immunomodulatory/exhaustion pattern rather than classical inflammation — consistent with the absence of IL-6/IL-8 from the highlighted proteins of the largest chronic pain proteomics screen (51,644 UKB participants; TAC1/Substance P not covered by that panel and therefore not evaluable); and (5) the GWAS-prioritized neural genes *MDGA2* and *DRD2* robustly upregulated. These PBMC-derived signatures do not replicate in whole blood (GSE67311), establishing them as PBMC-specific and setting plasma protein measurement as the decisive validation. The dopamine agonist RCT evidence remains limited (one unreplicated positive trial in 21 years). We conclude that the peripheral biology of FM is best described as **extracellular-matrix / neurite-outgrowth dysregulation (COL9A1–PTN) as the cell-intrinsic core, accompanied by a compositional shift in neuropeptide-expressing leukocytes, immunomodulation (UKB immune genes) and pH/nociception dysregulation (CA14)** — and we recommend prioritizing **COL9A1 and PTN** (Olink, plasma-detectable, Bonferroni-surviving, composition-robust) for plasma validation, with CA14 measured as a direction-specific reference, Substance P/enkephalins (ELISA) as secondary neuropeptide measures, and IL-8 retained as an assay control, in sex-balanced, medication-stratified, cell-type-resolved cohorts. Because the neuropeptide signal is compositional, the appropriate follow-up for that axis is cell-resolved (flow cytometry or scRNA-seq) rather than bulk transcriptomic or plasma measurement.
+
+---
+
+**Toward the exercise-responsive subphenotype (FME).** The same peripheral signals that survive here — an extracellular-matrix/neurite module (COL9A1/PTN) and a compositional opioid/tachykinin shift — are precisely the two systems that exercise engages from within: endogenous-opioid analgesia (opioid axis; naloxone-blockable, Sluka 2018, PMID 30113953; Bruehl 2020, PMID 32569082) and somatic/connective-tissue remodeling (COL9A1/PTN; the substrate that ~49% of FM patients carry as small-fiber polyneuropathy, Oaklander 2013, PMID 23748113; Üçeyler 2013, PMID 23474848). We therefore reframe the lead findings as candidate markers of the **exercise-responsive FM subphenotype (FME)**: in responders, the endogenous-opioid system is functional and the ECM/neurite axis is the modulable peripheral substrate; in non-responders (defective exercise-induced analgesia, Lannersten 2010, PMID 20621420) the same signals may reflect chronic-opioid-exposure desensitization or central sensitization instead. The design modules in §4.7–§4.8 (EIH phenotyping + skin-biopsy SFPN + OPRM1/5-HTT genotyping) are the concrete path to test this stratification. The present cohorts cannot test FME — they lack exercise, biopsy, and genotype data — so FME remains a design-level hypothesis, not a finding.
 
 ---
 
