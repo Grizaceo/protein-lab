@@ -4,9 +4,9 @@ fep_prep.py — P1/Línea 2: Preparación DRD2 + pramipexole para FEP/MM-PBSA.
 
 Receptor DRD2 (6VMS, D2) + pramipexole (D3-preferring agonist).
 Parametrización: amber14-all (proteína) + gaff-2.11 (ligando) + TIP3P.
-Ligando: template GAFF generado localmente (fep_gen_ligand_xml.py) con cargas
-Gasteiger (RDKit). APROXIMACIÓN DECLARADA: no AM1-BCC (openff no disponible
-por proxy de red).
+Ligando: template GAFF generado por fep_am1bcc.py con cargas
+AM1-BCC reales (AmberTools 22: antechamber + sqm). CAMINO CORRECTO
+(en reemplazo de Gasteiger heurístico, bloqueado por proxy de red para openff).
 
 CAVEAT: pramipexole es D3-preferring; DRD2 es D2. ΔG = cross-target estimate.
 """
@@ -69,8 +69,8 @@ meta = {
     "ligand": "pramipexole (D3-preferring agonist)",
     "caveat": "cross-target estimate: pramipexole is D3-preferring; DRD2 is D2",
     "protein_ff": "amber14-all", "ligand_ff": "gaff-2.11",
-    "ligand_charges": "Gasteiger (RDKit) — APPROXIMATION, not AM1-BCC",
-    "ligand_types": "GAFF assigned by elemental rule — APPROXIMATION",
+    "ligand_charges": "AM1-BCC (AmberTools 22 antechamber/sqm) — CAMINO CORRECTO",
+    "ligand_types": "GAFF 2.11 assigned by antechamber",
     "water": "tip3p", "n_atoms": system.getNumParticles(),
 }
 (OUT / "fep_meta.json").write_text(json.dumps(meta, indent=2))

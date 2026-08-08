@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<ForceField name="gaff-ligand-am1bcc">
+ <Residues>
+  <Residue name="UNL">
+   <Atom name="C1" type="c3" charge="-0.1086"/>
+   <Atom name="C2" type="c3" charge="0.1675"/>
+   <Atom name="C3" type="c3" charge="-0.1086"/>
+   <Atom name="N1" type="n3" charge="-0.8272"/>
+   <Atom name="C4" type="c3" charge="0.1688"/>
+   <Atom name="C5" type="c3" charge="-0.0002"/>
+   <Atom name="C6" type="cc" charge="-0.1434"/>
+   <Atom name="C7" type="cd" charge="-0.0821"/>
+   <Atom name="N2" type="na" charge="-0.1974"/>
+   <Atom name="C8" type="ca" charge="-0.0492"/>
+   <Atom name="C9" type="ca" charge="-0.1450"/>
+   <Atom name="C10" type="ca" charge="-0.1100"/>
+   <Atom name="C11" type="ca" charge="-0.1143"/>
+   <Atom name="C12" type="c3" charge="-0.0651"/>
+   <Atom name="C13" type="c3" charge="0.1274"/>
+   <Atom name="O1" type="oh" charge="-0.6018"/>
+   <Atom name="C14" type="ca" charge="-0.0840"/>
+   <Atom name="C15" type="ca" charge="-0.0898"/>
+   <Atom name="H1" type="hc" charge="0.0369"/>
+   <Atom name="H2" type="hc" charge="0.0369"/>
+   <Atom name="H3" type="hc" charge="0.0369"/>
+   <Atom name="H4" type="h1" charge="0.0567"/>
+   <Atom name="H5" type="hc" charge="0.0369"/>
+   <Atom name="H6" type="hc" charge="0.0369"/>
+   <Atom name="H7" type="hc" charge="0.0369"/>
+   <Atom name="H8" type="hn" charge="0.3588"/>
+   <Atom name="H9" type="h1" charge="0.0307"/>
+   <Atom name="H10" type="h1" charge="0.0307"/>
+   <Atom name="H11" type="hc" charge="0.0457"/>
+   <Atom name="H12" type="hc" charge="0.0457"/>
+   <Atom name="H13" type="h4" charge="0.1800"/>
+   <Atom name="H14" type="hn" charge="0.2967"/>
+   <Atom name="H15" type="ha" charge="0.1310"/>
+   <Atom name="H16" type="ha" charge="0.1490"/>
+   <Atom name="H17" type="hc" charge="0.0487"/>
+   <Atom name="H18" type="hc" charge="0.0487"/>
+   <Atom name="H19" type="h1" charge="0.0482"/>
+   <Atom name="H20" type="h1" charge="0.0482"/>
+   <Atom name="H21" type="ho" charge="0.3960"/>
+   <Atom name="H22" type="ha" charge="0.1280"/>
+   <Bond from="0" to="1"/>
+   <Bond from="0" to="18"/>
+   <Bond from="0" to="19"/>
+   <Bond from="0" to="20"/>
+   <Bond from="1" to="2"/>
+   <Bond from="1" to="3"/>
+   <Bond from="1" to="21"/>
+   <Bond from="2" to="22"/>
+   <Bond from="2" to="23"/>
+   <Bond from="2" to="24"/>
+   <Bond from="3" to="4"/>
+   <Bond from="3" to="25"/>
+   <Bond from="4" to="5"/>
+   <Bond from="4" to="26"/>
+   <Bond from="4" to="27"/>
+   <Bond from="5" to="6"/>
+   <Bond from="5" to="28"/>
+   <Bond from="5" to="29"/>
+   <Bond from="6" to="7"/>
+   <Bond from="6" to="17"/>
+   <Bond from="7" to="8"/>
+   <Bond from="7" to="30"/>
+   <Bond from="8" to="9"/>
+   <Bond from="8" to="31"/>
+   <Bond from="9" to="10"/>
+   <Bond from="9" to="17"/>
+   <Bond from="10" to="11"/>
+   <Bond from="10" to="32"/>
+   <Bond from="11" to="12"/>
+   <Bond from="11" to="33"/>
+   <Bond from="12" to="13"/>
+   <Bond from="12" to="16"/>
+   <Bond from="13" to="14"/>
+   <Bond from="13" to="34"/>
+   <Bond from="13" to="35"/>
+   <Bond from="14" to="15"/>
+   <Bond from="14" to="36"/>
+   <Bond from="14" to="37"/>
+   <Bond from="15" to="38"/>
+   <Bond from="16" to="17"/>
+   <Bond from="16" to="39"/>
+  </Residue>
+ </Residues>
+</ForceField>

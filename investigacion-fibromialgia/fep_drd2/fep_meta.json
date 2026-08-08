@@ -1,0 +1,11 @@
+{
+  "receptor": "6VMS (DRD2, D2)",
+  "ligand": "pramipexole (D3-preferring agonist)",
+  "caveat": "cross-target estimate: pramipexole is D3-preferring; DRD2 is D2",
+  "protein_ff": "amber14-all",
+  "ligand_ff": "gaff-2.11",
+  "ligand_charges": "AM1-BCC (AmberTools 22 antechamber/sqm) \u2014 CAMINO CORRECTO",
+  "ligand_types": "GAFF 2.11 assigned by antechamber",
+  "water": "tip3p",
+  "n_atoms": 4637
+}
