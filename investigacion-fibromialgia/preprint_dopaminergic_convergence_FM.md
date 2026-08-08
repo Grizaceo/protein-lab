@@ -365,6 +365,19 @@ We therefore propose, as a pre-specified secondary analysis in any FME validatio
 
 The combination of (C) a functional EIH assay + skin-biopsy SFPN phenotyping and (D) the OPRM1/5-HTT genotype grid is what makes FME *operational*: a patient can be classified as peripheral/somatic-exercise-modulable vs centrally-sensitized-non-exerciser, and our transcriptomic lead signals can be mapped onto that classification rather than left as unstratified associations.
 
+#### 4.8.1 Case Index — an exercise-responsive FM phenotype (N = 1, anecdotal)
+
+To make the FME construct concrete rather than abstract, we map a single observed case — a familial contact of the author who reports markedly better symptom control with exercise than with any pharmacological or non-pharmacological alternative — onto the four measurement axes of the §4.7 responder-phenotyping design. This is reported **as an anecdote, not evidence**: N = 1 cannot support or falsify any claim, and several axes remain unmeasured. The table is a *classification exercise*, not a finding.
+
+| Measurement axis (Protocol §2) | Tool | Observed in case index | Pending / unmeasured |
+|---|---|---|---|
+| **EIH (responder status)** | ΔPPT pre/post 15-min aerobic challenge | **Presumptive responder** — self-reported superior analgesia from exercise vs. alternatives is the operational definition of the responder phenotype (Lannersten 2010, PMID 20621420) | Objective ΔPPT (≥ +20% threshold) not measured; report is subjective |
+| **Peripheral/somatic signal** | Olink plasma (COL9A1, PTN primary; CA14 reference) | Not measured | Plasma analytes uncollected; inference only |
+| **SFPN substrate** | Skin punch biopsy, IENFD (PGP9.5/CGRP) | Not measured | Cutoff < 7 fibers/mm not assessed |
+| **Genetic predictor** | *OPRM1* rs1799971 + *5-HTTLPR* + *HTR1A* rs6295 | Not genotyped | Tour 2017 (PMID 28282362) predictor untested in this individual |
+
+**Why this case motivates — but does not justify — the FME reframing.** The case index exhibits the *signature pattern* the FME construct was built to capture: an endogenous-opioid system that responds to physical stimulus (exercise analgesia intact) rather than being blunted by exogenous-opioid desensitization (Limitation 10), combined with a peripheral/somatic compartment that exercise can remodel. It is therefore an existence proof that the two lead transcriptomic signals — the compositional opioid/tachykinin shift and the COL9A1/PTN ECM/neurite module — can co-occur in a single, clinically coherent, exercise-responsive individual. It does **not** establish prevalence, mechanism, or causality. The jumps from (i) blood mRNA to (ii) peripheral nerve/collagen and from (iii) observational exercise tolerance to (iv) measured EIH remain unclosed (GROUNDING §6, Gaps 3 and 5). The case is included to illustrate the phenotype the §4.7–§4.8 design would operationalize at scale, and to anchor the FME reframing in a recognizable clinical reality rather than a purely statistical construct.
+
 ---
 
 ## 5. Limitations
