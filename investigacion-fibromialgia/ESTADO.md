@@ -39,6 +39,16 @@
 - `PROTOCOL_FME_Responder_Phenotyping.md` (Módulo C): diseño 75 FM + 75 HC, EIH (PPT), Olink plasma, biopsia SFPN, genotipado.
 - **Estado:** HIPÓTESIS DE DISEÑO. No computable localmente (GSE221921 sin genotipos/bio/ejercicio). Entra al manuscrito como §4.7 (responder phenotyping) y §4.8 (genetic prediction) — narrativa/design-level only, sin recomputar estadísticas primarias.
 
+### NUEVO (2026-08-08): Línea 2 Computacional — P1 FEP/MM-PBSA DRD2 ✅ PIPELINE / ❌ ΔG NO CONVERGENTE
+- **Objetivo:** Cerrar gap Vina (LE=0.384) → ΔG física real para DRD2 + pramipexole.
+- **Pipeline (5 scripts, COMPLETO):** `fep_gen_ligand_xml.py` (template GAFF ligando) + `fep_prep.py` (merge complejo, 4637 át) + `fep_solvate.py` (minimización estable: E +38,316→−19,652 kJ/mol) + `fep_mmpbsa.py` (framework MM-PBSA) + `fep_report.py` (reporte).
+- **Resultado ΔG:** NO CONVERGENTE. ΔG calculado = 0.00 kcal/mol por cancelación metodológica (NoCutoff + GBSA sin PME/solvente explícito). NO es valor físico válido.
+- **Causa raíz (hardware):** OpenMM en `protein-lab` es **CPU-only** (sin CUDA/OpenCL registrado). MD de 4637 át en CPU inviable (>11 min sin terminar 12.5k steps). Solvatación explícita ~1.7M át inviable en RTX 4060 8GB. Sin GPU ni solvente, el MM-PBSA colapsa.
+- **Veredicto honesto:** P1 = **proof-of-pipeline** (parametrización + minimización + framework MM-PBSA implementado y funcional). El gap Vina→energía física se cierra a nivel de *infraestructura*, no de número. Para ΔG riguroso: OpenMM con CUDA + openff-toolkit 2.x (AM1-BCC) + solvente explícito (PME) + MD ≥10 ns.
+- **Bloqueo de red resuelto por workaround:** openff-toolkit NO instalable (proxy PyPI solo sirve openff 0.18 yanked; conda-forge tiene 2.x pero árbol de deps incompatible con py3.10). Decisión (X): GAFF por regla elemental + Gasteiger (RDKit). Declarado como aproximación.
+- **Limitaciones:** (1) Gasteiger≠AM1-BCC; (2) tipos GAFF heurísticos; (3) GBSA implícito; (4) cross-target D3→D2; (5) CPU-only sin MD.
+- **Entregables:** `fep_drd2/` con system.xml, complex_minimized.pdb, MM_PBSA_REPORT.md, MM_PBSA_FINAL.md, MANUSCRIPT_SNIPPET.md (§4.8.2 para manuscrito).
+
 ---
 
 ## 2. Control de Versiones del Manuscrito
