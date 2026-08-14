@@ -6,7 +6,9 @@
 
 ¹ Independent Researcher, Santiago, Chile. Correspondence: cristoe4@gmail.com
 
-**Preprint — Draft v2.10 — August 2026 (Reframed toward the exercise-responsive FM subphenotype, FME)**
+**Author Position Statement.** The author is an independent researcher without formal training in medicine, biology, or bioinformatics. No wet-lab experiments were performed; all analyses are computational reanalyses of publicly available data (GSE221921, GSE67311). This manuscript therefore makes no claim to domain expertise. Its value lies exclusively in the **rigor and reproducibility of the analytical protocol**: every statistical decision is documented, every correction is calibrated against negative controls, every negative finding is reported without cosmetic adjustment, and all scripts are publicly available for independent replication. The manuscript is offered as a **protocol-first contribution** — a pre-registered analytical pipeline applied to public FM transcriptomics — not as a substitute for domain expertise or clinical validation.
+
+**Preprint — Draft v2.10.reframe1 — August 2026**
 
 ---
 
@@ -265,6 +267,44 @@ Geometric-mean fold changes are smaller than the arithmetic ratios quoted above 
 **Power analysis for plasma validation (C4).** Anchoring the planned Olink cohort to the observed mRNA effect (d = 0.88, FC = 2.32 for COL9A1) and modeling mRNA→protein attenuation at four scenarios (r = 0.8 / 0.6 / 0.4 / 0.3), the required sample size for 80% power is: 33/group (optimistic), 56/group (moderate), 129/group (conservative), 233/group (pessimistic). A cohort of **75 FM + 75 HC** covers the moderate scenario with 88% power and is the recommended design.
 
 **Interpretation.** COL9A1 and PTN replace CA14 as the **primary plasma-validation candidates** from the UKB causal set: they are Bonferroni-surviving, sex-adjusted-robust, plasma-detectable, and biologically linked to pain through joint and neural mechanisms. CA14 is retained as a direction-specific **reference** candidate (expecting ↓ in FM plasma, per Chen 2025), not as the lead target.
+
+### 3.4.6 Testable Predictions for Validation Cohorts
+
+The following predictions are offered as concrete, falsifiable hypotheses for independent researchers with access to FM patient cohorts and plasma proteomics (Olink/ELISA). Each prediction is tied to a specific analytical protocol (§2) and a minimum detectable effect size derived from the present data.
+
+**Prediction 1 — COL9A1 and PTN elevated in FM plasma.**
+- *Hypothesis:* COL9A1 and PTN protein concentrations are significantly higher in FM plasma vs. healthy controls.
+- *Expected effect:* d ≥ 0.4 (conservative mRNA-to-protein attenuation from d = 0.88 at r = 0.6).
+- *Assay:* Olink Explore/Target panel (both proteins are Olink-covered).
+- *Sample size:* ≥75 FM + 75 HC for 88% power (moderate scenario, §3.4.5).
+- *Stratification:* Sex-balanced (or sex-stratified); medication-stratified (opioid-free stratum mandatory given Limitation 10).
+- *Protocol reference:* Model 6 (§2.4), four deconvolution implementations.
+
+**Prediction 2 — Opioid/tachykinin axis does NOT replicate in plasma.**
+- *Hypothesis:* The elevated TACR1/OPRM1/TAC1/OPRK1 signal observed in PBMCs (§3.2) is **not detectable** in plasma protein measurements.
+- *Rationale:* The PBMC signal is compositional (reflects leukocyte population shifts, not per-cell upregulation) and whole-blood non-replicating (§3.3). Plasma protein should not capture a cell-fraction artifact.
+- *Assay:* Olink + ELISA for Substance P (TAC1) and enkephalins (PENK).
+- *Expected result:* No significant difference (FC ≈ 1.0, p > 0.05 after correction).
+- *Negative-control value:* Confirmation saves resources — the opioid axis in plasma is a dead end.
+
+**Prediction 3 — CA14 downregulated in FM plasma (opposite to PBMC mRNA).**
+- *Hypothesis:* CA14 protein is significantly lower in FM plasma vs. healthy controls.
+- *Direction:* Opposite to the unadjusted PBMC mRNA direction (↑) but consistent with UKB cross-sectional plasma data (↓).
+- *Assay:* Olink.
+- *Confound:* The PBMC mRNA signal is sex-confounded (§4.2). The plasma prediction is independent of this confound because UKB was sex-adjusted.
+- *Clinical implication:* If confirmed, the repurposing direction is **CA14 agonism**, not sulthiame inhibition.
+
+**Prediction 4 — COL9A1/PTN signal is cell-intrinsic, not compositional.**
+- *Hypothesis:* The COL9A1/PTN elevation persists after adjustment for cell composition in any future PBMC/whole-blood transcriptomic cohort.
+- *Protocol:* Apply Model 6 (§2.4) with deconvolution; the signal should survive all four implementations (marker-score vs. NNLS fractions × reference-dropped vs. all-cell-types).
+- *Negative control benchmark:* 28% of random case-associated genes survive this adjustment (§3.2). COL9A1/PTN should be in the surviving minority.
+
+**Prediction 5 — Non-replication in whole blood is not neutrophil-driven.**
+- *Hypothesis:* Any future whole-blood transcriptomic study will **not** replicate the PBMC-derived COL9A1/PTN signal, and this non-replication will **not** be explained by neutrophil dilution.
+- *Protocol:* Marker-based deconvolution (§2.3) showing comparable neutrophil scores between FM and HC.
+- *Expected result:* Neutrophil scores FM ≈ HC within 0.1 units (as in GSE67311, §3.3).
+
+These predictions are pre-specified and falsifiable. The present study's analytical protocol (§2) can be applied identically to any future cohort without modification.
 
 ### 3.5 Targeted Literature Review: Dopamine Agonists in FM
 
