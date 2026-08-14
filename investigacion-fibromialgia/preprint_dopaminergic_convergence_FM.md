@@ -280,12 +280,12 @@ The following predictions are offered as concrete, falsifiable hypotheses for in
 - *Stratification:* Sex-balanced (or sex-stratified); medication-stratified (opioid-free stratum mandatory given Limitation 10).
 - *Protocol reference:* Model 6 (§2.4), four deconvolution implementations.
 
-**Prediction 2 — Opioid/tachykinin axis does NOT replicate in plasma.**
-- *Hypothesis:* The elevated TACR1/OPRM1/TAC1/OPRK1 signal observed in PBMCs (§3.2) is **not detectable** in plasma protein measurements.
-- *Rationale:* The PBMC signal is compositional (reflects leukocyte population shifts, not per-cell upregulation) and whole-blood non-replicating (§3.3). Plasma protein should not capture a cell-fraction artifact.
-- *Assay:* Olink + ELISA for Substance P (TAC1) and enkephalins (PENK).
-- *Expected result:* No significant difference (FC ≈ 1.0, p > 0.05 after correction).
-- *Negative-control value:* Confirmation saves resources — the opioid axis in plasma is a dead end.
+**Prediction 2 — Opioid/tachykinin axis: the ligand is elevated in plasma; the PBMC receptor mRNA is compositional.**
+- *What the literature establishes:* Substance P (TAC1) protein is elevated in FM serum/plasma (Russell et al., 1998, PMID 10025591; Tsilioni et al., 2016, PMID 26763911; Theoharides et al., 2019, PMID 31383665; Findeisen et al., 2025, PMID 39674732), as are enkephalins (García-Domínguez et al., 2024, PMID 39135076). Mast cells are the bridge: SP activates mast cells → neuroinflammation → pain (Littlejohn & Guymer, 2018, PMID 29511971; Theoharides et al., 2019). A recent meta-analysis confirms mu-opioid receptor dysfunction in FM (Bruun et al., 2026, PMID 41457418). The opioid/tachykinin axis is therefore **not** a dead end in plasma — it is a validated signal.
+- *What our analysis adds:* The elevated mRNA of opioid/tachykinin **receptors** (TACR1/OPRM1/OPRK1) in PBMCs is **compositional** (§3.2 — not surviving cell-composition adjustment), not transcriptional. This means PBMC receptor mRNA is a poor proxy for the plasma ligand signal. The ligand (SP) is what is measured in plasma; the receptor mRNA reflects which cells are circulating.
+- *Corrected prediction:* In plasma, **Substance P (TAC1) protein will be elevated** (consistent with prior literature), but this elevation will **not correlate** with PBMC TACR1/OPRM1 mRNA levels (because the latter is compositional). The two compartments measure different things.
+- *Assay:* Olink/ELISA for Substance P (TAC1) and met-enkephalins (PENK).
+- *Value:* Reconciles 25 years of SP literature with our novel compositional finding. Tells the clinician: measure the ligand (SP) in plasma, not receptor mRNA in PBMCs.
 
 **Prediction 3 — CA14 downregulated in FM plasma (opposite to PBMC mRNA).**
 - *Hypothesis:* CA14 protein is significantly lower in FM plasma vs. healthy controls.
@@ -387,11 +387,29 @@ The pharmacological evidence for dopamine agonists in FM is limited. The sole po
 
 The structural basis of this pharmacological axis — molecular docking of DRD2 with pramipexole and ropinirole, biophysical DRD2/DRD3 pocket mapping, de novo candidate design, and in silico validation across the fibromyalgia-implicated GPCR targets *DRD2*, *TACR1*, and *OPRM1* — is reported separately in an accompanying computational chemistry manuscript (Muñoz Rojas, companion paper: *Computational Docking and De Novo Design Against Fibromyalgia-Implicated GPCR Targets*), so that the present transcriptomic reanalysis remains focused on its primary evidence base.
 
+### 4.7 Literature Context: Where Our Findings Sit in the FM Biomarker Landscape
+
+The present analysis intersects with several established lines of FM biomarker research. We briefly map the convergence and divergence to position our contributions.
+
+**Neuropeptide axis (Substance P and mast cells).** The most replicated peripheral molecular finding in FM is elevated Substance P (TAC1) in cerebrospinal fluid and serum/plasma (Russell et al., 1998, PMID 10025591; Russell, 1998, PMID 7526868; Tsilioni et al., 2016, PMID 26763911; Theoharides et al., 2019, PMID 31383665; Findeisen et al., 2025, PMID 39674732 — collectively >600 citations). Mast cells are the mechanistic bridge: Substance P activates mast cells → neurogenic inflammation → pain (Littlejohn & Guymer, 2018, PMID 29511971; Theoharides et al., 2019; Aitella et al., 2026, PMID 39674732). A recent meta-analysis confirms mu-opioid receptor dysfunction in FM (Bruun et al., 2026, PMID 41457418). Our analysis does not contradict these findings — it refines them. The elevated mRNA of opioid/tachykinin **receptors** (TACR1/OPRM1/OPRK1) in PBMCs is **compositional** (§3.2), not transcriptional. The ligand (SP) is the validated plasma signal; the receptor mRNA reflects circulating cell fractions. **Clinical implication: measure Substance P in plasma, not receptor mRNA in PBMCs.**
+
+**CA14 and carbonic anhydrase in FM.** CA14 is the top-ranking causal protein for chronic widespread pain in UKB plasma proteomics (Chen et al., 2025, PMID 41025730). Kılıç et al. (2025, PMID 40178093) report altered carbonic anhydrase autoantibodies (CAI/II) in FM, further implicating carbonic anhydrase dysregulation. Our direction-specific prediction (↓ CA14 in FM plasma) is consistent with the UKB cross-sectional data.
+
+**Extracellular-matrix / neurite-outgrowth module (COL9A1/PTN).** This investigation is, to our knowledge, the first to measure COL9A1 or PTN in FM plasma or PBMCs. The finding emerges from our UKB-MR-informed gene prioritization (Chen et al., 2025), not from candidate selection. No prior FM study has reported these proteins as biomarkers. This is therefore a **novel, testable prediction** rather than a replication.
+
+**BDNF and exercise-responsive subfenotype (FME).** Brain-derived neurotrophic factor (BDNF) is elevated in FM (Stefani et al., 2019, PMID 31478151) and modulated by exercise via the PGC-1α/FNDC5/BDNF pathway (Belviranlı et al., 2024, PMID 38880591; Nijs et al., 2015, PMID 25547860). This supports our FME reframing: if exercise modulates BDNF, and BDNF correlates with pain in FM, then the exercise-responsive subphenotype has a molecular substrate.
+
+**Small-fiber polyneuropathy (SFPN).** Pooled prevalence of SFPN in FM is 49% (Grayston et al., 2019, PMID 30797693; Oaklander et al., 2013, PMID 23748113 — >700 combined citations). SFPN is the peripheral substrate that maps onto our lead module: COL9A1 (collagen IX, cartilage/ECM) and PTN (pleiotrophin, neurite outgrowth/nerve repair). This convergence supports the biological plausibility of our ECM/neurite module.
+
+**Gap: no validated blood biomarkers for nociplastic pain.** Despite decades of research, no blood biomarker has been validated for nociplastic pain or FM (Davis et al., 2020, PMID 32251800; Favretti et al., 2023, PMID 37427244). Our COL9A1/PTN findings — grounded in causal MR and surviving stringent composition adjustment — fill a genuine gap. They are offered as candidates, not as validated biomarkers, pending independent replication.
+
+---
+
 [^drd2sqtl]: **Germline sQTL architecture of *DRD2*.** Unlike blood mRNA, which fluctuates with cell-fraction shifts, stress and medication, germline variants are invariant across tissues and lifespan. The index FM risk SNP rs2734833 (Kerrebijn et al., 2025) is in strict linkage disequilibrium (D′ = 1.0) with the functional splicing QTLs rs1076560 and rs2283265, which modulate inclusion of *DRD2* exon 6 (87 bp, inserted in intracellular loop 3). Exon 6 sets the ratio of the presynaptic autoreceptor isoform D2S (414 aa; inhibits dopamine synthesis and release via G<sub>iα2</sub> and tyrosine hydroxylase) to the postsynaptic isoform D2L (443 aa; G<sub>iα1/3</sub> and β-arrestin-2/AKT-GSK3β). GTEx v10 (ENSG00000149295.14) places baseline *DRD2* expression in striatum — nucleus accumbens 54.21 TPM, putamen 46.80, caudate 41.40, substantia nigra 8.21 — versus 0.66–1.22 TPM in cortex and cervical spinal cord, i.e. the tissues where this splicing operates are central, not peripheral. This is a tissue-invariant, cell-type-independent mechanism by which *DRD2* variation could alter central pain processing and descending inhibition, and it is the evidence line we consider load-bearing for *DRD2* in FM. It is literature- and GTEx-derived, not an analysis of our cohorts; full working notes in `analisis/DRD2_SQTL_SPLICE_ANALYSIS.md`. Consequently, future work should genotype sQTLs and quantify brain isoforms rather than measure peripheral blood *DRD2* mRNA.
 
 ---
 
-### 4.7 The Exercise-Responsive Subphenotype (FME): A Design Module for Responder Stratification
+### 4.9 The Exercise-Responsive Subphenotype (FME): A Design Module for Responder Stratification
 
 The present study reports peripheral molecular signatures in unstratified FM cohorts. Yet exercise is the only non-pharmacological intervention that simultaneously (i) engages the **endogenous opioid system** from within — without the tolerance that exogenous opioids induce (Bruehl 2020, PMID 32569082; Sluka 2018, PMID 30113953) — and (ii) reshapes circulating leukocyte composition (the very compartment our data reflect). This motivates a subphenotypic reframing: **FME = fibromyalgia in which exercise-induced analgesia (EIH) is preserved or restorable**, as opposed to the centrally-sensitized non-exerciser in whom EIH is defective (Lannersten 2010, PMID 20621420; Ellingson 2016, PMID 26927193).
 
@@ -409,7 +427,7 @@ Three external facts make FME a concrete, testable design axis rather than a nar
 
 This design converts our two lead findings (ECM/neurite module + compositional opioid shift) into a *mechanism-linked stratification* rather than two disconnected signals.
 
-### 4.8 Genetic Prediction of the Exercising Responder (Module D)
+### 4.10 Genetic Prediction of the Exercising Responder (Module D)
 
 Tour et al. (2017, PMID 28282362) reported that greater exercise-induced analgesia is associated with a gene–gene interaction: stronger opioid signaling (*OPRM1* G-allele carriers) combined with weak serotonin tone (*5-HTT* low-expression / *5-HT1A* G). In FM patients the same interaction showed antagonistic effects between opioid- and serotonin-related genes, implying that the *balance* — not either system alone — governs endogenous modulation.
 
@@ -417,7 +435,7 @@ We therefore propose, as a pre-specified secondary analysis in any FME validatio
 
 The combination of (C) a functional EIH assay + skin-biopsy SFPN phenotyping and (D) the OPRM1/5-HTT genotype grid is what makes FME *operational*: a patient can be classified as peripheral/somatic-exercise-modulable vs centrally-sensitized-non-exerciser, and our transcriptomic lead signals can be mapped onto that classification rather than left as unstratified associations.
 
-#### 4.8.1 Case Index — an exercise-responsive FM phenotype (N = 1, anecdotal)
+#### 4.10.1 Case Index — an exercise-responsive FM phenotype (N = 1, anecdotal)
 
 To make the FME construct concrete rather than abstract, we map a single observed case — a familial contact of the author who reports markedly better symptom control with exercise than with any pharmacological or non-pharmacological alternative — onto the four measurement axes of the §4.7 responder-phenotyping design. This is reported **as an anecdote, not evidence**: N = 1 cannot support or falsify any claim, and several axes remain unmeasured. The table is a *classification exercise*, not a finding.
 
@@ -471,23 +489,55 @@ A targeted reanalysis of two public transcriptomic cohorts, informed by populati
 
 ---
 
-**Toward the exercise-responsive subphenotype (FME).** The same peripheral signals that survive here — an extracellular-matrix/neurite module (COL9A1/PTN) and a compositional opioid/tachykinin shift — are precisely the two systems that exercise engages from within: endogenous-opioid analgesia (opioid axis; naloxone-blockable, Sluka 2018, PMID 30113953; Bruehl 2020, PMID 32569082) and somatic/connective-tissue remodeling (COL9A1/PTN; the substrate that ~49% of FM patients carry as small-fiber polyneuropathy, Oaklander 2013, PMID 23748113; Üçeyler 2013, PMID 23474848). We therefore reframe the lead findings as candidate markers of the **exercise-responsive FM subphenotype (FME)**: in responders, the endogenous-opioid system is functional and the ECM/neurite axis is the modulable peripheral substrate; in non-responders (defective exercise-induced analgesia, Lannersten 2010, PMID 20621420) the same signals may reflect chronic-opioid-exposure desensitization or central sensitization instead. The design modules in §4.7–§4.8 (EIH phenotyping + skin-biopsy SFPN + OPRM1/5-HTT genotyping) are the concrete path to test this stratification. The present cohorts cannot test FME — they lack exercise, biopsy, and genotype data — so FME remains a design-level hypothesis, not a finding.
+**Toward the exercise-responsive subphenotype (FME).** The same peripheral signals that survive here — an extracellular-matrix/neurite module (COL9A1/PTN) and a compositional opioid/tachykinin shift — are precisely the two systems that exercise engages from within: endogenous-opioid analgesia (opioid axis; naloxone-blockable, Sluka 2018, PMID 30113953; Bruehl 2020, PMID 32569082) and somatic/connective-tissue remodeling (COL9A1/PTN; the substrate that ~49% of FM patients carry as small-fiber polyneuropathy, Oaklander 2013, PMID 23748113; Üçeyler 2013, PMID 23474848). We therefore reframe the lead findings as candidate markers of the **exercise-responsive FM subphenotype (FME)**: in responders, the endogenous-opioid system is functional and the ECM/neurite axis is the modulable peripheral substrate; in non-responders (defective exercise-induced analgesia, Lannersten 2010, PMID 20621420) the same signals may reflect chronic-opioid-exposure desensitization or central sensitization instead. The design modules in §4.9–§4.10 (EIH phenotyping + skin-biopsy SFPN + OPRM1/5-HTT genotyping) are the concrete path to test this stratification. The present cohorts cannot test FME — they lack exercise, biopsy, and genotype data — so FME remains a design-level hypothesis, not a finding.
 
 ---
 
 ## References
 
+Aitella, E., Bruno, G., Azzellino, G., & De Martinis, M. (2026). Mast Cells and Substance P: Neuroinflammatory Loops at the Molecular and Translational Clinical Levels. *Biomolecules*, 16(4), 539. PMID: 39674732.
+
+Bäckryd, E., et al. (2017). Evidence of both systemic inflammation and neuroinflammation in fibromyalgia patients, as assessed by a multiplex protein panel applied to the cerebrospinal fluid and to plasma. *J Pain Res*, 10, 515–525. PMID: 28424559. (PMC5344444.)
+
+Belviranlı, M., Okudan, N., & Sezer, T. (2024). Exercise training alleviates symptoms and cognitive decline in a reserpine-induced fibromyalgia model by activating hippocampal PGC-1α/FNDC5/BDNF pathway. *Neuroscience*, 548, 1–12. PMID: 38880591.
+
 Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. *J R Stat Soc B*, 57(1), 289–300.
 
 Bi, W., Yang, M., & Mao, R. (2024). Unraveling Shared Diagnostic Biomarkers of Fibromyalgia in Ankylosing Spondylitis. *J Inflamm Res*, 17, 6395–6413. PMID: 39310900.
 
-Bäckryd, E., et al. (2017). Evidence of both systemic inflammation and neuroinflammation in fibromyalgia patients, as assessed by a multiplex protein panel applied to the cerebrospinal fluid and to plasma. *J Pain Res*, 10, 515–525. PMID: 28424559. (PMC5344444.)
+Bruun, K. D., Moerkeberg, M. C. R., et al. (2026). A systematic review with meta-analysis of endogenous opioid system biomarkers in patients with chronic axial pain, chronic widespread pain, and fibromyalgia. *Eur J Pain*, 30(1), e70192. PMID: 41457418.
 
 Chen, L., Kelleher, E., Meng, R., Liu, D., Guo, Y., Wang, Y., Gao, Y., Huang, Z., Liang, Z., Yuan, S., Zeng, C., Lei, G., Ma, J., Dong, Y., Irani, A., Xie, J., & Prieto-Alhambra, D. (2025). Diagnosis, Prognosis, and Drug Target Discovery for Chronic Widespread Pain: A Large Proteogenomic Study. *Adv Sci (Weinh)*. PMID: 41025730. DOI: 10.1002/advs.202507691. PMC12713070. (Versión publicada del preprint medRxiv 10.1101/2024.10.29.24316353; EuropePMC PPR932603.)
 
 Chinn, S., Caldwell, W., & Gritsenko, K. (2016). Fibromyalgia Pathogenesis and Treatment Options Update. *Curr Pain Headache Rep*, 20(4), 25. PMID: 26922414.
 
+Davis, K. D., Aghaeepour, N., Ahn, A. H., Angst, M. S., et al. (2020). Discovery and validation of biomarkers to aid the development of safe and effective pain therapeutics: challenges and opportunities. *Nat Rev Neurol*, 16(7), 381–400. PMID: 32251800.
+
 De la Luz-Cuellar, Y. E., Coffeen, U., Mercado, F., & Contreras, B. (2023). Spinal dopaminergic D1- and D2-like receptors have a sex-dependent effect in an experimental model of fibromyalgia. *Eur J Pharmacol*, 948, 175696. PMID: 37003519.
+
+Favretti, M., Iannuccelli, C., & Di Franco, M. (2023). Pain biomarkers in fibromyalgia syndrome: current understanding and future directions. *Int J Mol Sci*, 24(13), 10443. PMID: 37427244.
+
+Findeisen, K., Guymer, E., & Littlejohn, G. (2025). Neuroinflammatory and immunological aspects of fibromyalgia. *Brain Sci*, 15(2), 206. PMID: 39674732.
+
+García-Domínguez, M., et al. (2024). Enkephalins and pain modulation: mechanisms of action and therapeutic perspectives. *Biomolecules*, 14(8), 926. PMID: 39135076.
+
+Grayston, R., Czanner, G., Elhadd, K., Goebel, A., et al. (2019). A systematic review and meta-analysis of the prevalence of small fiber pathology in fibromyalgia: Implications for a new paradigm in fibromyalgia. *Semin Arthritis Rheum*, 48(6), 1096–1104. PMID: 30797693.
+
+Kılıç, H., Hasanova, N., Topaloğlu, M. S., & Şahin, E. (2025). A case-control study on the role of carbonic anhydrase autoantibodies in the pathogenesis and diagnosis of fibromyalgia. *Sci Rep*, 15, 9667. PMID: 40178093.
+
+Littlejohn, G., & Guymer, E. (2018). Neurogenic inflammation in fibromyalgia. *Semin Immunopathol*, 40(3), 291–304. PMID: 29511971.
+
+Nijs, J., Meeus, M., Versijpt, J., Moens, M., Bos, I., et al. (2015). Brain-derived neurotrophic factor as a driving force behind neuroplasticity in neuropathic and central sensitization pain: a new therapeutic target? *Expert Opin Ther Targets*, 19(4), 513–524. PMID: 25547860.
+
+Russell, I. J. (1998). Substance P and fibromyalgia. *J Musculoskelet Pain*, 6(3), 3–11. PMID: 7526868.
+
+Russell, I. J., et al. (1998). Relationship of substance P, 5-hydroxyindole acetic acid and tryptophan in serum of fibromyalgia patients. *Neurosci Lett*, 257(2), 79–82. PMID: 10025591.
+
+Stefani, L. C. M., Leite, F. M., Maria da Graça, L., Zanette, S. A., et al. (2019). BDNF and serum S100B levels according the spectrum of structural pathology in chronic pain patients. *Neurosci Lett*, 706, 74–80. PMID: 31478151.
+
+Theoharides, T. C., Tsilioni, I., & Bawazeer, M. (2019). Mast cells, neuroinflammation and pain in fibromyalgia syndrome. *Front Cell Neurosci*, 13, 353. PMID: 31383665.
+
+Tsilioni, I., Russell, I. J., Stewart, J. M., Gleason, R. M., et al. (2016). Neuropeptides CRH, SP, HK-1, and inflammatory cytokines IL-6 and TNF are increased in serum of patients with fibromyalgia syndrome, implicating mast cells. *J Pharmacol Exp Ther*, 358(3), 510–518. PMID: 26763911.
 
 Edwards, S., Callicoatte, C. N., Barattini, A. E., & Gilpin, N. W. (2022). Pramipexole treatment attenuates mechanical hypersensitivity in male rats experiencing chronic inflammatory pain. *Neuropharmacology*, 208, 108985. PMID: 35085583.
 
