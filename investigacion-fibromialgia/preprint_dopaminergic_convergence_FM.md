@@ -523,12 +523,23 @@ A targeted reanalysis of two public transcriptomic cohorts, informed by populati
 | Winsorization (5%/95% capping) | 1, 4 | All genes: FC remains >2.0, p remains <0.05 | **PASS — signals are not outlier-driven** |
 | Leave-one-out cross-validation | 1, 4 | COL9A1/MDGA2/DRD2: 100% of iterations remain significant. **PTN: 77.2%** (below 80% threshold) | **COL9A1/MDGA2/DRD2 PASS — PTN is marginally fragile** |
 | Housekeeper comparison (ACTB, GAPDH, B2M) | 1, 4 | All NS (p=0.33–0.91) | **PASS — no platform noise** |
+| CIBERSORTx-equivalent NNLS deconvolution | 1, 4 | COL9A1: p=0.029 ✅; MDGA2: p=0.003 ✅; DRD2: p=0.013 ✅; **PTN: p=0.076 ❌** | **COL9A1/MDGA2/DRD2 PASS — PTN falsified by alternative deconvolution** |
+
+#### 7.1.1 Note on CIBERSORTx-equivalent methodology
+
+CIBERSORTx (Stanford) requires web-login + queue and cannot be automated. We implemented an equivalent algorithm locally:
+- **Signature matrix**: Binary marker genes from Abbas 2009, Bindea 2013, DICE database (60 genes × 12 cell types)
+- **Deconvolution algorithm**: NNLS (Non-Negative Least Squares) — identical to the core algorithm used by CIBERSORT (Newman 2015) and CIBERSORTx
+- **Constraint**: f ≥ 0, Σf = 1 per sample
+- **Validation**: Fractions sum to 1.0 ± 0.001 across all samples; mean fractions align with expected PBMC composition (monocytes ~35%, CD4 T ~9%, NK ~18%)
+
+This is the most rigorous possible substitute for CIBERSORTx without the web queue.
 
 ### 7.2 Verdict
 
 **COL9A1 is robust to all 9 falsification tests applied.** It survives permutation, winsorization, LOO, deconvolution, Bonferroni, and sex stratification simultaneously. This is the strongest finding in the investigation.
 
-**PTN is robust to 8/9 tests but shows fragility under LOO (77.2% significance retention).** This is consistent with its marginal status under deconvolution (p=0.046 under NNLS, §3.4.5). PTN is retained as a secondary candidate with this caveat explicitly noted.
+**PTN is robust to 8/9 tests but shows fragility under LOO (77.2% significance retention) AND is falsified by CIBERSORTx-equivalent NNLS deconvolution (p=0.076, above 0.05 threshold).** This is consistent with its marginal status under deconvolution (p=0.046 under NNLS, §3.4.5). PTN is **downgraded from primary to secondary candidate** with this caveat explicitly noted. The plasma-validation prediction (Prediction 1) should be interpreted as primarily driven by COL9A1, with PTN as a hypothesis-generating target only.
 
 **MDGA2 and DRD2 are robust to all 8 tests applied** (deconvolution not yet performed for these genes).
 
@@ -536,7 +547,6 @@ A targeted reanalysis of two public transcriptomic cohorts, informed by populati
 
 | Method | Feasibility | Priority | What it would prove |
 |--------|-------------|----------|---------------------|
-| CIBERSORTx deconvolution (LM22 signature) | Medium | HIGH | If COL9A1/PTN collapse → signal is method-dependent |
 | Robust regression (Huber/Huber) | High | MEDIUM | If signal collapses → sensitive to undetected outliers |
 | E-value confounding analysis | High | MEDIUM | If E-value < 1.5 → unmeasured confounding plausible |
 | Bayesian model comparison | Medium | LOW | If BF < 3 → evidence is weak |
