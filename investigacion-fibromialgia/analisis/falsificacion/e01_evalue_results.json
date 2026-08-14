@@ -1,0 +1,21 @@
+{
+  "gene": "COL9A1",
+  "dataset": "GSE221921",
+  "method": "VanderWeele & Ding (2017) E-value",
+  "effect_size": {
+    "d": 0.8598223282972534,
+    "se_d": 0.15206959007501808,
+    "d_lower_95ci": 0.5617659317502179,
+    "ln_or": 1.559545192419943,
+    "rr": 4.756657389269754,
+    "evalue": 8.983847014733083,
+    "evalue_lower": 4.984717009730802,
+    "n1": 96,
+    "n2": 93
+  },
+  "interpretation": {
+    "summary": "E-value = 9.0. A confounder needs RR >= 9.0 with both COL9A1 and FM to explain the effect.",
+    "robustness": "HIGH",
+    "benchmark": "E-value > 2.0 indicates robustness to moderate confounding."
+  }
+}
