@@ -524,6 +524,7 @@ A targeted reanalysis of two public transcriptomic cohorts, informed by populati
 | Leave-one-out cross-validation | 1, 4 | COL9A1/MDGA2/DRD2: 100% of iterations remain significant. **PTN: 77.2%** (below 80% threshold) | **COL9A1/MDGA2/DRD2 PASS — PTN is marginally fragile** |
 | Housekeeper comparison (ACTB, GAPDH, B2M) | 1, 4 | All NS (p=0.33–0.91) | **PASS — no platform noise** |
 | CIBERSORTx-equivalent NNLS deconvolution | 1, 4 | COL9A1: p=0.029 ✅; MDGA2: p=0.003 ✅; DRD2: p=0.013 ✅; **PTN: p=0.076 ❌** | **COL9A1/MDGA2/DRD2 PASS — PTN falsified by alternative deconvolution** |
+| **E-value (unmeasured confounding)** | **1** | **COL9A1: E-value = 8.98 (lower 95% CI = 4.99)** | **✅ HIGH robustness — confounder needs RR ≥ 9 to explain effect** |
 
 #### 7.1.1 Note on CIBERSORTx-equivalent methodology
 
@@ -537,7 +538,7 @@ This is the most rigorous possible substitute for CIBERSORTx without the web que
 
 ### 7.2 Verdict
 
-**COL9A1 is robust to all 8 falsification tests applied.** It survives permutation, winsorization, LOO, deconvolution, Bonferroni, and sex stratification simultaneously. This is the strongest finding in the investigation.
+**COL9A1 is robust to all 9 falsification tests applied.** It survives permutation, winsorization, LOO, deconvolution, Bonferroni, sex stratification, and E-value robustness simultaneously. This is the strongest finding in the investigation.
 
 **PTN is robust to 7/8 tests but shows fragility under LOO (77.2% significance retention) AND is falsified by CIBERSORTx-equivalent NNLS deconvolution (p=0.076, above 0.05 threshold).** This is consistent with its marginal status under deconvolution (p=0.046 under NNLS, §3.4.5). PTN is **downgraded from primary to secondary candidate** with this caveat explicitly noted. The plasma-validation prediction (Prediction 1) should be interpreted as primarily driven by COL9A1, with PTN as a hypothesis-generating target only.
 
@@ -574,7 +575,7 @@ The following require wet lab, different data, or new cohorts:
 ### 8.1 Immediate (computational, no wet lab)
 
 1. ~~**CIBERSORTx deconvolution**~~ — ✅ **EJECUTADO** (commit `6a01eab`, 2026-08-14). CIBERSORTx-equivalent NNLS deconvolution with Abbas/Bindea/DICE signatures (60 genes × 12 cell types) applied to GSE221921. Result: COL9A1 p=0.029 ✅; PTN p=0.076 ❌. PTN downgraded from primary to secondary candidate (§7.2).
-2. **E-value analysis** — compute E-values for unmeasured confounding of the COL9A1–FM association. If E-value > 2.0 → robust to moderate confounding.
+2. ~~**E-value analysis**~~ — ✅ **EJECUTADO** (commit `914afe1b`, 2026-08-14). COL9A1 E-value = 8.98 (lower 95% CI = 4.99). Confounder needs RR ≥ 9 with both COL9A1 and FM to explain effect → robustness HIGH.
 3. **Bayesian re-analysis** — compute Bayes factors for Model 6 vs Model 2 (no deconvolution). If BF > 10 → decisive evidence for composition-adjusted signal.
 
 ### 8.2 Short-term (protocol design, no data collection)
