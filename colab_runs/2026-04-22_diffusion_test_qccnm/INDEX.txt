@@ -1,4 +1,0 @@
-Colab diffusion test — second iteration
-Zip: /home/gris/.hermes/workspace/test_qccnm.result.zip
-Extracted to: /home/gris/.hermes/workspace/protein-lab/colab_runs/2026-04-22_diffusion_test_qccnm/raw
-Report: /home/gris/.hermes/workspace/protein-lab/colab_runs/2026-04-22_diffusion_test_qccnm/doc/RUN_002.md

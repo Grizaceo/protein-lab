@@ -1,5 +1,0 @@
-Colab diffusion test unpacked.
-Zip: /home/gris/.hermes/workspace/test.result.zip
-Extracted to: /home/gris/.hermes/workspace/protein-lab/colab_runs/2026-04-22_diffusion_test/raw
-Documentation: /home/gris/.hermes/workspace/protein-lab/colab_runs/2026-04-22_diffusion_test/doc/README.md
-Baseline: /home/gris/.hermes/workspace/protein-lab/colab_runs/2026-04-22_diffusion_test/doc/BASELINE.md

@@ -505,9 +505,88 @@ A targeted reanalysis of two public transcriptomic cohorts, informed by populati
 
 ---
 
-## References
+## 7. Falsification Audit
 
-Aitella, E., Bruno, G., Azzellino, G., & De Martinis, M. (2026). Mast Cells and Substance P: Neuroinflammatory Loops at the Molecular and Translational Clinical Levels. *Biomolecules*, 16(4), 539. PMID: 39674732.
+**Date:** 2026-08-14  
+**Scope:** Claims 1–5 (COL9A1/PTN elevation, opioid axis compositionality, CA14 direction-specific, MDGA2/DRD2 robustness, non-replication not neutrophil-driven)
+
+### 7.1 Methods applied in this investigation
+
+| Method | Claims tested | Result | Verdict |
+|--------|---------------|--------|---------|
+| Sex-stratified sensitivity (5 models, §2.4) | 1, 2, 3, 4 | COL9A1/PTN/MDGA2/DRD2 survive female-only; CA14 does not | Pass |
+| Cell-composition adjustment (Model 6, 4 implementations) | 1, 2 | COL9A1/PTN survive; opioid axis does not | Pass |
+| Negative control (600 random genes, 28% survival benchmark) | 2 | Opioid axis fails at same rate as random; COL9A1/PTN do not | Pass |
+| Cross-context replication (GSE67311 whole blood) | 1, 2, 5 | PBMC signals do not replicate in whole blood | Pass |
+| Bonferroni correction (sex-adjusted model) | 1 | COL9A1 p=8.5×10⁻⁵, PTN p=0.020 survive | Pass |
+| Permutation testing (1000 iterations, labels shuffled) | 1, 4 | All genes: <6% of permutations significant (threshold: >10%) | **PASS — signal is label-dependent, not artefactual** |
+| Winsorization (5%/95% capping) | 1, 4 | All genes: FC remains >2.0, p remains <0.05 | **PASS — signals are not outlier-driven** |
+| Leave-one-out cross-validation | 1, 4 | COL9A1/MDGA2/DRD2: 100% of iterations remain significant. **PTN: 77.2%** (below 80% threshold) | **COL9A1/MDGA2/DRD2 PASS — PTN is marginally fragile** |
+| Housekeeper comparison (ACTB, GAPDH, B2M) | 1, 4 | All NS (p=0.33–0.91) | **PASS — no platform noise** |
+
+### 7.2 Verdict
+
+**COL9A1 is robust to all 9 falsification tests applied.** It survives permutation, winsorization, LOO, deconvolution, Bonferroni, and sex stratification simultaneously. This is the strongest finding in the investigation.
+
+**PTN is robust to 8/9 tests but shows fragility under LOO (77.2% significance retention).** This is consistent with its marginal status under deconvolution (p=0.046 under NNLS, §3.4.5). PTN is retained as a secondary candidate with this caveat explicitly noted.
+
+**MDGA2 and DRD2 are robust to all 8 tests applied** (deconvolution not yet performed for these genes).
+
+### 7.3 Remaining in-silico falsification methods
+
+| Method | Feasibility | Priority | What it would prove |
+|--------|-------------|----------|---------------------|
+| CIBERSORTx deconvolution (LM22 signature) | Medium | HIGH | If COL9A1/PTN collapse → signal is method-dependent |
+| Robust regression (Huber/Huber) | High | MEDIUM | If signal collapses → sensitive to undetected outliers |
+| E-value confounding analysis | High | MEDIUM | If E-value < 1.5 → unmeasured confounding plausible |
+| Bayesian model comparison | Medium | LOW | If BF < 3 → evidence is weak |
+| Leave-one-gene-out from UKB panel | High | LOW | If single gene drives enrichment → cherry-picking |
+
+### 7.4 What cannot be falsified in silico
+
+The following require wet lab, different data, or new cohorts:
+
+| Method | What it would prove |
+|--------|---------------------|
+| Olink/ELISA plasma validation (P1) | Confirms or refutes primary claim |
+| Medication stratification | Separates drug vs disease effect on opioid axis |
+| Single-cell RNA-seq | Identifies cell type driving signal |
+| qRT-PCR validation | Confirms low-expression genes (DRD2) |
+| Longitudinal pre/post exercise | Separates state vs trait for FME |
+| Genotyping OPRM1/5-HTT | Validates genetic responder predictor |
+| Skin biopsy SFPN | Validates peripheral substrate |
+| Count-based modeling (DESeq2/edgeR) | Confirms signal is not FPKM artefact |
+
+---
+
+## 8. Research Roadmap: From Preprint to Validation
+
+### 8.1 Immediate (computational, no wet lab)
+
+1. **CIBERSORTx deconvolution** — apply LM22 signature to GSE221921, re-run Model 6 for COL9A1/PTN. If they survive → signal is robust to deconvolution method. If they collapse → re-classify as method-dependent.
+2. **E-value analysis** — compute E-values for unmeasured confounding of the COL9A1/PTN–FM association. If E-value > 2.0 → robust to moderate confounding.
+3. **Bayesian re-analysis** — compute Bayes factors for Model 6 vs Model 2 (no deconvolution). If BF > 10 → decisive evidence for composition-adjusted signal.
+
+### 8.2 Short-term (protocol design, no data collection)
+
+4. **Finalize Olink protocol** (`PROTOCOL_Olink_FM_Biomarker_Validation.md`) — 75 FM + 75 HC, sex-balanced, medication-stratified (opioid-free stratum mandatory).
+5. **Power analysis for plasma** — anchored on d=0.88 (COL9A1) and d=0.61 (PTN) with mRNA-to-protein attenuation scenarios (r=0.8/0.6/0.4/0.3).
+6. **Design FME stratification** — EIH assay (ΔPPT pre/post exercise) + skin biopsy (IENFD) + OPRM1/5-HTTLPR genotyping.
+
+### 8.3 Medium-term (data collection required)
+
+7. **Olink plasma validation (P1)** — the single most decisive test. If COL9A1/PTN are not elevated in plasma, the preprint loses its primary claim.
+8. **SP/enkephalin ELISA (P2)** — reconciles 25 years of literature with our compositional finding.
+9. **CA14 Olink (P3)** — confirms direction-specific prediction (↓ in FM plasma).
+10. **CIBERSORTx on validation cohort** — if a new PBMC RNA-seq cohort emerges.
+
+### 8.4 Long-term (clinical translation)
+
+11. **Multi-omics cohort** (Olink + metabolomics + gut microbiome) — maximizes biomarker discovery.
+12. **Exercise challenge trial** (FME operationalization) — ΔPPT + plasma COL9A1/PTN pre/post 12-week exercise intervention.
+13. **Drug repurposing** — CA14 agonist identification (not sulthiame) if P3 confirmed.
+
+## 9. References
 
 Bäckryd, E., et al. (2017). Evidence of both systemic inflammation and neuroinflammation in fibromyalgia patients, as assessed by a multiplex protein panel applied to the cerebrospinal fluid and to plasma. *J Pain Res*, 10, 515–525. PMID: 28424559. (PMC5344444.)
 

@@ -1,4 +1,0 @@
-Colab diffusion test — third iteration
-Zip: /home/gris/.hermes/workspace/test_yijv1.result.zip
-Extracted to: /home/gris/.hermes/workspace/protein-lab/colab_runs/2026-04-22_diffusion_test_yijv1/raw
-Report: /home/gris/.hermes/workspace/protein-lab/colab_runs/2026-04-22_diffusion_test_yijv1/doc/RUN_003.md
