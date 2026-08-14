@@ -168,6 +168,18 @@ Extending the panel to the neuropeptide axis (validate_fm_biomarkers_iter2.py v3
 
 To establish that this adjustment is a genuine filter rather than a procedure that removes all signal, the same model was applied to 600 randomly selected expressed genes with cell-type markers excluded. Of the 273 with a case effect after sex adjustment, **76 (28%) remained significant after composition adjustment** (median p = 0.182). The adjustment removes roughly three-quarters of case effects, but a substantial minority survives — so failing it is informative, and so is passing it. Collinearity among the fractions is moderate (VIF median 2.7, max 13.1).
 
+**Figure 1. Sensitivity analysis: nested models on log₂(FPKM+1).** M1 (group only), M2 (+ sex), M3 (+ cell composition). COL9A1 and PTN (blue) are the only genes that survive all three models; the opioid/tachykinin axis (grey) collapses under composition adjustment. The dashed line marks p = 0.05.
+
+![Figure 1](results/fig1_forest_m1m2m3.png)
+
+**Figure 2. Deconvolution variant sweep — 4 implementations.** The verdict is robust across estimation methods (NNLS vs marker-score fractions) and encoding strategies (reference-dropped vs all 12 cell types). COL9A1 and PTN survive all 4/4 implementations; no axis gene survives more than 2/4.
+
+![Figure 2](results/fig2_variant_sweep.png)
+
+**Figure 3. Negative control: 600 random expressed genes (markers excluded).** (A) Sex-adjusted p-value distribution: 273/600 genes have a case effect after sex adjustment. (B) Of those 273, only 76 (28%) survive composition adjustment — confirming the filter removes ~75% of case effects but does not eliminate them entirely.
+
+![Figure 3](results/fig3_negative_control.png)
+
 **Interpretation.** The axis is a **coordinated block**: ligands (*TAC1*, *PENK*) and their cognate receptors (*TACR1*, *OPRM1*, *OPRK1*) are jointly elevated and positively co-expressed, with *TACR1* (NK1 receptor for Substance P; d = +0.60) exceeding its ligand in effect size. But the composition analysis reframes what that block means: the elevation is **attributable to a shift in circulating leukocyte populations, not to upregulation within a given cell type**. This is a weaker claim than "the SP→NK1 circuit is sensitized," and we do not make the stronger one. It remains a real and potentially informative peripheral phenotype — a change in which neuropeptide-expressing cells circulate in FM — but it is a compositional phenotype, and the appropriate follow-up is cell-resolved (flow cytometry or scRNA-seq), not bulk. Two further confounders cannot be separated with these data: chronic opioid exposure is common in FM and is known to regulate opioid receptor expression (Limitation 10), and it may itself alter leukocyte composition. Elevated *OPRM1*/*OPRK1* therefore cannot be read as compensatory activation of the endogenous opioid system on this evidence. The possible link to pro-inflammatory cytokine involvement reviewed by Rodríguez-Pintó et al. (2014) via mast cell/neutrophil trafficking is not established in that review and remains hypothetical.
 
 ### 3.3 Cross-Context Comparison: GSE67311 (Whole Blood)
