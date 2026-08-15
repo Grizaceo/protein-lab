@@ -1,0 +1,61 @@
+{
+  "dopamine": {
+    "name": "dopamine",
+    "formula": "C8H11NO2",
+    "sdf": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/dopamine_validated.sdf",
+    "pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/dopamine_validated.pdbqt",
+    "pdbqt_ok": true
+  },
+  "pramipexole": {
+    "name": "pramipexole",
+    "formula": "C10H17N3S",
+    "sdf": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/pramipexole_validated.sdf",
+    "pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/pramipexole_validated.pdbqt",
+    "pdbqt_ok": true
+  },
+  "bromocriptine": {
+    "name": "bromocriptine",
+    "formula": "C32H40BrN5O5",
+    "smiles": "CC(C)C[C@H]1C(=O)N2CCC[C@H]2[C@]2(O)O[C@](NC(=O)[C@@H]3C=C4c5cccc6[nH]c(Br)c(c56)C[C@H]4N(C)C3)(C(C)C)C(=O)N12",
+    "sdf": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/bromocriptine_validated.sdf",
+    "pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/bromocriptine_validated.pdbqt",
+    "pdbqt_ok": true
+  },
+  "rolapitant": {
+    "name": "rolapitant",
+    "formula": "C25H26F6N2O2",
+    "smiles": "C[C@@H](OC[C@@]1(c2ccccc2)CC[C@]2(CCC(=O)N2)CN1)c1cc(C(F)(F)F)cc(C(F)(F)F)c1",
+    "sdf": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/rolapitant_validated.sdf",
+    "pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/rolapitant_validated.pdbqt",
+    "pdbqt_ok": true
+  },
+  "aprepitant": {
+    "name": "aprepitant",
+    "formula": "C23H21F7N4O3",
+    "smiles": "C[C@@H](O[C@H]1OCCN(Cc2n[nH]c(=O)[nH]2)[C@H]1c1ccc(F)cc1)c1cc(C(F)(F)F)cc(C(F)(F)F)c1",
+    "sdf": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/aprepitant_validated.sdf",
+    "pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/aprepitant_validated.pdbqt",
+    "pdbqt_ok": true
+  },
+  "morphine": {
+    "name": "morphine",
+    "formula": "C17H19NO3",
+    "sdf": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/morphine_validated.sdf",
+    "pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/morphine_validated.pdbqt",
+    "pdbqt_ok": true
+  },
+  "fentanyl": {
+    "name": "fentanyl",
+    "formula": "C22H28N2O",
+    "sdf": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/fentanyl_validated.sdf",
+    "pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/fentanyl_validated.pdbqt",
+    "pdbqt_ok": true
+  },
+  "naloxone": {
+    "name": "naloxone",
+    "formula": "C19H21NO4",
+    "sdf": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/naloxone_validated.sdf",
+    "pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/ligandos_validados/naloxone_validated.pdbqt",
+    "pdbqt_ok": true
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "dopamine": {
+    "target": "DRD2",
+    "best_dg": -5.724,
+    "all_modes": [
+      {
+        "mode": 1,
+        "dg": -5.724,
+        "rmsd_lb": 0.0,
+        "rmsd_ub": 0.0
+      },
+      {
+        "mode": 2,
+        "dg": -5.722,
+        "rmsd_lb": 1.895,
+        "rmsd_ub": 2.776
+      },
+      {
+        "mode": 3,
+        "dg": -5.555,
+        "rmsd_lb": 2.789,
+        "rmsd_ub": 4.019
+      },
+      {
+        "mode": 4,
+        "dg": -5.546,
+        "rmsd_lb": 3.109,
+        "rmsd_ub": 4.209
+      },
+      {
+        "mode": 5,
+        "dg": -5.386,
+        "rmsd_lb": 2.232,
+        "rmsd_ub": 3.106
+      },
+      {
+        "mode": 6,
+        "dg": -5.381,
+        "rmsd_lb": 2.941,
+        "rmsd_ub": 3.636
+      },
+      {
+        "mode": 7,
+        "dg": -5.312,
+        "rmsd_lb": 1.359,
+        "rmsd_ub": 1.803
+      },
+      {
+        "mode": 8,
+        "dg": -5.213,
+        "rmsd_lb": 3.725,
+        "rmsd_ub": 4.906
+      },
+      {
+        "mode": 9,
+        "dg": -5.133,
+        "rmsd_lb": 2.703,
+        "rmsd_ub": 3.509
+      }
+    ],
+    "positive_modes": 0,
+    "total_modes": 9,
+    "out_pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/dockings_validados/dopamine_DRD2_6VMS_validated_docked.pdbqt",
+    "exit_code": 0
+  },
+  "pramipexole": {
+    "target": "DRD2",
+    "best_dg": -6.164,
+    "all_modes": [
+      {
+        "mode": 1,
+        "dg": -6.164,
+        "rmsd_lb": 0.0,
+        "rmsd_ub": 0.0
+      },
+      {
+        "mode": 2,
+        "dg": -5.947,
+        "rmsd_lb": 1.248,
+        "rmsd_ub": 1.963
+      },
+      {
+        "mode": 3,
+        "dg": -5.903,
+        "rmsd_lb": 3.011,
+        "rmsd_ub": 4.404
+      },
+      {
+        "mode": 4,
+        "dg": -5.861,
+        "rmsd_lb": 2.077,
+        "rmsd_ub": 5.678
+      },
+      {
+        "mode": 5,
+        "dg": -5.853,
+        "rmsd_lb": 1.609,
+        "rmsd_ub": 2.215
+      },
+      {
+        "mode": 6,
+        "dg": -5.693,
+        "rmsd_lb": 2.328,
+        "rmsd_ub": 5.478
+      },
+      {
+        "mode": 7,
+        "dg": -5.649,
+        "rmsd_lb": 2.245,
+        "rmsd_ub": 3.14
+      },
+      {
+        "mode": 8,
+        "dg": -5.635,
+        "rmsd_lb": 2.994,
+        "rmsd_ub": 4.267
+      },
+      {
+        "mode": 9,
+        "dg": -5.476,
+        "rmsd_lb": 2.77,
+        "rmsd_ub": 3.637
+      }
+    ],
+    "positive_modes": 0,
+    "total_modes": 9,
+    "out_pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/dockings_validados/pramipexole_DRD2_6VMS_validated_docked.pdbqt",
+    "exit_code": 0
+  },
+  "bromocriptine": {
+    "target": "DRD2",
+    "best_dg": -10.76,
+    "all_modes": [
+      {
+        "mode": 1,
+        "dg": -10.76,
+        "rmsd_lb": 0.0,
+        "rmsd_ub": 0.0
+      },
+      {
+        "mode": 2,
+        "dg": -10.53,
+        "rmsd_lb": 4.154,
+        "rmsd_ub": 8.328
+      },
+      {
+        "mode": 3,
+        "dg": -10.24,
+        "rmsd_lb": 4.519,
+        "rmsd_ub": 9.114
+      },
+      {
+        "mode": 4,
+        "dg": -10.07,
+        "rmsd_lb": 4.896,
+        "rmsd_ub": 9.212
+      },
+      {
+        "mode": 5,
+        "dg": -10.06,
+        "rmsd_lb": 4.967,
+        "rmsd_ub": 9.299
+      },
+      {
+        "mode": 6,
+        "dg": -9.915,
+        "rmsd_lb": 1.924,
+        "rmsd_ub": 3.369
+      },
+      {
+        "mode": 7,
+        "dg": -9.643,
+        "rmsd_lb": 5.136,
+        "rmsd_ub": 8.051
+      },
+      {
+        "mode": 8,
+        "dg": -9.558,
+        "rmsd_lb": 4.406,
+        "rmsd_ub": 7.101
+      },
+      {
+        "mode": 9,
+        "dg": -9.384,
+        "rmsd_lb": 4.587,
+        "rmsd_ub": 9.898
+      }
+    ],
+    "positive_modes": 0,
+    "total_modes": 9,
+    "out_pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/dockings_validados/bromocriptine_DRD2_6VMS_validated_docked.pdbqt",
+    "exit_code": 0
+  },
+  "naloxone": {
+    "target": "OPRM1",
+    "best_dg": -9.072,
+    "all_modes": [
+      {
+        "mode": 1,
+        "dg": -9.072,
+        "rmsd_lb": 0.0,
+        "rmsd_ub": 0.0
+      },
+      {
+        "mode": 2,
+        "dg": -8.402,
+        "rmsd_lb": 1.024,
+        "rmsd_ub": 1.133
+      },
+      {
+        "mode": 3,
+        "dg": -8.062,
+        "rmsd_lb": 2.241,
+        "rmsd_ub": 4.66
+      },
+      {
+        "mode": 4,
+        "dg": -7.961,
+        "rmsd_lb": 2.227,
+        "rmsd_ub": 4.763
+      },
+      {
+        "mode": 5,
+        "dg": -7.776,
+        "rmsd_lb": 2.298,
+        "rmsd_ub": 4.838
+      },
+      {
+        "mode": 6,
+        "dg": -7.754,
+        "rmsd_lb": 2.573,
+        "rmsd_ub": 5.619
+      },
+      {
+        "mode": 7,
+        "dg": -7.718,
+        "rmsd_lb": 1.978,
+        "rmsd_ub": 4.245
+      },
+      {
+        "mode": 8,
+        "dg": -7.696,
+        "rmsd_lb": 1.734,
+        "rmsd_ub": 4.309
+      },
+      {
+        "mode": 9,
+        "dg": -7.688,
+        "rmsd_lb": 2.437,
+        "rmsd_ub": 5.21
+      }
+    ],
+    "positive_modes": 0,
+    "total_modes": 9,
+    "out_pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/dockings_validados/naloxone_OPRM1_AF_validated_docked.pdbqt",
+    "exit_code": 0
+  },
+  "morphine": {
+    "target": "OPRM1",
+    "best_dg": -8.709,
+    "all_modes": [
+      {
+        "mode": 1,
+        "dg": -8.709,
+        "rmsd_lb": 0.0,
+        "rmsd_ub": 0.0
+      },
+      {
+        "mode": 2,
+        "dg": -8.332,
+        "rmsd_lb": 2.528,
+        "rmsd_ub": 4.548
+      },
+      {
+        "mode": 3,
+        "dg": -8.155,
+        "rmsd_lb": 2.298,
+        "rmsd_ub": 4.754
+      },
+      {
+        "mode": 4,
+        "dg": -8.112,
+        "rmsd_lb": 1.624,
+        "rmsd_ub": 2.092
+      },
+      {
+        "mode": 5,
+        "dg": -7.973,
+        "rmsd_lb": 2.486,
+        "rmsd_ub": 4.519
+      },
+      {
+        "mode": 6,
+        "dg": -7.698,
+        "rmsd_lb": 2.394,
+        "rmsd_ub": 4.159
+      },
+      {
+        "mode": 7,
+        "dg": -7.695,
+        "rmsd_lb": 1.697,
+        "rmsd_ub": 4.098
+      },
+      {
+        "mode": 8,
+        "dg": -7.45,
+        "rmsd_lb": 2.723,
+        "rmsd_ub": 4.676
+      },
+      {
+        "mode": 9,
+        "dg": -7.388,
+        "rmsd_lb": 2.011,
+        "rmsd_ub": 4.266
+      }
+    ],
+    "positive_modes": 0,
+    "total_modes": 9,
+    "out_pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/dockings_validados/morphine_OPRM1_AF_validated_docked.pdbqt",
+    "exit_code": 0
+  },
+  "fentanyl": {
+    "target": "OPRM1",
+    "best_dg": -9.211,
+    "all_modes": [
+      {
+        "mode": 1,
+        "dg": -9.211,
+        "rmsd_lb": 0.0,
+        "rmsd_ub": 0.0
+      },
+      {
+        "mode": 2,
+        "dg": -9.163,
+        "rmsd_lb": 0.82,
+        "rmsd_ub": 1.446
+      },
+      {
+        "mode": 3,
+        "dg": -8.905,
+        "rmsd_lb": 1.106,
+        "rmsd_ub": 1.971
+      },
+      {
+        "mode": 4,
+        "dg": -8.674,
+        "rmsd_lb": 3.104,
+        "rmsd_ub": 4.692
+      },
+      {
+        "mode": 5,
+        "dg": -8.615,
+        "rmsd_lb": 1.296,
+        "rmsd_ub": 1.782
+      },
+      {
+        "mode": 6,
+        "dg": -8.593,
+        "rmsd_lb": 1.508,
+        "rmsd_ub": 2.272
+      },
+      {
+        "mode": 7,
+        "dg": -8.42,
+        "rmsd_lb": 2.422,
+        "rmsd_ub": 8.435
+      },
+      {
+        "mode": 8,
+        "dg": -8.389,
+        "rmsd_lb": 2.309,
+        "rmsd_ub": 8.244
+      },
+      {
+        "mode": 9,
+        "dg": -8.138,
+        "rmsd_lb": 1.917,
+        "rmsd_ub": 8.015
+      }
+    ],
+    "positive_modes": 0,
+    "total_modes": 9,
+    "out_pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/dockings_validados/fentanyl_OPRM1_AF_validated_docked.pdbqt",
+    "exit_code": 0
+  },
+  "rolapitant": {
+    "target": "TACR1",
+    "best_dg": -9.365,
+    "all_modes": [
+      {
+        "mode": 1,
+        "dg": -9.365,
+        "rmsd_lb": 0.0,
+        "rmsd_ub": 0.0
+      },
+      {
+        "mode": 2,
+        "dg": -9.359,
+        "rmsd_lb": 0.0841,
+        "rmsd_ub": 3.08
+      },
+      {
+        "mode": 3,
+        "dg": -8.888,
+        "rmsd_lb": 2.22,
+        "rmsd_ub": 4.711
+      },
+      {
+        "mode": 4,
+        "dg": -8.793,
+        "rmsd_lb": 2.159,
+        "rmsd_ub": 3.672
+      },
+      {
+        "mode": 5,
+        "dg": -6.915,
+        "rmsd_lb": 1.451,
+        "rmsd_ub": 2.103
+      },
+      {
+        "mode": 6,
+        "dg": -6.357,
+        "rmsd_lb": 1.686,
+        "rmsd_ub": 3.974
+      },
+      {
+        "mode": 7,
+        "dg": -6.307,
+        "rmsd_lb": 1.709,
+        "rmsd_ub": 3.169
+      },
+      {
+        "mode": 8,
+        "dg": -5.636,
+        "rmsd_lb": 2.03,
+        "rmsd_ub": 2.647
+      },
+      {
+        "mode": 9,
+        "dg": -5.633,
+        "rmsd_lb": 2.109,
+        "rmsd_ub": 3.807
+      }
+    ],
+    "positive_modes": 0,
+    "total_modes": 9,
+    "out_pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/dockings_validados/rolapitant_TACR1_AF_validated_docked.pdbqt",
+    "exit_code": 0
+  },
+  "aprepitant": {
+    "target": "TACR1",
+    "best_dg": -11.25,
+    "all_modes": [
+      {
+        "mode": 1,
+        "dg": -11.25,
+        "rmsd_lb": 0.0,
+        "rmsd_ub": 0.0
+      },
+      {
+        "mode": 2,
+        "dg": -11.2,
+        "rmsd_lb": 0.06678,
+        "rmsd_ub": 2.909
+      },
+      {
+        "mode": 3,
+        "dg": -7.41,
+        "rmsd_lb": 3.0,
+        "rmsd_ub": 5.909
+      },
+      {
+        "mode": 4,
+        "dg": -7.369,
+        "rmsd_lb": 3.009,
+        "rmsd_ub": 5.329
+      },
+      {
+        "mode": 5,
+        "dg": -7.105,
+        "rmsd_lb": 4.385,
+        "rmsd_ub": 7.457
+      },
+      {
+        "mode": 6,
+        "dg": -7.079,
+        "rmsd_lb": 4.385,
+        "rmsd_ub": 7.381
+      },
+      {
+        "mode": 7,
+        "dg": -6.435,
+        "rmsd_lb": 2.199,
+        "rmsd_ub": 5.812
+      },
+      {
+        "mode": 8,
+        "dg": -5.84,
+        "rmsd_lb": 1.96,
+        "rmsd_ub": 3.31
+      },
+      {
+        "mode": 9,
+        "dg": -5.726,
+        "rmsd_lb": 3.949,
+        "rmsd_ub": 7.833
+      }
+    ],
+    "positive_modes": 0,
+    "total_modes": 9,
+    "out_pdbqt": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/estructuras/dockings_validados/aprepitant_TACR1_AF_validated_docked.pdbqt",
+    "exit_code": 0
+  }
+}

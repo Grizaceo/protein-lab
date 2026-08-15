@@ -1,0 +1,39 @@
+---
+title: "Peripheral Transcriptomic Reframing of Fibromyalgia: ECM / Neurite-Outgrowth Dysregulation, Compositional Neuropeptide Shift, and pH/Nociception Dysregulation"
+author: 
+  - "Investigación Computacional DAVI"
+  - "Eidos Lab Research"
+date: "2026-08-14"
+abstract: "Background: Fibromyalgia (FM) is a chronic pain syndrome of unknown molecular etiology. Methods: Targeted reanalysis of two public transcriptomic cohorts (GSE221921 PBMCs, GSE67311 whole blood) informed by population-scale UK Biobank plasma proteomics (2,923 proteins, 51,644 participants). Nine falsification methods applied: permutation, winsorization, leave-one-out, deconvolution, Bonferroni, sex stratification, cell-composition adjustment, negative controls, and E-value. Results: (1) An extracellular-matrix / neurite-outgrowth module (COL9A1 FC=2.32 d=+0.88; PTN FC=2.91 d=+0.61) survives all nine falsification tests simultaneously; COL9A1 E-value=8.98, robust to moderate confounding. PTN downgraded to secondary candidate (falsified by NNLS deconvolution, p=0.076). (2) A complete opioid/tachykinin neuropeptide block elevated compositionally (TACR1 d=+0.60, OPRM1 d=+0.53) — reflects circulating leukocyte shift, not per-cell activation. (3) CA14 (top UKB causal protein for chronic widespread pain) is sex-confounded in PBMCs and downregulated in plasma. (4) Five UKB-causal immune genes downregulated (immunomodulation, not inflammation). Conclusions: The FM peripheral signature is ECM/neurite dysregulation as cell-intrinsic core, plus compositional neuropeptide shift, immunomodulation, and pH/nociception dysregulation. COL9A1 is the primary plasma-validation target."
+keywords: "fibromyalgia, transcriptomics, biomarkers, COL9A1, E-value, sensitivity analysis"
+geometry: margin=1in
+fontsize: 11pt
+linestretch: 1.15
+colorlinks: true
+linkcolor: blue
+urlcolor: blue
+toccolor: black
+header-includes:
+  - \usepackage{booktabs}
+  - \usepackage{longtable}
+  - \usepackage{array}
+  - \usepackage{multirow}
+  - \usepackage{wrapfig}
+  - \usepackage{float}
+  - \usepackage{colortbl}
+  - \usepackage{pdflscape}
+  - \usepackage{tabu}
+  - \usepackage{threeparttable}
+  - \usepackage{threeparttablex}
+  - \usepackage[normalem]{ulem}
+  - \usepackage{makecell}
+  - \usepackage{xcolor}
+  - \usepackage{hyperref}
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhead[L]{\leftmark}
+  - \fancyhead[R]{DAVI Protein Lab}
+  - \fancyfoot[C]{\thepage}
+  - \renewcommand{\headrulewidth}{0.4pt}
+  - \renewcommand{\footrulewidth}{0.4pt}
+---
