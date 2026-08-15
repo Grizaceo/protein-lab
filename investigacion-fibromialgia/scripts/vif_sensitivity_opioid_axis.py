@@ -65,3 +65,12 @@ print("\n=== EJE OPIOIDE M3 FULL (todas fracciones):")
 print(run_model(opioid, False))
 print("\n=== EJE OPIOIDE M3 DROP high-VIF (>5):")
 print(run_model(opioid, True))
+
+print("\n=== TABLA COMPARATIVA Composition-adj. p (reporte) ===")
+full = run_model(opioid, False)
+drop = run_model(opioid, True)
+print(f"{'Gene':8s} {'full(VIF) p':>12s} {'drop-VIF p':>12s} {'sig_ortogonal':>14s}")
+for g in opioid:
+    fp = full[g].get('p', float('nan'))
+    dp = drop[g].get('p', float('nan'))
+    print(f"{g:8s} {fp:12.4f} {dp:12.4f} {str(drop[g]['sig']):>14s}")
