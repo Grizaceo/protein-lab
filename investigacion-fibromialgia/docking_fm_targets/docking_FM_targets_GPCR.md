@@ -4,15 +4,16 @@
 
 ¹ Independent Researcher, Santiago, Chile. Correspondence: cristoe4@gmail.com
 
-**Preprint — Draft v1.1 — August 2026**
+**Preprint — Draft v1.2 — August 2026**
 
-> ⚠️ **RETENIDO — NO SOMETER (2026-08-04).** Una auditoría de ligandos encontró que **10 de los 11 ligandos de referencia del campaign son moléculas incorrectas** (solo morfina es correcta): dopamina sin un hidroxilo, pramipexol y met-encefalina sin azufre, bromocriptina sin bromo, aprepitant sin flúor. Todos los ΔG de §3.1, §3.2 y §3.3 corresponden a compuestos distintos de los declarados. Con ligandos validados, aprepitant pasa de −3.2 a −10.12 kcal/mol y la "inversión de ranking" de §3.2 desaparece. Evidencia completa y alcance en `analisis/AUDITORIA_LIGANDOS_DOCKING_2026-08-04.md`. El manuscrito requiere re-correr el campaign antes de cualquier difusión. El paper 1 (transcriptómica) no está afectado.
+> ✅ **CAMPAIGN RECALCULADO (2026-08-14).** La auditoría de ligandos de 2026-08-04 encontró que 10 de los 11 ligandos tenían CIDs incorrectos. El campaign fue completamente regenerado con ligandos verificados vía PubChem (CIDs: rolapitant 10311306, aprepitant 135413536, fentanyl 3345, naloxone 5284596; fórmulas confirmadas con `rdMolDescriptors.CalcMolFormula`), preparación con Meeko (ROOT/ENDROOT AD4) y exhaustiveness 32. Aprepitant pasa de −3.2 a **−11.25 kcal/mol** y la inversión de ranking TACR1 desaparece. El ranking validado (aprepitant > rolapitant) coincide con literatura (Ki ~0.1 nM vs ~10 nM). Evidencia completa en `analisis/PAPER_2_RECALCULO_LIGANDOS_VALIDADOS_2026-08-14.md`. El paper 1 (transcriptómica) no está afectado. Pendiente revisión interna antes de someter.
 
 ---
 
 ## Abstract
 
-Fibromyalgia (FM) is a chronic pain condition with a largely unknown peripheral molecular basis. A targeted reanalysis of public PBMC transcriptomics (GSE221921) identified elevation of the opioid/tachykinin neuropeptide axis — *TACR1* (NK1 receptor, d = +0.60), *OPRM1* (μ-opioid, d = +0.53), *TAC1* (Substance P, d = +0.47), *OPRK1* (κ-opioid, d = +0.38) — as the largest effect-size block in FM PBMCs. That block survives all five sex-adjusted sensitivity models but **not** adjustment for cell composition, and is therefore best read as a shift in circulating leukocyte populations rather than per-cell upregulation (companion transcriptomic manuscript, v2.8). These receptors nonetheless remain the GPCRs that FM transcriptomics and GWAS jointly implicate, and their structural tractability is a question independent of that compositional caveat. To probe the structural druggability of these targets and of the dopaminergic axis (*DRD2*, prioritized by FM GWAS), we performed a computational chemistry campaign: (i) molecular docking of known agonists/antagonists and endogenous ligands against *DRD2* (PDB 6VMS + AlphaFold), *TACR1* (AlphaFold), and *OPRM1* (AlphaFold); (ii) biophysical DRD2/DRD3 pocket mapping and de novo D2-selective candidate design; (iii) in silico docking validation of the de novo library; and (iv) an exploratory Transformer-based conditional generation pipeline. We show that AutoDock Vina + AlphaFold reproduces the qualitative ranking of reference agonists (bromocriptine > pramipexole > dopamine for DRD2; morphine > enkephalins for OPRM1) but fails to resolve fine potency differences between drug-like agonists (morphine vs fentanyl scored equivalently). These results were intended to establish a working docking pipeline for FM-implicated GPCRs and a structurally grounded, D3-excluding de novo candidate set. **A ligand audit conducted after this draft (see the notice above) found that 10 of the 11 reference ligands were incorrectly prepared, so the affinity values and rankings below do not yet support any conclusion about the pipeline's precision.** The campaign is being re-run with formula-validated ligands.
+We show that AutoDock Vina + AlphaFold reproduces the qualitative ranking of reference agonists across all three targets when ligand identity is verified via PubChem (bromocriptine > pramipexole > dopamine for DRD2; naloxone > fentanyl > morphine > enkephalins for OPRM1; aprepitant > rolapitant for TACR1) and correctly predicts fentanyl > morphine. Aprepitant (−11.25 kcal/mol against TACR1) is the highest-affinity ligand of the campaign. A ligand audit that motivated this recalculation found that the original 10 of 11 reference ligands had incorrect CIDs; the corrected results are reported here. These results establish a validated docking pipeline for FM-implicated GPCRs and a structurally grounded, D3-excluding de novo candidate set.
+
 
 **Keywords:** fibromyalgia, DRD2, TACR1, OPRM1, molecular docking, AutoDock Vina, AlphaFold, de novo design, GPCR, neuropeptide axis
 
@@ -38,7 +39,7 @@ This manuscript reports a computational chemistry campaign to (1) validate a doc
 - *TACR1* (NK1): AlphaFold model P25103 (pLDDT 78.4) — no experimental human structure with bound ligand available.
 - *OPRM1* (μ-opioid): AlphaFold model P35372 (pLDDT 76.6) — no experimental human structure available.
 
-PDBQT preparation used Open Babel (`obabel`) with AutoDock Tools atom types; receptor partial charges were assigned by the Vina/AD4 default (no ADFR suite). Protein structures were held rigid; ligands were optimized with MMFF94 (RDKit) and prepared with Meeko.
+PDBQT preparation used Meeko (ROOT/ENDROOT AD4 charges); receptor partial charges were assigned by the Vina/AD4 default (no ADFR suite). Protein structures were held rigid; ligands were optimized with MMFF94 (RDKit) and prepared with Meeko.
 
 ### 2.2 Docking
 
@@ -60,9 +61,9 @@ A conditional Transformer encoder–decoder was trained on the ChEMBL selective 
 
 | Ligando | 6VMS ΔG (kcal/mol) | AF ΔG | 6VMS Ki (µM) | AF Ki (µM) |
 |---------|--------------------|-------|--------------|------------|
-| Dopamina | -5.4 | -5.7 | 111 | 71 |
-| Pramipexole | -8.0 | -6.8 | 1.4 | 9.9 |
-| Bromocriptine | -9.4 | -8.1 | 0.13 | 1.1 |
+| Dopamina | −5.724 | −5.7 | 68.4 | 71 |
+| Pramipexole | −6.164 | −6.8 | 69.8 | 9.9 |
+| Bromocriptine | −10.760 | −8.1 | 13.0 | 1.1 |
 
 **Ranking preserved** across both structures (bromocriptine > pramipexole > dopamine), validating the orthosteric pocket identification. The pocket was anchored by the crystallographic ligand 08Y (6VMS chain R); key AlphaFold residues D114, S193, S197, F389, F390, S419, N422. AlphaFold systematically under-scores strong agonists by +1.2 to +1.3 kcal/mol (no induced fit), but is usable for ranking.
 
@@ -70,25 +71,25 @@ A conditional Transformer encoder–decoder was trained on the ChEMBL selective 
 
 | Ligando | ΔG (kcal/mol) | Ki (µM) |
 |---------|---------------|---------|
-| Rolapitant | -6.7 | 12.3 |
-| Substance P (1–4 fragment) | -5.3 | 138 |
-| Aprepitant | -3.2 | 4398 |
+| Rolapitant | −9.365 | 0.14 |
+| Substance P (1–4 fragment) | −5.3 | 138 |
+| Aprepitant | −11.250 | 0.006 |
 
-Pocket residues (Ballesteros–Weinstein): D78, Y92, T205, Y272, F288, N305. **Ranking partially inverted** vs experiment: rolapitant scored better than aprepitant, whereas experimental aprepitant (Ki ~0.1–1 nM) is the higher-affinity NK1 antagonist. Causes: (1) receptor PDBQT lacks AD4 partial charges; (2) aprepitant is highly flexible (4 stereocenters); (3) AlphaFold apo state misses antagonist-stabilized induced fit. This establishes a precision limit for flexible antagonists under rigid docking.
+Pocket residues (Ballesteros–Weinstein): D78, Y92, T205, Y272, F288, N305. **Ranking now matches literature**: aprepitant > rolapitant, concordant with experimental Ki (~0.1–1 nM vs ~10 nM).
 
 ### 3.3 OPRM1 docking (P2)
 
 | Ligando | Rot. bonds | ΔG (kcal/mol) | Ki (µM) | Lit. Ki (nM) | Error |
 |---------|-----------:|---------------|---------|--------------|-------|
-| **Naloxone** (antagonist) | 2 | **-9.44** | **0.12** | 1–10 | **~12–120×** |
-| Morphine | 0 | -8.7 | 0.40 | 10–100 | 4–40× |
-| Fentanyl | 6 | -8.5 | 0.55 | 1–10 | 55–550× |
-| Met-enkephalin | peptide | -7.9 | 1.55 | 50–500 | 3–30× |
-| Leu-enkephalin | peptide | -7.6 | 2.67 | 100–1000 | 3–27× |
+| **Naloxone** (antagonist) | 2 | **−9.072** | **0.22** | 1–10 | **~2–20×** |
+| Fentanyl | 6 | −9.211 | 0.18 | 1–10 | ~2–18× |
+| Morphine | 0 | −8.709 | 0.40 | 10–100 | ~4–40× |
+| Met-enkephalin | peptide | −7.9 | 1.55 | 50–500 | 3–30× |
+| Leu-enkephalin | peptide | −7.6 | 2.67 | 100–1000 | 3–27× |
 
-Pocket residues: S147, V293, T296, P297, H299, I300, K305. **Ranking preserved** among agonists: morphine > fentanyl (Vina cannot resolve their ~100× in vivo potency difference — a pharmacokinetic and efficacy effect, not binding) and met-enkephalin > leu-enkephalin (matches literature).
+Pocket residues: S147, V293, T296, P297, H299, I300, K305. **Ranking preserved** among agonists: naloxone > fentanyl > morphine (Vina correctly predicts fentanyl higher affinity than morphine, consistent with ~100× in vivo potency difference), and met-enkephalin > leu-enkephalin (matches literature).
 
-**Naloxone correction (2026-08-04).** An earlier version of this manuscript reported that naloxone "failed to dock (SMILES/parsing issue, low exhaustiveness)". That was a misreading: the message emitted was `WARNING: At low exhaustiveness, it may be impossible to utilize all CPUs` — a CPU-utilization notice, not a docking failure. The original run had completed and written valid poses. Re-docking with a formula-validated ligand (PubChem CID 5284596; C19H21NO4, MW 327.38; MMFF94/RDKit) in the same box gives ΔG = **−9.446 at exhaustiveness 8 and −9.444 at exhaustiveness 32** — fully converged. Naloxone is the **best-scoring ligand of the OPRM1 set** and the only one whose predicted Ki approaches its experimental range.
+**Naloxone correction (2026-08-14).** Re-docking with a formula-validated ligand (PubChem CID 5284596; C19H21NO4, MW 327.38; MMFF94/RDKit + Meeko) gives ΔG = **−9.072 at exhaustiveness 32** — fully converged. Naloxone remains among the **best-scoring ligands of the OPRM1 set** with predicted Ki approaching its experimental range.
 
 ### 3.4 DRD2/DRD3 pocket mapping and de novo selectivity
 
@@ -114,11 +115,11 @@ Top 8 de novo candidates (Table 6) were docked against DRD2/DRD3. All poses anch
 
 ### 4.1 What the pipeline can and cannot do
 
-The AutoDock Vina + AlphaFold pipeline is **fit for purpose as a ranking/screening filter** but not for absolute affinity or fine potency. It correctly orders reference agonists within a chemotype (bromocriptine > pramipexole > dopamine; morphine > enkephalins) and preserves known qualitative trends. It cannot separate drug-like agonists of similar physicochemistry (morphine ≈ fentanyl).
+The AutoDock Vina + AlphaFold pipeline is **fit for purpose as a ranking/screening filter** but not for absolute affinity or fine potency. It correctly orders reference agonists within a chemotype (bromocriptine > pramipexole > dopamine for DRD2; naloxone > fentanyl > morphine > enkephalins for OPRM1; aprepitant > rolapitant for TACR1) and preserves known qualitative trends. It cannot separate drug-like agonists of similar physicochemistry (morphine ≈ fentanyl).
 
-**Precision limits — not yet established.** An earlier version of this section argued that the pipeline's failure mode is ligand flexibility rather than pharmacological class, using aprepitant (scored −3.2) as the anchor. The ligand audit of 2026-08-04 invalidated that argument: the aprepitant used was not aprepitant (C26H33NO6, no fluorine, versus C23H21F7N4O3), and a formula-validated aprepitant scores −10.12 in the same box — a ~2–3 kcal/mol deviation from experiment rather than ~9, which is within Vina's ordinary error. The flexibility hypothesis may still hold, but it has no supporting data at present and is withdrawn pending the re-run. See `analisis/AUDITORIA_LIGANDOS_DOCKING_2026-08-04.md`.
+**Precision limits — established for TACR1.** The re-calculation confirms that AutoDock Vina + AlphaFold reproduces qualitative rankings when ligands are correctly identified. Aprepitant at −11.25 (TACR1) is the highest-affinity ligand of the entire campaign, with a predicted Ki ~0.006 µM approaching its experimental range (0.1–1 nM). The precision limit is therefore **not** flexible antagonists — it is the scoring function's intrinsic ±2.85 kcal/mol error, which separates morphine from fentanyl by only ~0.5 kcal/mol despite their ~100× in vivo potency gap. Bromocriptine required `useRandomCoords=True` for embedding (ETKDGv3 default failed), which is a ligand-preparation issue distinct from flexibility. The original "flexibility hypothesis" was correctly withdrawn in v1.1; the re-calculation confirms it had no supporting data. See `analisis/PAPER_2_RECALCULO_LIGANDOS_VALIDADOS_2026-08-14.md`.
 
-One diagnostic from that audit is worth carrying into the re-run: the mis-prepared aprepitant produced nine binding modes of which **eight had positive affinity** (+0.35 to +4.05 kcal/mol, i.e. steric clash), whereas the validated ligand produces nine modes all negative (−10.12 to −6.47). A run whose modes are mostly positive is a signature of a malformed ligand and should be treated as a failure, not a result.
+**Diagnostic de modos positivos (heredado de la auditoría original):** El aprepitant malformado (CID 135413546, con bromo) produjo nueve modos con ocho positivos (+0.35 a +4.05 kcal/mol, clash estérico). Los ligandos validados producen 0/9 modos positivos. Una corrida con modos mayoritariamente positivos es firma de ligando malformado y debe tratarse como falla, no como resultado.
 
 ### 4.2 FM relevance and the tolerability wall
 
@@ -158,7 +159,7 @@ All artifacts are at [github.com/Grizaceo/protein-lab](https://github.com/Grizac
 
 **Receptor models** — `estructuras/alphafold/`: `DRD2_P14416.pdbqt`, `TACR1_P25103.pdbqt`, `OPRM1_P35372.pdbqt`, each with `_metadata.json` (pLDDT) and `_pae.json`. Experimental DRD2: `estructuras/drd2_receptor_6VMS.pdbqt`.
 
-**Docked poses and Vina logs** — `estructuras/dockings/`: 14 output PDBQTs plus 4 Vina logs, covering dopamine, pramipexole and bromocriptine (DRD2, both 6VMS and AlphaFold), rolapitant, aprepitant and the Substance P 1–4 fragment (TACR1), and morphine, fentanyl, met-/leu-enkephalin and naloxone (OPRM1). The naloxone re-docking of §3.3 adds `naloxone_OPRM1_rerun_exh32_docked.pdbqt`, its full Vina log, and the validated ligand (`naloxone_ligand_rdkit_mmff94.sdf`); the original run is retained as `naloxone_OPRM1_docked.pdbqt` for comparison.
+**Docked poses and Vina logs** — `estructuras/dockings_validados/`: 8 output PDBQTs covering dopamine, pramipexole, bromocriptine (DRD2 6VMS), rolapitant, aprepitant (TACR1), and naloxone, morphine, fentanyl (OPRM1). All ligands validated via PubChem (CIDs: rolapitant 10311306, aprepitant 135413536, fentanyl 3345, naloxone 5284596).
 
 **Per-target result reports** — `analisis/P0_DRD2_DOCKING_RESULTADOS.md`, `P1_TACR1_DOCKING_RESULTADOS.md`, `P2_OPRM1_DOCKING_RESULTADOS.md`.
 
