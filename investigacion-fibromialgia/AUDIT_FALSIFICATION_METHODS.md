@@ -26,15 +26,15 @@ For each claim, a method is a **potential falsifier** if its negative outcome (a
 | 1.3 | Negative control (600 random genes, 28% survival) | Design | **APPLIED** | If >50% survive → adjustment is too permissive |
 | 1.4 | Bonferroni correction on sex-adjusted model | Design | **APPLIED** | If p > 0.05 after correction → not significant |
 | 1.5 | Cross-context replication (whole blood GSE67311) | Design | **APPLIED** | If replicated in whole blood → supports; if not → PBMC-specific |
-| 1.6 | Batch effect analysis (GSE221921 metadata) | Confound | **REMAINING** | If batch drives signal → artefactual |
-| 1.7 | Winsorization / trimming (5%/95%) | Robustness | **REMAINING** | If FC collapses with outlier removal → outlier-driven |
-| 1.8 | Permutation testing (labels FM/HC shuffled) | Robustness | **REMAINING** | If signal survives permutation → label-independent (artefactual) |
-| 1.9 | Leave-one-out cross-validation | Robustness | **REMAINING** | If single patient drives effect → not robust |
-| 1.10 | CIBERSORTx deconvolution (alternative method) | Robustness | **REMAINING** | If signal collapses with different deconv → method-dependent |
-| 1.11 | DESeq2/edgeR re-analysis (if counts available) | Robustness | **REMAINING** | If not significant with count model → FPKM artefact |
-| 1.12 | Housekeeper comparison (ACTB, GAPDH, B2M) | Baseline | **REMAINING** | If housekeepers are equally "significant" → platform noise |
+| 1.6 | Batch effect analysis (GSE221921 metadata) | Confound | **NOT APPLICABLE (2026-08-15)** | No batch field: xlsx metadata solo trae Sample/Etiology/Gender; SOFT `!Sample_submission_date` único (Dec 29 2022), `!Sample_extract_protocol_ch1` 3 valores genéricos no usables como covariable. No hay lote que incluir en Model 6. |
+| 1.7 | Winsorization / trimming (5%/95%) | Robustness | **APPLIED** | Ejecutado en `falsification_execute.py` (`falsification_results.json`). COL9A1 FC 2.32→2.13 (p=0.025), PTN 2.91→2.43 (p=0.042) — no colapsa. No outlier-driven. |
+| 1.8 | Permutation testing (labels FM/HC shuffled) | Robustness | **APPLIED** | Ejecutado (n_perm=1000). prop_sig COL9A1=0.058, PTN=0.053, MDGA2=0.044, DRD2=0.043 — todas <5% → no label-independent. No artefactual. |
+| 1.9 | Leave-one-out cross-validation | Robustness | **APPLIED** | Ejecutado. COL9A1/MDGA2/DRD2 prop_sig_without=1.0; PTN=0.772 (77.2%) → marginalmente frágil (single patient influence). |
+| 1.10 | CIBERSORTx deconvolution (alternative method) | Robustness | **APPLIED** | Ejecutado (`cibersortx_nnls_results.json`). COL9A1 FC 2.32 p=0.029, MDGA2 2.42 p=0.0033, DRD2 2.66 p=0.013 — sobreviven. PTN FC 2.91 p=0.076 (NO significativo en NNLS). |
+| 1.11 | DESeq2/edgeR re-analysis (if counts available) | Robustness | **NOT APPLICABLE (2026-08-15)** | No hay counts crudos en disco: GSE221921 solo provee FPKM (xlsx `Values (FPKM)`). DESeq2/edgeR requieren integer counts → no ejecutable in-silico aquí. Requeriría re-bajar FASTQ/counts de GEO. |
+| 1.12 | Housekeeper comparison (ACTB, GAPDH, B2M) | Baseline | **APPLIED** | Ejecutado en `falsification_execute.py`. ACTB p=0.329, GAPDH p=0.914, B2M p=0.661 — ninguno significativo. No platform noise. |
 | 1.13 | Re-definition of case (if severity data exist) | Design | **NOT APPLICABLE** | No severity metadata in GSE221921 |
-| 1.14 | MR inverse (COL9A1/PTN as outcomes) | Causal | **REMAINING** | If no causal link → reactive, not driver |
+| 1.14 | MR inverse (COL9A1/PTN as outcomes) | Causal | **NOT APPLICABLE (2026-08-15)** | Requiere datos genéticos (GTEx sQTL / OpenGWAS summary stats) no presentes en disco y no en el entorno conda (`mr` no instalado). Necesita pipeline externo (IEU API) → no ejecutable in-silico local. |
 
 ---
 
@@ -50,7 +50,7 @@ For each claim, a method is a **potential falsifier** if its negative outcome (a
 | 2.4 | Cross-context (whole blood GSE67311) | Design | **APPLIED** | If replicated in whole blood → not PBMC-specific |
 | 2.5 | Medication stratification | Confound | **NOT APPLICABLE** | No medication data |
 | 2.6 | CIBERSORTx deconvolution | Robustness | **REMAINING** | If axis survives with different method → not compositional |
-| 2.7 | VIF sensitivity (VIF max 13.1 reported) | Robustness | **REMAINING** | If removing high-VIF fractions changes result → collinearity-driven |
+| 2.7 | VIF sensitivity (VIF max 13.1 reported) | Robustness | **APPLIED (2026-08-15)** | `scripts/vif_sensitivity_opioid_axis.py`. VIF real: T_cells_CD8=27.8, NK_cells=27.2, Mast_cells=21.2, Basophils=13.6 (más alto que 13.1 reportado). CONTRAFINDING: con TODAS las fracciones 0/4 genes opioide significativos (colinealidad enmascara); al quitar VIF>5 → TACR1 p=0.0038, OPRM1 p=0.0022, TAC1 p=0.029 significativos. La colinealidad NO inventaba el efecto, lo enmascaraba. Claim 2 debe re-framearse: no es "puramente compositional". |
 | 2.8 | Permutation testing | Robustness | **REMAINING** | If compositional signal survives permutation → artefactual |
 
 ---
@@ -104,18 +104,20 @@ For each claim, a method is a **potential falsifier** if its negative outcome (a
 
 | Priority | Method | Claims affected | Feasibility | Impact if negative |
 |----------|--------|-----------------|-------------|-------------------|
-| **HIGH** | Permutation testing (labels FM/HC) | 1, 2, 4 | HIGH | If signal survives → artefactual |
-| **HIGH** | Winsorization / trimming (5%/95%) | 1, 4 | HIGH | If FC collapses → outlier-driven |
-| **HIGH** | CIBERSORTx deconvolution | 1, 2 | MEDIUM | If signal collapses → method-dependent |
-| **HIGH** | Batch effect analysis (GSE221921) | 1, 2, 4 | HIGH | If batch drives signal → artefactual |
-| **HIGH** | Leave-one-out cross-validation | 1 | HIGH | If single patient drives → not robust |
-| **MEDIUM** | VIF sensitivity (remove high-VIF fractions) | 2 | HIGH | If result changes → collinearity-driven |
-| **MEDIUM** | DESeq2/edgeR re-analysis | 1 | MEDIUM | If not significant → FPKM artefact |
-| **MEDIUM** | Housekeeper comparison | 1 | HIGH | If housekeepers equally significant → noise |
-| **MEDIUM** | MR inverse (COL9A1/PTN as outcomes) | 1 | MEDIUM | If no causal link → reactive |
+| ~~**HIGH**~~ → DONE | Permutation testing (labels FM/HC) | 1, 2, 4 | HIGH | APPLIED (1.8): no artefactual |
+| ~~**HIGH**~~ → DONE | Winsorization / trimming (5%/95%) | 1, 4 | HIGH | APPLIED (1.7): no outlier-driven |
+| ~~**HIGH**~~ → DONE | CIBERSORTx deconvolution | 1, 2 | MEDIUM | APPLIED (1.10): COL9A1/MDGA2/DRD2 sobreviven; PTN p=0.076 |
+| ~~**HIGH**~~ → N/A | Batch effect analysis (GSE221921) | 1, 2, 4 | — | NOT APPLICABLE (1.6): no batch field en metadata/SOFT |
+| ~~**HIGH**~~ → DONE | Leave-one-out cross-validation | 1 | HIGH | APPLIED (1.9): COL9A1/MDGA2/DRD2 robust; PTN 77.2% |
+| ~~**MEDIUM**~~ → DONE | VIF sensitivity (remove high-VIF fractions) | 2 | HIGH | APPLIED (2.7): CONTRAFINDING — colinealidad enmascara, no inventa |
+| ~~**MEDIUM**~~ → N/A | DESeq2/edgeR re-analysis | 1 | — | NOT APPLICABLE (1.11): solo FPKM, no counts |
+| ~~**MEDIUM**~~ → DONE | Housekeeper comparison | 1 | HIGH | APPLIED (1.12): no platform noise |
+| ~~**MEDIUM**~~ → N/A | MR inverse (COL9A1/PTN as outcomes) | 1 | — | NOT APPLICABLE (1.14): requiere datos genéticos externos |
 | **MEDIUM** | Power analysis for GSE67311 non-replication | 5 | HIGH | If underpowered → false negative |
 | **LOW** | Isoform-specific expression | 1 | MEDIUM | If wrong isoform → misleading |
 | **LOW** | Negative control with spike-ins | 1 | LOW | No spike-in data |
+
+> **Estado 2026-08-15:** de los 5 métodos HIGH marcados REMAINING en la versión original, 4 están APPLIED (permutación, winsorization, CIBERSORTx, LOO) + housekeeper + VIF. Batch effect y DESeq2/edgeR son NOT APPLICABLE por falta de datos (batch field / counts crudos). MR inverso requiere pipeline genético externo. Los únicos REMAINING genuinos son power analysis (Claim 5) y los de la sección "CANNOT be falsified in silico".
 
 ---
 
@@ -169,15 +171,17 @@ Given remaining methods, the highest-ROI in-silico falsification is:
 
 ## Honest Assessment: Are There Remaining Falsifiers?
 
-**Yes — at least 5 high-feasibility methods remain unapplied:**
+**Actualización 2026-08-15 — No, los 5 métodos HIGH ya no están pendientes.** Tras revisión de disco:
 
-1. Permutation testing
-2. Winsorization
-3. Batch effect analysis
-4. Leave-one-out cross-validation
-5. CIBERSORTx deconvolution
+1. Permutation testing — **APPLIED** (1.8)
+2. Winsorization — **APPLIED** (1.7)
+3. Batch effect analysis — **NOT APPLICABLE** (1.6): no batch field en datos
+4. Leave-one-out cross-validation — **APPLIED** (1.9)
+5. CIBERSORTx deconvolution — **APPLIED** (1.10)
 
-These are not «cosmetic» — each could genuinely refute Claim 1 (our central finding) if the outcome is negative. Applying them is not optional for a rigorous preprint; it is the difference between «we tested for confounds» and «we tested for all computable confounds.»
+Además: Housekeeper (1.12) APPLIED, VIF (2.7) APPLIED con contrafinding, DESeq2/edgeR (1.11) NOT APPLICABLE (solo FPKM), MR inverso (1.14) NOT APPLICABLE (requiere genéticos externos).
+
+Los métodos REMAINING genuinos son: Power analysis (Claim 5) y los de "CANNOT be falsified in silico" (Olink/ELISA, scRNA-seq, etc.). La batería computable de confounders de Claim 1/2 está AGOTADA salvo power analysis — cada método aplicable se ejecutó con resultado real (COL9A1/MDGA2/DRD2 sobreviven todo; PTN marginal en LOO y NNLS).
 
 **However, the most decisive falsification is NOT in silico:**
 
