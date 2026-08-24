@@ -1,0 +1,30 @@
+{
+  "experiment_id": "protein-25-evalue-loo-outlier-sensitivity-20260824",
+  "domain": "protein",
+  "linea": "fibromialgia",
+  "timestamp": "2026-08-24T04:30:00",
+  "method": "VanderWeele & Ding (2017) E-value; LOO + outlier sensitivity on COL9A1\u2013FM",
+  "metrics": {
+    "genes_analyzed": 1,
+    "COL9A1_evalue_full": 8.9838,
+    "COL9A1_evalue_loo_min": 8.7403,
+    "COL9A1_evalue_loo_max": 9.5469,
+    "COL9A1_evalue_loo_mean": 8.9949,
+    "COL9A1_evalue_loo_std": 0.2175,
+    "COL9A1_most_influential_index": 35,
+    "COL9A1_most_influential_value": 3.9272,
+    "COL9A1_evalue_outlier_without": 8.7403
+  },
+  "verdict": "ROBUSTO \u2014 all LOO E-values >= 5.0, outlier removal does not change verdict",
+  "gates_passed": ["G1_regime", "G2_consumer", "G3_axis", "G4_provenance"],
+  "labstate_validated": true,
+  "critico_audit": "Reproduced e03/e04 on disk via scripts/e03_e04_evalue_loo_outlier.py (base /home/gris/.miniconda/bin/python3 w/ openpyxl): LOO min=8.7403 max=9.5469 mean=8.9949 std=0.2175; outlier idx=35 val=3.9272; E-value w/o outlier=8.7403. Matches analisis/falsificacion/e03_evalue_outlier_sensitivity.json (3.9272/35/8.74) and e04_evalue_loo_full.json (8.74-9.55/8.99/0.218) exactly. LOO min coincides with outlier-removed value (internally consistent: index 35 is the most influential point). All 96 LOO E-values >= 5.0 -> verdict ROBUSTO sustained, no single FM sample drives result. No fabrication; every number traceable to script run. G4 N/A (no new DOIs cited).",
+  "input_artifacts": [
+    "analisis/falsificacion/e01_evalue_results.json",
+    "investigacion-fibromialgia/datos/geo/PBMC_FM_96patients_93controls/GSE221921_FM_ProcessedData.xlsx"
+  ],
+  "output_artifacts": [
+    "experiments/protein-25-evalue-loo-outlier-sensitivity-20260824.json"
+  ],
+  "status": "completed"
+}

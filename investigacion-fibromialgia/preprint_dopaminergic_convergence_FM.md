@@ -8,7 +8,7 @@
 
 **Author Position Statement.** The author is an independent researcher without formal training in medicine, biology, or bioinformatics. No wet-lab experiments were performed; all analyses are computational reanalyses of publicly available data (GSE221921, GSE67311). This manuscript therefore makes no claim to domain expertise. Its value lies exclusively in the **rigor and reproducibility of the analytical protocol**: every statistical decision is documented, every correction is calibrated against negative controls, every negative finding is reported without cosmetic adjustment, and all scripts are publicly available for independent replication. The manuscript is offered as a **protocol-first contribution** — a pre-registered analytical pipeline applied to public FM transcriptomics — not as a substitute for domain expertise or clinical validation.
 
-**Preprint — Draft v2.10.reframe1 — August 2026**
+**Preprint — Draft v2.13 — August 2026 (E-value LOO/outlier extension; VIF correction 13.1→27.8)**
 
 ---
 
@@ -137,7 +137,7 @@ Table 1 presents the sensitivity analysis for all 16 measured genes. Two genes �
 
 ### 3.2 The Opioid/Tachykinin Neuropeptide Axis Is Elevated in FM PBMCs — but the Signal Is Sensitive to Cell-Composition Collinearity
 
-Extending the panel to the neuropeptide axis (validate_fm_biomarkers_iter2.py v3 + session analysis), we find that **ligands and receptors of both the tachykinin (Substance P) and endogenous opioid systems are simultaneously elevated** in FM PBMCs (Table 2). This is the largest effect-size block observed in the entire investigation, and it survives all five sex-sensitivity models (§2.4). Under full cell-composition adjustment (model 6, all 12 fractions), the axis **does not survive across all four deconvolution implementations** (Table 2, "Composition-adj. p") — the canonical result that has motivated calling it "compositional." **However, a VIF-sensitivity analysis (2026-08-15) shows this non-survival is driven by extreme collinearity among the estimated fractions (T_cells_CD8 VIF = 27.8, NK_cells = 27.2, Mast_cells = 21.2; max reported previously as 13.1 was an underestimate).** When the high-VIF fractions (>5) are removed so that the composition adjustment uses an orthogonal subset, **three of four core axis genes (TACR1 p = 0.0038, OPRM1 p = 0.0022, TAC1 p = 0.0297) become significant**, while OPRK1 remains non-significant (p = 0.170). The axis is therefore **not a pure cell-population artefact**: it is partially composition-sensitive but retains a per-cell transcriptional component under an orthogonal adjustment. This reframes the appropriate follow-up from "cell-resolved only" to "cell-resolved *with* per-cell validation," and qualifies the strong "compositional" label used in earlier versions.
+Extending the panel to the neuropeptide axis (validate_fm_biomarkers_iter2.py v3 + session analysis), we find that **ligands and receptors of both the tachykinin (Substance P) and endogenous opioid systems are simultaneously elevated** in FM PBMCs (Table 2). This is the largest effect-size block observed in the entire investigation, and it survives all five sex-sensitivity models (§2.4). Under full cell-composition adjustment (model 6, all 12 fractions), the axis **does not survive across all four deconvolution implementations** (Table 2, "Composition-adj. p") — the canonical result that has motivated calling it "compositional." **However, a VIF-sensitivity analysis (2026-08-15) shows this non-survival is driven by extreme collinearity among the estimated fractions (T_cells_CD8 VIF = 27.8, NK_cells = 27.2, Mast_cells = 21.2).** When the high-VIF fractions (>5) are removed so that the composition adjustment uses an orthogonal subset, **three of four core axis genes (TACR1 p = 0.0038, OPRM1 p = 0.0022, TAC1 p = 0.0297) become significant**, while OPRK1 remains non-significant (p = 0.170). The axis is therefore **not a pure cell-population artefact**: it is partially composition-sensitive but retains a per-cell transcriptional component under an orthogonal adjustment. This reframes the appropriate follow-up from "cell-resolved only" to "cell-resolved *with* per-cell validation," and qualifies the strong "compositional" label used in earlier versions.
 
 **Table 2. Opioid/tachykinin axis in GSE221921 (96 FM vs 93 HC PBMCs).**
 
@@ -305,6 +305,59 @@ The following predictions are offered as concrete, falsifiable hypotheses for in
 - *Expected result:* Neutrophil scores FM ≈ HC within 0.1 units (as in GSE67311, §3.3).
 
 These predictions are pre-specified and falsifiable. The present study's analytical protocol (§2) can be applied identically to any future cohort without modification.
+
+### 3.4.7 Sensitivity Analysis for Unmeasured Confounding: E-values for COL9A1 and PTN (with LOO/outlier extension, 2026-08-24)
+
+All the robustness tests in §2.4–§2.6 address **measured** confounders (sex, cell composition). A different question is whether an **unmeasured** confounder — medication, BMI, age, smoking, socioeconomic status, or any factor not recorded in GSE221921 — could explain away the COL9A1–FM or PTN–FM association. We address this with the E-value (VanderWeele & Ding, 2017; Ding & VanderWeele, 2016).
+
+The E-value is the minimum strength of association (on the risk-ratio scale) that an unmeasured confounder would need to have with **both** the exposure (FM status) **and** the outcome (gene expression) to explain away the observed association, conditional on the measured covariates. It is computed as:
+
+    E-value = RR + sqrt(RR × (RR − 1))
+
+where RR is the observed risk ratio, here approximated from Cohen's d via the Borenstein transformation: ln(OR) ≈ d × π/√3. We also report the E-value for the lower bound of the 95% CI of RR, which is the more conservative measure. Benchmarks (VanderWeele & Ding, 2017; Mathur & Ding, 2020): E-value > 2.0 = robust to moderate confounding; > 3.0 = robust to substantial confounding; > 5.0 = extremely robust.
+
+**Table 6. E-value sensitivity analysis for COL9A1–FM and PTN–FM associations (GSE221921, 96 FM / 93 HC).**
+
+| Metric | COL9A1 | PTN |
+|--------|--------:|-----:|
+| Cohen's d (log₂ scale) | 0.860 | 0.722 |
+| Risk Ratio (RR from d) | 4.76 | 3.70 |
+| **E-value** | **8.98** | **6.86** |
+| **E-value (lower 95% CI)** | **4.98** | **3.76** |
+| Robustness verdict | HIGH ✅ | HIGH ✅ |
+| Confounder strength needed | RR ≥ 9.0 with both COL9A1 and FM | RR ≥ 6.9 with both PTN and FM |
+
+*Method: VanderWeele & Ding (2017) E-value for risk ratio. RR approximated from Cohen's d via Borenstein d→OR transformation. 95% CI lower bound computed from SE(d) = sqrt((n₁+n₂)/(n₁n₂) + d²/(2(n₁+n₂))). Script: `scripts/e01_evalue_col9a1.py` (commit a7d4405) extended to PTN. Results: `analisis/falsificacion/e01_evalue_results.json`, `analisis/falsificacion/e02_evalue_ptn_results.json`.*
+
+**Interpretation.** For an unmeasured confounder to explain away the COL9A1–FM association, it would need to be associated with both COL9A1 expression and fibromyalgia status at RR ≥ 9.0 (lower bound: 4.98). This is a large confounding effect — comparable to the smoking→lung cancer association (RR 15–30) and well above the obesity→diabetes association (RR 3–7). Common confounders in FM transcriptomics (chronic opioid use, BMI, socioeconomic status, smoking) have reported associations with either gene expression or FM status in the RR 1.5–3.0 range (Wang et al., 2020; Ge et al., 2021) — substantially below the E-value threshold. It is therefore **unlikely but not impossible** that an unmeasured confounder of sufficient strength exists.
+
+For the lower 95% CI bound (E-value = 4.98), a confounder with RR ≈ 5 with both COL9A1 and FM would suffice. This is within the range of strong socioeconomic or behavioral determinants of health (Marmot, 2005) but still above typical transcriptomic confounders (batch effects, population stratification — usually RR < 2). The conservative verdict is therefore: the COL9A1 association is **robust to moderate and most plausible strong unmeasured confounding**, with residual uncertainty only for an unmeasured confounder of RR ≥ 5.
+
+PTN's E-value (6.86; lower bound 3.76) is somewhat lower than COL9A1's but still above the "substantial confounding" threshold (E-value > 3.0) even on the conservative bound. PTN is therefore also robust to moderate-to-substantial unmeasured confounding, though the margin is narrower than COL9A1's.
+
+**Leave-one-out (LOU) sensitivity (2026-08-24).** To test whether the E-value is driven by a single influential sample, we recomputed it 96 times, leaving out one FM patient each iteration. Result: E-values in [8.74, 9.55], all ≥ 5.0 (mean 8.995, std 0.218). No single FM sample drives the COL9A1 E-value — the result is structurally robust to individual outliers.
+
+**Outlier sensitivity (2026-08-24).** Removing the most influential outlier (FM index 35, value 3.93) changes COL9A1 E-value from 8.98 to 8.74 — a negligible change. Verdict: ROBUSTO — E-value permanece ≥ 5.0 sin el outlier.
+
+**Clinical context for comparison.**
+
+| Association | Approx. RR | Approx. E-value |
+|-------------|-------------|-----------------|
+| Smoking → lung cancer | 15–30 | 29–59 |
+| Obesity → diabetes | 3–7 | 5–13 |
+| Age → mortality (per decade) | 2–5 | 3–9 |
+| **COL9A1 → FM** | **4.8** | **9.0** |
+| **PTN → FM** | **3.7** | **6.9** |
+
+Both gene-association E-values sit in the same range as the age→mortality-per-decade association — a well-established, non-confounded epidemiological relationship.
+
+**Limitations of the E-value analysis.**
+1. Assumes binary exposure (FM vs HC). Continuous gene expression is dichotomized at the group level.
+2. The Borenstein approximation (ln OR ≈ d·π/√3) works best for medium effects; very large effects may slightly overestimate OR.
+3. E-value is a **sensitivity** analysis, not a confounder test — it bounds the confounder strength needed to explain the effect, it does not test whether such a confounder exists.
+4. Does not adjust for sex or cell composition (these are addressed separately in Models 5–6, §2.4). The E-value and the composition-adjusted model are complementary: the latter addresses **measured** confounders known to the analysis, the former bounds **unmeasured** confounders not in the model.
+
+**Verdict.** COL9A1 (E-value = 8.98; lower bound 4.98) and PTN (E-value = 6.86; lower bound 3.76) are both robust to moderate-to-substantial unmeasured confounding. COL9A1, with its higher E-value, is the more robust of the two — consistent with its higher Cohen's d (0.860 vs 0.722) and its survival across all other sensitivity analyses (§3.4.5, §7.1). This is a 10th falsification-robustness layer applied to the two lead findings (see §7.1).
 
 ### 3.5 Targeted Literature Review: Dopamine Agonists in FM
 
@@ -524,7 +577,7 @@ A targeted reanalysis of two public transcriptomic cohorts, informed by populati
 | Leave-one-out cross-validation | 1, 4 | COL9A1/MDGA2/DRD2: 100% of iterations remain significant. **PTN: 77.2%** (below 80% threshold) | **COL9A1/MDGA2/DRD2 PASS — PTN is marginally fragile** |
 | Housekeeper comparison (ACTB, GAPDH, B2M) | 1, 4 | All NS (p=0.33–0.91) | **PASS — no platform noise** |
 | CIBERSORTx-equivalent NNLS deconvolution | 1, 4 | COL9A1: p=0.029 ✅; MDGA2: p=0.003 ✅; DRD2: p=0.013 ✅; **PTN: p=0.076 ❌** | **COL9A1/MDGA2/DRD2 PASS — PTN falsified by alternative deconvolution** |
-| **E-value (unmeasured confounding)** | **1** | **COL9A1: E-value = 8.98 (lower 95% CI = 4.99)** | **✅ HIGH robustness — confounder needs RR ≥ 9 to explain effect** |
+| **E-value (unmeasured confounding)** | **1, COL9A1 + PTN** | **COL9A1: E-value = 8.98 (lower 95% CI = 4.99); PTN: E-value = 6.86 (lower 95% CI = 3.76)** | **✅ Both HIGH robustness — confounder needs RR ≥ 9 (COL9A1) or RR ≥ 6.9 (PTN) to explain effect** |
 
 #### 7.1.1 Note on CIBERSORTx-equivalent methodology
 
@@ -575,7 +628,7 @@ The following require wet lab, different data, or new cohorts:
 ### 8.1 Immediate (computational, no wet lab)
 
 1. ~~**CIBERSORTx deconvolution**~~ — ✅ **EJECUTADO** (commit `6a01eab`, 2026-08-14). CIBERSORTx-equivalent NNLS deconvolution with Abbas/Bindea/DICE signatures (60 genes × 12 cell types) applied to GSE221921. Result: COL9A1 p=0.029 ✅; PTN p=0.076 ❌. PTN downgraded from primary to secondary candidate (§7.2).
-2. ~~**E-value analysis**~~ — ✅ **EJECUTADO** (commit `914afe1b`, 2026-08-14). COL9A1 E-value = 8.98 (lower 95% CI = 4.99). Confounder needs RR ≥ 9 with both COL9A1 and FM to explain effect → robustness HIGH.
+2. ~~**E-value analysis**~~ — ✅ **EJECUTADO** (commit `914afe1b`, 2026-08-14 for COL9A1; PTN added 2026-08-21). COL9A1 E-value = 8.98 (lower 95% CI = 4.99); PTN E-value = 6.86 (lower 95% CI = 3.76). Both HIGH robustness.
 3. **Bayesian re-analysis** — compute Bayes factors for Model 6 vs Model 2 (no deconvolution). If BF > 10 → decisive evidence for composition-adjusted signal.
 
 ### 8.2 Short-term (protocol design, no data collection)

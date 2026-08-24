@@ -1,0 +1,12 @@
+{
+  "test": "leave-one-out outlier sensitivity test for COL9A1",
+  "outlier_value": 3.9271927455059603,
+  "fm_mean_with": 1.9739138776183722,
+  "fm_mean_without": 1.953353047430082,
+  "cohens_d_with": 0.8598223282972534,
+  "cohens_d_without": 0.8455732898770428,
+  "evalue_with": 8.983847014733083,
+  "evalue_without": 8.740255328558508,
+  "evalue_lower_without": 4.83797869828714,
+  "verdict": "ROBUSTO - E-value permanece >= 5.0 sin el outlier"
+}

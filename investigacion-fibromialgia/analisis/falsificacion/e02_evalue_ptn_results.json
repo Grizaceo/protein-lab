@@ -1,0 +1,19 @@
+{
+  "gene": "PTN",
+  "dataset": "GSE221921",
+  "method": "VanderWeele & Ding (2017) E-value",
+  "effect_size": {
+    "d": 0.7216117138543494,
+    "rr": 3.7019468902364965,
+    "evalue": 6.864614101293514,
+    "evalue_lower": 3.76480988080918,
+    "n1": 96,
+    "n2": 93,
+    "robustness": "HIGH"
+  },
+  "interpretation": {
+    "summary": "E-value = 6.9. A confounder needs RR >= 6.9 with both PTN and FM to explain the effect.",
+    "robustness": "HIGH",
+    "benchmark": "E-value > 2.0 indicates robustness to moderate confounding."
+  }
+}

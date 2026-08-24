@@ -1,0 +1,13 @@
+{
+  "test": "leave-one-out sensitivity over all 96 FM points for COL9A1",
+  "evalue_with_all": 8.983847014733083,
+  "evalue_min": 8.740255328558508,
+  "evalue_max": 9.546866632432844,
+  "evalue_mean": 8.994913234974321,
+  "evalue_std": 0.21754103876432662,
+  "most_influential_point": {
+    "index": 35,
+    "evalue_without": 8.740255328558508
+  },
+  "verdict": "ROBUSTO - Todos los E-values leave-one-out >= 5.0"
+}

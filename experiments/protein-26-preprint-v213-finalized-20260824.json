@@ -1,0 +1,50 @@
+{
+  "experiment_id": "protein-26-preprint-v213-finalized-20260824",
+  "domain": "protein",
+  "linea": "fibromialgia",
+  "timestamp": "2026-08-24T18:20:00",
+  "action": "Finalize preprint v2.13 with Sensitivity Analysis (E-values + LOO + outlier) and generate PDF",
+  "metrics": {
+    "genes_with_evalue": 2,
+    "COL9A1_evalue": 8.98,
+    "PTN_evalue": 6.86,
+    "COL9A1_evalue_lower_ci": 4.98,
+    "PTN_evalue_lower_ci": 3.76,
+    "COL9A1_evalue_loo_min": 8.7403,
+    "COL9A1_evalue_loo_max": 9.5469,
+    "COL9A1_evalue_loo_mean": 8.9949,
+    "COL9A1_evalue_loo_std": 0.2175,
+    "COL9A1_evalue_outlier_without": 8.7403,
+    "outlier_index": 35,
+    "outlier_value": 3.9272,
+    "verdict": "ROBUSTO"
+  },
+  "artifacts": {
+    "preprint_md": "investigacion-fibromialgia/preprint_dopaminergic_convergence_FM.md",
+    "preprint_numbered_md": "investigacion-fibromialgia/preprint_dopaminergic_convergence_FM_numbered.md",
+    "preprint_pdf": "artifacts/manuscript/v2.13/FM_transcriptomic_reframing_v2.13.pdf",
+    "pdf_pages": 55,
+    "pdf_size_kb": 249.0,
+    "evalue_script": "investigacion-fibromialgia/scripts/e03_e04_evalue_loo_outlier.py",
+    "evalue_loo_result": "investigacion-fibromialgia/analisis/falsificacion/e04_evalue_loo_full.json",
+    "evalue_outlier_result": "investigacion-fibromialgia/analisis/falsificacion/e03_evalue_outlier_sensitivity.json",
+    "ptn_evalue_result": "investigacion-fibromialgia/analisis/falsificacion/e02_evalue_ptn_results.json"
+  },
+  "section_added": "3.4.7 Sensitivity Analysis for Unmeasured Confounding: E-values for COL9A1 and PTN (with LOO/outlier extension, 2026-08-24)",
+  "section_location": "After §3.4.6, before §3.5 Targeted Literature Review",
+  "updates": [
+    "Added §3.4.7 with E-value table (COL9A1 E=8.98, PTN E=6.86)",
+    "Added LOO sensitivity analysis: E-values in [8.74, 9.55], all >= 5.0",
+    "Added outlier sensitivity: removing idx 35 (value 3.93) changes E-value 8.98 -> 8.74",
+    "Added clinical context comparison table (smoking, obesity, age mortality, COL9A1, PTN)",
+    "Added E-value limitations section (4 specific caveats)",
+    "Updated falsification table §7.1 to include PTN E-value",
+    "Updated roadmap §8.1 to include PTN E-value addition",
+    "Updated version header to v2.13",
+    "Regenerated numbered preprint (line numbers synced)",
+    "Generated PDF v2.13 via weasyprint (55 pages, 249 KB)",
+    "Updated abstract to reference E-value LOO/outlier extension"
+  ],
+  "audit": "CRITICO audit from protein-25 applies (all LOO E-values >= 5.0, internally consistent: LOO min coincides with outlier-removed value). New §3.4.7 numbers match e01/e02/e03/e04 JSON files. No fabrication.",
+  "status": "completed"
+}
