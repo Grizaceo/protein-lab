@@ -219,3 +219,26 @@ Sin cambios en este delta. Estructura creada, sin hipótesis ni actividad.
 ---
 
 *Informe generado por DAVI en modo meta-análisis. Toda afirmación tiene ruta de evidencia en disco o git SHA. Cruza con `GROUNDING.md` antes de citar cualquier referencia externa. Los resultados de los subagentes delegados fueron verificados contra evidencia primaria; los resúmenes inyectados/corrompidos fueron descartados. Fecha de corte: 2026-08-14. Estado del repo en HEAD `e69391e` (rama master).*
+
+
+---
+
+## DELTA 14→23 AGO (añadido 2026-08-23 por Eidos) — veredictos del ciclo
+
+### Línea 1 (FM): cierre de la vía marginal opioide con veredicto negativo honesto
+
+| Artefacto | Veredicto |
+|-----------|-----------|
+| `experiments/gse67311_via_marginal_20260823.json` | GSE67311 (whole blood) DEBILITA la vía marginal COL9A1→NCAM1→DRD2: los 3 genes presentes en 33,297 probes pero NINGUNO significativo (COL9A1 FC=1.02 p=0.29 FDR=0.76; DRD2 FC=1.03 p=0.20 FDR=0.71; NCAM1 FC=0.94 p=0.24 FDR=0.73). |
+| `experiments/modulo_opioide_GSE67311_20260823.json` | Módulo opioide completo (10 genes) NO sobrevive en GSE67311: 10/10 presentes, 0/10 significativos, todos FDR>0.60. Máximo efecto MLN log2FC 0.062 p=0.049 FDR=0.60 = indistinguible de ruido. |
+| `reconciliacion_preprint_pbmc_20260823.json` | Preprint v2.12 NO sobre-generaliza: ya advierte limitación PBMC-específica (secciones 3.3, limitaciones 3/6/11) y usa GSE67311 como validación negativa. |
+| `eidos_verificacion_vif_v212_20260823.json` | INCONSISTENCIA de manuscrito: v2.12 reporta "VIF median 2.7, max 13.1" en §3.2 pero el artefacto fuente (AUDIT_FALSIFICATION_METHODS.md §2.7, 15-08) documenta VIF real corregido: T_cells_CD8=27.8, NK=27.2, Mast=21.2, Basophils=13.6. El 13.1 era el valor pre-corrección. **Artefacto de verificación registrado sin tocar el manuscrito.** |
+
+### Conclusiones nuevas
+
+- **La línea opioide queda cerrada con veredicto negativo honesto**: doble evidencia (STRING + GSE67311), NCAM1 invierte signo, 0/10 módulo significativo. El preprint no sobre-generaliza PERO tiene inconsistencia VIF pendiente de corregir (13.1 obsoleto vs 27.8 real).
+- **Pendiente P1 nuevo**: corregir §3.2 del preprint v2.12 con el VIF real (27.8) antes de cualquier difusión.
+
+### Estado kanban protein-1
+
+- `SINTESIS_PROTEIN_LAB_2026-08-14.md` verificado en disco (221 líneas, 20KB, cumple señal de terminación). El primer dispatch hizo timeout pero el re-dispatch con scope reducido funcionó. Estado kanban actualizado a completed.

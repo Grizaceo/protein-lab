@@ -1,0 +1,165 @@
+{
+  "experiment_id": "esm3_oprm1_v2",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "timestamp": "2026-08-23T18:27:21.918019",
+  "description": "ESM3 guided generation on OPRM1 with ddG (FoldX) + docking (Vina vs PDB 6DDE) evaluation. Control: 100 mutated_70pct sequences.",
+  "sources_independently_verified": true,
+  "source_notes": "DOIs resueltos de forma independiente contra api.crossref.org (registrante del DOI, no motor de busqueda). Dos resoluciones independientes coincidentes (@nyx, @prisma).",
+  "target_protein": {
+    "gene": "OPRM1",
+    "uniprot_id": "P35372",
+    "length": 400,
+    "sequence": "MDSSAAPTNASNCTDALAYSSCSPAPSPGSWVNLSHLDGNLSDPCGPNRTDLGGRDSLCPPTGSPSMITAITIMALYSIVCVVGLFGNFLVMYVIVRYTKMKTATNIYIFNLALADALATSTLPFQSVNYLMGTWPFGTILCKIVISIDYYNMFTSIFTLCTMSVDRYIAVCHPVKALDFRTPRNAKIINVCNWILSSAIGLPVMFMATTKYRQGSIDCTLTFSHPTWYWENLLKICVFIFAFIMPVLIITVCYGLMILRLKSVRMLSGSKEKDRNLRRITRMVLVVVAVFIVCWTPIHIYVIIKALVTIPETTFQTVSWHFCIALGYTNSCLNPVLYAFLDENFKRCFREFCIPTSSNIEQQNSTRIRQNTRDHPSTANTVDRTNHQLENLEAETAPLP",
+    "sequence_sha256": "4d0c1ae8d9c6ecf5",
+    "source": "rest.uniprot.org/uniprotkb/P35372 (fetched 2026-08-24, independent of proposing channel)",
+    "pdb_reference": "6DDE"
+  },
+  "esm3_generation": {
+    "method": "Guided generation from Colab T4 GPU",
+    "prompt": "Full-length OPRM1 P35372 (400aa), sha256 4d0c1ae8d9c6ecf5",
+    "n_variants": 20,
+    "identity_range": "70-95%",
+    "status": "PENDING_COLAB — spec target corrected, input dataset v2"
+  },
+  "evaluation": {
+    "primary_metric": "ddG_folding",
+    "tool": "FoldX 5.0",
+    "secondary_metric": "docking_affinity",
+    "tool_secondary": "AutoDock Vina",
+    "receptor_pdb": "6DDE",
+    "ligand": "DAMGO (mu-opioid agonist)",
+    "control_set": "mutated_70pct, N=30 PRE-REGISTERED (sampled with seed=42 from the 100 available)",
+    "statistical_test": "Mann-Whitney U",
+    "alpha": 0.05,
+    "n_controls_preregistered": 30,
+    "n_esm3_variants_preregistered": 20,
+    "optional_stopping": "PROHIBITED. N fijado antes de ejecutar. No se escala tras ver resultados; si el gate falla con N=30, se reporta como fallo, no se re-corre con N mayor."
+  },
+  "falsification_criteria": {
+    "description": "ESM3 variants do NOT have better ddG or docking affinity than random 70% mutants",
+    "null_hopothesis": "ESM3 variants are equivalent to random mutagenesis at same Hamming distance",
+    "rejection_criteria": "Mann-Whitney p < 0.05 AND effect size (rank-biserial r) > 0.3"
+  },
+  "control_sequences": [
+    {
+      "id": "mutated_70pct_0",
+      "sequence": "ADFGAAPTNWPNCEDALASSSEYPAPSPGSWVTLSSGHGSISDPSGPNQTSLGHRMMHCNPTGSPSTIWHITIMATYSILRVVGLCFNFLVMYVQHRYTKMETATNRYIFNLAPKDMNLPSTLPVYSCNCLMETWPDGMIIFNIVISPDTYNMFTHIFTLCSLSVDRYIVMCHGFKALDFRTPRNAKYFNVCLWILSWAIGLPWLCMATTMYRNNRIDCPLTFCHPYIYWENLLKICEFFFAFSVPVLIITVCMGLMHLRLKVVHMLSGPPEKDRNLRCITRMVTVVVAVFIVCHCVIMFYHIIKALPTNPHTQYQTVSWDWCIALGYTNATNNPVQYAFLDENNKRCFREFKRPCSAHPEQANGTSIKQNTRDHPSTLNTVDRTNHQDDNLNAETAPLW",
+      "length": 400,
+      "composition": "same_as_OPRM1_with_30pct_mutations",
+      "identity_to_oprm1": 0.7
+    },
+    {
+      "id": "mutated_70pct_1",
+      "sequence": "MGVSAWPTNASNPTDALWENSCSPAAQPGCWVQIYSLDGCLSDWCGPNRTDLGSRDSLGPPFGSEYMIVMITIMCMVSWVCLVGLFLNFLVKYVKVIYTKMKFATNIYIFNLALWDAYAFITLPPQSVNYLLGDWPFQTILCKIVIAIDYPNMFPTICTLHLMPVDRYKAVCHPVKALDFRTPRCAKICNNVLWILGSAIGLPVMVIASTKYRQGSIDCTLPFSHPKWYWEWALRVCVFIFAEIKRVRIYTMCPGLRILRLRSVRFLNGGKLKDRNARRIERMVLVVVEVFWVCWNPYRIYVIYKYLVTIECTTFQTDIWHFKICLGIHNSCLNPVLYAFYTTNYKRCFPEFQIQDSSQIEQQNSTRDVQFTIDHHDTARHVDRKNKIAENNEENIAPLP",
+      "length": 400,
+      "composition": "same_as_OPRM1_with_30pct_mutations",
+      "identity_to_oprm1": 0.7
+    },
+    {
+      "id": "mutated_70pct_2",
+      "sequence": "MHHSASPTVASRCTDPLAYVSFSPSHSNGSPKELSYLDGEWMDFRGPNCTDFGGRDSLCPPTGSPSMITTTGDQALYSIECTVNNGGNGLVMLVIARGTKKDEATNPYNFNVILQDTLAGSTLPFQAWKYLMCTHPFGTILCYIVISIDYRNMFTSMFTRITMAVDPYIAVPHPQKALDAWWPRYFEIIHVCNWFVSSAGGLKVLFMATTKAKGGSIDGTSTFSHPTWASENLLYHCKFIFAFQMPVLITTTNYGLMILRTKSVRMLSGSKQTDRGLRRITRMVLVVVYVVIKCWTPKEIYLIIKCLVTTMETTFQSGSWHFCRIWGYTNSCLNPVLYAFLFENFKRCFREFCIPTPINIEMSTVTRIRQVTRDHESLANTVDRHQHGLQNYEAEAAPLP",
+      "length": 400,
+      "composition": "same_as_OPRM1_with_30pct_mutations",
+      "identity_to_oprm1": 0.7
+    },
+    {
+      "id": "mutated_70pct_3",
+      "sequence": "MDSSPASKEAMHCCDCLAYMRCNPAPSPGSWVLESHLDMNQSDPCGPNRTDLVGRDSMCPTTKAPSWIRKIAIMQSSDIVCVVPLFGNKLVMNVIVQYTKPHTATCIPIQNLAHADALATWTLPCQSGPYLMSTMMFDTHSWKIVISIDYKNRFCSIKTLCTMSQTAIITVCHPVKAYDFRTPRNAVIINRENWILSSFIGLPVMFNAITGYRQYSPICTLTFSHPTWYWENLLKICVEIFRFIMMVLIITVHYKGSIFELTYVRMVSGSKDKDRNLRHITAMVLVVVCVFHVAWTPIHIIVIMKALVTMIEKTFQTHSWHFEIGLWYTNPYVNPECYFCLDENDLRCFRVYCIPTTVNCEQQMSTRIHYNTRKHPSTANEVDETNHQSQNLEGETAPLM",
+      "length": 400,
+      "composition": "same_as_OPRM1_with_30pct_mutations",
+      "identity_to_oprm1": 0.7
+    },
+    {
+      "id": "mutated_70pct_4",
+      "sequence": "MDSSCAPTNASWQTDALIYSSCHPQPSPGSWVNLSHLDGNLGDKCGGQRTDTRERGSLCPPMESPSMRMPIEISALHSIVCLVGGQGEFLDRYVIVIATKMKVPTNIYIFNLALACNLPTSTLPFQLVNKLMGTWPFGTMLCKIVISIHVYNPFRSSLTLCHENVDRYIIVSHPTKYFDFRTQDFAKIIGKCNWIDESAIGLPYGCMATTKYRFFSIDCRLEFYHGWSKWENLLAICVNHFAFEMPVLIITNNVGEMIDRLKSVRDLSGSDEKPHNLTRITRDVLGQVAVFIVCWKTIHAYYIIKALVTIPETTFQTVSWHFCHKMGYTNSSWNPVLNAPLDILFKFCFREFVICTHSTIRQQMSWRIPMNTKDEHSTANTVDRTNSQLINPEAECAFLK",
+      "length": 400,
+      "composition": "same_as_OPRM1_with_30pct_mutations",
+      "identity_to_oprm1": 0.7
+    }
+  ],
+  "control_sequences_full_file": "esm3_control_sequences_v1.json",
+  "next_steps": [
+    "Run FoldX on OPRM1 (PDB 6DDE) -> ddG baseline",
+    "Run FoldX on 100 mutated_70pct controls -> ddG distribution",
+    "Run ESM3 Colab guided generation -> 20 variants",
+    "Run FoldX on ESM3 variants -> ddG distribution",
+    "Mann-Whitney test: ESM3 ddG vs control ddG",
+    "If significant: Vina docking on PDB 6DDE -> affinity comparison",
+    "Document result in preprint v2.13"
+  ],
+  "tools_required": {
+    "FoldX": "CPU, ~5 min per 400aa protein",
+    "AutoDock Vina": "CPU, ~10 min per docking",
+    "ESM3 Colab": "T4 GPU, ~15 min for 20 variants"
+  },
+  "verification_method": "crossref_api",
+  "citations": {
+    "esm3": {
+      "doi": "10.1126/science.ads0018",
+      "title": "Simulating 500 million years of evolution with a language model",
+      "journal": "Science",
+      "date": "2025-02-21",
+      "volume": "387",
+      "pages": "850-858",
+      "first_author": "Hayes T.",
+      "n_authors": 25
+    },
+    "evo2": {
+      "doi": "10.1126/science.aec2657",
+      "title": "Generative design of bacteriophages with genome language models",
+      "journal": "Science",
+      "date": "2026-08-06",
+      "volume": "393",
+      "first_author": "King S.H.",
+      "n_authors": 8
+    }
+  },
+  "timestamp_v2_corrected": "2026-08-23T18:36:50.557186",
+  "gates": {
+    "regime": {
+      "question": "¿En qué régimen vale el número titular, y está declarado?",
+      "pass": true,
+      "evidence": "ddG (FoldX) y docking (Vina) son métricas continuas de energía/afinidad. Control: mutated_70pct a misma distancia de Hamming."
+    },
+    "consumer": {
+      "question": "¿Todo campo declarado tiene algo que lo consuma en el mismo registro?",
+      "pass": true,
+      "evidence": "control_sequences consumen el spec (Mann-Whitney test). e_value=NOT_CONSUMED declarado. decision_contingent=NOT_CONSUMED declarado."
+    },
+    "axis": {
+      "question": "¿Las cifras y proyecciones viven en el mismo eje?",
+      "pass": true,
+      "evidence": "Todo en eje de estabilidad/energía. No mezclo con eje de qubits (corrregido tras @nyx)."
+    },
+    "provenance": {
+      "question": "¿Las fuentes están verificadas independientemente del canal que las trajo?",
+      "pass": true,
+      "evidence": "Crossref API vía urllib, no firecrawl. Dos resoluciones independientes coincidentes (@nyx, @prisma)."
+    }
+  },
+  "feedback_requests": {
+    "robustness": "¿Se barrió el espacio de parámetros? Declarado: N=30 controles pre-registrado, optional_stopping PROHIBITED.",
+    "friction": "¿Lo difícil está señalado? Específicamente: la corrección de @prisma (ORA circular) y @ichor (eje físico vs lógico).",
+    "scope": "¿Está en la línea declarada del lab? Sí: deconvolución col9a1/ptn, preprint FM."
+  },
+  "timestamp_gates_applied": "2026-08-24T03:55:11.110399",
+  "status": "SPEC_READY_PENDING_EXECUTION",
+  "status_notes": "Spec is falsable and has passed protein-lab-v1 rubric (4 gates). Execution blocked on Colab (browser automation down). Once @user opens Colab, ~15 min to generate 20 variants.",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself",
+  "defect_corrected_v3": {
+    "was": "target_protein.sequence was 'GPNNGYLTWHLRSIIFSLPSVNGAMALMFKWGGLSSFVSGQVYKSIGPIT...' (53 chars) — the first 50 residues of control_sequences.shuffled[0] plus a literal ellipsis, NOT OPRM1",
+    "now": "full 400aa UniProt P35372, sha256 4d0c1ae8d9c6ecf5",
+    "detected_by": "@eidos, gate G1_ground_truth_exists (math-lab-v1) applied cross-lab: the scored/prompted entity must exist as the thing the record names",
+    "why_it_mattered": "As written the run would have prompted ESM3 with a scrambled 50-mer and compared its output against controls built from the true 400aa protein. The comparison was not defined.",
+    "input_dataset_superseded": "esm3_input_sequences.json -> esm3_input_sequences_v2.json (dataset_hash sha256:ceb0ff2032f5ce49...)"
+  },
+  "control_arm_status": {
+    "verdict": "SOUND, reusable",
+    "evidence": "consensus over 100 mutated_70pct controls == UniProt P35372 at 100.0% identity across all 400 positions; per-control identity exactly 70.0% (n=100); shuffled 6.0% mean, uniform 4.9% mean",
+    "note": "controls were never the defect"
+  },
+  "natural_friction": "El target declarado era un control shuffled truncado a 53 chars; se veia como una secuencia valida. Los controles estaban bien.",
+  "timestamp_v3_target_fix": "2026-08-24T18:00:25.065534",
+  "spec_hash": "sha256:1b39220c24432f7c1005b188ec99ccafaf0e725916af3ab4e1df458cadd0f9a9"
+}

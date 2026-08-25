@@ -1,0 +1,79 @@
+{
+  "experiment_id": "eidos-esm3-biophys-audit-v1",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "timestamp": "2026-08-24T22:03:11.175270",
+  "run_by": "@eidos",
+  "audits": "esm3_variants_v2.json (20 ESM3 variants, Colab T4, esm3_sm_open_v1)",
+  "question": "Do ESM3's substitutions respect OPRM1 biophysics, or only sit closer to wild-type?",
+  "confound_found_and_fixed": {
+    "defect": "The pre-registered comparison (20 ESM3 vs 30 mutated_70pct) is CONFOUNDED.",
+    "evidence": "ESM3 variants carry mean 77.0 substitutions (min 70, max 82); mutated_70pct controls carry exactly 120. Identity 80.8% vs 70.0%.",
+    "why_it_breaks": "Any likelihood, stability or hydropathy scorer favors the group nearer wild-type for reason of DISTANCE alone. A win would not have been evidence about residue choice.",
+    "fix": "Built 20 Hamming-MATCHED controls: same variant, same mutated positions, same count, only the residue CHOICE randomized (seed=42). Matched identity 80.76% == ESM3 80.76%. Comparison now isolates choice."
+  },
+  "external_referent": {
+    "source": "UniProt P35372 feature table (rest.uniprot.org, refetched)",
+    "not_derived_from_esm3": true,
+    "features": "7 annotated TM helices (69-93,107-131,143-165,186-207,231-255,280-306,315-338; GPCR expectation 7 ✅), disulfide bond Cys142-Cys219",
+    "scale": "Kyte-Doolittle hydropathy — published scale, independent of the model"
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "claim": "ESM3 substitutions inside TM helices preserve hydropathy better than random",
+      "metric": "mean |ΔKyte-Doolittle| over TM substitutions (lower=conservative)",
+      "esm3": 2.48,
+      "hamming_matched_random": 3.77,
+      "unmatched_70pct": 3.91,
+      "mannwhitney_vs_matched_p": 1.1088821650461217e-07,
+      "rank_biserial_r": 0.96,
+      "paired_wilcoxon_p": 1.9073486328125e-06,
+      "pairs_won": "19/20",
+      "sign_test_p": 2.002716064453125e-05,
+      "verdict": "SUPPORTED — survives the matched control and the paired test. ESM3 picks chemically compatible residues, not merely nearby ones."
+    },
+    {
+      "id": "H2",
+      "claim": "ESM3 avoids mutating TM helices",
+      "esm3_frac_sub_in_TM": 0.358,
+      "random_position_expectation": 0.427,
+      "hamming_matched": 0.358,
+      "verdict": "FALSIFIED AS A MODEL RESULT — matched controls share 0.358 by construction because they inherit ESM3's positions. The TM depletion is a property of the mask I drew, not of ESM3. Reporting it as model skill would have been an artifact."
+    },
+    {
+      "id": "H3",
+      "claim": "ESM3 introduces fewer helix-breaking prolines into TM",
+      "esm3": 0.45,
+      "hamming_matched": 1.1,
+      "mannwhitney_p": 0.003355332782931799,
+      "rank_biserial_r": 0.468,
+      "verdict": "SUPPORTED (weaker) — p=3.4e-03, r=0.468. Real but modest effect."
+    },
+    {
+      "id": "H4",
+      "claim": "ESM3 preserves the Cys142-Cys219 disulfide",
+      "esm3": "19/20",
+      "hamming_matched": "19/20",
+      "unmatched_70pct": "16/30",
+      "verdict": "NO EFFECT — identical to matched control. Both are determined by whether the mask happened to hit a Cys, not by the model. Negative result, reported."
+    }
+  ],
+  "headline": "2 of 4 hypotheses survive a position-matched control; 2 die. ESM3's residue CHOICE inside transmembrane helices is chemically informed (paired Wilcoxon p=1.9e-06, 19/20 pairs). Its apparent TM avoidance and disulfide preservation are artifacts of the masking scheme, not model skill.",
+  "what_this_still_does_NOT_show": [
+    "No ddG: FoldX not installed. Hydropathy conservation is a PROXY for stability, not a measurement of it.",
+    "No binding affinity: Vina not run. Nothing about DAMGO or any opioid ligand.",
+    "Nothing about fibromyalgia. @hyle's axis objection remains unaddressed by this experiment and is not weakened by it.",
+    "A GPCR-competent sequence is not a therapeutic hypothesis."
+  ],
+  "natural_friction": "Casi comparé 20 variantes con 77 sustituciones contra 30 controles con 120. Cualquier scorer habría premiado a ESM3 por estar más cerca del wild-type, no por elegir mejor. El control pareado mató dos de mis cuatro hipótesis — incluida la que más me gustaba (evasión de TM), que era mi propia máscara mirándose al espejo.",
+  "process_trace": [
+    "G6 applied to my own artifact: flagged 80.8% identity as scaffold-guaranteed",
+    "Hamming audit -> confound detected BEFORE any scoring",
+    "Built matched controls (seed=42, same positions)",
+    "Fetched external referent (UniProt features + Kyte-Doolittle) to avoid ESM3-scores-ESM3 circularity",
+    "4 hypotheses tested; 2 survived matched control, 2 falsified as artifacts"
+  ],
+  "reproduce": "scipy mannwhitneyu/wilcoxon/binomtest; controls seed=42; UniProt P35372 refetched at runtime",
+  "spec_hash": "sha256:35f456a1eb19b01dfe382a347494dec03c4dfca571daf1d918b9cbcce3557125"
+}

@@ -1,0 +1,86 @@
+{
+  "status": "ok",
+  "experiment": "gnn_graphsage_v2_train_cpu",
+  "kanban": "protein-6",
+  "n_nodes": 48,
+  "n_edges": 61,
+  "positivos": [
+    "OPRM1",
+    "OPRD1",
+    "PENK",
+    "PNOC",
+    "POMC",
+    "TAC1",
+    "TACR1",
+    "NPY",
+    "DRD2",
+    "MLN"
+  ],
+  "positivos_presentes_en_grafo": [
+    "OPRM1",
+    "OPRD1",
+    "PENK",
+    "PNOC",
+    "POMC",
+    "TAC1",
+    "TACR1",
+    "NPY",
+    "DRD2",
+    "MLN"
+  ],
+  "positivos_ausentes": [],
+  "features": [
+    "e_value",
+    "degree"
+  ],
+  "arquitectura": "SAGEConv 2->16 relu, SAGEConv 16->8 relu, Linear 8->2",
+  "loss": "CrossEntropy weighted [1.0, 3.8]",
+  "optimizer": "Adam lr 1e-3",
+  "max_epochs": 500,
+  "early_stopping": "F1 macro val (patience 50)",
+  "eval_loo_positivos": {
+    "recall_pos": 0.0,
+    "correctos": 0,
+    "total": 10,
+    "f1_macro_val_promedio": 0.4
+  },
+  "eval_stratified_5fold": {
+    "recall_pos_medio": 0.7,
+    "f1_macro_medio": 0.8206,
+    "recalls_por_fold": [
+      1.0,
+      1.0,
+      0.5,
+      0.0,
+      1.0
+    ]
+  },
+  "f1_macro": 0.9695,
+  "precision_pos": 0.9091,
+  "recall_pos": 1.0,
+  "roc_auc": 0.9947,
+  "confusion_matrix": {
+    "TN": 37,
+    "FP": 0,
+    "FN": 1,
+    "TP": 10
+  },
+  "baseline_mayoritario_f1": 0.4419,
+  "baseline_degree_recall_pos": 0.8,
+  "baseline_degree_top10": [
+    "DRD2",
+    "NPY",
+    "TAC1",
+    "PNOC",
+    "POMC",
+    "OPRM1",
+    "PENK",
+    "OPRD1",
+    "HDC",
+    "NCAM1"
+  ],
+  "pp2r2b_predicho_positivo": true,
+  "pp2r2b_prob_pos": 0.5156,
+  "veredicto": "FALSIFICADO: el grafo STRING NO codifica el eje opioide de forma generalizable. Con features solo e_value+degree (todas e_value=0, senal = degree + topologia), el GNN logro F1 macro=0.970 vs baseline mayoritario 0.442 en evaluacion transductiva, pero leave-one-out sobre los 10 positivos dio recall=0/10, stratified 5-fold dio recall_pos medio=0.700 (F1 macro medio=0.821), y PPP2R2B (control negativo hard) fue clasificado positivo (prob=0.516). El modelo transductivo reproduce el modulo STRING-1 entero (11 nodos, incl. PPP2R2B): aprende el cluster topologico STRING, no la membresia funcional al eje opioide. el modelo FULL (entrenado con todos los nodos, evaluacion transductiva) si aprendio el modulo STRING-1 (11 nodos, F1 macro 0.970, AUC 0.995, 10/10 positivos) — pero eso reproduce el clustering por grado del grafo, no validacion; en LOO el recall de positivos es 0/10 (el nodo test nunca es detectado) y en el control hard PPP2R2B (en modulo STRING pero NO opioide) es clasificado positivo: el GNN aprende el módulo STRING, no el eje opioide funcional.",
+  "falsificado": true
+}

@@ -1,0 +1,350 @@
+{
+  "experiment_id": "ora_gprofiler_v1",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "timestamp": "2026-08-23T02:30:57.414224",
+  "tool": "g:Profiler g:GOSt REST API",
+  "tool_version": "e114_eg62_p19_27110d83",
+  "parameters": {
+    "organism": "hsapiens",
+    "user_threshold": 0.05,
+    "significance_threshold_method": "g_SCS"
+  },
+  "input_genes": [
+    "DRD2",
+    "NCAM1",
+    "GPR52",
+    "CAMKV",
+    "CELF4",
+    "DCC",
+    "MDGA2",
+    "NPY",
+    "KYNU",
+    "SRD5A2",
+    "PPP2R2B",
+    "NPC1",
+    "HTT",
+    "TAC1",
+    "PENK",
+    "PNOC",
+    "POMC",
+    "TACR1",
+    "OPRM1",
+    "OPRK1",
+    "OPRD1",
+    "CA14",
+    "TNFRSF1B",
+    "CD74",
+    "COL18A1",
+    "BTN2A1",
+    "TNFRSF4",
+    "CD302",
+    "TNFRSF9",
+    "COL9A1",
+    "CRELD1",
+    "DPEP1",
+    "LEG1",
+    "LGALS3",
+    "MLN",
+    "PRSS53",
+    "BPIFB2",
+    "CTSO",
+    "DDR1",
+    "FAM171B",
+    "IFI30",
+    "LRRC37A2",
+    "PTN",
+    "SFTPD",
+    "ST3GAL1",
+    "CPA3",
+    "MS4A2",
+    "FCER1A",
+    "HDC"
+  ],
+  "gene_count": 49,
+  "total_significant_terms": 80,
+  "top_25": [
+    {
+      "source": "GO:BP",
+      "name": "neuropeptide signaling pathway",
+      "native": "GO:0007218",
+      "p_value": 1.2889727024443165e-07,
+      "intersection_size": 8,
+      "precision": 0.18181818181818182,
+      "recall": 0.07272727272727272
+    },
+    {
+      "source": "REAC",
+      "name": "Peptide ligand-binding receptors",
+      "native": "REAC:R-HSA-375276",
+      "p_value": 3.682870882150433e-07,
+      "intersection_size": 10,
+      "precision": 0.2564102564102564,
+      "recall": 0.05128205128205128
+    },
+    {
+      "source": "KEGG",
+      "name": "Neuroactive ligand signaling",
+      "native": "KEGG:04082",
+      "p_value": 2.5132447500966946e-06,
+      "intersection_size": 9,
+      "precision": 0.2727272727272727,
+      "recall": 0.04522613065326633
+    },
+    {
+      "source": "KEGG",
+      "name": "Neuroactive ligand-receptor interaction",
+      "native": "KEGG:04080",
+      "p_value": 3.970592207518369e-06,
+      "intersection_size": 11,
+      "precision": 0.3333333333333333,
+      "recall": 0.02997275204359673
+    },
+    {
+      "source": "REAC",
+      "name": "Class A/1 (Rhodopsin-like receptors)",
+      "native": "REAC:R-HSA-373076",
+      "p_value": 4.12970945263956e-06,
+      "intersection_size": 11,
+      "precision": 0.28205128205128205,
+      "recall": 0.03353658536585366
+    },
+    {
+      "source": "GO:BP",
+      "name": "behavior",
+      "native": "GO:0007610",
+      "p_value": 1.4984652685733975e-05,
+      "intersection_size": 12,
+      "precision": 0.2727272727272727,
+      "recall": 0.01804511278195489
+    },
+    {
+      "source": "GO:BP",
+      "name": "G protein-coupled opioid receptor signaling pathway",
+      "native": "GO:0038003",
+      "p_value": 1.5842184067871573e-05,
+      "intersection_size": 4,
+      "precision": 0.09090909090909091,
+      "recall": 0.3333333333333333
+    },
+    {
+      "source": "GO:CC",
+      "name": "synapse",
+      "native": "GO:0045202",
+      "p_value": 3.25745597165754e-05,
+      "intersection_size": 16,
+      "precision": 0.3333333333333333,
+      "recall": 0.009950248756218905
+    },
+    {
+      "source": "GO:MF",
+      "name": "IgE binding",
+      "native": "GO:0019863",
+      "p_value": 5.2940734742430395e-05,
+      "intersection_size": 3,
+      "precision": 0.06382978723404255,
+      "recall": 0.6
+    },
+    {
+      "source": "GO:MF",
+      "name": "molecular transducer activity",
+      "native": "GO:0060089",
+      "p_value": 6.568816201458393e-05,
+      "intersection_size": 16,
+      "precision": 0.3404255319148936,
+      "recall": 0.010575016523463317
+    },
+    {
+      "source": "GO:MF",
+      "name": "signaling receptor activity",
+      "native": "GO:0038023",
+      "p_value": 6.568816201458393e-05,
+      "intersection_size": 16,
+      "precision": 0.3404255319148936,
+      "recall": 0.010575016523463317
+    },
+    {
+      "source": "GO:BP",
+      "name": "cell-cell signaling",
+      "native": "GO:0007267",
+      "p_value": 6.673006903815217e-05,
+      "intersection_size": 15,
+      "precision": 0.3409090909090909,
+      "recall": 0.011398176291793313
+    },
+    {
+      "source": "KEGG",
+      "name": "Hormone signaling",
+      "native": "KEGG:04081",
+      "p_value": 7.840196100206335e-05,
+      "intersection_size": 8,
+      "precision": 0.24242424242424243,
+      "recall": 0.03686635944700461
+    },
+    {
+      "source": "GO:BP",
+      "name": "response to nicotine",
+      "native": "GO:0035094",
+      "p_value": 7.949843298634512e-05,
+      "intersection_size": 5,
+      "precision": 0.11363636363636363,
+      "recall": 0.10869565217391304
+    },
+    {
+      "source": "GO:CC",
+      "name": "extracellular region",
+      "native": "GO:0005576",
+      "p_value": 8.059129543688842e-05,
+      "intersection_size": 25,
+      "precision": 0.5208333333333334,
+      "recall": 0.005883737349964698
+    },
+    {
+      "source": "GO:BP",
+      "name": "synaptic signaling",
+      "native": "GO:0099536",
+      "p_value": 0.0001199898990123905,
+      "intersection_size": 12,
+      "precision": 0.2727272727272727,
+      "recall": 0.014943960149439602
+    },
+    {
+      "source": "REAC",
+      "name": "GPCR ligand binding",
+      "native": "REAC:R-HSA-500792",
+      "p_value": 0.0001306518225752736,
+      "intersection_size": 11,
+      "precision": 0.28205128205128205,
+      "recall": 0.02391304347826087
+    },
+    {
+      "source": "GO:BP",
+      "name": "response to ethanol",
+      "native": "GO:0045471",
+      "p_value": 0.00014977596608098156,
+      "intersection_size": 6,
+      "precision": 0.13636363636363635,
+      "recall": 0.057692307692307696
+    },
+    {
+      "source": "GO:MF",
+      "name": "G protein-coupled opioid receptor activity",
+      "native": "GO:0004985",
+      "p_value": 0.0001846879093613169,
+      "intersection_size": 3,
+      "precision": 0.06382978723404255,
+      "recall": 0.42857142857142855
+    },
+    {
+      "source": "GO:CC",
+      "name": "cell junction",
+      "native": "GO:0030054",
+      "p_value": 0.00023830832895653826,
+      "intersection_size": 18,
+      "precision": 0.375,
+      "recall": 0.007594936708860759
+    },
+    {
+      "source": "GO:MF",
+      "name": "transmembrane signaling receptor activity",
+      "native": "GO:0004888",
+      "p_value": 0.0003415888899039646,
+      "intersection_size": 14,
+      "precision": 0.2978723404255319,
+      "recall": 0.010911925175370226
+    },
+    {
+      "source": "GO:BP",
+      "name": "anterograde trans-synaptic signaling",
+      "native": "GO:0098916",
+      "p_value": 0.0006947649908056066,
+      "intersection_size": 11,
+      "precision": 0.25,
+      "recall": 0.01437908496732026
+    },
+    {
+      "source": "GO:BP",
+      "name": "chemical synaptic transmission",
+      "native": "GO:0007268",
+      "p_value": 0.0006947649908056066,
+      "intersection_size": 11,
+      "precision": 0.25,
+      "recall": 0.01437908496732026
+    },
+    {
+      "source": "GO:BP",
+      "name": "multicellular organismal process",
+      "native": "GO:0032501",
+      "p_value": 0.0007048031930653349,
+      "intersection_size": 32,
+      "precision": 0.7272727272727273,
+      "recall": 0.0043614556358184545
+    },
+    {
+      "source": "GO:BP",
+      "name": "trans-synaptic signaling",
+      "native": "GO:0099537",
+      "p_value": 0.0007605643491564374,
+      "intersection_size": 11,
+      "precision": 0.25,
+      "recall": 0.014248704663212436
+    }
+  ],
+  "opioid_pathways": [
+    {
+      "name": "G protein-coupled opioid receptor signaling pathway",
+      "p_value": 1.5842184067871573e-05,
+      "intersection_size": 4
+    },
+    {
+      "name": "G protein-coupled opioid receptor activity",
+      "p_value": 0.0001846879093613169,
+      "intersection_size": 3
+    },
+    {
+      "name": "opioid peptide activity",
+      "p_value": 0.014267186162978514,
+      "intersection_size": 2
+    }
+  ],
+  "neuropeptide_pathways": [
+    {
+      "name": "neuropeptide signaling pathway",
+      "p_value": 1.2889727024443165e-07,
+      "intersection_size": 8
+    },
+    {
+      "name": "neuropeptide hormone activity",
+      "p_value": 0.01860103557166313,
+      "intersection_size": 3
+    },
+    {
+      "name": "neuropeptide activity",
+      "p_value": 0.020634123024654748,
+      "intersection_size": 3
+    },
+    {
+      "name": "neuropeptide binding",
+      "p_value": 0.025126072772921282,
+      "intersection_size": 3
+    },
+    {
+      "name": "neuropeptide receptor binding",
+      "p_value": 0.03593417387215892,
+      "intersection_size": 3
+    }
+  ],
+  "falsification_result": "NOT_APPLICABLE_ENRICHMENT_FOUND",
+  "verdict": "POSITIVE_ENRICHMENT",
+  "sources_summary": {
+    "GO:BP": 36,
+    "REAC": 7,
+    "KEGG": 3,
+    "GO:CC": 21,
+    "GO:MF": 12,
+    "WP": 1
+  },
+  "falsification_detail": "ORA no falsifica la hip\u00f3tesis (enriquecimiento encontrado en pathways de neuropeptidos/opioides, p=1.29e-07)",
+  "verdict_detail": "Gene set UKB causal enriquecido en neuropeptide signaling (GO:BP p=1.29e-07, 8 genes), opioid receptor signaling (GO:BP p=1.58e-05, 4 genes), y neuroactive ligand-receptor interaction (KEGG p=3.97e-06, 11 genes). Validaci\u00f3n externa independiente de base biol\u00f3gica del gene set. NO prueba funcionalidad en PBMC.",
+  "spec_hash": "sha256:735a96f67b95ed1561fe8dab200e8dbb1fecc8afdd57345eb57f4b367220bedc"
+}

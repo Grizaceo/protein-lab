@@ -1,0 +1,604 @@
+{
+  "experiment_id": "gnn_architecture_v1",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "timestamp": "2026-08-23T04:50:34.667943",
+  "spec_hash": "sha256:68074d416bc2045b40a363ef24edb2e47a4312566580df17218f09969aff3d57",
+  "n_nodes": 48,
+  "n_edges": 61,
+  "node_features": [
+    {
+      "gene": "DRD2",
+      "e_value": 0,
+      "is_opioid": true
+    },
+    {
+      "gene": "NCAM1",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "GPR52",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "CAMKV",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "CELF4",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "DCC",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "MDGA2",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "NPY",
+      "e_value": 0,
+      "is_opioid": true
+    },
+    {
+      "gene": "KYNU",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "SRD5A2",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "PPP2R2B",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "NPC1",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "HTT",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "TAC1",
+      "e_value": 0,
+      "is_opioid": true
+    },
+    {
+      "gene": "PENK",
+      "e_value": 0,
+      "is_opioid": true
+    },
+    {
+      "gene": "PNOC",
+      "e_value": 0,
+      "is_opioid": true
+    },
+    {
+      "gene": "POMC",
+      "e_value": 0,
+      "is_opioid": true
+    },
+    {
+      "gene": "TACR1",
+      "e_value": 0,
+      "is_opioid": true
+    },
+    {
+      "gene": "OPRM1",
+      "e_value": 0,
+      "is_opioid": true
+    },
+    {
+      "gene": "OPRD1",
+      "e_value": 0,
+      "is_opioid": true
+    },
+    {
+      "gene": "CA14",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "TNFRSF1B",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "CD74",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "COL18A1",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "BTN2A1",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "TNFRSF4",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "CD302",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "TNFRSF9",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "COL9A1",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "CRELD1",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "DPEP1",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "C6orf58",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "LGALS3",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "MLN",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "PRSS53",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "BPIFB2",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "CTSO",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "DDR1",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "FAM171B",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "IFI30",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "LRRC37A2",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "PTN",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "SFTPD",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "ST3GAL1",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "CPA3",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "MS4A2",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "FCER1A",
+      "e_value": 0,
+      "is_opioid": false
+    },
+    {
+      "gene": "HDC",
+      "e_value": 0,
+      "is_opioid": false
+    }
+  ],
+  "architecture": {
+    "model": "GraphSAGE_mean",
+    "layers": [
+      {
+        "type": "SAGEConv",
+        "in_channels": 3,
+        "out_channels": 16,
+        "activation": "relu"
+      },
+      {
+        "type": "SAGEConv",
+        "in_channels": 16,
+        "out_channels": 8,
+        "activation": "relu"
+      },
+      {
+        "type": "Linear",
+        "in_channels": 8,
+        "out_channels": 2
+      }
+    ],
+    "loss": "CrossEntropyLoss",
+    "task": "binary_classification",
+    "labels": {
+      "description": "Node belongs to opioid module (1) or not (0)",
+      "positive_class": "module_1_opioid",
+      "negative_class": "other_modules"
+    },
+    "node_features": {
+      "description": "3 features per node: e_value (continuous), is_opioid (binary), degree (continuous)",
+      "feature_dim": 3
+    },
+    "adjacency": {
+      "type": "sparse",
+      "edges": 61,
+      "density": 0.054078014184397165,
+      "weight": "STRING_combined_score"
+    }
+  },
+  "adjacency_sparse": [
+    {
+      "i": 22,
+      "j": 32,
+      "score": 0.429
+    },
+    {
+      "i": 22,
+      "j": 36,
+      "score": 0.466
+    },
+    {
+      "i": 22,
+      "j": 39,
+      "score": 0.582
+    },
+    {
+      "i": 32,
+      "j": 42,
+      "score": 0.457
+    },
+    {
+      "i": 32,
+      "j": 46,
+      "score": 0.532
+    },
+    {
+      "i": 31,
+      "j": 35,
+      "score": 0.452
+    },
+    {
+      "i": 7,
+      "j": 19,
+      "score": 0.632
+    },
+    {
+      "i": 7,
+      "j": 47,
+      "score": 0.445
+    },
+    {
+      "i": 7,
+      "j": 15,
+      "score": 0.87
+    },
+    {
+      "i": 7,
+      "j": 17,
+      "score": 0.605
+    },
+    {
+      "i": 7,
+      "j": 13,
+      "score": 0.932
+    },
+    {
+      "i": 7,
+      "j": 16,
+      "score": 0.986
+    },
+    {
+      "i": 7,
+      "j": 33,
+      "score": 0.595
+    },
+    {
+      "i": 7,
+      "j": 18,
+      "score": 0.775
+    },
+    {
+      "i": 7,
+      "j": 14,
+      "score": 0.861
+    },
+    {
+      "i": 15,
+      "j": 19,
+      "score": 0.864
+    },
+    {
+      "i": 15,
+      "j": 17,
+      "score": 0.424
+    },
+    {
+      "i": 15,
+      "j": 16,
+      "score": 0.909
+    },
+    {
+      "i": 15,
+      "j": 18,
+      "score": 0.915
+    },
+    {
+      "i": 16,
+      "j": 19,
+      "score": 0.966
+    },
+    {
+      "i": 16,
+      "j": 33,
+      "score": 0.434
+    },
+    {
+      "i": 16,
+      "j": 18,
+      "score": 0.999
+    },
+    {
+      "i": 18,
+      "j": 19,
+      "score": 0.967
+    },
+    {
+      "i": 14,
+      "j": 19,
+      "score": 0.984
+    },
+    {
+      "i": 14,
+      "j": 15,
+      "score": 0.702
+    },
+    {
+      "i": 14,
+      "j": 16,
+      "score": 0.988
+    },
+    {
+      "i": 14,
+      "j": 18,
+      "score": 0.999
+    },
+    {
+      "i": 46,
+      "j": 47,
+      "score": 0.645
+    },
+    {
+      "i": 0,
+      "j": 47,
+      "score": 0.499
+    },
+    {
+      "i": 0,
+      "j": 15,
+      "score": 0.407
+    },
+    {
+      "i": 0,
+      "j": 13,
+      "score": 0.615
+    },
+    {
+      "i": 0,
+      "j": 12,
+      "score": 0.455
+    },
+    {
+      "i": 0,
+      "j": 18,
+      "score": 0.556
+    },
+    {
+      "i": 0,
+      "j": 14,
+      "score": 0.566
+    },
+    {
+      "i": 0,
+      "j": 1,
+      "score": 0.625
+    },
+    {
+      "i": 0,
+      "j": 16,
+      "score": 0.64
+    },
+    {
+      "i": 0,
+      "j": 7,
+      "score": 0.833
+    },
+    {
+      "i": 0,
+      "j": 10,
+      "score": 0.913
+    },
+    {
+      "i": 45,
+      "j": 47,
+      "score": 0.819
+    },
+    {
+      "i": 45,
+      "j": 46,
+      "score": 0.996
+    },
+    {
+      "i": 44,
+      "j": 47,
+      "score": 0.883
+    },
+    {
+      "i": 44,
+      "j": 45,
+      "score": 0.938
+    },
+    {
+      "i": 44,
+      "j": 46,
+      "score": 0.921
+    },
+    {
+      "i": 11,
+      "j": 12,
+      "score": 0.403
+    },
+    {
+      "i": 25,
+      "j": 45,
+      "score": 0.474
+    },
+    {
+      "i": 25,
+      "j": 27,
+      "score": 0.881
+    },
+    {
+      "i": 17,
+      "j": 18,
+      "score": 0.742
+    },
+    {
+      "i": 13,
+      "j": 15,
+      "score": 0.754
+    },
+    {
+      "i": 13,
+      "j": 17,
+      "score": 0.999
+    },
+    {
+      "i": 13,
+      "j": 18,
+      "score": 0.677
+    },
+    {
+      "i": 13,
+      "j": 33,
+      "score": 0.824
+    },
+    {
+      "i": 13,
+      "j": 16,
+      "score": 0.85
+    },
+    {
+      "i": 13,
+      "j": 14,
+      "score": 0.863
+    },
+    {
+      "i": 23,
+      "j": 41,
+      "score": 0.535
+    },
+    {
+      "i": 23,
+      "j": 28,
+      "score": 0.661
+    },
+    {
+      "i": 10,
+      "j": 28,
+      "score": 0.402
+    },
+    {
+      "i": 1,
+      "j": 28,
+      "score": 0.587
+    },
+    {
+      "i": 1,
+      "j": 25,
+      "score": 0.433
+    },
+    {
+      "i": 1,
+      "j": 27,
+      "score": 0.542
+    },
+    {
+      "i": 21,
+      "j": 25,
+      "score": 0.423
+    },
+    {
+      "i": 21,
+      "j": 27,
+      "score": 0.64
+    }
+  ],
+  "falsification_result": "NOT_APPLICABLE",
+  "verdict": "ARCHITECTURE_READY",
+  "verdict_detail": "Grafo construido desde STRING API v12. 48 nodos, 61 aristas. Arquitectura GraphSAGE de 2 capas con mean aggregation. Requiere PyTorch Geometric para entrenar (Colab/Kaggle gratuito).",
+  "next_steps": [
+    "Descargar PyTorch Geometric y entrenar en Colab (gratuito)",
+    "Validar: el GNN clasifica correctamente los 11 genes opioide del modulo 1?"
+  ]
+}

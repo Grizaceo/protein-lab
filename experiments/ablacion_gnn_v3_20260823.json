@@ -1,0 +1,80 @@
+{
+  "experiment": "ablacion_gnn_v3",
+  "lab": "protein-lab",
+  "linea": "eje_opioide_fibromialgia",
+  "timestamp": "2026-08-23",
+  "archivo_origen_datos": "gnn_architecture_v1.json (48 nodos, 61 aristas) + /tmp/ora_genes.json (g:Profiler)",
+  "protocolo_reproducido": "train_v3.py: GraphSAGE mean 2 capas (2*in->16 relu, 2*16->8 relu, 8->2), CrossEntropy weighted [1.0, 3.8], Adam lr 1e-3, 300 epochs fijas (SIN early stopping), CPU. LOO: leave-one-out sobre los 10 positivos, label del nodo test a 0, seed 42 GNN / seed 3 MLP (replica exacta v3).",
+  "reconstruccion_features": {
+    "degree": "grado del nodo en el grafo STRING 48 nodos/61 aristas (contado de adjacency_sparse de gnn_architecture_v1.json).",
+    "e_value": "0.0 para TODOS los 48 nodos (campo e_value del JSON de arquitectura, todos en cero) -> feature CONSTANTE, informacion nula.",
+    "ora_score_funcional": "reconstruida identica al train_v3.py: -log10(p_value) del termino GO/REAC/KEGG mas especifico (menor term_size) en el que aparece el gen en el analisis g:Profiler de 49 genes (g_SCS, threshold 0.05; /tmp/ora_genes.json). 0.0 si el gen no aparece en ningun termino significativo.",
+    "nota": "Las 3 features por nodo estaban disponibles: degree y e_value en gnn_architecture_v1.json; ora_score se recalculo con la MISMA funcion del train_v3.py (bit a bit identico: mismo query, mismo criterio de mejor termino). El JSON v3 verificado (gnn_graphsage_v3_features_ora.json) se reprodujo exactamente: gnn_full recall LOO 1.0 / f1 1.0 / PPP2R2B prob 0.0085 y mlp_full 0.9."
+  },
+  "metodologia_adicional": "Cada config se evaluo con 3 seeds (GNN: 42,7,2026; MLP: 3,7,2026); la media es identica al valor reportado en todas las configs (estabilidad total). Ademas se midio el control hard PPP2R2B (nodo del modulo STRING pero NO opioide) con modelo full: discriminador mas fino que el recall LOO, que en este protocolo satura.",
+  "configuraciones": [
+    {
+      "id": "gnn_full",
+      "features": ["degree", "e_value", "ora_score"],
+      "topologia": true,
+      "recall_pos_LOO": 1.0,
+      "f1_macro": 1.0,
+      "nota": "Reproduce v3 EXACTO: LOO 10/10, f1 1.0, predice exactamente 10 nodos, PPP2R2B prob 0.0085 (rechazado). Confusion 10/0/0/38. Configuracion de referencia (a)."
+    },
+    {
+      "id": "gnn_degree",
+      "features": ["degree"],
+      "topologia": true,
+      "recall_pos_LOO": 1.0,
+      "f1_macro": 0.9142,
+      "nota": "Solo degree: LOO 10/10 aparente pero predice 13 nodos positivos (debe ser 10) y clasifica PPP2R2B como POSITIVO (prob 0.63) -> degree captura el modulo STRING (misma senal que el baseline_degree de v2: 8/10 de los top-10 por grado), no el eje funcional. MLN al borde (0.53)."
+    },
+    {
+      "id": "gnn_evalue",
+      "features": ["e_value"],
+      "topologia": true,
+      "recall_pos_LOO": 1.0,
+      "f1_macro": 0.553,
+      "nota": "Feature CONSTANTE (e_value=0 en los 48 nodos): toda la senal es TOPOLOGIA SOLA. LOO 10/10 completamente APARENTE: predice 31/48 nodos como positivos (saturacion por peso de clase) y clasifica PPP2R2B como positivo (0.64). La topologia sola NO codifica el eje: codifica la masa del modulo STRING."
+    },
+    {
+      "id": "gnn_ora",
+      "features": ["ora_score"],
+      "topologia": true,
+      "recall_pos_LOO": 1.0,
+      "f1_macro": 0.8196,
+      "nota": "Solo ORA + topologia: LOO 10/10, predice 17 nodos (aun sobrepredice), pero PPP2R2B ya es NEGATIVO (0.41, margen bajo). La feature ORA sola ya orienta la clasificacion hacia el eje."
+    },
+    {
+      "id": "gnn_no_ora",
+      "features": ["degree", "e_value"],
+      "topologia": true,
+      "recall_pos_LOO": 1.0,
+      "f1_macro": 0.9695,
+      "nota": "GNN sin ORA: LOO 10/10, f1_macro 0.9695 que reproduce EXACTO el f1 transductivo del v2 (0.9695), predice 11 nodos y PPP2R2B negativo (0.26) con 3 seeds. Sin embargo es la config de la hipotesis original (topologia + senal de grado, sin senal funcional) y su comportamiento en el full es el 'modulo STRING': PPP2R2B a 0.26 vs 0.0085 con ORA. MLN/TACR1/OPRD1 quedan en 0.87-0.95 (rescate topologico parcial pero menos nito que el full)."
+    },
+    {
+      "id": "mlp_ora",
+      "features": ["ora_score"],
+      "topologia": false,
+      "recall_pos_LOO": 0.7,
+      "f1_macro": 0.5781,
+      "nota": "Control sin topologia, solo ORA: 7/10 LOO; falla OPRM1 (0.29), OPRD1 (0.29) y DRD2 (0.41) — los GPCRs de la lista. La feature ORA sola da 7/10 sin el grafo; la topologia los rescata (gnn_ora 10/10)."
+    },
+    {
+      "id": "mlp_full",
+      "features": ["degree", "e_value", "ora_score"],
+      "topologia": false,
+      "recall_pos_LOO": 0.9,
+      "f1_macro": 0.8333,
+      "nota": "Control MLP con las 3 features SIN aristas: 9/10 — reproduce el control del v3 (0.9). Falla MLN (0.30) y OPRD1 al borde (0.50). Confirma que las features (sobre todo ORA) portan la mayor parte de la senal aun sin topologia."
+    }
+  ],
+  "mejor": {"id": "gnn_full", "recall_pos_LOO": 1.0, "f1_macro": 1.0, "criterio": "unica config con prediccion exacta (10 predichos, PPP2R2B 0.0085) y f1 perfecto."},
+  "peor": {"id": "mlp_ora", "recall_pos_LOO": 0.7, "f1_macro": 0.5781, "criterio": "menor recall LOO y menor f1; control sin topologia con la unica feature que aporta."},
+  "veredicto": "La feature que mas aporta es claramente ora_score_funcional: es la unica cuya presencia produce la prediccion exacta del eje (gnn_full 10/10 con f1 1.0 y 10 predicos exactos; PPP2R2B cae de 0.64 a 0.0085), y sin ella ninguna config alcanza f1 > 0.97 ni precisamente 10 predicos — con ella sola (MLP sin topologia) ya se obtiene 7/10 y con el GNN 10/10. degree sola 'logra' 10/10 en LOO pero de forma espuria: predice 13 nodos y marca PPP2R2B (no opioide) como positivo, i.e. codifica el modulo STRING por conectividad (coincide con el baseline de grado del propio v2: 8/10 de los top-10 por degree son positivos), no el eje. La topologia SÍ aporta sobre las features (GNN full 10/10 con f1 1.0 vs MLP full 9/10, rescatando OPRD1 0.50->0.97 y MLN 0.30->0.99), pero LA TOPOLOGIA SOLA (config e_value, con feature constante) NO codifica el eje: su LOO 10/10 es un artefacto de saturacion del peso de clase (predice 31/48 nodos positivos y PPP2R2B como positivo), exactamente el comportamiento degenerado que v2 ya habia documentado con early stopping (recall 0/10). Con esto la falsacion de protein-7 queda completa y con doble evidencia: (1) el protocolo v2 con early-stopping daba LOO 0/10; (2) el protocolo v3 de 300 epochs fijas, aun cuando todas las configuraciones con topologia 'pasan' el LOO, no lo hace de verdad — la topologia sin senal funcional satura la clase positiva y reproduce el modulo STRING, no el eje opioide — mientras que la feature funcional ORA (externa al grafo, de g:Profiler) es la que discriminadamente decide y es imprescindible; la topologia queda como regularizador/completador que rescata nodos de feature debil (MLN, OPRD1, TACR1) cuando ORA esta presente.",
+  "falsacion_protein7": "COMPLETA: la hipotesis original 'la topologia STRING sola codifica el eje opioide' queda falsada por dos vias independientes (v2 con early-stopping: LOO 0/10; v3/esta ablacion: saturacion de clase cuando no hay senal funcional, PPP2R2B positivo, 31/48 predicos). Lo que codifica el eje es la feature funcional ORA (+ topologia como refuerzo), no la topologia pura.",
+  "seeds_usadas": {"gnn": [42, 7, 2026], "mlp": [3, 7, 2026]},
+  "estabilidad": "las 3 seeds dan el mismo recall en todas las configs (media == valor reportado).",
+  "archivos_generados": ["/tmp/ablation_v3.py", "/tmp/ablation_results_raw.json", "/tmp/check_pp2r2b.py"]
+}

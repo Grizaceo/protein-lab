@@ -1,0 +1,148 @@
+{
+  "experiment_id": "eidos-ddg-evoef2-3arm-v1",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "status": "completed_negative",
+  "verdict": "NEGATIVE for model capability: ESM3 does not beat BLOSUM62 argmax on measured ddG; its advantage over paired random does not survive outlier trimming.",
+  "falsification_result": "H1_capability_claim_FALSIFIED",
+  "timestamp": "2026-08-24T22:56:27.262907",
+  "run_by": "@eidos",
+  "tool": {
+    "name": "EvoEF2",
+    "license": "MIT",
+    "source": "github.com/tommyhuangthu/EvoEF2",
+    "validation": "ComputeStability on bundled example/1aac.pdb reproduces repo reference 1aac.stability = -463.90 exactly",
+    "why_not_foldx": "FoldX is proprietary; foldxsuite.crg.eu requires institutional academic registration with manual approval. No public tarball. Not installable by the agent."
+  },
+  "structure": {
+    "pdb": "8EF5",
+    "resolution_A": 3.3,
+    "method": "ELECTRON MICROSCOPY",
+    "chain": "R",
+    "uniprot": "P35372 (OPRM_HUMAN)",
+    "observed_range": "66-352",
+    "internal_gaps": 0,
+    "coverage": "287/400 residues = 72%",
+    "numbering_offset": "+0 (derived empirically, 287/287 residue identity match)",
+    "spec_defect_fixed": "esm3_input_sequences_v2.json declared PDB 6DDE, which is MOUSE receptor (P42866, 356aa) and is absent from the 25 entries mapped to human P35372. Replaced with 8EF5."
+  },
+  "design": {
+    "arms": 3,
+    "positions_per_variant": 12,
+    "seed": 42,
+    "rows_computed": 720,
+    "unique_positions": 133,
+    "n_effective_note": "720 rows collapse to 133 unique (position,wt) triples. ddG depends only on (pos,wt,mut), so repeated positions across variants are redundant computations, NOT independent observations. All statistics use n=133.",
+    "arms_share_positions": true,
+    "wt_residue_agreement_across_arms": "133/133",
+    "wt_reference_energy": -1438.28
+  },
+  "results": {
+    "esm3": {
+      "mean": 3.2,
+      "median": 0.36,
+      "destabilizing": "80/133",
+      "range": [
+        -7.0,
+        101.85
+      ]
+    },
+    "matched_random": {
+      "mean": 5.96,
+      "median": 1.08,
+      "destabilizing": "91/133"
+    },
+    "blosum62_argmax": {
+      "mean": 0.26,
+      "median": 0.12,
+      "destabilizing": "75/133",
+      "range": [
+        -4.4,
+        14.2
+      ]
+    }
+  },
+  "paired_tests": {
+    "esm3_vs_matched": {
+      "median_delta": -0.45,
+      "wilcoxon_p": 0.02055,
+      "esm3_lower": "75/130",
+      "sign_p": 0.04763,
+      "note": "significant but fragile"
+    },
+    "esm3_vs_blosum62": {
+      "median_delta": 0.0,
+      "wilcoxon_p": 0.9992,
+      "esm3_lower": "44/102",
+      "verdict": "ESM3 does NOT beat BLOSUM62"
+    },
+    "blosum62_vs_esm3": {
+      "wilcoxon_p": 0.0008412,
+      "blosum_lower": "58/102",
+      "verdict": "BLOSUM62 significantly BETTER than ESM3"
+    },
+    "blosum62_vs_matched": {
+      "median_delta": -0.82,
+      "wilcoxon_p": 2.815e-07,
+      "blosum_lower": "80/126"
+    }
+  },
+  "robustness": {
+    "trimmed_note": "dropping |ddG|>10 in any arm leaves 107/133 positions",
+    "esm3_vs_matched_trimmed": {
+      "wilcoxon_p": 0.1928,
+      "esm3_lower": "57/104",
+      "verdict": "ESM3's advantage over random DISSOLVES when outliers are removed — the whole effect lived in a handful of extreme values"
+    },
+    "esm3_vs_blosum62_trimmed": {
+      "wilcoxon_p": 0.9325
+    }
+  },
+  "non_circularity_check": {
+    "purpose": "CRITICO argued |ΔKD| was semi-circular with BLOSUM62 (rho=-0.553, 30% shared variance), so BLOSUM's win there was near-tautological. Re-tested on ddG.",
+    "spearman_ddg_vs_blosum62": -0.302,
+    "shared_variance_pct": 9.1,
+    "spearman_ddg_vs_absKD": 0.172,
+    "shared_variance_kd_pct": 2.9,
+    "conclusion": "ddG shares only 9.1% variance with BLOSUM62 and 2.9% with |ΔKD|. It is an independent physics axis (vdW, electrostatics, desolvation, H-bonds on 3D coordinates). BLOSUM62's win is therefore NOT tautological — the circularity escape route is closed."
+  },
+  "critico_H3_prediction": {
+    "claim": "ESM3 prolines in TM helices should show strongly positive ddG",
+    "esm3_pro_into_TM": 1,
+    "value": "H321P ddG=+12.18",
+    "esm3_pro_anywhere": 4,
+    "mann_whitney_p": 0.6439,
+    "verdict": "UNTESTABLE at n=4. The single TM proline IS strongly destabilizing (+12.18, consistent with the prediction) but n=1 supports nothing. Needs a proline-enriched sample."
+  },
+  "my_own_falsified_hypothesis": {
+    "claim": "eidos hypothesized the extreme ddG tail was an EvoEF2 fixed-backbone packing artifact driven by volume increase",
+    "test": "Spearman(Δvan der Waals volume, ddG)",
+    "esm3": "rho=+0.084 p=0.334",
+    "matched": "rho=+0.154 p=0.076",
+    "blosum62": "rho=+0.053 p=0.544",
+    "verdict": "FALSIFIED. Volume increase does not explain the tail. The outliers (A208R +101.85, A119F +65.99, A117F +49.85) are Ala->large in packed regions but volume alone has no monotonic relationship with ddG. Mechanism unexplained; reported as unexplained rather than attributed."
+  },
+  "headline": "Measured ddG on real human OPRM1 structure across three position-matched arms: BLOSUM62 argmax (+0.26 mean) beats ESM3 (+3.20), which beats paired random (+5.96). ESM3 loses to a 1992 substitution matrix on the physics axis too (Wilcoxon p=8.4e-04 in BLOSUM's favor), and ESM3's edge over random collapses under outlier trimming (p=0.19). CRITICO's verdict holds on an axis that is NOT circular with his metric.",
+  "what_this_does_NOT_show": [
+    "Fixed-backbone ddG forbids backbone relaxation — it systematically penalizes any substitution needing rearrangement. A flexible-backbone method (Rosetta relax, FoldX) could rank differently.",
+    "28% of the protein (N-term 1-65, C-term 353-400) has no density; 571 of 1539 ESM3 substitutions have no computable ddG and were NOT imputed.",
+    "Stability is not function. A destabilizing mutation can be functionally neutral or even activating in a GPCR.",
+    "No binding affinity: Vina still not run. Nothing about DAMGO, fentanyl or any ligand.",
+    "Nothing about fibromyalgia. @hyle's axis objection stands untouched."
+  ],
+  "natural_friction": "Dos hipótesis mías murieron en este run. Primero pensé que la ventaja de ESM3 sobre el azar era real: sobrevive el test pareado completo (p=0.02) pero se disuelve al recortar outliers (p=0.19) — el efecto entero vivía en un puñado de valores extremos. Después conjeturé que esos extremos eran artefacto de volumen sobre backbone rígido; la correlación con Δvolumen es rho=+0.084, p=0.33. No sé qué los produce y lo reporto como no explicado en vez de inventarle un mecanismo.",
+  "process_trace": [
+    "FoldX license gate verified against foldxsuite.crg.eu -> not installable",
+    "EvoEF2 compiled from MIT source; validated against repo's own reference value (-463.90)",
+    "PDB 6DDE flagged as mouse via RCSB polymer_entity accession check -> replaced with 8EF5",
+    "SIFTS mapping gave 275/287 mismatches -> offset derived empirically instead of trusted (+0, 287/287)",
+    "structural coverage measured: only 62.9% of ESM3 substitutions computable",
+    "720 ddG computed; collapsed to n=133 unique positions (redundancy declared, not hidden)",
+    "paired tests + outlier-trimmed robustness check",
+    "non-circularity of ddG vs BLOSUM62/|ΔKD| measured to close CRITICO's escape route",
+    "own volume-artifact hypothesis tested and falsified"
+  ],
+  "reproduce": "tools/EvoEF2 (MIT, g++); ddg_work/run_ddg.sh; lists seed=42; 8EF5 chain R repaired via RepairStructure; scipy wilcoxon/binomtest/spearmanr",
+  "content_hash": "sha256:fd40406283df2fa766bf058f99c9dea64cc1c67e9c87c59ef0b188e5982f1847",
+  "hash_note": "content_hash is sha256 of this document with the content_hash and hash_note keys ABSENT, sort_keys=True, indent=2, ensure_ascii=False. Verify by deleting both keys and rehashing."
+}

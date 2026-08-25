@@ -1,0 +1,90 @@
+{
+  "n_presentes": 10,
+  "n_significativos": 0,
+  "n_colapsados": 4,
+  "n_invertidos": 0,
+  "nota_escala": "GSE67311 reporta log2FC (no FC lineal); GSE221921 en contexto reporta FC lineal. Comparacion cualitativa valida.",
+  "genes": [
+    {
+      "gen": "OPRM1",
+      "fc_67311": 0.0285,
+      "p_67311": 0.1891,
+      "fdr_67311": 0.7096,
+      "estado": "no significativo",
+      "comparacion_221921": "FC 2.28 UP sig (PBMC) -> colapsa a NS (log2FC 0.029, p=0.19)"
+    },
+    {
+      "gen": "OPRD1",
+      "fc_67311": 0.0536,
+      "p_67311": 0.1361,
+      "fdr_67311": 0.6786,
+      "estado": "no significativo",
+      "comparacion_221921": "sin valor reportado en 221921; NS aqui"
+    },
+    {
+      "gen": "PENK",
+      "fc_67311": 0.0543,
+      "p_67311": 0.06141,
+      "fdr_67311": 0.6096,
+      "estado": "no significativo",
+      "comparacion_221921": "sin valor reportado en 221921; NS aqui (p marginal 0.061)"
+    },
+    {
+      "gen": "PNOC",
+      "fc_67311": 0.0358,
+      "p_67311": 0.4234,
+      "fdr_67311": 0.8129,
+      "estado": "no significativo",
+      "comparacion_221921": "sin valor reportado en 221921; NS aqui"
+    },
+    {
+      "gen": "POMC",
+      "fc_67311": 0.0165,
+      "p_67311": 0.6938,
+      "fdr_67311": 0.9142,
+      "estado": "no significativo",
+      "comparacion_221921": "sin valor reportado en 221921; NS aqui"
+    },
+    {
+      "gen": "TAC1",
+      "fc_67311": 0.006,
+      "p_67311": 0.8207,
+      "fdr_67311": 0.954,
+      "estado": "no significativo",
+      "comparacion_221921": "FC 2.10 UP sig 221921 -> COLAPSA (log2FC 0.006, p=0.82)"
+    },
+    {
+      "gen": "TACR1",
+      "fc_67311": 0.0119,
+      "p_67311": 0.7644,
+      "fdr_67311": 0.937,
+      "estado": "no significativo",
+      "comparacion_221921": "FC 2.73 UP sig 221921 -> COLAPSA (log2FC 0.012, p=0.76)"
+    },
+    {
+      "gen": "NPY",
+      "fc_67311": 0.0593,
+      "p_67311": 0.09525,
+      "fdr_67311": 0.6475,
+      "estado": "no significativo",
+      "comparacion_221921": "sin valor reportado en 221921; NS aqui"
+    },
+    {
+      "gen": "DRD2",
+      "fc_67311": 0.0465,
+      "p_67311": 0.1971,
+      "fdr_67311": 0.7139,
+      "estado": "no significativo",
+      "comparacion_221921": "FC 2.66 UP sig 221921 -> COLAPSA (log2FC 0.047, p=0.20)"
+    },
+    {
+      "gen": "MLN",
+      "fc_67311": 0.0622,
+      "p_67311": 0.04883,
+      "fdr_67311": 0.6028,
+      "estado": "no significativo",
+      "comparacion_221921": "sin valor reportado en 221921; p nominal 0.049 pero FDR 0.60 -> NS"
+    }
+  ],
+  "veredicto": "El modulo opioide completo (10 genes) NO sobrevive en el dataset negativo GSE67311 (whole blood): los 10 genes estan presentes en la tabla DEG, pero ninguno es diferencialmente expresado (todos con FDR > 0.60; el maximo efecto es MLN con log2FC 0.062, p=0.049, FDR 0.60, indistinguible de ruido tras correccion). Los 4 genes verificados como UP significativos en GSE221921 (PBMC) - OPRM1 (2.28), TAC1 (2.10), TACR1 (2.73), DRD2 (2.66) - colapsan por completo en GSE67311: sus log2FC caen a 0.006-0.047 con p entre 0.19 y 0.82, es decir, un efecto 40-100 veces menor y sin significancia. No hay ninguna inversion de signo (los 10 conservan direccion levemente positiva, pero dentro del ruido). Esto indica que la senal opioide detectada en GSE221921 es especifica de ese contexto (PBMC) y no se reproduce en sangre total, lo que NO invalida el hallazgo positivo en PBMC pero si demuestra que el modulo no generaliza entre tipos de muestra: la conclusion de la linea debe mantenerse limitada a PBMC y GSE221921, con la evidencia de GSE67311 actuando como limite de especificidad contextual y no como soporte del efecto."
+}

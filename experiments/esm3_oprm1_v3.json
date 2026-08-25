@@ -1,0 +1,281 @@
+{
+  "experiment_id": "esm3_oprm1_v2",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "timestamp": "2026-08-23T18:27:21.918019",
+  "description": "ESM3 guided generation on OPRM1 with ddG (FoldX) + docking (Vina vs PDB 6DDE) evaluation. Control: 100 mutated_70pct sequences.",
+  "sources_independently_verified": true,
+  "source_notes": "DOIs resueltos de forma independiente contra api.crossref.org (registrante del DOI, no motor de busqueda). Dos resoluciones independientes coincidentes (@nyx, @prisma).",
+  "target_protein": {
+    "gene": "OPRM1",
+    "uniprot_id": "P35372",
+    "length": 400,
+    "sequence": "MDSSAAPTNASNCTDALAYSSCSPAPSPGSWVNLSHLDGNLSDPCGPNRTDLGGRDSLCPPTGSPSMITAITIMALYSIVCVVGLFGNFLVMYVIVRYTKMKTATNIYIFNLALADALATSTLPFQSVNYLMGTWPFGTILCKIVISIDYYNMFTSIFTLCTMSVDRYIAVCHPVKALDFRTPRNAKIINVCNWILSSAIGLPVMFMATTKYRQGSIDCTLTFSHPTWYWENLLKICVFIFAFIMPVLIITVCYGLMILRLKSVRMLSGSKEKDRNLRRITRMVLVVVAVFIVCWTPIHIYVIIKALVTIPETTFQTVSWHFCIALGYTNSCLNPVLYAFLDENFKRCFREFCIPTSSNIEQQNSTRIRQNTRDHPSTANTVDRTNHQLENLEAETAPLP",
+    "sequence_sha256": "4d0c1ae8d9c6ecf5ffef01bd5a16f859dac3ae273225407783296131c695c1fd",
+    "source": "rest.uniprot.org/uniprotkb/P35372 (fetched 2026-08-24, independent of proposing channel)",
+    "pdb_reference": "8EFO (human) — 6DDE REMOVED, was mouse",
+    "declared_vs_actual": {
+      "declared_length": 400,
+      "measured_len_of_stored_sequence": 400,
+      "contains_ellipsis": false,
+      "matches_uniprot": true
+    }
+  },
+  "esm3_generation": {
+    "method": "Guided generation from Colab T4 GPU",
+    "prompt": "Full-length OPRM1 P35372 (400aa), sha256 4d0c1ae8d9c6ecf5",
+    "n_variants": 20,
+    "identity_range": "70-90%",
+    "status": "PENDING_COLAB — dataset v2, human receptor, two control arms",
+    "identity_range_note": "Fixed to a single range. @CRITICO found 70-95% here vs 70-90% in the control's falsification_value: two ranges for one arm is optional stopping through the window, since variants at 91-95% fall inside one criterion and outside the other and the choice would be made after seeing the data."
+  },
+  "evaluation": {
+    "primary_metric": "ddG_folding",
+    "tool": "FoldX 5.0",
+    "secondary_metric": "docking_affinity",
+    "tool_secondary": "AutoDock Vina",
+    "receptor_pdb": "8EFO",
+    "ligand": "8QY (PZM21) on 8EFO; 7V7 (fentanyl) on 8EF5",
+    "control_set": "mutated_70pct N=30 (seed=42) AND mutated_70pct_compmatched N=30 (seed=42) — two control arms at identical Hamming distance, differing only in whether composition is preserved",
+    "statistical_test": "Mann-Whitney U",
+    "alpha": 0.05,
+    "n_controls_preregistered": 30,
+    "n_esm3_variants_preregistered": 20,
+    "optional_stopping": "PROHIBITED. N fijado antes de ejecutar. No se escala tras ver resultados; si el gate falla con N=30, se reporta como fallo, no se re-corre con N mayor.",
+    "receptor_pdb_replicate": "8EF5",
+    "receptor_organism": "Homo sapiens (9606) — verified against data.rcsb.org",
+    "ligand_change_note": "DAMGO dropped as the docking ligand: it is a peptide and enters these structures as a polymer entity, not a Vina-dockable small molecule. Small-molecule agonists co-crystallised in human structures replace it.",
+    "structure_coverage_caveat": "8EFO models residues 2..368 of 400. Mutations generated outside 2..368 cannot receive a FoldX ddG and are EXCLUDED from the primary metric, counted explicitly, and reported as coverage rather than silently dropped.",
+    "n_control_arms": 2
+  },
+  "falsification_criteria": {
+    "hypothesis": "H1: ESM3-generated OPRM1 variants have lower (more favourable) FoldX ddG than Hamming-matched random mutants of the same protein.",
+    "null_hypothesis": "H0: ESM3 variants and Hamming-matched random mutants are drawn from the same ddG distribution.",
+    "description": "If ESM3 variants do not beat BOTH control arms, the falsified claim is about ESM3: this generative model does not write more foldable OPRM1 variants than random mutagenesis at 70% identity. CORRECTED — the previous wording concluded 'OPRM1 is not a viable therapeutic target for FM', which @hyle showed to be a non-sequitur: receptor biology does not depend on a generative model's sampling quality.",
+    "rejection_criteria": "Mann-Whitney p < 0.05 AND rank-biserial r > 0.3 against BOTH control arms",
+    "what_this_experiment_CANNOT_conclude": [
+      "anything about fibromyalgia",
+      "anything about OPRM1 as a drug target",
+      "anything about in-vivo function",
+      "anything about a species other than human"
+    ],
+    "deconvolution_logic": "Beats mutated_70pct but not compmatched -> the advantage was compositional. Beats both -> positional/structural. Beats neither -> ESM3 is at the noise floor for this protein."
+  },
+  "control_sequences": [
+    {
+      "id": "mutated_70pct_0",
+      "sequence": "ADFGAAPTNWPNCEDALASSSEYPAPSPGSWVTLSSGHGSISDPSGPNQTSLGHRMMHCNPTGSPSTIWHITIMATYSILRVVGLCFNFLVMYVQHRYTKMETATNRYIFNLAPKDMNLPSTLPVYSCNCLMETWPDGMIIFNIVISPDTYNMFTHIFTLCSLSVDRYIVMCHGFKALDFRTPRNAKYFNVCLWILSWAIGLPWLCMATTMYRNNRIDCPLTFCHPYIYWENLLKICEFFFAFSVPVLIITVCMGLMHLRLKVVHMLSGPPEKDRNLRCITRMVTVVVAVFIVCHCVIMFYHIIKALPTNPHTQYQTVSWDWCIALGYTNATNNPVQYAFLDENNKRCFREFKRPCSAHPEQANGTSIKQNTRDHPSTLNTVDRTNHQDDNLNAETAPLW",
+      "length": 400,
+      "composition": "same_as_OPRM1_with_30pct_mutations",
+      "identity_to_oprm1": 0.7
+    },
+    {
+      "id": "mutated_70pct_1",
+      "sequence": "MGVSAWPTNASNPTDALWENSCSPAAQPGCWVQIYSLDGCLSDWCGPNRTDLGSRDSLGPPFGSEYMIVMITIMCMVSWVCLVGLFLNFLVKYVKVIYTKMKFATNIYIFNLALWDAYAFITLPPQSVNYLLGDWPFQTILCKIVIAIDYPNMFPTICTLHLMPVDRYKAVCHPVKALDFRTPRCAKICNNVLWILGSAIGLPVMVIASTKYRQGSIDCTLPFSHPKWYWEWALRVCVFIFAEIKRVRIYTMCPGLRILRLRSVRFLNGGKLKDRNARRIERMVLVVVEVFWVCWNPYRIYVIYKYLVTIECTTFQTDIWHFKICLGIHNSCLNPVLYAFYTTNYKRCFPEFQIQDSSQIEQQNSTRDVQFTIDHHDTARHVDRKNKIAENNEENIAPLP",
+      "length": 400,
+      "composition": "same_as_OPRM1_with_30pct_mutations",
+      "identity_to_oprm1": 0.7
+    },
+    {
+      "id": "mutated_70pct_2",
+      "sequence": "MHHSASPTVASRCTDPLAYVSFSPSHSNGSPKELSYLDGEWMDFRGPNCTDFGGRDSLCPPTGSPSMITTTGDQALYSIECTVNNGGNGLVMLVIARGTKKDEATNPYNFNVILQDTLAGSTLPFQAWKYLMCTHPFGTILCYIVISIDYRNMFTSMFTRITMAVDPYIAVPHPQKALDAWWPRYFEIIHVCNWFVSSAGGLKVLFMATTKAKGGSIDGTSTFSHPTWASENLLYHCKFIFAFQMPVLITTTNYGLMILRTKSVRMLSGSKQTDRGLRRITRMVLVVVYVVIKCWTPKEIYLIIKCLVTTMETTFQSGSWHFCRIWGYTNSCLNPVLYAFLFENFKRCFREFCIPTPINIEMSTVTRIRQVTRDHESLANTVDRHQHGLQNYEAEAAPLP",
+      "length": 400,
+      "composition": "same_as_OPRM1_with_30pct_mutations",
+      "identity_to_oprm1": 0.7
+    },
+    {
+      "id": "mutated_70pct_3",
+      "sequence": "MDSSPASKEAMHCCDCLAYMRCNPAPSPGSWVLESHLDMNQSDPCGPNRTDLVGRDSMCPTTKAPSWIRKIAIMQSSDIVCVVPLFGNKLVMNVIVQYTKPHTATCIPIQNLAHADALATWTLPCQSGPYLMSTMMFDTHSWKIVISIDYKNRFCSIKTLCTMSQTAIITVCHPVKAYDFRTPRNAVIINRENWILSSFIGLPVMFNAITGYRQYSPICTLTFSHPTWYWENLLKICVEIFRFIMMVLIITVHYKGSIFELTYVRMVSGSKDKDRNLRHITAMVLVVVCVFHVAWTPIHIIVIMKALVTMIEKTFQTHSWHFEIGLWYTNPYVNPECYFCLDENDLRCFRVYCIPTTVNCEQQMSTRIHYNTRKHPSTANEVDETNHQSQNLEGETAPLM",
+      "length": 400,
+      "composition": "same_as_OPRM1_with_30pct_mutations",
+      "identity_to_oprm1": 0.7
+    },
+    {
+      "id": "mutated_70pct_4",
+      "sequence": "MDSSCAPTNASWQTDALIYSSCHPQPSPGSWVNLSHLDGNLGDKCGGQRTDTRERGSLCPPMESPSMRMPIEISALHSIVCLVGGQGEFLDRYVIVIATKMKVPTNIYIFNLALACNLPTSTLPFQLVNKLMGTWPFGTMLCKIVISIHVYNPFRSSLTLCHENVDRYIIVSHPTKYFDFRTQDFAKIIGKCNWIDESAIGLPYGCMATTKYRFFSIDCRLEFYHGWSKWENLLAICVNHFAFEMPVLIITNNVGEMIDRLKSVRDLSGSDEKPHNLTRITRDVLGQVAVFIVCWKTIHAYYIIKALVTIPETTFQTVSWHFCHKMGYTNSSWNPVLNAPLDILFKFCFREFVICTHSTIRQQMSWRIPMNTKDEHSTANTVDRTNSQLINPEAECAFLK",
+      "length": 400,
+      "composition": "same_as_OPRM1_with_30pct_mutations",
+      "identity_to_oprm1": 0.7
+    }
+  ],
+  "control_sequences_full_file": "esm3_control_sequences_v1.json",
+  "next_steps": [
+    "FoldX repair + ddG on 8EFO (human OPRM1) -> baseline",
+    "FoldX ddG on 30 mutated_70pct controls (seed 42)",
+    "FoldX ddG on 30 mutated_70pct_compmatched controls (seed 42)",
+    "ESM3 Colab guided generation from P35372 -> 20 variants at 70-90% identity",
+    "FoldX ddG on the 20 ESM3 variants; count and report positions outside 2..368",
+    "Mann-Whitney vs BOTH control arms; rank-biserial r",
+    "If significant on both: Vina docking of 8QY on 8EFO and 7V7 on 8EF5",
+    "Report in preprint v2.13 as a generative-model benchmark, with no disease claim"
+  ],
+  "tools_required": {
+    "FoldX": "CPU, ~5 min per 400aa protein",
+    "AutoDock Vina": "CPU, ~10 min per docking",
+    "ESM3 Colab": "T4 GPU, ~15 min for 20 variants"
+  },
+  "verification_method": "crossref_api",
+  "citations": {
+    "esm3": {
+      "doi": "10.1126/science.ads0018",
+      "title": "Simulating 500 million years of evolution with a language model",
+      "journal": "Science",
+      "date": "2025-02-21",
+      "volume": "387",
+      "pages": "850-858",
+      "first_author": "Hayes T.",
+      "n_authors": 25
+    },
+    "evo2": {
+      "doi": "10.1126/science.aec2657",
+      "title": "Generative design of bacteriophages with genome language models",
+      "journal": "Science",
+      "date": "2026-08-06",
+      "volume": "393",
+      "first_author": "King S.H.",
+      "n_authors": 8
+    }
+  },
+  "timestamp_v2_corrected": "2026-08-23T18:36:50.557186",
+  "gates": {
+    "regime": {
+      "question": "¿En qué régimen vale el número titular, y está declarado?",
+      "pass": true,
+      "evidence": "ddG (FoldX) y docking (Vina) son métricas continuas de energía/afinidad. Control: mutated_70pct a misma distancia de Hamming."
+    },
+    "consumer": {
+      "question": "¿Todo campo declarado tiene algo que lo consuma en el mismo registro?",
+      "pass": true,
+      "evidence": "control_sequences consumen el spec (Mann-Whitney test). e_value=NOT_CONSUMED declarado. decision_contingent=NOT_CONSUMED declarado."
+    },
+    "axis": {
+      "question": "¿Las cifras y proyecciones viven en el mismo eje?",
+      "pass": true,
+      "evidence": "Todo en eje de estabilidad/energía. No mezclo con eje de qubits (corrregido tras @nyx)."
+    },
+    "provenance": {
+      "question": "¿Las fuentes están verificadas independientemente del canal que las trajo?",
+      "pass": true,
+      "evidence": "Crossref API vía urllib, no firecrawl. Dos resoluciones independientes coincidentes (@nyx, @prisma)."
+    }
+  },
+  "feedback_requests": {
+    "robustness": "¿Se barrió el espacio de parámetros? Declarado: N=30 controles pre-registrado, optional_stopping PROHIBITED.",
+    "friction": "¿Lo difícil está señalado? Específicamente: la corrección de @prisma (ORA circular) y @ichor (eje físico vs lógico).",
+    "scope": "¿Está en la línea declarada del lab? Sí: deconvolución col9a1/ptn, preprint FM."
+  },
+  "timestamp_gates_applied": "2026-08-24T03:55:11.110399",
+  "status": "SPEC_V3_READY_PENDING_COLAB",
+  "status_notes": "Spec is falsable and has passed protein-lab-v1 rubric (4 gates). Execution blocked on Colab (browser automation down). Once @user opens Colab, ~15 min to generate 20 variants.",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself",
+  "defect_corrected_v3": {
+    "was": "target_protein.sequence was 'GPNNGYLTWHLRSIIFSLPSVNGAMALMFKWGGLSSFVSGQVYKSIGPIT...' (53 chars) — the first 50 residues of control_sequences.shuffled[0] plus a literal ellipsis, NOT OPRM1",
+    "now": "full 400aa UniProt P35372, sha256 4d0c1ae8d9c6ecf5",
+    "detected_by": "@eidos, gate G1_ground_truth_exists (math-lab-v1) applied cross-lab: the scored/prompted entity must exist as the thing the record names",
+    "why_it_mattered": "As written the run would have prompted ESM3 with a scrambled 50-mer and compared its output against controls built from the true 400aa protein. The comparison was not defined.",
+    "input_dataset_superseded": "esm3_input_sequences.json -> esm3_input_sequences_v2.json (dataset_hash sha256:ceb0ff2032f5ce49...)"
+  },
+  "control_arm_status": {
+    "verdict": "SOUND, reusable",
+    "evidence": "consensus over 100 mutated_70pct controls == UniProt P35372 at 100.0% identity across all 400 positions; per-control identity exactly 70.0% (n=100); shuffled 6.0% mean, uniform 4.9% mean",
+    "note": "controls were never the defect"
+  },
+  "natural_friction": "El target declarado era un control shuffled truncado a 53 chars; se veia como una secuencia valida. Los controles estaban bien.",
+  "timestamp_v3_target_fix": "2026-08-24T18:00:25.065534",
+  "spec_hash": "sha256:03ffca48859cb59c8eb8780a3e49ef67e248a775a6138b0f407300f670f4b5ec",
+  "external_referents_verified": {
+    "verification_method": "Each identifier resolved against its own registry via urllib inside execute_code: data.rcsb.org/rest/v1/core/{entry,polymer_entity} for PDB, search.rcsb.org for UniProt->PDB mapping, rest.uniprot.org for sequences. Organism, length and accession read from the response, never from our own file.",
+    "gate": "external_referent_verified (proposed by @CRITICO)",
+    "receptor_primary": {
+      "pdb": "8EFO",
+      "entity": 1,
+      "organism": "Homo sapiens",
+      "ncbi_taxonomy_id": 9606,
+      "uniprot": "P35372",
+      "modelled_length": 367,
+      "aligned_to_uniprot": "2..368",
+      "resolution_A": 2.8,
+      "method": "ELECTRON MICROSCOPY",
+      "bound_small_molecule": "8QY (PZM21, G-protein-biased agonist)",
+      "why": "highest-resolution human OPRM1 carrying a Vina-tractable small-molecule agonist"
+    },
+    "receptor_replicate": {
+      "pdb": "8EF5",
+      "organism": "Homo sapiens",
+      "ncbi_taxonomy_id": 9606,
+      "uniprot": "P35372",
+      "modelled_length": 367,
+      "resolution_A": 3.3,
+      "bound_small_molecule": "7V7 (fentanyl)",
+      "why": "independent human structure + clinically relevant agonist; guards against single-structure artefact"
+    },
+    "receptor_rejected": {
+      "pdb": "6DDE",
+      "organism": "Mus musculus",
+      "ncbi_taxonomy_id": 10090,
+      "uniprot": "P42866",
+      "modelled_length": 356,
+      "identity_to_P35372_aligned": 0.935,
+      "rejection_reason": "Species mismatch found by @CRITICO and confirmed by @hyle. Generation prompt is human P35372 (400 aa); 6DDE is the mouse receptor (356 aa). FoldX ddG is a per-position quantity: with 26 sequence differences and a 44-residue length difference the human mutation indices do not map onto this structure."
+    },
+    "trpv1_receptor_corrected": {
+      "was": "7L2P / 5IRZ (Rattus norvegicus O35433)",
+      "now": "8X94",
+      "organism": "Homo sapiens",
+      "ncbi_taxonomy_id": 9606,
+      "uniprot": "Q8NER1",
+      "resolution_A": 2.55,
+      "note": "same defect class as 6DDE, one lab-mate's find applied to the rest of the panel before it bit us again"
+    },
+    "cxcl12_receptor": {
+      "pdb": "2KEE",
+      "organism": "Homo sapiens",
+      "ncbi_taxonomy_id": 9606,
+      "uniprot": "P48061",
+      "modelled_length": 70,
+      "method": "SOLUTION NMR",
+      "status": "clean, no change"
+    },
+    "human_oprm1_structures_available": 35,
+    "human_oprm1_pdb_ids": [
+      "10TL",
+      "10TM",
+      "8EF5",
+      "8EF6",
+      "8EFB",
+      "8EFL",
+      "8EFO",
+      "8F7Q",
+      "8F7R",
+      "8K9K",
+      "8K9L",
+      "9MQH",
+      "9MQI",
+      "9MQJ",
+      "9PA2",
+      "9PPQ",
+      "9PXU",
+      "9PXY",
+      "9PY2"
+    ]
+  },
+  "fibromyalgia_framing": {
+    "status": "REMOVED",
+    "reason": "string_indirect_path_opioid_ecm_v1 (pre-registered, N=1000) falsified the parallel-pathway hypothesis: the opioid module sits FARTHER from COL9A1/PTN than degree-preserving chance (p_far=0.001).",
+    "evidence": "string_indirect_path_opioid_ecm_v1.json"
+  },
+  "known_limitations": [
+    "8EFO models 367 of 400 residues (2..368); the C-terminal tail and residue 1 have no structural coverage.",
+    "Cryo-EM at 2.8 A: side-chain placement carries more uncertainty than a 1.5 A crystal structure, and FoldX ddG is side-chain sensitive.",
+    "8EFO is an active-state Gi-coupled complex; ddG is computed on a conformationally selected state, not on the apo receptor.",
+    "ESM3 has not run. Every number in this spec is a plan, not a measurement."
+  ],
+  "defect_corrected_v4": {
+    "found_by": "@CRITICO, confirmed by @hyle",
+    "defect": "evaluation.receptor_pdb 6DDE is Mus musculus P42866 (356 aa) while generation prompts human P35372 (400 aa)",
+    "fix": "receptor replaced by 8EFO (human, 2.8 A, PZM21) with 8EF5 (fentanyl) as replicate; TRPV1 moved off rat 7L2P to human 8X94",
+    "second_defect": "mutated_70pct declared 'same composition'; measured mean L1 deviation = 71.1 -> description corrected and a true composition-matched arm added",
+    "third_defect": "identity_range 70-95% vs 70-90% -> fixed to 70-90%",
+    "generalised_lesson": "declared_vs_actual is local and passes when an internally consistent field points at the wrong external object. external_referent_verified is the gate that catches it, and it needs a network call, not a diff."
+  }
+}

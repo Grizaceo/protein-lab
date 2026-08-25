@@ -1,0 +1,32 @@
+{
+  "OPRM1": {
+    "uniprot_id": "P35372",
+    "name": "Mu-type opioid receptor",
+    "sequence_length": 400,
+    "sequence": "MDSSAAPTNASNCTDALAYSSCSPAPSPGSWVNLSHLDGNLSDPCGPNRT..."
+  },
+  "OPRD1": {
+    "uniprot_id": "P41143",
+    "name": "Delta-type opioid receptor",
+    "sequence_length": 372,
+    "sequence": "MEPAPSAGAELQPPLFANASDAYPSACPSAGANASGPPGARSASSLALAI..."
+  },
+  "SCN9A": {
+    "uniprot_id": "Q9Y5Y9",
+    "name": "Sodium channel protein type 10 subunit alpha",
+    "sequence_length": 1956,
+    "sequence": "MEFPIGSLETNNFRRFTPESLVEIEKQIAAKQGTKKAREKHREQKDQEEK..."
+  },
+  "TRPV1": {
+    "uniprot_id": "Q8NER1",
+    "name": "Transient receptor potential cation channel subfamily V member 1",
+    "sequence_length": 839,
+    "sequence": "MKKWSSTDLGAAADPLQKDTCPDPLDGDPNSRPPPAKPQLSTAKSRTRLF..."
+  },
+  "CXCL12": {
+    "uniprot_id": "P48061",
+    "name": "Stromal cell-derived factor 1",
+    "sequence_length": 93,
+    "sequence": "MNAKVVVVLVLVLTALCLSDGKPVSLSYRCPCRFFESHVARANVKHLKIL..."
+  }
+}

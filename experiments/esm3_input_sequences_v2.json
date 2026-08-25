@@ -1,0 +1,130 @@
+{
+  "dataset_id": "esm3_input_sequences_v2",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "timestamp": "2026-08-24T17:59:50.880963",
+  "supersedes": "esm3_input_sequences.json (v1)",
+  "audit_by": "@eidos, gate G1_ground_truth_exists + G4_provenance (math-lab-v1 method, applied cross-lab)",
+  "defects_found_in_v1": [
+    {
+      "id": "D1",
+      "severity": "blocking",
+      "defect": "All 5 sequences were stored TRUNCATED to 53 chars ending in a literal '...' ellipsis, while declaring sequence_length 400/372/1956/839/93.",
+      "evidence": "stored_len=53 for every entry; sequence.endswith('...')==True for all 5.",
+      "consequence": "The Colab script prompts ESM3 with a 50-residue fragment plus '...'; every generated variant would be a fragment continuation, not an OPRM1 variant. ddG vs the 400aa control set would compare different-length objects."
+    },
+    {
+      "id": "D2",
+      "severity": "blocking",
+      "defect": "esm3_oprm1_v2.json target_protein.sequence is not OPRM1 at all: it is the first 50 residues of shuffled control random_0 plus '...'.",
+      "evidence": "spec target[:50]=='GPNNGYLTWHLRSIIFSLPSVNGAMALMFKWGGLSSFVSGQVYKSIGPIT'; identical to control_sequences.shuffled[0][:50]. Real OPRM1 N-term is 'MDSSAAPTNASNCTDALAYSS...'.",
+      "consequence": "The spec's declared target was a SHUFFLED CONTROL. Executing as written would have prompted ESM3 with scrambled sequence and compared it against controls derived from the true protein."
+    },
+    {
+      "id": "D3",
+      "severity": "blocking",
+      "defect": "Accession Q9Y5Y9 labeled 'SCN9A' is SCN10A (Nav1.8), a different gene.",
+      "evidence": "UniProt Q9Y5Y9 geneName=SCN10A, 'Sodium channel protein type 10 subunit alpha'. Canonical SCN9A is Q15858 (1988 aa, Nav1.7).",
+      "consequence": "Wrong gene. Nav1.7 is the validated pain target (congenital insensitivity to pain); Nav1.8 is a different channel."
+    },
+    {
+      "id": "D4",
+      "severity": "non-blocking",
+      "defect": "Colab script hardcodes only 4 of the 5 genes (OPRD1 present, SCN9A silently dropped) with the same truncated strings.",
+      "evidence": "esm3_fm_script.md lines 18-23.",
+      "consequence": "Silent scope reduction not declared anywhere."
+    }
+  ],
+  "recovery_note": "The control set was NOT corrupt: consensus over the 100 mutated_70pct controls recovers UniProt P35372 at 100.0% identity over all 400 positions. Identity to real OPRM1: mutated_70pct 70.0% (exact, all 100), shuffled 6.0% mean, uniform 4.9% mean. The controls are sound and reusable; only the prompt inputs and the spec target were broken.",
+  "selection_criteria": {
+    "c1_len_max": "<=1024 aa — ESM3 open-weights practical context on a free-tier T4",
+    "c2_len_min": ">=50 aa — below this FoldX ddG has no interpretable signal",
+    "c3_structure_available": "a PDB structure must exist, else FoldX ddG and Vina docking cannot run at all",
+    "c4_accession_verified": "UniProt gene name must match the label, fetched from rest.uniprot.org (independent of the channel that proposed it)"
+  },
+  "sequences": {
+    "OPRM1": {
+      "uniprot_id": "P35372",
+      "gene_verified": "OPRM1",
+      "protein_name": "Mu-type opioid receptor",
+      "sequence_length": 400,
+      "sequence": "MDSSAAPTNASNCTDALAYSSCSPAPSPGSWVNLSHLDGNLSDPCGPNRTDLGGRDSLCPPTGSPSMITAITIMALYSIVCVVGLFGNFLVMYVIVRYTKMKTATNIYIFNLALADALATSTLPFQSVNYLMGTWPFGTILCKIVISIDYYNMFTSIFTLCTMSVDRYIAVCHPVKALDFRTPRNAKIINVCNWILSSAIGLPVMFMATTKYRQGSIDCTLTFSHPTWYWENLLKICVFIFAFIMPVLIITVCYGLMILRLKSVRMLSGSKEKDRNLRRITRMVLVVVAVFIVCWTPIHIYVIIKALVTIPETTFQTVSWHFCIALGYTNSCLNPVLYAFLDENFKRCFREFCIPTSSNIEQQNSTRIRQNTRDHPSTANTVDRTNHQLENLEAETAPLP",
+      "sequence_sha256": "4d0c1ae8d9c6ecf5",
+      "truncated": false,
+      "pdb_reference": "6DDE (mu-opioid + DAMGO, cryo-EM)",
+      "selected_for_esm3": true,
+      "selection_reasons": [
+        "within ESM3 context; FoldX-tractable"
+      ]
+    },
+    "OPRD1": {
+      "uniprot_id": "P41143",
+      "gene_verified": "OPRD1",
+      "protein_name": "Delta-type opioid receptor",
+      "sequence_length": 372,
+      "sequence": "MEPAPSAGAELQPPLFANASDAYPSACPSAGANASGPPGARSASSLALAIAITALYSAVCAVGLLGNVLVMFGIVRYTKMKTATNIYIFNLALADALATSTLPFQSAKYLMETWPFGELLCKAVLSIDYYNMFTSIFTLTMMSVDRYIAVCHPVKALDFRTPAKAKLINICIWVLASGVGVPIMVMAVTRPRDGAVVCMLQFPSPSWYWDTVTKICVFLFAFVVPILIITVCYGLMLLRLRSVRLLSGSKEKDRSLRRITRMVLVVVGAFVVCWAPIHIFVIVWTLVDIDRRDPLVVAALHLCIALGYANSSLNPVLYAFLDENFKRCFRQLCRKPCGRPDPSSFSRAREATARERVTACTPSDGPGGGAAA",
+      "sequence_sha256": "b75060695513d21a",
+      "truncated": false,
+      "pdb_reference": "6PT2/4N6H",
+      "selected_for_esm3": true,
+      "selection_reasons": [
+        "within ESM3 context; FoldX-tractable"
+      ]
+    },
+    "SCN9A": {
+      "uniprot_id": "Q15858",
+      "gene_verified": "SCN9A",
+      "protein_name": "Sodium channel protein type 9 subunit alpha",
+      "sequence_length": 1988,
+      "sequence": "MAMLPPPGPQSFVHFTKQSLALIEQRIAERKSKEPKEEKKDDDEEAPKPSSDLEAGKQLPFIYGDIPPGMVSEPLEDLDPYYADKKTFIVLNKGKTIFRFNATPALYMLSPFSPLRRISIKILVHSLFSMLIMCTILTNCIFMTMNNPPDWTKNVEYTFTGIYTFESLVKILARGFCVGEFTFLRDPWNWLDFVVIVFAYLTEFVNLGNVSALRTFRVLRALKTISVIPGLKTIVGALIQSVKKLSDVMILTVFCLSVFALIGLQLFMGNLKHKCFRNSLENNETLESIMNTLESEEDFRKYFYYLEGSKDALLCGFSTDSGQCPEGYTCVKIGRNPDYGYTSFDTFSWAFLALFRLMTQDYWENLYQQTLRAAGKTYMIFFVVVIFLGSFYLINLILAVVAMAYEEQNQANIEEAKQKELEFQQMLDRLKKEQEEAEAIAAAAAEYTSIRRSRIMGLSESSSETSKLSSKSAKERRNRRKKKNQKKLSSGEEKGDAEKLSKSESEDSIRRKSFHLGVEGHRRAHEKRLSTPNQSPLSIRGSLFSARRSSRTSLFSFKGRGRDIGSETEFADDEHSIFGDNESRRGSLFVPHRPQERRSSNISQASRSPPMLPVNGKMHSAVDCNGVVSLVDGRSALMLPNGQLLPEVIIDKATSDDSGTTNQIHKKRRCSSYLLSEDMLNDPNLRQRAMSRASILTNTVEELEESRQKCPPWWYRFAHKFLIWNCSPYWIKFKKCIYFIVMDPFVDLAITICIVLNTLFMAMEHHPMTEEFKNVLAIGNLVFTGIFAAEMVLKLIAMDPYEYFQVGWNIFDSLIVTLSLVELFLADVEGLSVLRSFRLLRVFKLAKSWPTLNMLIKIIGNSVGALGNLTLVLAIIVFIFAVVGMQLFGKSYKECVCKINDDCTLPRWHMNDFFHSFLIVFRVLCGEWIETMWDCMEVAGQAMCLIVYMMVMVIGNLVVLNLFLALLLSSFSSDNLTAIEEDPDANNLQIAVTRIKKGINYVKQTLREFILKAFSKKPKISREIRQAEDLNTKKENYISNHTLAEMSKGHNFLKEKDKISGFGSSVDKHLMEDSDGQSFIHNPSLTVTVPIAPGESDLENMNAEELSSDSDSEYSKVRLNRSSSSECSTVDNPLPGEGEEAEAEPMNSDEPEACFTDGCVWRFSCCQVNIESGKGKIWWNIRKTCYKIVEHSWFESFIVLMILLSSGALAFEDIYIERKKTIKIILEYADKIFTYIFILEMLLKWIAYGYKTYFTNAWCWLDFLIVDVSLVTLVANTLGYSDLGPIKSLRTLRALRPLRALSRFEGMRVVVNALIGAIPSIMNVLLVCLIFWLIFSIMGVNLFAGKFYECINTTDGSRFPASQVPNRSECFALMNVSQNVRWKNLKVNFDNVGLGYLSLLQVATFKGWTIIMYAAVDSVNVDKQPKYEYSLYMYIYFVVFIIFGSFFTLNLFIGVIIDNFNQQKKKLGGQDIFMTEEQKKYYNAMKKLGSKKPQKPIPRPGNKIQGCIFDLVTNQAFDISIMVLICLNMVTMMVEKEGQSQHMTEVLYWINVVFIILFTGECVLKLISLRHYYFTVGWNIFDFVVVIISIVGMFLADLIETYFVSPTLFRVIRLARIGRILRLVKGAKGIRTLLFALMMSLPALFNIGLLLFLVMFIYAIFGMSNFAYVKKEDGINDMFNFETFGNSMICLFQITTSAGWDGLLAPILNSKPPDCDPKKVHPGSSVEGDCGNPSVGIFYFVSYIIISFLVVVNMYIAVILENFSVATEESTEPLSEDDFEMFYEVWEKFDPDATQFIEFSKLSDFAAALDPPLLIAKPNKVQLIAMDLPMVSGDRIHCLDILFAFTKRVLGESGEMDSLRSQMEERFMSANPSKVSYEPITTTLKRKQEDVSATVIQRAYRRYRLRQNVKNISSIYIKDGDRDDDLLNKKDMAFDNVNENSSPEKTDATSSTTSPPSYDSVTKPDKEKYEQDRTEKEDKGKDSKESKK",
+      "sequence_sha256": "6cf2c19bfc54eef2",
+      "truncated": false,
+      "pdb_reference": "7W9K (partial)",
+      "selected_for_esm3": false,
+      "selection_reasons": [
+        "len 1988 > 1024 (T4 context/VRAM)"
+      ]
+    },
+    "TRPV1": {
+      "uniprot_id": "Q8NER1",
+      "gene_verified": "TRPV1",
+      "protein_name": "Transient receptor potential cation channel subfamily V member 1",
+      "sequence_length": 839,
+      "sequence": "MKKWSSTDLGAAADPLQKDTCPDPLDGDPNSRPPPAKPQLSTAKSRTRLFGKGDSEEAFPVDCPHEEGELDSCPTITVSPVITIQRPGDGPTGARLLSQDSVAASTEKTLRLYDRRSIFEAVAQNNCQDLESLLLFLQKSKKHLTDNEFKDPETGKTCLLKAMLNLHDGQNTTIPLLLEIARQTDSLKELVNASYTDSYYKGQTALHIAIERRNMALVTLLVENGADVQAAAHGDFFKKTKGRPGFYFGELPLSLAACTNQLGIVKFLLQNSWQTADISARDSVGNTVLHALVEVADNTADNTKFVTSMYNEILMLGAKLHPTLKLEELTNKKGMTPLALAAGTGKIGVLAYILQREIQEPECRHLSRKFTEWAYGPVHSSLYDLSCIDTCEKNSVLEVIAYSSSETPNRHDMLLVEPLNRLLQDKWDRFVKRIFYFNFLVYCLYMIIFTMAAYYRPVDGLPPFKMEKTGDYFRVTGEILSVLGGVYFFFRGIQYFLQRRPSMKTLFVDSYSEMLFFLQSLFMLATVVLYFSHLKEYVASMVFSLALGWTNMLYYTRGFQQMGIYAVMIEKMILRDLCRFMFVYIVFLFGFSTAVVTLIEDGKNDSLPSESTSHRWRGPACRPPDSSYNSLYSTCLELFKFTIGMGDLEFTENYDFKAVFIILLLAYVILTYILLLNMLIALMGETVNKIAQESKNIWKLQRAITILDTEKSFLKCMRKAFRSGKLLQVGYTPDGKDDYRWCFRVDEVNWTTWNTNVGIINEDPGNCEGVKRTLSFSLRSSRVSGRHWKNFALVPLLREASARDRQSAQPEEVYLRQFSGSLKPEDAEVFKSPAASGEK",
+      "sequence_sha256": "ed2277a5b7e4e7c4",
+      "truncated": false,
+      "pdb_reference": "7L2P/5IRZ",
+      "selected_for_esm3": true,
+      "selection_reasons": [
+        "within ESM3 context; FoldX-tractable"
+      ]
+    },
+    "CXCL12": {
+      "uniprot_id": "P48061",
+      "gene_verified": "CXCL12",
+      "protein_name": "Stromal cell-derived factor 1",
+      "sequence_length": 93,
+      "sequence": "MNAKVVVVLVLVLTALCLSDGKPVSLSYRCPCRFFESHVARANVKHLKILNTPNCALQIVARLKNNNRQVCIDPKLKWIQEYLEKALNKRFKM",
+      "sequence_sha256": "97c345aa7c221c00",
+      "truncated": false,
+      "pdb_reference": "2KEE (NMR)",
+      "selected_for_esm3": true,
+      "selection_reasons": [
+        "within ESM3 context; FoldX-tractable"
+      ]
+    }
+  },
+  "selected": [
+    "OPRM1",
+    "OPRD1",
+    "TRPV1",
+    "CXCL12"
+  ],
+  "excluded": {
+    "SCN9A": [
+      "len 1988 > 1024 (T4 context/VRAM)"
+    ]
+  },
+  "natural_friction": "El target del spec no era OPRM1 sino el control shuffled_0 truncado. Lo detecte porque los 400aa de control y los 53 del target no podian compararse; el consenso de los mutantes recupero la real al 100%.",
+  "dataset_hash": "sha256:ceb0ff2032f5ce49c316aee4e56f9dcd8da6ce30c4b9768a8864a813505c3780"
+}

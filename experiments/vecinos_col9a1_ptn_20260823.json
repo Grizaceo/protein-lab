@@ -1,0 +1,41 @@
+{
+  "experiment_id": "vecinos_col9a1_ptn_20260823",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "timestamp": "2026-08-23",
+  "fuentes": [
+    "experiments/string_network_v1.json",
+    "experiments/string_ids_v1.json",
+    "experiments/gnn_architecture_v1.json",
+    "investigacion-fibromialgia/analisis/reporte_red_opioide_2026-08-23.md"
+  ],
+  "metodo": "Grafo real de 48 nodos/61 aristas leido de gnn_architecture_v1.json (el unico archivo con la lista de aristas; string_network_v1.json solo contiene el resumen col9a1_analysis/ptn_analysis, con el que las aristas coinciden exactamente). BFS y enumeracion de caminos de longitud <=2 hacia los 10 genes opioides canonicos (OPRM1, OPRD1, PENK, PNOC, POMC, TAC1, TACR1, NPY, DRD2, MLN). Sin APIs externas, sin instalaciones.",
+  "col9a1_en_red": true,
+  "ptn_en_red": true,
+  "col9a1_idx": 28,
+  "ptn_idx": 41,
+  "n_aristas_col9a1": 3,
+  "aristas_col9a1": [
+    {"partner": "PPP2R2B", "score": 0.402},
+    {"partner": "NCAM1", "score": 0.587},
+    {"partner": "COL18A1", "score": 0.661}
+  ],
+  "n_aristas_ptn": 1,
+  "aristas_ptn": [
+    {"partner": "COL18A1", "score": 0.535}
+  ],
+  "consistencia_con_string_network_v1": "EXACTA: las 3 aristas de COL9A1 y la 1 de PTN en el grafo coinciden con col9a1_analysis/ptn_analysis del resumen STRING",
+  "nota_oprk1": "OPRK1 no existe como nodo en la red (48 nodos) ni en string_ids_v1, consistente con el informe previo",
+  "nota_mln_ppp2r2b": "MLN y PPP2R2B estan en el modulo opioide STRING y en el grafo, aunque sin flag is_opioid (discrepancia ya documentada en reporte_red_opioide_2026-08-23.md); se incluyen como diana del modulo para este analisis",
+  "caminos_longitud_2_desde_col9a1": [
+    {"camino": ["COL9A1", "NCAM1", "DRD2"], "bottleneck_score": 0.587},
+    {"camino": ["COL9A1", "PPP2R2B", "DRD2"], "bottleneck_score": 0.402}
+  ],
+  "caminos_longitud_2_desde_ptn": [],
+  "distancia_minima_bfs_col9a1_modulo_opioide": 2,
+  "distancia_minima_bfs_ptn_modulo_opioide": 4,
+  "distancia_min_modulo_opioide": 2,
+  "genes_puente": ["NCAM1", "DRD2", "PPP2R2B"],
+  "veredicto": "En STRING v12 (red local 48 nodos/61 aristas, confidence_threshold 700) COL9A1 y PTN SI aparecen como nodos, pero la desconexion de alta confianza del informe previo se mantiene para PTN y casi para COL9A1: PTN no tiene ningun camino de longitud <=2 al modulo opioide (su distancia minima real es 4, via COL18A1-COL9A1-NCAM1/PPP2R2B-DRD2), y COL9A1 tiene exactamente dos caminos de longitud 2 al modulo, ambos con bottleneck por debajo del umbral de alta confianza: COL9A1->NCAM1->DRD2 (bottleneck 0.587, la arista COL9A1-NCAM1 es de confianza media-baja) y COL9A1->PPP2R2B->DRD2 (bottleneck 0.402, confianza baja; PPP2R2B es ademas el control negativo de la linea). Ninguna de las aristas incidentes a COL9A1 (max 0.661) ni a PTN (max 0.535) alcanza 0.7, por lo que no existe conexion indirecta de alta confianza en 2 saltos: la falsificacion parcial del informe se mantiene y la convergencia COL9A1/PTN-eje opioide no queda justificada por topologia STRING de alta confianza. La unica via que merece atencion marginal es la mediacion de NCAM1 (adhesion neuronal) como puente de baja confianza hacia DRD2, que habria que validar con evidencia funcional/transcriptomica (p.ej. GSE67311), no con STRING; en rigor, el dato 'no alcanza' para sostener la convergencia directa ni indirecta solida.",
+  "nota_honestidad": "La lista de aristas no existe en string_network_v1.json (solo el resumen); se uso gnn_architecture_v1.json (48 nodos/61 aristas), fuente citada por el propio reporte_red_opioide. Los scores de aristas de COL9A1/PTN coinciden exactamente entre ambos archivos."
+}

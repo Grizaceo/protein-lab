@@ -1,0 +1,241 @@
+{
+  "experiment_id": "string_indirect_path_opioid_ecm_v1",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "spec_hash_preregistered": "sha256:30e6bcfe4c4b98c3501387d87367f0f817ad3fc4a71bdb0316019fbebf724ada",
+  "step_id": "S0_missing_link",
+  "network_actual": {
+    "nodes": 31,
+    "edges": 61,
+    "note": "31 of 49 input genes have >=1 edge at score>=0.400; 18 are isolated and absent from the induced graph"
+  },
+  "sources_in_graph": [
+    "OPRD1",
+    "PNOC",
+    "TACR1",
+    "TAC1",
+    "DRD2",
+    "PPP2R2B",
+    "POMC",
+    "NPY",
+    "MLN",
+    "OPRM1",
+    "PENK"
+  ],
+  "targets_in_graph": [
+    "COL9A1",
+    "PTN"
+  ],
+  "observed_mean_shortest_path": 4,
+  "reachable_pairs": 22,
+  "unreachable_pairs": 0,
+  "null_distribution": {
+    "n_usable": 1000,
+    "mean": 2.4404,
+    "sd": 0.2426,
+    "min": 1.8182,
+    "max": 3.8636
+  },
+  "p_one_sided_closer_than_null": 1.0,
+  "p_one_sided_farther_than_null": 0.001,
+  "alpha": 0.05,
+  "falsification_result": "FALSIFIED",
+  "verdict": "H1 rejected. The opioid module is NOT closer to COL9A1/PTN than degree-preserving chance; it is significantly FARTHER (p_far = 0.00100). Observed mean path = 4.0 vs null mean = 2.44, i.e. the real topology separates the two modules MORE than random rewiring does.",
+  "per_target": {
+    "COL9A1": {
+      "n_sources_reachable": 11,
+      "mean": 3,
+      "min": 1,
+      "max": 4
+    },
+    "PTN": {
+      "n_sources_reachable": 11,
+      "mean": 5,
+      "min": 3,
+      "max": 6
+    }
+  },
+  "shortest_paths_observed": {
+    "PPP2R2B->COL9A1": [
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "DRD2->COL9A1": [
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "PNOC->COL9A1": [
+      "PNOC",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "TAC1->COL9A1": [
+      "TAC1",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "POMC->COL9A1": [
+      "POMC",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "NPY->COL9A1": [
+      "NPY",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "OPRM1->COL9A1": [
+      "OPRM1",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "PENK->COL9A1": [
+      "PENK",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "PPP2R2B->PTN": [
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ],
+    "OPRD1->COL9A1": [
+      "OPRD1",
+      "PNOC",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "TACR1->COL9A1": [
+      "TACR1",
+      "PNOC",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "MLN->COL9A1": [
+      "MLN",
+      "TAC1",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1"
+    ],
+    "DRD2->PTN": [
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ],
+    "PNOC->PTN": [
+      "PNOC",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ],
+    "TAC1->PTN": [
+      "TAC1",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ],
+    "POMC->PTN": [
+      "POMC",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ],
+    "NPY->PTN": [
+      "NPY",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ],
+    "OPRM1->PTN": [
+      "OPRM1",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ],
+    "PENK->PTN": [
+      "PENK",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ],
+    "OPRD1->PTN": [
+      "OPRD1",
+      "PNOC",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ],
+    "TACR1->PTN": [
+      "TACR1",
+      "PNOC",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ],
+    "MLN->PTN": [
+      "MLN",
+      "TAC1",
+      "DRD2",
+      "PPP2R2B",
+      "COL9A1",
+      "COL18A1",
+      "PTN"
+    ]
+  },
+  "bridging_nodes": {
+    "finding": "Every opioid->COL9A1 path funnels through PPP2R2B, and every opioid->PTN path through COL18A1. These are the only two contact points.",
+    "articulation_points": [
+      "CD74",
+      "COL18A1",
+      "COL9A1",
+      "DRD2",
+      "FCER1A",
+      "HTT",
+      "LGALS3"
+    ],
+    "caveat": "PPP2R2B was counted INSIDE the opioid module by string_network_v1, so 'opioid module reaches COL9A1' is partly an artefact of that module assignment: PPP2R2B is a PP2A regulatory subunit, not an opioid/tachykinin gene."
+  },
+  "natural_friction": "The test inverted: the modules are farther apart than chance, not closer. And the only contact node was miscounted into the opioid module.",
+  "kill_criteria_respected": true,
+  "kill_criteria_consequence": "Per the pre-registered kill criterion (p >= 0.05 -> falsified), the fibromyalgia framing is REMOVED from esm3_fibromyalgia_bridge_v1. ESM3 stands as a generative-model-vs-noise-floor experiment only.",
+  "regime": "STRING functional network, confidence >= 0.400, human, 49-gene induced subgraph. Claims hold only in this regime.",
+  "axis_declaration": "Graph-topology axis only. A short path is topological proximity in a curated interaction database — NOT causal evidence in fibromyalgia tissue.",
+  "sources_independently_verified": true,
+  "verification_method": "STRING API v12 queried directly via urllib (string_edges_raw_v1.json, 61 edges); no intermediate scraper. Null computed locally with networkx 3.6.1, seed 20260824.",
+  "process_trace": {
+    "q1_discarded_design": "First intent was to declare the missing link as a next_step and move on. @hyle's axis BLOCK and @CRITICO's consumer finding made that inadmissible: a declared gap with no scheduled test is unfalsifiable.",
+    "q2_error_forcing_change": "The bridge's falsification criterion concluded 'OPRM1 is not a viable FM target' from an ESM3-vs-random comparison — a non-sequitur. Removed, and the disease question moved into THIS separate, topology-only test.",
+    "q3_decision_if_other_result": "Had p_near < 0.05, the parallel-pathway model would have survived and the FM framing stayed (as topology, not causality). It did not: p_far = 0.00100 says the separation is stronger than chance, so the framing is dropped."
+  },
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself",
+  "result_hash": "sha256:614ef9cd1d7db4f6a5fa4b7353a2a088920e84d0ce2477efea2907b96f625cf0"
+}

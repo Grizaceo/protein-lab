@@ -1,0 +1,36 @@
+{
+  "experimento": "cross-check funcional via marginal COL9A1->NCAM1->DRD2 vs DEGs GSE221921 (PBMC, 96 FM vs 93 CTRL)",
+  "fecha": "2026-08-23",
+  "fuente_datos": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/analisis/E7_sensitivity_master_GSE221921.csv",
+  "nota_fuente": "Los 3 CSV nombrados (GSE221921_DEGs_all/significant/FDR5_named) NO existen en disco (verificado con find en todo protein-lab). Se uso la tabla DEG real del dataset: E7_sensitivity_master_GSE221921.csv (6581 genes; FC = FM/HC, p_Welch, FDR_BH recalculada Benjamini-Hochberg sobre p_Welch, d_cohen, Robust_5of5). FC > 1 = sobreexpresado en FM.",
+  "genes": {
+    "COL9A1": {"fc": 2.32, "p": 1.0e-08, "fdr_bh": 8.2e-06, "d_cohen": 0.88, "direccion": "UP en FM", "nota": "presente y muy significativo"},
+    "NCAM1": {"fc": 1.353, "p": 0.0277, "fdr_bh": 0.086, "d_cohen": 0.32, "direccion": "UP en FM", "nota": "presente, p nominal < 0.05 pero NO sobrevive FDR 5%; rank 2111/6581"},
+    "DRD2": {"fc": 2.663, "p": 3.7e-06, "fdr_bh": 4.8e-04, "d_cohen": 0.70, "direccion": "UP en FM", "nota": "presente, muy significativo"},
+    "PTN": {"fc": 2.91, "p": 4.9e-05, "fdr_bh": 2.2e-03, "d_cohen": 0.61, "direccion": "UP en FM", "nota": "control; presente y significativo (no soporta el argumento de que COL9A1/PTN son ruido)"}
+  },
+  "modulos_presentes": 8,
+  "modulo_opioide_10_genes": {
+    "presentes_en_tabla": ["OPRM1", "OPRD1", "PENK", "PNOC", "POMC", "TAC1", "TACR1", "DRD2"],
+    "ausentes": ["NPY", "MLN"],
+    "detalle": {
+      "OPRM1": {"fc": 2.282, "p": 3.3e-04, "fdr_bh": 6.2e-03, "direccion": "UP"},
+      "OPRD1": {"fc": 1.226, "p": 0.508, "fdr_bh": 0.638, "direccion": "UP (ns)"},
+      "PENK": {"fc": 1.38, "p": 0.156, "fdr_bh": 0.280, "direccion": "UP (ns)"},
+      "PNOC": {"fc": 0.964, "p": 0.887, "fdr_bh": 0.94, "direccion": "sin cambio"},
+      "POMC": {"fc": 1.038, "p": 0.838, "fdr_bh": 0.93, "direccion": "sin cambio"},
+      "TAC1": {"fc": 2.099, "p": 1.4e-03, "fdr_bh": 0.014, "direccion": "UP"},
+      "TACR1": {"fc": 2.731, "p": 5.5e-05, "fdr_bh": 2.3e-03, "direccion": "UP"},
+      "DRD2": {"fc": 2.663, "p": 3.7e-06, "fdr_bh": 4.8e-04, "direccion": "UP"}
+    },
+    "con_p_nominal_<0.05": 5,
+    "nota": "8/10 tokens presentes (DRD2 contado 1 vez: 8/9 unicos); 5 significativos nominales, todos UP en FM; NPY y MLN ausentes de la tabla"
+  },
+  "veredicto": "La via marginal COL9A1->NCAM1->DRD2 SI tiene apoyo transcriptomico en el dataset principal GSE221921: los 3 genes de la via estan presentes y todos UP en FM (COL9A1 FC=2.32, p=1e-08, FDR=8e-06; DRD2 FC=2.66, p=3.7e-06, FDR=4.8e-04; NCAM1 FC=1.35, p=0.028, d=0.32), y el control PTN tambien es UP y significativo (FC=2.91, FDR=2.2e-03), lo que descarta que COL9A1/PTN sean 'ruido sin senal'. El punto debil es NCAM1, el cuello de botella de la via (bottleneck 0.587 STRING media-baja): su cambio es de magnitud modesta (FC=1.35) y no sobrevive FDR 5% (FDR_BH=0.086), aunque su p nominal y su direccion coinciden con la via. Ademas, 8/9 genes unicos del modulo opioide estan presentes y 5 son UP significativos (OPRM1, TAC1, TACR1, DRD2 + COL9A1 fuera del modulo), coherencia direccional completa con la linea. Verdicto: la via marginal NO queda falsificada por GSE221921 — tiene apoyo transcriptomico parcial (COL9A1 y DRD2 fuertes, NCAM1 debil nominal); la debilidad STRING media-baja de la conexion NCAM1-DRD2 sigue siendo la limitacion principal y NCAM1 es el eslabon a vigilar, pero no hay razon para abandonar la via por este dataset. Siguiente paso recomendado: chequear NCAM1 en GSE67311 (validacion ya negativa para los proxies) antes de decidir.",
+  "limitaciones": [
+    "Los 3 CSV _named_ de GSE221921 no existian en disco; se uso la tabla real E7_sensitivity_master del dataset (FC = FM_mean/HC_mean de FPKM)",
+    "FDR recalculada BH sobre p_Welch; un gen con p=0 exacta (probable test degenerado) en la tabla",
+    "NCAM1 no pasa FDR 5% (FDR=0.086) — senal nominal solo",
+    "NPY y MLN ausentes de la tabla DEG — no evaluables aqui"
+  ]
+}

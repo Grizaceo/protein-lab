@@ -1,0 +1,94 @@
+{
+  "bridge_id": "esm3_fibromyalgia_bridge_v1",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "timestamp": "2026-08-24T17:17:23.498858",
+  "spec_hash": "sha256:0a4ab8e8c064472eced730a464db2ea136c0131f80a7769b4ff43c18ef6511bf",
+  "status": "FALSIFIED",
+  "hypothesis": "ESM3 can generate OPRM1 variants that fold and bind better than random mutagenesis at equal Hamming distance. Separately (and NOT tested here): whether the opioid module is causally relevant to fibromyalgia.",
+  "evidence_chain": {
+    "step1": {
+      "claim": "OPRM1 is in the FM causal module",
+      "source": "ora_gprofiler_v1, string_network_v1",
+      "status": "CONFIRMED",
+      "evidence": "OPRM1 in opioid module, 38 interactions, combined_score 0.4-0.99"
+    },
+    "step2": {
+      "claim": "COL9A1/PTN (FM-specific genes) are in the same opioid module",
+      "source": "string_network_v1",
+      "status": "REFUTED",
+      "evidence": "COL9A1 connects to COL18A1 (0.66), NCAM1 (0.59), PPP2R2B (0.40). PTN connects to COL18A1 (0.54). Neither is in the opioid module. Verdict: PARTIALLY_FALSIFIED."
+    },
+    "step3": {
+      "claim": "The opioid module is relevant to FM",
+      "source": "ora_gprofiler_v1",
+      "status": "CONFIRMED",
+      "evidence": "Neuropeptide signaling p=1.29e-07, Neuroactive ligand-receptor KEGG p=3.97e-06",
+      "source_type": "lab_internal_only"
+    }
+  },
+  "conclusion": {
+    "bridge_status": "PARTIALLY_FALSIFIED",
+    "what_is_true": "OPRM1 is in a module enriched in FM-relevant pathways (opioid/neuropeptide signaling). The opioid system is plausibly involved in FM.",
+    "what_is_not_true": "COL9A1/PTN do NOT converge directly with OPRM1. The original hypothesis of dopaminergic convergence in FM is partially falsified.",
+    "what_this_means_for_esm3": "ESM3 variants of OPRM1 test opioid receptor function, NOT fibromyalgia directly. The bridge from OPRM1 variants → FM requires an additional step: connecting opioid signaling to the FM-specific genes (COL9A1/PTN) via indirect mechanisms (parallel pathways, not convergence)."
+  },
+  "falsification_criteria": {
+    "measured_quantity": "Whether ESM3-generated OPRM1 variants fold better (lower ddG) and dock better (Vina affinity vs PDB 6DDE) than random mutants at the SAME Hamming distance.",
+    "null_hypothesis": "ESM3 variants are indistinguishable from mutated_70pct controls at equal Hamming distance in ddG and in docking affinity.",
+    "rejection_criteria": "Mann-Whitney U, p < 0.05 AND effect size r > 0.3, favouring ESM3, on BOTH ddG and affinity.",
+    "what_a_negative_result_means": "ESM3 does not beat the noise floor for this receptor. That is a statement about the generative model's sampling quality on OPRM1 — NOT about whether OPRM1 is a viable FM target. Receptor biology does not depend on ESM3 sampling.",
+    "what_a_positive_result_means": "ESM3 conditions on structural constraints of OPRM1 beyond sequence noise. Still says nothing about FM: the disease link requires the missing step below.",
+    "axis_declaration": "Test axis = generative-model quality vs noise floor. Hypothesis axis = disease mechanism. These are DIFFERENT axes and are not conflated: no FM claim is derivable from this experiment alone.",
+    "corrected_after": "axis BLOCK by @hyle: previous description concluded 'OPRM1 is not a viable therapeutic target for FM' from an ESM3-vs-random comparison. Non-sequitur, removed."
+  },
+  "next_steps": [
+    {
+      "id": "S0_missing_link",
+      "step": "Close the declared gap: test whether the opioid module and the COL9A1/PTN ECM module are connected by INDIRECT paths in STRING (shortest-path length distribution, opioid module <-> ECM module, vs degree-preserving rewired null, 1000 permutations).",
+      "why_first": "This is the step named in what_this_means_for_esm3 and previously left unscheduled (G2 violation flagged by @hyle/@CRITICO). No FM claim from ESM3 is admissible until this returns.",
+      "cost": "CPU-only, minutes. No GPU, no Colab.",
+      "falsifiable": "If observed shortest-path length between the two modules is not shorter than the rewired null (permutation p >= 0.05), the parallel-pathway hypothesis is falsified and the FM framing is dropped entirely.",
+      "blocking_for": "any fibromyalgia interpretation of ESM3 output",
+      "status": "COMPLETED_FALSIFIED",
+      "result_artifact": "string_indirect_path_opioid_ecm_v1.json"
+    },
+    {
+      "id": "S1",
+      "step": "Execute ESM3 guided generation on OPRM1 (20 variants).",
+      "status": "BLOCKED_COLAB",
+      "blocker": "Google login / browser automation unavailable locally"
+    },
+    {
+      "id": "S2",
+      "step": "ddG via FoldX: 20 ESM3 variants vs 30 mutated_70pct controls (pre-registered N).",
+      "status": "PENDING"
+    },
+    {
+      "id": "S3",
+      "step": "Vina docking vs PDB 6DDE, same two arms.",
+      "status": "PENDING"
+    },
+    {
+      "id": "S4",
+      "step": "Report in preprint v2.13 with the axis declaration verbatim; no FM claim unless S0 is positive.",
+      "status": "PENDING"
+    }
+  ],
+  "sources_independently_verified": false,
+  "provenance_note": "Flagged by @CRITICO: the entire evidence_chain rests on lab-internal artefacts (ora_gprofiler_v1, string_network_v1). The p=1.29e-07 is our own ORA, not independent literature. External corroboration that the opioid module is FM-relevant is NOT yet obtained. Verification route when done: Crossref API via urllib (api.crossref.org/works/<doi>).",
+  "gate_status": {
+    "regime": "PASS — Hamming-matched control, continuous metrics (ddG, kcal/mol; Vina affinity)",
+    "consumer": "PASS — S0 executed, result consumed by fm_framing.status",
+    "axis": "PASS after fix — therapeutic-viability conclusion removed from the falsification criterion",
+    "provenance": "FAIL (declared) — sources_independently_verified=false, external corroboration pending",
+    "audited_by": "@hyle (axis), @CRITICO (consumer, provenance). Not self-assessed."
+  },
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself",
+  "fm_framing": {
+    "status": "REMOVED",
+    "reason": "string_indirect_path_opioid_ecm_v1 (pre-registered, N=1000) falsified the parallel-pathway hypothesis: p_near=1.0000, and the modules are significantly FARTHER apart than chance (p_far=0.00100).",
+    "evidence": "sha256:614ef9cd1d7db4f6a5fa4b7353a2a088920e84d0ce2477efea2907b96f625cf0",
+    "consequence": "ESM3 on OPRM1 is now scoped strictly as: does a generative protein model beat Hamming-matched random mutagenesis on ddG and docking? No fibromyalgia claim attaches to it."
+  }
+}

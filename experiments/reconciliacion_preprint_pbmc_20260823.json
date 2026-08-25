@@ -1,0 +1,38 @@
+{
+  "experiment_id": "protein-21-reconciliacion-preprint-pbmc-20260823",
+  "domain": "protein",
+  "linea": "fibromialgia",
+  "hallazgo_referencia": "El modulo opioide (OPRM1 FC=2.28, TAC1 FC=2.10, TACR1 FC=2.73, DRD2 FC=2.66, todos UP FDR<0.05) se detecta en GSE221921 (PBMC) pero NO sobrevive en GSE67311 (whole blood): 10/10 genes presentes, 0 significativos (FDR>0.60), 4/4 del nucleo colapsados bajo ajuste por composicion.",
+  "preprint_encontrado": true,
+  "ruta_preprint": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/preprint_dopaminergic_convergence_FM_numbered.md",
+  "preprint_secundario": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/preprint_dopaminergic_convergence_FM.md",
+  "version_preprint": "v2.12 (numbered, 2026-08-23; incluye seccion 4.9 STRING). El nombre interno 'v24' del laboratorio NO coincide con el versionado del manuscrito (v2.10/v2.11/v2.12 segun falsificacion/preprint_v24_sensitivity_section.json)",
+  "usa_gse67311_para_eje_opioide": true,
+  "detalle_uso_gse67311": "Se usa como validacion NEGATIVA explicita del eje opioide, no como validacion positiva: seccion 3.3 'Cross-Context Comparison: GSE67311 (Whole Blood)' y 'Opioid axis extension' reportan TACR1 FC=1.008 p=0.480, OPRM1 FC=1.020 p=0.160, OPRK1 FC=1.021 p=0.878, TAC1 FC=1.004 p=0.495, PENK FC=1.038 p=0.031 Bonf=0.155 (ninguno sobrevive). 'Honest assessment': 'PBMC/RNA-seq-specific and not replicated in whole blood'.",
+  "menciona_especificidad_tisular": true,
+  "donde_menciona": [
+    "Abstract: 'None of these signatures replicate in whole blood, where the axis probes sit in the bottom intensity decile'",
+    "Seccion 3.3 (tabla 3 y 'Honest assessment'): PBMC/RNA-seq-specific, no biomarcadores de sangre periferica",
+    "Seccion 4.5: 'Cell-Fraction-Dependent Contrast and the Whole-Blood Non-Replication'",
+    "Limitacion 3: deconvolucion de GSE67311 descarta dilucion por neutrofilos; composicion comparable FM vs HC",
+    "Limitacion 6: 'Whole-blood non-replication' explicita",
+    "Limitacion 11: 'Tissue Extrapolations of Peripheral Blood mRNA' (PBMC vs whole blood vs CNS)"
+  ],
+  "veredicto": "El preprint v2.12 NO sobre-generaliza el eje opioide a whole blood: ya advierte la limitacion PBMC-especifica de forma explicita y honesta, y de hecho usa GSE67311 como la validacion negativa del eje (seccion 3.3, limitaciones 3, 6 y 11), reportando que ninguno de los genes del modulo replica en sangre completa (FC ~1.00, p>0.15) y calificando las firmas como 'PBMC/RNA-seq-specific', no como biomarcadores de sangre periferica; el hallazgo PBMC-especifico del modulo opioide (protein-21: 10/10 presentes, 0 significativos en GSE67311) es plenamente consistente con lo que el manuscrito ya declara, aunque el preprint reporta p por gen y no el conteo consolidado del modulo (0/10) que el experimento verifica. La unica discrepancia interna relevante es de tono, no de tejido: la v2.12 describe el eje como 'compositional — un shift en poblaciones leucocitarias circulantes' sin matices, mientras que la v2.11 (abstract y seccion 3.2, VIF-sensitivity 2026-08-15) mostraba que el colapso por composicion es en parte colinealidad (max VIF 27.8) y que bajo ajuste ortogonal TACR1 (p=0.0038), OPRM1 (p=0.0022) y TAC1 (p=0.0297) recuperan significancia, sugiriendo un componente per-celular retenido; la v2.12 suprimio esa matiz, con lo cual el claim 'compositional' quedo sobregirado en la direccion opuesta (no es sobre-generalizacion tisular, sino posible sobre-lectura del ajuste). Para la v2.5 recomiendo: (1) anadir en la seccion 3.3 una frase con el conteo consolidado del modulo en GSE67311 ('10/10 genes del eje presentes en la plataforma, 0 significativos a FDR<0.05, nucleo 4/4 colapsado bajo ajuste de composicion', citando analisis/RESULTADOS_DEGs_GSE67311.md y el reporte_red_opioide_2026-08-23.md) para convertir la validacion negativa en una estadistica de modulo explicita; (2) reintroducir la matiz VIF en la seccion 3.2 y en el abstract (el eje es 'parcialmente sensible a composicion con componente per-celular retenido' no 'puramente compositional') para no sobrevender el colapso; y (3) mantener la restriccion de lenguaje ya presente — la senal opioide debe seguir describiendose como firma transcriptional PBMC-especifica con confirmacion celular (flow/scRNA-seq) como siguiente paso, y nunca como biomarcador de sangre periferica validado, que es exactamente lo que GSE67311 descarta.",
+  "recomendacion_v25_concreta": "1) Agregar en seccion 3.3 la estadistica de modulo de GSE67311 (10/10 presentes, 0/10 significativos FDR<0.05, 4/4 nucleo colapsados); 2) reintroducir la matiz VIF-sensitivity (2026-08-15) en seccion 3.2 y abstract (colapso parcial por colinealidad, 3 genes recuperan significancia bajo ajuste ortogonal); 3) mantener el lenguaje 'PBMC-specific transcriptional signature' y aclarar en la tabula 2 que la etiqueta 'compositional' aplica al analisis de modelo 6, no a un veredicto biologico unico; 4) citar los archivos de trazabilidad del hallazgo (analisis/discrepancias_opioide_2026-08-23.md, experiments/*.json) en data availability.",
+  "archivos_leidos": [
+    "investigacion-fibromialgia/preprint_dopaminergic_convergence_FM_numbered.md (v2.12, principal)",
+    "investigacion-fibromialgia/preprint_dopaminergic_convergence_FM.md (v2.11, secundario)",
+    "investigacion-fibromialgia/falsificacion/preprint_v24_sensitivity_section.json",
+    "investigacion-fibromialgia/analisis/reporte_red_opioide_2026-08-23.md",
+    "investigacion-fibromialgia/analisis/RESULTADOS_DEGs_GSE67311.md",
+    "investigacion-fibromialgia/analisis/discrepancias_opioide_2026-08-23.md"
+  ],
+  "no_creados": "no se crearon papers, no commits, no se modifico ningun preprint",
+  "status": "completed",
+  "verificacion_eidos_20260823": {
+    "discrepancia_vif_v212_vs_audit": true,
+    "detalle": "v2.12 dice \"VIF median 2.7, max 13.1\"; AUDIT_FALSIFICATION_METHODS.md (seccion 2.7, 2026-08-15) documenta que el VIF real es T_cells_CD8=27.8, NK_cells=27.2, Mast_cells=21.2, Basophils=13.6, y que \"13.1\" era el valor reportado ANTES de la correccion. El script vif_sensitivity_opioid_axis.py (15-ago) coincide con el audit. El preprint v2.12 conserva el valor superado (13.1) y suprime la recuperacion ortogonal (27 menciones VIF v2.11 -> 1 en v2.12; \"orthogonal\" 19 -> 1).",
+    "veredicto_integridad": "INCONSISTENCIA DE MANUSCRITO CONFIRMADA: el max VIF del preprint (13.1) contradice el artefacto fuente (27.8). No es supresion de seccion completa, pero si numero obsoleto + perdida del matiz ortogonal documentado. Recomendado: corregir a 27.8 y reintroducir matiz VIF en v2.13 (mismo lenguaje que el audit: \"la colinealidad no inventaba el efecto, lo enmascaraba\")."
+  }
+}

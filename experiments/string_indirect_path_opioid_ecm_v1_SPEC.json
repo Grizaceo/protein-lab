@@ -1,0 +1,50 @@
+{
+  "experiment_id": "string_indirect_path_opioid_ecm_v1",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "step_id": "S0_missing_link",
+  "purpose": "Close the gap declared in esm3_fibromyalgia_bridge_v1: are the opioid module and the FM-specific ECM genes COL9A1/PTN connected by INDIRECT paths in the STRING network, more closely than chance?",
+  "hypothesis": "H1: mean shortest-path length from opioid-module genes to {COL9A1, PTN} is SHORTER than in degree-preserving rewired nulls.",
+  "null_hypothesis": "H0: the observed mean shortest-path length is drawn from the rewired-null distribution.",
+  "network": {
+    "source": "STRING API v12 /api/json/network",
+    "species": 9606,
+    "required_score": 400,
+    "input_genes_n": 49,
+    "edges_n": 61,
+    "edges_artifact": "string_edges_raw_v1.json"
+  },
+  "source_set_opioid_module": [
+    "OPRD1",
+    "PNOC",
+    "TACR1",
+    "TAC1",
+    "DRD2",
+    "PPP2R2B",
+    "POMC",
+    "NPY",
+    "MLN",
+    "OPRM1",
+    "PENK"
+  ],
+  "target_set_ecm_fm": [
+    "COL9A1",
+    "PTN"
+  ],
+  "statistic": "mean unweighted shortest-path length over all reachable (source,target) pairs",
+  "null_model": "degree-preserving double-edge swap (nx.double_edge_swap), nswap = 10 x |E|, N = 1000 permutations, seeded",
+  "n_permutations_preregistered": 1000,
+  "test": "one-sided permutation test, p = (1 + #{null <= observed}) / (N + 1)",
+  "alpha": 0.05,
+  "optional_stopping": "PROHIBITED — N=1000 fixed before execution; no re-running with different N",
+  "kill_criteria": "If p >= 0.05 the parallel-pathway hypothesis is FALSIFIED and every fibromyalgia framing is removed from the ESM3 bridge; ESM3 remains a pure generative-model-vs-noise-floor experiment.",
+  "regime": "STRING functional network, confidence >= 0.400, human, 49-gene induced subgraph. Claims hold only in this regime.",
+  "axis_declaration": "Graph-topology axis only. A short path is topological proximity in a curated interaction database — NOT causal evidence in fibromyalgia tissue.",
+  "consumers": {
+    "p_value": "decides whether the FM framing survives in esm3_fibromyalgia_bridge_v1",
+    "mean_path_length": "reported in preprint v2.13 section 4.9",
+    "bridging_nodes": "candidate targets for the next STRING/expression query"
+  },
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself",
+  "spec_hash": "sha256:30e6bcfe4c4b98c3501387d87367f0f817ad3fc4a71bdb0316019fbebf724ada"
+}

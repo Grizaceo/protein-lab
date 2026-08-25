@@ -1,0 +1,53 @@
+{
+  "experimento": "check_via_marginal_en_validacion_negativa_GSE67311 (protein-19)",
+  "fecha": "2026-08-23",
+  "status": "ok",
+  "fuente": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/datos/GSE67311_DEGs_all_named.csv",
+  "nota_fuente": "Tabla DEG real del dataset GSE67311 (whole blood, GPL11532, 33,297 probes con gene_symbol; t-test + BH, generada 2026-05-13). FC = 2^log2FC; FC > 1 = UP en FM. Complementada con el informe VALIDACION_GSE67311_NEGATIVA.md (2026-08-03) y RESULTADOS_DEGs_GSE67311.md (2026-05-13).",
+  "genes_linea_opioide_chequeados_en_GSE67311": [
+    {"gen": "TAC1", "gse221921": "FC=2.10, p=0.0002", "gse67311": "FC=1.004, p=0.495, Bonf=1.0, d=+0.038", "reproduce": false},
+    {"gen": "OPRM1", "gse221921": "FC=2.28, p<0.0001", "gse67311": "FC=1.020, p=0.160, Bonf=0.80, d=+0.222", "reproduce": false},
+    {"gen": "OPRK1", "gse221921": "FC=1.78", "gse67311": "FC=1.021, p=0.878, Bonf=1.0, d=+0.191", "reproduce": false},
+    {"gen": "TACR1", "gse221921": "FC=2.73, d=+0.60", "gse67311": "FC=1.008, p=0.480, Bonf=1.0, d=+0.050", "reproduce": false},
+    {"gen": "PENK", "gse221921": "FC=1.38, p=0.0031", "gse67311": "FC=1.038, p=0.031, Bonf=0.155, d=+0.317", "reproduce": "trend, no sobrevive Bonf"},
+    {"gen": "PCSK1N", "gse221921": "FC=0.76 (DOWN)", "gse67311": "FC=1.041 (UP), p=0.045", "reproduce": "invierte direccion"},
+    {"gen": "LGALS3BP", "gse221921": "FC=0.75 (DOWN)", "gse67311": "FC=0.956 (DOWN), NS", "reproduce": "direccion consistente, NS"},
+    {"gen": "IL6", "gse221921": "FC=1.66, p=0.0002", "gse67311": "FC=1.023, p=0.524, NS", "reproduce": false},
+    {"gen": "MDH1", "gse221921": "FC=0.86, NS", "gse67311": "FC=0.985, NS", "reproduce": "NS en ambos"}
+  ],
+  "colga1": null,
+  "col9a1": {
+    "estado": "presente en tabla DEG, NO significativo (NS)",
+    "fc": 1.018,
+    "log2fc": 0.0262,
+    "p": 0.2876,
+    "fdr": 0.7554,
+    "direccion": "UP insignificante (FC ~ 1.0)",
+    "comparado_con_GSE221921": "FC=2.32, p=1e-08, FDR=8.2e-06 => colapso completo (FC 2.32 -> 1.02)"
+  },
+  "ngam1": null,
+  "ncam1": {
+    "estado": "presente en la tabla, NO significativo (NS) y con DIRECCION INVERTIDA respecto a GSE221921",
+    "fc": 0.944,
+    "log2fc": -0.0838,
+    "p": 0.2395,
+    "fdr": 0.7335,
+    "direccion": "DOWN insignificante en GSE67311 (GSE221921 era UP FC=1.35)",
+    "comparacion_con_gse221921": "NCAM1 FC=1.353, p=0.0277, FDR=0.086 (UP nominal) => aqui FC=0.944, p=0.24: el eslabon debil NO se reproduce y ademas invierte de signo"
+  },
+  "drd2": {
+    "estado": "presente en la tabla, NO significativo (NS)",
+    "fc": 1.033,
+    "log2fc": 0.0465,
+    "p": 0.1971,
+    "fdr": 0.7139,
+    "direccion": "UP insignificante (FC ~ 1.0)",
+    "comparacion_con_gse221921": "DRD2 FC=2.663, p=3.7e-06, FDR=4.8e-04 => colapso completo (FC 2.66 -> 1.03)"
+  },
+  "veredicto": "GSE67311 DEBILITA la via marginal COL9A1->NCAM1->DRD2: los 3 genes estan presentes en la tabla DEG completa del dataset negativo (33,297 probes) y se pudieron evaluar, pero ninguno es significativo (COL9A1 FC=1.02 p=0.29 FDR=0.76; DRD2 FC=1.03 p=0.20 FDR=0.71; NCAM1 FC=0.94 p=0.24 FDR=0.73), con FCs ~1.0 que colapsan frente a los del dataset principal GSE221921 (COL9A1 2.32, DRD2 2.66). El punto critico es NCAM1, el eslabon debil de la via: no solo NO se reproduce, sino que INVIERTE direccion (UP nominal FC=1.35 en GSE221921 vs DOWN FC=0.94 en GSE67311), el mismo patron de bandera roja que ya se documento con PCSK1N en la validacion negativa de 2026-08-03. La no-replicacion es consistente con el patron global ya establecido del eje (TAC1/OPRM1/TACR1/OPRK1 todos FC~1.0 en whole blood: la senal es PBMC-especifica y de amplitud, no de organizacion del circuito - la co-expresion del modulo opioide si es estable en whole blood, pero eso no rescata los fold-changes absolutos ni a los 3 genes de esta via). NCAM1 no aparece como DEG en ningun nivel (ni siquiera nominal) en el dataset negativo, y la unica conexion topologica que lo sostenia (DRD2-NCAM1 combined score 0.625, media-baja, segun string_network_v1) sigue siendo la debilidad documentada; ademas la red STRING no conecta COL9A1 al modulo opioide directamente, solo via segundos vecinos (NCAM1/COL18A1). RECOMENDACION FINAL: cerrar la linea de escalar la via marginal - NO invertir en validacion funcional externa costosa para COL9A1->NCAM1->DRD2 en este momento, porque (1) el unico apoyo transcriptomico de la via viene de un solo dataset (GSE221921), (2) el eslabon central NCAM1 no se reproduce y ademas invierte direccion en la validacion negativa, y (3) la desconexion STRING (COL9A1 fuera del modulo, puente NCAM1-DRD2 media-baja) queda como limite estructural documentado; la linea queda como 'marginal, no prioritaria': solo se reabre con nueva evidencia independiente (tercer dataset PBMC/RNA-seq, proteomica plasmatica tipo Olink, o datos de tejido), no con mas transcriptomica de sangre total. La v1 de la linea opioide (TAC1/OPRM1/IL6, PBMC) mantiene su estado previo (apoyo en GSE221921, no-replicacion en whole blood ya documentada), pero esta via marginal concreta NO queda reforzada por GSE67311.",
+  "limitaciones": [
+    "GSE67311 es whole blood y GSE221921 es PBMC: el colapso FC puede ser de compartimento/sensibilidad (documentado en VALIDACION_GSE67311_NEGATIVA.md item C: la deconvolucion mostro composicion celular identica FM vs HC, no explicada por dilucion neutrofilica)",
+    "La tabla all_named usa probes Affymetrix (gene_id + gene_symbol); FC calculado como 2^log2FC",
+    "No existe otra tabla DEG de GSE67311 con FC/proteina fuera de los CSV listados (all, significant, FDR5) — verificado por busqueda en disco"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "experiment_id": "eidos-integridad-preprint-v212-vif",
+  "domain": "protein",
+  "timestamp": "2026-08-23T09:05:00-04:00",
+  "hallazgo": "INCONSISTENCIA DE MANUSCRITO en preprint dopaminergico v2.12: reporta 'VIF median 2.7, max 13.1' en §3.2, pero el artefacto fuente (AUDIT_FALSIFICATION_METHODS.md §2.7, 2026-08-15) documenta el VIF real corregido: T_cells_CD8=27.8, NK_cells=27.2, Mast_cells=21.2, Basophils=13.6 — y que '13.1' era el valor pre-correccion. El script scripts/vif_sensitivity_opioid_axis.py (15-ago) coincide con el audit (27.8).",
+  "comparacion_versiones": {
+    "v2.11": {"menciones_VIF": 27, "menciones_orthogonal": 19, "max_VIF_reportado": "27.8", "recuperacion_ortogonal": "TACR1 p=0.0038, OPRM1 p=0.0022, TAC1 p=0.029 significativos bajo ajuste ortogonal"},
+    "v2.12": {"menciones_VIF": 1, "menciones_orthogonal": 1, "max_VIF_reportado": "13.1", "recuperacion_ortogonal": "no reportada"}
+  },
+  "clasificacion": "NO es supresion de seccion completa; es NUMERO OBSOLETO (13.1 pre-correccion) + PERDIDA del matiz ortogonal documentado (la colinealidad enmascaraba, no inventaba el efecto).",
+  "recomendacion": "v2.13: corregir max VIF a 27.8, reintroducir matiz ortogonal con lenguaje del audit ('la colinealidad no inventaba el efecto, lo enmascaraba'), mantener 'PBMC-specific'.",
+  "no_tocado": "NO se modifico el preprint (manuscrito de Ichor); solo se anexo verificacion al JSON de reconciliacion de protein-21.",
+  "verificado_por": "eidos (lectura directa de ambos preprints + audit + script fuente)"
+}

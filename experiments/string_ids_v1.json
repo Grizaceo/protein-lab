@@ -1,0 +1,434 @@
+[
+  {
+    "queryIndex": 0,
+    "queryItem": "DRD2",
+    "stringId": "9606.ENSP00000354859",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "DRD2",
+    "annotation": "D(2) dopamine receptor; Dopamine receptor whose activity is mediated by G proteins which inhibit adenylyl cyclase; Belongs to the G-protein coupled receptor 1 family."
+  },
+  {
+    "queryIndex": 1,
+    "queryItem": "NCAM1",
+    "stringId": "9606.ENSP00000480132",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "NCAM1",
+    "annotation": "Neural cell adhesion molecule 1; This protein is a cell adhesion molecule involved in neuron- neuron adhesion, neurite fasciculation, outgrowth of neurites, etc."
+  },
+  {
+    "queryIndex": 2,
+    "queryItem": "GPR52",
+    "stringId": "9606.ENSP00000356658",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "GPR52",
+    "annotation": "G-protein coupled receptor 52; Gs-coupled receptor activated by antipsychotics reserpine leading to an increase in intracellular cAMP and its internalization. May play a role in locomotor activity through modulation of dopamine, NMDA and ADORA2A-induced locomotor activity. These behavioral changes are accompanied by modulation of the dopamine receptor signaling pathway in striatum. Modulates HTT level via cAMP-dependent but PKA independent mechanisms throught activation of RAB39B that translocates HTT to the endoplasmic reticulum, thus avoiding proteasome degradation."
+  },
+  {
+    "queryIndex": 3,
+    "queryItem": "CAMKV",
+    "stringId": "9606.ENSP00000419195",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "CAMKV",
+    "annotation": "CaM kinase-like vesicle-associated protein; Does not appear to have detectable kinase activity; Belongs to the protein kinase superfamily. CAMK Ser/Thr protein kinase family."
+  },
+  {
+    "queryIndex": 4,
+    "queryItem": "CELF4",
+    "stringId": "9606.ENSP00000410584",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "CELF4",
+    "annotation": "CUGBP Elav-like family member 4; RNA-binding protein implicated in the regulation of pre-mRNA alternative splicing. Mediates exon inclusion and/or exclusion in pre- mRNA that are subject to tissue-specific and developmentally regulated alternative splicing. Specifically activates exon 5 inclusion of cardiac isoforms of TNNT2 during heart remodeling at the juvenile to adult transition. Promotes exclusion of both the smooth muscle (SM) and non-muscle (NM) exons in actinin pre-mRNAs. Activates the splicing of MAPT/Tau exon 10. Binds to muscle-specific splicing enhancer (MSE) intronic site [...] "
+  },
+  {
+    "queryIndex": 5,
+    "queryItem": "DCC",
+    "stringId": "9606.ENSP00000389140",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "DCC",
+    "annotation": "Netrin receptor DCC; Receptor for netrin required for axon guidance. Mediates axon attraction of neuronal growth cones in the developing nervous system upon ligand binding. Its association with UNC5 proteins may trigger signaling for axon repulsion. It also acts as a dependence receptor required for apoptosis induction when not associated with netrin ligand. Implicated as a tumor suppressor gene."
+  },
+  {
+    "queryIndex": 6,
+    "queryItem": "MDGA2",
+    "stringId": "9606.ENSP00000405456",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "MDGA2",
+    "annotation": "MAM domain-containing glycosylphosphatidylinositol anchor protein 2; May be involved in cell-cell interactions."
+  },
+  {
+    "queryIndex": 7,
+    "queryItem": "NPY",
+    "stringId": "9606.ENSP00000384364",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "NPY",
+    "annotation": "C-flanking peptide of NPY; NPY is implicated in the control of feeding and in secretion of gonadotrophin-release hormone; Belongs to the NPY family."
+  },
+  {
+    "queryIndex": 8,
+    "queryItem": "KYNU",
+    "stringId": "9606.ENSP00000264170",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "KYNU",
+    "annotation": "Kynureninase; Catalyzes the cleavage of L-kynurenine (L-Kyn) and L-3- hydroxykynurenine (L-3OHKyn) into anthranilic acid (AA) and 3- hydroxyanthranilic acid (3-OHAA), respectively. Has a preference for the L-3-hydroxy form. Also has cysteine-conjugate-beta-lyase activity. Belongs to the kynureninase family."
+  },
+  {
+    "queryIndex": 9,
+    "queryItem": "SRD5A2",
+    "stringId": "9606.ENSP00000477587",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "SRD5A2",
+    "annotation": "3-oxo-5-alpha-steroid 4-dehydrogenase 2; Converts testosterone (T) into 5-alpha-dihydrotestosterone (DHT) and progesterone or corticosterone into their corresponding 5- alpha-3-oxosteroids. It plays a central role in sexual differentiation and androgen physiology."
+  },
+  {
+    "queryIndex": 10,
+    "queryItem": "PPP2R2B",
+    "stringId": "9606.ENSP00000377936",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "PPP2R2B",
+    "annotation": "Serine/threonine-protein phosphatase 2A 55 kDa regulatory subunit B beta isoform; The B regulatory subunit might modulate substrate selectivity and catalytic activity, and also might direct the localization of the catalytic enzyme to a particular subcellular compartment. Within the PP2A holoenzyme complex, isoform 2 is required to promote proapoptotic activity (By similarity). Isoform 2 regulates neuronal survival through the mitochondrial fission and fusion balance (By similarity)."
+  },
+  {
+    "queryIndex": 11,
+    "queryItem": "NPC1",
+    "stringId": "9606.ENSP00000269228",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "NPC1",
+    "annotation": "NPC intracellular cholesterol transporter 1; Intracellular cholesterol transporter which acts in concert with NPC2 and plays an important role in the egress of cholesterol from the endosomal/lysosomal compartment. Unesterified cholesterol that has been released from LDLs in the lumen of the late endosomes/lysosomes is transferred by NPC2 to the cholesterol-binding pocket in the N-terminal domain of NPC1. Cholesterol binds to NPC1 with the hydroxyl group buried in the binding pocket. Binds oxysterol with higher affinity than cholesterol. May play a role in vesicular trafficking in glia, [...] "
+  },
+  {
+    "queryIndex": 12,
+    "queryItem": "HTT",
+    "stringId": "9606.ENSP00000347184",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "HTT",
+    "annotation": "Huntingtin, myristoylated N-terminal fragment; [Huntingtin]: May play a role in microtubule-mediated transport or vesicle function."
+  },
+  {
+    "queryIndex": 13,
+    "queryItem": "TAC1",
+    "stringId": "9606.ENSP00000321106",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "TAC1",
+    "annotation": "C-terminal-flanking peptide; Tachykinins are active peptides which excite neurons, evoke behavioral responses, are potent vasodilators and secretagogues, and contract (directly or indirectly) many smooth muscles."
+  },
+  {
+    "queryIndex": 14,
+    "queryItem": "PENK",
+    "stringId": "9606.ENSP00000400894",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "PENK",
+    "annotation": "Met-enkephalin-Arg-Gly-Leu; Met- and Leu-enkephalins compete with and mimic the effects of opiate drugs. They play a role in a number of physiologic functions, including pain perception and responses to stress. PENK(114-133) and PENK(237-258) increase glutamate release in the striatum. PENK(114-133) decreases GABA concentration in the striatum; Belongs to the opioid neuropeptide precursor family."
+  },
+  {
+    "queryIndex": 15,
+    "queryItem": "PNOC",
+    "stringId": "9606.ENSP00000301908",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "PNOC",
+    "annotation": "Prepronociceptin; [Nociceptin]: Ligand of the opioid receptor-like receptor OPRL1. It may act as a transmitter in the brain by modulating nociceptive and locomotor behavior. May be involved in neuronal differentiation and development. [Orphanin FQ2]: Has potent analgesic activity. Belongs to the opioid neuropeptide precursor family."
+  },
+  {
+    "queryIndex": 16,
+    "queryItem": "POMC",
+    "stringId": "9606.ENSP00000384092",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "POMC",
+    "annotation": "Corticotropin-like intermediary peptide; [Corticotropin]: Stimulates the adrenal glands to release cortisol. [Melanocyte-stimulating hormone beta]: Increases the pigmentation of skin by increasing melanin production in melanocytes. [Met-enkephalin]: Endogenous opiate; Belongs to the POMC family."
+  },
+  {
+    "queryIndex": 17,
+    "queryItem": "TACR1",
+    "stringId": "9606.ENSP00000303522",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "TACR1",
+    "annotation": "Substance-P receptor; This is a receptor for the tachykinin neuropeptide substance P. It is probably associated with G proteins that activate a phosphatidylinositol-calcium second messenger system. The rank order of affinity of this receptor to tachykinins is: substance P > substance K > neuromedin-K; Belongs to the G-protein coupled receptor 1 family."
+  },
+  {
+    "queryIndex": 18,
+    "queryItem": "OPRM1",
+    "stringId": "9606.ENSP00000394624",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "OPRM1",
+    "annotation": "Mu-type opioid receptor; Receptor for endogenous opioids such as beta-endorphin and endomorphin. Receptor for natural and synthetic opioids including morphine, heroin, DAMGO, fentanyl, etorphine, buprenorphin and methadone. Agonist binding to the receptor induces coupling to an inactive GDP-bound heterotrimeric G-protein complex and subsequent exchange of GDP for GTP in the G-protein alpha subunit leading to dissociation of the G-protein complex with the free GTP-bound G-protein alpha and the G-protein beta-gamma dimer activating downstream cellular effectors. The agonist- and cell typ [...] "
+  },
+  {
+    "queryIndex": 20,
+    "queryItem": "OPRD1",
+    "stringId": "9606.ENSP00000234961",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "OPRD1",
+    "annotation": "Delta-type opioid receptor; G-protein coupled receptor that functions as receptor for endogenous enkephalins and for a subset of other opioids. Ligand binding causes a conformation change that triggers signaling via guanine nucleotide-binding proteins (G proteins) and modulates the activity of down-stream effectors, such as adenylate cyclase. Signaling leads to the inhibition of adenylate cyclase activity. Inhibits neurotransmitter release by reducing calcium ion currents and increasing potassium ion conductance. Plays a role in the perception of pain and in opiate-mediated analgesia.  [...] "
+  },
+  {
+    "queryIndex": 21,
+    "queryItem": "CA14",
+    "stringId": "9606.ENSP00000358107",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "CA14",
+    "annotation": "Carbonic anhydrase 14; Reversible hydration of carbon dioxide."
+  },
+  {
+    "queryIndex": 22,
+    "queryItem": "TNFRSF1B",
+    "stringId": "9606.ENSP00000365435",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "TNFRSF1B",
+    "annotation": "Tumor necrosis factor receptor superfamily member 1b, membrane form; Receptor with high affinity for TNFSF2/TNF-alpha and approximately 5-fold lower affinity for homotrimeric TNFSF1/lymphotoxin-alpha. The TRAF1/TRAF2 complex recruits the apoptotic suppressors BIRC2 and BIRC3 to TNFRSF1B/TNFR2. This receptor mediates most of the metabolic effects of TNF-alpha. Isoform 2 blocks TNF-alpha-induced apoptosis, which suggests that it regulates TNF-alpha function by antagonizing its biological activity."
+  },
+  {
+    "queryIndex": 23,
+    "queryItem": "CD74",
+    "stringId": "9606.ENSP00000009530",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "CD74",
+    "annotation": "HLA class II histocompatibility antigen gamma chain; Plays a critical role in MHC class II antigen processing by stabilizing peptide-free class II alpha/beta heterodimers in a complex soon after their synthesis and directing transport of the complex from the endoplasmic reticulum to the endosomal/lysosomal system where the antigen processing and binding of antigenic peptides to MHC class II takes place. Serves as cell surface receptor for the cytokine MIF."
+  },
+  {
+    "queryIndex": 24,
+    "queryItem": "COL18A1",
+    "stringId": "9606.ENSP00000352798",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "COL18A1",
+    "annotation": "Collagen alpha-1(XVIII) chain; Probably plays a major role in determining the retinal structure as well as in the closure of the neural tube.  Endostatin: Potently inhibits endothelial cell proliferation and angiogenesis. May inhibit angiogenesis by binding to the heparan sulfate proteoglycans involved in growth factor signaling (By similarity). Inhibits VEGFA-induced endothelial cell proliferation and migration. Seems to inhibit VEGFA-mediated signaling by blocking the interaction of VEGFA to its receptor KDR/VEGFR2. Modulates endothelial cell migration in an integrin-dependent manner [...] "
+  },
+  {
+    "queryIndex": 25,
+    "queryItem": "BTN2A1",
+    "stringId": "9606.ENSP00000312158",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "BTN2A1",
+    "annotation": "Butyrophilin subfamily 2 member A1."
+  },
+  {
+    "queryIndex": 26,
+    "queryItem": "TNFRSF4",
+    "stringId": "9606.ENSP00000368538",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "TNFRSF4",
+    "annotation": "Tumor necrosis factor receptor superfamily member 4; Receptor for TNFSF4/OX40L/GP34. Is a costimulatory molecule implicated in long-term T-cell immunity."
+  },
+  {
+    "queryIndex": 27,
+    "queryItem": "CD302",
+    "stringId": "9606.ENSP00000259053",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "CD302",
+    "annotation": "CD302 antigen; Potential multifunctional C-type lectin receptor that may play roles in endocytosis and phagocytosis as well as in cell adhesion and migration."
+  },
+  {
+    "queryIndex": 28,
+    "queryItem": "TNFRSF9",
+    "stringId": "9606.ENSP00000478699",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "TNFRSF9",
+    "annotation": "Tumor necrosis factor receptor superfamily member 9; Receptor for TNFSF9/4-1BBL. Possibly active during T cell activation."
+  },
+  {
+    "queryIndex": 29,
+    "queryItem": "COL9A1",
+    "stringId": "9606.ENSP00000349790",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "COL9A1",
+    "annotation": "Collagen alpha-1(IX) chain; Structural component of hyaline cartilage and vitreous of the eye."
+  },
+  {
+    "queryIndex": 30,
+    "queryItem": "CRELD1",
+    "stringId": "9606.ENSP00000321856",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "CRELD1",
+    "annotation": "Protein disulfide isomerase CRELD1; Protein disulfide isomerase (By similarity). Promotes the localization of acetylcholine receptors (AChRs) to the plasma membrane (By similarity); Belongs to the CRELD family."
+  },
+  {
+    "queryIndex": 31,
+    "queryItem": "DPEP1",
+    "stringId": "9606.ENSP00000376807",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "DPEP1",
+    "annotation": "Dipeptidase 1; Hydrolyzes a wide range of dipeptides. Implicated in the renal metabolism of glutathione and its conjugates. Converts leukotriene D4 to leukotriene E4; it may play an important role in the regulation of leukotriene activity."
+  },
+  {
+    "queryIndex": 32,
+    "queryItem": "LEG1",
+    "stringId": "9606.ENSP00000328069",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "C6orf58",
+    "annotation": "Protein LEG1 homolog; May be involved in early liver development."
+  },
+  {
+    "queryIndex": 33,
+    "queryItem": "LGALS3",
+    "stringId": "9606.ENSP00000254301",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "LGALS3",
+    "annotation": "Galectin-3; Galactose-specific lectin which binds IgE. May mediate with the alpha-3, beta-1 integrin the stimulation by CSPG4 of endothelial cells migration. Together with DMBT1, required for terminal differentiation of columnar epithelial cells during early embryogenesis (By similarity). In the nucleus: acts as a pre-mRNA splicing factor. Involved in acute inflammatory responses including neutrophil activation and adhesion, chemoattraction of monocytes macrophages, opsonization of apoptotic neutrophils, and activation of mast cells. Together with TRIM16, coordinates the recognition of [...] "
+  },
+  {
+    "queryIndex": 34,
+    "queryItem": "MLN",
+    "stringId": "9606.ENSP00000388825",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "MLN",
+    "annotation": "Motilin-associated peptide; Plays an important role in the regulation of interdigestive gastrointestinal motility and indirectly causes rhythmic contraction of duodenal and colonic smooth muscle."
+  },
+  {
+    "queryIndex": 35,
+    "queryItem": "PRSS53",
+    "stringId": "9606.ENSP00000280606",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "PRSS53",
+    "annotation": "Serine protease 53; In vitro can degrade the fibrinogen alpha chain of as well as pro-urokinase-type plasminogen activator."
+  },
+  {
+    "queryIndex": 36,
+    "queryItem": "BPIFB2",
+    "stringId": "9606.ENSP00000170150",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "BPIFB2",
+    "annotation": "BPI fold containing family B member 2; Belongs to the BPI/LBP/Plunc superfamily. BPI/LBP family."
+  },
+  {
+    "queryIndex": 37,
+    "queryItem": "CTSO",
+    "stringId": "9606.ENSP00000414904",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "CTSO",
+    "annotation": "Cathepsin O; Proteolytic enzyme possibly involved in normal cellular protein degradation and turnover; Belongs to the peptidase C1 family."
+  },
+  {
+    "queryIndex": 38,
+    "queryItem": "DDR1",
+    "stringId": "9606.ENSP00000427552",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "DDR1",
+    "annotation": "Epithelial discoidin domain-containing receptor 1; Tyrosine kinase that functions as cell surface receptor for fibrillar collagen and regulates cell attachment to the extracellular matrix, remodeling of the extracellular matrix, cell migration, differentiation, survival and cell proliferation. Collagen binding triggers a signaling pathway that involves SRC and leads to the activation of MAP kinases. Regulates remodeling of the extracellular matrix by up-regulation of the matrix metalloproteinases MMP2, MMP7 and MMP9, and thereby facilitates cell migration and wound healing. Required fo [...] "
+  },
+  {
+    "queryIndex": 39,
+    "queryItem": "FAM171B",
+    "stringId": "9606.ENSP00000304108",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "FAM171B",
+    "annotation": "Protein FAM171B; Family with sequence similarity 171 member B; Belongs to the FAM171 family."
+  },
+  {
+    "queryIndex": 40,
+    "queryItem": "IFI30",
+    "stringId": "9606.ENSP00000384886",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "IFI30",
+    "annotation": "Gamma-interferon-inducible lysosomal thiol reductase; Lysosomal thiol reductase that can reduce protein disulfide bonds. May facilitate the complete unfolding of proteins destined for lysosomal degradation. Plays an important role in antigen processing. Facilitates the generation of MHC class II-restricted epitodes from disulfide bond-containing antigen by the endocytic reduction of disulfide bonds (By similarity). Facilitates also MHC class I- restricted recognition of exogenous antigens containing disulfide bonds by CD8+ T-cells or crosspresentation (By similarity)."
+  },
+  {
+    "queryIndex": 41,
+    "queryItem": "LRRC37A2",
+    "stringId": "9606.ENSP00000459551",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "LRRC37A2",
+    "annotation": "Leucine-rich repeat-containing protein 37A2; Leucine rich repeat containing 37 member A2."
+  },
+  {
+    "queryIndex": 42,
+    "queryItem": "PTN",
+    "stringId": "9606.ENSP00000341170",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "PTN",
+    "annotation": "Pleiotrophin; Secreted growth factor that mediates its signal through cell- surface proteoglycan and non-proteoglycan receptors. Binds cell-surface proteoglycan receptor via their chondroitin sulfate (CS) groups. Thereby regulates many processes like cell proliferation, cell survival, cell growth, cell differentiation and cell migration in several tissues namely neuron and bone. Also plays a role in synaptic plasticity and learning-related behavior by inhibiting long-term synaptic potentiation (By similarity). Binds PTPRZ1, leading to neutralization of the negative charges of the CS ch [...] "
+  },
+  {
+    "queryIndex": 43,
+    "queryItem": "SFTPD",
+    "stringId": "9606.ENSP00000361366",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "SFTPD",
+    "annotation": "Pulmonary surfactant-associated protein D; Contributes to the lung's defense against inhaled microorganisms, organic antigens and toxins. Interacts with compounds such as bacterial lipopolysaccharides, oligosaccharides and fatty acids and modulates leukocyte action in immune response. May participate in the extracellular reorganization or turnover of pulmonary surfactant. Binds strongly maltose residues and to a lesser extent other alpha- glucosyl moieties."
+  },
+  {
+    "queryIndex": 44,
+    "queryItem": "ST3GAL1",
+    "stringId": "9606.ENSP00000428540",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "ST3GAL1",
+    "annotation": "CMP-N-acetylneuraminate-beta-galactosamide-alpha-2,3-sialyltransferase 1; Responsible for the synthesis of the sequence NeuAc-alpha- 2,3-Gal-beta-1,3-GalNAc- found on sugar chains O-linked to Thr or Ser and also as a terminal sequence on certain gangliosides. SIAT4A and SIAT4B sialylate the same acceptor substrates but exhibit different Km values; Belongs to the glycosyltransferase 29 family."
+  },
+  {
+    "queryIndex": 45,
+    "queryItem": "CPA3",
+    "stringId": "9606.ENSP00000296046",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "CPA3",
+    "annotation": "Carboxypeptidase A3."
+  },
+  {
+    "queryIndex": 46,
+    "queryItem": "MS4A2",
+    "stringId": "9606.ENSP00000278888",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "MS4A2",
+    "annotation": "High affinity immunoglobulin epsilon receptor subunit beta; High affinity receptor that binds to the Fc region of immunoglobulins epsilon. Aggregation of FCER1 by multivalent antigens is required for the full mast cell response, including the release of preformed mediators (such as histamine) by degranulation and de novo production of lipid mediators and cytokines. Also mediates the secretion of important lymphokines. Binding of allergen to receptor- bound IgE leads to cell activation and the release of mediators responsible for the manifestations of allergy; Belongs to the MS4A family."
+  },
+  {
+    "queryIndex": 47,
+    "queryItem": "FCER1A",
+    "stringId": "9606.ENSP00000357097",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "FCER1A",
+    "annotation": "High affinity immunoglobulin epsilon receptor subunit alpha; Binds to the Fc region of immunoglobulins epsilon. High affinity receptor. Responsible for initiating the allergic response. Binding of allergen to receptor-bound IgE leads to cell activation and the release of mediators (such as histamine) responsible for the manifestations of allergy. The same receptor also induces the secretion of important lymphokines."
+  },
+  {
+    "queryIndex": 48,
+    "queryItem": "HDC",
+    "stringId": "9606.ENSP00000267845",
+    "ncbiTaxonId": 9606,
+    "taxonName": "Homo sapiens",
+    "preferredName": "HDC",
+    "annotation": "Histidine decarboxylase; Catalyzes the biosynthesis of histamine from histidine. Belongs to the group II decarboxylase family."
+  }
+]
