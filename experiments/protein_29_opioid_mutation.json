@@ -1,0 +1,56 @@
+{
+  "experiment_id": "protein-29-opioid-mutation-v1",
+  "domain": "protein",
+  "linea": "eje_opioide",
+  "timestamp": "2026-08-26T16:30:00",
+  "task": "F2 (protein-29): nueva mutacion en el eje opioide (OPRM1) / repack v2 sobre ddg_work",
+  "method": "EvoEF2 BuildMutant + ComputeStability (rigid-backbone ddG), estructura oprm1_R_Repair.pdb, referencia WT Total=-1438.28. Extension del mecanismo esterico de repack (ddg_repack_floor_and_steric_mechanism_v1): posicion 113 NO estaba en las 133 muestreadas; se establece su repack floor (A113A) y se prueba la regla enterrada pequeno->voluminoso mutando A113F.",
+  "mutation_evoef2_code": "AR113F",
+  "mutation_human": "A113F",
+  "residue": {
+    "wt_residue": "ALA",
+    "chain": "R",
+    "position": 113,
+    "mutant_residue": "PHE",
+    "burial_cb_count_10A": 25
+  },
+  "metrics": {
+    "wt_energy": -1438.28,
+    "floor_113_A113A_energy": -1438.28,
+    "floor_113_ddg": 0.000,
+    "mutant_AR113F_energy": -1366.97,
+    "ddg_raw": 71.310,
+    "ddg_corrected": 71.310,
+    "ddg_corrected_note": "ddg_raw - floor_113; floor_113 = 0.000 (self-mutacion A113A bien portada), asi que corregido == crudo",
+    "steric_rule_condition": "WT in {A,G,S,T} AND MT in {F,W,Y,R,K} AND burial>=median(14)",
+    "steric_rule_fires": true,
+    "steric_rule_prediction": "catastrofe esterica (ddG fuertemente positivo)",
+    "observed_vs_rule": "CONFIRMA la regla: ddG +71.310 es el mayor destablizacion de todo el dataset OPRM1 ddg; la mediana observada de pequeno->voluminoso enterrado en ddg_repack fue +34.68, este punto queda en la cola extrema superior",
+    "n_existing_arms_sampled_positions": 133,
+    "position_113_previously_sampled": false
+  },
+  "verdict": "CONFIRMATORIO del mecanismo esterico de repack en un punto independiente nunca muestreado. A113F produce ddG +71.31 kcal/mol (el maximo de todo el dataset ddg de OPRM1), validando que la catastrofe por sobre-empaquetamiento de sitio enterrado se generaliza a nuevas posiciones. Regimen rigid-backbone: NO es ddG experimental ni efecto funcional/diana; solo prueba del mecanismo de puntuacion.",
+  "gates_self_assessed": {
+    "G1_regime": "PASS - regimen rigid-backbone y cola de floor declarados",
+    "G2_consumer": "PASS - self-mutacion A113A establece floor en la nueva posicion",
+    "G3_axis": "PASS - conclusion sobre mecanismo EvoEF2/OPRM1, no sobre enfermedad ni diana",
+    "G4_provenance": "PASS - numero calculado en esta sesion con EvoEF2 desde disco",
+    "G5_external_referent": "N/A - sin identificador externo nuevo"
+  },
+  "input_artifacts": [
+    "experiments/ddg_work/oprm1_R_Repair.pdb",
+    "experiments/ddg_work/run_ddg.sh",
+    "experiments/ddg_work/wt_stability.txt",
+    "experiments/ddg_repack_floor_and_steric_mechanism_v1.json",
+    "experiments/ddg_work/self_floor.json"
+  ],
+  "output_artifacts": [
+    "experiments/protein_29_opioid_mutation.json"
+  ],
+  "result_hash_plain": {
+    "mutacion": "AR113F",
+    "ddg": 71.31,
+    "metodo": "EvoEF2 ddG (BuildMutant+ComputeStability), oprm1_R_Repair.pdb, WT=-1438.28"
+  },
+  "status": "completed"
+}
