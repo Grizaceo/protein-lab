@@ -8,7 +8,7 @@
 008: 
 009: **Author Position Statement.** The author is an independent researcher without formal training in medicine, biology, or bioinformatics. No wet-lab experiments were performed; all analyses are computational reanalyses of publicly available data (GSE221921, GSE67311). This manuscript therefore makes no claim to domain expertise. Its value lies exclusively in the **rigor and reproducibility of the analytical protocol**: every statistical decision is documented, every correction is calibrated against negative controls, every negative finding is reported without cosmetic adjustment, and all scripts are publicly available for independent replication. The manuscript is offered as a **protocol-first contribution** — a pre-registered analytical pipeline applied to public FM transcriptomics — not as a substitute for domain expertise or clinical validation.
 010: 
-011: **Preprint — Draft v2.13 — August 2026 (E-value LOO/outlier extension; VIF correction 13.1→27.8)**
+011: **Preprint — Draft v2.14 — August 2026 (PTN E-value LOO/outlier extension; both genes now have LOO/outlier sensitivity)**
 012: 
 013: ---
 014: 
@@ -335,9 +335,9 @@
 335: 
 336: PTN's E-value (6.86; lower bound 3.76) is somewhat lower than COL9A1's but still above the "substantial confounding" threshold (E-value > 3.0) even on the conservative bound. PTN is therefore also robust to moderate-to-substantial unmeasured confounding, though the margin is narrower than COL9A1's.
 337: 
-338: **Leave-one-out (LOU) sensitivity (2026-08-24).** To test whether the E-value is driven by a single influential sample, we recomputed it 96 times, leaving out one FM patient each iteration. Result: E-values in [8.74, 9.55], all ≥ 5.0 (mean 8.995, std 0.218). No single FM sample drives the COL9A1 E-value — the result is structurally robust to individual outliers.
-339: 
-340: **Outlier sensitivity (2026-08-24).** Removing the most influential outlier (FM index 35, value 3.93) changes COL9A1 E-value from 8.98 to 8.74 — a negligible change. Verdict: ROBUSTO — E-value permanece ≥ 5.0 sin el outlier.
+**Leave-one-out (LOO) sensitivity (2026-08-24 for COL9A1; 2026-08-25 for PTN).** To test whether the E-value is driven by a single influential sample, we recomputed it 96 times, leaving out one FM patient each iteration. **COL9A1:** E-values in [8.74, 9.55], all ≥ 5.0 (mean 8.995, std 0.218). No single FM sample drives the COL9A1 E-value — the result is structurally robust to individual outliers. **PTN:** E-values in [6.65, 7.07], all ≥ 5.0 (mean 6.878, std 0.133). No single FM sample drives the PTN E-value either.
+
+**Outlier sensitivity (2026-08-24 for COL9A1; 2026-08-25 for PTN).** Removing the most influential outlier (FM index 35) changes COL9A1 E-value from 8.98 to 8.74 (value 3.93) and PTN E-value from 6.86 to 6.69 (value 3.02) — both negligible changes. Verdict: ROBUSTO — both E-values remain ≥ 5.0 without the outlier.
 341: 
 342: **Clinical context for comparison.**
 343: 

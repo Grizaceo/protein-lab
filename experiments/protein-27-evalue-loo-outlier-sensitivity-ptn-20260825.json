@@ -1,0 +1,27 @@
+{
+  "experiment_id": "protein-27-evalue-loo-outlier-sensitivity-ptn-20260825",
+  "domain": "protein",
+  "linea": "fibromialgia",
+  "timestamp": "2026-08-25T22:00:00",
+  "method": "VanderWeele & Ding (2017) E-value; LOO + outlier sensitivity on PTN-FM",
+  "metrics": {
+    "genes_analyzed": 1,
+    "PTN_evalue_full": 6.8646,
+    "PTN_evalue_loo_min": 6.6488,
+    "PTN_evalue_loo_max": 7.0687,
+    "PTN_evalue_loo_mean": 6.8779,
+    "PTN_evalue_loo_std": 0.1327,
+    "PTN_most_influential_index": 35,
+    "PTN_most_influential_value": 3.0224,
+    "PTN_evalue_outlier_without": 6.6946
+  },
+  "verdict": "ROBUSTO - all PTN LOO E-values >= 5.0, outlier removal does not change verdict",
+  "input_artifacts": [
+    "analisis/falsificacion/e02_evalue_ptn_results.json",
+    "investigacion-fibromialgia/datos/geo/PBMC_FM_96patients_93controls/GSE221921_FM_ProcessedData.xlsx"
+  ],
+  "output_artifacts": [
+    "experiments/protein-27-evalue-loo-outlier-sensitivity-ptn-20260825.json"
+  ],
+  "status": "completed"
+}

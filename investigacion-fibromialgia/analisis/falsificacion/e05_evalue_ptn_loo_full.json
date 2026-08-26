@@ -1,0 +1,13 @@
+{
+  "test": "leave-one-out sensitivity over all 96 FM points for PTN",
+  "evalue_with_all": 6.864614101293514,
+  "evalue_min": 6.648846760357797,
+  "evalue_max": 7.068689474765375,
+  "evalue_mean": 6.877855284866655,
+  "evalue_std": 0.1327451762730558,
+  "most_influential_point": {
+    "index": 35,
+    "evalue_without": 6.694646926826912
+  },
+  "verdict": "ROBUSTO - Todos los E-values leave-one-out >= 5.0"
+}
