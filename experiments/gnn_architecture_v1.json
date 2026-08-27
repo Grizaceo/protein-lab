@@ -3,7 +3,6 @@
   "lab": "protein-lab",
   "domain": "protein",
   "timestamp": "2026-08-23T04:50:34.667943",
-  "spec_hash": "sha256:68074d416bc2045b40a363ef24edb2e47a4312566580df17218f09969aff3d57",
   "n_nodes": 48,
   "n_edges": 61,
   "node_features": [
@@ -600,5 +599,8 @@
   "next_steps": [
     "Descargar PyTorch Geometric y entrenar en Colab (gratuito)",
     "Validar: el GNN clasifica correctamente los 11 genes opioide del modulo 1?"
-  ]
+  ],
+  "spec_hash": "sha256:cfb524639c94e59e2010020044d3ff687598a7dc8c0812b8f81393fb7734d9fa",
+  "result_hash": "sha256:cfb524639c94e59e2010020044d3ff687598a7dc8c0812b8f81393fb7734d9fa",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

@@ -236,6 +236,7 @@
     "q2_error_forcing_change": "The bridge's falsification criterion concluded 'OPRM1 is not a viable FM target' from an ESM3-vs-random comparison — a non-sequitur. Removed, and the disease question moved into THIS separate, topology-only test.",
     "q3_decision_if_other_result": "Had p_near < 0.05, the parallel-pathway model would have survived and the FM framing stayed (as topology, not causality). It did not: p_far = 0.00100 says the separation is stronger than chance, so the framing is dropped."
   },
-  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself",
-  "result_hash": "sha256:614ef9cd1d7db4f6a5fa4b7353a2a088920e84d0ce2477efea2907b96f625cf0"
+  "spec_hash": "sha256:5f9f251e93f4558363689cabc16efa943aeba639e579d571b000249a62cb21f9",
+  "result_hash": "sha256:5f9f251e93f4558363689cabc16efa943aeba639e579d571b000249a62cb21f9",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

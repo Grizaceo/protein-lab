@@ -45,5 +45,8 @@
     "Updated PDF to v2.14 via weasyprint (64 pages, 716 KB)"
   ],
   "audit": "CRITICO audit from protein-25 and protein-27 applies: all COL9A1 and PTN LOO E-values >= 5.0. Internal consistency: PTN LOO min (6.6488) matches PTN outlier-removed value (6.6946) within rounding. No fabrication. PDF v2.14 generated successfully.",
-  "status": "completed"
+  "status": "completed",
+  "spec_hash": "sha256:91b9f572bc7e01ba5f2829cf8ada84e6a83c766619e76f605ebb3c9c2e9922b2",
+  "result_hash": "sha256:91b9f572bc7e01ba5f2829cf8ada84e6a83c766619e76f605ebb3c9c2e9922b2",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

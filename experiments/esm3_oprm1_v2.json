@@ -146,7 +146,6 @@
   "timestamp_gates_applied": "2026-08-24T03:55:11.110399",
   "status": "SPEC_READY_PENDING_EXECUTION",
   "status_notes": "Spec is falsable and has passed protein-lab-v1 rubric (4 gates). Execution blocked on Colab (browser automation down). Once @user opens Colab, ~15 min to generate 20 variants.",
-  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself",
   "defect_corrected_v3": {
     "was": "target_protein.sequence was 'GPNNGYLTWHLRSIIFSLPSVNGAMALMFKWGGLSSFVSGQVYKSIGPIT...' (53 chars) — the first 50 residues of control_sequences.shuffled[0] plus a literal ellipsis, NOT OPRM1",
     "now": "full 400aa UniProt P35372, sha256 4d0c1ae8d9c6ecf5",
@@ -161,5 +160,7 @@
   },
   "natural_friction": "El target declarado era un control shuffled truncado a 53 chars; se veia como una secuencia valida. Los controles estaban bien.",
   "timestamp_v3_target_fix": "2026-08-24T18:00:25.065534",
-  "spec_hash": "sha256:1b39220c24432f7c1005b188ec99ccafaf0e725916af3ab4e1df458cadd0f9a9"
+  "spec_hash": "sha256:9152166311af1f260011d61f1d8530b52547628fafc6841fd73c3799b1b62232",
+  "result_hash": "sha256:9152166311af1f260011d61f1d8530b52547628fafc6841fd73c3799b1b62232",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

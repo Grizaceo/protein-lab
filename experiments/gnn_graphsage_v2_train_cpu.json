@@ -82,5 +82,8 @@
   "pp2r2b_predicho_positivo": true,
   "pp2r2b_prob_pos": 0.5156,
   "veredicto": "FALSIFICADO: el grafo STRING NO codifica el eje opioide de forma generalizable. Con features solo e_value+degree (todas e_value=0, senal = degree + topologia), el GNN logro F1 macro=0.970 vs baseline mayoritario 0.442 en evaluacion transductiva, pero leave-one-out sobre los 10 positivos dio recall=0/10, stratified 5-fold dio recall_pos medio=0.700 (F1 macro medio=0.821), y PPP2R2B (control negativo hard) fue clasificado positivo (prob=0.516). El modelo transductivo reproduce el modulo STRING-1 entero (11 nodos, incl. PPP2R2B): aprende el cluster topologico STRING, no la membresia funcional al eje opioide. el modelo FULL (entrenado con todos los nodos, evaluacion transductiva) si aprendio el modulo STRING-1 (11 nodos, F1 macro 0.970, AUC 0.995, 10/10 positivos) — pero eso reproduce el clustering por grado del grafo, no validacion; en LOO el recall de positivos es 0/10 (el nodo test nunca es detectado) y en el control hard PPP2R2B (en modulo STRING pero NO opioide) es clasificado positivo: el GNN aprende el módulo STRING, no el eje opioide funcional.",
-  "falsificado": true
+  "falsificado": true,
+  "spec_hash": "sha256:b0bcbf7936c7b7e8125c5a6fde68bca8b4ed08b0e861cf47c14b1bc12ea56e3a",
+  "result_hash": "sha256:b0bcbf7936c7b7e8125c5a6fde68bca8b4ed08b0e861cf47c14b1bc12ea56e3a",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

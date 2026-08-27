@@ -29,7 +29,7 @@
       "OPRM1",
       "PENK"
     ],
-    "description": "Neuropeptide/Opioid signaling cluster \u2014 all 11 genes are opioid/tachykinin related"
+    "description": "Neuropeptide/Opioid signaling cluster — all 11 genes are opioid/tachykinin related"
   },
   "col9a1_analysis": {
     "in_opioid_module": false,
@@ -61,20 +61,22 @@
     ],
     "interpretation": "PTN is NOT in the opioid module. Single interaction with COL18A1 (another UKB causal gene), not with opioid signaling."
   },
-  "key_finding": "Deconvolucion de la senal: ORA gProfiler (p=1.29e-07 para neuropeptide signaling) viene de los 11 genes opioides/neurop\u00e9ptidos, NO de COL9A1/PTN. COL9A1 y PTN estan fuera del modulo opioide, conectados a genes neurales/estructurales.",
+  "key_finding": "Deconvolucion de la senal: ORA gProfiler (p=1.29e-07 para neuropeptide signaling) viene de los 11 genes opioides/neuropéptidos, NO de COL9A1/PTN. COL9A1 y PTN estan fuera del modulo opioide, conectados a genes neurales/estructurales.",
   "biological_interpretation": {
-    "hypothesis_convergence": "PARTIALLY FALSIFIED \u2014 COL9A1 y PTN no convergen directamente con genes opioide en STRING. La convergencia dopamin\u00e9rgica/opioide es indirecta: genes opioide (OPRM1/OPRD1/TAC1/POMC) + genes estructurales (COL9A1/PTN) + genes neurales (NCAM1/DRD2).",
-    "alternative_model": "La se\u00f1al en FM podria ser: (1) Eje opioide/neurop\u00e9ptido como v\u00eda directa de se\u00f1alizaci\u00f3n, (2) COL9A1/PTN contribuyendo a trav\u00e9s de integridad estructural/matriz extracelular, (3) Ambos mecanismos operando en paralelo pero no convergiendo en el mismo m\u00f3dulo STRING."
+    "hypothesis_convergence": "PARTIALLY FALSIFIED — COL9A1 y PTN no convergen directamente con genes opioide en STRING. La convergencia dopaminérgica/opioide es indirecta: genes opioide (OPRM1/OPRD1/TAC1/POMC) + genes estructurales (COL9A1/PTN) + genes neurales (NCAM1/DRD2).",
+    "alternative_model": "La señal en FM podria ser: (1) Eje opioide/neuropéptido como vía directa de señalización, (2) COL9A1/PTN contribuyendo a través de integridad estructural/matriz extracelular, (3) Ambos mecanismos operando en paralelo pero no convergiendo en el mismo módulo STRING."
   },
   "falsification_result": "PARTIALLY_FALSIFIED",
   "verdict": "DECONVOLUTION",
   "falsification_detail": "COL9A1 and PTN are NOT in the opioid module. ORA enrichment is driven by opioid/neuropeptide genes, not by COL9A1/PTN. The dopaminergic/opioid convergence hypothesis requires refinement.",
-  "verdict_detail": "Deconvolucion completa: ORA positivo (p=1.29e-07), STRING muestra que COL9A1/PTN estan fuera del modulo opioide. Hip\u00f3tesis de convergencia requiere refinamiento \u2014 mecanismos paralelos, no convergencia directa.",
+  "verdict_detail": "Deconvolucion completa: ORA positivo (p=1.29e-07), STRING muestra que COL9A1/PTN estan fuera del modulo opioide. Hipótesis de convergencia requiere refinamiento — mecanismos paralelos, no convergencia directa.",
   "next_steps": [
     "Documentar deconvolucion en preprint v2.12",
     "Analizar si COL9A1/PTN tienen conexion indirecta con opioides a traves de segundos vecinos",
     "Explorar dataset GSE67311 (expr) para validar si COL9A1/PTN tienen expresion correlacionada con genes opioide en PBMCs FM",
     "Considerar pathways analysis con GNN sobre grafo completo (no solo high-confidence)"
   ],
-  "spec_hash": "sha256:40b1a560af27aae0976b4f95d6bbeeec6f39f8e8b99f07e2749cde1653b77012"
+  "spec_hash": "sha256:8dd02e08c888c8c40914f999b2aced523c948c0d80046cb1a95c8743ff051da0",
+  "result_hash": "sha256:8dd02e08c888c8c40914f999b2aced523c948c0d80046cb1a95c8743ff051da0",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

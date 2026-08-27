@@ -75,5 +75,7 @@
     "4 hypotheses tested; 2 survived matched control, 2 falsified as artifacts"
   ],
   "reproduce": "scipy mannwhitneyu/wilcoxon/binomtest; controls seed=42; UniProt P35372 refetched at runtime",
-  "spec_hash": "sha256:35f456a1eb19b01dfe382a347494dec03c4dfca571daf1d918b9cbcce3557125"
+  "spec_hash": "sha256:57a740539bd5869046e7f6520bfdd91ccc2d7ee142f389698fea4385b3635de3",
+  "result_hash": "sha256:57a740539bd5869046e7f6520bfdd91ccc2d7ee142f389698fea4385b3635de3",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

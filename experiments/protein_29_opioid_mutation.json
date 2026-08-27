@@ -17,10 +17,10 @@
   "metrics": {
     "wt_energy": -1438.28,
     "floor_113_A113A_energy": -1438.28,
-    "floor_113_ddg": 0.000,
+    "floor_113_ddg": 0.0,
     "mutant_AR113F_energy": -1366.97,
-    "ddg_raw": 71.310,
-    "ddg_corrected": 71.310,
+    "ddg_raw": 71.31,
+    "ddg_corrected": 71.31,
     "ddg_corrected_note": "ddg_raw - floor_113; floor_113 = 0.000 (self-mutacion A113A bien portada), asi que corregido == crudo",
     "steric_rule_condition": "WT in {A,G,S,T} AND MT in {F,W,Y,R,K} AND burial>=median(14)",
     "steric_rule_fires": true,
@@ -52,5 +52,8 @@
     "ddg": 71.31,
     "metodo": "EvoEF2 ddG (BuildMutant+ComputeStability), oprm1_R_Repair.pdb, WT=-1438.28"
   },
-  "status": "completed"
+  "status": "completed",
+  "spec_hash": "sha256:f895e8fb0d31af1aab4fd878ff40d5b512163d1cecd0a7a9993cbb183550d487",
+  "result_hash": "sha256:f895e8fb0d31af1aab4fd878ff40d5b512163d1cecd0a7a9993cbb183550d487",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

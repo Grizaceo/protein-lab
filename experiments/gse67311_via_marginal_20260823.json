@@ -5,15 +5,60 @@
   "fuente": "/home/gris/.hermes/workspace/ACTIVE/protein-lab/investigacion-fibromialgia/datos/GSE67311_DEGs_all_named.csv",
   "nota_fuente": "Tabla DEG real del dataset GSE67311 (whole blood, GPL11532, 33,297 probes con gene_symbol; t-test + BH, generada 2026-05-13). FC = 2^log2FC; FC > 1 = UP en FM. Complementada con el informe VALIDACION_GSE67311_NEGATIVA.md (2026-08-03) y RESULTADOS_DEGs_GSE67311.md (2026-05-13).",
   "genes_linea_opioide_chequeados_en_GSE67311": [
-    {"gen": "TAC1", "gse221921": "FC=2.10, p=0.0002", "gse67311": "FC=1.004, p=0.495, Bonf=1.0, d=+0.038", "reproduce": false},
-    {"gen": "OPRM1", "gse221921": "FC=2.28, p<0.0001", "gse67311": "FC=1.020, p=0.160, Bonf=0.80, d=+0.222", "reproduce": false},
-    {"gen": "OPRK1", "gse221921": "FC=1.78", "gse67311": "FC=1.021, p=0.878, Bonf=1.0, d=+0.191", "reproduce": false},
-    {"gen": "TACR1", "gse221921": "FC=2.73, d=+0.60", "gse67311": "FC=1.008, p=0.480, Bonf=1.0, d=+0.050", "reproduce": false},
-    {"gen": "PENK", "gse221921": "FC=1.38, p=0.0031", "gse67311": "FC=1.038, p=0.031, Bonf=0.155, d=+0.317", "reproduce": "trend, no sobrevive Bonf"},
-    {"gen": "PCSK1N", "gse221921": "FC=0.76 (DOWN)", "gse67311": "FC=1.041 (UP), p=0.045", "reproduce": "invierte direccion"},
-    {"gen": "LGALS3BP", "gse221921": "FC=0.75 (DOWN)", "gse67311": "FC=0.956 (DOWN), NS", "reproduce": "direccion consistente, NS"},
-    {"gen": "IL6", "gse221921": "FC=1.66, p=0.0002", "gse67311": "FC=1.023, p=0.524, NS", "reproduce": false},
-    {"gen": "MDH1", "gse221921": "FC=0.86, NS", "gse67311": "FC=0.985, NS", "reproduce": "NS en ambos"}
+    {
+      "gen": "TAC1",
+      "gse221921": "FC=2.10, p=0.0002",
+      "gse67311": "FC=1.004, p=0.495, Bonf=1.0, d=+0.038",
+      "reproduce": false
+    },
+    {
+      "gen": "OPRM1",
+      "gse221921": "FC=2.28, p<0.0001",
+      "gse67311": "FC=1.020, p=0.160, Bonf=0.80, d=+0.222",
+      "reproduce": false
+    },
+    {
+      "gen": "OPRK1",
+      "gse221921": "FC=1.78",
+      "gse67311": "FC=1.021, p=0.878, Bonf=1.0, d=+0.191",
+      "reproduce": false
+    },
+    {
+      "gen": "TACR1",
+      "gse221921": "FC=2.73, d=+0.60",
+      "gse67311": "FC=1.008, p=0.480, Bonf=1.0, d=+0.050",
+      "reproduce": false
+    },
+    {
+      "gen": "PENK",
+      "gse221921": "FC=1.38, p=0.0031",
+      "gse67311": "FC=1.038, p=0.031, Bonf=0.155, d=+0.317",
+      "reproduce": "trend, no sobrevive Bonf"
+    },
+    {
+      "gen": "PCSK1N",
+      "gse221921": "FC=0.76 (DOWN)",
+      "gse67311": "FC=1.041 (UP), p=0.045",
+      "reproduce": "invierte direccion"
+    },
+    {
+      "gen": "LGALS3BP",
+      "gse221921": "FC=0.75 (DOWN)",
+      "gse67311": "FC=0.956 (DOWN), NS",
+      "reproduce": "direccion consistente, NS"
+    },
+    {
+      "gen": "IL6",
+      "gse221921": "FC=1.66, p=0.0002",
+      "gse67311": "FC=1.023, p=0.524, NS",
+      "reproduce": false
+    },
+    {
+      "gen": "MDH1",
+      "gse221921": "FC=0.86, NS",
+      "gse67311": "FC=0.985, NS",
+      "reproduce": "NS en ambos"
+    }
   ],
   "colga1": null,
   "col9a1": {
@@ -49,5 +94,8 @@
     "GSE67311 es whole blood y GSE221921 es PBMC: el colapso FC puede ser de compartimento/sensibilidad (documentado en VALIDACION_GSE67311_NEGATIVA.md item C: la deconvolucion mostro composicion celular identica FM vs HC, no explicada por dilucion neutrofilica)",
     "La tabla all_named usa probes Affymetrix (gene_id + gene_symbol); FC calculado como 2^log2FC",
     "No existe otra tabla DEG de GSE67311 con FC/proteina fuera de los CSV listados (all, significant, FDR5) — verificado por busqueda en disco"
-  ]
+  ],
+  "spec_hash": "sha256:7f1ce2637356723442d1a5593ae16b81ad45505a4105cadbd2e5c14b3c5cc106",
+  "result_hash": "sha256:7f1ce2637356723442d1a5593ae16b81ad45505a4105cadbd2e5c14b3c5cc106",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

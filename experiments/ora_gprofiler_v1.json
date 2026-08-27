@@ -344,7 +344,9 @@
     "GO:MF": 12,
     "WP": 1
   },
-  "falsification_detail": "ORA no falsifica la hip\u00f3tesis (enriquecimiento encontrado en pathways de neuropeptidos/opioides, p=1.29e-07)",
-  "verdict_detail": "Gene set UKB causal enriquecido en neuropeptide signaling (GO:BP p=1.29e-07, 8 genes), opioid receptor signaling (GO:BP p=1.58e-05, 4 genes), y neuroactive ligand-receptor interaction (KEGG p=3.97e-06, 11 genes). Validaci\u00f3n externa independiente de base biol\u00f3gica del gene set. NO prueba funcionalidad en PBMC.",
-  "spec_hash": "sha256:735a96f67b95ed1561fe8dab200e8dbb1fecc8afdd57345eb57f4b367220bedc"
+  "falsification_detail": "ORA no falsifica la hipótesis (enriquecimiento encontrado en pathways de neuropeptidos/opioides, p=1.29e-07)",
+  "verdict_detail": "Gene set UKB causal enriquecido en neuropeptide signaling (GO:BP p=1.29e-07, 8 genes), opioid receptor signaling (GO:BP p=1.58e-05, 4 genes), y neuroactive ligand-receptor interaction (KEGG p=3.97e-06, 11 genes). Validación externa independiente de base biológica del gene set. NO prueba funcionalidad en PBMC.",
+  "spec_hash": "sha256:3e1ea413a7d7cdbb9ad9de647018e5fbc27f3926d5a17f20cf8b35b750432898",
+  "result_hash": "sha256:3e1ea413a7d7cdbb9ad9de647018e5fbc27f3926d5a17f20cf8b35b750432898",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

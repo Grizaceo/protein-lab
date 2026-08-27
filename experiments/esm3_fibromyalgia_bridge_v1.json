@@ -3,7 +3,6 @@
   "lab": "protein-lab",
   "domain": "protein",
   "timestamp": "2026-08-24T17:17:23.498858",
-  "spec_hash": "sha256:0a4ab8e8c064472eced730a464db2ea136c0131f80a7769b4ff43c18ef6511bf",
   "status": "FALSIFIED",
   "hypothesis": "ESM3 can generate OPRM1 variants that fold and bind better than random mutagenesis at equal Hamming distance. Separately (and NOT tested here): whether the opioid module is causally relevant to fibromyalgia.",
   "evidence_chain": {
@@ -84,11 +83,13 @@
     "provenance": "FAIL (declared) — sources_independently_verified=false, external corroboration pending",
     "audited_by": "@hyle (axis), @CRITICO (consumer, provenance). Not self-assessed."
   },
-  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself",
   "fm_framing": {
     "status": "REMOVED",
     "reason": "string_indirect_path_opioid_ecm_v1 (pre-registered, N=1000) falsified the parallel-pathway hypothesis: p_near=1.0000, and the modules are significantly FARTHER apart than chance (p_far=0.00100).",
     "evidence": "sha256:614ef9cd1d7db4f6a5fa4b7353a2a088920e84d0ce2477efea2907b96f625cf0",
     "consequence": "ESM3 on OPRM1 is now scoped strictly as: does a generative protein model beat Hamming-matched random mutagenesis on ddG and docking? No fibromyalgia claim attaches to it."
-  }
+  },
+  "spec_hash": "sha256:158c0e4a08bb9a59a2a6d964fee7727d12f3fe0376ab14502b40af18310c94ed",
+  "result_hash": "sha256:158c0e4a08bb9a59a2a6d964fee7727d12f3fe0376ab14502b40af18310c94ed",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

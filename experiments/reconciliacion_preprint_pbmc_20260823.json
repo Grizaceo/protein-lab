@@ -34,5 +34,8 @@
     "discrepancia_vif_v212_vs_audit": true,
     "detalle": "v2.12 dice \"VIF median 2.7, max 13.1\"; AUDIT_FALSIFICATION_METHODS.md (seccion 2.7, 2026-08-15) documenta que el VIF real es T_cells_CD8=27.8, NK_cells=27.2, Mast_cells=21.2, Basophils=13.6, y que \"13.1\" era el valor reportado ANTES de la correccion. El script vif_sensitivity_opioid_axis.py (15-ago) coincide con el audit. El preprint v2.12 conserva el valor superado (13.1) y suprime la recuperacion ortogonal (27 menciones VIF v2.11 -> 1 en v2.12; \"orthogonal\" 19 -> 1).",
     "veredicto_integridad": "INCONSISTENCIA DE MANUSCRITO CONFIRMADA: el max VIF del preprint (13.1) contradice el artefacto fuente (27.8). No es supresion de seccion completa, pero si numero obsoleto + perdida del matiz ortogonal documentado. Recomendado: corregir a 27.8 y reintroducir matiz VIF en v2.13 (mismo lenguaje que el audit: \"la colinealidad no inventaba el efecto, lo enmascaraba\")."
-  }
+  },
+  "spec_hash": "sha256:657d3bdfe5579f25f0b19dc5f85c08ba2f08827fc9109ad5419c943b7e3b38b3",
+  "result_hash": "sha256:657d3bdfe5579f25f0b19dc5f85c08ba2f08827fc9109ad5419c943b7e3b38b3",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

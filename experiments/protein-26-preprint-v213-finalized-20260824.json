@@ -46,5 +46,8 @@
     "Updated abstract to reference E-value LOO/outlier extension"
   ],
   "audit": "CRITICO audit from protein-25 applies (all LOO E-values >= 5.0, internally consistent: LOO min coincides with outlier-removed value). New §3.4.7 numbers match e01/e02/e03/e04 JSON files. No fabrication.",
-  "status": "completed"
+  "status": "completed",
+  "spec_hash": "sha256:cd6bc38f31b7f5237109dd21393d26809543ea37005c058f462e87d1bb03e9ad",
+  "result_hash": "sha256:cd6bc38f31b7f5237109dd21393d26809543ea37005c058f462e87d1bb03e9ad",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

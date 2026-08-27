@@ -23,5 +23,8 @@
   "output_artifacts": [
     "experiments/protein-27-evalue-loo-outlier-sensitivity-ptn-20260825.json"
   ],
-  "status": "completed"
+  "status": "completed",
+  "spec_hash": "sha256:b333250c2379cd439bca9854b624849397ae974a44b0fcc1e78aade046c3e85b",
+  "result_hash": "sha256:b333250c2379cd439bca9854b624849397ae974a44b0fcc1e78aade046c3e85b",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

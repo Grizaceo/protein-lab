@@ -3,7 +3,6 @@
   "lab": "protein-lab",
   "domain": "protein",
   "timestamp": "2026-08-23T18:13:54.214030",
-  "spec_hash": "sha256:ad89cef410381bbbc555cd0ac0262ce6e6b3680236c2d5c309b342cb98848ec5",
   "description": "Brazo de control para ESM3 guided generation. 300 secuencias: 100 shuffled (misma composición), 100 uniform (aleatoria), 100 mutated (70% identidad).",
   "target_protein": "OPRM1 (P35372, 400 aa)",
   "control_sequences": {
@@ -2651,5 +2650,7 @@
     "length": 400,
     "sha256": "4d0c1ae8d9c6ecf5ffef01bd5a16f859dac3ae273225407783296131c695c1fd"
   },
-  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself"
+  "spec_hash": "sha256:f0ceea1398ae9a9bf18df0becab0221492e942ffdcfac23d9bc7a07b6d168350",
+  "result_hash": "sha256:f0ceea1398ae9a9bf18df0becab0221492e942ffdcfac23d9bc7a07b6d168350",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

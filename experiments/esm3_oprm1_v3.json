@@ -167,7 +167,6 @@
   "timestamp_gates_applied": "2026-08-24T03:55:11.110399",
   "status": "SPEC_V3_READY_PENDING_COLAB",
   "status_notes": "Spec is falsable and has passed protein-lab-v1 rubric (4 gates). Execution blocked on Colab (browser automation down). Once @user opens Colab, ~15 min to generate 20 variants.",
-  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself",
   "defect_corrected_v3": {
     "was": "target_protein.sequence was 'GPNNGYLTWHLRSIIFSLPSVNGAMALMFKWGGLSSFVSGQVYKSIGPIT...' (53 chars) — the first 50 residues of control_sequences.shuffled[0] plus a literal ellipsis, NOT OPRM1",
     "now": "full 400aa UniProt P35372, sha256 4d0c1ae8d9c6ecf5",
@@ -182,7 +181,6 @@
   },
   "natural_friction": "El target declarado era un control shuffled truncado a 53 chars; se veia como una secuencia valida. Los controles estaban bien.",
   "timestamp_v3_target_fix": "2026-08-24T18:00:25.065534",
-  "spec_hash": "sha256:03ffca48859cb59c8eb8780a3e49ef67e248a775a6138b0f407300f670f4b5ec",
   "external_referents_verified": {
     "verification_method": "Each identifier resolved against its own registry via urllib inside execute_code: data.rcsb.org/rest/v1/core/{entry,polymer_entity} for PDB, search.rcsb.org for UniProt->PDB mapping, rest.uniprot.org for sequences. Organism, length and accession read from the response, never from our own file.",
     "gate": "external_referent_verified (proposed by @CRITICO)",
@@ -277,5 +275,8 @@
     "second_defect": "mutated_70pct declared 'same composition'; measured mean L1 deviation = 71.1 -> description corrected and a true composition-matched arm added",
     "third_defect": "identity_range 70-95% vs 70-90% -> fixed to 70-90%",
     "generalised_lesson": "declared_vs_actual is local and passes when an internally consistent field points at the wrong external object. external_referent_verified is the gate that catches it, and it needs a network call, not a diff."
-  }
+  },
+  "spec_hash": "sha256:0b4129db219b7fb82c40dba8685b6b7ec33dff2d963babf7cd2c76a2beb99fc3",
+  "result_hash": "sha256:0b4129db219b7fb82c40dba8685b6b7ec33dff2d963babf7cd2c76a2beb99fc3",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

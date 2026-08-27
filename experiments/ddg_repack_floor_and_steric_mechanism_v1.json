@@ -196,7 +196,6 @@
     "G5_external_referent_verified": "NOT_APPLICABLE - no external identifier introduced; parent spec's 8EFO already verified",
     "G6_control_arm_declares_what_it_matches": "PASS - self-mutation arm's invariant (mt==wt) verified for all 133"
   },
-  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING result_hash AND hash_method themselves",
   "corrected_conclusion": {
     "esm3_vs_random": {
       "firing_rate_small_to_bulky": {
@@ -231,5 +230,7 @@
       }
     ]
   },
-  "result_hash": "sha256:e55e4d7e39075d19ffb9e54788b07dc6138ff8509d0ae7595246478b1e825df7"
+  "spec_hash": "sha256:e55e4d7e39075d19ffb9e54788b07dc6138ff8509d0ae7595246478b1e825df7",
+  "result_hash": "sha256:e55e4d7e39075d19ffb9e54788b07dc6138ff8509d0ae7595246478b1e825df7",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }

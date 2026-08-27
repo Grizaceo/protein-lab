@@ -45,6 +45,7 @@
     "mean_path_length": "reported in preprint v2.13 section 4.9",
     "bridging_nodes": "candidate targets for the next STRING/expression query"
   },
-  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself",
-  "spec_hash": "sha256:30e6bcfe4c4b98c3501387d87367f0f817ad3fc4a71bdb0316019fbebf724ada"
+  "spec_hash": "sha256:db079b17ad7e0388a10d832195df50619e24ac2a5451c5f3abde9bd51f09438a",
+  "result_hash": "sha256:db079b17ad7e0388a10d832195df50619e24ac2a5451c5f3abde9bd51f09438a",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING spec_hash, result_hash AND hash_method themselves"
 }
