@@ -1,0 +1,52 @@
+{
+  "experiment_id": "ddg_foldx_3arm_v1",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "status": "SPEC_REGISTERED_PRE_EXECUTION",
+  "timestamp_utc": "2026-08-27T08:17:26Z",
+  "type": "CONFIRMATORY_RE_RANK_FLEXIBLE_SIDECHAIN",
+  "question": "Does the EvoEF2 fixed-backbone verdict (BLOSUM62 argmax > ESM3 > paired random on ddG) survive a flexible-side-chain force field (FoldX 5.1) on the same positions and arms?",
+  "parent_experiments": ["ddg_evoef2_3arm_v1", "foldx5_smoke_test_oprm1_v1"],
+  "design": {
+    "structure": "oprm1_R.pdb chain R (8EFO lineage), RepairPDB per FoldX protocol",
+    "arms": ["esm3", "blosum62 (argmax)", "matched (paired random)"],
+    "mutations_per_arm": 240,
+    "lists_reused_from": "ddg_work/list_{esm3,blosum62,matched}.txt (byte-identical arm design, position-matched, 720/720 lines validated against repaired PDB: WT residue and chain R correct at every position)",
+    "positions_unique": 133,
+    "tool": "FoldX 5.1 foldx_1_20270131.exe sha256 a5d18d39fef02fdf86ccd7eead8644fb9c2965a70d7d087c1823ca9adff0e844",
+    "numberOfRuns": 1
+  },
+  "pre_registered_statistics": {
+    "n_effective": 133,
+    "note": "720 rows collapse to 133 unique (position,wt) triples via last-occurrence rule (dict overwrite in analyze_ddg_foldx_3arm.py). Positions with multiple lines are NOT redundant computations: they carry multiple DISTINCT mutation suggestions at the same position (esm3: 29 positions, matched: 70; blosum62 argmax: 0). The paired test compares each method's suggested mutation ddG at each position. All tests use n=133.",
+    "primary_test": "two-sided paired Wilcoxon signed-rank on position-matched arms, alpha=0.05",
+    "primary_comparison": "ESM3 vs BLOSUM62 (the EvoEF2 verdict axis)",
+    "secondary_comparisons": ["ESM3 vs matched random", "BLOSUM62 vs matched random"],
+    "robustness": "repeat all tests with |ddG|<=10 kcal/mol trimming (pre-registered, mirrors EvoEF2 analysis)",
+    "multiple_comparisons": "Holm correction across the 3 paired comparisons",
+    "foldx_noise_floor": "self-mutation floor measured in smoke test: mean -0.0112, max |ddG| 0.0509 (5 self-mutations); medians below 0.05 kcal/mol are indistinguishable from FoldX self-repack noise"
+  },
+  "falsification_criteria": {
+    "hypothesis_H1_confirms_evoef2": "ESM3 does not beat BLOSUM62 under FoldX either (paired Wilcoxon n=133 p>0.05 in ESM3's favor) -> the EvoEF2 negative verdict is force-field-robust on the flexible-side-chain axis; strengthens CIERRE.",
+    "hypothesis_H2_reversal": "ESM3 beats BLOSUM62 under FoldX (p<0.05, rank-biserial r>0.3) -> the EvoEF2 verdict was an artifact of fixed-backbone scoring; the line re-opens as PIVOTE with a real finding.",
+    "hypothesis_H3_inconclusive": "sign flip without significance or floor-confounded medians -> declared INCONCLUSIVE, no narrative either way."
+  },
+  "kill_criteria": [
+    "If >20% of mutations in any arm fail to produce a ddG value, stop and report coverage defect before any statistics.",
+    "If any self-mutation control in this battery returns |ddG|>0.5 kcal/mol, flag FoldX state inconsistency and re-validate the tool before interpreting.",
+    "Optional stopping PROHIBITED: full 240-per-arm run completes before any test is computed."
+  ],
+  "what_this_experiment_CANNOT_conclude": [
+    "Nothing about fibromyalgia (framing removed in parent line).",
+    "Nothing about OPRM1 as a drug target.",
+    "Nothing about binding affinity (Vina remains conditional on a positive ddG result).",
+    "FoldX ddG absolute values are not comparable to EvoEF2 absolute values; only paired rank/statistics within FoldX.",
+    "This is not experimental ddG; both force fields are approximations."
+  ],
+  "run_by": "ichor",
+  "execution": {
+    "workdirs": "/mnt/c/temp/foldx5/battery_foldx_<arm>/",
+    "wrapper": "protein-lab/tools/foldx5/run_foldx_ddg.sh (validated on 3 runs, deterministic)",
+    "outputs": "ddg.tsv per arm + full logs, copied to experiments/ddg_foldx_work/ on completion"
+  }
+}

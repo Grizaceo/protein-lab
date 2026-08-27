@@ -1,0 +1,125 @@
+{
+  "rubric_id": "protein-lab-v1",
+  "domain": "protein",
+  "lab": "protein-lab",
+  "timestamp": "2025-08-23",
+  "description": "Rubrics for protein-lab experiments. Based on Tau Ceti (Lean FRO, 2026) binary-gate model: 4 blocking gates + 3 non-blocking rubrics.",
+  "goals_declared": {
+    "g_a": "Identify causal mechanisms of fibromyalgia via E-values, ORA, STRING deconvolution",
+    "g_b": "Develop falsifiable deconvolution methodology (E-values → ORA → STRING → ESM3 → GNN)",
+    "g_c": "Produce preprints for publication (bioRxiv, not medRxiv)",
+    "tension": "g_c pushes for over-interpretation; g_a demands caution. g_b sometimes competes: rigorous method requires declaring negative results."
+  },
+  "known_limitations": [
+    {
+      "id": "KL1",
+      "description": "ESM3 guided generation requires Colab (browser automation is down locally). The spec is ready but execution is blocked on @user opening Colab.",
+      "impact": "G2 can block ESM3 specs that declare consumers (FoldX, Vina) that are not yet executed."
+    },
+    {
+      "id": "KL2",
+      "description": "GNN architecture is designed but not trained. E-values declared as NOT_CONSUMED until training runs.",
+      "impact": "Under G2, e_value features must be declared NOT_CONSUMED until GNN executes."
+    },
+    "G1-G4 are all local: they read the artefact against itself. G5 is the first gate in this rubric that requires a network call, so it cannot run offline and it fails open if a registry is unreachable — that failure must be recorded as UNVERIFIED, never as PASS."
+  ],
+  "implementation_notes": {
+    "auditor_strategy": "Two options under discussion: (a) @CRITICO runs 4 sequential passes, one per gate; (b) labs cross-audit (each lab audits the gates of another lab, never their own). Tau Ceti uses parallel agents — we have one @CRITICO, so sequential is default.",
+    "human_override": "NOT IMPLEMENTED. Per Tau Ceti: humans write roadmaps and spot-check downstream, but do not rescue individual records. If a gate systematically blocks legitimate work, sharpen its block_when.",
+    "untrusted_author_input": "natural_friction and process_trace are written by the author — they are evidence, not ground truth. @CRITICO must verify them against the diff, not read them as declarations."
+  },
+  "rubric_hash": "sha256:eb5bdfb89e481e716342b74bd4eb0d2974299909aec815d8d33cbd5c719d1a2c",
+  "blocking_gates": [
+    {
+      "id": "G1_regime",
+      "type": "blocking",
+      "question": "¿En qué régimen vale el número titular, y está declarado?",
+      "description": "Every headline number must have its regime declared (magnitude range, identity threshold, statistical method).",
+      "not_your_concern": "If the regime itself is scientifically interesting, that is not your concern — only whether it is declared and matches the computation.",
+      "block_when": "Regime is missing, or declared regime does not match the computation.",
+      "protein_examples": {
+        "pass": "E-value 8.98: 'UKB, LOO, confounders epidemiológicos, 49 genes'",
+        "fail": "E-value 8.98 with no regime declared"
+      }
+    },
+    {
+      "id": "G2_consumer",
+      "type": "blocking",
+      "question": "¿Todo campo declarado tiene algo que lo consuma en el mismo registro?",
+      "description": "Every declared field must have a consumer: a decision, a calculation, a kill criterion. If nothing consumes it, declare it NOT_CONSUMED with reason.",
+      "not_your_concern": "Whether the consumer is scientifically valuable — only whether it exists.",
+      "block_when": "A field is declared but no consumer is named, and it is not marked NOT_CONSUMED.",
+      "protein_examples": {
+        "pass": "decision_contingent_on_estimate: NOT_CONSUMED (no lab decision depends on exact T-count)",
+        "fail": "decision_contingent_on_estimate: FORMALLY EMPTY (reads as rigor but is unfalsifiable)"
+      }
+    },
+    {
+      "id": "G3_axis",
+      "type": "blocking",
+      "question": "¿Las cifras y proyecciones viven en el mismo eje?",
+      "description": "If a result and a projection use different axes (logical vs physical qubits, fidelity vs width, breakdown vs discovery), they must not be conflated in the same table.",
+      "not_your_concern": "Which axis is the right one for the science — only whether they are mixed.",
+      "block_when": "A table mixes axes without explicit declaration, or a projection assumes progress on one axis to date progress on another.",
+      "protein_examples": {
+        "pass": "STRING combined_score (0-1) used for network weight; E-value used for node feature — different axes, not mixed",
+        "fail": "Using E-value as a continuous score AND as a binary threshold in the same analysis without declaring the axis switch"
+      }
+    },
+    {
+      "id": "G4_provenance",
+      "type": "blocking",
+      "question": "¿Las fuentes están verificadas independientemente del canal que las trajo?",
+      "description": "Every DOI/source must be resolvable via an independent method (Crossref API via urllib, not the same scraper that suggested it).",
+      "not_your_concern": "Whether the source is correct — only whether it was verified independently.",
+      "block_when": "A DOI is cited but cannot be resolved, or the same agent that suggested it also verified it.",
+      "protein_examples": {
+        "pass": "10.1126/science.ads0018 resolved via api.crossref.org/works/ by @nyx and @prisma independently",
+        "fail": "10.1126/science.ads0018 reported by @eidel via firecrawl, no independent resolution"
+      }
+    },
+    {
+      "id": "G5_external_referent_verified",
+      "proposed_by": "@CRITICO",
+      "adopted_by": "protein-lab, 2026-08-24",
+      "rule": "Every identifier that points at a resource outside this workspace — PDB ID, UniProt accession, DOI, dataset catalogue ID — must be resolved against that resource, and the returned object's organism, length, gene name and title checked against what the artefact claims about it.",
+      "block_when": "An external identifier is cited and either (a) was never resolved against its registry in this session, or (b) resolves to an object whose organism / length / accession differs from what the artefact declares.",
+      "why_declared_vs_actual_is_not_enough": "declared_vs_actual compares an artefact against itself. 'receptor_pdb: 6DDE' is a valid string, internally consistent with every other field, and points at a mouse receptor while the prompt is human. No local diff detects that. Only a network call to data.rcsb.org does.",
+      "evidence_of_value": "Caught on first application: 6DDE (Mus musculus P42866) was the docking receptor for variants of human P35372 through three prior audits. Same defect found in the TRPV1 panel (7L2P/5IRZ are Rattus norvegicus O35433).",
+      "cost": "one HTTP GET per identifier; seconds"
+    },
+    {
+      "id": "G6_control_arm_declares_what_it_matches",
+      "proposed_by": "@ichor",
+      "rule": "A control arm's stated invariant (composition, Hamming distance, length, degree) must be measured on the stored sequences and the measurement recorded in the artefact.",
+      "block_when": "An arm declares an invariant that the stored data does not satisfy.",
+      "evidence_of_value": "mutated_70pct declared 'same_as_OPRM1' composition; measured mean L1 deviation from P35372 composition = 71.1 (shuffled = 0.0). @CRITICO measured it, I had not. Fix: description corrected AND a genuine composition-matched arm added, which turns a fixed error into a deconvolution the experiment lacked.",
+      "cost": "a Counter and a subtraction"
+    }
+  ],
+  "non_blocking_rubrics": [
+    {
+      "id": "R1_robustness",
+      "type": "non-blocking",
+      "question": "¿Se barrió el espacio de parámetros, o se reporta un punto?",
+      "description": "If a result depends on a parameter (N, threshold, identity range), the parameter space must be swept or the sensitivity declared.",
+      "request_changes": "Report the sweep range, or state explicitly: 'single point, sensitivity not assessed'."
+    },
+    {
+      "id": "R2_friction",
+      "type": "non-blocking",
+      "question": "¿Lo difícil está señalado, o las 20 filas pesan igual?",
+      "description": "The reader must know what was difficult, where the pipeline almost failed, what was unexpected.",
+      "request_changes": "Add natural_friction field (≤100 chars): what was the hard part?"
+    },
+    {
+      "id": "R3_scope",
+      "type": "non-blocking",
+      "question": "¿Está en la línea declarada del lab?",
+      "description": "The experiment must fall within the declared scope of the protein-lab: fibromialgia in-silico, protein folding, free energy, deconvolución col9a1/ptn.",
+      "request_changes": "Declare scope explicitly if not obvious."
+    }
+  ],
+  "schema_version": "protein-lab-v1.2",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) computed over the full object EXCLUDING the hash field itself"
+}

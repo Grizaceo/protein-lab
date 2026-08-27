@@ -32,7 +32,7 @@
     "seed": 42,
     "rows_computed": 720,
     "unique_positions": 133,
-    "n_effective_note": "720 rows collapse to 133 unique (position,wt) triples. ddG depends only on (pos,wt,mut), so repeated positions across variants are redundant computations, NOT independent observations. All statistics use n=133.",
+    "n_effective_note": "720 rows collapse to 133 unique (position,wt) triples. Repeated positions across variants carry DISTINCT mutation suggestions, NOT redundant computations (esm3: 29 multi-mutation positions, matched: 70; blosum62 argmax: 0). Paired tests use n=133. Correction 2026-08-27 per CRITICO audit (original wording was false).",
     "arms_share_positions": true,
     "wt_residue_agreement_across_arms": "133/133",
     "wt_reference_energy": -1438.28
@@ -143,6 +143,11 @@
     "own volume-artifact hypothesis tested and falsified"
   ],
   "reproduce": "tools/EvoEF2 (MIT, g++); ddg_work/run_ddg.sh; lists seed=42; 8EF5 chain R repaired via RepairStructure; scipy wilcoxon/binomtest/spearmanr",
-  "content_hash": "sha256:fd40406283df2fa766bf058f99c9dea64cc1c67e9c87c59ef0b188e5982f1847",
-  "hash_note": "content_hash is sha256 of this document with the content_hash and hash_note keys ABSENT, sort_keys=True, indent=2, ensure_ascii=False. Verify by deleting both keys and rehashing."
+  "content_hash": "sha256:bec2ac347f01aa1f34b96c682b4bc31045bdaebaea2fb9fd7dd5c31b8544a024",
+  "hash_note": "content_hash is sha256 of this document with the content_hash and hash_note keys ABSENT, sort_keys=True, indent=2, ensure_ascii=False. Verify by deleting both keys and rehashing.",
+  "spec_hash": "sha256:e3b5d2c3426da6f24c74d0e41de3a065cf897c1a10ad5091e2eea5ccd6fb816b",
+  "result_hash": "sha256:e3b5d2c3426da6f24c74d0e41de3a065cf897c1a10ad5091e2eea5ccd6fb816b",
+  "hash_method": "sha256(json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False)) over the full object EXCLUDING content_hash. NOTE 2026-08-27: the previously stored content_hash never recomputed under the originally declared convention (broken since registration, registration script hashed an intermediate object); it is retained in content_hash_superseded. Git commit 190ffa66 preserves the pre-correction state.",
+  "content_hash_superseded": "sha256:fd40406283df2fa766bf058f99c9dea64cc1c67e9c87c59ef0b188e5982f1847",
+  "provenance_note": "2026-08-27 CRITICO audit of the FoldX re-run flagged this parent artifact: (1) 'redundant computations' wording was false — repeated positions carry distinct mutations (esm3: 29, matched: 70); note corrected in place. (2) content_hash recomputed under the simplified convention. Also: spec_hash and result_hash were recorded with IDENTICAL values at registration (registration bug) and the EvoEF2 SPEC JSON was not retained on disk — treat both as legacy/unverifiable. Verdict text and statistics of this experiment are unchanged."
 }
