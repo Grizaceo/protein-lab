@@ -1,0 +1,17 @@
+# COL9A1 vía GSE221921 — Veredicto de deconvolución
+
+**Fecha:** 2026-08-27
+**Registro validado:** `experiments/col9a1_via_GSE221921_20260823.json` (validado con `json.load`; commiteado en `190ffa6` — "chore: backfill experiment artifacts v2.13")
+**Experimento:** `cross-check funcional via marginal COL9A1->NCAM1->DRD2 vs DEGs GSE221921 (PBMC, 96 FM vs 93 CTRL)`
+**Tabla fuente real:** `investigacion-fibromialgia/analisis/E7_sensitivity_master_GSE221921.csv` (6581 genes; FC = FM/HC; FDR_BH recalculada sobre p_Welch)
+
+## Veredicto
+
+La evidencia de este registro **no alcanza para afirmar que COL9A1 sea robusto frente a PTN, y se dice explícitamente**: el archivo valida presencia y significación de genes en la tabla DEG de GSE221921, no re-ejecuta la deconvolución (no contiene ninguna métrica ajustada por composición celular tipo `p_full_adj` ni fracciones celulares), por lo que un veredicto de robustez de la deconvolución a partir de él sería un exceso. Lo que el archivo sí muestra, con sus valores literales: COL9A1 sale fuerte en este cross-check (`fc=2.32`, `p=1e-08`, `fdr_bh=8.2e-06`, `d_cohen=0.88`, `direccion="UP en FM"`), pero **PTN no es marginal aquí** — es tan significativo o más (`fc=2.91`, `p=4.9e-05`, `fdr_bh=0.0022`, `d_cohen=0.61`), de modo que este dataset no discrimina a favor de COL9A1 sobre PTN; DRD2 acompaña fuerte (`fc=2.663`, `p=3.7e-06`, `fdr_bh=0.00048`) y el eslabón débil de la vía es NCAM1 (`fc=1.353`, `p=0.0277`, `fdr_bh=0.086`, `d_cohen=0.32` — **no sobrevive FDR 5%**, señal nominal, en su propio JSON `limitaciones`). El `veredicto` del propio JSON coincide: la vía marginal "NO queda falsificada" y tiene "apoyo transcriptomico parcial (COL9A1 y DRD2 fuertes, NCAM1 debil nominal)". A esto se suman dos limitaciones registradas que impiden lectura fuerte: los 3 CSV `_named_` de GSE221921 no existían en disco y se usó la tabla maestra E7 (con un gen de `p=0` exacta, probable test degenerado), y NPY/MLN no son evaluables al estar ausentes de la tabla. En resumen: COL9A1 no es ruido y la vía marginal conserva apoyo parcial en GSE221921, pero este registro **no prueba robustez de COL9A1 sobre PTN ni valida la deconvolución en sí** — para eso falta replicar el ajuste composicional (modelo E1b) sobre estas cifras.
+
+## Trazabilidad de campos citados (todos literales de `col9a1_via_GSE221921_20260823.json`)
+
+- **De `genes`:** `COL9A1` (`fc=2.32`, `p=1e-08`, `fdr_bh=8.2e-06`, `d_cohen=0.88`, `direccion="UP en FM"`, `nota="presente y muy significativo"`); `NCAM1` (`fc=1.353`, `p=0.0277`, `fdr_bh=0.086`, `d_cohen=0.32`, `nota="presente, p nominal < 0.05 pero NO sobrevive FDR 5%; rank 2111/6581"`); `DRD2` (`fc=2.663`, `p=3.7e-06`, `fdr_bh=0.00048`, `d_cohen=0.7`); `PTN` (`fc=2.91`, `p=4.9e-05`, `fdr_bh=0.0022`, `d_cohen=0.61`).
+- **De `limitaciones`:** ítem 0 (los 3 CSV `_named_` no existían; se usó `E7_sensitivity_master` con FC = FM_mean/HC_mean de FPKM), ítem 1 (FDR recalculada BH; un gen con `p=0` exacta, probable test degenerado), ítem 2 (NCAM1 FDR=0.086, señal nominal solo), ítem 3 (NPY y MLN ausentes, no evaluables).
+- **De `veredicto`:** "NO queda falsificada", "apoyo transcriptomico parcial (COL9A1 y DRD2 fuertes, NCAM1 debil nominal)".
+- **De `nota_fuente`:** origen de la tabla real y definición FC = FM/HC.
