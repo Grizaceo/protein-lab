@@ -1,0 +1,45 @@
+{
+  "experiment_id": "ichor-gaia-dr3-cygnus-x-match",
+  "domain": "protein",
+  "timestamp": "2026-08-21T22:21:54.244980",
+  "action": "Gaia DR3 query for ZTF candidate 730110400006924 (RA 314.87, Dec +41.00)",
+  "input_artifacts": [
+    "/home/gris/.hermes/workspace/ACTIVE/astronomy-lab/experiments/cygnus_anomaly_v1.json"
+  ],
+  "output_artifacts": [],
+  "candidate_coordinates": {
+    "RA": 314.87,
+    "dec": 41.0,
+    "ztf_object_id": "730110400006924",
+    "ztf_mag_range": 8.649,
+    "ztf_skew": -6.7606,
+    "ztf_n_detections": 58,
+    "ztf_filter": "g"
+  },
+  "gaia_dr3_match": {
+    "brightest_counterpart": {
+      "source_id": 1873436941790810624,
+      "ra": 314.8679443594694,
+      "dec": 40.96023164286826,
+      "g_mag": 6.7149506,
+      "bp_mag": 7.237884,
+      "rp_mag": 6.0344586,
+      "parallax_mas": 5.06303077317198,
+      "radial_velocity_kms": -31.179466,
+      "bp_rp_color": 1.2034254,
+      "angular_distance_arcmin": 2.43
+    },
+    "second_brightest": {
+      "source_id": 1873437762121506560,
+      "g_mag": 13.326232,
+      "bp_rp_color": 1.5873957,
+      "parallax_mas": 1.2979428662753605,
+      "angular_distance_arcmin": 2.68
+    },
+    "interpretation": "Bright G=6.71 star (A/F-type based on BP-RP=1.20) at 2.4 arcmin from candidate. If same object, the ZTF mag_range=8.6 in g-band implies variability of ~6 magnitudes from Gaia G-band, which is physically implausible for a normal star. Candidate is likely a spurious detection near a bright star (cross-match error, scattered light, or cosmic ray artifact). No Gaia object within 1 arcmin with mag consistent with ZTF range (13-22)."
+  },
+  "recommendation": "DISCARD candidate 730110400006924 as likely artifact. Move to next candidate in cygnus_x top-5.",
+  "spec_hash": "sha256:ichor-gaia-dr3-cygnus-match-20260822",
+  "status": "completed",
+  "deliverable": "Gaia DR3 cross-match for @nyx astronomy-lab"
+}

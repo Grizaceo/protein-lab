@@ -1,0 +1,40 @@
+{
+  "experiment_id": "ichor-protein-prepint-v24-sensitivity-section",
+  "domain": "protein",
+  "timestamp": "2026-08-21T21:31:41.480394",
+  "action": "Added Sensitivity Analysis section (E-values) to preprint v2.10",
+  "version_clarification": "Preprint is v2.10 (line 009 of numbered md). File name 'preprint_v24' is internal naming that does NOT match manuscript versioning.",
+  "input_artifacts": [
+    "analisis/falsificacion/e01_evalue_results.json",
+    "analisis/falsificacion/e02_evalue_ptn_results.json",
+    "analisis/E1b_deconvolution_col9a1_ptn.csv"
+  ],
+  "output_artifacts": [
+    "investigacion-fibromialgia/preprint_dopaminergic_convergence_FM_numbered.md"
+  ],
+  "metrics": {
+    "genes_analyzed": 2,
+    "COL9A1_E_value": 8.98,
+    "PTN_E_value": 6.86,
+    "robustness_verdict": "HIGH"
+  },
+  "spec_hash": "sha256:ichor-preprint-v24-sensitivity-20260821",
+  "status": "completed",
+  "deliverable": "Section 4.2b inserted into preprint markdown before \u00a74.3",
+  "extension_2026_08_24": {
+    "action": "Extended \u00a73.4.7 (renamed from 4.2b) with LOO + outlier sensitivity for COL9A1 E-value; bumped manuscript to v2.13",
+    "new_metrics": {
+      "COL9A1_evalue_loo_min": 8.7403,
+      "COL9A1_evalue_loo_max": 9.5469,
+      "COL9A1_evalue_loo_mean": 8.9949,
+      "COL9A1_evalue_loo_std": 0.2175,
+      "COL9A1_most_influential_index": 35,
+      "COL9A1_most_influential_value": 3.9272,
+      "COL9A1_evalue_outlier_without": 8.7403
+    },
+    "verdict": "ROBUSTO \u2014 all 96 LOO E-values >= 5.0",
+    "run_store_record": "experiments/protein-25-evalue-loo-outlier-sensitivity-20260824.json",
+    "repro_script": "investigacion-fibromialgia/scripts/e03_e04_evalue_loo_outlier.py",
+    "gates_passed": ["G1_regime", "G2_consumer", "G3_axis", "G4_provenance"]
+  }
+}

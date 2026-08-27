@@ -335,9 +335,9 @@
 335: 
 336: PTN's E-value (6.86; lower bound 3.76) is somewhat lower than COL9A1's but still above the "substantial confounding" threshold (E-value > 3.0) even on the conservative bound. PTN is therefore also robust to moderate-to-substantial unmeasured confounding, though the margin is narrower than COL9A1's.
 337: 
-**Leave-one-out (LOO) sensitivity (2026-08-24 for COL9A1; 2026-08-25 for PTN).** To test whether the E-value is driven by a single influential sample, we recomputed it 96 times, leaving out one FM patient each iteration. **COL9A1:** E-values in [8.74, 9.55], all ≥ 5.0 (mean 8.995, std 0.218). No single FM sample drives the COL9A1 E-value — the result is structurally robust to individual outliers. **PTN:** E-values in [6.65, 7.07], all ≥ 5.0 (mean 6.878, std 0.133). No single FM sample drives the PTN E-value either.
-
-**Outlier sensitivity (2026-08-24 for COL9A1; 2026-08-25 for PTN).** Removing the most influential outlier (FM index 35) changes COL9A1 E-value from 8.98 to 8.74 (value 3.93) and PTN E-value from 6.86 to 6.69 (value 3.02) — both negligible changes. Verdict: ROBUSTO — both E-values remain ≥ 5.0 without the outlier.
+338: **Leave-one-out (LOO) sensitivity (2026-08-24 for COL9A1; 2026-08-25 for PTN).** To test whether the E-value is driven by a single influential sample, we recomputed it 96 times, leaving out one FM patient each iteration. **COL9A1:** E-values in [8.74, 9.55], all ≥ 5.0 (mean 8.995, std 0.218). No single FM sample drives the COL9A1 E-value — the result is structurally robust to individual outliers. **PTN:** E-values in [6.65, 7.07], all ≥ 5.0 (mean 6.878, std 0.133). No single FM sample drives the PTN E-value either.
+339: 
+340: **Outlier sensitivity (2026-08-24 for COL9A1; 2026-08-25 for PTN).** Removing the most influential outlier (FM index 35) changes COL9A1 E-value from 8.98 to 8.74 (value 3.93) and PTN E-value from 6.86 to 6.69 (value 3.02) — both negligible changes. Verdict: ROBUSTO — both E-values remain ≥ 5.0 without the outlier.
 341: 
 342: **Clinical context for comparison.**
 343: 
@@ -577,7 +577,7 @@
 577: | Leave-one-out cross-validation | 1, 4 | COL9A1/MDGA2/DRD2: 100% of iterations remain significant. **PTN: 77.2%** (below 80% threshold) | **COL9A1/MDGA2/DRD2 PASS — PTN is marginally fragile** |
 578: | Housekeeper comparison (ACTB, GAPDH, B2M) | 1, 4 | All NS (p=0.33–0.91) | **PASS — no platform noise** |
 579: | CIBERSORTx-equivalent NNLS deconvolution | 1, 4 | COL9A1: p=0.029 ✅; MDGA2: p=0.003 ✅; DRD2: p=0.013 ✅; **PTN: p=0.076 ❌** | **COL9A1/MDGA2/DRD2 PASS — PTN falsified by alternative deconvolution** |
-580: | **E-value (unmeasured confounding)** | **1, COL9A1 + PTN** | **COL9A1: E-value = 8.98 (lower 95% CI = 4.99); PTN: E-value = 6.86 (lower 95% CI = 3.76)** | **✅ Both HIGH robustness — confounder needs RR ≥ 9 (COL9A1) or RR ≥ 6.9 (PTN) to explain effect** |
+580: | **E-value (unmeasured confounding)** | **1, COL9A1 + PTN** | **COL9A1: E-value = 8.98 (lower 95% CI = 4.98); PTN: E-value = 6.86 (lower 95% CI = 3.76)** | **✅ Both HIGH robustness — confounder needs RR ≥ 9 (COL9A1) or RR ≥ 6.9 (PTN) to explain effect** |
 581: 
 582: #### 7.1.1 Note on CIBERSORTx-equivalent methodology
 583: 
@@ -628,7 +628,7 @@
 628: ### 8.1 Immediate (computational, no wet lab)
 629: 
 630: 1. ~~**CIBERSORTx deconvolution**~~ — ✅ **EJECUTADO** (commit `6a01eab`, 2026-08-14). CIBERSORTx-equivalent NNLS deconvolution with Abbas/Bindea/DICE signatures (60 genes × 12 cell types) applied to GSE221921. Result: COL9A1 p=0.029 ✅; PTN p=0.076 ❌. PTN downgraded from primary to secondary candidate (§7.2).
-631: 2. ~~**E-value analysis**~~ — ✅ **EJECUTADO** (commit `914afe1b`, 2026-08-14 for COL9A1; PTN added 2026-08-21). COL9A1 E-value = 8.98 (lower 95% CI = 4.99); PTN E-value = 6.86 (lower 95% CI = 3.76). Both HIGH robustness.
+631: 2. ~~**E-value analysis**~~ — ✅ **EJECUTADO** (commit `914afe1b`, 2026-08-14 for COL9A1; PTN added 2026-08-21). COL9A1 E-value = 8.98 (lower 95% CI = 4.98); PTN E-value = 6.86 (lower 95% CI = 3.76). Both HIGH robustness.
 632: 3. **Bayesian re-analysis** — compute Bayes factors for Model 6 vs Model 2 (no deconvolution). If BF > 10 → decisive evidence for composition-adjusted signal.
 633: 
 634: ### 8.2 Short-term (protocol design, no data collection)
