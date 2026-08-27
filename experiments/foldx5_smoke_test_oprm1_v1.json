@@ -1,0 +1,68 @@
+{
+  "experiment_id": "foldx5_smoke_test_oprm1_v1",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "status": "completed",
+  "timestamp_utc": "2026-08-27T07:58:27Z",
+  "type": "TOOL_VALIDATION_SMOKE_TEST",
+  "purpose": "Validate FoldX 5.1 (Windows binary, WSL interop) end-to-end on human OPRM1 before any re-ranking experiment. Closes the KL1 license blocker if kept.",
+  "tool": {
+    "name": "FoldX",
+    "version": "5.1 (build 2011, foldx_1_20270131.exe)",
+    "sha256_binary": "a5d18d39fef02fdf86ccd7eead8644fb9c2965a70d7d087c1823ca9adff0e844",
+    "distribution": "foldx5_Windows.zip provided by user after manual academic registration at foldxsuite.crg.eu",
+    "provenance_note": "Registration completed manually by @user (Cristobal) with a Registration Purpose text declaring non-commercial academic benchmarking of ESM3-generated OPRM1 variants for an open preprint.",
+    "execution_mode": "PE32+ Windows binary run from /mnt/c/temp/foldx5 via WSL interop; rotabase.txt and molecules/ present in distribution",
+    "invocation_validated": "foldx_1_20270131.exe --command=BuildModel --pdb=<repaired>.pdb --mutant-file=individual_list.txt --numberOfRuns=1",
+    "individual_list_format": "<wt_1letter><chain><pos><mut_1letter>;  e.g. AR113F; (WT FIRST, then chain letter, then position, then mutant)"
+  },
+  "structure": {
+    "pdb": "oprm1_R.pdb (OPRM1 chain R, from ddg_work/, cryo-EM 8EFO lineage)",
+    "repair_command": "RepairPDB, 119.42 s",
+    "repair_sha256": "0f79b0dabc46d45c6819d75b6a72b2c36c6b0f5c5fd40bd2eeb0c023cc11f278",
+    "repair_energy_total": -0.44
+  },
+  "measurements": {
+    "ddg_A113F_foldx": {
+      "value": 16.8166,
+      "units": "kcal/mol (FoldX Dif total energy, positive = destabilizing)",
+      "evoef2_same_mutation": 71.31,
+      "interpretation": "Two independent force fields (EvoEF2 rigid-backbone, FoldX 5.1 flexible side-chain) agree in sign and catastrophe magnitude on the buried Ala113->Phe overpacking site. The steric mechanism in ddg_repack_floor_and_steric_mechanism_v1 is not an EvoEF2 artifact."
+    },
+    "self_mutation_noise_floor_foldx": {
+      "mutations": ["MR74M", "KR102K", "FR180F", "IR304I", "RR347R"],
+      "ddG_values": [-0.050921, -0.00593343, 0.0192992, -0.0185884, 3.62661e-11],
+      "mean": -0.0112,
+      "max_abs": 0.0509,
+      "interpretation": "FoldX self-mutations return ~0.000 kcal/mol (max |ddG| = 0.05). The repack noise floor measured in EvoEF2 (mean -0.75, max 2.78) is ABSENT in FoldX's default side-chain relaxation: FoldX re-optimizes side chains symmetrically for mutant and WT-like reference, so its floor is not comparable to EvoEF2's. Any cross-FF comparison must declare this."
+    }
+  },
+  "errors_found_and_fixed_during_smoke": [
+    "First BuildModel attempt never created individual_list.txt (600 s foreground timeout killed the command that would have written it); 7 subsequent 'No mutation file is provided' failures were caused by the missing file, not the tool.",
+    "Mutation syntax: WT one-letter code comes FIRST, then chain, then position, then mutant (AR113F, not RA113F). 'RA113F' reads as WT=Arg chain=A which does not exist.",
+    "Mutant file MUST be named individual_list* or mutant_file* (binary enforces filename prefix).",
+    "CLI --mutant-file=... works once the file exists with a valid name and correct syntax; config-file route parses but BuildModel does not consume it in this build."
+  ],
+  "what_this_does_NOT_show": [
+    "No claim about ESM3 generation quality — no variants generated yet.",
+    "No claim about fibromyalgia or OPRM1 as a therapeutic target.",
+    "One mutation + 5 self-mutations is a smoke test, not a benchmark. The 133-position battery is not re-run.",
+    "FoldX ddG values are not comparable in absolute terms to EvoEF2 ddG (different force fields, different entropy terms, different reference states)."
+  ],
+  "license": "Academic license activated by user registration. Binary hash above identifies the exact build used.",
+  "next_steps_pre_registered": [
+    "If pivote approved: re-run ddg battery (133 unique positions, 3 arms) under FoldX 5.1 as flexible-side-chain axis; paired Wilcoxon, n=133, pre-registered alpha=0.05, two-sided; report both raw and |ddG|<=10 trimmed.",
+    "ESM3 variants from Colab (spec esm3_oprm1_v3) can be scored under BOTH EvoEF2 and FoldX for cross-FF robustness.",
+    "Vina docking (8QY on 8EFO) remains conditional on a positive ddG result, per spec v3."
+  ],
+  "process_trace": [
+    "Binary extracted to /mnt/c/temp/foldx5 (WSL interop; UNC cwd avoided)",
+    "RepairPDB on oprm1_R.pdb: 119.42 s, total energy -0.44",
+    "BuildModel AR113F: 5.11 s, ddG +16.8166 (Dif_oprm1_R_Repair.fxout)",
+    "BuildModel 5x self-mutation: 15.6 s, mean ddG -0.0112",
+    "All logs in /mnt/c/temp/foldx5/*.log; hashes recomputed 2026-08-27T07:58Z"
+  ],
+  "hash_method": "sha256 over file bytes (binary and PDB); JSON has no self-hash until registered in run store",
+  "run_by": "ichor",
+  "natural_friction": "FoldX is Windows-first in this distribution; WSL interop adds ~0 latency for CLI but RepairPDB is slow (2 min) because it runs through the 9P filesystem bridge. Batch scoring of 400 mutations should copy the working set to the Windows-native path once and keep FoldX I/O there."
+}

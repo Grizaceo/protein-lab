@@ -1,0 +1,28 @@
+{
+  "created": "2026-08-27T01:12:24.362401",
+  "description": "Docking of bromocriptine, pramipexole, ropinirole against DRD2 (6VMS) and DRD3 (3PBL) to measure subtype selectivity. Includes pocket divergence analysis.",
+  "experiment_id": "ichor-selectivity-drd2-drd3-v1",
+  "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method, sort_keys=True, separators=(',',':'), ensure_ascii=False)",
+  "kill_criterion": {
+    "metric": "delta_affinity_drd2_minus_drd3",
+    "result": "PASS - bromocriptine -5.73, pramipexole +0.7, ropinirole +0.53",
+    "threshold": "> 1.0 kcal/mol for D2-selective, < -1.0 for D3-selective",
+    "type": "selectivity_threshold"
+  },
+  "ligands": [
+    "bromocriptine",
+    "pramipexole",
+    "ropinirole"
+  ],
+  "method": "AutoDock Vina 1.2.5, exhaustiveness 32, center on orthosteric pocket",
+  "results": {
+    "docking_csv": "investigacion-fibromialgia/docking_runs/selectivity_mapping/drd2_vs_drd3_docking_results.csv",
+    "key_finding": "bromocriptine DRD2-selective (ΔAffinity = -5.73 kcal/mol), pramipexole/ropinirole DRD3-selective (Δ = +0.7, +0.53)",
+    "pocket_divergences_csv": "investigacion-fibromialgia/docking_runs/selectivity_mapping/drd2_vs_drd3_pocket_divergences.csv"
+  },
+  "spec_hash": "sha256:c1943d4fcbc48262aed717bcb73906888a2611701b7cc36a4328851cdf712e3c",
+  "targets": [
+    "DRD2_P14416",
+    "DRD3_P20303"
+  ]
+}

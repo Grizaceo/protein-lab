@@ -1,0 +1,24 @@
+{
+  "created": "2026-08-27T01:12:24.362502",
+  "description": "Docking of naltrexone (antagonist) and morphine (agonist) against OPRM1 (8EF5 crystal structure) to validate binding poses and measure relative affinities.",
+  "experiment_id": "ichor-naltrexone-morphine-oprm1-v1",
+  "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method, sort_keys=True, separators=(',',':'), ensure_ascii=False)",
+  "kill_criterion": {
+    "metric": "RMSD to crystal pose for naltrexone/morphine",
+    "result": "PENDING - requires redocking validation",
+    "threshold": "< 2.0 Å",
+    "type": "pose_recovery"
+  },
+  "ligands": [
+    "naltrexone",
+    "morphine"
+  ],
+  "method": "AutoDock Vina 1.2.5, box from crystal ligand, exhaustiveness 32",
+  "results": {
+    "docked": "investigacion-fibromialgia/docking_runs/naltrexone_mor/docked.pdbqt",
+    "log": "investigacion-fibromialgia/docking_runs/naltrexone_mor/docking_log.txt",
+    "receptor": "investigacion-fibromialgia/docking_runs/naltrexone_mor/receptor_R.pdbqt"
+  },
+  "spec_hash": "sha256:75a55150e98c94f47124738801c88b6c22484eb9587b0a2afe65dfc226bafdc8",
+  "target": "OPRM1_P35372 (8EF5, 3.3Å, fentanyl-bound)"
+}

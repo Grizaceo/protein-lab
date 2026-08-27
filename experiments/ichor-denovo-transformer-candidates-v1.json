@@ -1,0 +1,25 @@
+{
+  "created": "2026-08-27T01:12:24.362468",
+  "description": "Transformer-generated de novo candidates for DRD2 selectivity. 11 candidates with predicted selectivity ratios 12-38, CNS_MPO > 3.8. 5 with APPROVED_HIGH_CONFIDENCE.",
+  "experiment_id": "ichor-denovo-transformer-candidates-v1",
+  "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method, sort_keys=True, separators=(',',':'), ensure_ascii=False)",
+  "kill_criterion": {
+    "cns_mpo_threshold": "> 3.5",
+    "result": "PASS - all 11 candidates exceed both thresholds",
+    "selectivity_threshold": "> 10",
+    "type": "selectivity_and_druglikeness"
+  },
+  "method": "Generative transformer trained on ChEMBL D2-selective compounds, validated by QSAR predictor and docking",
+  "results": {
+    "csv": "investigacion-fibromialgia/docking_runs/ad_hoc_design/transformer_validated_candidates.csv",
+    "docked_dir": "investigacion-fibromialgia/docking_runs/ad_hoc_design/results/",
+    "key_metrics": {
+      "approved_high_confidence": 5,
+      "cns_mpo_min": 3.8,
+      "n_candidates": 11,
+      "pred_selectivity_ratio_range": "12-38"
+    }
+  },
+  "spec_hash": "sha256:6f6cd019d1ada38001fa10ff88567dce4c2a2e7abac13842637361999e5fa49c",
+  "target": "DRD2_P14416 vs DRD3_P20303"
+}
