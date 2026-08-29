@@ -1,0 +1,307 @@
+{
+ "meta": {
+  "tarea": "ichor/protein-7",
+  "linea": "FME",
+  "spec": "sweep datasets reutilizables: (A) 18 GSE FM censados, (B) ejercicio humanos no-FM, (C) genetica eje opioide/dolor, (D) DRG humano single-cell, (E) GWAS FM summary stats",
+  "fecha": "2026-08-28",
+  "pesos": {
+   "A": 0.6,
+   "B": 0.1,
+   "C": 0.1,
+   "D": 0.1,
+   "E": 0.1
+  },
+  "nota_eih": "EIH se mide con algometro: no hay datasets EIH directos; los angulos son proxies del sustrato que se proyectan sobre series FM",
+  "fuente_A": "NCBI eutils esummary db=gds (18 UIDs GDS de protein-6), 2026-08-28"
+ },
+ "candidatos": [
+  {
+   "id": "A01",
+   "angulo": "A",
+   "gse": "GSE334369",
+   "uid_gds": "200334369",
+   "n_samples": 206,
+   "clase": "FM+estimulo",
+   "fenotipos": [
+    "dolor",
+    "estres_inmune",
+    "no_responder_analogo"
+   ],
+   "titulo_corto": "Neutrofilos FM vs HC +/- LPS",
+   "descripcion": "Neutrofilos FM con LPS ex vivo: inflamacion basal elevada pero respuesta BLUNTED a LPS - el patron molecular no-responder que FME busca estratificar en EIH",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "estratificacion responder/no-responder inmune en FM; modulo blunted-response proyectable sobre series principales"
+  },
+  {
+   "id": "A02",
+   "angulo": "A",
+   "gse": "GSE215154",
+   "uid_gds": "200215154",
+   "n_samples": 12,
+   "clase": "dolor_miofascial+intervencion",
+   "fenotipos": [
+    "dolor",
+    "estres"
+   ],
+   "titulo_corto": "Dexmedetomidina puntos gatillo (MTrP)",
+   "descripcion": "Dexmedetomidina en puntos gatillo miofasciales via TNF-a/NF-kB; eje autonomo/estres modulando dolor",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "modulo autonomo/estres; validacion cruzada NF-kB"
+  },
+  {
+   "id": "A03",
+   "angulo": "A",
+   "gse": "GSE303093",
+   "uid_gds": "200303093",
+   "n_samples": 48,
+   "clase": "dolor+inflamacion (murino+humano)",
+   "fenotipos": [
+    "dolor",
+    "inflamacion"
+   ],
+   "titulo_corto": "sncRNA inflamacion->dolor raton y humano",
+   "descripcion": "miRNA/tRF conservados linkean inflamacion->dolor; modulo transversal dolor-inflamacion",
+   "taxon": "Mus musculus + Homo sapiens",
+   "reutilizable": false,
+   "utilidad_prevista": "apoyo cross-species (no reutilizable directo)"
+  },
+  {
+   "id": "A04",
+   "angulo": "A",
+   "gse": "GSE269047",
+   "uid_gds": "200269047",
+   "n_samples": 43,
+   "clase": "FM+ME/CFS (HERV arrays)",
+   "fenotipos": [
+    "dolor",
+    "fatiga"
+   ],
+   "titulo_corto": "HERV arrays FM/MECFS",
+   "descripcion": "IDs tipo HERV_gag_at no mapean a genes estandar; verificado NO UTILIZABLE para proxies (ver GSE269047_NO_UTILIZABLE.md)",
+   "taxon": "Homo sapiens",
+   "reutilizable": false,
+   "utilidad_prevista": null,
+   "nota": "descartado previamente, registro en sweep"
+  },
+  {
+   "id": "A05",
+   "angulo": "A",
+   "gse": "GSE274134",
+   "uid_gds": "200274134",
+   "n_samples": 12,
+   "clase": "FM+intervencion",
+   "fenotipos": [
+    "dolor",
+    "estres",
+    "intervencion_nofarmacologica"
+   ],
+   "titulo_corto": "Terapia manual SIK1",
+   "descripcion": "Terapia manual mejora FM via downregulation SIK1; intervencion no-farmacologica con respuesta clinica",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "marco responder-vs-nonresponder FM ante intervencion pre/post"
+  },
+  {
+   "id": "A06",
+   "angulo": "A",
+   "gse": "GSE221921",
+   "uid_gds": "200221921",
+   "n_samples": 189,
+   "clase": "FM+HC",
+   "fenotipos": [
+    "dolor",
+    "genero"
+   ],
+   "titulo_corto": "RNA-seq 96 FM vs 93 HC (serie principal 1)",
+   "descripcion": "Serie principal FME (usada protein-6): 96 FM vs 93 HC, dos subtipos moleculares descritos",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "serie principal 1; blanco de proyeccion del modulo ejercicio (B) y estratificacion no-responder (A)",
+   "usado_protein6": true
+  },
+  {
+   "id": "A07",
+   "angulo": "A",
+   "gse": "GSE229750",
+   "uid_gds": "200229750",
+   "n_samples": 12,
+   "clase": "FM+intervencion",
+   "fenotipos": [
+    "dolor",
+    "estres"
+   ],
+   "titulo_corto": "Tocilizumab neutrofilos FM",
+   "descripcion": "Anti-IL6R s.c.: 5 FM vs controles + 2 FM pre/post 12 semanas; n pequeno pero unico set FM con intervencion anti-inflamatoria con respuesta clinica",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "validacion de ejes IL6 con respuesta clinica pre/post"
+  },
+  {
+   "id": "A08",
+   "angulo": "A",
+   "gse": "GSE156184",
+   "uid_gds": "200156184",
+   "n_samples": 9,
+   "clase": "senescencia SASP",
+   "fenotipos": [
+    "estres"
+   ],
+   "titulo_corto": "Senescent SASP + acido alfa-lipoico",
+   "descripcion": "Senescencia+SASP; sin FM ni dolor; prioridad baja",
+   "taxon": "Homo sapiens",
+   "reutilizable": false,
+   "utilidad_prevista": null,
+   "nota": "tangencial: solo si FME explora SASP/envejecimiento"
+  },
+  {
+   "id": "A09",
+   "angulo": "A",
+   "gse": "GSE217118",
+   "uid_gds": "200217118",
+   "n_samples": 10,
+   "clase": "MPS (raton)",
+   "fenotipos": [
+    "dolor"
+   ],
+   "titulo_corto": "Tianhe Zhuifeng MPS murino",
+   "descripcion": "Modelo murino sindrome miofascial con intervencion TCM; mouse arrays",
+   "taxon": "Rattus norvegicus",
+   "reutilizable": false,
+   "utilidad_prevista": "apoyo cross-species"
+  },
+  {
+   "id": "A10",
+   "angulo": "A",
+   "gse": "GSE165709+GSE165708",
+   "uid_gds": "200165709,200165708",
+   "n_samples": 312,
+   "clase": "blunted-response no-FM",
+   "fenotipos": [
+    "estres_inmune",
+    "blunted_response"
+   ],
+   "titulo_corto": "Macrofagos alveolares HIV/TB respuesta blunted a Mtb",
+   "descripcion": "Respuesta blunted a Mtb en macrofagos HIV - patron 'blunted response to stimulus' fuera de FM; diseno basal-vs-estimulo limpio",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "esqueleto analitico del no-responder EIH (definicion molecular de no-respuesta al estimulo)"
+  },
+  {
+   "id": "A11",
+   "angulo": "A",
+   "gse": "GSE167914",
+   "uid_gds": "200167914",
+   "n_samples": 39,
+   "clase": "PBMC metabolico no-FM",
+   "fenotipos": [
+    "estres",
+    "fatiga_analogo"
+   ],
+   "titulo_corto": "PBMC disfuncion mitocondrial pre-sepsis",
+   "descripcion": "PBMC en riesgo de sepsis con disfuncion mitocondrial; analogo energetico/fatiga",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "modulo energetico-fatiga (PeFM) en PBMC"
+  },
+  {
+   "id": "A12",
+   "angulo": "A",
+   "gse": "GSE85506",
+   "uid_gds": "200085506",
+   "n_samples": 47,
+   "clase": "FM+HC metilacion",
+   "fenotipos": [
+    "dolor",
+    "genero"
+   ],
+   "titulo_corto": "Metilacion DNA mujeres FM",
+   "descripcion": "Metilacion DNA mujeres FM vs HC; capa epigenetica complementaria",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "capa metilacion exploratoria FM (47 mujeres)"
+  },
+  {
+   "id": "A13",
+   "angulo": "A",
+   "gse": "GSE92472",
+   "uid_gds": "200092472",
+   "n_samples": 15,
+   "clase": "autoinmunidad lncRNA",
+   "fenotipos": [],
+   "titulo_corto": "lncRNA autoinmunidad",
+   "descripcion": "lncRNAs en autoinmunidad; sin FM ni dolor",
+   "taxon": "Homo sapiens",
+   "reutilizable": false,
+   "utilidad_prevista": null,
+   "nota": "prioridad baja"
+  },
+  {
+   "id": "A14",
+   "angulo": "A",
+   "gse": "GSE67311",
+   "uid_gds": "200067311",
+   "n_samples": 142,
+   "clase": "FM+HC",
+   "fenotipos": [
+    "dolor",
+    "genero"
+   ],
+   "titulo_corto": "Whole blood 70 FM vs 70 HC (serie principal 2)",
+   "descripcion": "Serie principal FME 2 (usada protein-6): 70 FM vs 70 HC whole blood",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "serie principal 2; blanco de proyeccion del modulo ejercicio (B)",
+   "usado_protein6": true
+  },
+  {
+   "id": "A15",
+   "angulo": "A",
+   "gse": "GSE65033",
+   "uid_gds": "200065033",
+   "n_samples": 21,
+   "clase": "FM+HC miRNA",
+   "fenotipos": [
+    "dolor",
+    "genero"
+   ],
+   "titulo_corto": "miRNome diagnostico FM",
+   "descripcion": "miRNome FM: 233 miRNAs down-regulados >=2x; capa miRNA para validar modulos",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "validacion miRNA de modulos FME"
+  },
+  {
+   "id": "A16",
+   "angulo": "A",
+   "gse": "GSE37830",
+   "uid_gds": "200037830",
+   "n_samples": 108,
+   "clase": "CSF autoanticuerpos",
+   "fenotipos": [
+    "dolor",
+    "spa"
+   ],
+   "titulo_corto": "CSF autoantibody lipid microarray",
+   "descripcion": "Autoanticuerpos en LCR humano (lipid microarray); capa autoinmunidad central",
+   "taxon": "Homo sapiens",
+   "reutilizable": true,
+   "utilidad_prevista": "capa autoanticuerpos LCR; cruces con hipotesis autoinmune FM"
+  },
+  {
+   "id": "A17",
+   "angulo": "A",
+   "gse": "GSE37866",
+   "uid_gds": "200037866",
+   "n_samples": 11,
+   "clase": "QC RNA tumoral",
+   "fenotipos": [],
+   "titulo_corto": "RNA tumoral amplificado (QC)",
+   "descripcion": "QC amplificacion RNA tumoral para DC; sin FM/dolor; descartado",
+   "taxon": "Homo sapiens",
+   "reutilizable": false,
+   "utilidad_prevista": null
+  }
+ ]
+}
