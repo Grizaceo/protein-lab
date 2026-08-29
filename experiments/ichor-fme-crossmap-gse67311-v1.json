@@ -1,0 +1,95 @@
+{
+  "caveats": [
+    "GSE67311 is AFFY array with older platform; sensitivity lower than RNA-seq",
+    "IFN nominal p-values do not survive FDR within our 24-gene subset",
+    "Peripheral blood confounds (cell-type composition) not fully adjusted",
+    "NOMINAL p-values on IFN axis are consistent with fragmentarily-reported IFN decreases in FM but not Bonferroni-corrected"
+  ],
+  "datasets": {
+    "probe_mapping": "GPL11532.annot.gz (22,170 probes mapped to gene symbols)",
+    "source_genes": [
+      "GSE324210 (exercise response: IL1B/TAC1/MRGPRX2/CA14/TLR4/OPRM1)",
+      "GSE334369 (LPS blunted response: IL1B/IL6/CXCL8/TNFAIP3/CA14/TACR1)"
+    ],
+    "target": "GSE67311 (FM vs HC peripheral blood, AFFY GPL11532 Illumina HumanHT-12 v4)"
+  },
+  "description": "Cross-map FME module: key genes from GSE324210 (exercise acute response, healthy monocytes) and GSE334369 (LPS blunted response, FM neutrophils) projected onto GSE67311 (FM vs HC peripheral blood, GPL11532, n=70). Tests whether the exercise-response / blunter-response genes are also dysregulated in FM blood at baseline.",
+  "experiment_id": "ichor-fme-crossmap-gse67311-v1",
+  "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method, sort_keys=True, separators=(',',':'), ensure_ascii=False)",
+  "interpretation": {
+    "for_fme": "FM blood baseline does NOT show constitutive dysregulation of the exercise-response module or of the LPS-blunted-response genes. The blunted LPS response in PMN (GSE334369) and the acute-exercise response in monocytes (GSE324210) are STIMULUS-DEPENDENT states, not baseline transcriptional dysregulation. This supports a state-dependent model: FM alters the RESPONSE to stress, not the RESTING state.",
+    "mision_connection": "La forma que se descubre: el fenotipo FME no es visible en sangre basale como expresión diferencial cruda — pero SI emerge cuando se somete a estrés (ejercicio / LPS). La 'forma' existe en la interacción estímulo-respuesta, no en el estado basal. Replicar requiere la cohorte húmeda (0 datasets públicos con ΔPPT/EIH)."
+  },
+  "key_result": {
+    "nominal_trend_IFN_axis_DOWN": {
+      "IFI44L": {
+        "adj_pval": 0.584,
+        "log2FC": -0.078,
+        "pval": 0.0254
+      },
+      "IFIT1": {
+        "adj_pval": 0.6173,
+        "log2FC": -0.055,
+        "pval": 0.0563
+      },
+      "IFITM1": {
+        "adj_pval": 0.6169,
+        "log2FC": -0.015,
+        "pval": 0.0457
+      },
+      "MX1": {
+        "adj_pval": 0.7264,
+        "log2FC": -0.027,
+        "pval": 0.219
+      },
+      "OAS1": {
+        "adj_pval": 0.6118,
+        "log2FC": -0.032,
+        "pval": 0.0376
+      }
+    },
+    "opioide_axis": {
+      "OPRD1": {
+        "adj_pval": 0.687,
+        "log2FC": 0.012,
+        "pval": 0.138
+      },
+      "OPRK1": {
+        "adj_pval": 0.75,
+        "log2FC": 0.011,
+        "pval": 0.268
+      },
+      "OPRM1": {
+        "adj_pval": 0.72,
+        "log2FC": 0.01,
+        "pval": 0.196
+      },
+      "note": "All flat. No peripheral opioid receptor dysregulation in FM blood."
+    },
+    "sensory_axis": {
+      "TAC1": {
+        "adj_pval": 0.954,
+        "log2FC": 0.002
+      },
+      "TACR1": {
+        "adj_pval": 0.938,
+        "log2FC": 0.003
+      },
+      "note": "Flat. No peripheral taquinin axis dysregulation."
+    },
+    "summary": "None of the 23 key genes are significantly different (all adj.pval > 0.58). The exercise-response / LPS-blunting signature does NOT carry over to FM peripheral blood at baseline."
+  },
+  "kill_criterion": {
+    "follow_up": "The blunted-response hypothesis survives only at stimulus level, not at baseline",
+    "metric": "at least 1 of 24 key genes with adj.pval < 0.05 and |log2FC| > 0.1 in FM vs HC",
+    "result": "FAIL - Best candidate IFI44L adj.pval=0.584; no gene survives multiple-testing correction",
+    "threshold": ">= 1 gene",
+    "type": "signal_carries_to_target"
+  },
+  "spec_hash": "sha256:8813e5efe055be9631afffa38f8420540aedcf33c03379dda4362516089f693c",
+  "target_samples": {
+    "fm": 35,
+    "hc": 35,
+    "n_total": 70
+  }
+}
