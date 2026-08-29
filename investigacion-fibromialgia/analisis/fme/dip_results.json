@@ -1,0 +1,102 @@
+{
+  "spec": "test bimodalidad FME (Hartigan dip + bootstrap 5000, null uniforme y gaussiano) en proxies COL9A1/PTN/modulo",
+  "semilla": 112358,
+  "n_boot": 5000,
+  "GSE221921_cases": 96,
+  "GSE221921_controls": 93,
+  "GSE67311_FM": 67,
+  "GSE67311_HC": 75,
+  "verdict_221921": {
+    "COL9A1": {
+      "FM": {
+        "dip": 0.03891,
+        "p_uniform": 0.3624,
+        "p_gaussian": 0.0574
+      },
+      "HC": {
+        "dip": 0.04542,
+        "p_uniform": 0.1662,
+        "p_gaussian": 0.0106
+      }
+    },
+    "PTN": {
+      "FM": {
+        "dip": 0.03365,
+        "p_uniform": 0.627,
+        "p_gaussian": 0.1874
+      },
+      "HC": {
+        "dip": 0.03299,
+        "p_uniform": 0.6946,
+        "p_gaussian": 0.2418
+      }
+    },
+    "BPIFB2": {
+      "FM": {
+        "dip": 0.03928,
+        "p_uniform": 0.347,
+        "p_gaussian": 0.0512
+      },
+      "HC": {
+        "dip": 0.02597,
+        "p_uniform": 0.9618,
+        "p_gaussian": 0.6988
+      }
+    },
+    "ST3GAL1": {
+      "FM": {
+        "dip": 0.02894,
+        "p_uniform": 0.863,
+        "p_gaussian": 0.4386
+      },
+      "HC": {
+        "dip": 0.03483,
+        "p_uniform": 0.5912,
+        "p_gaussian": 0.164
+      }
+    }
+  },
+  "verdict_67311": {
+    "COL9A1": {
+      "FM": {
+        "dip": 0.0244,
+        "p_uniform": 0.9996,
+        "p_gaussian": 0.973
+      },
+      "HC": {
+        "dip": 0.03072,
+        "p_uniform": 0.9232,
+        "p_gaussian": 0.5974
+      }
+    },
+    "PTN": {
+      "FM": {
+        "dip": 0.03098,
+        "p_uniform": 0.9494,
+        "p_gaussian": 0.6956
+      },
+      "HC": {
+        "dip": 0.03663,
+        "p_uniform": 0.6926,
+        "p_gaussian": 0.2628
+      }
+    },
+    "BPIFB2": {
+      "nan": {
+        "error": "gene absent"
+      }
+    },
+    "ST3GAL1": {
+      "FM": {
+        "dip": 0.03595,
+        "p_uniform": 0.8004,
+        "p_gaussian": 0.3924
+      },
+      "HC": {
+        "dip": 0.03068,
+        "p_uniform": 0.9242,
+        "p_gaussian": 0.601
+      }
+    }
+  }
+}
