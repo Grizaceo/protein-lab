@@ -1,0 +1,61 @@
+{
+  "dataset": {
+    "id": "GSE324210",
+    "platform": "GPL24676",
+    "raw_data": "GSE324210_MONOCYTE_RNA_SEQ_healthy.xlsx (60,660 genes x 83 samples, GEO supplementary)",
+    "samples": 83,
+    "sex_split": {
+      "female_subjects": 9,
+      "male_subjects": 12
+    },
+    "subjects": 21,
+    "timepoints": {
+      "T1": "pre-exercise",
+      "T2": "immediately post-acute-exercise",
+      "T3": "post-8-week training",
+      "T4": "post-training + acute exercise"
+    }
+  },
+  "description": "FME cuadro: GSE324210 (adolescent monocyte exercise-response, n=21 subjects, 83 samples, 8-week endurance + acute bout, 35 female samples / 9 female subjects) baseline for exercise-response module vs FM cohorts (GSE221921/GSE67311 blank series). GSE334369 (blunted-response FM) completes the 2x2.",
+  "experiment_id": "ichor-fme-gse324210-cuadro-v1",
+  "female_stratification": {
+    "female_samples": 35,
+    "n_subjects": 9,
+    "note": "FM ~90% female. Female-only T1->T2: TAC1 +0.60 log2FC (vs +0.31 all), CA14 +0.61 (vs +0.16 all), TLR4 -0.31 (vs -0.01 all). Sex-stratified analysis mandatory."
+  },
+  "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method, sort_keys=True, separators=(',',':'), ensure_ascii=False)",
+  "key_findings_T1_vs_T2": {
+    "DOWN": {
+      "MRGPRX2": -0.33
+    },
+    "FLAT": {
+      "CA14": 0.156,
+      "COL9A1": 0.108,
+      "CRH": 0.121,
+      "OPRM1": 0.06,
+      "TLR4": -0.014
+    },
+    "NOT_EXPRESSED": {
+      "DRD2": "0/83",
+      "OPRK1": "5/83 (near-zero)",
+      "TACR1": "0/83 samples"
+    },
+    "UP": {
+      "IL1B": 0.537,
+      "TAC1": 0.307
+    },
+    "interpretation": "Monocyte acute-exercise response in healthy adolescents: immune activation (IL1B UP) + sensory neuropeptide shift (TAC1 UP, MRGPRX2 DOWN), sex-specific in females. Opioid receptors (OPRM1/OPRK1/OPRD1) and DRD2 essentially silent in monocytes at transcript level."
+  },
+  "kill_criterion": {
+    "metric": "module genes with |log2FC| > 0.3 in T1->T2 (in-protocol)",
+    "result": "PASS marginal: IL1B +0.54, TAC1 +0.31, MRGPRX2 -0.33 = 3 genes at threshold; CA14 female-only +0.61 strengthens sex-stratified signal",
+    "threshold": "> 3 genes PASS",
+    "type": "signal_exists"
+  },
+  "next_steps": [
+    "GSE334369 (blunted-response FM) same pipeline",
+    "Cross-map exercise-response module vs FM blank series GSE221921/GSE67311",
+    "Test TAC1/MRGPRX2 axis blunting in FM monocytes"
+  ],
+  "spec_hash": "sha256:0fbf23729fade60d10521ab4bb38be82eb4ca6cc3cf93d2fe4b11a065ed31e30"
+}
