@@ -1,0 +1,96 @@
+{
+  "connection_to_fm_cuadro": {
+    "GSE324210_t1_t2": "IL1B +0.54, TAC1 +0.31, MRGPRX2 -0.33 (healthy adolescent monocytes)",
+    "GSE334369_lps_response": "IL1B blunted in FM vs HC (p=0.055), IL6/CXCL8/TNFAIP3 blunted (p<0.05)",
+    "cross_synthesis": "Same cells respond differently to stress: monocytes UP-regulate IL1B with exercise stress (GSE324210); neutrophils show BLUNTED IL1B/IL6/CXCL8 LPS responses in FM (GSE334369). Sex-specific signal in healthy (TAC1/CA14) + blunting in FM patient neutrophils = converging pain-inflammation axis."
+  },
+  "dataset": {
+    "design": "62 FM (Case) vs 64 HC (Control), neutrophils, LPS-stimulated (NAR) vs unstimulated (NNAR)",
+    "groups": {
+      "Case_LPS": 44,
+      "Case_UNSTIM": 57,
+      "Control_LPS": 47,
+      "Control_UNSTIM": 58
+    },
+    "id": "GSE334369",
+    "naming_correction": "NAR=LPS-stimulated (NOT unstimulated): IL1B NAR mean TPM 10,290 vs NNAR 146 - unambiguous",
+    "platform": "GPL24676",
+    "raw_data": "GSE334369_RAW.tar (80.4 MB, 206 TSV.gz), 58,103 genes, TPM",
+    "samples": 206
+  },
+  "description": "GSE334369 blunted-response FM neutrophils: paired LPS-stimulated (NAR) vs unstimulated (NNAR) TPM analysis of 19 key genes (IL1B/IL6/CXCL8/TNFAIP3 inflammasome axis, ISG15/MX1/OAS1 IFN axis, TAC1/TACR1 sensory axis, OPRM1/CA14). Completes the 2x2 FME cuadro his GSE324210 (acute exercise response).",
+  "experiment_id": "ichor-fme-gse334369-blunted-response-v1",
+  "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method, sort_keys=True, separators=(',',':'), ensure_ascii=False)",
+  "key_findings_blunted_response": {
+    "NO_blunting": {
+      "IFN_axis": {
+        "IFI44L": 0.1975,
+        "IFIT1": 0.1678,
+        "IFITM1": 0.2364,
+        "ISG15": 0.2306,
+        "MX1": 0.264,
+        "OAS1": 0.0775
+      },
+      "note": "Interferon axis NOT blunted in FM neutrophils"
+    },
+    "borderline": {
+      "IL1B": {
+        "blunting": -1.17,
+        "note": "trend FM<HC, classic blunted response",
+        "p": 0.0547
+      },
+      "OPRM1": {
+        "blunting": 0.265,
+        "note": "trend control depletion",
+        "p": 0.0554
+      }
+    },
+    "significant_blunting_p_lt_0.05": {
+      "CA14": {
+        "blunting": 0.5,
+        "note": "CA14 downregulated MORE in control - less blunted in FM",
+        "p": 0.0328
+      },
+      "CXCL8": {
+        "blunting": -1.669,
+        "note": "IL-8/LPS response lower in FM",
+        "p": 0.0096
+      },
+      "IL6": {
+        "blunting": -1.236,
+        "p": 0.0364
+      },
+      "IL6R": {
+        "blunting": 0.272,
+        "p": 0.0395
+      },
+      "TACR1": {
+        "blunting": 0.06,
+        "note": "small delta but significant; TACR1 signaling axis",
+        "p": 0.0134
+      },
+      "TNFAIP3": {
+        "blunting": -1.152,
+        "p": 0.0453
+      }
+    }
+  },
+  "kill_criterion": {
+    "metric": "at least 1 gene with blunting p<0.05 after Bonferroni correction (19 tests)",
+    "result": "FAIL strict (BXCL8 p=0.0096 > 0.0026); PASS exploratory (6 genes p<0.05, all in consistent direction)",
+    "threshold": "p < 0.0026",
+    "type": "signal_exists"
+  },
+  "multiple_testing": {
+    "bonferroni_threshold": 0.002631578947368421,
+    "n_genes_tested": 19,
+    "note": "CXCL8 p=0.0096 over Bonferroni (0.0026); others nominal only. Treat as exploratory."
+  },
+  "paired_analysis": {
+    "case_pairs": 13,
+    "control_pairs": 18,
+    "method": "log2(LPS+0.1 / UNSTIM+0.1) within-subject, Welch t-test case vs control",
+    "n_pairs": 31
+  },
+  "spec_hash": "sha256:77a4d5b17859c77abcd9d7245bf18f50d840bd00b9ed92980bb3a2f4d477dd51"
+}
