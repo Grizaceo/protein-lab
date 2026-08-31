@@ -1,0 +1,5755 @@
+{
+  "C1_detectability": {
+    "build": {
+      "build_id": 607,
+      "n_canonical": 17553,
+      "n_datasets": 1246,
+      "n_distinct_peptides": 5309343,
+      "name": "Human 2026-01",
+      "nota": "build vigente segun https://peptideatlas.org/builds/human/ (1.75B PSMs)"
+    },
+    "definicion": ">=3 peptidos unicos y >=5 observaciones (spec, umbral PeptideAtlas estandar)",
+    "resultados": [
+      {
+        "c1_note": "build 607: 35 distinct peptides, 2538 obs, presence=canonical, prob=0.999 | plasma build 603: no observado",
+        "coverage_pct": null,
+        "description": "coreProteome sp|P10145|IL8_HUMAN Interleukin-8 OS=Homo sapiens OX=9606 GN=CXCL8 PE=1 SV=1",
+        "gene": "CXCL8",
+        "n_distinct_peptides": 35,
+        "n_observations": 2538,
+        "passes_C1": true,
+        "passes_C1_plasma": false,
+        "plasma_build_603": null,
+        "presence_level": "canonical",
+        "prioridad": 1,
+        "protein_prophet_prob": 0.999,
+        "role": "blunted_target",
+        "uniprot": "P10145",
+        "url": "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProteins?atlas_build_id=607&biosequence_name_constraint=P10145&action=QUERY&QUERY_NAME=AT_GetProteins&apply_action=QUERY"
+      },
+      {
+        "c1_note": "build 607: 49 distinct peptides, 2806 obs, presence=canonical, prob=0.999 | plasma build 603 (2025-08): 9 pep, 104 obs -> C1 PASS",
+        "coverage_pct": null,
+        "description": "coreProteome sp|P05231|IL6_HUMAN Interleukin-6 OS=Homo sapiens OX=9606 GN=IL6 PE=1 SV=1 \\VariantSimple=(32|S)(162|E)(162",
+        "gene": "IL6",
+        "n_distinct_peptides": 49,
+        "n_observations": 2806,
+        "passes_C1": true,
+        "passes_C1_plasma": true,
+        "plasma_build_603": {
+          "n_distinct_peptides": 9,
+          "n_observations": 104,
+          "presence_level": "canonical",
+          "protein_prophet_prob": 0.999
+        },
+        "presence_level": "canonical",
+        "prioridad": 1,
+        "protein_prophet_prob": 0.999,
+        "role": "blunted_target",
+        "uniprot": "P05231",
+        "url": "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProteins?atlas_build_id=607&biosequence_name_constraint=P05231&action=QUERY&QUERY_NAME=AT_GetProteins&apply_action=QUERY"
+      },
+      {
+        "c1_note": "build 607: 121 distinct peptides, 9023 obs, presence=canonical, prob=0.999 | plasma build 603: no observado",
+        "coverage_pct": null,
+        "description": "coreProteome sp|P01584|IL1B_HUMAN Interleukin-1 beta OS=Homo sapiens OX=9606 GN=IL1B PE=1 SV=2 \\VariantSimple=(141|N)",
+        "gene": "IL1B",
+        "n_distinct_peptides": 121,
+        "n_observations": 9023,
+        "passes_C1": true,
+        "passes_C1_plasma": false,
+        "plasma_build_603": null,
+        "presence_level": "canonical",
+        "prioridad": 1,
+        "protein_prophet_prob": 0.999,
+        "role": "blunted_target",
+        "uniprot": "P01584",
+        "url": "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProteins?atlas_build_id=607&biosequence_name_constraint=P01584&action=QUERY&QUERY_NAME=AT_GetProteins&apply_action=QUERY"
+      },
+      {
+        "c1_note": "build 607: 706 distinct peptides, 40931 obs, presence=canonical, prob=1.0 | plasma build 603: no observado",
+        "coverage_pct": null,
+        "description": "coreProteome sp|P21580|TNAP3_HUMAN Tumor necrosis factor alpha-induced protein 3 OS=Homo sapiens OX=9606 GN=TNFAIP3 PE=1",
+        "gene": "TNFAIP3",
+        "n_distinct_peptides": 706,
+        "n_observations": 40931,
+        "passes_C1": true,
+        "passes_C1_plasma": false,
+        "plasma_build_603": null,
+        "presence_level": "canonical",
+        "prioridad": 2,
+        "protein_prophet_prob": 1.0,
+        "role": "blunted_target",
+        "uniprot": "P21580",
+        "url": "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProteins?atlas_build_id=607&biosequence_name_constraint=P21580&action=QUERY&QUERY_NAME=AT_GetProteins&apply_action=QUERY"
+      },
+      {
+        "c1_note": "build 607: 43 distinct peptides, 654 obs, presence=canonical, prob=1.0 | plasma build 603: no observado",
+        "coverage_pct": null,
+        "description": "coreProteome sp|P01579|IFNG_HUMAN Interferon gamma OS=Homo sapiens OX=9606 GN=IFNG PE=1 SV=1 \\VariantSimple=(29|Q)(160|Q",
+        "gene": "IFNG",
+        "n_distinct_peptides": 43,
+        "n_observations": 654,
+        "passes_C1": true,
+        "passes_C1_plasma": false,
+        "plasma_build_603": null,
+        "presence_level": "canonical",
+        "prioridad": 3,
+        "protein_prophet_prob": 1.0,
+        "role": "diagnostic_axis_IFN",
+        "uniprot": "P01579",
+        "url": "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProteins?atlas_build_id=607&biosequence_name_constraint=P01579&action=QUERY&QUERY_NAME=AT_GetProteins&apply_action=QUERY"
+      }
+    ]
+  },
+  "api_errors": [],
+  "created": "2026-08-31T01:29:21-04:00",
+  "criterion_source": "experiments/grounding_B_spec.json (PRE-REGISTRADO, commit fb73d34; este inventario NO altera criterio)",
+  "experiment_id": "ichor-fme-grounding-B-proteomics-congruence-v1",
+  "inventory_file": "experiments/grounding_B_inventory_20260831.json",
+  "peptideatlas_build": {
+    "build_id": 607,
+    "n_canonical": 17553,
+    "n_datasets": 1246,
+    "n_distinct_peptides": 5309343,
+    "name": "Human 2026-01",
+    "nota": "build vigente segun https://peptideatlas.org/builds/human/ (1.75B PSMs)"
+  },
+  "peptideatlas_plasma_build": {
+    "build_id": 603,
+    "n_datasets": 158,
+    "n_distinct_peptides": 282399,
+    "n_msruns": 30695,
+    "name": "Human Plasma 2025-08"
+  },
+  "pride_datasets": [
+    {
+      "accession": "PXD081782",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Single-cell proteomics",
+        "High-throughput",
+        "Multicolumn nanolc"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)",
+        "Mus musculus (mouse)",
+        "Escherichia coli",
+        "Candida albicans (yeast)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-07-28",
+      "title": "High-Throughput Label-free Single-Cell Proteomics Enabled by Multicolumn NanoLC with a 5-min Cycle Time"
+    },
+    {
+      "accession": "PXD078938",
+      "experimentTypes": [
+        "Data-dependent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Interactome.",
+        "Myeloid differentiation primary response gene 88",
+        "Toll-like receptors",
+        "Innate immunity",
+        "Myddosome"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-05-27",
+      "title": "Agonist-Specific Modulation of the MyD88 Niche Governs Temporal Dynamics of Immune Responses"
+    },
+    {
+      "accession": "PXD076315",
+      "experimentTypes": [
+        "Top-down proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Prasugrel",
+        "Proteomics",
+        "Drug repurposing",
+        "Parkinson’s disease"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)",
+        "Rattus norvegicus (rat)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Primary cell",
+        "Cerebral cortex neuron"
+      ],
+      "quantificationMethods": [
+        "Peptide counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-03-30",
+      "title": "Repurposing the antiplatelet drug prasugrel for Parkinson’s disease: Evidence of neuroprotective effects and proteomic profiles"
+    },
+    {
+      "accession": "PXD075718",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Cell barcoding",
+        "Microscopy",
+        "Dendritic cells",
+        "Spatial proteomics",
+        "Inflammation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus",
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Spleen",
+        "Dendritic cell"
+      ],
+      "quantificationMethods": [
+        "Absolute quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-03-17",
+      "title": "NicheProt: Cell-type-resolved proteomics of mouse spleen tissue compartments"
+    },
+    {
+      "accession": "PXD075232",
+      "experimentTypes": [
+        "Data-independent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Dili",
+        "Monocytes",
+        "Drug-induced liver injury",
+        "Immune checkpoint inhibitors",
+        "Metaheps",
+        "Amoxicillin-clavulanate"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Peripheral blood mononuclear cell"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-03-04",
+      "title": "Utility of monocyte-derived cells to investigate immune-mediated drug-induced liver injury"
+    },
+    {
+      "accession": "PXD075198",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteomics",
+        "Antimicrobial resistance",
+        "Bacterial protein extraction",
+        "Membrane proteins"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Escherichia coli"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-03-04",
+      "title": "Lyophilization prior to homogenisation and extraction increases membrane protein detection in Gram-negative bacterial proteomic analyses"
+    },
+    {
+      "accession": "PXD075006",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Innate immunity",
+        "Shigella flexneri",
+        "Ufm1"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)",
+        "Shigella flexneri"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Cell suspension culture"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-02-28",
+      "title": "identification of UFM1-dependent host effectors binding to Shigella flexneri in infectect HeLa cells"
+    },
+    {
+      "accession": "PXD074830",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteomics",
+        "Secretomics",
+        "Inflammation",
+        "Dia",
+        "Timstof",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-02-25",
+      "title": "dia-PASEF Enables Rapid Profiling of the Human Secretome for Deeper Insights into Cellular Dynamics and Inflammatory Mechanisms"
+    },
+    {
+      "accession": "PXD074568",
+      "experimentTypes": [
+        "Data-independent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        ""
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Spleen",
+        "B cell"
+      ],
+      "quantificationMethods": [
+        "Data-independent acquisition"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-02-18",
+      "title": "Lipopolysaccharide stimulates dynamic changes in B cell metabolism to promote proliferation - Fluvastatin data"
+    },
+    {
+      "accession": "PXD074552",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Ovis aries",
+        "Timstof pro 2",
+        "Amphiregulin",
+        "Evosep one"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Ovis aries"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-02-17",
+      "title": "Amphiregulin drives mitochondrial vesicle packaging and delivery for immune modulation"
+    },
+    {
+      "accession": "PXD074418",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Innate immunity; lipopolysaccharides (lps); monocytes; proteomics; sepsis; interleukin-1 receptor associated kinase 3  (irak3)."
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Monocyte",
+        "Cell suspension culture"
+      ],
+      "quantificationMethods": [
+        "Peptide counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-02-13",
+      "title": "Exploring the proteomic landscape of THP-1 monocytes through two-challenge LPS induction"
+    },
+    {
+      "accession": "PXD073650",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Acute lung injury; drowning; sh3glb1; rab7; mitophagy"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2026-01-27",
+      "title": "Macrophage SH3GLB1 is required for Rab7-1 mediated mitophagy in inflammation during acute lung injury"
+    },
+    {
+      "accession": "PXD072062",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Chemoproteomics",
+        "Shp1",
+        "Covalent agonist"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)",
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-12-17",
+      "title": "A druggable redox switch on SHP1 controls macrophage inflammation"
+    },
+    {
+      "accession": "PXD071663",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Biofilm adaptation",
+        "Cross-resistance",
+        "Colanic acid",
+        "Lipopolysaccharide",
+        "Antimicrobial resistance",
+        "Biocides"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Escherichia coli",
+        "Bacteria"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-12-06",
+      "title": "Biofilm-driven LPS remodeling and colanic acid overproduction mediate Triamine adaptation and antibiotic cross-resistance in E. coli"
+    },
+    {
+      "accession": "PXD070961",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Cell surface proteomics",
+        "Rna-seq",
+        "Physiologic media",
+        "Hipsc",
+        "Surfaceome",
+        "Macrophages",
+        "Drug screening",
+        "Cell manufacturing"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Monocyte"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-11-19",
+      "title": "Generation of human iPSC-derived macrophages under animal-free conditions enables their application for safety and efficacy testing"
+    },
+    {
+      "accession": "PXD070784",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Monocytes  activation-induced alternative splicing isoforms"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Monocyte",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-11-16",
+      "title": "Native long-read RNA sequencing of human monocytes reveals activation-induced alternative splicing toward functional isoforms"
+    },
+    {
+      "accession": "PXD070731",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Immunology",
+        "Membrane curvature",
+        "Inflammasomes",
+        "Lipopolysaccharide sensing",
+        "Caspase-4",
+        "Host-pathogen interaction gbp1"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-11-14",
+      "title": "Caspase-4 binds to LPS membranes with positive curvature for non-canonical inflammasome activation"
+    },
+    {
+      "accession": "PXD070201",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Nanolc-ms/ms",
+        "288 spd",
+        "High-throughput scp",
+        "5-min cycle time"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)",
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-11-03",
+      "title": "High-Throughput Label-free Single-Cell Proteomics Enabled by Multicolumn NanoLC with a 5-min Cycle Time"
+    },
+    {
+      "accession": "PXD069660",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Top-down proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lptb2fgc",
+        "Native ms",
+        "Lipopolysaccharide",
+        "Lptb2fg",
+        "Lps",
+        "P. aeruginosa"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Pseudomonas aeruginosa pao1"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-10-20",
+      "title": "Structural snapshots of Pseudomonas aeruginosa LptB2FG and LptB2FGC reveal insights into lipopolysaccharide recognition and transport - native mass spectrometry data"
+    },
+    {
+      "accession": "PXD069220",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Sars-cov-2; orf8; macrophage; ace2; pyroptosis; il-1β; brodalumab"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Primary cell",
+        "Blood",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-10-08",
+      "title": "Secreted ORF8 reprograms macrophages to enhance SARS-CoV-2 infection of lung epithelial cells"
+    },
+    {
+      "accession": "PXD069059",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteomics",
+        "Sheep",
+        "Macrophage differentiation",
+        "Inflammation",
+        "Tissue repair"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Ovis aries"
+      ],
+      "organismsPart": [
+        "Monocyte",
+        "Blood",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-10-01",
+      "title": "Proteomic and morphologic characterization of ovine macrophage differentiation and polarization – cell lysates"
+    },
+    {
+      "accession": "PXD068541",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteomics",
+        "Sheep",
+        "Macrophage differentiation",
+        "Inflammation",
+        "Tissue repair"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Ovis aries"
+      ],
+      "organismsPart": [
+        "Monocyte",
+        "Blood",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-09-19",
+      "title": "Proteomic and morphologic characterization of ovine macrophage differentiation and polarization - secretomes"
+    },
+    {
+      "accession": "PXD068376",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Gel digestion",
+        "Native ms",
+        "Lps translocon"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Escherichia coli"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-09-15",
+      "title": "Structural basis of gate dynamics at the outer membrane lipopolysaccharide holo-translocon"
+    },
+    {
+      "accession": "PXD068076",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Inflammasomes",
+        "Proteomics",
+        "Innate immunity",
+        "Lipopolysaccharide (lps)",
+        "Macrophages",
+        "Mass spectrometry",
+        "Protein aggregation capture (pac)"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "label-free quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-09-04",
+      "title": "Induced pluripotent stem cell-derived macrophages as a model for human inflammasome signalling"
+    },
+    {
+      "accession": "PXD067612",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Monocytes",
+        "Ipscs",
+        "Extracellular vesicles",
+        "Inflammation",
+        "Macrophages"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-08-22",
+      "title": "Extracellular vesicles derived from induced pluripotent stem cells mediate anti-inflammatory effects in human primary macrophage. Macrophage dataset."
+    },
+    {
+      "accession": "PXD067236",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Preterm infant",
+        "Intestinal organoid",
+        "Bacteria",
+        "Host-microbiome interactions",
+        "Preterm models",
+        "Gut inflammation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [
+        "label-free quantification",
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-08-11",
+      "title": "Optimising the induction of inflammation within preterm infant-derived intestinal epithelial organoids"
+    },
+    {
+      "accession": "PXD067233",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Preterm infant",
+        "Intestinal organoid",
+        "Bacteria",
+        "Host-microbiome interactions",
+        "Preterm models",
+        "Gut inflammation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Gut"
+      ],
+      "quantificationMethods": [
+        "label-free quantification",
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-08-11",
+      "title": "Optimising the induction of inflammation within preterm infant-derived intestinal epithelial organoids"
+    },
+    {
+      "accession": "PXD067214",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "3d culture",
+        "Neutrophil extracellular traps",
+        "Mesenchymal stromal cells"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Stem cell"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-08-11",
+      "title": "MESENCHYMAL STROMAL CELLS FROM THREE-DIMENSIONAL CULTURE MITIGATE IV VITRO EXTRACELLULAR TRAPS INDUCED BY LIPOPOLYSACCHARIDES"
+    },
+    {
+      "accession": "PXD065699",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Bone marrow derived macrophages",
+        "Spg48",
+        "Neuroinflammation",
+        "Spg11"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Femur",
+        "Tibia",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-07-03",
+      "title": "Hyperactivity of the non-canonical inflammasome promotes neuroinflammation in Hereditary Spastic Paraplegia type SPG11 and SPG48"
+    },
+    {
+      "accession": "PXD065520",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Gel-based experiment",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Tmt-labeling; proteomics; fasciola hepatica; fh15; tlr; nf-κb; inos; cd36; lck; lps; macrophages; sepsis"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Bone marrow",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-06-26",
+      "title": "Quantitative Proteomics Reveals Fh15 as an Antagonist of TLR4 Downregulating the Activation of NF-κB, Inducible Nitric Oxide, Phagosome Signaling Pathways, and Oxidative Stress of LPS-stimulated Macrophages"
+    },
+    {
+      "accession": "PXD064672",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "14-3-3",
+        "Salmonella",
+        "Lncrna",
+        "Immunity",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "label-free quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-06-05",
+      "title": "A human-specific long noncoding RNA regulator of antigen-presenting cell viability and antimicrobial defense"
+    },
+    {
+      "accession": "PXD064630",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Innate immunity; interferon; interferon regulatory factor (irf); lipopolysaccharide (lps); macrophage; pattern recognition receptor (prr); stat transcription factor; toll-like receptor 4 (tlr4); virus; elongator"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Bone marrow",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-06-04",
+      "title": "Elongator is required for pattern recognition receptor and type I interferon signaling in macrophages."
+    },
+    {
+      "accession": "PXD064521",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Colorectal cancer cells",
+        "Lps",
+        "Klebsiella pneumoniae",
+        "5-fu"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-06-02",
+      "title": "Klebsiella pneumoniae LPS drives stromal-mediated repression of p53 and colorectal cancer chemoresistance"
+    },
+    {
+      "accession": "PXD064363",
+      "experimentTypes": [
+        "Top-down proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        ""
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Spleen",
+        "Cell culture",
+        "T cell"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-05-28",
+      "title": "Targeting LRBA triggers CTLA4 degradation and antitumor immunity for cancer immunotherapy"
+    },
+    {
+      "accession": "PXD064064",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Data-independent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Phosphoproteomics",
+        "Data independent acquisition",
+        "Tlr4",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-05-19",
+      "title": "Phosphoproteomic profiling of lipopolysaccharide stimulated toll-like receptor pathways in immortalized mouse macrophages"
+    },
+    {
+      "accession": "PXD063463",
+      "experimentTypes": [
+        "Data-dependent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Post-translational modification",
+        "Multi-protease digestion",
+        "Immune signaling",
+        "Acyl-biotin exchange (abe)",
+        "Palmitoylation",
+        "Proteomics",
+        "Lipopolysaccharide (lps)",
+        "S-acylation",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-04-29",
+      "title": "Proteome-wide Analysis of Palmitoylated Proteins in Macrophages Reveals Novel Insights into Early Immune Signaling"
+    },
+    {
+      "accession": "PXD062775",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lc-msms",
+        "Co-purification",
+        "Bacteroides fragilis",
+        "Membrane fraction",
+        "Bsap receptor"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Bacteroides thetaiotaomicron (strain atcc 29148 / dsm 2079 / nctc 10582 / e50 / vpi-5482)"
+      ],
+      "organismsPart": [
+        "Outer membrane"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-04-09",
+      "title": "Identification of receptor-binding domains of Bacteroidales antibacterial pore-forming toxins"
+    },
+    {
+      "accession": "PXD062689",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Co-infection",
+        "P. aeruginosa infection",
+        "Proteomics",
+        "C. albicans infection",
+        "Bone marrow derived macrophages"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)",
+        "Candida albicans (yeast)"
+      ],
+      "organismsPart": [
+        "Bone marrow",
+        "Bone marrow macrophage"
+      ],
+      "quantificationMethods": [
+        "Absolute quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-04-07",
+      "title": "Candida albicans infection suppresses Lipopolysaccharide or Pseudomonas aeruginosa stimulated murine bone marrow derived macrophage (BMDM) responses"
+    },
+    {
+      "accession": "PXD062376",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Metabolic endotoksemia",
+        "Microbiota",
+        "Noncanonical inflammasome",
+        "Caspase-4/-5",
+        "Lipopolysaccharide",
+        "Extracellular vesicles",
+        "Inflammation",
+        "Coronary artery disease"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-03-30",
+      "title": "Noncanonical Caspase 4/-5 Inflammasome Activation in Coronary Artery Endothelial Cells by Lipopolysaccharides Drives Extracellular Vesicle Secretion"
+    },
+    {
+      "accession": "PXD061276",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "H3.3",
+        "Morc3",
+        "Ifn1",
+        "Sumo",
+        "H3k9me3",
+        "Sumoylation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "label-free quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-02-27",
+      "title": "SUMO operates from a unique long tandem repeat to keep innate immunity in check"
+    },
+    {
+      "accession": "PXD060977",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Ipsc microglia",
+        "Surfaceomics",
+        "Wga-hrp",
+        "Lipopolysaccharide",
+        "Amyloid-beta"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Microglial cell"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-02-19",
+      "title": "iTF Microglia Cell-Surface Proteomics"
+    },
+    {
+      "accession": "PXD060882",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Plasma",
+        "Platelet",
+        "Transfusion",
+        "Proteomics",
+        "Label-free",
+        "Dia"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Blood plasma"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-02-17",
+      "title": "Platelet transfusion-induced changes in plasma profiles"
+    },
+    {
+      "accession": "PXD060569",
+      "experimentTypes": [
+        "SWATH MS",
+        "Data-independent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Bacterial",
+        "Fungal",
+        "Neutrophil extracellular traps",
+        "Viral"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Bone marrow",
+        "Neutrophil"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-02-07",
+      "title": "Comprehensive Proteomic Dataset of Neutrophil Extracellular Traps Triggered by Fungal, Bacterial, and Viral Stimuli"
+    },
+    {
+      "accession": "PXD059551",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics",
+        "Gel-based experiment",
+        "Data-independent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Translocon",
+        "Lipocalin",
+        "Outer membrane",
+        "Bacteria",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Escherichia coli"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "TIC"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2025-01-08",
+      "title": "• Optimal Functioning of the Lipopolysaccharide Transport Bridge Depends on a Ternary Complex Between the Lipocalin YedD and the LptDE Translocon"
+    },
+    {
+      "accession": "PXD058485",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        ""
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-12-02",
+      "title": "Integrated Multi-Omic Analysis Reveals KDM5B as a Regulator of Microglial Reactivity to Immunomodulatory Stimuli"
+    },
+    {
+      "accession": "PXD058087",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Rnf114",
+        "Adp-ribosylation",
+        "Ubiquitin",
+        "Chemoproteomics"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [
+        "label-free quantification",
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-11-20",
+      "title": "Identification of RNF114 as ADPrUb reader through chemical synthesis of non-hydrolysable Ubiquitylated ADPribose"
+    },
+    {
+      "accession": "PXD057739",
+      "experimentTypes": [
+        "Data-independent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        ""
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "B cell",
+        "Lymph node"
+      ],
+      "quantificationMethods": [
+        "Data-independent acquisition"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-11-11",
+      "title": "Lipopolysaccharide stimulates dynamic changes in B cell metabolism to promote cell proliferation - naive and LPS data"
+    },
+    {
+      "accession": "PXD057586",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Ipsc",
+        "Ftd",
+        "Lc-ms/ms",
+        "Als",
+        "Microglia"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Microglial cell"
+      ],
+      "quantificationMethods": [
+        "label-free quantification"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-11-06",
+      "title": "Human VCP mutant ALS/FTD microglia display immune and lysosomal phenotypes independently of GPNMB"
+    },
+    {
+      "accession": "PXD057460",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Myocarditis;cardiomyocytes; macrophages; large extracellular vesicles"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Rattus norvegicus (rat)"
+      ],
+      "organismsPart": [
+        "Cardiomyocyte cell line",
+        "Extracellular vesicle"
+      ],
+      "quantificationMethods": [
+        "Peptide counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-11-03",
+      "title": "Large Extracellular Vesicles Derived from LPS-preconditioned Cardiomyocytes Alleviate Myocarditis via Mediating Macrophage Polarization and Modulating p38 MAPK Pathway"
+    },
+    {
+      "accession": "PXD057050",
+      "experimentTypes": [
+        "Proteogenomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Acute kidney injury",
+        "Sepsis",
+        "Mice"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Kidney"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-10-22",
+      "title": "SA-AKI mice and Sepsis mice kidney MS data"
+    },
+    {
+      "accession": "PXD056875",
+      "experimentTypes": [
+        "Data-dependent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Bacteria",
+        "Pseudaminic acid",
+        "Glycosylation",
+        "Flagella"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Helicobacter pylori p12"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-10-17",
+      "title": "Uncovering new insights into bacterial pseudaminylation with a pan-specific antibody tool"
+    },
+    {
+      "accession": "PXD056628",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Salmonella",
+        "O-antigen",
+        "Omv",
+        "Outer-membrane_vesicles"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Salmonella enterica subsp. enterica serovar typhimurium str. 14028s wu"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "Spectrum counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-10-08",
+      "title": "Wild-type and single-O-antigen repeat outer-membrane vesicles induce equivalent protection against homologous and heterologous Salmonella challenge"
+    },
+    {
+      "accession": "PXD056226",
+      "experimentTypes": [
+        "Data-dependent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteomic profile",
+        "Extracellular vesicles",
+        "Mass spectrometry",
+        "Microglia"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-09-25",
+      "title": "Proteomic Profiling of Extracellular Vesicles Derived From Different State Of Polarized Microglia"
+    },
+    {
+      "accession": "PXD055006",
+      "experimentTypes": [
+        "HDMSE"
+      ],
+      "flags": {},
+      "keywords": [
+        "Shp-1; hdx-ms; hydrogen/deuterium exchange mass spectrometry; covalent activator"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-08-19",
+      "title": "A druggable redox switch on SHP1 controls macrophage inflammation"
+    },
+    {
+      "accession": "PXD054562",
+      "experimentTypes": [
+        "Data-independent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Ebp",
+        "Lc-msms",
+        "Lung transplantation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Sus scrofa domesticus (domestic pig)"
+      ],
+      "organismsPart": [
+        "Lung"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-08-04",
+      "title": "Unraveling molecular and functional responses across three lung injury models to expand the donor lung pool"
+    },
+    {
+      "accession": "PXD054404",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Tobacco smoke",
+        "Lung cancer",
+        "Multi-omics"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Lung",
+        "Type ii pneumocyte"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-07-30",
+      "title": "A multi-omics study of epigenetic changes in type II alveolar cells in A/J mice exposed to lipopolysaccharide and environmental tobacco smoke"
+    },
+    {
+      "accession": "PXD054069",
+      "experimentTypes": [
+        "Data-dependent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lc/ms",
+        "Agnhw",
+        "Phosphoproteome"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Brain"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-07-19",
+      "title": "LC/MS Analysis of Phosphorylated Protein Changes in Mouse Brain Tissue After LPS Treatment and Angong Niuhuang Wan Administration"
+    },
+    {
+      "accession": "PXD053647",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Glycoproteomics",
+        "M2 macrophage",
+        "Macrophage polarization",
+        "M1 macrophage",
+        "Proteomics",
+        "Surfaceome",
+        "Tumor-associated macrophages"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Monocyte",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-07-04",
+      "title": "Deciphering the mechanisms of macrophage polarization through comprehensive analysis of protein glycosylation in cells and on the surface"
+    },
+    {
+      "accession": "PXD052925",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Ehec (enterohemorrhagic e. coli)",
+        "Tnfα (tumour necrosis factor alpha)",
+        "Brain pathology",
+        "Etanercept",
+        "Microglial activation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Brain"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-06-07",
+      "title": "Inhibition of tumour necrosis factor alpha by Etanercept attenuates Shiga toxin-induced brain pathology"
+    },
+    {
+      "accession": "PXD052433",
+      "experimentTypes": [
+        "Immunopeptidomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Sepsis",
+        "Tlr4",
+        "Myd88"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Peptide counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-05-21",
+      "title": "LPS-induced TIR domain complex acetylation activated TLR4/MAL/MyD88 signal pathway in sepsis"
+    },
+    {
+      "accession": "PXD052414",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Cysteine",
+        "Ros",
+        "Oxidation",
+        "Lps",
+        "Manganese"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Epithelial cell"
+      ],
+      "quantificationMethods": [
+        "SILAC"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-05-20",
+      "title": "Kinetic redox proteomic analysis reveals distinct lipopolysaccharide effects, limited by a manganese Superoxide Dismutase mimic"
+    },
+    {
+      "accession": "PXD052113",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Immunoparalysis",
+        "Cytokines",
+        "Inflammasomes",
+        "Toll-like receptors",
+        "Immune thrombocytopenia"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Primary cell",
+        "Monocyte"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-05-08",
+      "title": "Platelet-derived transcription factors license human monocyte inflammation"
+    },
+    {
+      "accession": "PXD051013",
+      "experimentTypes": [
+        "Data-dependent acquisition"
+      ],
+      "flags": {},
+      "keywords": [
+        "Plasma",
+        "Time series analysis",
+        "Lipopolysaccharide",
+        "Lipidomics",
+        "Inflammation",
+        "Anti-oxidative supplements",
+        "Lipid mediators",
+        "Clinical study"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Blood plasma"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-03-27",
+      "title": "Lipid class-specific kinetics of plasma fatty acids, oxylipins, endocannabinoids, lysophospholipids and bile acids upon a lipopolysaccharide challenge of healthy humans and their modulation by anti-oxidative supplements"
+    },
+    {
+      "accession": "PXD050432",
+      "experimentTypes": [
+        "Top-down proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Isorhynchophylline；acute lung injury；proteomic technology; tunel; rt-pcr; nano-lc-ms/ms"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Lung"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-03-07",
+      "title": "Mechanism of isorhynchophylline in lipopolysaccharide-induced acute lung injury based on proteomic technology"
+    },
+    {
+      "accession": "PXD048664",
+      "experimentTypes": [
+        "Shotgun proteomics",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Nanoplastic particle",
+        "Nanolc-ms/ms",
+        "Mouse",
+        "Gel plugs",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Protein Abundance Index - PAI"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-01-18",
+      "title": "Biobased, Biodegradable but not bio-neutral: about the effects of polylactic acid nanoparticles on macrophages."
+    },
+    {
+      "accession": "PXD048278",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Immunomodulatory cytokine",
+        "Tgm (tgf-β mimic)",
+        "Helminth worm parasites"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Spleen",
+        "Fibroblast",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2024-01-05",
+      "title": "The TGF-β mimic TGM4 achieves cell specificity through combinatorial surface co-receptor binding."
+    },
+    {
+      "accession": "PXD046793",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Chemical cross-linking coupled with mass spectrometry proteomics",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Mouse",
+        "Lps",
+        "Macrophage",
+        "Rna binding protein"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-11-08",
+      "title": "LPS-Stimulated Mouse Macrophage RNA Binding Protein Domain Enrichment and Analysis"
+    },
+    {
+      "accession": "PXD046754",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lc-ms",
+        "Mouse",
+        "Proteomics",
+        "Rna-binding protein",
+        "Lps",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "SILAC"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-11-07",
+      "title": "Lipopolysaccharide-induced changes in the RNA-binding proteome of mouse macrophages"
+    },
+    {
+      "accession": "PXD046656",
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Mouse",
+        "Lipopolysaccharide",
+        "Proteome",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-11-03",
+      "title": "Global Proteomics Profiling of LPS Stimulated IMM cells"
+    },
+    {
+      "accession": "PXD046550",
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Plasma",
+        "Complexome profiling",
+        "Medical proteomics",
+        "Acute phase",
+        "Bottom-up ms"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Blood plasma"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-11-01",
+      "title": "Longitudinal fluctuations in protein concentrations and higher-order structures in the plasma proteome of patients enduring a kidney transplant: two in-depth case studies"
+    },
+    {
+      "accession": "PXD046383",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Polyphenol",
+        "Elaeagnus latifolia",
+        "Macrophages",
+        "Anti-oxidation",
+        "Anti-inflammation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-10-25",
+      "title": "Effects of Elaeagnus latifolia extract on anti-inflammation in LPS-induced macrophages"
+    },
+    {
+      "accession": "PXD046284",
+      "experimentTypes": [
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lc-ms",
+        "Mof/kat8",
+        "Histone acetyl transferase",
+        "Gel based ms",
+        "Lfq",
+        "Prdx1",
+        "Lysine acetylation",
+        "Hek",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-10-22",
+      "title": "MOF-mediated PRDX1 acetylation regulates inflammatory macrophage activation"
+    },
+    {
+      "accession": "PXD045934",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Rhomboid-family proteins",
+        "Organelle proteomics",
+        "Er-associated degradation",
+        "Protein homeostasis",
+        "Intramembrane proteolysis",
+        "Protein trafficking"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-10-06",
+      "title": "RHBDL4-triggered downregulation of COPII adaptor protein TMED7 suppresses TLR4-mediated inflammatory signaling"
+    },
+    {
+      "accession": "PXD045527",
+      "experimentTypes": [
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Caseinase",
+        "Proteases",
+        "Drosophila",
+        "Hemolymph",
+        "Gelatinase",
+        "Immunity",
+        "In gel zymography"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Drosophila melanogaster (fruit fly)"
+      ],
+      "organismsPart": [
+        "Hemolymph"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-09-20",
+      "title": "Drosophila melanogaster hemolymph gelatinase"
+    },
+    {
+      "accession": "PXD045237",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Stimulation",
+        "Pathogen",
+        "Immunity",
+        "Pbmc"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "B cell",
+        "Primary cell",
+        "Monocyte",
+        "T cell"
+      ],
+      "quantificationMethods": [
+        "Normalized Spectral Abundance Factor - NSAF"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-09-09",
+      "title": "Multi-omic profiling of pathogen-stimulated primary immune cells"
+    },
+    {
+      "accession": "PXD045072",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Tmt labelled"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-09-04",
+      "title": "Helicobacter pylori induces a novel form of innate immune memory via accumulation of NF-кB proteins"
+    },
+    {
+      "accession": "PXD045082",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Extracellular proteins; cupriavidus pauculus; nickel resistance; secretome; efflux pumps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Cupriavidus pauculus"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-09-04",
+      "title": "Extracellular proteins enhance Cupriavidus pauculus nickel tolerance and cell aggregate formation"
+    },
+    {
+      "accession": "PXD044893",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteomics",
+        "Extracellular vesicles",
+        "Lipopolysaccharide",
+        "Neuroinflammation",
+        "Microglia"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Brain"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-08-28",
+      "title": "Acute neuroinflammation promotes a metabolic shift that alters extracellular vesicle cargo in the mouse brain cortex"
+    },
+    {
+      "accession": "PXD044230",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Thermal proteome profiling",
+        "Thermal profiling",
+        "Tpp",
+        "Ms-cetsa",
+        "Drug discovery",
+        "Cetsa"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Escherichia coli"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-07-31",
+      "title": "Thermal proteome profiling of stationary-phase E. coli treated with semapimod"
+    },
+    {
+      "accession": "PXD044043",
+      "experimentTypes": [
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Oxidative-inflammatory stress",
+        "Macrophages"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-07-24",
+      "title": "Widespread cysteine persulfidation in activated macrophages as a protective mechanism against oxidative-inflammatory stress"
+    },
+    {
+      "accession": "PXD043195",
+      "experimentTypes": [
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Ftsh",
+        "Antibiotics",
+        "Outer membrane",
+        "Lipopolysaccharide",
+        "Phospholipid",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Escherichia coli"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-06-22",
+      "title": "Same same but different – The global response of Escherichia coli to five different LpxC inhibitors"
+    },
+    {
+      "accession": "PXD043019",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Pinch",
+        "Focal adhesion",
+        "Inflammation",
+        "Complement"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Stem cell",
+        "Bone marrow"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-06-15",
+      "title": "Mapping of bone marrow sample proteome of Pinch1/2 knockout mice"
+    },
+    {
+      "accession": "PXD042754",
+      "experimentTypes": [
+        "Top-down proteomics",
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Altprot",
+        "Immunoglobulin",
+        "Astrocyte",
+        "Heimdall"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Rattus norvegicus (rat)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Brain",
+        "Astrocyte"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-06-06",
+      "title": "Heimdall, an alternative protein issued from a ncRNA related to kappa light chain variable region of immunoglobulins from astrocytes  : a new player in neural proteome"
+    },
+    {
+      "accession": "PXD042579",
+      "experimentTypes": [
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Necroptosis",
+        "O-glcnac",
+        "Ripk1"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-05-31",
+      "title": "O-GlcNAcylation of RIPK1 Rescues Red Blood Cells from Necroptosis"
+    },
+    {
+      "accession": "PXD041774",
+      "experimentTypes": [
+        "MSE"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lptde",
+        "Hdx-ms",
+        "Membrane protein",
+        "Translocon",
+        "Native ms"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Escherichia coli"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-04-24",
+      "title": "LptM promotes oxidative maturation of the lipopolysaccharide translocon by substrate binding mimicry."
+    },
+    {
+      "accession": "PXD041375",
+      "experimentTypes": [
+        "SWATH MS"
+      ],
+      "flags": {},
+      "keywords": [
+        "Dexamethasone",
+        "Mouse",
+        "Innate immunity",
+        "Glucocorticoid",
+        "Macrophage",
+        "Type i interferon"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Bone marrow",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-04-06",
+      "title": "Effect of LPS and the glucocorticoid dexamethasone on the mouse Bone Marrow Derived Macrophage Proteome"
+    },
+    {
+      "accession": "PXD041265",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lipopolysaccharide",
+        "Epigenetics",
+        "Sepsis",
+        "Ezh2",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "Dimethyl Labeling"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-04-01",
+      "title": "The regulatory roles of Ezh2 in response to lipopolysaccharide (LPS) in macrophages and mice with conditional Ezh2 deletion with LysM-Cre system"
+    },
+    {
+      "accession": "PXD040963",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lc-ms/ms",
+        "Extracellular vesicles",
+        "Label-free",
+        "E. coli"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Escherichia coli"
+      ],
+      "organismsPart": [
+        "Cell suspension culture"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-03-19",
+      "title": "lExtracellular vesicle proteins of E. coli O83"
+    },
+    {
+      "accession": "PXD040933",
+      "experimentTypes": [
+        "SWATH MS"
+      ],
+      "flags": {},
+      "keywords": [
+        "Kdac inhibition",
+        "Mouse",
+        "Alveolar-like macrophages",
+        "Dia proteomics",
+        "Lps activation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-03-17",
+      "title": "Effects of lysine deacetylase inhibitor treatment on LPS responses of alveolar-like macrophages"
+    },
+    {
+      "accession": "PXD040940",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Liver",
+        "Lc-ms/ms",
+        "Ld",
+        "Lbp"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Hepatocyte",
+        "Liver"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-03-17",
+      "title": "LBP resists hepatic oxidative stress by regulating LD homeostasis"
+    },
+    {
+      "accession": "PXD039815",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Tdag51",
+        "Inflammatory response",
+        "Tlr",
+        "Lps",
+        "Phlda1",
+        "Foxo1"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Brain",
+        "Colon"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-02-03",
+      "title": "TDAG51 is a novel coactivator of FoxO1"
+    },
+    {
+      "accession": "PXD039193",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Pff",
+        "Lc-ms/ms",
+        "Inflammation",
+        "Alpha-synuclein",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Brain"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2023-01-03",
+      "title": "Effect of systemic, low-dose LPS treatment on brain proteome of PFF-inoculated mice"
+    },
+    {
+      "accession": "PXD038941",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Multi-mineral",
+        "Cytokines",
+        "Proteomics",
+        "Gut barrier",
+        "Inflammation",
+        "Colon organoids",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Stem cell",
+        "Epithelial cell",
+        "Colon"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-12-19",
+      "title": "Red Algae-Derived Mineral Intervention to Counter Pro-inflammatory Activity in Human Colon Organoids"
+    },
+    {
+      "accession": "PXD038764",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Transmigration",
+        "Mass spectrometry based proteomics",
+        "Optogenetic control",
+        "Toll-like receptor 4",
+        "Lipopolysaccharide",
+        "Pro-inflammatory proteins",
+        "Chemotaxis",
+        "Endothelial cells"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Lymphatic endothelial cell"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-12-13",
+      "title": "Comparative and temporal characterization of LPS and blue light induced TLR4 signal transduction and gene expression in optogenetically manipulated endothelial cells"
+    },
+    {
+      "accession": "PXD038747",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Macrophage; lps; immunoproteasome"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-12-12",
+      "title": "The mass spectrometry-based proteomics analysis of macrophages"
+    },
+    {
+      "accession": "PXD038612",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Inflammation",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Primary cell"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-12-07",
+      "title": "Discovery of a druggable copper-signaling pathway that drives inflammation"
+    },
+    {
+      "accession": "PXD037062",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Membrane vesicles",
+        "Pseudomonas aeruginosa",
+        "Proteomics analysis",
+        "X-ray irradiation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Pseudomonas aeruginosa pao1"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-09-28",
+      "title": "Proteomics analysis of the membrane vesicles in Pseudomonas aeruginosa under X-ray irradiation"
+    },
+    {
+      "accession": "PXD036970",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Long covid syndrome; chronic fatigue syndrome; proteomics; metabolomics; macrophage polarization"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "M2 macrophage",
+        "M1 macrophage",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-09-25",
+      "title": "Multi-omics provide evidence for an anti-inflammatory immune signature and metabolic alterations in patients with Long COVID Syndrome – an exploratory study (supernatants of M1 and M2-like macrophages)"
+    },
+    {
+      "accession": "PXD030521",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Aggregation",
+        "Proteins",
+        "Host defense",
+        "Antimicrobial peptides",
+        "Innate immunity",
+        "Inflammation",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Wound healing involved in inflammatory response",
+        "Wound fluid"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-09-17",
+      "title": "Aggregation as a host defense mechanism"
+    },
+    {
+      "accession": "PXD036711",
+      "experimentTypes": [
+        "SWATH MS"
+      ],
+      "flags": {},
+      "keywords": [
+        "Protein complex",
+        "Co-frac-ms",
+        "Swath",
+        "Dia",
+        "Cofractionation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [
+        "SWATH MS"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-09-14",
+      "title": "Rapid profiling of protein complex re-organization in perturbed systems"
+    },
+    {
+      "accession": "PXD036744",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics",
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteomics",
+        "Inflammation",
+        "N2a",
+        "Turboid",
+        "Bv2"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-09-14",
+      "title": "Cellular proteomic profiling using proximity labelling by TurboID-NES in microglial and neuronal cell lines."
+    },
+    {
+      "accession": "PXD036542",
+      "experimentTypes": [
+        "Shotgun proteomics",
+        "Gel-based experiment",
+        "SWATH MS"
+      ],
+      "flags": {},
+      "keywords": [
+        "Tca cycle",
+        "Glucocorticoids",
+        "Succinate",
+        "Proteomics",
+        "Adrenal gland",
+        "Lipopolysaccharide (lps)"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Adrenal gland"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-09-05",
+      "title": "Succinate mediates inflammation-induced adrenocortical dysfunction"
+    },
+    {
+      "accession": "PXD036456",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Enterocytes",
+        "Omega-3 polyunsaturated fatty acids",
+        "Shotgun proteomics",
+        "Lc-ms/ms.",
+        "Metabolic stress",
+        "Lipopolysaccharides",
+        "Biological dataset"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Sus scrofa domesticus (domestic pig)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Intestinal epithelial cell"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-09-02",
+      "title": "Comprehensive proteomic analysis reveals omega-3 fatty acids to counteract endotoxin-stimulated metabolic dysregulation in porcine enterocytes"
+    },
+    {
+      "accession": "PXD036036",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Pamp",
+        "Monocyte",
+        "Marker of tolerance",
+        "Hydrazide",
+        "Tolerance",
+        "Glycoproteins",
+        "N-glycosylation",
+        "Staphylococcus aureus",
+        "Membrane proteins"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Monocyte",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-08-12",
+      "title": "Staphylococcus aureus Mediated Tolerance Induction in Human Monocytes is accompanied with Specific Alterations in Membrane Receptor Expression"
+    },
+    {
+      "accession": "PXD035577",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Nets",
+        "Neutrophils",
+        "Ros",
+        "Degranulation",
+        "Aging",
+        "Tlr4",
+        "Phagocytosis"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Primary cell",
+        "Neutrophil"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-07-25",
+      "title": "Age-related decline in the resistance of mice to bacterial infection and in LPS/TLR4 pathway-dependent neutrophil responses"
+    },
+    {
+      "accession": "PXD035071",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Phage biocontrol",
+        "Psa phage proteomics",
+        "Structural proteome φpsa374",
+        "Cryo-electron microscopy"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Pseudomonas phage pamx74"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-07-04",
+      "title": "A lipopolysaccharide-dependent phage infects a pseudomonad phytopathogen and can evolve to evade phage resistance"
+    },
+    {
+      "accession": "PXD034963",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lipopolysaccharide-binding protein",
+        "Retained placenta",
+        "Proteomics",
+        "Cows",
+        "Serum"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Bos taurus (bovine)"
+      ],
+      "organismsPart": [
+        "Blood serum"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-06-29",
+      "title": "Biomarkers for diagnosing the retained placenta in cows-does the analysis of serum proteome keep the secret?"
+    },
+    {
+      "accession": "PXD034900",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteostasis",
+        "Proteomics",
+        "Neuroinflammation",
+        "Cns",
+        "Ups",
+        "Immunoproteasome",
+        "Microglia"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Microglial cell",
+        "Cell culture",
+        "Brain"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-06-26",
+      "title": "Impact of immunoproteasome impairment on microglia cell function"
+    },
+    {
+      "accession": "PXD034530",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Pseudomonas aeruginosa; chlorhexidine digluconate; chlorhexidine; cross-resistance; biofilm; psl; cell aggregate; persistence; wound infection"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-06-15",
+      "title": "Chlorhexidine promotes psl in Pseudomonas aeruginosa that enhances cell aggregation with preserved pathogenicity demonstrates an adaptation against antiseptic"
+    },
+    {
+      "accession": "PXD033859",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lrba",
+        "Pka",
+        "Vasopressin"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-05-12",
+      "title": "Mass spectrometry-based analysis of LRBA phosphorylation"
+    },
+    {
+      "accession": "PXD033852",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lrba",
+        "Renal collecting duct",
+        "Aqp2",
+        "Pka substrates"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Kidney"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-05-12",
+      "title": "cAMP/PKA signaling phosphorylates LRBA in renal collecting duct"
+    },
+    {
+      "accession": "PXD033532",
+      "experimentTypes": [
+        "SWATH MS"
+      ],
+      "flags": {},
+      "keywords": [
+        "Swath-ms; uveitis; lipopolysaccharide; retina; inflammation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Retina"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-04-28",
+      "title": "Retinal proteomic analysis in a mouse model of endotoxin-induced uveitis using a data-independent acquisition-based mass spectrometry"
+    },
+    {
+      "accession": "PXD032759",
+      "experimentTypes": [
+        "All-ion fragmentation"
+      ],
+      "flags": {},
+      "keywords": [
+        "Inulin; anti-inflammatory effect; diapasef; dia-nn; library-free"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-03-23",
+      "title": "Potential anti-inflammatory effect of inulin in an inflammatory cell model (mouse macrophages with LPS)"
+    },
+    {
+      "accession": "PXD032320",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "",
+        "C9orf72 interactome",
+        "C9orf72 mutation",
+        "Lc-ms/ms",
+        "Microglia and inflammation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Brain",
+        "Pluripotent stem cell"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-03-16",
+      "title": "Cell autonomous immune dysfunction driven by disrupted autophagy in C9orf72-ALS microglia contributes to neurodegeneration"
+    },
+    {
+      "accession": "PXD032209",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Na",
+        "Proteomics",
+        "Lipopolysaccharide",
+        "A549 cell.",
+        "K-atpase α1",
+        "Ards"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Epithelial cell"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-03-11",
+      "title": "Identification of different proteins binding to Na, K-ATPase α1 in LPS-induced ARDS cell model by proteomic analysis"
+    },
+    {
+      "accession": "PXD031930",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteomics dia",
+        "Stroke",
+        "Liposaccharides",
+        "Microglia"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Microglia"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-02-28",
+      "title": "Proteomic alterations in microglia with ischemic stroke and effect of LPS treatment"
+    },
+    {
+      "accession": "PXD031609",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteomics",
+        "Polystyrene particles",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Protein Abundance Index - PAI"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-02-11",
+      "title": "Does size matter ? A proteomics-informed comparison of the effects of polystyrene beads of different sizes on macrophages"
+    },
+    {
+      "accession": "PXD030989",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Tuberculosis",
+        "Corticosteroids",
+        "Glucocorticoids",
+        "Transcriptional activator",
+        "Alpha-1-antitrypsin"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Blood cell",
+        "Blood plasma"
+      ],
+      "quantificationMethods": [
+        "Spectrum counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-01-16",
+      "title": "Alpha-1-antitrypsin binds to the glucocorticoid receptor with anti-inflammatory and anti-mycobacterial significance in macrophages"
+    },
+    {
+      "accession": "PXD030838",
+      "experimentTypes": [
+        "SWATH MS"
+      ],
+      "flags": {},
+      "keywords": [
+        "Mouse",
+        "Lat1",
+        "Neuroinflammation",
+        "Proteome",
+        "Diapasef"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Brain"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2022-01-08",
+      "title": "Deep proteome analysis of mouse brains from wild-type, LPS-induced, and drug-treated mice groups"
+    },
+    {
+      "accession": "PXD030678",
+      "experimentTypes": [
+        "Top-down proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Hydrocephalus",
+        "Csf",
+        "Multi-omics",
+        "Choroide plexus"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Rattus norvegicus (rat)"
+      ],
+      "organismsPart": [
+        "Brain",
+        "Epithelial cell"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-12-31",
+      "title": "A druggable signaling hub of choroid plexus immune-secretory function"
+    },
+    {
+      "accession": "PXD030415",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Ubiquitin",
+        "Traf6",
+        "Atg9a"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Early embryonic cell"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-12-15",
+      "title": "K48/K63-linked polyubiquitination of ATG9A at K581/K838 by TRAF6 E3 ligase"
+    },
+    {
+      "accession": "PXD030321",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Thp-1",
+        "Lc-ms/ms",
+        "Irak3",
+        "Co-ip"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Monocyte"
+      ],
+      "quantificationMethods": [
+        "Spectrum counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-12-11",
+      "title": "LC-MS/MS identification of interactors of Interleukin-1 Receptor Associated Kinase 3 (IRAK3)"
+    },
+    {
+      "accession": "PXD029948",
+      "experimentTypes": [
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lps biosynthesis inhibition",
+        "Proteomics",
+        "Pseudomonas aeruginosa",
+        "Stress response",
+        "Mode of action"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Pseudomonas aeruginosa pao1"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "Peptide counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-11-26",
+      "title": "Adaptive responses of Pseudomonas aeruginosa to treatment with antibiotics"
+    },
+    {
+      "accession": "PXD029831",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Lc-ms",
+        "Ipsc",
+        "Secretome"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-11-20",
+      "title": "Secretome analysis of polarised macrophages derived from induced pluripotent stem cells"
+    },
+    {
+      "accession": "PXD029776",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Lc-ms",
+        "Ipsc",
+        "Macrophages"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-11-17",
+      "title": "Proteomic analysis of macrophages derived from induced pluripotent stem cells"
+    },
+    {
+      "accession": "PXD029672",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Structural proteomics; raw264.7; lps; lip-ms; hsp60"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-11-11",
+      "title": "Structural Alternation in Heat Shock Proteins of Activated Macrophages"
+    },
+    {
+      "accession": "PXD029634",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Biomarkers; peripheral blood mononuclear cells; proteomics; pulmonary tuberculosis; treatment response."
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Blood cell",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-11-09",
+      "title": "Proteomic analysis of peripheral blood mononuclear cells isolated from patients with pulmonary tuberculosis: a pilot study from Zanzibar, Tanzania"
+    },
+    {
+      "accession": "PXD029155",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Mouse macrophage lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-10-15",
+      "title": "Explorining the effect of LPS treatment on mouse macrophages"
+    },
+    {
+      "accession": "PXD028314",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Apim-peptide",
+        "Glycolysis",
+        "Apim",
+        "Atx-101",
+        "Cell signaling",
+        "Pi3k/akt pathway"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-09-09",
+      "title": "PCNA regulates metabolism by stabilizing ENO1 and 6PGD"
+    },
+    {
+      "accession": "PXD027737",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Mitochondria",
+        "Nrf2",
+        "Keap1",
+        "Tmt",
+        "Bmdm",
+        "Murine"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Bone marrow macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-08-05",
+      "title": "Nrf2 is a central regulator of the metabolic landscape in macrophages and finetunes their inflammatory response"
+    },
+    {
+      "accession": "PXD027744",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Dinch",
+        "Plasticizers",
+        "Endocrine disruption",
+        "Minch"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell suspension culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-08-05",
+      "title": "THP-1 cells treated with plasticizer DINCH and metabolite MINCH"
+    },
+    {
+      "accession": "PXD027471",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Sepsis; clp; macrophages; proteomic analysis; ivig"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-07-21",
+      "title": "Exploration on survived mice after sepsis and proteomic analy-sis on LPS-activated macrophages supports the regulation of sepsis hyper-inflammation by intravenous immunoglobulin"
+    },
+    {
+      "accession": "PXD027350",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Endocannabinoid",
+        "Eicosanoid",
+        "Plcg2",
+        "Innate immune cell"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Microglial cell",
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-07-16",
+      "title": "PLCG2 regulates endocannabinoid and eicosanoid networks in innate immune cells"
+    },
+    {
+      "accession": "PXD027003",
+      "experimentTypes": [
+        "Shotgun proteomics",
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Excretory",
+        "Filariasis",
+        "Brugia malayi",
+        "Bmes",
+        "Lc-esi ms/ms",
+        "Secretory"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Brugia malayi"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "Spectrum counting",
+        "Peptide counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-06-30",
+      "title": "Filariasis test strip (FTS) antibody recognition of Brugia malayi glycoproteins"
+    },
+    {
+      "accession": "PXD026828",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Translatome",
+        "Nascent peptides",
+        "Ribo-seq"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Embryonic stem cell",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-06-21",
+      "title": "Nascent Ribo-Seq measures ribosomal loading time and reveals kinetic impact on ribosome density"
+    },
+    {
+      "accession": "PXD026304",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lc-ms/ms; orbitrap; antigenic molecules"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Leishmania donovani ld 2001"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Diploid cell"
+      ],
+      "quantificationMethods": [
+        "Normalized Spectral Abundance Factor - NSAF"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-05-27",
+      "title": "Utilizing of quantitative proteomics to identify species-specific protein therapeutic target for treatment of leishmaniasis."
+    },
+    {
+      "accession": "PXD025022",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Tryptophan catabolites",
+        "Indole-3-aldehyde",
+        "Proteomics",
+        "Human macrophages",
+        "Lc-ms/ms",
+        "Indole-3-acetic acide",
+        "Tmt",
+        "Benzo[a]pyrene",
+        "Ahr",
+        "Metabolism",
+        "Lipopolysaccharides"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-03-26",
+      "title": "Proteomic characterization of the cellular effects of AHR activation by microbial tryptophan catabolites in endotoxin-activated human macrophages"
+    },
+    {
+      "accession": "PXD024068",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Traps",
+        "Mkd",
+        "Fmf"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Monocyte",
+        "Leukocyte",
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-02-08",
+      "title": "PROTEOMIC SIGNATURES OF MONOCYTES IN HEREDITARY RECURRENT FEVERS"
+    },
+    {
+      "accession": "PXD023509",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Immune response",
+        "Thp-1 cells",
+        "Lc-ms/ms",
+        "Hyperlopit"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "B cell",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2021-01-11",
+      "title": "HyperLOPIT and temporal proteomic profiling of the response to lipopolysaccharide in the THP-1 human leukaemia cell line"
+    },
+    {
+      "accession": "PXD023005",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Succinate dehydrogenase",
+        "Proteomics",
+        "Selenium",
+        "Macrophages"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Bone marrow",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-12-11",
+      "title": "Metabolic control of inflammation by selenium"
+    },
+    {
+      "accession": "PXD022958",
+      "experimentTypes": [
+        "SRM/MRM"
+      ],
+      "flags": {},
+      "keywords": [
+        "Multiple sclerosis"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cerebrospinal fluid"
+      ],
+      "quantificationMethods": [
+        "Parallel Reaction Monitoring (PRM)"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-12-07",
+      "title": "CSF chitinase 3-like 2 is associated with disability progression in patients with progressive multiple sclerosis"
+    },
+    {
+      "accession": "PXD022599",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Allergic contact dermatitis",
+        "Monocyte-derived dendritic cells",
+        "Proteomics",
+        "Nickel",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Dendritic cell",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "Gel-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-11-18",
+      "title": "The contact allergen NiSO4 triggers a distinct molecular response in primary human dendritic cells compared to bacterial LPS"
+    },
+    {
+      "accession": "PXD021925",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lps tolerance",
+        "Raw 264.7",
+        "Secretome",
+        "Macrophages"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "SILAC"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-10-12",
+      "title": "LPS Tolerance inhibits cellular respiration and induces global changes in the secretome"
+    },
+    {
+      "accession": "PXD020617",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Reproducibility issues",
+        "Eicosanoids",
+        "Cell metabolism",
+        "Macrophages"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-07-29",
+      "title": "Addressing reproducibility challenges in cell culture: the impact of oxylipins contained in fetal calf serum"
+    },
+    {
+      "accession": "PXD019853",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lc-msms sampei modifications ptm orbitrap macrophages lps scx"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell suspension culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-06-17",
+      "title": "Deep chemoproteomic analysis of LPS-stimulated RAW264.7 cell proteome"
+    },
+    {
+      "accession": "PXD019267",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Nanotoxicology",
+        "Proteomics",
+        "Nanomaterials",
+        "Immunotoxicology",
+        "Mass spectrometry"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Monocyte"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-05-19",
+      "title": "Proteome changes in monocytic THP-1 cells induced by 31 engineered nanomaterials"
+    },
+    {
+      "accession": "PXD019258",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Host response",
+        "Immunopeptidomics",
+        "Monocytes",
+        "Foreign body response",
+        "Biocompatibility",
+        "Biocompatibility assay",
+        "Mass spectrometry",
+        "Biomaterials"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Monocyte",
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-05-18",
+      "title": "The impact of biomaterial cell contact on the immunopeptidome"
+    },
+    {
+      "accession": "PXD018257",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Arpe-19",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Retinal pigment epithelium cell line",
+        "Epithelial cell"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-03-31",
+      "title": "Quantitative proteomic analysis of ARPE-19 cells in response to LPS"
+    },
+    {
+      "accession": "PXD018260",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Arpe-19",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Retinal pigment epithelium cell line",
+        "Epithelial cell"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-03-30",
+      "title": "Quantitative phosphoproteomic analysis of ARPE-19 cells in response to LPS"
+    },
+    {
+      "accession": "PXD018274",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lipopolysaccharide",
+        "Endothelial dysfunction",
+        "Disdivo.",
+        "Vascular beds",
+        "Endothelial cells"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cardiovascular system"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-03-30",
+      "title": "Characterization of proteome dynamics in individual vascular layers at the early stage of acute sepsis"
+    },
+    {
+      "accession": "PXD017474",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Cell signalling",
+        "Metabolomics",
+        "Kinome",
+        "Signalome",
+        "Redox metabolism",
+        "Systems-level study",
+        "Central carbon metabolism",
+        "Apim",
+        "Pi3k/akt pathway"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Embryo",
+        "Kidney epithelial cell"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-02-12",
+      "title": "PCNA has specific functions in regulation of metabolism in haematological cells"
+    },
+    {
+      "accession": "PXD016469",
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics",
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Adp-ribosylation",
+        "Sec",
+        "Size exclusion chromatography",
+        "Phosphorylation",
+        "Imac",
+        "Interactome",
+        "Ask2",
+        "Parp",
+        "Lps",
+        "Macrophage",
+        "Parp9"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)",
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Bone marrow",
+        "Blood",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-01-16",
+      "title": "Protein ADP-ribosylation, phosphorylation, and interactome dynamics in macrophage activation."
+    },
+    {
+      "accession": "PXD016946",
+      "experimentTypes": [
+        "Shotgun proteomics",
+        "MSE"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lingzhi",
+        "Protein hydrolysate",
+        "Antioxidative peptide"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)",
+        "Ganoderma lingzhi"
+      ],
+      "organismsPart": [
+        "Lung",
+        "Fruit body",
+        "Vegetative cell (sensu fungi)",
+        "Epithelial cell"
+      ],
+      "quantificationMethods": [
+        "Identified by peptide fragmentation",
+        "Normalized Spectral Abundance Factor - NSAF"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2020-01-06",
+      "title": "Ant-oxidative effect of Lingzhi Protein Hydrolysate on Lipopolysaccharide-Stimulated A549 Cells"
+    },
+    {
+      "accession": "PXD016872",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Caveolin-1; caveolin; caveolae; inflammation; neural retina; retina; retinal degeneration; immune response"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Retina"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-12-20",
+      "title": "Neuroretinal-derived caveolin-1 promotes endotoxin-induced inflammation in the murine retina"
+    },
+    {
+      "accession": "PXD016379",
+      "experimentTypes": [
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Nanoparticles",
+        "2d gel",
+        "Mouse",
+        "Lc-ms/ms",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-11-21",
+      "title": "The longer the worse: a combined proteomic and targeted study of the long-term versus short-term effects of silver nanoparticles on macrophages"
+    },
+    {
+      "accession": "PXD016098",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lc-ms/ms",
+        "Tmt",
+        "Amino acid; calf; leucine; threonine; muscle; plasma;  proteomics"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Bos taurus (bovine)"
+      ],
+      "organismsPart": [
+        "Muscle",
+        "Blood plasma"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-10-31",
+      "title": "LC-MS/MS Data of Skeletal Muscle and Plasma of Preruminant Calves fed with Leucine and Threonine Supplemented Diets"
+    },
+    {
+      "accession": "PXD016051",
+      "experimentTypes": [
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lc-ms/ms",
+        "Silver nanoparticles",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-10-28",
+      "title": "The longer the worse: a combined proteomic and targeted study of the long-term versus short-term effects of silver nanoparticles on macrophages"
+    },
+    {
+      "accession": "PXD016040",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Itraq lc-ms/ms",
+        "Lipopolysaccharide",
+        "Depression",
+        "Hypothalamus",
+        "Brain tissue"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Brain"
+      ],
+      "quantificationMethods": [
+        "iTRAQ"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-10-28",
+      "title": "Hypothalamic Proteomics analysis of lipopolysaccharide (LPS)-induced depressed mice"
+    },
+    {
+      "accession": "PXD015021",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Remyelinating",
+        "Multiple sclerosis",
+        "Macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Bone marrow",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-08-14",
+      "title": "Generation of macrophages that are profoundly pro-remyelinating through unexpected activation cues"
+    },
+    {
+      "accession": "PXD014661",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Hek293",
+        "Toll like receptor",
+        "Statin",
+        "Tlr",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Kidney cell"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-07-18",
+      "title": "Identification of Toll-like receptor 4 interacting partner through immunoprecipitation-based chemical cross-linking proteomics"
+    },
+    {
+      "accession": "PXD014664",
+      "experimentTypes": [
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Mouse",
+        "Lipopolysaccharide",
+        "Lc-ms/ms",
+        "Sepsis",
+        "Kidney"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Kidney"
+      ],
+      "quantificationMethods": [
+        "Spectrum counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-07-18",
+      "title": "Proteomic analysis of septic renal acute phase response"
+    },
+    {
+      "accession": "PXD014662",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Spatial proteomics",
+        "Cyanobacteria",
+        "Synechocystis",
+        "Lopit"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Synechocystis sp. pcc 6803",
+        "Bacteria"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-07-18",
+      "title": "Cyanobacterial proteome mapping reveals distinct compartment organisation and metabolism dispersed throughout the cell"
+    },
+    {
+      "accession": "PXD014619",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Gram-negative infection",
+        "Chorioamnionitis",
+        "Acute kidney injury",
+        "Proteomics",
+        "Intrauterine bacterial infection"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Sus scrofa domesticus (domestic pig)"
+      ],
+      "organismsPart": [
+        "Blood plasma"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-07-15",
+      "title": "Data in support of Prenatal intra-amniotic lipopolysaccharide induces neonatal renal immune activation after preterm birth"
+    },
+    {
+      "accession": "PXD014273",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Infection",
+        "Galleria",
+        "Mini-model",
+        "Candida",
+        "Co-infection. anti-microbial",
+        "Immunity",
+        "Staphylococcus"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Galleria mellonella"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-06-17",
+      "title": "Response of Galleria to co-infection by Candida and Staphylococcus."
+    },
+    {
+      "accession": "PXD014259",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Protein profile",
+        "Lc-ms/ms",
+        "Serum",
+        "Mice",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Blood serum"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-06-14",
+      "title": "Serum protein profile in LPS-induced mice model by two-dimensional LC-MS/MS"
+    },
+    {
+      "accession": "PXD014070",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Acute lung injury (ali)/acute respiratory distress syndrome (ards)",
+        "Murine lipopolysaccharide (lps)-induced direct and indirect lung injury model",
+        "Bronchoalveolar lavage fluid (balf)"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Lung",
+        "Alveolar system"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-05-30",
+      "title": "Differential protein expression profiles of bronchoalveolar lavage fluid following lipopolysaccharide-induced direct and indirect lung injury in mice"
+    },
+    {
+      "accession": "PXD013977",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lcmsms human evc",
+        "Thp-1 monocytes"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Spectrum counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-05-23",
+      "title": "Toll like receptor 2release by macrophages"
+    },
+    {
+      "accession": "PXD013648",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Il8",
+        "Granulocyte",
+        "Autoimmune disease"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Equus caballus (horse)"
+      ],
+      "organismsPart": [
+        "Primary cell",
+        "Leukocyte",
+        "Neutrophil",
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-04-26",
+      "title": "The equine granulocyte proteome: expression changes in autoimmune disease and after stimulation"
+    },
+    {
+      "accession": "PXD013224",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Axenic culture",
+        "Q-exactive",
+        "Metabolic activity",
+        "Quantitative proteomics",
+        "Dot/icm",
+        "Type iv secretion system",
+        "Lipopolysaccharide",
+        "Stress response",
+        "Coxiella burnetii"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)",
+        "Coxiella burnetii rsa 493",
+        "Coxiella burnetii"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Fibroblast"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-03-25",
+      "title": "Quantitative proteome profiling of Coxiella burnetii reveals major metabolic and stress differences under axenic and cell culture cultivation – proteome dataset"
+    },
+    {
+      "accession": "PXD013086",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Time-of-flight.",
+        "Ion mobility",
+        "Lipopolysaccharide",
+        "Tims",
+        "Docosahexaenoic acid",
+        "Label-free quantification",
+        "Microglia"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Microglial cell",
+        "Cell culture"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-03-13",
+      "title": "Docosahexaenoic acid attenuates metabolic dysfunctions induced by lipopolysaccharide in BV-2 microglial cells"
+    },
+    {
+      "accession": "PXD013074",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Francisella tularensis; fsc200; outer membrane vesicles; stress response"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Francisella tularensis subsp. holarctica fsc200",
+        "Francisella tularensis subsp. holarctica"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "Spectrum count/molecular weight",
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2019-03-13",
+      "title": "Proteomic characterization and label-free comparison of outer membrane vesicles from Francisella tularensis subsp. holarctica strain FSC200 isolated from different cultivation conditions"
+    },
+    {
+      "accession": "PXD012155",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Denditric cells",
+        "Phagosomes",
+        "Mass spectrometry",
+        "Label-free quantification"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Dendritic cell"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2018-12-21",
+      "title": "Spatiotemporal changes of the phagosomal proteome in dendritic cells in response to LPS stimulation"
+    },
+    {
+      "accession": "PXD011757",
+      "experimentTypes": [
+        "Top-down proteomics",
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Tc1 and tc2 secretion"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Heart",
+        "T cell",
+        "Fibroblast"
+      ],
+      "quantificationMethods": [
+        "TIC"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2018-11-20",
+      "title": "Tc1 and Tc2 secretion proteome evaluation"
+    },
+    {
+      "accession": "PXD011611",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Crc",
+        "Nf-kb",
+        "Colorectal cancer",
+        "Extracellular vesicles",
+        "Label-free",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Colon epithelial cell"
+      ],
+      "quantificationMethods": [
+        "Spectrum counting",
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2018-11-07",
+      "title": "Lipopolysaccharide-regulated secretion of soluble and vesicle-based colorectal cancer cell proteins"
+    },
+    {
+      "accession": "PXD010988",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Thermo q-exactive plus",
+        "Dda",
+        "Molecular mode of action",
+        "Photoaffinity labeling",
+        "Interaction mapping",
+        "Photo crosslinking",
+        "Macrocyclic peptidomimetic antibiotics",
+        "Lpt complex",
+        "E.coli",
+        "Lc-ms/ms",
+        "Gram-negative eskape pathogens",
+        "Ompta (outer membrane-targeting antibiotics)"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Escherichia coli"
+      ],
+      "organismsPart": [
+        "Cell suspension culture"
+      ],
+      "quantificationMethods": [
+        "TIC"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2018-09-03",
+      "title": "Thanatin Targets the Inter-Membrane Protein Complex Required for Lipopolysaccharide  Transport in Escherichia coli"
+    },
+    {
+      "accession": "PXD010858",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Proteomics",
+        "Thp-1 monocytes",
+        "Gold-nanoparticles"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Monocyte"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2018-08-24",
+      "title": "Proteomics study of THP-1 monocytic cells exposed to surface modified-gold nanoparticles"
+    },
+    {
+      "accession": "PXD006195",
+      "experimentTypes": [
+        "Shotgun proteomics",
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Ftsh",
+        "Super-silac",
+        "Quantitative proteomics",
+        "Proteolysis",
+        "Escherichia coli",
+        "Lipopolysaccharide",
+        "Lc-ms/ms",
+        "Lpxc"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Escherichia coli"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [
+        "SILAC"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2018-07-02",
+      "title": "Super-SILAC reveals intricate crosstalk between lipopolysaccharide, phospholipid and fatty acid metabolism in Escherichia coli"
+    },
+    {
+      "accession": "PXD008898",
+      "experimentTypes": [
+        "SWATH MS"
+      ],
+      "flags": {},
+      "keywords": [
+        "Antigen presentation",
+        "Dendritic cell maturation",
+        "Quantitative proteomics",
+        "Lipopolysaccharide",
+        "Leukocyte metabolism"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Dendritic cell",
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2018-04-18",
+      "title": "Quantitative analysis of large-scale proteomic changes in LPS-activated monocyte-derived dendritic cells: A SWATH-MS study"
+    },
+    {
+      "accession": "PXD009399",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Plasma",
+        "Quantitative proteomics",
+        "Lipopolysaccharide endotoxin infection",
+        "Tmt",
+        "Chicken"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Gallus gallus (chicken)"
+      ],
+      "organismsPart": [
+        "Blood plasma"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2018-04-04",
+      "title": "TMT-based quantitative proteomics of plasma from chicken challenged with lipopolysaccharide endotoxin"
+    },
+    {
+      "accession": "PXD009005",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Spleen",
+        "Lc-msms",
+        "Mouse",
+        "Ageing",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Spleen"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2018-02-21",
+      "title": "Mouse spleen LC-MSMS: effects of age and immune challenge"
+    },
+    {
+      "accession": "PXD008726",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Lc-msms",
+        "Bmdm",
+        "A20"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Bone marrow",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2018-01-19",
+      "title": "Mouse WT vs. A20 KO BMDM differential proteomics"
+    },
+    {
+      "accession": "PXD008552",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Andrographolide sulfonate",
+        "Acute lung injury",
+        "Target identification.",
+        "Proteomics",
+        "Itraq"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Lung"
+      ],
+      "quantificationMethods": [
+        "iTRAQ"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2017-12-22",
+      "title": "Andrographolide sulfonate attenuates acute lung injury by reducing expression of myeloperoxidase and neutrophil-derived proteases in mice"
+    },
+    {
+      "accession": "PXD008439",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Shotgun proteomic analysis",
+        "Antimicrobial histones",
+        "Cytoskeleton reorganization",
+        "Endocytosis",
+        "Paracentrotus lividus",
+        "Iimmune response",
+        "Mass spectrometry",
+        "Phagocytosis"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Paracentrotus lividus (common sea urchin)"
+      ],
+      "organismsPart": [
+        "Coelomocyte"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2017-12-13",
+      "title": "Changes in the proteome of mediterranean sea urchin Paracentrotus lividus due to activation of its immune system"
+    },
+    {
+      "accession": "PXD008406",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Mouse bmdm lc-msms"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Bone marrow",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2017-12-11",
+      "title": "Expression of Siglec-E alters the proteome of LPS-activated macrophages but does not affect LPS-driven cytokine production or TLR4 endocytosis Expression of Siglec-E alters the proteome of LPS-activated macrophages but does not affect LPS-driven cytokine production or TLR4 endocytosis"
+    },
+    {
+      "accession": "PXD006196",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Modc",
+        "Hplc-ms/ms"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Dendritic cell",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "iTRAQ",
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2017-09-07",
+      "title": "moDCs HPLC-MS/MS -  Unbiased Quantitative Proteomics Reveals a Crucial Role of the Allergen Context for the Activation of Human Dendritic Cells"
+    },
+    {
+      "accession": "PXD006990",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Ingenuity pathway analysis",
+        "Ethanol",
+        "Gel-free quantitative proteomics",
+        "Lipopolysaccharide",
+        "Raw 264.7 macrophages"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Spectrum counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2017-07-12",
+      "title": "Comparative and Network-based Proteomic Analysis of Ethanol-treated and Lipopolysaccharide-induced Macrophages"
+    },
+    {
+      "accession": "PXD006825",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Salmonella",
+        "Virulence",
+        "Yedf",
+        "Vrf"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Salmonella enterica subsp. enterica serovar typhimurium str. sl1344"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "iTRAQ"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2017-06-29",
+      "title": "First insights into the pleiotropic role of vrf (yedF), a newly characterized  gene of Salmonella Typhimurium"
+    },
+    {
+      "accession": "PXD005929",
+      "experimentTypes": [
+        "Shotgun proteomics",
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Veillonella parvula",
+        "Outer membrane proteome"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Veillonella parvula dsm 2008"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2017-02-15",
+      "title": "Outer Membrane Proteome of Veillonella parvula: a Diderm Firmicute of the Human Microbiome"
+    },
+    {
+      "accession": "PXD005785",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Brain",
+        "Neuroinflammation",
+        "Ltp",
+        "Lps"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Brain"
+      ],
+      "quantificationMethods": [
+        "iTRAQ"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2017-01-26",
+      "title": "The effect of chronic inflammation on molecular pathways of long-term potentiation in an APP/PS1 mouse model of Alzheimer Disease"
+    },
+    {
+      "accession": "PXD005083",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Innate immunity",
+        "Macrophages",
+        "Lps",
+        "Non-canonical inflammasome"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2017-01-19",
+      "title": "Proteomic and bioinformatic characterization of proteins secreted conventionally and unconventionally from human primary macrophages upon LPS transfection"
+    },
+    {
+      "accession": "PXD002759",
+      "experimentTypes": [
+        "Top-down proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Rat",
+        "Primary",
+        "Silac",
+        "Microglia"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Rattus norvegicus (rat)"
+      ],
+      "organismsPart": [
+        "Microglial cell",
+        "Primary cell"
+      ],
+      "quantificationMethods": [
+        "SILAC"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2016-04-06",
+      "title": "Development and evaluation of a SILAC method for proteomic analysis of rat primary microglia"
+    },
+    {
+      "accession": "PXD003335",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Acute phase proteins",
+        "Biomarkers",
+        "Innate immunity",
+        "Endotoxin"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Gallus gallus (chicken)"
+      ],
+      "organismsPart": [
+        "Blood cell",
+        "Blood plasma"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2015-12-14",
+      "title": "Chicken plasma proteome LPS -  Proteomic Changes in Chicken Plasma Induced by Salmonella typhimurium Lipopolysaccharides"
+    },
+    {
+      "accession": "PXD003144",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Myotubes",
+        "Mouse",
+        "Muscle",
+        "Inflammatio",
+        "5600 tripletof",
+        "Lps",
+        "Interferon gamma"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Cell culture"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2015-11-04",
+      "title": "Measuring C2C12 Myotube Protein Expression Changes in Inflammation using Punch-P"
+    },
+    {
+      "accession": "PXD002123",
+      "experimentTypes": [
+        "Gel-based experiment"
+      ],
+      "flags": {},
+      "keywords": [
+        "Q-exactive",
+        "Francisella",
+        "Glycosylation"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Francisella tularensis subsp. holarctica fsc200"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2015-04-29",
+      "title": "Pleiotropic effect of Francisella ABC transporter gene inactivation on production of glycoconjugates"
+    },
+    {
+      "accession": "PXD002031",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Tec kinase macrophage"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2015-04-09",
+      "title": "Tec kinase deficiency in macrophages"
+    },
+    {
+      "accession": "PXD001674",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Human",
+        "Lc-ms",
+        "Neutrophils"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Neutrophil",
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2015-01-14",
+      "title": "Immune suppressive neutrophils are a separate subset developing parallel to normal neutrophils"
+    },
+    {
+      "accession": "PXD001247",
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Cytoskeleton; kupffer cell; macrophage; malaria; murine"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [
+        "Cell culture",
+        "Hepatocyte"
+      ],
+      "quantificationMethods": [
+        "Spectrum counting"
+      ],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2014-08-18",
+      "title": "The cellular and proteomic response of primary and immortalized murine Kupffer cells following immune stimulation diverges from that of monocyte-derived macrophages"
+    },
+    {
+      "accession": "PXD000600",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Macrophage activation/quantitative proteomics/protein synthesis/protein secretion/transcription"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Mus musculus (mouse)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2013-11-23",
+      "title": "Temporal dynamics of protein synthesis and secretion during LPS activation of macrophages"
+    },
+    {
+      "accession": "PRD000478",
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ],
+      "flags": {},
+      "keywords": [
+        "Not available"
+      ],
+      "numAssays": null,
+      "organisms": [
+        "Homo sapiens (human)"
+      ],
+      "organismsPart": [],
+      "quantificationMethods": [],
+      "queries": [
+        "lipopolysaccharide"
+      ],
+      "submissionDate": "2012-02-01",
+      "title": "Quantitative analysis of human plasma in vivo lipopolysaccharide administration using ¹?O/¹?O Labeling and AMT"
+    }
+  ],
+  "queries_log": [
+    {
+      "n_results": 5,
+      "query": "GetProteins biosequence_name_constraint={P10145,P05231,P01584,P21580,P01579} atlas_build_id=607",
+      "source": "PeptideAtlas",
+      "status": "ok"
+    },
+    {
+      "n_results": 5,
+      "query": "GetProteins atlas_build_id=607 biosequence_name_constraint in {5 targets} (parser v2: ancla >ACC</TD>)",
+      "source": "PeptideAtlas",
+      "status": "ok"
+    },
+    {
+      "new_cum": 100,
+      "page": 0,
+      "query": "lipopolysaccharide",
+      "returned": 100,
+      "source": "PRIDE"
+    },
+    {
+      "new_cum": 199,
+      "page": 1,
+      "query": "lipopolysaccharide",
+      "returned": 99,
+      "source": "PRIDE"
+    }
+  ],
+  "registered_by": "Ichor (protein subagent, eidos profile)",
+  "restriccion": "nivel inventario: ids, especie, muestras, condiciones, flags. SIN descargas de datasets",
+  "sources": {
+    "PRIDE": {
+      "api": "https://www.ebi.ac.uk/pride/ws/archive/v2/search/projects (GET, keyword+pageSize+page)",
+      "detail": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/{PXD}",
+      "nota_api": "/projects/list NO existe en v2 (404); /search/projects es el endpoint de busqueda"
+    },
+    "PeptideAtlas": {
+      "api": "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProteins (SBEAMS CGI, HTML-parseado)",
+      "nota_api": "db.systemsbiology.net/api/* NO existe (404 todos); la API de PeptideAtlas son los CGI SBEAMS. buildDetails/getJson 404."
+    }
+  },
+  "spec_hash": "sha256:c1f79e847a3fc8a2f441b7ce5b7b31532021a6ad49fd38c3180c44a769f4ab17"
+}
