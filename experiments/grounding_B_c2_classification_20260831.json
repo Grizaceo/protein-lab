@@ -1,0 +1,831 @@
+{
+  "experiment_id": "ichor-fme-grounding-B-proteomics-congruence-v1",
+  "phase": "C2_inventory_classification",
+  "created": "2026-08-31T01:48:49-04:00",
+  "criterion_source": "experiments/grounding_B_spec.json (PRE-REGISTRADO, commit fb73d34); este script NO altera el criterio",
+  "C1_gate": {
+    "blunted_proteotipables": [
+      "CXCL8",
+      "IL6",
+      "IL1B",
+      "TNFAIP3"
+    ],
+    "n_blunted_proteotipables": 4,
+    "c1_gate_pass": true
+  },
+  "filter_applied": {
+    "organisms": "Homo sapiens",
+    "organismsPart_subset": [
+      "blood",
+      "cell suspension culture",
+      "dendritic cell",
+      "macrophage",
+      "monocyte",
+      "neutrophil",
+      "peripheral blood mononuclear cell",
+      "primary cell",
+      "whole blood"
+    ],
+    "stimulus": "LPS/lipopolysaccharide o interferon en titulo+keywords",
+    "source_hits": 199
+  },
+  "n_human_immunocyte_candidates": 39,
+  "n_with_quantification": 25,
+  "n_eligible_metadata_level": 7,
+  "primary_candidates": [
+    {
+      "accession": "PXD075232",
+      "title": "Utility of monocyte-derived cells to investigate immune-mediated drug-induced liver injury",
+      "organismsPart": [
+        "Peripheral blood mononuclear cell"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2026-03-04",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Data-independent acquisition"
+      ]
+    },
+    {
+      "accession": "PXD074830",
+      "title": "dia-PASEF Enables Rapid Profiling of the Human Secretome for Deeper Insights into Cellular Dynamics and Inflammatory Mechanisms",
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2026-02-25",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD074418",
+      "title": "Exploring the proteomic landscape of THP-1 monocytes through two-challenge LPS induction",
+      "organismsPart": [
+        "Monocyte",
+        "Cell suspension culture"
+      ],
+      "quantificationMethods": [
+        "Peptide counting"
+      ],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2026-02-13",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD068076",
+      "title": "Induced pluripotent stem cell-derived macrophages as a model for human inflammasome signalling",
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "label-free quantification"
+      ],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2025-09-04",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD052433",
+      "title": "LPS-induced TIR domain complex acetylation activated TLR4/MAL/MyD88 signal pathway in sepsis",
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Peptide counting"
+      ],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2024-05-21",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Immunopeptidomics"
+      ]
+    },
+    {
+      "accession": "PXD025022",
+      "title": "Proteomic characterization of the cellular effects of AHR activation by microbial tryptophan catabolites in endotoxin-activated human macrophages",
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2021-03-26",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD001674",
+      "title": "Immune suppressive neutrophils are a separate subset developing parallel to normal neutrophils",
+      "organismsPart": [
+        "Neutrophil",
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2015-01-14",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    }
+  ],
+  "eligible_candidates": [
+    {
+      "accession": "PXD081782",
+      "title": "High-Throughput Label-free Single-Cell Proteomics Enabled by Multicolumn NanoLC with a 5-min Cycle Time",
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2026-07-28",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD075232",
+      "title": "Utility of monocyte-derived cells to investigate immune-mediated drug-induced liver injury",
+      "organismsPart": [
+        "Peripheral blood mononuclear cell"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2026-03-04",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Data-independent acquisition"
+      ]
+    },
+    {
+      "accession": "PXD075006",
+      "title": "identification of UFM1-dependent host effectors binding to Shigella flexneri in infectect HeLa cells",
+      "organismsPart": [
+        "Cell culture",
+        "Cell suspension culture"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2026-02-28",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD074830",
+      "title": "dia-PASEF Enables Rapid Profiling of the Human Secretome for Deeper Insights into Cellular Dynamics and Inflammatory Mechanisms",
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2026-02-25",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD074418",
+      "title": "Exploring the proteomic landscape of THP-1 monocytes through two-challenge LPS induction",
+      "organismsPart": [
+        "Monocyte",
+        "Cell suspension culture"
+      ],
+      "quantificationMethods": [
+        "Peptide counting"
+      ],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2026-02-13",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD070961",
+      "title": "Generation of human iPSC-derived macrophages under animal-free conditions enables their application for safety and efficacy testing",
+      "organismsPart": [
+        "Monocyte"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2025-11-19",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD070784",
+      "title": "Native long-read RNA sequencing of human monocytes reveals activation-induced alternative splicing toward functional isoforms",
+      "organismsPart": [
+        "Monocyte",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2025-11-16",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD069220",
+      "title": "Secreted ORF8 reprograms macrophages to enhance SARS-CoV-2 infection of lung epithelial cells",
+      "organismsPart": [
+        "Primary cell",
+        "Blood",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2025-10-08",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD068076",
+      "title": "Induced pluripotent stem cell-derived macrophages as a model for human inflammasome signalling",
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "label-free quantification"
+      ],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2025-09-04",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Data-independent acquisition",
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD067612",
+      "title": "Extracellular vesicles derived from induced pluripotent stem cells mediate anti-inflammatory effects in human primary macrophage. Macrophage dataset.",
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Relative quantification"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2025-08-22",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD064672",
+      "title": "A human-specific long noncoding RNA regulator of antigen-presenting cell viability and antimicrobial defense",
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "label-free quantification"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2025-06-05",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Data-dependent acquisition",
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD053647",
+      "title": "Deciphering the mechanisms of macrophage polarization through comprehensive analysis of protein glycosylation in cells and on the surface",
+      "organismsPart": [
+        "Cell culture",
+        "Monocyte",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2024-07-04",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD052433",
+      "title": "LPS-induced TIR domain complex acetylation activated TLR4/MAL/MyD88 signal pathway in sepsis",
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Peptide counting"
+      ],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2024-05-21",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Immunopeptidomics"
+      ]
+    },
+    {
+      "accession": "PXD052113",
+      "title": "Platelet-derived transcription factors license human monocyte inflammation",
+      "organismsPart": [
+        "Primary cell",
+        "Monocyte"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2024-05-08",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Bottom-up proteomics"
+      ]
+    },
+    {
+      "accession": "PXD046284",
+      "title": "MOF-mediated PRDX1 acetylation regulates inflammatory macrophage activation",
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2023-10-22",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Gel-based experiment"
+      ]
+    },
+    {
+      "accession": "PXD045237",
+      "title": "Multi-omic profiling of pathogen-stimulated primary immune cells",
+      "organismsPart": [
+        "B cell",
+        "Primary cell",
+        "Monocyte",
+        "T cell"
+      ],
+      "quantificationMethods": [
+        "Normalized Spectral Abundance Factor - NSAF"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2023-09-09",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD045072",
+      "title": "Helicobacter pylori induces a novel form of innate immune memory via accumulation of NF-кB proteins",
+      "organismsPart": [
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2023-09-04",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD038612",
+      "title": "Discovery of a druggable copper-signaling pathway that drives inflammation",
+      "organismsPart": [
+        "Primary cell"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2022-12-07",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD036970",
+      "title": "Multi-omics provide evidence for an anti-inflammatory immune signature and metabolic alterations in patients with Long COVID Syndrome – an exploratory study (supernatants of M1 and M2-like macrophages)",
+      "organismsPart": [
+        "M2 macrophage",
+        "M1 macrophage",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2022-09-25",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD036036",
+      "title": "Staphylococcus aureus Mediated Tolerance Induction in Human Monocytes is accompanied with Specific Alterations in Membrane Receptor Expression",
+      "organismsPart": [
+        "Monocyte",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2022-08-12",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD030321",
+      "title": "LC-MS/MS identification of interactors of Interleukin-1 Receptor Associated Kinase 3 (IRAK3)",
+      "organismsPart": [
+        "Monocyte"
+      ],
+      "quantificationMethods": [
+        "Spectrum counting"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2021-12-11",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ]
+    },
+    {
+      "accession": "PXD029831",
+      "title": "Secretome analysis of polarised macrophages derived from induced pluripotent stem cells",
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2021-11-20",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD029776",
+      "title": "Proteomic analysis of macrophages derived from induced pluripotent stem cells",
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2021-11-17",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD029634",
+      "title": "Proteomic analysis of peripheral blood mononuclear cells isolated from patients with pulmonary tuberculosis: a pilot study from Zanzibar, Tanzania",
+      "organismsPart": [
+        "Blood cell",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2021-11-09",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD027744",
+      "title": "THP-1 cells treated with plasticizer DINCH and metabolite MINCH",
+      "organismsPart": [
+        "Cell suspension culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2021-08-05",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD025022",
+      "title": "Proteomic characterization of the cellular effects of AHR activation by microbial tryptophan catabolites in endotoxin-activated human macrophages",
+      "organismsPart": [
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2021-03-26",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD024068",
+      "title": "PROTEOMIC SIGNATURES OF MONOCYTES IN HEREDITARY RECURRENT FEVERS",
+      "organismsPart": [
+        "Monocyte",
+        "Leukocyte",
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2021-02-08",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD023509",
+      "title": "HyperLOPIT and temporal proteomic profiling of the response to lipopolysaccharide in the THP-1 human leukaemia cell line",
+      "organismsPart": [
+        "B cell",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "TMT"
+      ],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2021-01-11",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD022599",
+      "title": "The contact allergen NiSO4 triggers a distinct molecular response in primary human dendritic cells compared to bacterial LPS",
+      "organismsPart": [
+        "Dendritic cell",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "Gel-free quantification method"
+      ],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2020-11-18",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD020617",
+      "title": "Addressing reproducibility challenges in cell culture: the impact of oxylipins contained in fetal calf serum",
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2020-07-29",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD019267",
+      "title": "Proteome changes in monocytic THP-1 cells induced by 31 engineered nanomaterials",
+      "organismsPart": [
+        "Monocyte"
+      ],
+      "quantificationMethods": [
+        "Label free"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2020-05-19",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD019258",
+      "title": "The impact of biomaterial cell contact on the immunopeptidome",
+      "organismsPart": [
+        "Monocyte",
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2020-05-18",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics"
+      ]
+    },
+    {
+      "accession": "PXD016469",
+      "title": "Protein ADP-ribosylation, phosphorylation, and interactome dynamics in macrophage activation.",
+      "organismsPart": [
+        "Bone marrow",
+        "Blood",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2020-01-16",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Affinity purification coupled with mass spectrometry proteomics",
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD013977",
+      "title": "Toll like receptor 2release by macrophages",
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [
+        "Spectrum counting"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2019-05-23",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD010858",
+      "title": "Proteomics study of THP-1 monocytic cells exposed to surface modified-gold nanoparticles",
+      "organismsPart": [
+        "Monocyte"
+      ],
+      "quantificationMethods": [
+        "MS1 intensity based label-free quantification method"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2018-08-24",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD008898",
+      "title": "Quantitative analysis of large-scale proteomic changes in LPS-activated monocyte-derived dendritic cells: A SWATH-MS study",
+      "organismsPart": [
+        "Dendritic cell",
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2018-04-18",
+      "has_quantification": false,
+      "experimentTypes": [
+        "SWATH MS"
+      ]
+    },
+    {
+      "accession": "PXD006196",
+      "title": "moDCs HPLC-MS/MS -  Unbiased Quantitative Proteomics Reveals a Crucial Role of the Allergen Context for the Activation of Human Dendritic Cells",
+      "organismsPart": [
+        "Dendritic cell",
+        "Blood"
+      ],
+      "quantificationMethods": [
+        "iTRAQ",
+        "TMT"
+      ],
+      "stimulus_tags": [],
+      "submissionDate": "2017-09-07",
+      "has_quantification": true,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD005083",
+      "title": "Proteomic and bioinformatic characterization of proteins secreted conventionally and unconventionally from human primary macrophages upon LPS transfection",
+      "organismsPart": [
+        "Cell culture",
+        "Macrophage"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [
+        "LPS"
+      ],
+      "submissionDate": "2017-01-19",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    },
+    {
+      "accession": "PXD001674",
+      "title": "Immune suppressive neutrophils are a separate subset developing parallel to normal neutrophils",
+      "organismsPart": [
+        "Neutrophil",
+        "Blood"
+      ],
+      "quantificationMethods": [],
+      "stimulus_tags": [],
+      "submissionDate": "2015-01-14",
+      "has_quantification": false,
+      "experimentTypes": [
+        "Shotgun proteomics"
+      ]
+    }
+  ],
+  "kill_criterion": {
+    "metric": "elegibilidad del inventario (metadatos) tras C1",
+    "kill_if": "C1 falla para los 4 genes blunted O 0 datasets elegibles",
+    "triggered": false
+  },
+  "verdict": "TESTABLE_INVENTORY_LEVEL",
+  "verdict_note": "C1 PASS 4/4 genes blunted (PeptideAtlas build 607) y >0 datasets de estimulacion elegibles (in vitro LPS THP-1/macrófagos humanos + in vivo LPS en humanos: PXD001674 neutrófilos, PRD000478 plasma) -> el inventario PUEDE testear congruencia. La congruencia génica cuantitativa (log2FC>0.58 por gen) requiere re-análisis dirigido de assays (fase posterior); NO se descarga dataset crudo esta noche.",
+  "limits": [
+    "C2 génica (log2FC por gen) NO ejecutada en esta fase: requiere re-analisis de assays (fase siguiente)",
+    "niveles de citocinas pequeñas en proteomica global celular pueden ser bajos; in vivo plasma LPS (PRD000478) es la prueba mas directa",
+    "nivel inventario: sin descarga de datos crudos (restriccion spec)"
+  ],
+  "next_step": "Re-analisis dirigido C2: PXD001674 (neutrofilos iv-LPS 6h, n~8) y PRD000478 (plasma in vivo) + 1 dataset THP-1 LPS time-course"
+}
