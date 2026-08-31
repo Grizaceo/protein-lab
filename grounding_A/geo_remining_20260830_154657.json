@@ -1,0 +1,14 @@
+{
+  "spec_hash": "sha256:5e8b3f1a2c4d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f",
+  "timestamp": "2026-08-30T15:46:57.434922",
+  "queries": [
+    "(\"exercise\"[Title/Abstract] OR \"training\"[Title/Abstract] OR \"physical activity\"[Title/Abstract]) AND (\"fibromyalgia\"[Title/Abstract] OR \"chronic pain\"[Title/Abstract] OR \"pressure pain threshold\"[Title/Abstract] OR \"exercise-induced hypoalgesia\"[Title/Abstract]) AND (\"RNA-seq\"[Title/Abstract] OR \"transcriptomics\"[Title/Abstract] OR \"gene expression\"[Title/Abstract]) AND (\"2023/01/01\"[PDAT] : \"3000\"[PDAT])",
+    "(\"LPS\"[Title/Abstract] OR \"lipopolysaccharide\"[Title/Abstract] OR \"immune stimulation\"[Title/Abstract] OR \"cytokine\"[Title/Abstract]) AND (\"fibromyalgia\"[Title/Abstract] OR \"chronic pain\"[Title/Abstract]) AND (\"RNA-seq\"[Title/Abstract] OR \"transcriptomics\"[Title/Abstract] OR \"gene expression\"[Title/Abstract]) AND (\"2023/01/01\"[PDAT] : \"3000\"[PDAT])",
+    "(\"pressure pain threshold\"[Title/Abstract] OR \"exercise-induced hypoalgesia\"[Title/Abstract] OR \"conditioned pain modulation\"[Title/Abstract]) AND (\"RNA-seq\"[Title/Abstract] OR \"transcriptomics\"[Title/Abstract] OR \"gene expression\"[Title/Abstract]) AND (\"2023/01/01\"[PDAT] : \"3000\"[PDAT])",
+    "(\"fibromyalgia\" OR \"chronic pain\" OR \"pressure pain threshold\") AND (\"exercise\" OR \"training\") AND (\"RNA-seq\" OR \"transcriptomics\") AND \"Homo sapiens\"[Organism] AND \"Expression profiling by high throughput sequencing\"[Filter]"
+  ],
+  "total_gds_searched": 1,
+  "candidates": [],
+  "kill_criterion": "0 datasets con ΔPPT/EIH + transcriptómica longitudinal post-2022",
+  "verdict": "FAIL"
+}
