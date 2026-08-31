@@ -1,0 +1,1672 @@
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+
+<title>PeptideAtlas</title><link rel='stylesheet' type='text/css' href='/peptideatlas/includes/pa2020.css'><link rel='stylesheet' type='text/css' href='/peptideatlas/includes/pa2020-db.css'><script src='/peptideatlas/includes/pa2020.js'></script></head>
+
+
+<body>    <style type="text/css">
+      .sortarrow { font-size: 12pt; font-weight: bold }
+  .sortheader{ font-size: 9pt; font-weight: bold; color:white; }
+  .sortheader th   { font-weight: bold; padding: 5px 12px; }
+  .info_box { background: #F0F0F0; border: #000 1px solid; padding: 4px; width: 80%; color: #444444 }
+  .small_super_text { vertical-align: super; font-size: 8pt }
+  .clear_info_box { border: #000 1px solid; padding: 4px; width: 90%; color: #444444; margin-left:15px; }
+  .nowrap_clear_info_box { border: #000 1px solid; padding: 4px; width: 99%; white-space: nowrap; color: #444444 }
+  .clear_warning_box { border: #F03 1px solid; padding: 4px; width: 80%; color: #444444 }
+  .popup_help { cursor: Help; color:#444444; }
+  .gaggle-data { display: none }
+  .bold_text { font-weight: bold; white-space: nowrap }
+  .nowrap_text { white-space: nowrap }
+  a.dataheader { font-weight: bold; text-decoration:none; }
+  a.dataheader:hover { color: #ff5f00; }
+  .dataheader { font-weight: bold; color:white }
+
+  /* Style info below organized by originating module
+  /* Peptide Atlas */
+  .cellblock_top { border-top:thin solid; border-color:black; border-left:thin solid; border-right:thin solid}
+  .cellblock_bottom { border-bottom:thin solid; border-color:black; border-left:thin solid; border-right:thin solid}
+  .cellblock { border-color:black; border-left:thin solid; border-right:thin solid}
+  .small_form_field {    font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000; background-color: #FFFFCC; padding: 1px; height: 16px; border: 1px solid #7F9DB9 }  
+  .small_form_text {    font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; }
+  .small_form_caption {    font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold; }
+  .pseudo_link    {  font-family: Helvetica, Arial, sans-serif; font-size: 9pt; text-decoration:none; color: blue; CURSOR: help;}
+  .white_bg{background-color: #FFFFFF }
+  .grey_bg{ background-color: #CCCCCC }
+  .bold_italic_text{font-weight:bold;font-style:italic}
+  .bold_red_italic_text{font-weight:bold;font-style:italic;color:red}
+  .inactive_text {color:#AAAAAA}
+  .active_text {color:#000000}
+  .med_gray_bg{ background-color: #CCCCCC; font-size: 12pt; font-weight: bold; Padding:2}
+  .grey_header{ font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14pt; background-color: #CCCCCC; font-weight: bold; padding:1 2}
+  .section_description{ font-family: Helvetica, Arial, sans-serif; color: #666666; font-size: 14pt; font-weight: bold; padding:1}
+  .rev_gray{background-color: #555555; font-size: 12pt; font-weight: bold; color:white; line-height: 25px;}
+  .rev_gray_head{background-color: #888888; font-size: 9pt; font-weight: bold; color:white; line-height: 25px;}
+  .blue_bg{ font-family: Helvetica, Arial, sans-serif; background-color: #4455cc; font-size: 14pt; font-weight: bold; color: white}
+  .pa_predicted_pep{ background-color: lightcyan; font-size: 9pt; font-family:courier; letter-spacing:0.5;	border-style: solid; border-width: 0.1px; border-color: black }
+  .spaced_text { line-height: 1.2em; }
+  .spaced_text SUB, .spaced SUP { line-height: 1; }
+  .aa_mod { vertical-align: top; font-size: 9; color: darkslategray }
+
+  .pa_sequence_font{font-family:courier; font-size: 9pt;  letter-spacing:0.5; font-weight: bold; }	
+  .pa_observed_sequence{font-family:courier; font-size: 9pt; color: red;  letter-spacing:0.5; font-weight: bold;}	
+  .pa_snp_observed_sequence{font-family:courier; font-size: 9pt; color:#62b4cf;  letter-spacing:0.5; font-weight: extra bold;}
+  .pa_sequence_counter{font-size:smaller; background-color:white; color:#ccc;}
+
+  .pa_snp_font{font-family:courier; font-size: 9pt; letter-spacing:0.5; font-weight: bold; background-color: #66CCFF}	
+  .pa_snp_obs_font{font-family:courier; font-size: 9pt; letter-spacing:0.5; font-weight: bold; color: #62b4cf}	
+  .pa_snp_medium_font{font-family:courier; font-size: 9pt; letter-spacing:0.5; font-weight: bold; color: #CCCC00}	
+  .pa_snp_warn_font{font-family:courier; font-size: 9pt; letter-spacing:0.5; font-weight: bold; color: #CC0000}	
+
+  .pa_acetylated_font{font-family:courier; font-size: 9pt; letter-spacing:0.5; font-weight: bold; background-color: #FFCC66}	
+  .pa_phospho_font{font-family:courier; font-size: 9pt; letter-spacing:0.5; font-weight: bold; background-color: #009966}	
+  .pa_modified_aa_font{font-family:courier; font-size: 9pt; letter-spacing:0.5; font-weight: bold; background-color: #999999}	
+  .pa_glycosite{ background-color: #EE9999; border-style: solid; font-size: 9pt; font-family:courier; border-width: 0px; letter-spacing:0.5 }	
+
+  .section_heading {  font-family: Helvetica, Arial, sans-serif; font-size: 10pt; font-weight: Bold; }
+  .description { font-family: Helvetica, Arial, sans-serif; color:#333333; font-size: 9pt; font-style: italic;  }
+  .help_key {  font-family: Helvetica, Arial, sans-serif; font-size: 9pt; font-weight: Bold; }
+  .help_val {  font-family: Helvetica, Arial, sans-serif; font-size: 9pt; }
+  .plot_caption {  font-size: 12pt; margin-left:15px; }
+
+  .left_text { text-align: left }
+  .center_text { text-align: center }
+  .right_text { text-align: right }
+  .header_text { color: white; text-align: left }
+  .topbound_text { vertical-align: top }
+  .clustal_dummy_wrap {calc(100vw - 50px); overflow-x: scroll; overflow-y:hidden; height: 20px;}
+  .clustal_wrap {calc(100vw - 50px); overflow-x: scroll; overflow-y:hidden; height: 200px;}
+  .clustal_dummy {width:calc(100vw - 50px); height: 20px; }
+  .clustalx { calc(100vw - 50px); }
+  .clustal {calc(100vw - 50px); overflow-x: scroll;}
+  .clustal_peptide {width: calc(100vw - 50px); height: 400px; overflow-x: scroll; overflow-y: scroll;}
+  .fade_header { background-image: url(/sbeams/images/fade_orange_header_2.png); background-repeat: no-repeat }
+
+  .form_button { background: #ffffff; color: #333; border: 2px solid #333; font-weight: 800; padding: 0px 25px; }
+  .form_button:hover { background: #b00; color: #fff; }
+
+  /* Glycopeptide */
+  .blue_bg_glyco{ font-family: Helvetica, Arial, sans-serif; background-color: #4455cc; font-size: 12pt; font-weight: bold; color: white}
+  .identified_pep{ background-color: #882222; font-size: 12pt; font-weight: bold; letter-spacing:0.5;	color:white; Padding:1; border-style: solid; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-left-color: #eeeeee; border-right-color: #eeeeee; border-top-color: #aaaaaa; border-bottom-color:#aaaaaa; }
+  .predicted_pep{ background-color: #FFCC66; font-size: 12pt; font-family:courier; font-weight: bold; letter-spacing:0.5;	border-style: solid; border-width: 1px; border-right-color: blue ; border-left-color:  red ; }
+  .sseq{ background-color: #CCCCFF; font-size: 12pt; font-weight: bold}
+  .tmhmm{ background-color: #CCFFCC; font-size: 9pt; font-weight: bold; text-decoration:underline}
+  .instruction_text{ font-size: 12pt; font-weight: bold}
+  .sequence_font{font-family:courier; font-size: 12pt; font-weight: bold; letter-spacing:0.5}	
+  .obs_seq_font{font-family:courier; font-size: 12pt; font-weight: bold; letter-spacing:0.5; color: red }	
+  .sec_obs_seq_font{font-family:courier; font-size: 12pt; font-weight: bold; letter-spacing:0.5; color: green }	
+  .obs_seq_bg_font{font-family:courier; font-size: 12pt; font-weight: bold; letter-spacing:0.5; background-color: lightskyblue }	
+  .sec_obs_seq_bg_font{font-family:courier; font-size: 12pt; font-weight: bold; letter-spacing:0.5; background-color: springgreen }	
+
+table.freeze_table { table-layout: fixed; width: 1000px; *margin-left: -100px;/*ie7*/}
+     .freeze_table td { vertical-align: top; width:100px;  }
+     .freeze_table th {  position:absolute; *position: relative; /*ie7*/ left:0; width:100px;  }
+
+  /* Phosphopep */
+  .invalid_parameter_value  {  font-family: Helvetica, Arial, sans-serif; font-size: 12pt; text-decoration: none; color: #FC0; font-style: Oblique; }
+  .missing_required_parameter  {  font-family: Helvetica, Arial, sans-serif; font-size: 12pt; text-decoration: none; color: #F03; font-style: Italic; }
+  .section_title  {  font-family: Helvetica, Arial, sans-serif; font-size: 14pt; text-decoration: none; color: #090; font-style: Normal; }
+
+  /* Microarray */
+  .lite_blue_bg{font-family: Helvetica, Arial, sans-serif; background-color: #eeeeff; font-size: 14pt; color: #cc1111; font-weight: bold;border-style: solid; border-width: 1px; border-color: #555555 #cccccc #cccccc #555555;}
+  .orange_bg{ background-color: #FFCC66; font-size: 12pt; font-weight: bold}
+  .red_bg{ background-color: #882222; font-size: 12pt; font-weight: bold; color:white; Padding:2}
+
+  td.grn_bg{ background-color: #00FF00; font-size: 9pt;}
+  td.yel_bg{ background-color: #FFFF00; font-size: 9pt;}
+  td.red_bg{ background-color: #FF0000; font-size: 9pt; }
+
+  .small_cell {font-size: 8; background-color: #CCCCCC; white-space: nowrap  }
+  .med_cell {font-size: 10; background-color: #CCCCCC; white-space: nowrap  }
+  .anno_cell {white-space: nowrap  }
+  .present_cell{border: none}
+  .marginal_cell{border: 1px solid #0033CC}
+  .absent_cell{border: 2px solid #660033}
+  .small_text{font-family: Helvetica,Arial,sans-serif; font-size:x-small; color:#aaaaaa}
+  .table_setup{border: 0px ; border-collapse: collapse;   }
+  .pad_cell{padding:5px;  }
+  .white_hyper_text{font-family: Helvetica,Arial,sans-serif; color:#000000;}
+  .white_text    {  font-family: Helvetica, Arial, sans-serif; font-size: 9pt; text-decoration: underline; color: white; CURSOR: help;}
+  .white_text_head {  font-family: Helvetica, Arial, sans-serif; font-size: 9pt; text-decoration: underline; color: white; CURSOR: help;}
+  
+  div.visible { display: inline; white-space: nowrap;         }
+  div.visilink { display: inline; white-space: nowrap;         }
+  div.hidden { display: none; }
+  span.visible { display: inline; white-space: nowrap;         }
+  span.hidden { display: none; }
+  table.tbl_visible { display: table; }
+  table.tbl_hidden { display: none; }
+  tr.tbl_visible { display: table-row; }
+  .hoverabletitle { cursor:pointer; margin-top: 8px; background:#f3f1e4; color:#5e6a71; font-size:large; font-weight:bold; border-top:1px solid #b00; border-left:15px solid #b00; padding:0.5em; position:relative; z-index:2}
+  .hoverabletitle:hover { box-shadow:0 3px 5px 3px #aaa;}
+  tr.hoverable:hover td { background:#ffad4e; }
+  td.key   { border-bottom:1px solid #ddd; background:#d3d1c4;}
+  td.value { border-bottom:1px solid #ddd; }
+  tr.tbl_hidden { display: none; }
+  td.tbl_visible { display: table-cell; }
+  td.tbl_hidden { display: none; }
+
+  .table_freeze_first_col {overflow-x: auto; width: 100%; position: relative;}
+  .table_freeze_first_col table {border-collapse: collapse; width: 100%;}
+  .table_freeze_first_col th:first-child,
+  .table_freeze_first_col td:first-child {position: sticky; left: 0; z-index: 2; background-color: inherit;}
+  .table_freeze_first_col td:not(:first-child),
+  .table_freeze_first_col th:not(:first-child) {position: relative;z-index: 1;}
+
+
+    </style>
+
+
+<div id="pa-overlay" title="click to dismiss menu and return to page" onclick="toggleSideMenu('close');"></div>
+<div id="pa-sidemenu">
+<span onclick="toggleSideMenu();" title="Hide links menu" style="cursor:pointer;" class="head">&#8801;&nbsp;&nbsp;&nbsp;PeptideAtlas Links</span>
+<a href="http://www.proteomecenter.org/">Seattle Proteome Center</a>
+<br><br>
+<span class="subhead">PeptideAtlas:</span>
+<a href="http://www.peptideatlas.org/">Home</a>
+<a href="http://www.peptideatlas.org/overview.php">Overview</a>
+<a href="http://www.peptideatlas.org/contacts.php">Contacts</a>
+<a href="http://www.peptideatlas.org/publications.php">Publications</a>
+<a href="http://www.peptideatlas.org/software.php">Software</a>
+<a href="http://www.peptideatlas.org/dbschema.php">Database Schema</a>
+<a href="http://www.peptideatlas.org/feedback.php">Feedback</a>
+<a href="http://www.peptideatlas.org/funding.php">Funding</a>
+<a href="http://www.peptideatlas.org/faq.php">FAQ</a>
+<br>
+
+<form method="post" action="https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/Search">
+  <span class="subhead">Atlas Data:</span>
+  <a href="http://www.peptideatlas.org/repository/">Data Repository</a>
+  <a href="http://www.peptideatlas.org/hupo/hppp/">HPPP Data Central</a>
+  <a href="https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/main.cgi">PeptideAtlas Builds</a>
+  <a href="http://www.peptideatlas.org/builds/">PeptideAtlas Exports</a>
+  <a href="http://www.peptideatlas.org/thisp/">THISP</a>
+  <a href="https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/Search">Search Database</a>
+  <input type="text" name="search_key" value="" size="25" maxlength="60"/><input type="hidden" name="apply_action" value="GO" />
+  <br/>
+  <a href="http://www.peptideatlas.org/upload/">Contribute Data</a>
+</form>
+<br>
+
+<span class="subhead">Related:</span>
+<a href="http://www.srmatlas.org/"  title="Database of best-available SRM transitions for the complete proteomes of a few species">SRMAtlas</a>
+<a href="http://www.peptideatlas.org/passel/"  title="Repository specifically for SRM experimental data">PASSEL</a>
+<a href="http://www.swathatlas.org/">SWATHAtlas</a>
+<br><br>
+
+<span class="subhead">Glossary/Terms:</span>
+<a href="http://www.peptideatlas.org/docs/PA_terms.php">Atlas nomenclature</a>
+<a href="http://www.peptideatlas.org/docs/protein_ident_terms.php">Protein ID terms</a>
+<br>
+<br>
+<a href="https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProteins?atlas_build_id=607;biosequence_name_constraint=P01584;action=QUERY;QUERY_NAME=AT_GetProteins;apply_action=QUERY;force_login=yes" title="Users with PeptideAtlas accounts can log in to see more atlas builds">LOG IN</a><br>
+<a style="border-top: 1px solid #002664;margin-top:50px;" href="https://isbscience.org/"><img width="120" src="/peptideatlas/images/isb_logo2.png"/></a>
+</div>
+
+
+<div onclick="toggleSideMenu();" title="Click for PeptideAtlas menu" style="cursor:pointer;" id="pa-banner" banner-bg-text="&#8801; &nbsp;&nbsp;&nbsp;PeptideAtlas">
+<img class="link" width="150" src="/peptideatlas/images/isb_logo.png"/>
+<span class="menulink">MENU</span>
+</div>
+
+<a id="pa-login" class="pa-button" href="https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProteins?atlas_build_id=607;biosequence_name_constraint=P01584;action=QUERY;QUERY_NAME=AT_GetProteins;apply_action=QUERY;force_login=yes" title="Users with PeptideAtlas accounts can log in to see more atlas builds">Log In</a>
+
+<!-- end of 2020 header -->
+
+
+
+	<SCRIPT LANGUAGE="JavaScript">
+	<!--
+
+	function refreshDocument() {
+            //confirm( "apply_action ="+document.MainForm.apply_action.options[0].selected+"=");
+            document.MainForm.apply_action_hidden.value = "REFRESH";
+            document.MainForm.action.value = "REFRESH";
+	    document.MainForm.submit();
+	} // end refreshDocument
+
+
+	function showPassed(input_field) {
+            //confirm( "input_field ="+input_field+"=");
+            confirm( "selected option ="+document.forms[0].slide_id.options[document.forms[0].slide_id.selectedIndex].text+"=");
+	    return;
+	} // end showPassed
+
+
+
+        // -->
+        </SCRIPT>
+      <!-- Begin TabDDMenu --> 
+    <!-- CSS definitions -->
+    <style type="text/css">
+    .tabmenuset {
+		margin: 0px;
+	        list-style:none;
+		white-space: nowrap;
+                padding:0;
+		float:left;
+		display:block;
+		color:#5e6a71;
+		text-decoration:none;
+		padding:6px 10px;
+		font-weight:bold;
+              	background:#d3d1c4;
+		margin: 0px;
+		border-right:1px solid #f3f1e4;
+                }
+
+    .tabmenuset:hover {
+	       background:#22eceb;
+	       color:#444444;
+               cursor: pointer;
+	   }
+
+    .tabmenuset.atab {
+              background:#f3f1e4;
+              color:#333333;
+	      border-bottom:#f3f1e4;;
+	  }
+
+    .tabmenuset a:hover,
+    .tabmenuset A.atab:hover {
+              background:#22eceb;
+              color:#444444;
+    }
+
+    span.ddmenu, a.ddmenu{
+              background:#f3f1e4;
+              border-left: 4px solid #f3f1e4;
+	      white-space: nowrap;
+	      text-decoration:none;
+	    display:block;
+	    color:#5e6a71;
+	      padding:4px 6px;
+	      font-weight:bold;
+	      z-index:10;
+	  }
+
+    a.ddmenu:hover {
+      border-left: 4px solid #b00;
+    }
+
+    span.ddmenus {
+        min-width:170px;
+	background:#f3f1e4;
+	border: 1px solid #aaaaaa;
+	border-collapse: collapse;
+	visibility:hidden;
+	position:absolute;
+      display:inline-block;
+	margin-top:1.5em;
+	z-index:5;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      }
+
+    </style>
+
+    <SCRIPT LANGUAGE=JavaScript>
+    function showmenu(elmnt){
+      document.getElementById(elmnt).style.visibility="visible";
+      var telmnt = elmnt.replace("menu", "title");
+      if (document.getElementById(telmnt)) {
+        document.getElementById(telmnt).style.backgroundColor = '#d3d1c4;';
+        document.getElementById(elmnt).style.left = document.getElementById(telmnt).getBoundingClientRect().left - 1;
+      }
+    }
+
+    function hidemenu(elmnt){
+      document.getElementById(elmnt).style.visibility="hidden";
+      var telmnt = elmnt.replace("menu", "title");
+      if (document.getElementById(telmnt))
+	  document.getElementById(telmnt).style.backgroundColor = '';
+    }
+    </SCRIPT>
+
+    <div style='background:#d3d1c4;display:inline-block;width:100%;'>
+<a class='tabmenuset ' align='right' href='/sbeams/cgi/PeptideAtlas/Search?_tab=1' TITLE='Search PeptideAtlas by keyword'> Search </a>
+<span onmouseover="showmenu('ddmenu2')" onmouseout="hidemenu('ddmenu2')" class='tabmenuset ' id='ddtitle2' > All Builds<span class='ddmenus' id='ddmenu2'>
+<a class='ddmenu' title='Select a preferred PeptideAtlas build' href='/sbeams/cgi/PeptideAtlas/main.cgi' >Select Build </a>
+<a class='ddmenu' title='Get stats, retrieve peptide and protein lists for all builds' href='/sbeams/cgi/PeptideAtlas/buildInfo' >Stats &amp; Lists </a>
+<a class='ddmenu' title='Retrieve peptide and protein lists for default builds' href='/sbeams/cgi/PeptideAtlas/defaultBuildsPepsProts' >Peps &amp; Prots for Default Builds </a>
+<a class='ddmenu' title='Browsing the basic information about a peptide' href='/sbeams/cgi/PeptideAtlas/Summarize_Peptide' >Summarize Peptide </a>
+<a class='ddmenu' title='View OrthoMCL orthologs group' href='/sbeams/cgi/PeptideAtlas/viewOrthologs?use_default=1' >View Ortholog Group </a>
+</span>
+</span>
+<span onmouseover="showmenu('ddmenu3')" onmouseout="hidemenu('ddmenu3')" class='tabmenuset ' id='ddtitle3' > Current Build<span class='ddmenus' id='ddmenu3'>
+<a class='ddmenu' title='View information about a peptide' href='/sbeams/cgi/PeptideAtlas/GetPeptide' >Peptide </a>
+<a class='ddmenu' title='View information about a protein' href='/sbeams/cgi/PeptideAtlas/GetProtein' >Protein </a>
+</span>
+</span>
+<span class='tabmenuset atab' align='right' > Queries </span>
+<span onmouseover="showmenu('ddmenu5')" onmouseout="hidemenu('ddmenu5')" class='tabmenuset ' id='ddtitle5' > SRMAtlas<span class='ddmenus' id='ddmenu5'>
+<a class='ddmenu' title='Query for SRM Transitions' href='/sbeams/cgi/PeptideAtlas/GetTransitions' >Query Transitions </a>
+<a class='ddmenu' title='Download and upload validated SRM transition lists' href='/sbeams/cgi/PeptideAtlas/GetTransitionLists' >Transition Lists </a>
+<a class='ddmenu' title='View statistics on available SRMAtlas builds' href='/sbeams/cgi/PeptideAtlas/ViewSRMBuild' >SRMAtlas Builds </a>
+<a class='ddmenu' title='Browse SRM experiments' href='/sbeams/cgi/PeptideAtlas/GetSELExperiments' >PASSEL Experiments </a>
+<a class='ddmenu' title='View transition groups for SRM experiments' href='/sbeams/cgi/PeptideAtlas/GetSELTransitions' >PASSEL Data </a>
+</span>
+</span>
+<span onmouseover="showmenu('ddmenu6')" onmouseout="hidemenu('ddmenu6')" class='tabmenuset ' id='ddtitle6' TITLE='Submit or access datasets'> Submission<span class='ddmenus' id='ddmenu6'>
+<a class='ddmenu' title='View/manage submitted datasets' href='/sbeams/cgi/PeptideAtlas/PASS_Summary' >Datasets Summary </a>
+<a class='ddmenu' title='Submit a datasets to one of the PeptideAtlas resources' href='/sbeams/cgi/PeptideAtlas/PASS_Submit' >Submit Dataset </a>
+<a class='ddmenu' title='View/access a previously submitted dataset' href='/sbeams/cgi/PeptideAtlas/PASS_View' >View Dataset </a>
+</span>
+</span>
+<span onmouseover="showmenu('ddmenu7')" onmouseout="hidemenu('ddmenu7')" class='tabmenuset ' id='ddtitle7' TITLE='Resource for data independent analysis'> SWATH/DIA<span class='ddmenus' id='ddmenu7'>
+<a class='ddmenu' title='Download libraries in various formats' href='/sbeams/cgi/SWATHAtlas/GetDIALibs?mode=download_libs' >Download Library </a>
+<a class='ddmenu' title='Generate custom subset libraries' href='/sbeams/cgi/SWATHAtlas/GetDIALibs?mode=subset_libs' >Custom Library </a>
+<a class='ddmenu' title='Assess physical properties of DIA Library' href='/sbeams/cgi/SWATHAtlas/AssessDIALibrary' >Assess Library </a>
+<a class='ddmenu' title='Uploading DIA spectral ion libraries at SWATHAtlas' href='http://www.swathatlas.org/uploadlibrary.php' >Upload Library </a>
+</span>
+</span>
+</div>
+<div class='ddmenu' style='background:#f3f1e4;border-bottom:1px solid #5e6a71;display:inline-block;padding-left:70px;width:calc(100% - 70px);'>  <!-- Begin TabMenu --> 
+    <!-- CSS definitions -->
+    <style type="text/css">
+    #menuset {
+             position:relative;
+	           float:left;
+	           width:100%;
+	           padding:0 0 0 0;
+	           margin: 0px;
+	           list-style:none;
+	           line-height:1.75em;
+             }
+   
+    #menuset LI {
+                float:left;
+	        margin: 0px;
+	        padding:0;
+                }
+
+    #menuset A {
+	        padding:0;
+                float:left;
+                display:block;
+              	color:#5e6a71;
+              	text-decoration:none;
+                padding:0.25em 1em;
+              	font-weight:bold;
+              	background:#f3f1e4;
+              	margin: 0px;
+              	border-left:1.25px solid #FFFFFF;
+              	border-top:1.25px solid #FFFFFF;
+              	border-right:1.25px solid #AAAAAA;
+                }
+
+    #menuset A:hover {
+	    background:#22eceb;
+            color:#000;
+    }
+    #menuset A:active,
+    #menuset A.atab:link,
+    #menuset A.atab:visited {
+	    background:#ffffff;
+     	    color:#5e6a71;
+            position: relative;
+            top: 1px;
+            border-left: 1px solid;
+            border-right: 1px solid;
+            border-top: 1px solid;
+    }
+    #menuset A.atab:hover {
+	    background:#22eceb;
+            color:#000;
+    }
+    </style>
+
+  <div id='menuset'>
+<a  href='/sbeams/cgi/PeptideAtlas/GetPeptides?_subtab=1' title='Multi-constraint browsing of PeptideAtlas Peptides'> Browse Peptides </A><a class=atab href='/sbeams/cgi/PeptideAtlas/GetProteins?_subtab=2' title='Multi-constraint browsing of PeptideAtlas Proteins'> Browse Proteins </A><a  href='/sbeams/cgi/PeptideAtlas/GetCoreProteomeMapping?_subtab=3' title='Browsing Core Proteome Chromosome mapping and PeptideAtlas observabiligy'> Browse Core Proteome </A><a  href='/sbeams/cgi/PeptideAtlas/GetPTMSummary?_subtab=4' title='Browsing PTM Summary Table in PTM Builds'> Browse PTM Summary </A><a  href='/sbeams/cgi/PeptideAtlas/GetProteinsByExperiment?_subtab=5' title='Browsing proteins identfied in each expreiment'> Browse Protein By Experiment </A><a  href='/sbeams/cgi/PeptideAtlas/CompareBuildsProteins?_subtab=6' title='Display proteins identified in both of two specified PeptideAtlas builds'> Compare Proteins in 2 Builds </A><a  href='/sbeams/cgi/PeptideAtlas/SearchProteins?_subtab=7' title='Search for a list of proteins'> Search Proteins </A><a  href='/sbeams/cgi/PeptideAtlas/showPathways?_subtab=8' title='Show PeptideAtlas coverage for a KEGG pathway'> Pathways </A><a  href='/sbeams/cgi/PeptideAtlas/proteinListSelector?_subtab=9' title='HPP B/D Protein Lists'> HPP Protein Lists </A></div>
+
+    
+  <!-- End TabMenu -->
+</div>
+
+    
+  <!-- End TabMenu -->
+<script>document.title = 'PeptideAtlas: Get Proteins';</script>
+	  <h1>Get Proteins</h1>
+	    <STYLE>
+  #messagetab {
+    color:#bb0000;
+/*    text-decoration:blink; */
+    font-weight:bold;
+  }
+  table.tabs {border-collapse: collapse; border-color: #000000;}
+  table.resultsettabs {border-collapse: collapse; border-color: #000000; white-space:nowrap;}
+  td.formtab {
+      border: 2px solid #666666;
+      border-bottom: 2px solid #010101;  /* can't be pure black due to Firefox bug! */
+      font-weight:bold;
+      color: #666666;
+      background:#dedede;
+  }
+  td.formtabON {
+      border-top: 2px solid black;
+      border-right: 2px solid black;
+      border-left: 2px solid black;
+      border-bottom: 0px;
+      font-weight: bold;
+      background: #ffffff;
+  }
+
+  .formtab a {
+      text-decoration:none;
+      color:#666666;
+  }
+  .formtab a:hover {
+      background:#bb0000;
+      color:#ffffff;
+  }
+
+  .formtabON a {
+      text-decoration:none;
+      color:#666666;
+      color:#000000;
+  }
+
+  td.formtabbase {
+      border-bottom: 2px solid black;
+  }
+  </STYLE>
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+  <!--
+  var resultsettabs = new Array();
+
+  function showResultSetPane(divId) {
+      var x;
+      for (x in resultsettabs) {
+	  var elId = "resultsettab"+x;
+	  document.getElementById(elId).className = "formtab";
+
+	  if (document.getElementById(elId+"_content"))
+	      document.getElementById(elId+"_content").className="hidden";
+      }
+
+      if (document.getElementById("messagetab").innerHTML != " ")
+	  document.getElementById("messagetab").innerHTML = " ";
+
+      if (document.getElementById(divId+"_content"))
+	  document.getElementById(divId+"_content").className="visible";
+      document.getElementById(divId).className="formtabON";
+  }
+
+  // -->
+  </SCRIPT>
+<table cellpadding='0' class='resultsettabs'>
+<tr>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='resultsettab0'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='resultsettab1'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='resultsettab2'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='resultsettab3'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='resultsettab4'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='resultsettab5'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='resultsettab6'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='resultsettab7'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='resultsettab8'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='resultsettab9'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' id='messagetab'></td>
+<td class='formtabbase'>&nbsp;&nbsp;&nbsp;</td>
+<td class='formtabbase' width='800'>&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+
+<br/>
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+  <!--
+      var index = resultsettabs.push('Form') - 1;
+      document.getElementById("messagetab").innerHTML = "Loading Form...";
+
+      document.getElementById("resultsettab"+index).innerHTML = "<a href=\"javascript:showResultSetPane('resultsettab" + index + "');\">&nbsp;&nbsp;&nbsp;Form&nbsp;&nbsp;&nbsp;</a>";
+      document.getElementById("resultsettab"+index).className = "formtab";
+      document.getElementById("resultsettab"+index).name = "Form";
+
+      document.write("<div class=\"hidden\" id=\"resultsettab"+index+"_content\">\n");
+
+  // -->
+  </SCRIPT>
+
+	  <form method="post" action="GetProteins" NAME="MainForm" ENCTYPE="multipart/form-data" >
+	  <table border=0>
+        <STYLE>
+  .popup
+  {
+  COLOR: #9F141A;
+  CURSOR: help;
+  TEXT-DECORATION: none
+  }
+  </STYLE>
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+  <!--
+  function popitup(url)
+  {
+    newwindow=window.open( url ,'helpwin','height=400,width=300,dependent=yes,screenX=5000,screenY=50,scrollbars=yes,resizable=yes');
+    if (window.focus) {newwindow.focus()}
+    return false;
+  }
+  // -->
+  </SCRIPT>
+  <STYLE>
+  tr.rowvisible {
+    display: table-row;
+  }
+  tr.rowhidden {
+    display: none;
+  }
+  </STYLE>
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+  <!--
+
+  function toggleFullForm() {
+    var new_state, new_text;
+    var button = document.getElementById('form_detail_control');
+
+    if (button.value == 'Show All Query Constraints') {
+	new_state = 'rowvisible';
+	new_text = 'Show Most Common Constraints';
+    } else {
+	new_state = 'rowhidden';
+	new_text = 'Show All Query Constraints';
+    }
+
+    // Grab page elements by their Names
+    var aTableRows = document.getElementsByName('full_detail_field');
+
+    for(var i=0; i<aTableRows.length; i++) {
+	aTableRows[i].className = new_state;
+    }
+    // Update button text
+    button.value = new_text;
+  }
+
+  // -->
+  </SCRIPT>
+
+      <TR>
+      <TD><hr color="#ffffff" width="275"></TD>
+      <TD colspan="2">
+      <input type="button" id="form_detail_control" onClick="toggleFullForm()" value="Show All Query Constraints">
+      </TD></TR>
+      <TR>
+        <TD><B><font color=red>Atlas Build:</font></B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Select desired Atlas Build to include in query, required." class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=atlas_build_id&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><SELECT NAME="atlas_build_id"  onChange="refreshDocument()">
+        <OPTION VALUE=""></OPTION>
+          <!-- 607 -->
+        <OPTION VALUE="510">Arabidopsis thaliana 2021-03</OPTION>
+<OPTION VALUE="540">Arabidopsis thaliana 2023-10</OPTION>
+<OPTION VALUE="562">Arabidopsis thaliana 2024-04 TAIR12</OPTION>
+<OPTION VALUE="616">Arabidopsis thaliana Phosphoproteome 2026-08</OPTION>
+<OPTION VALUE="506">Babesia microti 2021-01</OPTION>
+<OPTION VALUE="505">Bartonella henselae 2021-01</OPTION>
+<OPTION VALUE="580">Borrelia burgdorferi 2024-03</OPTION>
+<OPTION VALUE="579">Borrelia burgdorferi 2024-03 ISB</OPTION>
+<OPTION VALUE="398">Caenorhabditis Elegans 2013-09</OPTION>
+<OPTION VALUE="458">Caenorhabditis Elegans 2016-06</OPTION>
+<OPTION VALUE="614">Caenorhabditis elegans 2026-05</OPTION>
+<OPTION VALUE="578">Candida albicans 2024-03</OPTION>
+<OPTION VALUE="573">Canis familiaris 2024-01</OPTION>
+<OPTION VALUE="252">CelegansPhospho 2010-06</OPTION>
+<OPTION VALUE="457">Chicken 2016-04</OPTION>
+<OPTION VALUE="459">Chicken 2016-07</OPTION>
+<OPTION VALUE="320">Cow Milk 2011-12</OPTION>
+<OPTION VALUE="610">Danio rerio 2026-04</OPTION>
+<OPTION VALUE="512">Deer Tick 2021-04</OPTION>
+<OPTION VALUE="307">Drosophila 2011-09 Ens62</OPTION>
+<OPTION VALUE="352">Drosophila 2012-08</OPTION>
+<OPTION VALUE="613">Drosophila melanogaster 2026-04</OPTION>
+<OPTION VALUE="575">Escherichia coli 2024-02</OPTION>
+<OPTION VALUE="576">Escherichia coli 2024-03</OPTION>
+<OPTION VALUE="585">Escherichia coli 2024-11 ionbot</OPTION>
+<OPTION VALUE="589">Escherichia coli Phosphoproteome 2024-10</OPTION>
+<OPTION VALUE="570">Felis catus 2023-11</OPTION>
+<OPTION VALUE="615">Gallus gallus 2026-06</OPTION>
+<OPTION VALUE="329">Halobacterium 2012-02</OPTION>
+<OPTION VALUE="396">Halobacterium 2013-08</OPTION>
+<OPTION VALUE="438">Halobacterium 2014-11</OPTION>
+<OPTION VALUE="399">HoneyBee 2013-09</OPTION>
+<OPTION VALUE="378">Horse 2013-04</OPTION>
+<OPTION VALUE="526">Human 2022-01</OPTION>
+<OPTION VALUE="550">Human 2023-01</OPTION>
+<OPTION VALUE="572">Human 2024-01</OPTION>
+<OPTION VALUE="592">Human 2025-01</OPTION>
+<OPTION SELECTED VALUE="607">Human 2026-01</OPTION>
+<OPTION VALUE="605">Human Acetylation Proteome 2026-04</OPTION>
+<OPTION VALUE="609">Human DIA 2026-03</OPTION>
+<OPTION VALUE="349">Human Glyco Synthetic Peptides 2012-07</OPTION>
+<OPTION VALUE="337">Human Glycocapture 2012-03</OPTION>
+<OPTION VALUE="546">Human HLA 2022-09</OPTION>
+<OPTION VALUE="568">Human HLA 2023-11</OPTION>
+<OPTION VALUE="611">Human HLA 2023-11 N-term remap</OPTION>
+<OPTION VALUE="602">Human HLA 2025-06</OPTION>
+<OPTION VALUE="390">Human Kidney 2013-08</OPTION>
+<OPTION VALUE="612">Human Methylation Proteome 2026-04</OPTION>
+<OPTION VALUE="552">Human NON-HLA 2023-01</OPTION>
+<OPTION VALUE="563">Human NON-HLA 2023-06</OPTION>
+<OPTION VALUE="461">Human Phosphoproteome 2017-01</OPTION>
+<OPTION VALUE="537">Human Phosphoproteome 2022-04</OPTION>
+<OPTION VALUE="595">Human Phosphoproteome 2025-01</OPTION>
+<OPTION VALUE="606">Human Phosphoproteome 2025-12</OPTION>
+<OPTION VALUE="519">Human Plasma 2021-07</OPTION>
+<OPTION VALUE="559">Human Plasma 2023-04</OPTION>
+<OPTION VALUE="603">Human Plasma 2025-08</OPTION>
+<OPTION VALUE="516">Human Plasma Extracellular vesicle 2021-06</OPTION>
+<OPTION VALUE="560">Human Plasma Extracellular vesicle 2023-04</OPTION>
+<OPTION VALUE="351">Human SRM 2012-08</OPTION>
+<OPTION VALUE="596">Human SUMOylation Proteome 2025-02</OPTION>
+<OPTION VALUE="604">Human Ubiquitination Proteome 2025-11</OPTION>
+<OPTION VALUE="388">Human Urine 2013-08</OPTION>
+<OPTION VALUE="530">Human Urine 2022-02</OPTION>
+<OPTION VALUE="490">Labeo rohita 2019-09</OPTION>
+<OPTION VALUE="500">Labeo rohita 2020-07</OPTION>
+<OPTION VALUE="121">Leptospira interrogans 2008-01</OPTION>
+<OPTION VALUE="397">Leptospira interrogans 2013-08</OPTION>
+<OPTION VALUE="543">Maize 2022-07</OPTION>
+<OPTION VALUE="564">Maize 2023-09</OPTION>
+<OPTION VALUE="591">Maize Phosphoproteome 2024-12</OPTION>
+<OPTION VALUE="440">Mouse 2014-12</OPTION>
+<OPTION VALUE="446">Mouse 2016-01</OPTION>
+<OPTION VALUE="350">Mouse Glyco Synthetic Peptides 2012-07</OPTION>
+<OPTION VALUE="548">Mouse Phosphoproteome 2022-11</OPTION>
+<OPTION VALUE="577">Mouse Phosphoproteome 2024-02</OPTION>
+<OPTION VALUE="321">Mouse Plasma 2011-12 Ens64</OPTION>
+<OPTION VALUE="557">Mouse Plasma 2023-04</OPTION>
+<OPTION VALUE="327">Mycobacterium tuberculosis 2013-05</OPTION>
+<OPTION VALUE="385">Mycobacterium tuberculosis 2013-07</OPTION>
+<OPTION VALUE="356">Mycobacterium tuberculosis Light DirtyPeptide 2013-05</OPTION>
+<OPTION VALUE="588">Mycobacterium tuberculosis Phosphoproteome 2024-09</OPTION>
+<OPTION VALUE="300">Pig 2011-08 Ens62</OPTION>
+<OPTION VALUE="439">Pig 2014-11</OPTION>
+<OPTION VALUE="358">Plasmodium falciparum 2012-09</OPTION>
+<OPTION VALUE="542">Plasmodium falciparum Phospho 2023-10</OPTION>
+<OPTION VALUE="359">Plasmodium yoelii 2012-09</OPTION>
+<OPTION VALUE="455">Pseudomonas aeruginosa 2021-01</OPTION>
+<OPTION VALUE="407">Rat 2013-11</OPTION>
+<OPTION VALUE="549">Rice 2022-12</OPTION>
+<OPTION VALUE="598">Rice 2025-03</OPTION>
+<OPTION VALUE="539">Rice Phosphoproteome 2022-04</OPTION>
+<OPTION VALUE="498">SARS-CoV-2 2020-06</OPTION>
+<OPTION VALUE="499">SARS-CoV-2 2020-06 Synthetic</OPTION>
+<OPTION VALUE="355">Schizosaccharomyces pombe 2012-08</OPTION>
+<OPTION VALUE="403">Staphylococcus aureus COL 2013-10</OPTION>
+<OPTION VALUE="435">Staphylococcus aureus HG001 2014-09</OPTION>
+<OPTION VALUE="452">Staphylococcus aureus HG001 2015-12</OPTION>
+<OPTION VALUE="402">Staphylococcus aureus NCTC8325 2013-10</OPTION>
+<OPTION VALUE="487">Streptococcus pneumoniae D39 2019-06</OPTION>
+<OPTION VALUE="488">Streptococcus pneumoniaeTIGR 2019-06</OPTION>
+<OPTION VALUE="298">Streptococcus pyogenes 2011-07</OPTION>
+<OPTION VALUE="456">THISP Validation Build 2016-04</OPTION>
+<OPTION VALUE="601">Toxoplasma gondii Phosphoproteome 2025-05</OPTION>
+<OPTION VALUE="590">Trypanosoma brucei Phosphoproteome 2024-12</OPTION>
+<OPTION VALUE="541">Yeast 2022-06</OPTION>
+<OPTION VALUE="261">Yeast non-ICAT 2010-09</OPTION>
+<OPTION VALUE="586">Yeast Phosphoproteome 2024-08</OPTION>
+<OPTION VALUE="260">Yeast QQQ-Atlas 2010-09</OPTION>
+<OPTION VALUE="123">Yeast_MRM_Atlas_2008-03_P0.9</OPTION>
+<OPTION VALUE="408">Zebrafish 2014-03</OPTION>
+</SELECT></TD>
+      </TR>
+<TR>
+        <TD><B>Protein Name Constraint:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constraint for the Protein Name (accession). &#39;%&#39; is wildcard character; &#39;_&#39; is single character wildcard; character range is like &#39;[a-m]&#39;; multiple entries may be separated with a  semicolon; Use ! for NOT." class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=biosequence_name_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="biosequence_name_constraint"
+         VALUE="P01584" SIZE=40 ></TD>
+      </TR>
+<TR>
+        <TD><B>Upload File Of Proteins:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Path to file with list of Protein Names, one per line, to be uploaded via the web interface (NOTE: if proteins are not found, search defaults to printing all proteins of the selected Atlas build)" class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=upload_file&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="file" NAME="upload_file"
+         VALUE="" SIZE=40 >
+         </TD>
+      </TR>
+
+		<TR bgcolor="#efefef" name="full_detail_field" id="full_detail_field" class="rowhidden">
+		
+        <TD><B>Tube Constraint:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="constraint for ISB tube name" class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=tube_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="tube_constraint"
+         VALUE="" SIZE=40 ></TD>
+      </TR>
+
+		<TR bgcolor="#efefef" name="full_detail_field" id="full_detail_field" class="rowhidden">
+		
+        <TD><B>Origene SKU:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="constraint for origene sku. do not use wildcard character % " class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=sku_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="sku_constraint"
+         VALUE="" SIZE=40 ></TD>
+      </TR>
+<TR>
+        <TD><B>Gene Name Constraint:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constraint for the Gene Name. &#39;%&#39; is wildcard character; &#39;_&#39; is single character wildcard; character range is like &#39;[a-m]&#39;; multiple entries may be separated with a  semicolon; Use ! for NOT." class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=biosequence_gene_name_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="biosequence_gene_name_constraint"
+         VALUE="" SIZE=40 ></TD>
+      </TR>
+<TR>
+        <TD><B>Description Constraint:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constraint for the Protein description (description string from input FASTA file). &#39;%&#39; is wildcard character; &#39;_&#39; is single character wildcard; character range is like &#39;[a-m]&#39;; multiple entries may be separated with a  semicolon; Use ! for NOT." class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=biosequence_desc_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="biosequence_desc_constraint"
+         VALUE="" SIZE=40 ></TD>
+      </TR>
+<TR>
+        <TD><B>Number of Observations Constraint:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constraint for the number of observations for each protein.  Allowed syntax: &quot;n&quot;, &quot;&gt; n&quot;, &quot;&lt; n&quot;, &quot;between n and n&quot;, &quot;n +- n&quot;" class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=n_observations_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="n_observations_constraint"
+         VALUE="" SIZE=10 ></TD>
+      </TR>
+<TR>
+        <TD><B>Number of Distinct Peptides Constraint:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constraint for the number of sequence-distinct peptides for each protein.  Allowed syntax: &quot;n&quot;, &quot;&gt; n&quot;, &quot;&lt; n&quot;, &quot;between n and n&quot;, &quot;n +- n&quot;" class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=n_distinct_peptides_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="n_distinct_peptides_constraint"
+         VALUE="" SIZE=10 ></TD>
+      </TR>
+<TR>
+        <TD><B>Chromosome:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constrain to proteins mapping to a particular chromosome, and, in human, display a graphical depiction of chromosome coverage." class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=chromosome&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="chromosome"
+         VALUE="" SIZE=50 ></TD>
+      </TR>
+<TR>
+        <TD><B>Genetic Locus:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constrain to proteins mapping to a particular genetic locus (e.g. 5q35.1)" class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=genetic_locus&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="genetic_locus"
+         VALUE="" SIZE=50 ></TD>
+      </TR>
+<TR>
+        <TD><B>Start Position in Chromosome:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constrain to proteins whose genes start at a particular region of the chromosome. Allowed syntax: &quot;&gt;n&quot; or &quot;&lt;n&quot;" class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=start_in_chromosome&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="start_in_chromosome"
+         VALUE="" SIZE=20 ></TD>
+      </TR>
+<TR>
+        <TD><B>End Position in Chromosome:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constrain to proteins whose genes end at a particular region of the chromosome. Allowed syntax:  &quot;&gt;n&quot; or &quot;&lt;n&quot;" class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=end_in_chromosome&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="end_in_chromosome"
+         VALUE="" SIZE=20 ></TD>
+      </TR>
+<TR>
+        <TD><B>Strand:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Strand (+,-) of the protein in the chromosome" class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=strand&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="strand"
+         VALUE="" SIZE=10 ></TD>
+      </TR>
+<TR>
+        <TD><B>Protein Probability Constraint:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constraint for the protein probability.  Allowed syntax: &quot;n.n&quot;, &quot;&gt; n.n&quot;, &quot;&lt; n.n&quot;, between n.n and n.n&quot;&quot;, &quot;&quot;n.n +- n.n&quot;&quot;&quot;" class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=protein_probability_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="protein_probability_constraint"
+         VALUE="" SIZE=15 ></TD>
+      </TR>
+<TR>
+        <TD><B>Protein Group Representative Constraint:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constraint for protein group representative identifier. &#39;%&#39; is wildcard character; &#39;_&#39; is single character wildcard; character range is like &#39;[a-m]&#39;; multiple entries may be separated with a  semicolon; Use ! for NOT. " class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=protein_group_representative_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><INPUT TYPE="text" NAME="protein_group_representative_constraint"
+         VALUE="" SIZE=15 ></TD>
+      </TR>
+<TR>
+        <TD><B>Presence Levels:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constraint for presence level. No selection shows all. Canonical=protein(s) with best evidence in group. Subsumed=peptides are a subset of peptides for other protein(s) in group. Possibly distingished=all others.  Can Ctrl-select multiple options." class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=presence_level_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><SELECT NAME="presence_level_constraint" MULTIPLE SIZE=6 >
+        <OPTION VALUE="1">canonical</OPTION>
+<OPTION VALUE="7">indistinguishable representative</OPTION>
+<OPTION VALUE="10">insufficient evidence</OPTION>
+<OPTION VALUE="9">marginally distinguished</OPTION>
+<OPTION VALUE="17">noncore-canonical</OPTION>
+<OPTION VALUE="15">not observed</OPTION>
+<OPTION VALUE="6">NTT subsumed</OPTION>
+<OPTION VALUE="2">possibly distinguished</OPTION>
+<OPTION VALUE="13">recovered</OPTION>
+<OPTION VALUE="12">rejected</OPTION>
+<OPTION VALUE="16">representative</OPTION>
+<OPTION VALUE="3">subsumed</OPTION>
+<OPTION VALUE="8">weak</OPTION>
+
+        <OPTION VALUE=""></OPTION>
+        </SELECT></TD>
+      </TR>
+<TR>
+        <TD><B>Redundancy:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constraint for which redundant proteins to display. Indistinguishable=sequence-unique but exact same peptide set as a canonical, possibly distinguished, or subsumed protein. Identical=sequence-identical to a canonical, possibly distingusihed, subsumed, or indistinguishable. Can Ctrl-select multiple options." class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=redundancy_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><SELECT NAME="redundancy_constraint" MULTIPLE SIZE=4 >
+        <OPTION VALUE="1">indistinguishable</OPTION>
+<OPTION VALUE="2">identical</OPTION>
+<OPTION VALUE="4">no redundant relationships</OPTION>
+
+        <OPTION VALUE=""></OPTION>
+        </SELECT></TD>
+      </TR>
+<TR>
+        <TD><B>Experiment Category ID:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Limit query to one experiment category used to compile this Atlas build. Caution: The protein status presented in the result table is computed based on all available data in the Atlas build, NOT just within the selected experiment category." class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=sample_category_id&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><SELECT NAME="sample_category_id" >
+        <OPTION VALUE=""></OPTION>
+          <!--  -->
+        <OPTION VALUE="1226">Adipose</OPTION>
+<OPTION VALUE="17">Adrenal Gland</OPTION>
+<OPTION VALUE="28">Blood Cells</OPTION>
+<OPTION VALUE="130">Blood Extracellular Vesicles</OPTION>
+<OPTION VALUE="13">Blood Plasma</OPTION>
+<OPTION VALUE="1202">Blood Vessel</OPTION>
+<OPTION VALUE="2">Brain</OPTION>
+<OPTION VALUE="15">Breast</OPTION>
+<OPTION VALUE="65">Cancer and Non Cancer Cell Lines</OPTION>
+<OPTION VALUE="1269">Cancer and Non Cancer Tissues</OPTION>
+<OPTION VALUE="1219">Cancer Cell Lines</OPTION>
+<OPTION VALUE="49">Cancer Cell Lines, Blood</OPTION>
+<OPTION VALUE="1214">Cancer Cell Lines, Blood; Cancer Cell Lines, Skin</OPTION>
+<OPTION VALUE="73">Cancer Cell Lines, Bone</OPTION>
+<OPTION VALUE="50">Cancer Cell Lines, Brain</OPTION>
+<OPTION VALUE="51">Cancer Cell Lines, Breast</OPTION>
+<OPTION VALUE="1204">Cancer Cell Lines, Breast; Non Cancer Cell Lines</OPTION>
+<OPTION VALUE="52">Cancer Cell Lines, Digestive System</OPTION>
+<OPTION VALUE="53">Cancer Cell Lines, Kidney</OPTION>
+<OPTION VALUE="54">Cancer Cell Lines, Liver</OPTION>
+<OPTION VALUE="55">Cancer Cell Lines, Lung</OPTION>
+<OPTION VALUE="58">Cancer Cell Lines, Other Anatomical Entities</OPTION>
+<OPTION VALUE="56">Cancer Cell Lines, Other Female Reproductive Organ</OPTION>
+<OPTION VALUE="57">Cancer Cell Lines, Other Male Reproductive Organ</OPTION>
+<OPTION VALUE="59">Cancer Cell Lines, Ovary</OPTION>
+<OPTION VALUE="67">Cancer Cell Lines, Pancreas</OPTION>
+<OPTION VALUE="77">Cancer Cell Lines, Skin</OPTION>
+<OPTION VALUE="62">Cancer Cell Lines, Urinary Bladder</OPTION>
+<OPTION VALUE="41">Cancer, Adrenal Gland</OPTION>
+<OPTION VALUE="1201">Cancer, Blood Cells</OPTION>
+<OPTION VALUE="1272">Cancer, Blood Cells; Blood Cells</OPTION>
+<OPTION VALUE="30">Cancer, Brain</OPTION>
+<OPTION VALUE="40">Cancer, Breast</OPTION>
+<OPTION VALUE="1274">Cancer, Breast; Cancer Cell Lines, Breast</OPTION>
+<OPTION VALUE="39">Cancer, Digestive System</OPTION>
+<OPTION VALUE="33">Cancer, Kidney</OPTION>
+<OPTION VALUE="29">Cancer, Liver</OPTION>
+<OPTION VALUE="34">Cancer, Lung</OPTION>
+<OPTION VALUE="61">Cancer, Other Anatomical Entities</OPTION>
+<OPTION VALUE="1270">Cancer, Other Anatomical Entities; Cancer Cell Lines</OPTION>
+<OPTION VALUE="1203">Cancer, Other Anatomical Entities; Cancer, Blood Cells</OPTION>
+<OPTION VALUE="37">Cancer, Other Female Reproductive Organ</OPTION>
+<OPTION VALUE="38">Cancer, Other Male Reproductive Organ</OPTION>
+<OPTION VALUE="44">Cancer, Ovary</OPTION>
+<OPTION VALUE="35">Cancer, Pancreas</OPTION>
+<OPTION VALUE="1275">Cancer, Prostate; Cancer Cell Lines, Prostate</OPTION>
+<OPTION VALUE="76">Cancer, Skin</OPTION>
+<OPTION VALUE="45">Cancer, Testis</OPTION>
+<OPTION VALUE="42">Cancer, Thyroid Gland</OPTION>
+<OPTION VALUE="48">Cancer, Urinary Bladder</OPTION>
+<OPTION VALUE="24">Cerebrospinal Fluid</OPTION>
+<OPTION VALUE="14">Digestive System</OPTION>
+<OPTION VALUE="3">Eye</OPTION>
+<OPTION VALUE="4">Heart</OPTION>
+<OPTION VALUE="5">Kidney</OPTION>
+<OPTION VALUE="1">Liver</OPTION>
+<OPTION VALUE="6">Lung</OPTION>
+<OPTION VALUE="1205">mixture</OPTION>
+<OPTION VALUE="70">Muscle</OPTION>
+<OPTION VALUE="1224">Nervous system</OPTION>
+<OPTION VALUE="60">Non Cancer Cell Lines</OPTION>
+<OPTION VALUE="1271">Non Cancer Tissues</OPTION>
+<OPTION VALUE="66">Olfactory system</OPTION>
+<OPTION VALUE="23">Oocyte</OPTION>
+<OPTION VALUE="16">Other Anatomical Entities</OPTION>
+<OPTION VALUE="11">Other Female Reproductive Organ</OPTION>
+<OPTION VALUE="74">Other Gestational Structure</OPTION>
+<OPTION VALUE="12">Other Male Reproductive Organ</OPTION>
+<OPTION VALUE="26">Other Respiratory Organ</OPTION>
+<OPTION VALUE="20">Ovary</OPTION>
+<OPTION VALUE="7">Pancreas</OPTION>
+<OPTION VALUE="1266">Parathyroid Gland</OPTION>
+<OPTION VALUE="27">Pituitary Gland</OPTION>
+<OPTION VALUE="25">Placenta</OPTION>
+<OPTION VALUE="1265">Salivary Gland</OPTION>
+<OPTION VALUE="75">Skin</OPTION>
+<OPTION VALUE="22">Sperm</OPTION>
+<OPTION VALUE="8">Spleen</OPTION>
+<OPTION VALUE="1263">Synovial Fluid</OPTION>
+<OPTION VALUE="21">Testis</OPTION>
+<OPTION VALUE="1264">Thymus</OPTION>
+<OPTION VALUE="18">Thyroid Gland</OPTION>
+<OPTION VALUE="19">Ureter</OPTION>
+<OPTION VALUE="9">Urinary Bladder</OPTION>
+<OPTION VALUE="10">Urine</OPTION>
+<!---->
+</SELECT></TD>
+      </TR>
+<TR>
+        <TD><B>Proteome:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Constraint for which set of proteins to display." class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=proteome&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><SELECT NAME="proteome" >
+        <OPTION VALUE=""></OPTION>
+          <!--  -->
+        <OPTION VALUE="All">All</OPTION>
+<OPTION VALUE="CoreProteome"> CoreProteome</OPTION>
+<OPTION VALUE="NonCoreProteome">NonCoreProteome</OPTION>
+<!---->
+</SELECT></TD>
+      </TR>
+<TR>
+        <TD><B>Display only proteins in covering set:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Display only proteins in covering set (smallest set needed to explain all peptides)." class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=covering_constraint&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+      <TD COLSPAN=2 HEIGHT=32><INPUT TYPE=CHECKBOX NAME="covering_constraint" ></INPUT></TD>
+      
+        <TD>
+	  </TD>
+      </TR>
+<TR>
+        <TD><B>Display Options:</B></TD>
+            <TD BGCOLOR="E0E0E0">  <SPAN title="Various selectable table display options" class="popup">
+  <IMG SRC=/sbeams/images/greyqmark.gif BORDER=0 ONCLICK="popitup('/sbeams/cgi/help_popup.cgi?column_name=display_options&table_name=AT_GetProteins');"></SPAN>
+</TD>
+              
+        <TD><SELECT NAME="display_options" MULTIPLE SIZE=3 >
+        <OPTION VALUE="ShowAbundances">Show Estimated Abundances</OPTION>
+<OPTION VALUE="ShowGOColumns">Show GO Columns</OPTION>
+<OPTION VALUE="ShowSQL">Show SQL Query</OPTION>
+
+        <OPTION VALUE=""></OPTION>
+        </SELECT></TD>
+      </TR>
+
+      <INPUT TYPE="hidden" NAME="set_current_work_group" VALUE="">
+      <INPUT TYPE="hidden" NAME="set_current_project_id" VALUE="">
+      <INPUT TYPE="hidden" NAME="QUERY_NAME" VALUE="AT_GetProteins">
+      <INPUT TYPE="hidden" NAME="apply_action_hidden" VALUE="">
+      <TR><TD COLSPAN=3>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <INPUT TYPE="submit" NAME="action" VALUE="QUERY">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <INPUT TYPE="submit" NAME="action" VALUE="REFRESH">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <INPUT TYPE="reset"  VALUE="Reset">
+       </TR></table>
+       </form>
+  
+    <hr color='black'></div>
+      <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+       document.getElementById("messagetab").innerHTML = " ";
+
+          var mytab = 'resultsettab' + (resultsettabs.length - 1);
+          document.onload = showResultSetPane(mytab);
+    // -->
+    </SCRIPT>
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+  <!--
+      var index = resultsettabs.push('Resultset') - 1;
+      document.getElementById("messagetab").innerHTML = "Loading Resultset...";
+
+      document.getElementById("resultsettab"+index).innerHTML = "<a href=\"javascript:showResultSetPane('resultsettab" + index + "');\">&nbsp;&nbsp;&nbsp;Resultset&nbsp;&nbsp;&nbsp;</a>";
+      document.getElementById("resultsettab"+index).className = "formtab";
+      document.getElementById("resultsettab"+index).name = "Resultset";
+
+      document.write("<div class=\"hidden\" id=\"resultsettab"+index+"_content\">\n");
+
+  // -->
+  </SCRIPT>
+<TABLE><TR><TD ALIGN=left><a href='#' onclick="toggle_content('proteins');return false;"><IMG ID='proteins_gif'  SRC='/sbeams/images//info_small.gif'> <DIV ID=proteinshidetext class='hidden'> hide column descriptions </DIV><DIV ID=proteinsshowtext class='visible'> show column descriptions </DIV></a>     <style TYPE="text/css" media="all"> 
+    div.visible { display: inline; white-space: nowrap; }
+    div.hidden { display: none; }
+    </style>
+
+    <SCRIPT TYPE="text/javascript">
+    function make_sticky_toggle( div_name, appearance ) {
+      var cookie = document.cookie;
+      var regex = new RegExp( "SBEAMSui=([^;]+)" );
+      var match = regex.exec( cookie + ";" );
+      var newval = div_name + "&" + appearance;
+      var cookie = "";
+      if ( match ) {
+        cookie = match[0] + "&" + newval;
+      } else { 
+        cookie = "SBEAMSui=" + newval;
+      }
+      document.cookie = cookie;
+    }
+    function toggle_content(div_name) {
+      
+      // Grab page elements by their IDs
+      var mtable = document.getElementById(div_name);
+      var show = document.getElementById( div_name + 'showtext');
+      var hide = document.getElementById( div_name + 'hidetext');
+      var gif_file = div_name + "_gif";
+      var tgif = document.getElementById(gif_file);
+
+      var current_appearance = mtable.className;
+
+      var new_appearance = 'hidden';
+      if ( current_appearance == 'hidden' ) {
+        new_appearance = 'visible';
+      }
+
+      // If hidden set visible, and vice versa
+      if ( current_appearance == 'hidden' ) {
+        ;
+        mtable.className = 'visible';
+        if ( hide ) {
+          hide.className = 'visible';
+        }
+        if ( show ) {
+          show.className = 'hidden';
+        }
+        if ( tgif ) {
+          var regex = new RegExp( ".*small_gray_plus.gif" );
+          var match = regex.exec( tgif.src );
+          if ( match ) {
+            tgif.src = "/sbeams/images/small_gray_minus.gif"; 
+          } else {
+            tgif.src =  '/sbeams/images//info_small.gif'
+          }
+        }
+      } else {
+        ;
+        mtable.className = 'hidden';
+        if ( hide ) {
+          hide.className = 'hidden';
+        }
+        if ( show ) {
+          show.className = 'visible';
+        }
+        if ( tgif ) {
+          var regex = new RegExp( ".*small_gray_minus.gif" );
+          var match = regex.exec( tgif.src );
+          if ( match ) {
+            tgif.src = "/sbeams/images/small_gray_plus.gif"; 
+          } else {
+            tgif.src =  '/sbeams/images//info_small.gif'
+          }
+        }
+      }
+    }
+    </SCRIPT>
+     
+    <DIV ID=proteins class="hidden">   <BR>
+  <span class=section_heading>Identified Proteins</span> 
+  <span class=description>Protein sequences mapped to by identified peptides</span>
+  <TABLE class=info_box>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Biosequence Name</TD><TD NOWRAP ><b>Sequence database accession</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Percent Coverage</TD><TD NOWRAP ><b>% of observed sequence</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Covering Set</TD><TD NOWRAP ><b>Whether this sequence is part of a minimal set explaining all observed peptides</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Presence Level</TD><TD NOWRAP ><b>canonical=member of minimally redundant set<br>possibly distinguished=at least one pep diff from all canonicals<br>subsumed=all peps contained in a canon. or poss. dist.<br>ntt-subsumed=subsumed and >=1 pep lacks tryptic terminus</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Protein Prophet Prob</TD><TD NOWRAP ><b>Probability this protein exists in sample, according to Protein Prophet.</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Norm Obs per 1M</TD><TD NOWRAP ><b>N Obs, normalized to number of observable peptides in protein, expressed per 1M total observations</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Published plasma ng/ml</TD><TD NOWRAP ><b>Physiological concentration in human plasma</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Mult Hyp Test Prob</TD><TD NOWRAP ><b>Probability this protein exists in sample, according to States, et al., Nat Biotechnol, 2006</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >N Obs</TD><TD NOWRAP ><b>ProteinProphet adjusted PSM (peptide-spectrum match) count, usually lower than actual PSM count</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >N Distinct Peptides</TD><TD NOWRAP ><b>Number of sequence-distinct peptides</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Genetic Locus</TD><TD NOWRAP ><b>Provided when available</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Start/End in Chrom</TD><TD NOWRAP ><b>Starting/ending base number in chromosome</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Strand</TD><TD NOWRAP ><b>Which strand of chromosome</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Source</TD><TD NOWRAP ><b>Literature source for published ng/ml; one of Hortin, et al., Clin Chem, 2008; Polanski & Anderson, Biomarker Insights, 2006; Haab, et al., Proteomics, 2005</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Estimated ng/ml</TD><TD NOWRAP ><b>Estimated physiological concentration, by spectral counting (only available for some builds)</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Uncertainty ng/ml</TD><TD NOWRAP ><b>About 2/3 of estimated concentrations are within +/- this multiplicative factor</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Redundancy Relationship</TD><TD NOWRAP ><b>This protein sequence has exactly the same peptides as a sequence with a Presence Level. "identical" if sequence-identical, else "indistinguishable"</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Redundant With Respect To</TD><TD NOWRAP ><b>Sequence that this entry is indistinguishable from or identical to</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Protein Group</TD><TD NOWRAP ><b>Sequence belongs to protein group of this name. Click here to see all group members.</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Seq Uniq Prots in Grp</TD><TD NOWRAP ><b>Number of sequence-unique protein sequences in this group</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Protein Group Seq Alignmt</TD><TD NOWRAP ><b>Click to see a sequence alignment for this protein group</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Keratin</TD><TD NOWRAP ><b>Is keratin according to description, or is in same group as a keratin</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Ig</TD><TD NOWRAP ><b>Is immunoglobulin according to description, or is in same group as an immunoglobulin</b></TD></TR>
+
+        <TR ><TD NOWRAP bgcolor="cccccc" >Protein Description</TD><TD NOWRAP ><b>Description as taken from sequence database fasta file</b></TD></TR>
+</TABLE>
+
+  <span class=description></span>
+ </DIV>
+<BR></TD></TR></TABLE>
+<TABLE ID="TBL"   BORDER=0 CELLPADDING=2 CELLSPACING=2>
+<TR>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Biosequence Name</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Biosequence Accession</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Gene Name</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Cover ing Set</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Percent Coverage</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Presence Level</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Protein Prophet Prob</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Mult Hyp Test Prob</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>N Obs</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Norm Obs per 1M</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>N Distinct Peptides</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Genetic Locus</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Start in Chrom</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>End in Chrom</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Strand</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Redundancy Relationship</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Redundant With Respect To</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Protein Group</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Seq Uniq Prots in Grp</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Protein Group Seq Alignmt</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Keratin</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Ig</SPAN></TH>
+ <TH ALIGN=CENTER BGCOLOR=#002664><SPAN CLASS=dataheader>Protein Description</SPAN></TH>
+</TR>
+<TR> 
+<TD ALIGN=LEFT NOWRAP BGCOLOR="#f3f1e4">P01584</TD>
+<TD ALIGN=LEFT NOWRAP BGCOLOR="#f3f1e4">P01584</TD>
+<TD ALIGN=LEFT NOWRAP BGCOLOR="#f3f1e4">IL1B</TD>
+<TD ALIGN=LEFT NOWRAP BGCOLOR="#f3f1e4">C</TD>
+<TD BGCOLOR="#f3f1e4" NOWRAP>&nbsp;</TD>
+<TD ALIGN=LEFT NOWRAP BGCOLOR="#f3f1e4">canonical</TD>
+<TD ALIGN=LEFT NOWRAP BGCOLOR="#f3f1e4">0.999</TD>
+<TD ALIGN=LEFT NOWRAP BGCOLOR="#f3f1e4">0.000</TD>
+<TD ALIGN=CENTER NOWRAP BGCOLOR="#f3f1e4">9023</TD>
+<TD ALIGN=LEFT NOWRAP BGCOLOR="#f3f1e4">940.500</TD>
+<TD ALIGN=CENTER NOWRAP BGCOLOR="#f3f1e4">121</TD>
+<TD BGCOLOR="#f3f1e4" NOWRAP>&nbsp;</TD>
+<TD BGCOLOR="#f3f1e4" NOWRAP>&nbsp;</TD>
+<TD BGCOLOR="#f3f1e4" NOWRAP>&nbsp;</TD>
+<TD BGCOLOR="#f3f1e4" NOWRAP>&nbsp;</TD>
+<TD BGCOLOR="#f3f1e4" NOWRAP>&nbsp;</TD>
+<TD BGCOLOR="#f3f1e4" NOWRAP>&nbsp;</TD>
+<TD ALIGN=LEFT NOWRAP BGCOLOR="#f3f1e4">P01584</TD>
+<TD ALIGN=CENTER NOWRAP BGCOLOR="#f3f1e4">25</TD>
+<TD ALIGN=CENTER NOWRAP BGCOLOR="#f3f1e4"><IMG BORDER="0" SRC="/sbeams/images/compareProteins.png"></TD>
+<TD BGCOLOR="#f3f1e4" NOWRAP>&nbsp;</TD>
+<TD BGCOLOR="#f3f1e4" NOWRAP>&nbsp;</TD>
+<TD ALIGN=LEFT NOWRAP BGCOLOR="#f3f1e4">coreProteome sp|P01584|IL1B_HUMAN Interleukin-1 beta OS=Homo sapiens OX=9606 GN=IL1B PE=1 SV=2 \VariantSimple=(141|N)</TD>
+</TR>
+</TABLE>
+
+<SCRIPT LANGUAGE=javascript SRC='/sbeams/usr/javascript/pa_tables/result_set.js'></SCRIPT>
+<SCRIPT TYPE="text/javascript">
+window.SBEAMSResultSet && window.SBEAMSResultSet.applyResortLinks({
+  tableId: 'TBL',
+  resortConfig: {"visible_col_indices":[0,1,2,3,4,5,6,7,8,9,10,13,14,15,16,17,18,19,21,22,23,24,25,31,32,33,34,35,36,37,38,39,40,41,42,45,46,47,48,49,50,51,53,54,55,56,57,63,64,65,66,67,68,69,70,71,72,73,74,77,78,79,80,81,82,83,85,86,87,88,89],"query_params":{"rs_set_name":"query_guest_20260830-225016-008","apply_action":"VIEWRESULTSET"},"base_url":"/sbeams/cgi/PeptideAtlas/GetProteins","current_column":"","current_type":"ASC"}
+});
+</SCRIPT>
+
+<SCRIPT LANGUAGE=javascript SRC='/sbeams/usr/javascript/pa_tables/result_set.js'></SCRIPT>
+<SCRIPT TYPE="text/javascript">
+window.SBEAMSResultSet && window.SBEAMSResultSet.applyJsUrlCols({
+  tableId: 'TBL',
+  urlColsByIndex: {"67":"/sbeams/cgi/PeptideAtlas/compareProteins?atlas_build_id=607&protein_group_number=%20V&apply_action=QUERY","41":"/sbeams/cgi/PeptideAtlas/GetProteins?protein_group_representative_constraint=%V&apply_action=QUERY","17":"/sbeams/cgi/PeptideAtlas/GetProteins?protein_group_representative_constraint=%V&apply_action=QUERY","48":"/sbeams/cgi/PeptideAtlas/GetProtein?atlas_build_id=607&protein_name=%0V&apply_action=QUERY","0":"/sbeams/cgi/PeptideAtlas/GetProtein?atlas_build_id=607&protein_name=%0V&apply_action=QUERY","24":"/sbeams/cgi/PeptideAtlas/GetProtein?atlas_build_id=607&protein_name=%0V&apply_action=QUERY","19":"/sbeams/cgi/PeptideAtlas/compareProteins?atlas_build_id=607&protein_group_number=%20V&apply_action=QUERY","43":"/sbeams/cgi/PeptideAtlas/compareProteins?atlas_build_id=607&protein_group_number=%20V&apply_action=QUERY","65":"/sbeams/cgi/PeptideAtlas/GetProteins?protein_group_representative_constraint=%V&apply_action=QUERY"},
+  visibleOriginalColIndices: [0,1,2,3,4,5,6,7,8,9,10,13,14,15,16,17,18,19,21,22,23,24,25,31,32,33,34,35,36,37,38,39,40,41,42,45,46,47,48,49,50,51,53,54,55,56,57,63,64,65,66,67,68,69,70,71,72,73,74,77,78,79,80,81,82,83,85,86,87,88,89],
+  perRowHiddenData: [{"20":16944}],
+  htmlBaseDir: '/sbeams'
+});
+</SCRIPT>
+
+<SCRIPT LANGUAGE=javascript SRC='/sbeams/usr/javascript/pa_tables/result_set.js'></SCRIPT>
+<SCRIPT TYPE="text/javascript">
+window.SBEAMSResultSet && window.SBEAMSResultSet.rewritePlaceholderLinksWithRetries({
+  tableId: 'TBL',
+  visibleOriginalColIndices: [0,1,2,3,4,5,6,7,8,9,10,13,14,15,16,17,18,19,21,22,23,24,25,31,32,33,34,35,36,37,38,39,40,41,42,45,46,47,48,49,50,51,53,54,55,56,57,63,64,65,66,67,68,69,70,71,72,73,74,77,78,79,80,81,82,83,85,86,87,88,89],
+  perRowHiddenData: [{"20":16944}]
+});
+</SCRIPT>
+
+<FORM METHOD="POST">Displayed rows 1 - 1 of 1
+
+<BR>Result Page 
+
+      <script type="text/javascript" src="/sbeams/cgi/../usr/javascript/lorikeet/js/jquery.min.js"></script>
+    
+      <script type="text/javascript" src="/sbeams/cgi/../usr/javascript/simplePagination/jquery.simplePagination.js"></script>
+      <link rel="stylesheet" type="text/css" href="/sbeams/cgi/../usr/javascript/simplePagination/simplePagination.css" />
+      
+      <br>
+      <div class="compact-theme simple-pagination" id="compact-pagination_TBL">
+      </div>
+      <INPUT TYPE="hidden" NAME="rs_set_name" VALUE="query_guest_20260830-225016-008">
+      Page Size:
+      <INPUT TYPE="text" NAME="rs_page_size" SIZE=4
+        VALUE="50">
+      &nbsp;&nbsp;&nbsp;&nbsp;Page Number:
+      <INPUT TYPE="text" NAME="rs_page_number" SIZE=4
+        VALUE="1">
+      <INPUT TYPE="submit" NAME="apply_action" VALUE="VIEWRESULTSET">
+      <script>
+  			$(function() {
+           var itemsOnPage = $("[name='rs_page_size']").val();
+           var rs_page_number = $("[name='rs_page_number']").val();
+			  	 $('#compact-pagination_TBL').pagination({
+							items: 1,
+							itemsOnPage: itemsOnPage,
+							cssStyle: 'light-theme',
+              rs_page_number: rs_page_number,
+              table_id: 'TBL',
+              table_name: '',
+							rs_set_name: "query_guest_20260830-225016-008",
+					});
+			  });
+			</script>
+    
+      <BR>Download ResultSet in Format: <SPAN ID="rs_download_links_TBL"></SPAN>
+      <SCRIPT LANGUAGE=javascript SRC='/sbeams/usr/javascript/pa_tables/result_set.js'></SCRIPT>
+      <SCRIPT TYPE="text/javascript">
+      window.SBEAMSResultSet && window.SBEAMSResultSet.renderDownloadLinks({
+        targetId: 'rs_download_links_TBL',
+        links: [{"queryParams":{"rs_set_name":"query_guest_20260830-225016-008","apply_action":"VIEWRESULTSET","output_mode":"excel","rs_page_size":1000000},"baseUrl":"/sbeams/cgi/PeptideAtlas/GetProteins/query_guest_20260830-225016-008.xls?","name":"Excel"},{"queryParams":{"rs_set_name":"query_guest_20260830-225016-008","apply_action":"VIEWRESULTSET","output_mode":"xml","rs_page_size":1000000},"baseUrl":"/sbeams/cgi/PeptideAtlas/GetProteins/query_guest_20260830-225016-008.xml?","name":"XML"},{"queryParams":{"rs_set_name":"query_guest_20260830-225016-008","apply_action":"VIEWRESULTSET","output_mode":"tsv","rs_page_size":1000000},"baseUrl":"/sbeams/cgi/PeptideAtlas/GetProteins/query_guest_20260830-225016-008.tsv?","name":"TSV"},{"queryParams":{"rs_set_name":"query_guest_20260830-225016-008","apply_action":"VIEWRESULTSET","output_mode":"csv","rs_page_size":1000000},"baseUrl":"/sbeams/cgi/PeptideAtlas/GetProteins/query_guest_20260830-225016-008.csv?","name":"CSV"}]
+      });
+      </SCRIPT>
+    
+        <BR>
+        <SPAN id="rs_cytoscape_link_TBL"></SPAN>
+        <SCRIPT TYPE="text/javascript">
+        (function(){
+          var target = document.getElementById('rs_cytoscape_link_TBL');
+          if (!target) { return; }
+          var a = document.createElement('a');
+          a.href = 'http://db.systemsbiology.net:8080/cytoscape/sbeams?m=generic&rs=query_guest_20260830-225016-008';
+          a.textContent = '[View this Resultset with Cytoscape]';
+          target.appendChild(a);
+        })();
+        </SCRIPT>
+      
+        <BR><SPAN id="rs_annotate_link_TBL"></SPAN>
+        Name: ''
+        (20260830-225016)
+        <SCRIPT TYPE="text/javascript">
+        (function(){
+          var target = document.getElementById('rs_annotate_link_TBL');
+          if (!target) { return; }
+          var a = document.createElement('a');
+          a.href = '/sbeams/cgi/PeptideAtlas/ManageTable.cgi?TABLE_NAME=cached_resultset&cached_resultset_id=19280309';
+          a.textContent = '[Annotate this Resultset]';
+          target.appendChild(a);
+        })();
+        </SCRIPT>
+      
+<BR>
+
+        <BR>
+        <NOBR id="rs_recall_block_TBL">URL to </NOBR>
+      
+      <BR>
+      <NOBR id="rs_reexec_block_TBL">URL to </NOBR>
+      <SCRIPT LANGUAGE=javascript SRC='/sbeams/usr/javascript/pa_tables/result_set.js'></SCRIPT>
+      <SCRIPT TYPE="text/javascript">
+      window.SBEAMSResultSet && window.SBEAMSResultSet.appendResultSetLinkLines({
+        shortUrlBase: 'https://db.systemsbiology.net/sbeams/cgi/shortURL?key=',
+        recall: {
+          blockId: 'rs_recall_block_TBL',
+          baseUrl: '/sbeams/cgi/PeptideAtlas/GetProteins',
+          queryParams: {"rs_set_name":"query_guest_20260830-225016-008","apply_action":"VIEWRESULTSET","rs_page_number":1,"rs_page_size":50},
+          linkText: ' recall this result set',
+          shortKey: 'hlbl5fh5'
+        },
+        reexec: {
+          blockId: 'rs_reexec_block_TBL',
+          baseUrl: '/sbeams/cgi/PeptideAtlas/GetProteins',
+          queryParams: {"biosequence_name_constraint":"P01584","atlas_build_id":"607","row_limit":5000,"apply_action":"QUERY","gene_annotation_level_constraint":"leaf","QUERY_NAME":"AT_GetProteins","organism_id":2,"action":"QUERY","uploaded_file_not_saved":1},
+          linkText: ' re-execute this query',
+          shortKey: 'zz4jhgr9'
+        }
+      });
+      </SCRIPT>
+      <BR>
+    Query Time:     0.07 s<BR>
+</FORM>
+
+    <hr color='black'></div>
+      <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+       document.getElementById("messagetab").innerHTML = " ";
+
+          var mytab = 'resultsettab' + (resultsettabs.length - 1);
+          document.onload = showResultSetPane(mytab);
+    // -->
+    </SCRIPT>
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+  <!--
+      var index = resultsettabs.push('Plot') - 1;
+      document.getElementById("messagetab").innerHTML = "Loading Plot...";
+
+      document.getElementById("resultsettab"+index).innerHTML = "<a href=\"javascript:showResultSetPane('resultsettab" + index + "');\">&nbsp;&nbsp;&nbsp;Plot&nbsp;&nbsp;&nbsp;</a>";
+      document.getElementById("resultsettab"+index).className = "formtab";
+      document.getElementById("resultsettab"+index).name = "Plot";
+
+      document.write("<div class=\"hidden\" id=\"resultsettab"+index+"_content\">\n");
+
+  // -->
+  </SCRIPT>
+
+    <TABLE WIDTH="100%" BORDER=0>
+    <FORM METHOD="POST">
+    
+    <TD VALIGN="TOP" WIDTH="80%">
+    <INPUT TYPE="hidden" NAME="rs_set_name" VALUE="query_guest_20260830-225016-008">
+    <TABLE>
+    <TR><TD BGCOLOR="#E0E0E0">Plot Type</TD><TD>
+    <SELECT NAME="rs_plot_type">
+     <option  VALUE="ghistogram">Histogram of Column A Group by Column B
+<option  VALUE="histogram">Histogram of Column A
+<option  VALUE="xypoints">Scatterplot B vs A
+</SELECT></TD></TR>
+        <TR><TD BGCOLOR="#E0E0E0">Column A</TD>
+        <TD><SELECT NAME="rs_columnA">
+      <option  VALUE="0">Biosequence Name
+<option  VALUE="1">Biosequence Accession
+<option  VALUE="2">Gene Name
+<option  VALUE="3">Cover ing Set
+<option  VALUE="4">Percent Coverage
+<option  VALUE="5">Presence Level
+<option  VALUE="6">Protein Prophet Prob
+<option  VALUE="7">Mult Hyp Test Prob
+<option  VALUE="8">N Obs
+<option  VALUE="9">Norm Obs per 1M
+<option  VALUE="10">N Distinct Peptides
+<option  VALUE="11">N Distinct Synthetic Peptides
+<option  VALUE="12">Chromosome
+<option  VALUE="13">Genetic Locus
+<option  VALUE="14">Start in Chrom
+<option  VALUE="15">End in Chrom
+<option  VALUE="16">Strand
+<option  VALUE="17">Redundancy Relationship
+<option  VALUE="18">Redundant With Respect To
+<option  VALUE="19">Protein Group
+<option  VALUE="20">Group Number
+<option  VALUE="21">Seq Uniq Prots in Grp
+<option  VALUE="22">Protein Group Seq Alignmt
+<option  VALUE="23">Keratin
+<option  VALUE="24">Ig
+<option  VALUE="25">Protein Description
+<option  VALUE="26">biosequence_accessor
+<option  VALUE="27">biosequence_accessor_suffix
+<option  VALUE="28">Organism
+<option  VALUE="29">ppl_sort_order
+<option  VALUE="30">brt_sort_order
+<option  VALUE="31">Biosequence ID
+<option  VALUE="32">Biosequence Name
+<option  VALUE="33">Biosequence Accession
+<option  VALUE="34">Gene Name
+<option  VALUE="35">Cover ing Set
+<option  VALUE="36">Percent Coverage
+<option  VALUE="37">Presence Level
+<option  VALUE="38">Protein Prophet Prob
+<option  VALUE="39">Mult Hyp Test Prob
+<option  VALUE="40">N Obs
+<option  VALUE="41">Norm Obs per 1M
+<option  VALUE="42">N Distinct Peptides
+<option  VALUE="43">N Distinct Synthetic Peptides
+<option  VALUE="44">Chromosome
+<option  VALUE="45">Genetic Locus
+<option  VALUE="46">Start in Chrom
+<option  VALUE="47">End in Chrom
+<option  VALUE="48">Strand
+<option  VALUE="49">Redundancy Relationship
+<option  VALUE="50">Redundant With Respect To
+<option  VALUE="51">Protein Group
+<option  VALUE="52">Group Number
+<option  VALUE="53">Seq Uniq Prots in Grp
+<option  VALUE="54">Protein Group Seq Alignmt
+<option  VALUE="55">Keratin
+<option  VALUE="56">Ig
+<option  VALUE="57">Protein Description
+<option  VALUE="58">biosequence_accessor
+<option  VALUE="59">biosequence_accessor_suffix
+<option  VALUE="60">Organism
+<option  VALUE="61">ppl_sort_order
+<option  VALUE="62">brt_sort_order
+<option  VALUE="63">Biosequence ID
+<option  VALUE="64">Biosequence Name
+<option  VALUE="65">Biosequence Accession
+<option  VALUE="66">Gene Name
+<option  VALUE="67">Cover ing Set
+<option  VALUE="68">Percent Coverage
+<option  VALUE="69">Presence Level
+<option  VALUE="70">Protein Prophet Prob
+<option  VALUE="71">Mult Hyp Test Prob
+<option  VALUE="72">N Obs
+<option  VALUE="73">Norm Obs per 1M
+<option  VALUE="74">N Distinct Peptides
+<option  VALUE="75">N Distinct Synthetic Peptides
+<option  VALUE="76">Chromosome
+<option  VALUE="77">Genetic Locus
+<option  VALUE="78">Start in Chrom
+<option  VALUE="79">End in Chrom
+<option  VALUE="80">Strand
+<option  VALUE="81">Redundancy Relationship
+<option  VALUE="82">Redundant With Respect To
+<option  VALUE="83">Protein Group
+<option  VALUE="84">Group Number
+<option  VALUE="85">Seq Uniq Prots in Grp
+<option  VALUE="86">Protein Group Seq Alignmt
+<option  VALUE="87">Keratin
+<option  VALUE="88">Ig
+<option  VALUE="89">Protein Description
+<option  VALUE="90">biosequence_accessor
+<option  VALUE="91">biosequence_accessor_suffix
+<option  VALUE="92">Organism
+<option  VALUE="93">ppl_sort_order
+<option  VALUE="94">brt_sort_order
+</SELECT></TD></TR>
+
+        <TR><TD BGCOLOR="#E0E0E0">Column B</TD>
+        <TD><SELECT NAME="rs_columnB">
+      <option  VALUE="0">Biosequence Name
+<option  VALUE="1">Biosequence Accession
+<option  VALUE="2">Gene Name
+<option  VALUE="3">Cover ing Set
+<option  VALUE="4">Percent Coverage
+<option  VALUE="5">Presence Level
+<option  VALUE="6">Protein Prophet Prob
+<option  VALUE="7">Mult Hyp Test Prob
+<option  VALUE="8">N Obs
+<option  VALUE="9">Norm Obs per 1M
+<option  VALUE="10">N Distinct Peptides
+<option  VALUE="11">N Distinct Synthetic Peptides
+<option  VALUE="12">Chromosome
+<option  VALUE="13">Genetic Locus
+<option  VALUE="14">Start in Chrom
+<option  VALUE="15">End in Chrom
+<option  VALUE="16">Strand
+<option  VALUE="17">Redundancy Relationship
+<option  VALUE="18">Redundant With Respect To
+<option  VALUE="19">Protein Group
+<option  VALUE="20">Group Number
+<option  VALUE="21">Seq Uniq Prots in Grp
+<option  VALUE="22">Protein Group Seq Alignmt
+<option  VALUE="23">Keratin
+<option  VALUE="24">Ig
+<option  VALUE="25">Protein Description
+<option  VALUE="26">biosequence_accessor
+<option  VALUE="27">biosequence_accessor_suffix
+<option  VALUE="28">Organism
+<option  VALUE="29">ppl_sort_order
+<option  VALUE="30">brt_sort_order
+<option  VALUE="31">Biosequence ID
+<option  VALUE="32">Biosequence Name
+<option  VALUE="33">Biosequence Accession
+<option  VALUE="34">Gene Name
+<option  VALUE="35">Cover ing Set
+<option  VALUE="36">Percent Coverage
+<option  VALUE="37">Presence Level
+<option  VALUE="38">Protein Prophet Prob
+<option  VALUE="39">Mult Hyp Test Prob
+<option  VALUE="40">N Obs
+<option  VALUE="41">Norm Obs per 1M
+<option  VALUE="42">N Distinct Peptides
+<option  VALUE="43">N Distinct Synthetic Peptides
+<option  VALUE="44">Chromosome
+<option  VALUE="45">Genetic Locus
+<option  VALUE="46">Start in Chrom
+<option  VALUE="47">End in Chrom
+<option  VALUE="48">Strand
+<option  VALUE="49">Redundancy Relationship
+<option  VALUE="50">Redundant With Respect To
+<option  VALUE="51">Protein Group
+<option  VALUE="52">Group Number
+<option  VALUE="53">Seq Uniq Prots in Grp
+<option  VALUE="54">Protein Group Seq Alignmt
+<option  VALUE="55">Keratin
+<option  VALUE="56">Ig
+<option  VALUE="57">Protein Description
+<option  VALUE="58">biosequence_accessor
+<option  VALUE="59">biosequence_accessor_suffix
+<option  VALUE="60">Organism
+<option  VALUE="61">ppl_sort_order
+<option  VALUE="62">brt_sort_order
+<option  VALUE="63">Biosequence ID
+<option  VALUE="64">Biosequence Name
+<option  VALUE="65">Biosequence Accession
+<option  VALUE="66">Gene Name
+<option  VALUE="67">Cover ing Set
+<option  VALUE="68">Percent Coverage
+<option  VALUE="69">Presence Level
+<option  VALUE="70">Protein Prophet Prob
+<option  VALUE="71">Mult Hyp Test Prob
+<option  VALUE="72">N Obs
+<option  VALUE="73">Norm Obs per 1M
+<option  VALUE="74">N Distinct Peptides
+<option  VALUE="75">N Distinct Synthetic Peptides
+<option  VALUE="76">Chromosome
+<option  VALUE="77">Genetic Locus
+<option  VALUE="78">Start in Chrom
+<option  VALUE="79">End in Chrom
+<option  VALUE="80">Strand
+<option  VALUE="81">Redundancy Relationship
+<option  VALUE="82">Redundant With Respect To
+<option  VALUE="83">Protein Group
+<option  VALUE="84">Group Number
+<option  VALUE="85">Seq Uniq Prots in Grp
+<option  VALUE="86">Protein Group Seq Alignmt
+<option  VALUE="87">Keratin
+<option  VALUE="88">Ig
+<option  VALUE="89">Protein Description
+<option  VALUE="90">biosequence_accessor
+<option  VALUE="91">biosequence_accessor_suffix
+<option  VALUE="92">Organism
+<option  VALUE="93">ppl_sort_order
+<option  VALUE="94">brt_sort_order
+</SELECT></TD></TR>
+
+      <TR><TD BGCOLOR="#E0E0E0">GroupBy</TD>
+        <TD><SELECT NAME="groupbycolumn">
+        <option  value="B">Column B</OPTION>
+        <option  value="A">Column A</OPTION>
+        </SELECT>
+        &nbsp;&nbsp;<label for="groupbyvalue" style="background-color:#E0E0E0">Selected Value</label>
+        <SELECT NAME="is_equal">
+        <option  value="yes">Equal to</OPTION>
+        <option  value="no">Not Equal to</OPTION>
+        </SELECT>
+        <input type="text" id="groupbyvalue" name="groupbyvalue">
+        <label for="cmpto" style="background-color:#E0E0E0">Plot With</label> 
+        &nbsp;&nbsp;<SELECT NAME="cmpto">
+        <option  value="all">All Values</OPTION> 
+        <option  value="others">Other Values</OPTION>
+        </SELECT>
+        <label for="histnorm" style="background-color:#E0E0E0">Histnorm="percent"</label>
+        <INPUT TYPE=CHECKBOX NAME="histnorm" >
+       </TD>
+      </TR>
+      <TR><TD></TD><TD>
+      <INPUT TYPE="submit" NAME="apply_action" VALUE="VIEWPLOT">
+      </TD></TR></TABLE>
+      </TD><TD>
+      <TABLE>
+    
+    </TABLE>
+    </TD></TR>
+    </TABLE>
+    </FORM>
+    
+    <hr color='black'></div>
+      <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+       document.getElementById("messagetab").innerHTML = " ";
+
+    // -->
+    </SCRIPT>
+</TABLE><!--SBEAMS_PAGE_OK-->
+
+
+
+<!-- start of 2020 footer -->
+
+<div class="pa-footer">
+PeptideAtlas<br>
+&copy; 2004-2026 Institute for Systems Biology, All Rights Reserved
+</div>
+</body>
+</html>

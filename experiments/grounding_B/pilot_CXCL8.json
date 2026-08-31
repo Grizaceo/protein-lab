@@ -1,0 +1,129 @@
+{
+ "experiment_id": "ichor-fme-grounding-B-proteomics-congruence-v1",
+ "phase": "B_pilot_per_target_v1",
+ "created": "2026-08-31T01:53:25-04:00",
+ "gene": "CXCL8",
+ "uniprot": "P10145",
+ "role": "blunted_target",
+ "prioridad": 1,
+ "criterio_fuente": "experiments/grounding_B_spec.json (spec_hash sha256:c1f79e847a3fc8a2f441b7ce5b7b31532021a6ad49fd38c3180c44a769f4ab17, PRE-REGISTRADO fb73d34)",
+ "evidencia_http": {
+  "peptideatlas_build607": {
+   "url": "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProteins?atlas_build_id=607&biosequence_name_constraint=P10145&action=QUERY&QUERY_NAME=AT_GetProteins&apply_action=QUERY",
+   "http": "200 OK",
+   "raw_file": "experiments/grounding_B/raw_sbeams/P10145_build607.html",
+   "sha256": "168eb3925918df41357bdddd950dfcf62f285a5a8828ebc314fa5a3ad01d4f10",
+   "raw_extract_tokens": [
+    "P10145",
+    "P10145",
+    "CXCL8",
+    "C",
+    "canonical",
+    "0.999",
+    "0.000",
+    "2538",
+    "787.900",
+    "35",
+    "P10145",
+    "10",
+    "&nb"
+   ],
+   "parsed": {
+    "n_observations": 2538,
+    "n_distinct_peptides": 35,
+    "protein_prophet_prob": 0.999
+   }
+  },
+  "peptideatlas_plasma_build603": {
+   "url": "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProteins?atlas_build_id=603&biosequence_name_constraint=P10145&action=QUERY&QUERY_NAME=AT_GetProteins&apply_action=QUERY",
+   "http": "200 OK",
+   "raw_file": "experiments/grounding_B/raw_sbeams/P10145_build603_plasma_check.html",
+   "sha256": "aac1c490b7fa7dbb6571f7f7aef6da2083460a5fff85a874a5cfb5dc9c908801",
+   "row_present": false,
+   "nota": "build 603 = Human Plasma 2025-08 (158 datasets); fila ausente = no observado en plasma"
+  }
+ },
+ "C1_pilot": {
+  "definicion": "Gen proteotipable: >=3 peptidos unicos mapeados en PeptideAtlas (build humano vigente) en contextos sangre/plasma/PBMC. Citoquinas pequenas (CXCL8 99aa, IL6 212aa, IL1B 269aa, IFNG 166aa) rara vez aparecen en proteomica global estandar; su ausencia en MS global es LIMITACION TECNICA conocida, no evidencia contra la senal RNA.",
+  "umbral": ">=3 peptidos unicos y >=5 observaciones (estandar PeptideAtlas)",
+  "n_distinct_peptides_607": 35,
+  "n_observations_607": 2538,
+  "passes_C1": true,
+  "passes_C1_plasma": false,
+  "inventario_consistente": true,
+  "nota": "response HTTP 2026-08-31 consistente con inventario build 607 registrado (campos identicos)"
+ },
+ "C2_pilot": {
+  "umbral_log2fc": 0.58,
+  "aggregation_rule": "Por gen: maximo log2FC observado entre todos los datasets elegibles donde el gen esta cuantificado. Se usa el MAXIMO porque la cobertura MS por dataset varia ampliamente; un dataset con cobertura pobre no debe clasificar",
+  "log2FC_piloto": null,
+  "porque_no_computado": "nivel inventario: requiere re-analisis de assays de datasets elegibles (fase siguiente, cf. grounding_B_c2_classification_20260831.json next_step)",
+  "datasets_elegibles_metadatos": {
+   "con_quantificacion_en_elegibles": [
+    "PXD075232",
+    "PXD074830",
+    "PXD074418",
+    "PXD070784",
+    "PXD068076",
+    "PXD067612",
+    "PXD064672",
+    "PXD053647",
+    "PXD052433",
+    "PXD046284",
+    "PXD045237",
+    "PXD036036",
+    "PXD030321",
+    "PXD029831",
+    "PXD029776",
+    "PXD029634",
+    "PXD027744",
+    "PXD025022",
+    "PXD023509",
+    "PXD022599",
+    "PXD020617",
+    "PXD019267",
+    "PXD013977",
+    "PXD010858",
+    "PXD006196"
+   ],
+   "primarios_invC2": [
+    {
+     "accession": "PXD001674",
+     "note": "neutrofilos sangre ±LPS in vivo (invC2: sin quant en metadatos)",
+     "stim": "LPS"
+    },
+    {
+     "accession": "PXD074418",
+     "note": "THP-1 LPS two-challenge",
+     "stim": "LPS"
+    },
+    {
+     "accession": "PXD068076",
+     "note": "macrófagos iPSC inflammasoma LPS",
+     "stim": "LPS"
+    },
+    {
+     "accession": "PXD052433",
+     "note": "TIR LPS sepsis (macrófagos)",
+     "stim": "LPS"
+    },
+    {
+     "accession": "PXD025022",
+     "note": "AHR + microbial LPS macrófagos",
+     "stim": "LPS"
+    }
+   ]
+  }
+ },
+ "verdict": {
+  "C1": "PASS",
+  "C2": "DEFERRED (requiere re-analisis cuantitativo)",
+  "congruencia_con_rna_grounding_A": "RNA: blunted (nominal) con LPS en GSE334369; proteomica: proteotipable (35 peptidos build 607) pero direccion log2FC LPS requiere re-analisis de assays — pilot establece PROTEOTIPABILIDAD (C1 PASS), no congruencia cuantitativa"
+ },
+ "rna_reference": {
+  "source": "GSE334369 neutrofilos ±LPS (a9710fa) + cross-map GSE67311 (a32cb2f)",
+  "blunting_log2": -1.669,
+  "p": 0.0096,
+  "status": "blunted (nominal)"
+ }
+}

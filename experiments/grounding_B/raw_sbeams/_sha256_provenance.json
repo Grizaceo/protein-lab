@@ -1,0 +1,20 @@
+{
+ "raw_sbeams_sha256": {
+  "P01579_build607.html": "a3f8e1a80221cb73c51ee2df620426d85644e82e810d2399011862156981265c",
+  "P01584_build603_plasma_check.html": "b94ceb207f417f47559d60a89c19d639d82023834ee4a73cbc1308795e96778a",
+  "P21580_build603_plasma_check.html": "abe0f21b3ab0f523c8d7b8113cee649128d08c0496459376281f836059e29310",
+  "P05231_build607.html": "8abe4832a3b6568163d756f84a917d6570d755cc4fcfa01f8e5607f46e952a57",
+  "P01584_build607.html": "373dfd5aaa04f05cc611a758a66265ede9b4fd47a341fa581b3e5a391179710f",
+  "P21580_build607.html": "1e95f1d72f84436522242c23dcaba8517be8c4103bf875d264bf035e0b93db64",
+  "P10145_build607.html": "168eb3925918df41357bdddd950dfcf62f285a5a8828ebc314fa5a3ad01d4f10",
+  "P01579_build603_plasma_check.html": "c174442ec300ef184ced78eb98cdd63647bbdbf28ae6317b2c71a372a9d3682e",
+  "P10145_build603_plasma_check.html": "aac1c490b7fa7dbb6571f7f7aef6da2083460a5fff85a874a5cfb5dc9c908801"
+ },
+ "raw_pride_sha256": {
+  "search_fibromyalgia.json": "43d4ad5dc884de4894e94e284f74443da3f7fb17e8e0085491fd09b425da5ebf",
+  "search_ifngamma.json": "9e780dacbdfeae0e510bbebe989ee7cbd8b732590393cb27cbca7d7ba411e825",
+  "search_ifng_stim.json": "5984eac0c5c6d947241e29dd5671b81a1546cedf77e08d38438ac47029969afa",
+  "search_ifng_monocytes.json": "5984eac0c5c6d947241e29dd5671b81a1546cedf77e08d38438ac47029969afa",
+  "search_ifng_pbmc.json": "5984eac0c5c6d947241e29dd5671b81a1546cedf77e08d38438ac47029969afa"
+ }
+}

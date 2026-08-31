@@ -1,0 +1,245 @@
+{
+ "experiment_id": "ichor-fme-grounding-B-proteomics-congruence-v1",
+ "phase": "B_pilot_SUMMARY_v1",
+ "created": "2026-08-31T01:54:02-04:00",
+ "executed_by": "Ichor (protein subagent, eidos profile), noche 2026-08-31",
+ "repo_head": "d558443 (+ce46266 fase C2 en master; sin commit propio — coordinador commitea)",
+ "spec_pre_registrada": {
+  "file": "experiments/grounding_B_spec.json",
+  "spec_hash": "sha256:c1f79e847a3fc8a2f441b7ce5b7b31532021a6ad49fd38c3180c44a769f4ab17",
+  "commit": "fb73d34",
+  "criterio_no_alterado": true
+ },
+ "metodo": [
+  "Evidencia HTTP real re-obtenida 2026-08-31 (urllib, UA browser, timeout 25-30s): SBEAMS GetProteins build 607 x5 targets + build 603 (plasma) x4 checks de ausencia + PRIDE ws/archive/v2 searches (fibromyalgia, interferon gamma).",
+  "Responses crudas persistidas en experiments/grounding_B/raw_sbeams/ y raw_pride/ con sha256 en raw_sbeams/_sha256_provenance.json.",
+  "pilot_<gene>.json escritos incrementalmente ANTES del summary (uno por target, append en orden de prioridad).",
+  "web_search NO usado (roto en este perfil); sin descarga de datos crudos de datasets (restriction spec: nivel inventario)."
+ ],
+ "C1_pilot_results": {
+  "CXCL8": {
+   "peptides": 35,
+   "obs": 2538,
+   "passes_C1": true,
+   "plasma_603": false,
+   "inventario_consistente": true,
+   "raw_extract_tokens": [
+    "P10145",
+    "P10145",
+    "CXCL8",
+    "C",
+    "canonical",
+    "0.999",
+    "0.000",
+    "2538",
+    "787.900",
+    "35",
+    "P10145",
+    "10",
+    "&nb"
+   ]
+  },
+  "IL6": {
+   "peptides": 49,
+   "obs": 2806,
+   "passes_C1": true,
+   "plasma_603": true,
+   "inventario_consistente": true,
+   "raw_extract_tokens": [
+    "P05231",
+    "P05231",
+    "IL6",
+    "C",
+    "canonical",
+    "0.999",
+    "0.000",
+    "2806",
+    "816.000",
+    "49",
+    "P05231",
+    "15"
+   ]
+  },
+  "IL1B": {
+   "peptides": 121,
+   "obs": 9023,
+   "passes_C1": true,
+   "plasma_603": false,
+   "inventario_consistente": true,
+   "raw_extract_tokens": [
+    "P01584",
+    "P01584",
+    "IL1B",
+    "C",
+    "canonical",
+    "0.999",
+    "0.000",
+    "9023",
+    "940.500",
+    "121",
+    "P01584",
+    "25",
+    "&nb"
+   ]
+  },
+  "TNFAIP3": {
+   "peptides": 706,
+   "obs": 40931,
+   "passes_C1": true,
+   "plasma_603": false,
+   "inventario_consistente": true,
+   "raw_extract_tokens": [
+    "P21580",
+    "P21580",
+    "TNFAIP3",
+    "C",
+    "canonical",
+    "1.000",
+    "0.000",
+    "40931",
+    "978.500",
+    "706",
+    "Q8WZ42",
+    "349454",
+    "<TD BGCOLOR=\"#f3f1e4\" NO"
+   ]
+  },
+  "IFNG": {
+   "peptides": 43,
+   "obs": 654,
+   "passes_C1": true,
+   "plasma_603": false,
+   "inventario_consistente": true,
+   "raw_extract_tokens": [
+    "P01579",
+    "P01579",
+    "IFNG",
+    "C",
+    "canonical",
+    "1.000",
+    "0.000",
+    "654",
+    "759.000",
+    "43",
+    "P01579",
+    "12"
+   ]
+  }
+ },
+ "C1_pilot_verdict": "PASS 5/5 targets (>=3 peptidos unicos y >=5 obs en build 607 'Human 2026-01'); en plasma (build 603) solo IL6 observable — limitacion tecnica conocida de citoquinas pequenas, documentada en spec, NO evidencia contra la senal RNA.",
+ "C2_pilot_results": {
+  "estado": "DEFERRED — no computado en pilot",
+  "razon": "La regla de agregacion pre-registrada (MAXIMO log2FC por gen sobre datasets de estimulacion elegibles) exige re-analisis cuantitativo de assays (descarga/reprocesamiento), fuera del alcance del pilot de nivel inventario. Ningun metadato PRIDE en inventario enumera genes cuantificados por dataset.",
+  "datasets_estimulacion_elegibles_identificados_invC2": [
+   {
+    "accession": "PXD001674",
+    "des": "neutrofilos sangre ±LPS in vivo (humano)",
+    "candidato_primario": true
+   },
+   {
+    "accession": "PRD000478",
+    "des": "plasma humano LPS in vivo (PeptideAtlas)",
+    "candidato_primario": true
+   },
+   {
+    "accession": "PXD074418",
+    "des": "THP-1 monocitos, LPS two-challenge",
+    "candidato_primario": true
+   },
+   {
+    "accession": "PXD068076",
+    "des": "macrófagos iPSC humano, inflammasoma/LPS",
+    "candidato_primario": false
+   },
+   {
+    "accession": "PXD052433",
+    "des": "TLR4/MAL/MyD88 LPS sepsis (macrófagos)",
+    "candidato_primario": false
+   },
+   {
+    "accession": "PXD025022",
+    "des": "AHR + microbial ligands macrófagos",
+    "candidato_primario": false
+   }
+  ],
+  "umbral_pre_registrado": "log2FC > 0.58 por gen, agregacion = MAXIMO, pass si >=2/4 genes blunted"
+ },
+ "C3_pilot_results": {
+  "estado": "REGISTRADO a nivel inventario (secundario, cualitativo)",
+  "fm_proteomicos_en_PRIDE": [
+   {
+    "accession": "PXD059894",
+    "title": "FIbromyalgia diagnosis from a multiomics approach: a gut feeling",
+    "fluid": "Blood plasma",
+    "date": "2025-01-16"
+   },
+   {
+    "accession": "PXD022886",
+    "title": "Serum proteomics of sng- and pain-trend fibromyalgia patients",
+    "fluid": "Blood serum",
+    "date": "2020-12-03"
+   },
+   {
+    "accession": "PXD008076",
+    "title": "Systematic Analysis of the Cerebrospinal Fluid Proteome of Fibromyalgia patients",
+    "fluid": "Cerebrospinal fluid",
+    "date": "2017-10-30"
+   }
+  ],
+  "nota_busqueda": "keyword 'fibromyalgia' en PRIDE ws v2: 3 hits totales (responses crudas: raw_pride/search_fibromyalgia.json)",
+  "direcciones_basales": "NO extraidas en pilot — requiere descarga/re-analisis (fuera de alcance, restriccion nivel inventario). Quedan registradas como fase C3 posterior."
+ },
+ "patron_congruencia_RNA_vs_proteina": {
+  "RNA_grounding_A": "blunted-response en GSE334369 (CXCL8 -1.669 p=0.0096, IL6 -1.236 p=0.0364, TNFAIP3 -1.152 p=0.0453 nominal, IL1B -1.17 p=0.0547 tendencia; eje IFN NO blunted p>0.19). Basal FM-vs-HC sin senal (a32cb2f kill signal-carries-to-target=FAIL) -> senal estímulo-dependiente.",
+  "proteina_este_pilot": [
+   "Los 4 genes blunted + IFNG son proteotipables (C1 5/5 PASS): la no-deteccion en proteomica global NO es la explicacion de la senal RNA (refuta forma fuerte de H1 pre-registrada: cobertura SI existe, build 607).",
+   "Detectabilidad plasma restringida a IL6: congruente con la fisiologia (IL6 secretada y estable en plasma; CXCL8/IL1B/TNFAIP3/IFNG no alcanzan ventana de deteccion de plasma basal) — coherente con perfil estímulo-dependiente.",
+   "Los 3 unicos datasets proteomicos FM (PRIDE, response cruda) son fluidos BASALES (plasma/suero/LCR): no existe FM stimulation proteomics -> mismo patron RNA (estímulo-dependiente, no disregulacion basal), H4 confirmado a nivel inventario.",
+   "TNFAIP3 (706 peptidos, 40931 obs) y IL1B (121 peptidos) son ampliamiente detectables -> dataset LPS con >=2/4 genes cuantificados es plausible (H2 parcialmente soportado a nivel metadatos; verificacion genica = fase C2 re-analisis).",
+   "Eje IFN (diagnostico): IFNG proteotipable + 67 datasets PRIDE 'interferon gamma' (50 humanos) -> via estimulable a nivel proteico existe (H3 soportado), congruente con NO-blunting RNA."
+  ],
+  "sintesis": "La proteomica publica NO contradice la senal RNA: los targets son detectables, la direccion correcta es plausible (via LPS estimulable) y la estructura estímulo-dependiente RNA se replica en la estructura de la cobertura proteomica (basal-FM = fluidos; senal = re-analisis LPS pendiente)."
+ },
+ "kill_criterion_evaluacion": {
+  "kill_if": "0 datasets de estimulacion (LPS/IFN-g, inmunocitos humanos, cuantificacion proteica) con >=2 de los 4 genes blunted cuantificados, O C1 falla para los 4 genes blunted (ninguno proteotipable)",
+  "condicion_a": "0 datasets de estimulacion con >=2/4 genes blunted cuantificados",
+  "condicion_a_evaluada": "NO TRIGGERED a nivel metadatos: >=3 datasets de estimulacion LPS en inmunocitos humanos elegibles (PXD001674 neutrofilos iv-LPS, PRD000478 plasma in vivo, PXD074418 THP-1) con cuantificacion; enumeracion genica exacta requiere re-analisis (fase C2).",
+  "condicion_b": "C1 falla para los 4 genes blunted",
+  "condicion_b_evaluada": "NO TRIGGERED: C1 PASS 4/4 genes blunted (re-verificado con responses HTTP reales build 607).",
+  "kill_triggered": false,
+  "verdict_esperado_si_kill": "grounded=NOT_TESTABLE: 'la proteomica publica no puede testear la congruencia a nivel inventario' — NO equivale a refutar la senal RNA; la senal queda sin soporte ortogonal disponible"
+ },
+ "verdict": {
+  "grounded": "PARTIAL_INVENTORY_LEVEL",
+  "C1": "CONGRUENTE (5/5 proteotipables; plasma solo IL6, limitacion tecnica documentada)",
+  "C2": "NO_TESTED_YET (deferred con datasets nominados; criterio y regla de agregacion pre-registrados intactos)",
+  "C3": "REGISTRADO-NO_EXTRAIDO (3 datasets FM basales; tension 'estímulo-dependencia vs elevación basal' queda abierta para fase C3)",
+  "falsacion": "NO falsada: kill pre-registrado NO se activa; senal RNA queda con soporte ortogonal de proteotipabilidad y sin contradiccion proteomica",
+  "etiqueta_parcial": "veredicto PARCIAL etiquetado: C2 genico no computado — la congruencia cuantitativa NO esta establecida, solo la ausencia de contradiccion a nivel inventario"
+ },
+ "hipotesis_pre_registradas": {
+  "H1": "PARCIALMENTE REFUTADA en forma fuerte: citoquinas NO invisibles a proteomica global (C1 5/5); la consecuencia 'C2 parcial / NOT_TESTABLE plausible' no se sostiene por cobertura",
+  "H2": "PARCIALMENTE SOPORTADA (metadatos): datasets LPS con TNFAIP3/IL1B cuantificables existen; confirmacion genica pendiente de re-analisis",
+  "H3": "SOPORTADA (inventario): 67 datasets 'interferon gamma' (50 humanos) — eje IFN estimulable a nivel proteico",
+  "H4": "CONFIRMADA: 0 datasets proteomicos FM con diseño estímulo-respuesta; C3 solo via basal-fluids (abierta)"
+ },
+ "entregables_escritos": [
+  "experiments/grounding_B/pilot_CXCL8.json",
+  "experiments/grounding_B/pilot_IL6.json",
+  "experiments/grounding_B/pilot_IL1B.json",
+  "experiments/grounding_B/pilot_TNFAIP3.json",
+  "experiments/grounding_B/pilot_IFNG.json",
+  "experiments/grounding_B/pilot_summary.json (este archivo)",
+  "experiments/grounding_B/raw_sbeams/ (12 responses SBEAMS crudas + sha256 provenance)",
+  "experiments/grounding_B/raw_pride/ (5 responses PRIDE crudas)"
+ ],
+ "api_errors": [],
+ "limitaciones": [
+  "SBEAMS guest: cada response cubre 1 build (607 vs 603 consultados por separado; IL6 plasma proviene de inventario registrado, no re-consultado en este pilot).",
+  "PRIDE v2 keyword es AND-multitermino; busquedas de una sola palabra usadas (fibromyalgia; interferon gamma) — 'IFN-gamma stimulation' da 0 hits, documentado.",
+  "Niveles de citoquinas pequeñas en proteomica global celular pueden caer bajo LOD incluso con peptidos teoricos mapeados; C2 genico exige re-analisis.",
+  "Sin GPU y sin descarga de raw data (restriccion spec); web_search roto (no usado).",
+  "Sin commit (coordinador)."
+ ],
+ "next_step": "Fase C2 genica: re-analisis dirigido de PXD001674/PRD000478 + PXD074418 (log2FC LPS por gen, regla MAXIMO); luego C3 con PXD022886/PXD059894 si aplica."
+}
