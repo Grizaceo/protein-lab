@@ -1,0 +1,99 @@
+{
+  "experiment_id": "ichor-fme-grounding-B-proteomics-congruence-v1",
+  "created": "2026-08-31T01:15:00-04:00",
+  "registered_by": "Ichor (protein subagent, eidos profile)",
+  "repo_head_at_registration": "a32cb2f",
+  "pre_registration": {
+    "order_of_operations": "Esta spec (incluyendo criterio de congruencia y kill) se REGISTRA Y COMMITEA antes de ejecutar el inventario PRIDE/PeptideAtlas. El inventario no puede alterar el criterio; desviaciones solo via enmienda fechada en este mismo archivo.",
+    "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method at any level, sort_keys=True, separators=(\",\",\":\"), ensure_ascii=False)"
+  },
+  "question": "La proteomica publica (PRIDE / PeptideAtlas, nivel inventario + analisis dirigido posterior) es CONGRUENTE con la senal RNA de blunted-response en CXCL8/IL6/IL1B/TNFAIP3 y de NO-blunting en el eje IFN, observada en FM (GSE334369 neutrofilos ± LPS)?",
+  "rna_reference_state": {
+    "catalog": "investigacion-fibromialgia/analisis/fme/datasets_candidatos.json (protein-7: 17 GSE verificados, 13 reutilizables)",
+    "grounding_A": "protein-10: kill FAIL (signal-carries-to-target); blunted-response es estímulo-dependiente, no disregulacion basal. Ver experiments/ichor-fme-gse67311-*, commit a32cb2f.",
+    "blunted_response_signature_GSE334369": {
+      "design": "neutrofilos FM (n=62) vs HC (n=64) ± LPS ex vivo, 31 pares, log2(LPS+0.1/UNSTIM+0.1) within-subject",
+      "CXCL8": "blunting -1.669, p=0.0096 (nominal)",
+      "IL6": "blunting -1.236, p=0.0364 (nominal)",
+      "TNFAIP3": "blunting -1.152, p=0.0453 (nominal)",
+      "IL1B": "blunting -1.17, p=0.0547 (tendencia)",
+      "IFN_axis": "NO blunted (ISG15/MX1/OAS1/IFI44L/IFIT1/IFITM1 p>0.19)",
+      "caveat": "ningun pasa Bonferroni 19 tests: senal EXPLORATORIA, no confirmada. Grounding B tests ortogonales, no re-testea p-valores."
+    },
+    "expected_protein_direction_under_stimulation": {
+      "CXCL8": "UP con LPS (citoquina inducible NF-kB)",
+      "IL6": "UP con LPS",
+      "IL1B": "UP con LPS (pro-IL1B intracelular; maduracion requiere inflamamasoma)",
+      "TNFAIP3": "UP con LPS (feedback negativo NF-kB)",
+      "IFNG": "sin exigencia de direccion: el RNA NO declaro blunting en eje IFN; IFNG es de celulas T/NK (no mielogeno), se registra como diagnostico"
+    }
+  },
+  "genes": {
+    "CXCL8": {
+      "uniprot": "P10145",
+      "role": "blunted_target",
+      "prioridad": 1
+    },
+    "IL6": {
+      "uniprot": "P05231",
+      "role": "blunted_target",
+      "prioridad": 1
+    },
+    "IL1B": {
+      "uniprot": "P01584",
+      "role": "blunted_target",
+      "prioridad": 1
+    },
+    "TNFAIP3": {
+      "uniprot": "P21580",
+      "role": "blunted_target",
+      "prioridad": 2
+    },
+    "IFNG": {
+      "uniprot": "P01579",
+      "role": "diagnostic_axis_IFN",
+      "prioridad": 3
+    }
+  },
+  "congruence_criterion": {
+    "C1_detectability": {
+      "definicion": "Gen proteotipable: >=3 peptidos unicos mapeados en PeptideAtlas (build humano vigente) en contextos sangre/plasma/PBMC. Citoquinas pequenas (CXCL8 99aa, IL6 212aa, IL1B 269aa, IFNG 166aa) rara vez aparecen en proteomica global estandar; su ausencia en MS global es LIMITACION TECNICA conocida, no evidencia contra la senal RNA.",
+      "umbral": ">=3 peptidos unicos y >=5 observaciones (estandar PeptideAtlas)"
+    },
+    "C2_direction_of_effect": {
+      "definicion": "En datasets de estimulacion in vitro (LPS y/o IFN-gamma) en inmunocitos humanos (PBMC/monocitos/neutrofilos) con cuantificacion proteica: log2FC(estimulo/control) > 0.58 (FC > 1.5) en misma direccion que el RNA inducido.",
+      "umbral_log2fc": 0.58,
+      "justificacion_umbral": "FC 1.5 es conservador: en sobrenadante/exocitoma estas citoginas suben 10-500x con LPS; en proteomica celular global, 2-20x. Umbral bajo evita falsos discordantes por datasets de baja sensibilidad.",
+      "aggregation_rule": "Por gen: maximo log2FC observado entre todos los datasets elegibles donde el gen esta cuantificado. Se usa el MAXIMO porque la cobertura MS por dataset varia ampliamente; un dataset con cobertura pobre no debe clasificar un gen como discordante si otro dataset demuestra la respuesta. Regla declarada A PRIORI.",
+      "pass": ">=2 de 4 genes blunted con log2FC>0.58, direccion coincidente con RNA, en >=1 dataset de estimulacion elegible",
+      "partial_discordance": ">=1 gen: en TODOS los datasets donde esta cuantificado no alcanza umbral o direccion opuesta, mientras otros si pasan -> clasificar 'discordante parcial', reportar (no silenciar)"
+    },
+    "C3_basal_FM_vs_HC": {
+      "definicion": "SECUNDARIO, cualitativo: si existe dataset proteomico plasma/suero FM vs HC, se registran direcciones basales. Tension parcial (proteina basal elevada en FM mientras RNA basal nulo) se reporta como 'tensión estímulo-dependencia vs elevación basal', NO como refutación (protein-10 ya establecio que la senal RNA es estímulo-dependiente)."
+    }
+  },
+  "kill_criterion": {
+    "metric": "elegibilidad del inventario para testear congruencia",
+    "kill_if": "0 datasets de estimulacion (LPS/IFN-g, inmunocitos humanos, cuantificacion proteica) con >=2 de los 4 genes blunted cuantificados, O C1 falla para los 4 genes blunted (ninguno proteotipable)",
+    "kill_verdict": "grounded=NOT_TESTABLE: 'la proteomica publica no puede testear la congruencia a nivel inventario' — NO equivale a refutar la senal RNA; la senal queda sin soporte ortogonal disponible",
+    "type": "signal_exists",
+    "pre_registered_before_inventory": true
+  },
+  "hypotheses": {
+    "H1": "Las citoquinas blunted (CXCL8, IL6) son tan poco abundantes que la proteomica publica global no las cubre -> expectativa de C2 parcial, kill NOT_TESTABLE es resultado plausible, no fracaso",
+    "H2": "Existen >=1 datasets LPS de monocitos/PBMC con TNFAIP3 (mas grande, 575aa) y quizas IL1B pro-forma cuantificados -> C2 PASS parcial",
+    "H3": "Datasets de estimulacion IFN-gamma existen y muestran el eje ISG a nivel proteico -> soporta que la via IFN es respondible (congruente con NO-blunting RNA)",
+    "H4": "No existe dataset proteomico FM con diseño estímulo-respuesta -> el eslabon FM-specific queda abierto (C3 solo via plasma/suero basal si existe)"
+  },
+  "domain_note": "NADA in-silico se presenta como validacion clinica. La congruencia proteomica publica es evidencia ortogonal de SUSTENTO mecanico de la señal RNA exploratoria; no valida, diagnostica ni refuta FM en clinica.",
+  "data_sources": {
+    "PRIDE": "https://www.ebi.ac.uk/pride/ws/archive/v2 (search: keyword, filters species/tissue; campos minimos: accession, title, species, tissue, numAssays, submissionDate; lectura JSON via urllib; SIN descargar datasets grandes",
+    "PeptideAtlas": "https://db.systemsbiology.net/api (builds y peptidos por UniProt; endpoints read-only)",
+    "restriccion": "nivel inventario: PXD/assay ids, condiciones, especie, n muestras, flag estímulo LPS/IFN, flag plasma/suero. Descarga de datos crudos/procesados queda para fase posterior"
+  },
+  "deliverables": [
+    "experiments/grounding_B_spec.json (este archivo, commit ANTES del inventario)",
+    "experiments/grounding_B_inventory_20260831.json (inventario con candidates + veredicto C1/C2 inicial a nivel metadatos)"
+  ],
+  "spec_hash": "sha256:c1f79e847a3fc8a2f441b7ce5b7b31532021a6ad49fd38c3180c44a769f4ab17"
+}
