@@ -1,0 +1,33 @@
+{
+  "PXD008076_CSF_qualitative_5v5": {
+    "CAR14_CA14": {
+      "fm": "3/5",
+      "ctrl": "1/5",
+      "note": "presence only - nominal"
+    },
+    "IL6RB": {
+      "fm": "5/5",
+      "ctrl": "5/5",
+      "note": "constitutive"
+    },
+    "NFKB1": {
+      "fm": "2/5",
+      "ctrl": "0/5",
+      "note": "FM-only in small n"
+    },
+    "IL1RN": {
+      "fm": "0",
+      "ctrl": "0",
+      "note": "not detected"
+    },
+    "TAC1_TACR1": {
+      "fm": "0",
+      "ctrl": "0",
+      "note": "not detected"
+    }
+  },
+  "PXD059894_serum_319_screened": {
+    "fm_key_genes_detected": 0,
+    "note": "immunodepleted high-abundance serum panel \u2014 cytokines below detection"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "caveats": [
+    "Only 5+5 samples from PXD008076 (of 39+36) analyzed for presence/absence — qualitative, not quantitative",
+    "PXD059894 is immunodepleted high-abundance serum — cytokines below detection by design",
+    "mzid files are identification lists, not quantitative abundances; need reanalysis for FM/HC differential",
+    "No dataset public with simultaneous transcriptomics + proteomics + stimulus challenge"
+  ],
+  "conclusion": {
+    "for_fme": "No public proteomics dataset tests the FME blunted-response signature at protein level. FM blood proteomics (2025) screens high-abundance proteins and misses cytokines. FM CSF (2018) has CA14 detectable but the study's differential analysis was not available in accessible format for quantitative re-analysis. The blunted-response hypothesis at protein level remains UNTESTED in public data.",
+    "kill_criterion_result": "FAIL (no protein-level correlate available to test) — grounding-B hypothesis: 'blunted-response RNA has protein-level correlate' remains UNTESTED, not falsified"
+  },
+  "datasets_searched": {
+    "PRIDE_v2_API": "Searched: 'fibromyalgia', 'chronic pain', 'monocyte LPS', 'neutrophil LPS proteome', 'exercise monocyte proteome'",
+    "fm_hits": [
+      {
+        "accession": "PXD008076",
+        "note": "Downloaded 5 FM + 5 Ctrl .mzid identification files",
+        "type": "CSF proteomics, 39 FM + 36 Controls (depleted top-7 abundant)",
+        "used": 10,
+        "year": 2018
+      },
+      {
+        "accession": "PXD022886",
+        "type": "Serum proteomics FM pain trend",
+        "used": 0,
+        "year": 2022
+      },
+      {
+        "accession": "PXD059894",
+        "type": "Blood proteomics 199 FM vs 43 HC women",
+        "used": 1,
+        "year": 2025
+      }
+    ],
+    "method_hits_exercise": 0,
+    "method_hits_monocyte_neutrophil": 0
+  },
+  "description": "Grounding B assigned by @eidos: meta-analysis of public proteomics (PRIDE) to test whether the FME blunted-response signature (CXCL8/IL6/IL1B/TNFAIP3 from GSE334369 + TAC1/CA14 from GSE324210) has protein-level correlates in public repositories.",
+  "experiment_id": "ichor-grounding-b-proteomics-pub-v1",
+  "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method, sort_keys=True, separators=(',',':'), ensure_ascii=False)",
+  "key_findings": {
+    "PXD008076_CSF_qualitative_presence_5vs5": {
+      "CA14_(CAR14):  detected": "3/5 FM vs 1/5 Ctrl (presence-only)",
+      "IFIT1/IFIT2/OAS1/MX1": "present in both groups, no differential signal",
+      "IL1RN/TAC1/TACR1": "not detected at all in CSF mzid files",
+      "IL6RB": "5/5 FM vs 5/5 Ctrl (constitutive, not differentially present)",
+      "NFKB1": "2/5 FM, 0/5 Ctrl (FM-only, but n=5 too small)",
+      "PTN_PTPN3": "3/5 FM vs 1/5 Ctrl nominal - not robust"
+    },
+    "PXD059894_serum_319_proteins_screened": {
+      "fm_key_genes_found": "0/16 targets (IL1B, IL6, CXCL8, TNFAIP3, TAC1, TACR1, CA14, IL1RN, etc.)",
+      "note": "High-abundance immunodepleted serum panel: cytokines/chemokines below detection. Complement axis dominant (13+ proteins). 46 proteins significant (p<0.05) but no FME key-gene hits.",
+      "top_Hits": "PRG4 (p=3e-4), CO8G, PSB3, FA10, APOA4, PSA7, ACTB"
+    }
+  },
+  "kill_criterion": {
+    "metric": "at least 1 public proteomics dataset allowing differential testing of CXCL8/IL6/IL1B/TNFAIP3/TAC1/CA14 protein levels FM vs HC with adequate sample size (n>20 per group)",
+    "result": "NO such dataset found. Kill = completed_negative (dataset-availability kill)",
+    "threshold": "yes = proceed to meta-analysis, no = negative",
+    "type": "dataset_exists"
+  },
+  "spec_hash": "sha256:95a5628b55d83bd7ef42cb7435d4f3e4fd0efc1e667671585920f4de5c2de0d9"
+}
