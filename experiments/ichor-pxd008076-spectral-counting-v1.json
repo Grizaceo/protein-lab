@@ -1,0 +1,29 @@
+{
+  "data_on_disk": {
+    "download_strategy": "parallel fetch, ~1-2 MB each, ~10 min for full set",
+    "mzid_files_currently": 10,
+    "total_available": 75
+  },
+  "description": "Brazos B del cuadro FME: re-analisis cuantitativo-ish de PXD008076 (CSF, 39 FM + 36 HC) via espectral counting sobre los matchs por espectro embebidos en los .mzid, para testar si las cannoneras FME (IL-6/CXCL8/IL1RN/IL1B/TAC1/CA14/eje IFN) separan FM vs HC a nivel proteico en CSF.",
+  "experiment_id": "ichor-pxd008076-spectral-counting-v1",
+  "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method, sort_keys=True, separators=(',',':'), ensure_ascii=False)",
+  "hypotheses_to_test": {
+    "H1_cannonera": "IL-6 / CXCL8 / IL1RN / IL1B (pro-inflam) show differential spectral counts FM vs HC (direction unknown, blunted = DOWN in FM)",
+    "H2_ca14": "CA14 (CAR14) presence frequency differs FM vs HC (nominal 3/5 vs 1/5 from earlier 5+5 sample)",
+    "H3_ifn": "IFN-axis proteins (ISG15, IFIT1, MX1, OAS1) show differential presence"
+  },
+  "kill_criterion": {
+    "fail_if": "No protein of the cannon/IFN axis passes FDR < 0.10 in n=75 → linea proteica cerrada sin ambigüedad (reanálisis cuantitativo no rescata la señal)",
+    "metric": "at least 1 of the 3 hypothesis-groups (H1 cannonera, H2 CA14, H3 IFN) showing differential spectral presence with BH-FDR corrected p < 0.10 across full n=75",
+    "threshold": "BH-FDR < 0.10 on cannon/CA14/IFN genes with consistent direction",
+    "type": "signal_exists_at_protein_level"
+  },
+  "method": {
+    "comparison": "Mann-Whitney U / Fisher-based presence-frequency FM vs HC on common proteins",
+    "multiple_testing": "Benjamini-Hochberg FDR<0.05 on the ~2000 proteins per group",
+    "normalization": "Pascal's triangle-style NSAF (normalized spectral abundance factor)",
+    "quantification": "Spectral counting (peptide-spectrum matches per protein per sample)"
+  },
+  "preregistered_before_running": true,
+  "spec_hash": "sha256:28ef136a62ef85757632eb2c0eaf4d4dd5611492bb75fde8d56673c5e316b40e"
+}

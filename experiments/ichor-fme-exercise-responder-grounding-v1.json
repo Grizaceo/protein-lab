@@ -1,0 +1,24 @@
+{
+  "description": "FME ejercicio-sensible: especializar la investigacion in-silico en la subpoblacion FM que solo responde a ejercicio. Hipotesis falsable: el perfil blunted IL-1/IL-6/CXCL8 (GSE334369) es el predictor molecular del no-responder al ejercicio; el modulo de respuesta-ejercicio (GSE324210 training-atenudados) discrimina FM subtipos en datasets publicos.",
+  "existing_context": {
+    "GSE324210": "83 samples, adolescent exercise acute+training, sex-specific",
+    "GSE334369": "206 samples, FM vs HC neutrophil LPS blunted, CXCL8 -1.67 p=0.0096",
+    "GSE67311": "FM vs HC baseline blood, 0/24 genes = estado-dependiente no basal"
+  },
+  "experiment_id": "ichor-fme-exercise-responder-grounding-v1",
+  "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method, sort_keys=True, separators=(',',':'), ensure_ascii=False)",
+  "kill_criterion": {
+    "fail_consequence": "Si no hay dataset publico o la correlacion no emerge: la subpoblacion ejercicio-sensible de FM no es testable in-silico con lo que hay",
+    "metric": "correlacion (Spearman) entre blunting score pre-intervencion y magnitude de respuesta al ejercicio en al menos 1 dataset publico con n>=20",
+    "threshold": "rho > 0.4 con p < 0.05 en n>=20 → proceder; 0 hits en todos los datasets → subhipotesis blunted=no-responder muere",
+    "type": "linkage_exists"
+  },
+  "plan": {
+    "step_1": "Minería sistemática: GEO query 'exercise intervention' + 'fibromyalgia' OR 'chronic pain' OR 'chronic fatigue' post-2020, buscar longitudinales pre/post con periféricos",
+    "step_2": "GEO query 'resistance training' OR 'aerobic training' + 'pain' (cualquier condicion dolor cronico) — el fenotipo no-RESPONDER al ejercicio en general, no unicamente FM",
+    "step_3": "Proyectar el modulo blunted (CXCL8/IL6/IL1B/TNFAIP3 de GSE334369) sobre los nuevos datasets longitudinales",
+    "step_4": "Test: ¿la respuesta blunted predice la falta de respuesta al ejercicio? Correlacion pre-treatment blunting score vs post-treatment response"
+  },
+  "preregistered_before_running": true,
+  "spec_hash": "sha256:c03a8f35e3d7db4e8cb71bea5a3933eb7ee0125454ac60d072081a3fe6e83d93"
+}
