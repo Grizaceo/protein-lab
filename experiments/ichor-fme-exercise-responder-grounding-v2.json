@@ -1,0 +1,28 @@
+{
+  "description": "FME ejercicio-sensible (directiva user): especializar la investigacion in-silico en la subpoblacion de FM/no-responders al ejercicio. Mineria GEO completada: el candidato principal es la familia GSE111553/554/555 — entrenamiento endurencia en hombres con datos de sangre (total leukocytes G1 n=44, G2 n=40 + PBMC n=32), explicitamente disenado para 'high variability in VO2 response' = marco responder vs no-responder SIN necesidad de FM etiqetada.",
+  "experiment_id": "ichor-fme-exercise-responder-grounding-v2",
+  "hash_method": "eidos-canonicalization-v1 (excludes spec_hash and hash_method, sort_keys=True, separators=(',',':'), ensure_ascii=False)",
+  "kill_criterion": {
+    "fail_consequence": "Si rho < 0.2 en ambos blood datasets (n total ~84): el modulo blunted IL-1/IL-6/CXCL8 no predice la respuesta al ejercicio — la direccion de la subpoblacion ejercicio-sensible via transcriptomica periferica muere",
+    "metric": "Spearman rho entre blunting pre-training score y VO2-peak response",
+    "threshold": "rho > 0.4 con p < 0.05 en n>=40 (GSE111554 blood) = PASS; rho < 0.2 en both GSE111553+554 = FAIL",
+    "type": "linkage_exists"
+  },
+  "mining_results": {
+    "key_finding": "El fenotipo responder-vs-no-responer al ejercicio es directamente atacable en GSE111554 (n=40, men VO2 variability) — sin necesidad de que el dataset sea FM",
+    "query_results": {
+      "exercise_FM": "0 hits en GEO (no existe dataset ejercicio+FM longitudinal periférico)",
+      "exercise_pain_training": "0 hits (ídem dolor crónico + ejercicio transcripcional)",
+      "training_response_blood": "7 hits, con GSE111553/554/555 familia como mejores candidatos"
+    }
+  },
+  "plan_concrete": {
+    "step_1": "Descargar GSE111554 (blood n=40) + GSE111553 (blood n=44): series matrices GPL17586",
+    "step_2": "Identificar subpoblacion high-VO2-response vs low-VO2-response (responder vs non-responder) usando VO2peak change",
+    "step_3": "Proyectar el modulo blunted (CXCL8/IL6/IL1B/TNFAIP3 from GSE334369) pre-intervencion sobre los 2 grupos",
+    "step_4": "Test: correlacion (Spearman) entre blunting score pre-training y magnitude de VO2 response",
+    "step_5": "Si rho>0.4: cross-validate en GSE111552 (PBMC) y GSE324210 (monocitos adolescentes, T3/T4 training)"
+  },
+  "preregistered_before_running": true,
+  "spec_hash": "sha256:e219d00562348806fbae6b1de80d92e512f8ce4e6beaf3b5723f45eece58adb1"
+}

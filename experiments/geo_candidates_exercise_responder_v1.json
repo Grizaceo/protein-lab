@@ -1,0 +1,58 @@
+[
+  {
+    "uid": "200324210",
+    "accession": "GSE324210",
+    "n_samples": 83,
+    "platform": "24676",
+    "title": "Exercise Training Attenuates the Monocyte Transcriptome Response to Acute Exercise in Adolescents: Evidence for Sex-Specific Molec",
+    "summary": "Background: Atherosclerosis is tied to functional characteristics of circulating monocytes, the disease in adults likely begins in childhood and adolescence, and clinical heart disease differs substantially between women and men. Since monocyte function is influenced by exercise, we measured monocyt"
+  },
+  {
+    "uid": "200111555",
+    "accession": "GSE111555",
+    "n_samples": 142,
+    "platform": "17586",
+    "title": "Blood and skeletal muscle gene signatures of exercise training in men",
+    "summary": "This SuperSeries is composed of the SubSeries listed below."
+  },
+  {
+    "uid": "200111554",
+    "accession": "GSE111554",
+    "n_samples": 40,
+    "platform": "17586",
+    "title": "Blood and skeletal muscle gene signatures of exercise training in men (Total blood data set G2)",
+    "summary": "Accounting for transcriptional features of endurance adaptations to training is important and could help elucidate the high variability in oxygen uptake (VO2) response. We aimed to identify whole-transcriptome signatures of an endurance training protocol in whole-blood (leukocytes), PBMCs and skelet"
+  },
+  {
+    "uid": "200111553",
+    "accession": "GSE111553",
+    "n_samples": 44,
+    "platform": "17586",
+    "title": "Blood and skeletal muscle gene signatures of exercise training in men (Total blood data set G1)",
+    "summary": "Accounting for transcriptional features of endurance adaptations to training is important and could help elucidate the high variability in oxygen uptake (VO2) response. We aimed to identify whole-transcriptome signatures of an endurance training protocol in whole-blood (leukocytes), PBMCs and skelet"
+  },
+  {
+    "uid": "200111552",
+    "accession": "GSE111552",
+    "n_samples": 32,
+    "platform": "17586",
+    "title": "Blood and skeletal muscle gene signatures of exercise training in men (PBMC data set)",
+    "summary": "Accounting for transcriptional features of endurance adaptations to training is important and could help elucidate the high variability in oxygen uptake (VO2) response. We aimed to identify whole-transcriptome signatures of an endurance training protocol in whole-blood (leukocytes), PBMCs and skelet"
+  },
+  {
+    "uid": "200111551",
+    "accession": "GSE111551",
+    "n_samples": 26,
+    "platform": "17586",
+    "title": "Blood and skeletal muscle gene signatures of exercise training in men (Muscle data set)",
+    "summary": "Accounting for transcriptional features of endurance adaptations to training is important and could help elucidate the high variability in oxygen uptake (VO2) response. We aimed to identify whole-transcriptome signatures of an endurance training protocol in whole-blood (leukocytes), PBMCs and skelet"
+  },
+  {
+    "uid": "100000096",
+    "accession": "GPL96",
+    "n_samples": 43657,
+    "platform": "96",
+    "title": "[HG-U133A] Affymetrix Human Genome U133A Array",
+    "summary": "Affymetrix submissions are typically submitted to GEO using the GEOarchive method described at http://www.ncbi.nlm.nih.gov/projects/geo/info/geo_affy.html  June 03, 2009: annotation table updated with netaffx build 28 June 08, 2012: annotation table updated with netaffx build 32 June 24, 2016: annot"
+  }
+]
