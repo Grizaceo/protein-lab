@@ -16,5 +16,11 @@
   "note": "Kill criterion: if 0/primary and 0/secondary endpoints met, FME sub-hypothesis is dead",
   "primary_hypothesis": "Pre-training expression of the training-attenuated module (dip-score-selected genes) predicts VO2max change after endurance intervention",
   "question": "Does the FME (exercise-attenuated gene module, from GSE324210) distinguish responders from non-responders at baseline?",
-  "status": "preregistered-before-data-look"
+  "status": "kill-blunting-vo2-rho-minus0.078-p0.74-n20",
+  "kill_result": {
+    "rho": -0.0781954887218045,
+    "p": 0.7431490742332264,
+    "n": 20,
+    "threshold": "rho<0.2=FAIL, rho>0.4=PASS"
+  }
 }
