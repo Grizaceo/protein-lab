@@ -1,0 +1,91 @@
+{
+  "experiment_id": "ichor-fme-gse334369-mrgprx2-axis-v1",
+  "lab": "protein-lab",
+  "domain": "protein",
+  "status": "completed_negative",
+  "timestamp_utc": "2026-09-10T07:30:00Z",
+  "type": "CONFIRMATORY_FALSIFICATION",
+  "dataset": {
+    "id": "GSE334369",
+    "tissue": "neutrophils",
+    "design": "paired LPS-stimulated (NAR) vs unstimulated (NNAR), FM cases vs HC",
+    "n_case_pairs": 36,
+    "n_ctrl_pairs": 41,
+    "raw_source": "GSE334369_RAW.tar (206 TSV.gz, TPM)",
+    "data_on_disk": true
+  },
+  "genes_tested": [
+    "MRGPRX2",
+    "TAC1",
+    "TACR1",
+    "CMA1",
+    "IL1B",
+    "CXCL8"
+  ],
+  "results": {
+    "MRGPRX2": {
+      "case_lps_response": 0.024,
+      "ctrl_lps_response": -0.0,
+      "delta": 0.024,
+      "p": 0.4596,
+      "verdict": "NULL"
+    },
+    "TAC1": {
+      "case_lps_response": -0.013,
+      "ctrl_lps_response": 0.017,
+      "delta": -0.03,
+      "p": 0.3944,
+      "verdict": "NULL (replicates parent p=0.907)"
+    },
+    "TACR1": {
+      "case_lps_response": 0.0,
+      "ctrl_lps_response": -0.029,
+      "delta": 0.029,
+      "p": 0.0346,
+      "verdict": "nominal but effect ~0.03 log2 — biologically negligible"
+    },
+    "CMA1": {
+      "case_lps_response": -0.02,
+      "ctrl_lps_response": -0.04,
+      "delta": 0.02,
+      "p": 0.7198,
+      "verdict": "NULL (MRGPRX2 downstream tryptase)"
+    },
+    "IL1B": {
+      "case_lps_response": 5.859,
+      "ctrl_lps_response": 6.655,
+      "delta": -0.797,
+      "p": 0.0613,
+      "verdict": "direction replicates parent blunting (-1.17)"
+    },
+    "CXCL8": {
+      "case_lps_response": 3.996,
+      "ctrl_lps_response": 5.059,
+      "delta": -1.063,
+      "p": 0.0053,
+      "verdict": "replicates parent p=0.0096 — positive control PASS"
+    }
+  },
+  "pipeline_validation": {
+    "note": "Independent re-pairing by donor E-code (36/41 pairs vs parent 13/18) reproduces parent findings: CXCL8 p=0.0053 vs 0.0096, IL1B direction consistent. Pipeline cross-check PASS.",
+    "pairing_fix": "tar member names carry 'Aligned' suffix; initial pairing failed silently (0 pairs) until suffix stripped"
+  },
+  "kill_criterion": {
+    "metric": "at least 1 NEW axis gene (MRGPRX2 or CMA1) with blunting p<0.05 after Bonferroni (n=6, threshold 0.0083)",
+    "result": "FAIL — MRGPRX2 p=0.46, CMA1 p=0.72",
+    "verdict": "KILL: MRGPRX2/TAC1 axis not differentially LPS-responsive in FM neutrophils"
+  },
+  "biological_caveat": {
+    "tissue_mismatch": "GSE334369 is neutrophils; MRGPRX2 is primarily a mast-cell receptor (skin/mucosa DRG proximity). Low basal expression (58/205 samples nonzero TPM) limits power. A null here does NOT kill the mast-cell compartment hypothesis — it kills THIS dataset as a test of it.",
+    "honest_scope": "Negative result is dataset-scoped, not axis-scoped"
+  },
+  "artifacts": {
+    "extraction_script": "investigacion-fibromialgia/scripts/extract_mrgprx2_gse334369.py",
+    "analysis_script": "investigacion-fibromialgia/scripts/analyze_mrgprx2_gse334369.py",
+    "tpm_data": "investigacion-fibromialgia/datos/geo/GSE334369/mrgprx2_tpm.json",
+    "results": "investigacion-fibromialgia/datos/geo/GSE334369/mrgprx2_blunting_results.json"
+  },
+  "parent_experiment": "ichor-fme-gse334369-blunted-response-v1 (spec_hash 77a4d5b1)",
+  "conclusion_for_eidos": "Handoff accepted and executed as cheap falsification gate FIRST: axis genes are null in this dataset. GSE334369 cannot test MRGPRX2 (wrong tissue). If the TAC1/MRGPRX2 line continues, it needs a mast-cell or skin/DRG dataset — not more neutrophil data.",
+  "spec_hash": "sha256:290b7f700f5011d5172ceb97b8d6d27084176e94e9b76a536e02f5b1537d33d6"
+}
