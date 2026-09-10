@@ -1,0 +1,13 @@
+{
+  "rho": 0.18984552600994642,
+  "p": 0.481290677330312,
+  "n": 16,
+  "genetic_module": [
+    "CXCL8",
+    "IL6",
+    "IL1B",
+    "TNFAIP3"
+  ],
+  "dataset": "GSE111552",
+  "tissue": "PBMC"
+}
