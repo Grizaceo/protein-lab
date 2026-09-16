@@ -16,7 +16,7 @@ import time
 from pathlib import Path
 from typing import Any
 
-CONDA_PYTHON = os.getenv("PROTEIN_LAB_PYTHON", "/home/gris/.miniconda/envs/protein-lab/bin/python")
+CONDA_PYTHON = os.getenv("PROTEIN_LAB_PYTHON", "/home/gris96/.miniconda/envs/protein-lab/bin/python")
 RUNNER_SCRIPT = str(Path(__file__).resolve().parent / "_run_dti.py")
 
 

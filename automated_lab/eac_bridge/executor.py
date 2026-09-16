@@ -9,8 +9,8 @@ from typing import Dict, Any, Optional
 
 # Ensure agentic-lab-eac src directory is in sys.path
 _eac_candidates = [
-    Path("/home/gris/.hermes/workspace/ACTIVE/agentic-lab-eac/src"),
-    Path("/home/gris/.hermes/workspace/agentic-lab-eac/src"),
+    Path("/home/gris96/.hermes/workspace/ACTIVE/agentic-lab-eac/src"),
+    Path("/home/gris96/.hermes/workspace/agentic-lab-eac/src"),
     Path(__file__).resolve().parents[3] / "agentic-lab-eac" / "src",
 ]
 for _candidate in _eac_candidates:

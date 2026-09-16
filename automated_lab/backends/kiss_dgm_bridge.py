@@ -32,8 +32,8 @@ from pathlib import Path
 from typing import Any, Callable
 
 LAB_DIR = Path(__file__).resolve().parent.parent.parent
-KISS_DIR = Path("/home/gris/.hermes/workspace/repos/kiss_discovery_engine")
-DGM_DIR = Path("/home/gris/oss-science-agents/dgm")
+KISS_DIR = Path("/home/gris96/.hermes/workspace/repos/kiss_discovery_engine")
+DGM_DIR = Path("/home/gris96/oss-science-agents/dgm")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # Configuración

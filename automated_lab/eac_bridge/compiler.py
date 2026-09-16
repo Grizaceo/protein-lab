@@ -3,7 +3,7 @@ import logging
 from pathlib import Path
 
 # Ensure agentic-lab-eac src directory is in sys.path
-EAC_SRC = Path("/home/gris/.hermes/workspace/agentic-lab-eac/src")
+EAC_SRC = Path("/home/gris96/.hermes/workspace/agentic-lab-eac/src")
 if EAC_SRC.exists() and str(EAC_SRC) not in sys.path:
     sys.path.insert(0, str(EAC_SRC))
 

@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Any
 
 LAB_DIR = Path(__file__).resolve().resolve().parent.parent.parent
-BIONEMO_DIR = Path("/home/gris/oss-science-agents/bionemo-agent-toolkit")
+BIONEMO_DIR = Path("/home/gris96/oss-science-agents/bionemo-agent-toolkit")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # Configuración

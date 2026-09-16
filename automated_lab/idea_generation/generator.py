@@ -28,7 +28,7 @@ from pathlib import Path
 from typing import Any
 
 LAB_DIR = Path(__file__).resolve().parent.parent.parent
-KISS_DIR = Path(os.getenv("KISS_DISCOVERY_ENGINE_DIR", "/home/gris/.hermes/workspace/repos/kiss_discovery_engine"))
+KISS_DIR = Path(os.getenv("KISS_DISCOVERY_ENGINE_DIR", "/home/gris96/.hermes/workspace/repos/kiss_discovery_engine"))
 
 # `fasta_key` debe calzar con el primer campo del header FASTA.
 TARGETS = {

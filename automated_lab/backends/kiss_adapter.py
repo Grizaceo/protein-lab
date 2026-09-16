@@ -26,7 +26,7 @@ from pathlib import Path
 from typing import Any
 
 LAB_DIR = Path(__file__).resolve().parent.parent.parent
-KISS_DIR = Path("/home/gris/.hermes/workspace/repos/kiss_discovery_engine")
+KISS_DIR = Path("/home/gris96/.hermes/workspace/repos/kiss_discovery_engine")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # Configuración

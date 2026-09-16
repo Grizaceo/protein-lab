@@ -15,7 +15,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-LAB = Path("/home/gris/.hermes/workspace/protein-lab/automated_lab")
+LAB = Path("/home/gris96/.hermes/workspace/protein-lab/automated_lab")
 RESULTS = LAB / "results"
 ACTIVE = RESULTS / "ACTIVE_RUN.json"
 STATE = RESULTS / ".overnight_monitor.state.json"

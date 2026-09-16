@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import List, Dict
 
 # Try to insert agentic-lab-eac src directory into sys.path to leverage its adapters
-EAC_SRC = Path("/home/gris/.hermes/workspace/agentic-lab-eac/src")
+EAC_SRC = Path("/home/gris96/.hermes/workspace/agentic-lab-eac/src")
 if EAC_SRC.exists() and str(EAC_SRC) not in sys.path:
     sys.path.insert(0, str(EAC_SRC))
 
@@ -26,8 +26,8 @@ class CombinedLiteratureProvider:
         _workspace_root = Path(__file__).resolve().parents[2]
         _grounding_candidates = [
             _workspace_root / "GROUNDING.md",
-            Path("/home/gris/.hermes/workspace/ACTIVE/protein-lab/GROUNDING.md"),
-            Path("/home/gris/.hermes/workspace/protein-lab/GROUNDING.md"),
+            Path("/home/gris96/.hermes/workspace/ACTIVE/protein-lab/GROUNDING.md"),
+            Path("/home/gris96/.hermes/workspace/protein-lab/GROUNDING.md"),
         ]
         self.grounding_path = next((p for p in _grounding_candidates if p.exists()), _grounding_candidates[0])
 

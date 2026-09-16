@@ -26,7 +26,7 @@ from pathlib import Path
 from typing import Any
 
 LAB_DIR = Path(__file__).resolve().parent.parent.parent
-DGM_DIR = Path("/home/gris/oss-science-agents/dgm")
+DGM_DIR = Path("/home/gris96/oss-science-agents/dgm")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # Configuración
