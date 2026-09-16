@@ -20,8 +20,22 @@ def check_exposed_sulfurs(pdb_path):
     return exposed
 
 if __name__ == "__main__":
-    bfr_path = os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")
-    mtra_path = os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/MtrA.pdb")
+    from pathlib import Path
+    _candidates = [
+        Path(__file__).resolve().parent / "data/pdb/new_chassis/1BFR.pdb",
+        Path(__file__).resolve().parent / "data/pdb/1BFR.pdb",
+        Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+        Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+    ]
+    bfr_path = str(next((p for p in _candidates if p.exists()), _candidates[0]))
+
+    _mtra_candidates = [
+        Path(__file__).resolve().parent / "data/pdb/MtrA.pdb",
+        Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/MtrA.pdb")),
+        Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/MtrA.pdb")),
+    ]
+    mtra_path = str(next((p for p in _mtra_candidates if p.exists()), _mtra_candidates[0]))
+
     
     print("--- 🔍 AUDITORÍA DE PUERTOS DE CONEXIÓN (AZUFRE) ---")
     

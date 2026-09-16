@@ -1,0 +1,194 @@
+{
+ "MRGPRX2": {
+  "n_case": 36,
+  "n_ctrl": 41,
+  "case_LPS_response": 0.024397343403722842,
+  "ctrl_LPS_response": -6.788647441080863e-05,
+  "blunting_delta_case_minus_ctrl": 0.02446522987813365,
+  "welch_t": 0.7433069356771534,
+  "df": 74.95146839130004,
+  "p_val": 0.45961950876560004,
+  "unmatched_example": [
+   [
+    "E02NARAligned",
+    "GSM9786802"
+   ],
+   [
+    "E03NAR",
+    "GSM9786804"
+   ],
+   [
+    "E07NAR",
+    "GSM9786810"
+   ],
+   [
+    "E12NAR",
+    "GSM9786817"
+   ],
+   [
+    "F12NAR",
+    "GSM9786909"
+   ]
+  ]
+ },
+ "TAC1": {
+  "n_case": 36,
+  "n_ctrl": 41,
+  "case_LPS_response": -0.013315737185079956,
+  "ctrl_LPS_response": 0.01689778837938432,
+  "blunting_delta_case_minus_ctrl": -0.030213525564464275,
+  "welch_t": -0.8567467240462566,
+  "df": 71.91601420627887,
+  "p_val": 0.3944307745890113,
+  "unmatched_example": [
+   [
+    "E02NARAligned",
+    "GSM9786802"
+   ],
+   [
+    "E03NAR",
+    "GSM9786804"
+   ],
+   [
+    "E07NAR",
+    "GSM9786810"
+   ],
+   [
+    "E12NAR",
+    "GSM9786817"
+   ],
+   [
+    "F12NAR",
+    "GSM9786909"
+   ]
+  ]
+ },
+ "TACR1": {
+  "n_case": 36,
+  "n_ctrl": 41,
+  "case_LPS_response": 1.9930956470265756e-05,
+  "ctrl_LPS_response": -0.02867126258927101,
+  "blunting_delta_case_minus_ctrl": 0.028691193545741275,
+  "welch_t": 2.1548236200355224,
+  "df": 70.37884521296016,
+  "p_val": 0.034599046245647615,
+  "unmatched_example": [
+   [
+    "E02NARAligned",
+    "GSM9786802"
+   ],
+   [
+    "E03NAR",
+    "GSM9786804"
+   ],
+   [
+    "E07NAR",
+    "GSM9786810"
+   ],
+   [
+    "E12NAR",
+    "GSM9786817"
+   ],
+   [
+    "F12NAR",
+    "GSM9786909"
+   ]
+  ]
+ },
+ "CMA1": {
+  "n_case": 36,
+  "n_ctrl": 41,
+  "case_LPS_response": -0.01990120560519688,
+  "ctrl_LPS_response": -0.039906619251346385,
+  "blunting_delta_case_minus_ctrl": 0.020005413646149505,
+  "welch_t": 0.3601443014525227,
+  "df": 68.41487194696118,
+  "p_val": 0.7198486848104635,
+  "unmatched_example": [
+   [
+    "E02NARAligned",
+    "GSM9786802"
+   ],
+   [
+    "E03NAR",
+    "GSM9786804"
+   ],
+   [
+    "E07NAR",
+    "GSM9786810"
+   ],
+   [
+    "E12NAR",
+    "GSM9786817"
+   ],
+   [
+    "F12NAR",
+    "GSM9786909"
+   ]
+  ]
+ },
+ "IL1B": {
+  "n_case": 36,
+  "n_ctrl": 41,
+  "case_LPS_response": 5.858608324146752,
+  "ctrl_LPS_response": 6.655138886929671,
+  "blunting_delta_case_minus_ctrl": -0.7965305627829187,
+  "welch_t": -1.9205244305745657,
+  "df": 44.031270154795635,
+  "p_val": 0.061282693983256635,
+  "unmatched_example": [
+   [
+    "E02NARAligned",
+    "GSM9786802"
+   ],
+   [
+    "E03NAR",
+    "GSM9786804"
+   ],
+   [
+    "E07NAR",
+    "GSM9786810"
+   ],
+   [
+    "E12NAR",
+    "GSM9786817"
+   ],
+   [
+    "F12NAR",
+    "GSM9786909"
+   ]
+  ]
+ },
+ "CXCL8": {
+  "n_case": 36,
+  "n_ctrl": 41,
+  "case_LPS_response": 3.9963999729483026,
+  "ctrl_LPS_response": 5.05944150640011,
+  "blunting_delta_case_minus_ctrl": -1.0630415334518073,
+  "welch_t": -2.9066157379804243,
+  "df": 52.79105779523743,
+  "p_val": 0.005330110907663398,
+  "unmatched_example": [
+   [
+    "E02NARAligned",
+    "GSM9786802"
+   ],
+   [
+    "E03NAR",
+    "GSM9786804"
+   ],
+   [
+    "E07NAR",
+    "GSM9786810"
+   ],
+   [
+    "E12NAR",
+    "GSM9786817"
+   ],
+   [
+    "F12NAR",
+    "GSM9786909"
+   ]
+  ]
+ }
+}

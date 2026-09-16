@@ -33,7 +33,15 @@ def find_triangular_manifold(pdb_path, target_area, min_dist=10.0, max_dist=25.0
     return triangles
 
 if __name__ == "__main__":
-    bfr_path = os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")
+    from pathlib import Path
+    _candidates = [
+        Path(__file__).resolve().parent / "data/pdb/new_chassis/1BFR.pdb",
+        Path(__file__).resolve().parent / "data/pdb/1BFR.pdb",
+        Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+        Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+    ]
+    bfr_path = str(next((p for p in _candidates if p.exists()), _candidates[0]))
+
     
     # El área de interés es cerca de donde el Oro debe estar (calculado en optimize_core.py)
     gold_target = np.array([11.55, -12.53, 24.28])

@@ -53,8 +53,23 @@ def get_center_of_mass(pdb_path, atom_filter="FE"):
 
 
 if __name__ == "__main__":
-    mtra_path = os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/MtrA.pdb")
-    bfr_path = os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")
+    from pathlib import Path
+    _script_dir = Path(__file__).resolve().parent
+    _mtra_candidates = [
+        _script_dir / "data/pdb/MtrA.pdb",
+        Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/MtrA.pdb")),
+        Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/MtrA.pdb")),
+    ]
+    mtra_path = str(next((p for p in _mtra_candidates if p.exists()), _mtra_candidates[0]))
+
+    _bfr_candidates = [
+        _script_dir / "data/pdb/new_chassis/1BFR.pdb",
+        _script_dir / "data/pdb/1BFR.pdb",
+        Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+        Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+    ]
+    bfr_path = str(next((p for p in _bfr_candidates if p.exists()), _bfr_candidates[0]))
+
 
     # 1. MtrA: Distancia Hemo -> CYS 67
     # Buscamos el FE del hemo más cercano a CYS 67

@@ -1,0 +1,7 @@
+{
+  "n_subjects": 20,
+  "platform": "GPL17586",
+  "n_probes": 70523,
+  "delta_vo2_mean": 0.5186499999999998,
+  "note": "Pre expression matrix extracted; next step is probe->gene mapping via GPL17586"
+}

@@ -29,7 +29,15 @@ def scan_stepping_stones(pdb_path, center_point):
     return stones
 
 if __name__ == "__main__":
-    bfr_path = os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")
+    from pathlib import Path
+    _candidates = [
+        Path(__file__).resolve().parent / "data/pdb/new_chassis/1BFR.pdb",
+        Path(__file__).resolve().parent / "data/pdb/1BFR.pdb",
+        Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+        Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+    ]
+    bfr_path = str(next((p for p in _candidates if p.exists()), _candidates[0]))
+
     center = get_center_of_mass(bfr_path)
     
     print("--- 🪜 ESCANEO DE ESCALERA ELECTRÓNICA (TRP/TYR) ---")

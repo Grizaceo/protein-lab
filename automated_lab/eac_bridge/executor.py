@@ -8,14 +8,28 @@ from pathlib import Path
 from typing import Dict, Any, Optional
 
 # Ensure agentic-lab-eac src directory is in sys.path
-EAC_SRC = Path("/home/gris/.hermes/workspace/agentic-lab-eac/src")
-if EAC_SRC.exists() and str(EAC_SRC) not in sys.path:
-    sys.path.insert(0, str(EAC_SRC))
+_eac_candidates = [
+    Path("/home/gris/.hermes/workspace/ACTIVE/agentic-lab-eac/src"),
+    Path("/home/gris/.hermes/workspace/agentic-lab-eac/src"),
+    Path(__file__).resolve().parents[3] / "agentic-lab-eac" / "src",
+]
+for _candidate in _eac_candidates:
+    if _candidate.exists() and str(_candidate) not in sys.path:
+        sys.path.insert(0, str(_candidate))
+        break
 
 from agentic_lab_eac.models import ExecutionPlan, PlanStatus
 from eac_bridge.ledger import ResearchLedger
 from engine.experiment import ExperimentRunner
-from tropical_metrics import BioMaterialCAD
+
+try:
+    from tropical_metrics import BioMaterialCAD
+except ImportError:
+    try:
+        from tropical_metrics_v2 import BioMaterialCAD
+    except ImportError:
+        BioMaterialCAD = None
+
 
 logger = logging.getLogger(__name__)
 
@@ -228,6 +242,10 @@ class ProteinLabExecutor:
 
                 # 3. Action: topology.audit (Marcus theory / Ihara Zeta)
                 elif action == "topology.audit":
+                    if BioMaterialCAD is None:
+                        raise RuntimeError(
+                            "BioMaterialCAD is unavailable in protein-lab (biomaterials line migrated to material-science-lab)"
+                        )
                     cad = BioMaterialCAD()
                     target_seq = params.get("target_seq", "MALWMRLLPLLALLALWGPDPAAA")
                     coords = cad.sequence_to_mock_coords(target_seq, folding=0.5)

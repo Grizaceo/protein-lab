@@ -1,0 +1,47 @@
+{
+  "experiment_id": "protein-28-preprint-v24-sensitivity-section-20260915",
+  "domain": "protein",
+  "linea": "fibromialgia",
+  "timestamp": "2026-09-15T19:55:16.631986+00:00",
+  "method": "VanderWeele & Ding (2017) E-value; consolidated COL9A1 + PTN with LOO + outlier + clinical context",
+  "action": "Updated preprint v2.14 with Section 3.4.7 (E-values sensitivity analysis, LOO/outlier extension)",
+  "metrics": {
+    "genes_analyzed": 2,
+    "COL9A1_evalue": 8.983847014733083,
+    "COL9A1_evalue_lower": 4.984717009730802,
+    "COL9A1_evalue_loo_min": 8.740255328558508,
+    "COL9A1_evalue_loo_max": 9.546866632432844,
+    "PTN_evalue": 6.864614101293514,
+    "PTN_evalue_lower": 3.76480988080918,
+    "PTN_evalue_loo_min": 6.648846760357797,
+    "PTN_evalue_loo_max": 7.068689474765375,
+    "robustness_verdict": "HIGH",
+    "looverdict": "ROBUSTO - all LOO E-values >= 5.0 for both genes"
+  },
+  "verdict": "COMPLETADO",
+  "gates_passed": [
+    "G1_regime",
+    "G2_consumer",
+    "G3_axis",
+    "G4_provenance"
+  ],
+  "labstate_validated": true,
+  "critico_audit": "Todos los numeros verificables en disco: e01 (COL9A1=8.98), e02 (PTN=6.86), e03 (outlier ROBUSTO), e04 (LOO COL9A1 8.74-9.55), e05 (LOO PTN 6.65-7.07). Section 3.4.7 presente en preprint_dopaminergic_convergence_FM_numbered.md linea 309. Sin fabricacion.",
+  "input_artifacts": [
+    "analisis/falsificacion/e01_evalue_results.json",
+    "analisis/falsificacion/e02_evalue_ptn_results.json",
+    "analisis/falsificacion/e03_evalue_outlier_sensitivity.json",
+    "analisis/falsificacion/e04_evalue_loo_full.json",
+    "analisis/falsificacion/e05_evalue_ptn_loo_full.json",
+    "experiments/protein-25-evalue-loo-outlier-sensitivity-20260824.json",
+    "experiments/protein-27-evalue-loo-outlier-sensitivity-ptn-20260825.json"
+  ],
+  "output_artifacts": [
+    "investigacion-fibromialgia/preprint_dopaminergic_convergence_FM_numbered.md (Seccion 3.4.7)",
+    "experiments/protein-28-preprint-v24-sensitivity-section-20260915.json"
+  ],
+  "status": "completed",
+  "spec_hash": "sha256:ichor-preprint-v24-sensitivity-20260821",
+  "hash_method": "eidos-canonicalization-v1",
+  "content_sha256": "07551ae4d5355d7b43b58f447f2377a9138015343b5a8911c8b0b2fcf74169f5"
+}

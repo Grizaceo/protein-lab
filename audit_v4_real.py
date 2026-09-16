@@ -7,8 +7,17 @@ Autor: DAVI-rol Adam Heller. Estado: Freeze V4-20260422.
 """
 
 import os, numpy as np
+from pathlib import Path
 
-BFR = os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")
+_script_dir = Path(__file__).resolve().parent
+_candidates = [
+    _script_dir / "data/pdb/new_chassis/1BFR.pdb",
+    _script_dir / "data/pdb/1BFR.pdb",
+    Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+    Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+]
+BFR = str(next((p for p in _candidates if p.exists()), _candidates[0]))
+
 
 print("=" * 60)
 print("AUDITORIA V4: Au NP Policristalino -> Electrodo (via Heme)")

@@ -23,7 +23,14 @@ class CombinedLiteratureProvider:
     3. Falls back to a robust, rate-limited local implementation using NCBI E-utils in case of import or network errors.
     """
     def __init__(self):
-        self.grounding_path = Path("/home/gris/.hermes/workspace/protein-lab/GROUNDING.md")
+        _workspace_root = Path(__file__).resolve().parents[2]
+        _grounding_candidates = [
+            _workspace_root / "GROUNDING.md",
+            Path("/home/gris/.hermes/workspace/ACTIVE/protein-lab/GROUNDING.md"),
+            Path("/home/gris/.hermes/workspace/protein-lab/GROUNDING.md"),
+        ]
+        self.grounding_path = next((p for p in _grounding_candidates if p.exists()), _grounding_candidates[0])
+
         self.fake_pmids = {"Kang 2007", "Tominaga 2006", "Hainfeld 2011"}
         self.verified_cache: List[Dict] = []
         self._load_grounding_cache()

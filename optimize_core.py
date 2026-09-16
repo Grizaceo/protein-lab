@@ -16,7 +16,15 @@ def get_coords(pdb_path, residue_num, atom_name="CA", chain="A"):
     return None
 
 if __name__ == "__main__":
-    bfr_path = os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")
+    from pathlib import Path
+    _candidates = [
+        Path(__file__).resolve().parent / "data/pdb/new_chassis/1BFR.pdb",
+        Path(__file__).resolve().parent / "data/pdb/1BFR.pdb",
+        Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+        Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+    ]
+    bfr_path = str(next((p for p in _candidates if p.exists()), _candidates[0]))
+
     
     # Supongamos que nuestro puerto de entrada es MET 1 en la cadena A
     port_pos = get_coords(bfr_path, 1, "SD", "A")

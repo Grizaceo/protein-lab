@@ -17,17 +17,25 @@ Uso: python geometry_cys_rotamer.py
 """
 
 import os
+from pathlib import Path
 import numpy as np
 from Bio.PDB import PDBParser
+
 
 # ─── Parámetros de geometría tetraédrica ──────────────────────────────────────
 BOND_CA_CB = 1.530   # Å  (CYS: igual a ILE dentro de error cristalográfico)
 BOND_CB_SG = 1.810   # Å  (CYS estándar)
 ANGLE_CA_CB_SG = np.radians(114.4)  # grados → radianes (AMBER ff19SB)
 
-BFR_PATH = os.path.expanduser(
-    "~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb"
-)
+_script_dir = Path(__file__).resolve().parent
+_candidates = [
+    _script_dir / "data/pdb/new_chassis/1BFR.pdb",
+    _script_dir / "data/pdb/1BFR.pdb",
+    Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+    Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+]
+BFR_PATH = str(next((p for p in _candidates if p.exists()), _candidates[0]))
+
 
 # ─── Cargar estructura con BioPython (sin silenciar errores) ──────────────────
 parser = PDBParser(QUIET=False)

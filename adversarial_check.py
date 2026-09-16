@@ -13,7 +13,16 @@ def get_center_of_mass_chain(pdb_path, chain):
     return np.mean(coords, axis=0) if coords else None
 
 if __name__ == "__main__":
-    bfr_path = os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")
+    from pathlib import Path
+    _script_dir = Path(__file__).resolve().parent
+    _candidates = [
+        _script_dir / "data/pdb/new_chassis/1BFR.pdb",
+        _script_dir / "data/pdb/1BFR.pdb",
+        Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+        Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+    ]
+    bfr_path = str(next((p for p in _candidates if p.exists()), _candidates[0]))
+
     
     # 1. TEST DE GEOGRAFÍA (Ataque 3)
     c_a = get_center_of_mass_chain(bfr_path, "A")

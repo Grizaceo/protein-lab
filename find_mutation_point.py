@@ -17,7 +17,15 @@ def get_coords(pdb_path, residue_num, atom_name="CA", chain="A"):
     return None
 
 if __name__ == "__main__":
-    bfr_path = os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")
+    from pathlib import Path
+    _candidates = [
+        Path(__file__).resolve().parent / "data/pdb/new_chassis/1BFR.pdb",
+        Path(__file__).resolve().parent / "data/pdb/1BFR.pdb",
+        Path(os.path.expanduser("~/.hermes/workspace/ACTIVE/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+        Path(os.path.expanduser("~/.hermes/workspace/protein-lab/data/pdb/new_chassis/1BFR.pdb")),
+    ]
+    bfr_path = str(next((p for p in _candidates if p.exists()), _candidates[0]))
+
     
     p1 = np.array([-10.608, -8.967, 43.839]) # MET 1 (A)
     p2 = np.array([-2.013, -15.754, 25.579]) # TYR 45 (H)
