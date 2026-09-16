@@ -8,7 +8,7 @@
 set -euo pipefail
 PDB="$(readlink -f "$1")"
 LIST="$(readlink -f "$2")"
-FX=/mnt/c/temp/foldx5
+FX=tools/foldx5
 EXE="$FX/foldx_1_20270131.exe"
 BASE=$(basename "$PDB" .pdb)
 WORK="$FX/ddg_$(date +%s)"

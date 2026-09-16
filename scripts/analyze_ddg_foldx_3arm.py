@@ -5,7 +5,7 @@ runs two-sided paired Wilcoxon with Holm correction + |ddG|<=10 trimming."""
 import re, json, sys
 from itertools import combinations
 
-BASE = "/mnt/c/temp/foldx5/battery_foldx"
+BASE = "tools/foldx5"
 ARMS = ["esm3", "blosum62", "matched"]
 N_PRE = 133
 ALPHA = 0.05
