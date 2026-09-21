@@ -281,7 +281,7 @@
 281: - *Protocol reference:* Model 6 (§2.4), four deconvolution implementations.
 282: 
 283: **Prediction 2 — Opioid/tachykinin axis: the ligand is elevated in plasma; the PBMC receptor mRNA is partially composition-sensitive (not purely transcriptional).**
-284: - *What the literature establishes:* Substance P (TAC1) protein is elevated in FM serum/plasma (Russell et al., 1998, PMID 10025591; Tsilioni et al., 2016, PMID 26763911; Theoharides et al., 2019, PMID 31383665; Findeisen et al., 2025, PMID 39674732), as are enkephalins (García-Domínguez et al., 2024, PMID 39135076). Mast cells are the bridge: SP activates mast cells → neuroinflammation → pain (Littlejohn & Guymer, 2018, PMID 29511971; Theoharides et al., 2019). A recent meta-analysis confirms mu-opioid receptor dysfunction in FM (Bruun et al., 2026, PMID 41457418). The opioid/tachykinin axis is therefore **not** a dead end in plasma — it is a validated signal.
+284: - *What the literature establishes:* Substance P (TAC1) protein is elevated in FM serum/plasma (Russell et al., 1998, PMID 10025591; Tsilioni et al., 2016, PMID 26763911; Theoharides et al., 2019, PMID 31427928; Findeisen et al., 2025, PMID 40002538), as are enkephalins (García-Domínguez et al., 2024, PMID 39199314). Mast cells are the bridge: SP activates mast cells → neuroinflammation → pain (Littlejohn & Guymer, 2018, PMID 29556959; Theoharides et al., 2019). A recent meta-analysis confirms mu-opioid receptor dysfunction in FM (Bruun et al., 2026, PMID 41457418). The opioid/tachykinin axis is therefore **not** a dead end in plasma — it is a validated signal.
 285: - *What our analysis adds:* The elevated mRNA of opioid/tachykinin **receptors** (TACR1/OPRM1/OPRK1) in PBMCs is **partially composition-sensitive** (§3.2 — it collapses under full cell-composition adjustment, but a VIF-sensitivity analysis shows that collapse is collinearity-driven and the genes regain significance under an orthogonal adjustment). It is therefore not a pure transcriptional signal, but neither is it a pure cell-population artefact. PBMC receptor mRNA is at best a weak proxy for the plasma ligand signal. The ligand (SP) is what is measured in plasma; the receptor mRNA reflects both which cells are circulating and a partially retained per-cell component.
 286: - *Corrected prediction:* In plasma, **Substance P (TAC1) protein will be elevated** (consistent with prior literature), and this elevation may **not correlate cleanly** with PBMC TACR1/OPRM1 mRNA levels (because the latter is composition-sensitive). The two compartments measure related but not identical things.
 287: - *Assay:* Olink/ELISA for Substance P (TAC1) and met-enkephalins (PENK).
@@ -444,29 +444,29 @@
 444: 
 445: The present analysis intersects with several established lines of FM biomarker research. We briefly map the convergence and divergence to position our contributions.
 446: 
-447: **Neuropeptide axis (Substance P and mast cells).** The most replicated peripheral molecular finding in FM is elevated Substance P (TAC1) in cerebrospinal fluid and serum/plasma (Russell et al., 1998, PMID 10025591; Russell, 1998, PMID 7526868; Tsilioni et al., 2016, PMID 26763911; Theoharides et al., 2019, PMID 31383665; Findeisen et al., 2025, PMID 39674732 — collectively >600 citations). Mast cells are the mechanistic bridge: Substance P activates mast cells → neurogenic inflammation → pain (Littlejohn & Guymer, 2018, PMID 29511971; Theoharides et al., 2019; Aitella et al., 2026, PMID 39674732). A recent meta-analysis confirms mu-opioid receptor dysfunction in FM (Bruun et al., 2026, PMID 41457418). Our analysis does not contradict these findings — it refines them. The elevated mRNA of opioid/tachykinin **receptors** (TACR1/OPRM1/OPRK1) in PBMCs is **compositional** (§3.2), not transcriptional. The ligand (SP) is the validated plasma signal; the receptor mRNA reflects circulating cell fractions. **Clinical implication: measure Substance P in plasma, not receptor mRNA in PBMCs.**
+447: **Neuropeptide axis (Substance P and mast cells).** The most replicated peripheral molecular finding in FM is elevated Substance P (TAC1) in cerebrospinal fluid and serum/plasma (Russell et al., 1998, PMID 10025591; Russell, 1998, PMID 7526868; Tsilioni et al., 2016, PMID 26763911; Theoharides et al., 2019, PMID 31427928; Findeisen et al., 2025, PMID 40002538 — collectively >600 citations). Mast cells are the mechanistic bridge: Substance P activates mast cells → neurogenic inflammation → pain (Littlejohn & Guymer, 2018, PMID 29556959; Theoharides et al., 2019). A recent meta-analysis confirms mu-opioid receptor dysfunction in FM (Bruun et al., 2026, PMID 41457418). Our analysis does not contradict these findings — it refines them. The elevated mRNA of opioid/tachykinin **receptors** (TACR1/OPRM1/OPRK1) in PBMCs is **compositional** (§3.2), not transcriptional. The ligand (SP) is the validated plasma signal; the receptor mRNA reflects circulating cell fractions. **Clinical implication: measure Substance P in plasma, not receptor mRNA in PBMCs.**
 448: 
 449: **CA14 and carbonic anhydrase in FM.** CA14 is the top-ranking causal protein for chronic widespread pain in UKB plasma proteomics (Chen et al., 2025, PMID 41025730). Kılıç et al. (2025, PMID 40178093) report altered carbonic anhydrase autoantibodies (CAI/II) in FM, further implicating carbonic anhydrase dysregulation. Our direction-specific prediction (↓ CA14 in FM plasma) is consistent with the UKB cross-sectional data.
 450: 
 451: **Extracellular-matrix / neurite-outgrowth module (COL9A1/PTN).** This investigation is, to our knowledge, the first to measure COL9A1 or PTN in FM plasma or PBMCs. The finding emerges from our UKB-MR-informed gene prioritization (Chen et al., 2025), not from candidate selection. No prior FM study has reported these proteins as biomarkers. This is therefore a **novel, testable prediction** rather than a replication.
 452: 
-453: **COL9A1 in osteoarthritis and cartilage.** COL9A1 (collagen type IX α1) is a minor collagen covalently cross-linked to type II collagen in articular cartilage. Kang et al. (2025, *Arthritis Rheumatol*, 23 citations) identified COL9A1 as a **plasma predictor of future osteoarthritis risk** in a prospective cohort. Zhang et al. (2019, *J Cell Physiol*, 24 citations) reported COL9A1 as a candidate OA biomarker from network/pathway analysis. He et al. (2024, *Biology of Collagens*, 22 citations) reviewed that Col9a1-knockout mice develop severe degenerative joint disease. The COL9A1–FM link is biologically plausible: FM frequently co-occurs with joint hypermobility and osteoarthritis, and COL9A1 is a cartilage-turnover protein detectable in plasma.
+453: **COL9A1 in osteoarthritis and cartilage.** COL9A1 (collagen type IX α1) is a minor collagen covalently cross-linked to type II collagen in articular cartilage. Kang et al. (2025, *Arthritis Rheumatol*, 23 citations) identified COL9A1 as a **plasma predictor of future osteoarthritis risk** in a prospective cohort. He et al. (2024, *Biology of Collagens*, 22 citations) reviewed that Col9a1-knockout mice develop severe degenerative joint disease. The COL9A1–FM link is biologically plausible: FM frequently co-occurs with joint hypermobility and osteoarthritis, and COL9A1 is a cartilage-turnover protein detectable in plasma.
 454: 
 455: **PTN in neuropathic pain and nerve regeneration.** Pleiotrophin (PTN, also called heparin-binding growth-associated molecule) is a neurotrophic factor with dual roles in **neuropathic pain** and **peripheral nerve regeneration**. Martin et al. (2011, *Curr Pharm Des*, 27 citations) and Herradon et al. (2019, *Front Pharmacol*, 80 citations) reviewed PTN as a pharmacological target for limiting neuropathic pain. Lien et al. (2020, *J Peripher Nerv Syst*, 39 citations) demonstrated that PTN synergizes with GDNF to promote axonal regeneration. Jin et al. (2009, *Neurosurg Rev*, 40 citations) reviewed PTN in peripheral nerve injury. Blondet et al. (2005, *J Histochem Cytochem*, 70 citations) showed PTN cellular localization in nerve regeneration. Ezquerra et al. (2008, *Growth Factors*, 36 citations) correlated PTN gene expression changes with rat-strain differences in neuropathic pain. The PTN–FM link is coherent with the SFPN substrate (~49% of FM patients): PTN elevation in FM may reflect attempted nerve repair in the peripheral-somatic compartment.
 456: 
-457: **Multi-omics landscape in FM.** Our transcriptomic reanalysis sits within a growing multi-omics FM literature. Bonomi et al. (2025, *Int J Mol Sci*, 13 citations) and Favretti & Iannuccelli (2025, *Clin Exp Rheumatol*, 49 citations) reviewed multi-omics (transcriptomics, proteomics, metabolomics, epigenomics) approaches in FM. García-Domínguez (2026, *Biomedicines*, 1 citation) reviewed emerging biomarkers and digital phenotyping. Clos-Garcia et al. (2019, *EBioMedicine/The Lancet*, 244 citations) performed the landmark gut-microbiome + serum-metabolome study in FM, identifying altered glutamate metabolism. Our work adds a UKB-MR-informed transcriptomic layer to this landscape, bridging causal genetics with peripheral mRNA signatures.
+457: **Multi-omics landscape in FM.** Our transcriptomic reanalysis sits within a growing multi-omics FM literature. Bonomi et al. (2025, *Int J Mol Sci*, 13 citations) and Favretti & Iannuccelli (2025, *Clin Exp Rheumatol*, 49 citations) reviewed multi-omics (transcriptomics, proteomics, metabolomics, epigenomics) approaches in FM. García-Domínguez (2026, *Biomedicines*, 1 citation) reviewed emerging biomarkers and digital phenotyping. Clos-Garcia et al. (2020, *EBioMedicine*, 244 citations) performed the landmark gut-microbiome + serum-metabolome study in FM, identifying altered glutamate metabolism. Our work adds a UKB-MR-informed transcriptomic layer to this landscape, bridging causal genetics with peripheral mRNA signatures.
 458: 
 459: **Gut microbiome and the gut-brain axis.** Erdrich et al. (2020, *BMC Musculoskelet Disord*, 107 citations) systematically reviewed the FM–gut-microbiome association. Garofalo et al. (2023, *Biomedicines*, 74 citations) reviewed the FM-IBS interaction via gut microbiota. Martín et al. (2023, *Front Immunol*, 52 citations) reported bacterial translocation in FM. Varrassi et al. (2026, scoping review) updated the microbiota-gut-brain axis in FM. This literature contextualizes our FME reframing: if exercise modulates gut microbiota, and gut dysbiosis drives neuroinflammation in FM, then the exercise-responsive subphenotype may have a gut-axis substrate in addition to the BDNF pathway.
 460: 
-461: **Metabolomics: tryptophan and glutamate.** Clos-Garcia et al. (2019, 244 citations) identified altered glutamate metabolism and diagnostic serum metabolome biomarkers in FM. Zetterman et al. (2024, *Clin Transl Sci*, 21 citations) used machine learning to identify fatigue as a key FM symptom reflected in tyrosine, purine, pyrimidine, and glutaminergic metabolism. Marino et al. (2021, *Metabolites*, 20 citations) reported ¹H-NMR metabolomic differences in FM-depression comorbidity. Teckchandani et al. (2021, *Eur J Pain*, 66 citations) reviewed acylcarnitines and tryptophan metabolism in chronic pain. These metabolomic signatures are orthogonal to our proteomic-transcriptomic findings and suggest that a multi-omics validation cohort (Olink + metabolomics) would maximize biomarker discovery.
+461: **Metabolomics: tryptophan and glutamate.** Clos-Garcia et al. (2020, 244 citations) identified altered glutamate metabolism and diagnostic serum metabolome biomarkers in FM. Zetterman et al. (2024, *Clin Transl Sci*, 21 citations) used machine learning to identify fatigue as a key FM symptom reflected in tyrosine, purine, pyrimidine, and glutaminergic metabolism. Marino et al. (2024, *Metabolites*, 20 citations) reported ¹H-NMR metabolomic differences in FM-depression comorbidity. Teckchandani et al. (2021, *Eur J Pain*, 66 citations) reviewed acylcarnitines and tryptophan metabolism in chronic pain. These metabolomic signatures are orthogonal to our proteomic-transcriptomic findings and suggest that a multi-omics validation cohort (Olink + metabolomics) would maximize biomarker discovery.
 462: 
 463: **No prior MDGA2–pain link.** A search for MDGA2 (MAMDC1) in chronic pain, neural synapse, or fibromyalgia returned zero results, indicating that this gene — also elevated in our PBMC analysis but not surviving Bonferroni correction — is, at present, an uncharacterized candidate in the pain literature rather than a replicated signal.
 464: 
 465: **BDNF and exercise-responsive subfenotype (FME).** Brain-derived neurotrophic factor (BDNF) is elevated in FM (Stefani et al., 2019, PMID 31478151) and modulated by exercise via the PGC-1α/FNDC5/BDNF pathway (Belviranlı et al., 2024, PMID 38880591; Nijs et al., 2015, PMID 25547860). This supports our FME reframing: if exercise modulates BDNF, and BDNF correlates with pain in FM, then the exercise-responsive subphenotype has a molecular substrate.
 466: 
-467: **Small-fiber polyneuropathy (SFPN).** Pooled prevalence of SFPN in FM is 49% (Grayston et al., 2019, PMID 30797693; Oaklander et al., 2013, PMID 23748113 — >700 combined citations). SFPN is the peripheral substrate that maps onto our lead module: COL9A1 (collagen IX, cartilage/ECM) and PTN (pleiotrophin, neurite outgrowth/nerve repair). This convergence supports the biological plausibility of our ECM/neurite module.
+467: **Small-fiber polyneuropathy (SFPN).** Pooled prevalence of SFPN in FM is 49% (Grayston et al., 2019, PMID 30314675; Oaklander et al., 2013, PMID 23748113 — >700 combined citations). SFPN is the peripheral substrate that maps onto our lead module: COL9A1 (collagen IX, cartilage/ECM) and PTN (pleiotrophin, neurite outgrowth/nerve repair). This convergence supports the biological plausibility of our ECM/neurite module.
 468: 
-469: **Gap: no validated blood biomarkers for nociplastic pain.** Despite decades of research, no blood biomarker has been validated for nociplastic pain or FM (Davis et al., 2020, PMID 32251800; Favretti et al., 2023, PMID 37427244). Our COL9A1/PTN findings — grounded in causal MR and surviving stringent composition adjustment — fill a genuine gap. They are offered as candidates, not as validated biomarkers, pending independent replication.
+469: **Gap: no validated blood biomarkers for nociplastic pain.** Despite decades of research, no blood biomarker has been validated for nociplastic pain or FM (Favretti et al., 2023, PMID 37445618). Our COL9A1/PTN findings — grounded in causal MR and surviving stringent composition adjustment — fill a genuine gap. They are offered as candidates, not as validated biomarkers, pending independent replication.
 470: 
 471: ---
 472: 
@@ -666,21 +666,21 @@
 666: 
 667: Chinn, S., Caldwell, W., & Gritsenko, K. (2016). Fibromyalgia Pathogenesis and Treatment Options Update. *Curr Pain Headache Rep*, 20(4), 25. PMID: 26922414.
 668: 
-669: Davis, K. D., Aghaeepour, N., Ahn, A. H., Angst, M. S., et al. (2020). Discovery and validation of biomarkers to aid the development of safe and effective pain therapeutics: challenges and opportunities. *Nat Rev Neurol*, 16(7), 381–400. PMID: 32251800.
+669: 
 670: 
 671: De la Luz-Cuellar, Y. E., Coffeen, U., Mercado, F., & Contreras, B. (2023). Spinal dopaminergic D1- and D2-like receptors have a sex-dependent effect in an experimental model of fibromyalgia. *Eur J Pharmacol*, 948, 175696. PMID: 37003519.
 672: 
-673: Favretti, M., Iannuccelli, C., & Di Franco, M. (2023). Pain biomarkers in fibromyalgia syndrome: current understanding and future directions. *Int J Mol Sci*, 24(13), 10443. PMID: 37427244.
+673: Favretti, M., Iannuccelli, C., & Di Franco, M. (2023). Pain biomarkers in fibromyalgia syndrome: current understanding and future directions. *Int J Mol Sci*, 24(13), 10443. PMID: 37445618.
 674: 
-675: Findeisen, K., Guymer, E., & Littlejohn, G. (2025). Neuroinflammatory and immunological aspects of fibromyalgia. *Brain Sci*, 15(2), 206. PMID: 39674732.
+675: Findeisen, K., Guymer, E., & Littlejohn, G. (2025). Neuroinflammatory and immunological aspects of fibromyalgia. *Brain Sci*, 15(2), 206. PMID: 40002538.
 676: 
-677: García-Domínguez, M., et al. (2024). Enkephalins and pain modulation: mechanisms of action and therapeutic perspectives. *Biomolecules*, 14(8), 926. PMID: 39135076.
+677: García-Domínguez, M., et al. (2024). Enkephalins and pain modulation: mechanisms of action and therapeutic perspectives. *Biomolecules*, 14(8), 926. PMID: 39199314.
 678: 
-679: Grayston, R., Czanner, G., Elhadd, K., Goebel, A., et al. (2019). A systematic review and meta-analysis of the prevalence of small fiber pathology in fibromyalgia: Implications for a new paradigm in fibromyalgia. *Semin Arthritis Rheum*, 48(6), 1096–1104. PMID: 30797693.
+679: Grayston, R., Czanner, G., Elhadd, K., Goebel, A., et al. (2019). A systematic review and meta-analysis of the prevalence of small fiber pathology in fibromyalgia: Implications for a new paradigm in fibromyalgia. *Semin Arthritis Rheum*, 48(6), 1096–1104. PMID: 30314675.
 680: 
 681: Kılıç, H., Hasanova, N., Topaloğlu, M. S., & Şahin, E. (2025). A case-control study on the role of carbonic anhydrase autoantibodies in the pathogenesis and diagnosis of fibromyalgia. *Sci Rep*, 15, 9667. PMID: 40178093.
 682: 
-683: Littlejohn, G., & Guymer, E. (2018). Neurogenic inflammation in fibromyalgia. *Semin Immunopathol*, 40(3), 291–304. PMID: 29511971.
+683: Littlejohn, G., & Guymer, E. (2018). Neurogenic inflammation in fibromyalgia. *Semin Immunopathol*, 40(3), 291–304. PMID: 29556959.
 684: 
 685: Nijs, J., Meeus, M., Versijpt, J., Moens, M., Bos, I., et al. (2015). Brain-derived neurotrophic factor as a driving force behind neuroplasticity in neuropathic and central sensitization pain: a new therapeutic target? *Expert Opin Ther Targets*, 19(4), 513–524. PMID: 25547860.
 686: 
@@ -690,7 +690,7 @@
 690: 
 691: Stefani, L. C. M., Leite, F. M., Maria da Graça, L., Zanette, S. A., et al. (2019). BDNF and serum S100B levels according the spectrum of structural pathology in chronic pain patients. *Neurosci Lett*, 706, 74–80. PMID: 31478151.
 692: 
-693: Theoharides, T. C., Tsilioni, I., & Bawazeer, M. (2019). Mast cells, neuroinflammation and pain in fibromyalgia syndrome. *Front Cell Neurosci*, 13, 353. PMID: 31383665.
+693: Theoharides, T. C., Tsilioni, I., & Bawazeer, M. (2019). Mast cells, neuroinflammation and pain in fibromyalgia syndrome. *Front Cell Neurosci*, 13, 353. PMID: 31427928.
 694: 
 695: Tsilioni, I., Russell, I. J., Stewart, J. M., Gleason, R. M., et al. (2016). Neuropeptides CRH, SP, HK-1, and inflammatory cytokines IL-6 and TNF are increased in serum of patients with fibromyalgia syndrome, implicating mast cells. *J Pharmacol Exp Ther*, 358(3), 510–518. PMID: 26763911.
 696: 
@@ -740,41 +740,41 @@
 740: 
 741: ---
 742: 
-743: Clos-Garcia, M., Andrés-Marin, N., Fernández-Eulate, G., et al. (2019). Gut microbiome and serum metabolome analyses identify molecular biomarkers and altered glutamate metabolism in fibromyalgia. *EBioMedicine*, 49, 525–537. PMID: 31672305.
+743: Clos-Garcia, M., Andrés-Marin, N., Fernández-Eulate, G., et al. (2019). Gut microbiome and serum metabolome analyses identify molecular biomarkers and altered glutamate metabolism in fibromyalgia. *EBioMedicine*, 49, 525–537. PMID: 31327695.
 744: 
-745: Erdrich, J. A., Hawrelak, J. A., Myers, S. P., et al. (2020). Determining the association between fibromyalgia, the gut microbiome and its biomarkers: A systematic review. *BMC Musculoskelet Disord*, 21, 181. PMID: 32209077.
+745: Erdrich, J. A., Hawrelak, J. A., Myers, S. P., et al. (2020). Determining the association between fibromyalgia, the gut microbiome and its biomarkers: A systematic review. *BMC Musculoskelet Disord*, 21, 181. PMID: 32192466.
 746: 
 747: Ezquerra, L., Alguacil, L. F., Nguyen, T., & Deuel, T. F. (2008). Pleiotrophin and midkine expression in neuropathic pain: correlation between changes in pleiotrophin gene expression and rat strain differences in neuropathic pain. *Growth Factors*, 26(1), 34–42. PMID: 18365411.
 748: 
-749: Favretti, M., Iannuccelli, C., & Di Franco, M. (2025). Fibromyalgia: one year in review 2025. *Clin Exp Rheumatol*, 43(1), 1–10. PMID: 39525179.
+749: Favretti, M., Iannuccelli, C., & Di Franco, M. (2025). Fibromyalgia: one year in review 2025. *Clin Exp Rheumatol*, 43(1), 1–10. PMID: 40470564.
 750: 
-751: García-Domínguez, M. (2026). Moving Toward Objective Diagnosis in Fibromyalgia: Emerging Biomarkers and Digital Phenotyping Tools. *Biomedicines*, 14(3), 271. PMID: 40149692.
+751: García-Domínguez, M. (2026). Moving Toward Objective Diagnosis in Fibromyalgia: Emerging Biomarkers and Digital Phenotyping Tools. *Biomedicines*, 14(3), 271. PMID: 41751339.
 752: 
-753: Garofalo, G., Cristiani, C. M., Ilari, S., et al. (2023). Fibromyalgia and irritable bowel syndrome interaction: a possible role for gut microbiota and gut-brain axis. *Biomedicines*, 11(6), 1701. PMID: 37371737.
+753: Garofalo, G., Cristiani, C. M., Ilari, S., et al. (2023). Fibromyalgia and irritable bowel syndrome interaction: a possible role for gut microbiota and gut-brain axis. *Biomedicines*, 11(6), 1701. PMID: 37371796.
 754: 
 755: He, Y., Sardar, S., & Bay-Jensen, A. C. (2024). Type IX collagen. In *Biology of Collagens, Laminins* (pp. 1–20). Elsevier.
 756: 
-757: Herradon, G., Ramos-Alvarez, M. P., & Gramage, E. (2019). Connecting metainflammation and neuroinflammation through the PTN-MK-RPTPβ/ζ axis: relevance in therapeutic development. *Front Pharmacol*, 10, 377. PMID: 31031621.
-758: 
-759: Jin, L., Jianghai, C., Juan, L., & Hao, K. (2009). Pleiotrophin and peripheral nerve injury. *Neurosurg Rev*, 32(2), 165–171. PMID: 19130090.
+757: Herradon, G., Ramos-Alvarez, M. P., & Gramage, E. (2019). Connecting metainflammation and neuroinflammation through the PTN-MK-RPTPβ/ζ axis: relevance in therapeutic development. *Front Pharmacol*, 10, 377. PMID: 31031625.
+758: Jin, L., Jianghai, C., Juan, L., & Hao, K. (2009). Pleiotrophin and peripheral nerve injury. *Neurosurg Rev*, 32(4), 387–393. PMID: 19424734.
+759: 
 760: 
-761: Kang, Z., Zhang, J., Liu, W., et al. (2025). Plasma proteomic profiles predict individual future osteoarthritis risk. *Arthritis Rheumatol*, 77(5), 712–723. PMID: 39840902.
-762: 
-763: Lien, B. V., Brown, N. J., Ransom, S. C., et al. (2020). Enhancing peripheral nerve regeneration with neurotrophic factors and bioengineered scaffolds: A basic science and clinical perspective. *J Peripher Nerv Syst*, 25(1), 37–52. PMID: 31957137.
-764: 
-765: Marino, C., Grimaldi, M., Sabatini, P., et al. (2021). Fibromyalgia and depression in women: An ¹H-NMR metabolomic study. *Metabolites*, 11(7), 429. PMID: 34203492.
-766: 
-767: Martín, F., Blanco-Suárez, M., Zambrano, P., et al. (2023). Bacterial translocation are associated with fibromyalgia and myalgic encephalomyelitis/chronic fatigue syndrome: implications for disease-related biomarker. *Front Immunol*, 14, 1253121. PMID: 37868800.
-768: 
-769: Martin, Y. B., & Herradon, G. (2011). Uncovering new pharmacological targets to treat neuropathic pain by understanding how the organism reacts to nerve injury. *Curr Pharm Des*, 17(16), 1551–1560. PMID: 21568866.
-770: 
-771: Teckchandani, S., & Nagana Gowda, G. A. (2021). Metabolomics in chronic pain research. *Eur J Pain*, 25(1), 31–44. PMID: 33078866.
-772: 
-773: Varrassi, G., Chelidze, K., Tran, Y. V., et al. (2026). The microbiota-gut-brain axis in fibromyalgia: a scoping review. *Clin Exp Rheumatol*, 44(1), 45–55. PMID: 40747659.
-774: 
-775: Zhang, R., Guo, H., Yang, X., et al. (2019). Potential candidate biomarkers associated with osteoarthritis: evidence from a comprehensive network and pathway analysis. *J Cell Physiol*, 234(11), 19408–19419. PMID: 31001848.
+761: 
+762: Kang, Z., Zhang, J., Liu, W., et al. (2025). Plasma proteomic profiles predict individual future osteoarthritis risk. *Arthritis Rheumatol*, 77(5), 712–723. PMID: 39989277.
+763: 
+764: Lien, B. V., Brown, N. J., Ransom, S. C., et al. (2020). Enhancing peripheral nerve regeneration with neurotrophic factors and bioengineered scaffolds: A basic science and clinical perspective. *J Peripher Nerv Syst*, 25(1), 37–52. PMID: 31957137.
+765: 
+766: Marino, C., Grimaldi, M., Sabatini, P., et al. (2021). Fibromyalgia and depression in women: An ¹H-NMR metabolomic study. *Metabolites*, 11(7), 429. PMID: 34209136.
+767: 
+768: Martín, F., Blanco-Suárez, M., Zambrano, P., et al. (2023). Bacterial translocation are associated with fibromyalgia and myalgic encephalomyelitis/chronic fatigue syndrome: implications for disease-related biomarker. *Front Immunol*, 14, 1253121. PMID: 37744357.
+769: 
+770: Martin, Y. B., & Herradon, G. (2011). Uncovering new pharmacological targets to treat neuropathic pain by understanding how the organism reacts to nerve injury. *Curr Pharm Des*, 17(16), 1551–1560. PMID: 21568866.
+771: 
+772: Teckchandani, S., & Nagana Gowda, G. A. (2021). Metabolomics in chronic pain research. *Eur J Pain*, 25(1), 31–44. PMID: 33065770.
+773: 
+774: Varrassi, G., Chelidze, K., Tran, Y. V., et al. (2026). The microbiota-gut-brain axis in fibromyalgia: a scoping review. *Clin Exp Rheumatol*, 44(1), 45–55. PMID: 42328953.
+775: 
 776: 
-777: Zetterman, T., Nieminen, A. I., Markkula, R., et al. (2024). Machine learning identifies fatigue as a key symptom of fibromyalgia reflected in tyrosine, purine, pyrimidine, and glutaminergic metabolism. *Clin Transl Sci*, 17(2), e13740. PMID: 38365405.
+777: Zetterman, T., Nieminen, A. I., Markkula, R., et al. (2024). Machine learning identifies fatigue as a key symptom of fibromyalgia reflected in tyrosine, purine, pyrimidine, and glutaminergic metabolism. *Clin Transl Sci*, 17(2), e13740. PMID: 38411371.
 778: 
 779: ## Data & Code Availability
 780: 
